@@ -22,5 +22,61 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 
  .bar.bar-stable{
-    background-color: transparent!important;
+    background-color: transparent!important;  
+}
+
+.bartitle{
+    .bar.bar-stable .title{
+        color: transparent!important;
+    }
+}
+
+.bg-color{
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 30%,rgba(255,255,255,1) 30%,rgba(224,224,224,1) 99%)!important;
+}
+
+.ionslide{
+    height: 600px!important;
+}
+
+.sliderlabel{
+    font-size: 24px;
+}
+
+.slidertext{
+    padding: 15px;
+    label{
+        font-size: 18px;
+    }
+}
+
+.skipButton{
+    margin: 60px auto;
+    display: block;
+    border-top: 2px solid #424242!important;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    background: transparent;
+    border-radius: 0px;
+    min-height: 35px!important;
+    font-size: 20px;
+    line-height: 2px;
+  
+}
+
+
+.sliderbutton{
+    .swiper-pagination{
+        bottom: 75px;
+    }
+    
+}
+
+.swipperbutton{
+.swiper-pagination-bullet {
+   
+    background: #444444;
+ 
+}
 }

@@ -9872,5 +9872,41 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.bar-color .bar.bar-stable {
+.bar.bar-stable {
   background-color: transparent !important; }
+
+.bartitle .bar.bar-stable .title {
+  color: transparent !important; }
+
+.bg-color {
+  background: linear-gradient(to bottom, white 30%, white 30%, #e0e0e0 99%) !important; }
+
+.ionslide {
+  height: 600px !important; }
+
+.sliderlabel {
+  font-size: 24px; }
+
+.slidertext {
+  padding: 15px; }
+  .slidertext label {
+    font-size: 18px; }
+
+.skipButton {
+  margin: 60px auto;
+  display: block;
+  border-top: 2px solid #424242 !important;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  background: transparent;
+  border-radius: 0px;
+  min-height: 35px !important;
+  font-size: 20px;
+  line-height: 2px; }
+
+.sliderbutton .swiper-pagination {
+  bottom: 75px; }
+
+.swipperbutton .swiper-pagination-bullet {
+  background: #444444; }
