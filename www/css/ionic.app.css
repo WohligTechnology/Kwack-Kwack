@@ -9878,6 +9878,9 @@ a.button {
 .bartitle .bar.bar-stable .title {
   color: transparent !important; }
 
+.bar.bar-stable .title {
+  color: transparent; }
+
 .bg-color {
   background: linear-gradient(to bottom, white 30%, white 30%, #e0e0e0 99%) !important; }
 
