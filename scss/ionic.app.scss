@@ -84,9 +84,32 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
  
 }
 }
-.c{
-   
-   color:red;
-    
+
+//**********css given by kishori**********
+//signup start
+.content-mar{
+    margin: 0px 45px;
+    .item {
+        border: none;
+
+    }
+}
+.w56{
+    width: 56%;
+}
+.w100{
+    width: 100%;
+}
+.social-icon{
+    li{
  
+        width: 25% !important;
+        display: inline-block;
+    
+    }
+   
+}
+.back-white{
+    background-color: #fff;
+    box-shadow: 0px 3px 9px rgba(136, 136, 136, 0.34);
 }
