@@ -23,6 +23,8 @@ angular.module('starter.controllers', [])
 
 .controller('HomeCtrl', function($scope, $stateParams, Chats) {
   $scope.sliderData = {};
+
+   
   var setupSlider = function () {
     //some options to pass to our slider
     $scope.sliderData.sliderOptions = {
@@ -47,6 +49,12 @@ angular.module('starter.controllers', [])
   };
 
   setupSlider();
+})
+
+.controller('TrailerCtrl', function($scope) {
+})
+
+.controller('SignUpCtrl', function($scope) {
 })
 
 .controller('AccountCtrl', function($scope) {

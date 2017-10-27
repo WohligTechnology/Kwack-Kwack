@@ -7,8 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+.run(function ($ionicPlatform) {
+  $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -69,12 +69,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-    .state('home', {
+  .state('home', {
       url: '/home',
-      
-          templateUrl: 'templates/homeSlider.html',
-          controller: 'HomeCtrl'
-      
+
+      templateUrl: 'templates/homeSlider.html',
+      controller: 'HomeCtrl'
+
+    })
+    .state('trailer', {
+      url: '/trailer',
+
+      templateUrl: 'templates/trailer.html',
+      controller: 'TrailerCtrl'
+
+    })
+    
+     .state('signUp', {
+      url: '/signup',
+
+      templateUrl: 'templates/signUp.html',
+      controller: 'SignUpCtrl'
+
     })
 
   .state('tab.account', {
