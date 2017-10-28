@@ -53,6 +53,8 @@ angular.module('starter.controllers', [])
 
 .controller('TrailerCtrl', function($scope) {
 })
+.controller('ProfileCtrl', function($scope) {
+})
 
 .controller('SignUpCtrl', function($scope) {
 })

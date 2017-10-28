@@ -83,6 +83,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'TrailerCtrl'
 
     })
+      .state('profile', {
+      url: '/profile',
+
+      templateUrl: 'templates/profile.html',
+      controller: 'ProfileCtrl'
+
+    })
     
      .state('signUp', {
       url: '/signup',
