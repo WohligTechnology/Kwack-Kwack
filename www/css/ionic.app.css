@@ -9877,8 +9877,8 @@ a.button {
   src: url("../fonts/montserrat/Montserrat-Regular.ttf"); }
 
 @font-face {
-  font-family: 'montserrat-b';
-  src: url("../fonts//montserrat/Montserrat-Bold.ttf"); }
+  font-family: 'Montserrat-Bold';
+  src: url("../fonts/montserrat/Montserrat-Bold.otf"); }
 
 @font-face {
   font-family: 'Montserrat-Light';
@@ -9942,8 +9942,10 @@ a.button {
   top: 0px !important; }
 
 .Trailertitle {
-  font-family: "Montserrat-Light";
-  font-size: 15px; }
+  padding-top: 12px; }
+  .Trailertitle span {
+    font-family: "Montserrat-Light";
+    font-size: 16px; }
 
 .content-mar {
   margin: 0px 45px; }

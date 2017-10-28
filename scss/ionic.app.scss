@@ -16,12 +16,16 @@ $dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
+ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-
+$font-family-sans-serif: "Montserrat-Light",
+"Montserrat-Bold";
+$font-family-light-sans-serif: "Montserrat-Light",
+"Montserrat-Bold",
+"montserrat-r";
 
 @font-face {
   font-family: 'montserrat-r';
@@ -32,8 +36,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 
 @font-face {
-  font-family: 'montserrat-b';
-  src: url("../fonts//montserrat/Montserrat-Bold.ttf");
+  font-family: 'Montserrat-Bold';
+  src: url("../fonts/montserrat/Montserrat-Bold.otf");
 
 }
 
@@ -143,8 +147,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .Trailertitle{
-font-family: "Montserrat-Light";
-font-size: 15px;
+    span{
+        font-family: "Montserrat-Light";
+        font-size: 16px;
+    }
+padding-top: 12px;
 }
 //**********css given by kishori**********
 //signup start
