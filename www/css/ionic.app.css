@@ -9873,9 +9873,16 @@ a.button {
   transition-duration: 0s; }
 
 @font-face {
-  font-family: 'DejaVuSans';
-  src: url("../fonts/DejaVuSans.ttf");
-  font-weight: 100; }
+  font-family: 'montserrat-r';
+  src: url("../fonts/montserrat/Montserrat-Regular.ttf"); }
+
+@font-face {
+  font-family: 'montserrat-b';
+  src: url("../fonts//montserrat/Montserrat-Bold.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url("../fonts//montserrat/Montserrat-Light.ttf"); }
 
 .bar.bar-stable {
   background-color: transparent !important; }
@@ -9935,5 +9942,35 @@ a.button {
   top: 0px !important; }
 
 .Trailertitle {
-  font-family: "DejaVuSans";
+  font-family: "Montserrat-Light";
   font-size: 15px; }
+
+.content-mar {
+  margin: 0px 45px; }
+  .content-mar .item {
+    border: none; }
+
+.w56 {
+  width: 56%; }
+
+.w100 {
+  width: 100%; }
+
+.social-icon li {
+  width: 25% !important;
+  display: inline-block; }
+
+.back-white {
+  background-color: #fff;
+  box-shadow: 0px 3px 9px rgba(136, 136, 136, 0.34);
+  padding: 0px 20px 0px 10px; }
+  .back-white label {
+    margin: 10px 0px; }
+  .back-white input {
+    font-family: 'montserrat-r'; }
+
+.border-bot {
+  border-bottom: 1px solid rgba(136, 136, 136, 0.21) !important; }
+
+.title h5 {
+  font-family: 'montserrat-b'; }
