@@ -9872,6 +9872,11 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+@font-face {
+  font-family: 'DejaVuSans';
+  src: url("../fonts/DejaVuSans.ttf");
+  font-weight: 100; }
+
 .bar.bar-stable {
   background-color: transparent !important; }
 
@@ -9916,3 +9921,19 @@ a.button {
 
 .c {
   color: red; }
+
+.removebar .bar {
+  padding: 0px !important;
+  height: 0px !important; }
+
+.closenavbar {
+  font-size: 35px;
+  padding: 5px 5px 0px 0px;
+  color: #f9b90e; }
+
+.has-header {
+  top: 0px !important; }
+
+.Trailertitle {
+  font-family: "DejaVuSans";
+  font-size: 15px; }

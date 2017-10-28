@@ -21,6 +21,28 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+
+$font-family-sans-serif: "DejaVuSans",
+"AvenirNext-Bold",
+"savoyeplain",
+"fontawesome",
+"Roboto",
+"Segoe UI",
+sans-serif !default;
+$font-family-light-sans-serif: "DejaVuSans",
+"AvenirNext-Bold",
+"savoyeplain",
+"fontawesome",
+"Segoe UI-Light",
+sans-serif-light !default;
+
+
+@font-face {
+    font-family: 'DejaVuSans';
+    src: url("../fonts/DejaVuSans.ttf");
+    font-weight: 100;
+  }
+//start of homeslider image
  .bar.bar-stable{
     background-color: transparent!important;  
 }
@@ -84,9 +106,43 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
  
 }
 }
-.c{
-   
+//end of home slider css
+
+.c{  
    color:red;
-    
- 
+}
+
+
+//trailer
+.removebar{
+    .bar{
+        padding: 0px!important;
+        height: 0px!important;
+      
+    }
+}
+
+//   .bar  .title{
+//         line-height: 0px!important; 
+//         height: 0px!important;
+// }
+
+.closenavbar{
+    font-size: 35px;
+    padding: 5px 5px 0px 0px;
+    color: #f9b90e;
+}
+
+// .bar{
+//     height: 0px!important;
+//     padding: 0px!important
+// }
+
+.has-header{
+    top: 0px!important
+}
+
+.Trailertitle{
+font-family: "DejaVuSans";
+font-size: 15px;
 }
