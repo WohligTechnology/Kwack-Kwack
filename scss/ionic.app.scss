@@ -28,25 +28,33 @@ $font-family-light-sans-serif: "Montserrat-Light",
 "Montserrat-Bold",
 "Montserrat-Regular";
 
+
+$font-family: "Montserrat-Light",
+"Montserrat-Bold",
+"Montserrat-Regular";
+$font-family: "Montserrat-Light",
+"Montserrat-Bold",
+"Montserrat-Regular";
+
+
+
 @font-face {
-  font-family: 'Montserrat-Regular';
-  src: url("../fonts/montserrat/Montserrat-Regular.otf");
+    font-family: 'Montserrat-Light';
+    src: url("../fonts/montserrat/Montserrat-Light.ttf");
+  
+  }
 
-}
-
-
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url("../fonts/montserrat/Montserrat-Regular.otf");
+  
+  }
 
 @font-face {
   font-family: 'Montserrat-Bold';
   src: url("../fonts/montserrat/Montserrat-Bold.otf");
-
 }
 
-@font-face {
-    font-family: 'Montserrat-Light';
-    src: url("../fonts//montserrat/Montserrat-Light.ttf");
-  
-  }
 
  .bar.bar-stable{
     background-color: transparent!important;  
@@ -113,12 +121,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 //end of home slider css
 
-.c{  
-   color:red;
-}
-
-
-//trailer
+//trailerstart
 .removebar{
     .bar{
         padding: 0px!important;
@@ -154,6 +157,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
 padding-top: 12px;
 }
+//trailercssendshere
 //**********css given by kishori**********
 //signup start
 .content-mar{
@@ -193,12 +197,29 @@ padding-top: 12px;
     border-bottom: 1px solid rgba(136, 136, 136, 0.21) !important;
 }
 
+
 .btn-yellow{
     color: #000;
     background-color: rgb(255, 182, 0);
     letter-spacing: 3px;
     font-size: 12px;
 
-  
+}
     // font-family: "Montserrat-Regular";
+
+.title{
+    h5{
+      font-family: 'montserrat-b';
+    }
+}
+
+//common classes and ionic classes start
+.bar-stable .button.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #444;
+    font-size: 17px;
+    display: none;
+
 }
