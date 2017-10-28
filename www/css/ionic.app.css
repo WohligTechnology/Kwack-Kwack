@@ -9873,8 +9873,8 @@ a.button {
   transition-duration: 0s; }
 
 @font-face {
-  font-family: 'montserrat-r';
-  src: url("../fonts/montserrat/Montserrat-Regular.ttf"); }
+  font-family: 'Montserrat-Regular';
+  src: url("../fonts/montserrat/Montserrat-Regular.otf"); }
 
 @font-face {
   font-family: 'Montserrat-Bold';
@@ -9968,11 +9968,14 @@ a.button {
   padding: 0px 20px 0px 10px; }
   .back-white label {
     margin: 10px 0px; }
-  .back-white input {
-    font-family: 'montserrat-r'; }
+  .back-white .list {
+    padding-bottom: 50px; }
 
 .border-bot {
   border-bottom: 1px solid rgba(136, 136, 136, 0.21) !important; }
 
-.title h5 {
-  font-family: 'montserrat-b'; }
+.btn-yellow {
+  color: #000;
+  background-color: #ffb600;
+  letter-spacing: 3px;
+  font-size: 12px; }

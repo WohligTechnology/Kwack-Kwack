@@ -22,14 +22,15 @@ $dark:                            #444 !default;
 @import "www/lib/ionic/scss/ionic";
 
 $font-family-sans-serif: "Montserrat-Light",
-"Montserrat-Bold";
+"Montserrat-Bold",
+"Montserrat-Regular";
 $font-family-light-sans-serif: "Montserrat-Light",
 "Montserrat-Bold",
-"montserrat-r";
+"Montserrat-Regular";
 
 @font-face {
-  font-family: 'montserrat-r';
-  src: url("../fonts/montserrat/Montserrat-Regular.ttf");
+  font-family: 'Montserrat-Regular';
+  src: url("../fonts/montserrat/Montserrat-Regular.otf");
 
 }
 
@@ -184,15 +185,20 @@ padding-top: 12px;
     label{
         margin: 10px 0px;
     }
-    input{
-         font-family: 'montserrat-r';
+  .list {
+        padding-bottom: 50px;
     }
 }
 .border-bot{
     border-bottom: 1px solid rgba(136, 136, 136, 0.21) !important;
 }
-.title{
-    h5{
-      font-family: 'montserrat-b';
-    }
+
+.btn-yellow{
+    color: #000;
+    background-color: rgb(255, 182, 0);
+    letter-spacing: 3px;
+    font-size: 12px;
+
+  
+    // font-family: "Montserrat-Regular";
 }
