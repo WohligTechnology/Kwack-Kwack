@@ -9874,11 +9874,15 @@ a.button {
 
 @font-face {
   font-family: 'Montserrat-Medium';
-  src: url("../fonts/montserrat/Montserrat-Medium.otf"); }
+  src: url("../fonts/Montserrat-Medium.ttf"); }
 
 @font-face {
   font-family: 'Montserrat-SemiBold';
   src: url("../fonts/Montserrat-SemiBold.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url("../fonts/montserrat/Montserrat-Light.ttf"); }
 
 @font-face {
   font-family: 'Montserrat-Italic';
@@ -9895,6 +9899,16 @@ a.button {
 @font-face {
   font-family: 'Montserrat-Light';
   src: url("../fonts/Montserrat-Medium.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url("../fonts/montserrat/Montserrat-Bold.otf"); }
+
+.absolute {
+  position: absolute; }
+
+.relative {
+  position: relative; }
 
 .bar.bar-stable {
   background-color: transparent !important; }
@@ -10070,24 +10084,110 @@ a.button {
 .w100 {
   width: 100%; }
 
-.social-icon li {
-  width: 25% !important;
-  display: inline-block; }
+.social-icon {
+  text-align: right;
+  margin-right: -18px;
+  margin-top: 30px; }
+  .social-icon li {
+    width: 23% !important;
+    display: inline-block; }
+  .social-icon p {
+    margin-right: 50px;
+    padding-top: 7px;
+    letter-spacing: 1px; }
 
 .back-white {
   background-color: #fff;
   box-shadow: 0px 3px 9px rgba(136, 136, 136, 0.34);
-  padding: 0px 20px 0px 10px; }
+  padding: 0px 20px 0px 10px;
+  margin-top: 7px; }
   .back-white label {
     margin: 10px 0px; }
-  .back-white input {
-    font-family: 'montserrat-r'; }
+  .back-white .list {
+    padding: 30px 0px; }
 
 .border-bot {
   border-bottom: 1px solid rgba(136, 136, 136, 0.21) !important; }
 
+.btn-yellow {
+  color: #000;
+  background-color: #ffb600;
+  background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%) !important;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding: 7px 65px;
+  border-radius: 0px !important;
+  border: none; }
+
 .title h5 {
-  font-family: 'montserrat-b'; }
+  color: #fff;
+  font-weight: 900;
+  padding: 10px;
+  letter-spacing: 1px; }
+
+.title span {
+  font-weight: 400; }
+
+.footer .bar-footer {
+  height: 57px;
+  background-color: black; }
+
+.w25 {
+  width: 25%; }
+
+.mar-auto {
+  margin: 0 auto; }
+
+.font-size {
+  font-size: 13px;
+  letter-spacing: 2px; }
+
+.profile-pic {
+  width: 280px;
+  height: 280px;
+  margin-top: 30px;
+  padding: 40px 55px;
+  position: relative;
+  background-color: white;
+  box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
+  border-radius: 100%;
+  overflow: hidden; }
+
+.plus-btn {
+  right: 75px;
+  bottom: 7px; }
+  .plus-btn .button {
+    min-width: 45px !important;
+    min-height: 45px !important;
+    border-radius: 93%;
+    background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%) !important;
+    color: black; }
+    .plus-btn .button i {
+      font-size: 13px; }
+
+.arrow-back {
+  margin-top: 10px; }
+  .arrow-back .button {
+    background: transparent; }
+    .arrow-back .button i {
+      color: #fff;
+      font-size: 20px; }
+
+.skip {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-top: 13px; }
+
+.plus-icon {
+  color: black; }
+
+.mar-t30 {
+  margin-top: 30%; }
+
+.bg-gray {
+  background-color: #f2f2f2; }
 
 .bar-stable .button.button-clear {
   border-color: transparent;
@@ -10116,3 +10216,7 @@ a.button {
 
 .pad0 {
   padding: 0px !important; }
+
+.sign-up {
+  bottom: -29px;
+  right: -37px; }

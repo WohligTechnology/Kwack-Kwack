@@ -16,12 +16,16 @@ $dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
- $ionicons-font-path: "../lib/ionic/fonts" !default;
-
+$ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-
 $font-family-sans-serif: "Montserrat-Light",
+"Montserrat-Bold",
+"Montserrat-Regular";
+$font-family-light-sans-serif: "Montserrat-Light",
+"Montserrat-Bold",
+"Montserrat-Regular";
+$font-family: "Montserrat-Light",
 "Montserrat-Bold",
 "Montserrat-Regular",
 "Montserrat-Medium",
@@ -35,18 +39,18 @@ $font-family-light-sans-serif: "Montserrat-Light",
 "Montserrat-SemiBold";
 
 
-@mixin placeholder {
-    $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
-    @each $placeholder in $placeholders {
-      &:#{$placeholder}-placeholder {
-        @content;
-      }
-    }
-  }
+// @mixin placeholder {
+//     $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+//     @each $placeholder in $placeholders {
+//       &:#{$placeholder}-placeholder {
+//         @content;
+//       }
+//     }
+//   }
 
 @font-face {
     font-family: 'Montserrat-Medium';
-    src: url("../fonts/montserrat/Montserrat-Medium.otf" ) ;
+    src: url("../fonts/Montserrat-Medium.ttf" ) ;
   
   }
 
@@ -56,6 +60,12 @@ $font-family-light-sans-serif: "Montserrat-Light",
     
   
   }
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url("../fonts/montserrat/Montserrat-Light.ttf");
+}
+
 
   @font-face {
     font-family: 'Montserrat-Italic';
@@ -78,12 +88,27 @@ $font-family-light-sans-serif: "Montserrat-Light",
     src: url("../fonts/Montserrat-Medium.ttf");
   
   }
- .bar.bar-stable{
-    background-color: transparent!important;  
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url("../fonts/montserrat/Montserrat-Bold.otf");
 }
 
-.bartitle{
-    .bar.bar-stable .title{
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+
+}
+
+.bar.bar-stable {
+    background-color: transparent!important;
+}
+
+.bartitle {
+    .bar.bar-stable .title {
         color: transparent!important;
     }
 }
@@ -92,26 +117,26 @@ $font-family-light-sans-serif: "Montserrat-Light",
     color: transparent;
 }
 
-.bg-color{
-    background: linear-gradient(to bottom, rgba(255,255,255,1) 30%,rgba(255,255,255,1) 30%,rgba(224,224,224,1) 99%)!important;
+.bg-color {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 1) 30%, rgba(224, 224, 224, 1) 99%)!important;
 }
 
-.ionslide{
+.ionslide {
     height: 600px!important;
 }
 
-.sliderlabel{
+.sliderlabel {
     font-size: 24px;
 }
 
-.slidertext{
+.slidertext {
     padding: 15px;
-    label{
+    label {
         font-size: 18px;
     }
 }
 
-.skipButton{
+.skipButton {
     margin: 60px auto;
     display: block;
     border-top: 2px solid #424242!important;
@@ -123,51 +148,60 @@ $font-family-light-sans-serif: "Montserrat-Light",
     min-height: 35px!important;
     font-size: 20px;
     line-height: 2px;
-  
 }
 
-
-.sliderbutton{
-    .swiper-pagination{
+.sliderbutton {
+    .swiper-pagination {
         bottom: 75px;
     }
-    
 }
 
-.swipperbutton{
-.swiper-pagination-bullet {
-   
-    background: #444444;
- 
+.swipperbutton {
+    .swiper-pagination-bullet {
+        background: #444444;
+    }
 }
-}
+
 //end of home slider css
-
 //trailerstart
-.removebar{
-    .bar{
+.removebar {
+    .bar {
         padding: 0px!important;
         height: 0px!important;
-      
     }
 }
 
 
 
-.closenavbar{
+
+
+
+//   .bar  .title{
+//         line-height: 0px!important; 
+//         height: 0px!important;
+// }
+.closenavbar {
+
     font-size: 35px;
     padding: 5px 5px 0px 0px;
     color: #f9b90e;
 }
 
 
-.Trailertitle{
-    span{
+// .bar{
+//     height: 0px!important;
+//     padding: 0px!important
+// }
+
+
+.Trailertitle {
+    span {
         font-family: "Montserrat-Light";
         font-size: 16px;
     }
-padding-top: 12px;
+    padding-top: 12px;
 }
+
 
 .trailerImage{
     width:100%;
@@ -298,51 +332,163 @@ img{
         width: 100%;
     }
 }
+
 //trailercssendshere
 //**********css given by kishori**********
 //signup start
-.content-mar{
+.content-mar {
     margin: 0px 45px;
     .item {
         border: none;
-
     }
 }
-.w56{
+
+.w56 {
     width: 56%;
 }
-.w100{
+
+.w100 {
     width: 100%;
 }
-.social-icon{
-    li{
- 
-        width: 25% !important;
+
+.social-icon {
+    text-align: right;
+    margin-right: -18px;
+    margin-top: 30px;
+    li {
+        width: 23% !important;
         display: inline-block;
-    
     }
-   
+    p {
+        margin-right: 50px;
+        padding-top: 7px;
+        letter-spacing: 1px;
+    }
 }
-.back-white{
+
+.back-white {
     background-color: #fff;
     box-shadow: 0px 3px 9px rgba(136, 136, 136, 0.34);
     padding: 0px 20px 0px 10px;
-    label{
+    margin-top: 7px;
+    label {
         margin: 10px 0px;
     }
-    input{
-         font-family: 'montserrat-r';
-    }
-}
-.border-bot{
-    border-bottom: 1px solid rgba(136, 136, 136, 0.21) !important;
-}
-.title{
-    h5{
-      font-family: 'montserrat-b';
+    .list {
+        padding: 30px 0px;
     }
 }
 
+.border-bot {
+    border-bottom: 1px solid rgba(136, 136, 136, 0.21) !important;
+}
+
+.btn-yellow {
+    color: #000;
+    background-color: rgb(255, 182, 0);
+    background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%)!important;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding: 7px 65px;
+    border-radius: 0px!important;
+    border: none;
+    // font-family: "Montserrat-Regular";
+}
+
+.title {
+    h5 {
+        // font-family: "Montserrat-Bold";
+        color: #fff;
+        font-weight: 900;
+        padding: 10px;
+        letter-spacing: 1px;
+    }
+    span {
+        font-weight: 400;
+    }
+}
+
+.footer {
+    .bar-footer {
+        height: 57px;
+        background-color: black;
+    }
+}
+
+//end of .sign-up
+//start of profile
+.w25 {
+    width: 25%;
+}
+
+.mar-auto {
+    margin: 0 auto;
+}
+
+.font-size {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.profile-pic {
+    width: 280px;
+    height: 280px;
+    margin-top: 30px;
+    padding: 40px 55px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.plus-btn {
+    right: 75px;
+    bottom: 7px;
+    .button {
+        min-width: 45px !important;
+        min-height: 45px !important;
+        border-radius: 93%;
+        background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%)!important;
+        color: black;
+        i {
+            font-size: 13px;
+        }
+    }
+}
+
+.arrow-back {
+    margin-top: 10px;
+    .button {
+        background: transparent;
+        i {
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+}
+
+.skip {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 13px;
+}
+
+.plus-icon {
+    color: black;
+}
+
+.mar-t30 {
+    margin-top: 30%;
+}
+
+//end of .profile-pic
+//start of filter
+.bg-gray{
+    background-color: #f2f2f2;
+}
 //common classes and ionic classes start
 .bar-stable .button.button-clear {
     border-color: transparent;
@@ -377,4 +523,9 @@ img{
 
 .pad0{
     padding: 0px!important;
+}
+.sign-up {
+    bottom: -29px;
+    right: -37px;
+
 }
