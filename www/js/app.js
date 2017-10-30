@@ -78,15 +78,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
     .state('trailer', {
       url: '/trailer',
-
-      templateUrl: 'templates/trailer.html',
-      controller: 'TrailerCtrl'
-
+        templateUrl: 'templates/trailer.html',
+        controller: 'TrailerCtrl'
     })
     
      .state('signUp', {
       url: '/signup',
-
       templateUrl: 'templates/signUp.html',
       controller: 'SignUpCtrl'
 
