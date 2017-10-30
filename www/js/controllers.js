@@ -56,6 +56,9 @@ angular.module('starter.controllers', [])
 .controller('ProfileCtrl', function($scope) {
 })
 
+.controller('FilterCtrl', function($scope) {
+})
+
 .controller('SignUpCtrl', function($scope) {
 })
 

@@ -50,6 +50,10 @@ $font-family: "Montserrat-Light",
     position: absolute;
 }
 
+.relative {
+    position: relative;
+}
+
 .bar.bar-stable {
     background-color: transparent!important;
 }
@@ -222,30 +226,83 @@ $font-family: "Montserrat-Light",
 .footer {
     .bar-footer {
         height: 57px;
-         background-color: black;
+        background-color: black;
     }
 }
 
 //end of .sign-up
 //start of profile
-
-.w25{
+.w25 {
     width: 25%;
-  
 }
-.mar-auto{
-  margin: 0 auto;
+
+.mar-auto {
+    margin: 0 auto;
 }
-.profile-pic{
+
+.font-size {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.profile-pic {
     width: 280px;
     height: 280px;
     margin-top: 30px;
+    padding: 40px 55px;
+    position: relative;
     background-color: white;
+    box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
     border-radius: 100%;
     overflow: hidden;
 }
-.mar-t30{
+
+.plus-btn {
+    right: 75px;
+    bottom: 7px;
+    .button {
+        min-width: 45px !important;
+        min-height: 45px !important;
+        border-radius: 93%;
+        background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%)!important;
+        color: black;
+        i {
+            font-size: 13px;
+        }
+    }
+}
+
+.arrow-back {
+    margin-top: 10px;
+    .button {
+        background: transparent;
+        i {
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+}
+
+.skip {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 13px;
+}
+
+.plus-icon {
+    color: black;
+}
+
+.mar-t30 {
     margin-top: 30%;
+}
+
+//end of .profile-pic
+//start of filter
+.bg-gray{
+    background-color: #f2f2f2;
 }
 //common classes and ionic classes start
 .bar-stable .button.button-clear {

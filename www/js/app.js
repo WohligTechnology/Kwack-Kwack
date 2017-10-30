@@ -90,6 +90,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'ProfileCtrl'
 
     })
+     .state('filter', {
+      url: '/filter',
+
+      templateUrl: 'templates/filter.html',
+      controller: 'FilterCtrl'
+
+    })
     
      .state('signUp', {
       url: '/signup',
