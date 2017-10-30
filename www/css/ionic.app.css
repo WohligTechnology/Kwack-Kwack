@@ -10189,6 +10189,31 @@ a.button {
 .bg-gray {
   background-color: #f2f2f2; }
 
+.filter h4 {
+  color: #969696;
+  letter-spacing: 2px;
+  padding: 11px;
+  font-size: 16px; }
+
+.filter .button {
+  margin: 5px 3px;
+  border-radius: 0px; }
+
+.btn-category {
+  background-color: #ffc943; }
+
+.w35 {
+  width: 41%; }
+
+.w74 {
+  width: 74%; }
+
+.color-black {
+  background-color: #000; }
+
+.all-category {
+  margin: 0px 10px; }
+
 .bar-stable .button.button-clear {
   border-color: transparent;
   background: none;
