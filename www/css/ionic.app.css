@@ -10214,6 +10214,28 @@ a.button {
 .all-category {
   margin: 0px 10px; }
 
+.bg-color-yellow {
+  background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 30%, #fbcf60 99%) !important; }
+
+.w15 {
+  width: 15%; }
+
+.title-discover {
+  font-weight: 900;
+  letter-spacing: 3px;
+  padding-top: 5px; }
+
+.discover-para {
+  font-weight: 600;
+  padding: 0px 50px; }
+
+.input-category {
+  width: 340px;
+  height: 45px !important;
+  border-radius: 25px;
+  box-shadow: inset 0px 1px 21px rgba(34, 33, 33, 0.22);
+  background: #f0ab05; }
+
 .bar-stable .button.button-clear {
   border-color: transparent;
   background: none;

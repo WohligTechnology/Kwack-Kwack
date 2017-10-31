@@ -62,6 +62,9 @@ angular.module('starter.controllers', [])
 .controller('SignUpCtrl', function($scope) {
 })
 
+.controller('DiscoverCtrl', function($scope) {
+})
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

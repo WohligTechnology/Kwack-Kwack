@@ -102,6 +102,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'SignUpCtrl'
 
     })
+    .state('discover', {
+      url: '/discover',
+      templateUrl: 'templates/discover.html',
+      controller: 'DiscoverCtrl'
+
+    })
 
   .state('tab.account', {
     url: '/account',

@@ -1,44 +1,63 @@
 <ion-view>
-<div class="bar bar-header bar-light">
-  <h1 class="title">bar-light</h1>
-</div>
-<ion-content class="bg-color filter">
-    <div class="bg-gray has-header text-center">
-        <h4>FILTERS</h4>
-        <!--<span>Reset</span>-->
+    <div class="bar bar-header bar-light">
+        <h1 class="title">bar-light</h1>
     </div>
-    <div>
+    <ion-content class="bg-color filter">
+        <div class="bg-gray has-header text-center">
+            <h4>FILTERS</h4>
+            <!--<span>Reset</span>-->
+        </div>
+        <div class="row">
+            <div class="col-50">
+                <div class="list">
+                    <select>
+                           <option>Blue</option>
+                           <option selected>Green</option>
+                           <option>Red</option>
+                     </select>
+                    </label>
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="list">
+                    <select>
+                      <option>Blue</option>
+                      <option selected>Green</option>
+                      <option>Red</option>
+                    </select>
+                    </label>
+                </div>
+            </div>
+        </div>
         <div>
-            <p>My Preferances</p>
-             <label class="item item-input">
+            <div>
+                <p>My Preferances</p>
+                <label class="item item-input">
     <input type="text" placeholder="Enter Category">
   </label>
-        </div>
-          <div class="">
-        <div class="row">
-          
+            </div>
             <div class="">
-                <div>
-             <button class="button color-black w100">Sports</button>
-             <button class="button btn-category w100">Business</button>
-              <button class="button btn-category w100">Fashion</button>
-                  <button class="button color-black w100">Helath</button>
+                <div class="row">
+                    <div class="">
+                        <div>
+                            <button class="button color-black w100">Sports</button>
+                            <button class="button btn-category w100">Business</button>
+                            <button class="button btn-category w100">Fashion</button>
+                            <button class="button color-black w100">Helath</button>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="all-category">
+                            <button class="button btn-category w35">Science</button>
+                            <button class="button btn-category w35">Food</button>
+                            <button class="button btn-category w74">Entertainment</button>
+                            <button class="button color-black w74">International</button>
+                            <button class="button btn-category w35">Comedy</button>
+                            <button class="button btn-category w35">Books</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class=""> 
-                <div class="all-category">
-                <button class="button btn-category w35">Science</button>
-                 <button class="button btn-category w35">Food</button>
-                <button class="button btn-category w74">Entertainment</button>
-                
-                <button class="button color-black w74">International</button>
-                <button class="button btn-category w35">Comedy</button>
-                    <button class="button btn-category w35">Books</button>
-                </div>
-
-            </div>
             </div>
         </div>
-    </div>
-</ion-content>
+    </ion-content>
 </ion-view>
