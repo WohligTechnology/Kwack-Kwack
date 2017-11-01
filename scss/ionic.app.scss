@@ -33,12 +33,9 @@ $font-family: "Montserrat-Light",
 "Montserrat-SemiBold";
 $font-family-light-sans-serif: "Montserrat-Light",
 "Montserrat-Bold",
-"Montserrat-Regular"
-"Montserrat-Medium",
+"Montserrat-Regular" "Montserrat-Medium",
 "Montserrat-Italic",
 "Montserrat-SemiBold";
-
-
 // @mixin placeholder {
 //     $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
 //     @each $placeholder in $placeholders {
@@ -47,47 +44,40 @@ $font-family-light-sans-serif: "Montserrat-Light",
 //       }
 //     }
 //   }
-
 @font-face {
     font-family: 'Montserrat-Medium';
-    src: url("../fonts/Montserrat-Medium.ttf" ) ;
-  
-  }
+    src: url("../fonts/Montserrat-Medium.ttf");
+}
 
-  @font-face {
+@font-face {
     font-family: 'Montserrat-SemiBold';
-    src: url("../fonts/Montserrat-SemiBold.ttf" ) ;
-    
-  
-  }
+    src: url("../fonts/Montserrat-SemiBold.ttf");
+}
 
 @font-face {
     font-family: 'Montserrat-Light';
     src: url("../fonts/montserrat/Montserrat-Light.ttf");
 }
 
-
-  @font-face {
+@font-face {
     font-family: 'Montserrat-Italic';
     src: url("../fonts/Montserrat-Italic.ttf");
-  }
+}
 
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url("../fonts/Montserrat-Regular.ttf") ;
-  
-  }
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
 
 @font-face {
-  font-family: 'Montserrat-Bold';
-  src: url("../fonts/Montserrat-Bold.ttf");
+    font-family: 'Montserrat-Bold';
+    src: url("../fonts/Montserrat-Bold.ttf");
 }
 
 @font-face {
     font-family: 'Montserrat-Light';
     src: url("../fonts/Montserrat-Medium.ttf");
-  
-  }
+}
 
 @font-face {
     font-family: 'Montserrat-Bold';
@@ -100,7 +90,10 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 .relative {
     position: relative;
+}
 
+.button {
+    border-radius: 0px;
 }
 
 .bar.bar-stable {
@@ -171,29 +164,20 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
 }
 
-
-
-
-
-
 //   .bar  .title{
 //         line-height: 0px!important; 
 //         height: 0px!important;
 // }
 .closenavbar {
-
     font-size: 35px;
     padding: 5px 5px 0px 0px;
     color: #f9b90e;
 }
 
-
 // .bar{
 //     height: 0px!important;
 //     padding: 0px!important
 // }
-
-
 .Trailertitle {
     span {
         font-family: "Montserrat-Light";
@@ -202,84 +186,82 @@ $font-family-light-sans-serif: "Montserrat-Light",
     padding-top: 12px;
 }
 
-
-.trailerImage{
-    width:100%;
-    img{
+.trailerImage {
+    width: 100%;
+    img {
         width: 100%
     }
 }
 
-.trailerName{
-padding: 20px 20px 5px;
-text-align: left;
-label{
-    font-family: "Montserrat-Medium";
-    font-size: 18px;
-}
+.trailerName {
+    padding: 20px 20px 5px;
+    text-align: left;
+    label {
+        font-family: "Montserrat-Medium";
+        font-size: 18px;
+    }
 }
 
-.articleDate{
+.articleDate {
     font-family: "Montserrat-Regular";
     color: #afafaf
 }
 
-.readarticle{
+.readarticle {
     padding: 5px;
     font-family: "Montserrat-Italic";
     color: #afafaf
 }
 
-.chooseside{
-    height:200px;
+.chooseside {
+    height: 200px;
 }
 
-.bg-yellow{
+.bg-yellow {
     margin-top: 20px;
     padding: 15px 0px;
-    background-color:  #fcc230;
+    background-color: #fcc230;
     box-shadow: inset 0px -5px 20px rgba(0, 0, 0, 0.26);
-  text-align: center;
-  h3{
-      padding: 0px!important;
-      margin: 0px!important;
-      font-family: "Montserrat-SemiBold";
-      font-weight: 700;
-  }
-  label{
-color: white;
-font-size: 18px;
-font-family: "Montserrat-Regular";
-  }
+    text-align: center;
+    h3 {
+        padding: 0px!important;
+        margin: 0px!important;
+        font-family: "Montserrat-SemiBold";
+        font-weight: 700;
+    }
+    label {
+        color: white;
+        font-size: 18px;
+        font-family: "Montserrat-Regular";
+    }
 }
 
-.yourSide{
+.yourSide {
     margin-top: 20px;
     text-align: center;
-    img{
+    img {
         width: 70%
-
-    } 
-  
+    }
 }
 
-.yoursideright{
+.yoursideright {
     border-right: 1px solid #d4d4d4;
-    height: 35px;   
+    height: 35px;
     position: absolute;
     right: 0px;
     top: 33%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-.yourside-labelsel{
+.yourside-labelsel {
     font-family: "Montserrat-Bold";
 }
-.yourside-label{
+
+.yourside-label {
     font-family: "Montserrat-Regular";
 }
 
-.trailernext{
+.trailernext {
     display: block;
     margin: 0 auto;
     margin-top: 20px;
@@ -292,43 +274,45 @@ font-family: "Montserrat-Regular";
     border: none;
     margin-bottom: 20px;
 }
-.aligntop{
+
+.aligntop {
     vertical-align: top;
 }
-.pad-left5{
+
+.pad-left5 {
     padding-left: 5px;
 }
 
-.martop{
+.martop {
     margin-top: 10px;
 }
 
-.footerImg{
+.footerImg {
     text-align: center;
     padding: 8px 0px 0px 0px;
     width: 35%;
     display: block;
     margin: 0 auto;
-img{
-    width: 100%!important;
-}
+    img {
+        width: 100%!important;
+    }
 }
 
-.footerKwackImg{
+.footerKwackImg {
     text-align: center;
     padding: 8px 0px 0px 0px;
     width: 45%;
     display: block;
     margin: 0 auto;
-img{
-    width: 100%!important;
-}  
+    img {
+        width: 100%!important;
+    }
 }
 
-.yellowStrip{
+.yellowStrip {
     width: 100%;
     line-height: 10px;
-    img{
+    img {
         width: 100%;
     }
 }
@@ -486,67 +470,137 @@ img{
 
 //end of .profile-pic
 //start of filter
-.bg-gray{
+.bg-gray {
     background-color: #f2f2f2;
 }
 
-.filter{
-    h4{
-        color:  #969696;
+.filter {
+    h4 {
+        color: #969696;
         letter-spacing: 2px;
         padding: 11px;
         font-size: 16px;
     }
-    .button{
+    .button {
         margin: 5px 3px;
         border-radius: 0px;
     }
 }
-.btn-category{
-     background-color: #ffc943;
+
+.btn-tran{
+   background: transparent !important;
 }
-.w35{
-    width: 41%;
-}
-.w74{
-    width: 74%;
-}
-.color-black{
-    background-color: #000;
-}
-.all-category{
+
+.all-category {
     margin: 0px 10px;
 }
 
 //start of discover
-
-.bg-color-yellow{
-    background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 30%, #fbcf60 99%)!important;
+.bg-color-yellow {
+    background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%)!important;
 }
 
-.w15{
-    width:15%;
+.w15 {
+    width: 15%;
 }
-.title-discover{
+
+.title-discover {
     font-weight: 900;
     letter-spacing: 3px;
     padding-top: 5px;
 }
-.discover-para{
+
+.discover-para {
     font-weight: 600;
     padding: 0px 50px;
 }
-.input-category{
-    width: 340px;
 
+.input-category {
+    width: 300px;
     height: 45px !important;
     border-radius: 25px;
+    margin-bottom: 10px;
     box-shadow: inset 0px 1px 21px rgba(34, 33, 33, 0.22);
     background: #f0ab05;
-  
 }
 
+.btn-bg {
+    background-color: #ffc943;
+    box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
+    margin: 7px 5px;
+    font-size: 13px;
+}
 
+.btn-bg-black {
+    background: linear-gradient(to right bottom, #000 30%, #000 57%, #2b2727 100%)!important;
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    margin: 7px 5px;
+}
+
+.align-right {
+    text-align: right;
+    margin-right: 40px;
+}
+
+.align-left {
+    text-align: left;
+    margin-left: 36px;
+}
+
+.btn-sports {
+    padding: 7px 23px;
+}
+
+.btn-comedy {
+    padding: 7px 18px;
+}
+
+.btn-food {
+    padding: 7px 29px;
+}
+
+.btn-science {
+    padding: 7px 18px;
+}
+
+.btn-entertainment {
+    padding: 7px 46px;
+}
+
+.btn-international {
+    padding: 7px 53px;
+}
+
+.btn-books {
+    padding: 7px 24px;
+}
+
+.btn-health {
+    padding: 7px 21px;
+}
+
+.cat-btn-plus {
+    top: 0px;
+    right: 0px;
+    .button {
+        background: transparent;
+        font-size: 12px;
+    }
+}
+
+//    .input-category {
+//   width: 300px;
+//   @include placeholder {
+//     color: red !important;
+//   }
+// }
+// input{
+// -webkit-input-placeholder { /* Chrome */
+//   color: red !important;
+// }
+// }
 //common classes and ionic classes start
 .bar-stable .button.button-clear {
     border-color: transparent;
@@ -557,33 +611,33 @@ img{
     display: none;
 }
 
-.has-header{
+.has-header {
     top: 60px;
 }
 
-.has-footer{
-    bottom: 40px;  
+.has-footer {
+    bottom: 40px;
 }
 
-.rel{
+.rel {
     position: relative;
 }
 
-.customFooter{
+.customFooter {
     margin: 0px!important;
     padding: 0px!important;
     box-shadow: 0px -15px 25px rgba(0, 0, 0, 0.11);
 }
 
-.border-r{
-   border-right: 1px solid #d4d4d4;
+.border-r {
+    border-right: 1px solid #d4d4d4;
 }
 
-.pad0{
+.pad0 {
     padding: 0px!important;
 }
+
 .sign-up {
     bottom: -29px;
     right: -37px;
-
 }
