@@ -5,7 +5,7 @@ in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
 
-$light:                           #fff !default;
+
 $stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
@@ -10193,20 +10193,104 @@ a.button {
   background-color: #f2f2f2; }
 
 .filter h4 {
-  color: #969696;
+  color: #6b6b6b;
   letter-spacing: 2px;
-  padding: 11px;
-  font-size: 16px; }
+  padding: 13px;
+  font-size: 16px;
+  box-shadow: inset 0px -2px 6px rgba(222, 216, 216, 0.46); }
 
 .filter .button {
   margin: 5px 3px;
   border-radius: 0px; }
+
+.select-month {
+  padding: 9px 37px;
+  margin: 5px 0px 5px 35px;
+  background-color: #000;
+  color: #fff;
+  border: none; }
+
+.select-year {
+  padding: 9px 41px;
+  margin: 5px 36px 5px 0px;
+  background-color: #ffc943;
+  color: #000;
+  border: none; }
+
+.category-preferences {
+  background: linear-gradient(to top, white 39%, white 60%, rgba(224, 224, 224, 0.51) 90%) !important;
+  padding: 0px 25px; }
+  .category-preferences .input-category {
+    width: 325px;
+    margin: 15px 0px;
+    box-shadow: inset 0px 0px 6px rgba(34, 33, 33, 0.22); }
+  .category-preferences h6 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #444444;
+    padding: 20px 0px 0px 20px; }
+
+.filter-btns {
+  margin-bottom: 15px; }
+  .filter-btns .btn-sports {
+    padding: 0px 27px; }
+  .filter-btns .btn-science {
+    padding: 0px 18px; }
+  .filter-btns .btn-food {
+    padding: 0px 32px; }
+  .filter-btns .btn-science {
+    padding: 0px 18px; }
+  .filter-btns .btn-entertainment {
+    padding: 0px 53px; }
+  .filter-btns .btn-fashion {
+    padding: 0px 21px; }
+  .filter-btns .btn-international {
+    padding: 0px 60px; }
+  .filter-btns .btn-health {
+    padding: 0px 26px; }
+  .filter-btns .btn-books {
+    padding: 0px 26px; }
+  .filter-btns .btn-comedy {
+    padding: 0px 21px; }
+
+.display-inline {
+  display: inline-block; }
 
 .btn-tran {
   background: transparent !important; }
 
 .all-category {
   margin: 0px 10px; }
+
+.all {
+  width: 50px;
+  height: 50px;
+  margin: 20px 0px 20px 26px; }
+  .all img {
+    width: 20px;
+    vertical-align: middle; }
+  .all span {
+    padding-left: 9px; }
+
+.polls {
+  width: 70px;
+  height: 50px;
+  margin: 20px 0px 20px 33px; }
+  .polls img {
+    width: 25px;
+    vertical-align: middle; }
+  .polls span {
+    padding-left: 9px; }
+
+.kwack {
+  width: 100px;
+  height: 50px;
+  margin: 20px 0px 20px 24px; }
+  .kwack img {
+    width: 20px;
+    vertical-align: middle; }
+  .kwack span {
+    padding-left: 9px; }
 
 .bg-color-yellow {
   background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%) !important; }

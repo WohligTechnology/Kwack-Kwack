@@ -4,7 +4,7 @@ in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
 
-$light:                           #fff !default;
+
 $stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
@@ -15,6 +15,9 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$yellow: #ffc943 !default;
+$black:#000 !default;
+$light:#fff !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
@@ -476,10 +479,11 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 .filter {
     h4 {
-        color: #969696;
+        color: #6b6b6b;
         letter-spacing: 2px;
-        padding: 11px;
+        padding: 13px;
         font-size: 16px;
+        box-shadow: inset 0px -2px 6px rgba(222, 216, 216, 0.46);
     }
     .button {
         margin: 5px 3px;
@@ -487,13 +491,123 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
 }
 
-.btn-tran{
-   background: transparent !important;
+.select-month {
+    padding: 9px 37px;
+    margin: 5px 0px 5px 35px;
+    background-color: $black;
+    color: $light;
+    border: none;
+}
+
+.select-year {
+    padding: 9px 41px;
+    margin: 5px 36px 5px 0px;
+    background-color: $yellow;
+    color: $black;
+    border: none;
+}
+
+.category-preferences {
+    background: linear-gradient(to top, white 39%, white 60%, rgba(224, 224, 224, 0.51) 90%) !important;
+    padding: 0px 25px;
+    .input-category {
+        width: 325px;
+        margin: 15px 0px;
+        box-shadow: inset 0px 0px 6px rgba(34, 33, 33, 0.22);
+    }
+    h6 {
+        font-size: 13px;
+        font-weight: bold;
+        color: #444444;
+        padding: 20px 0px 0px 20px;
+    }
+}
+.filter-btns{
+    margin-bottom: 15px;
+   .btn-sports {
+    padding: 0px 27px;
+}
+ .btn-science {
+    padding: 0px 18px;
+}
+ .btn-food {
+    padding: 0px 32px;
+}
+ .btn-science {
+    padding: 0px 18px;
+}
+ .btn-entertainment {
+    padding: 0px 53px;
+}
+.btn-fashion {
+    padding: 0px 21px;
+}
+ .btn-international {
+    padding: 0px 60px;
+}
+ .btn-health {
+    padding: 0px 26px;
+}
+ .btn-books {
+    padding: 0px 26px;
+}
+ .btn-comedy {
+    padding: 0px 21px;
+}
+}
+.display-inline{
+    display: inline-block;
+}
+.btn-tran {
+    background: transparent !important;
 }
 
 .all-category {
     margin: 0px 10px;
 }
+.w20{
+    
+}
+.all{
+    width: 50px;
+    height: 50px;
+          margin: 20px 0px 20px 26px;
+    img{
+        width: 20px;
+        vertical-align: middle;
+    }
+    span{
+        
+        padding-left: 9px;
+    }
+}
+.polls{
+    width: 70px ;
+    height: 50px;
+    margin: 20px 0px 20px 33px;;
+    img{
+        width: 25px;
+        vertical-align: middle;
+    }
+    span{
+        
+        padding-left: 9px;
+    }
+}
+.kwack{
+    width: 100px;
+    height: 50px;
+      margin: 20px 0px 20px 24px;
+     img{
+        width: 20px;
+        vertical-align: middle;
+    }
+    span{
+        
+        padding-left: 9px;
+    }
+}
+
 
 //start of discover
 .bg-color-yellow {
