@@ -65,6 +65,9 @@ angular.module('starter.controllers', [])
 .controller('DiscoverCtrl', function($scope) {
 })
 
+.controller('OtpCtrl', function($scope) {
+})
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

@@ -10256,6 +10256,9 @@ a.button {
 .display-inline {
   display: inline-block; }
 
+.dis-inline {
+  display: inline; }
+
 .btn-tran {
   background: transparent !important; }
 
@@ -10291,6 +10294,9 @@ a.button {
     vertical-align: middle; }
   .kwack span {
     padding-left: 9px; }
+
+.otp-input {
+  width: 50px; }
 
 .bg-color-yellow {
   background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%) !important; }

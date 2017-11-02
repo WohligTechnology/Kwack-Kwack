@@ -109,6 +109,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     })
 
+    .state('otp', {
+      url: '/otp',
+      templateUrl: 'templates/otp.html',
+      controller: 'DiscoverCtrl'
+
+    })
+
   .state('tab.account', {
     url: '/account',
     views: {
