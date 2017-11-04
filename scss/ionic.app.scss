@@ -522,45 +522,49 @@ $font-family-light-sans-serif: "Montserrat-Light",
         padding: 20px 0px 0px 20px;
     }
 }
-.filter-btns{
+
+.filter-btns {
     margin-bottom: 15px;
-   .btn-sports {
-    padding: 0px 27px;
+    .btn-sports {
+        padding: 0px 27px;
+    }
+    .btn-science {
+        padding: 0px 18px;
+    }
+    .btn-food {
+        padding: 0px 32px;
+    }
+    .btn-science {
+        padding: 0px 18px;
+    }
+    .btn-entertainment {
+        padding: 0px 53px;
+    }
+    .btn-fashion {
+        padding: 0px 21px;
+    }
+    .btn-international {
+        padding: 0px 60px;
+    }
+    .btn-health {
+        padding: 0px 26px;
+    }
+    .btn-books {
+        padding: 0px 26px;
+    }
+    .btn-comedy {
+        padding: 0px 21px;
+    }
 }
- .btn-science {
-    padding: 0px 18px;
-}
- .btn-food {
-    padding: 0px 32px;
-}
- .btn-science {
-    padding: 0px 18px;
-}
- .btn-entertainment {
-    padding: 0px 53px;
-}
-.btn-fashion {
-    padding: 0px 21px;
-}
- .btn-international {
-    padding: 0px 60px;
-}
- .btn-health {
-    padding: 0px 26px;
-}
- .btn-books {
-    padding: 0px 26px;
-}
- .btn-comedy {
-    padding: 0px 21px;
-}
-}
-.display-inline{
+
+.display-inline {
     display: inline-block;
 }
-.dis-inline{
+
+.dis-inline {
     display: inline;
 }
+
 .btn-tran {
     background: transparent !important;
 }
@@ -569,50 +573,51 @@ $font-family-light-sans-serif: "Montserrat-Light",
     margin: 0px 10px;
 }
 
-.all{
+.all {
     width: 50px;
     height: 50px;
-          margin: 20px 0px 20px 26px;
-    img{
+    margin: 20px 0px 20px 26px;
+    img {
         width: 20px;
         vertical-align: middle;
     }
-    span{
-        
-        padding-left: 9px;
-    }
-}
-.polls{
-    width: 70px ;
-    height: 50px;
-    margin: 20px 0px 20px 33px;;
-    img{
-        width: 25px;
-        vertical-align: middle;
-    }
-    span{
-        
-        padding-left: 9px;
-    }
-}
-.kwack{
-    width: 100px;
-    height: 50px;
-      margin: 20px 0px 20px 24px;
-     img{
-        width: 20px;
-        vertical-align: middle;
-    }
-    span{
-        
+    span {
         padding-left: 9px;
     }
 }
 
-.otp-input{
-   width:50px;
+.polls {
+    width: 70px;
+    height: 50px;
+    margin: 20px 0px 20px 33px;
+    ;
+    img {
+        width: 25px;
+        vertical-align: middle;
+    }
+    span {
+        padding-left: 9px;
+    }
+}
+
+.kwack {
+    width: 100px;
+    height: 50px;
+    margin: 20px 0px 20px 24px;
+    img {
+        width: 20px;
+        vertical-align: middle;
+    }
+    span {
+        padding-left: 9px;
+    }
+}
+
+.otp-input {
+    width: 50px;
     // display: inline;
 }
+
 //start of discover
 .bg-color-yellow {
     background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%)!important;
@@ -708,17 +713,72 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
 }
 
-//    .input-category {
-//   width: 300px;
-//   @include placeholder {
-//     color: red !important;
-//   }
-// }
-// input{
-// -webkit-input-placeholder { /* Chrome */
-//   color: red !important;
-// }
-// }
+//start of explore
+.w40 {
+    width: 40%;
+}
+
+.title-explore {
+    font-weight: 900;
+    letter-spacing: 6px;
+    font-size: 16px;
+    position: relative;
+}
+
+.title-explore:before {
+    content: "";
+    position: absolute;
+    width: 104px;
+    top: 50%;
+    left: 3%;
+    border-bottom: 1px solid #bebebe;
+}
+
+.title-explore:after {
+    content: "";
+    width: 104px;
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    border-bottom: 1px solid#bebebe;
+}
+
+.news-content {
+    .card {
+        margin: 7px 20px;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    h3 {
+        font-weight: 900px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    span {
+        font-size: 10px;
+        img {
+            vertical-align: middle;
+        }
+    }
+    p {
+        font-size: 11px;
+        margin-top: 0px;
+    }
+}
+
+.float-right {
+    float: right;
+}
+
+.w8 {
+    width: 8%;
+}
+
+.padd-lr {
+    padding: 0px 16px;
+}
+
+//end of explore
 //common classes and ionic classes start
 .bar-stable .button.button-clear {
     border-color: transparent;
@@ -731,6 +791,10 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 .has-header {
     top: 60px;
+}
+
+.no-header {
+    top: 42px;
 }
 
 .has-footer {
@@ -758,4 +822,28 @@ $font-family-light-sans-serif: "Montserrat-Light",
 .sign-up {
     bottom: -29px;
     right: -37px;
+}
+
+.invtfrndshdr {
+    top: 145px;
+    border-top: solid 1px #b2b2b2;
+}
+
+.back-img {
+    position: relative;
+}
+
+.back-img-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    img {
+        width: 100px;
+    }
 }

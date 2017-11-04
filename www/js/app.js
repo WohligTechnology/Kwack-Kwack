@@ -115,7 +115,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'DiscoverCtrl'
 
     })
+     .state('explore', {
+      url: '/explore',
+      templateUrl: 'templates/explore.html',
+      controller: 'ExploreCtrl'
 
+    })
+
+.state('inviteFriends', {
+      url: '/inviteFriends',
+      templateUrl: 'templates/inviteFriends.html',
+      controller: 'InviteFriendsCtrl'
+
+    })
+    .state('startPolling', {
+      url: '/startPolling',
+      templateUrl: 'templates/startPolling.html',
+      controller: 'SrartPollingCtrl'
+
+    })
   .state('tab.account', {
     url: '/account',
     views: {

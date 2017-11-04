@@ -68,6 +68,17 @@ angular.module('starter.controllers', [])
 .controller('OtpCtrl', function($scope) {
 })
 
+.controller('InviteFriendsCtrl', function($scope) {
+})
+
+.controller('SrartPollingCtrl', function($scope) {
+})
+
+
+.controller('ExploreCtrl', function($scope) {
+})
+
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
