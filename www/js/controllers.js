@@ -69,8 +69,6 @@ angular.module('starter.controllers', [])
 .controller('SignUpCtrl', function($scope) {
 })
 
-.controller('DiscoverCtrl', function($scope) {
-})
 
 .controller('OtpCtrl', function($scope) {
 })
