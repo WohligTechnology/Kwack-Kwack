@@ -679,8 +679,8 @@ $font-family-light-sans-serif: "Montserrat-Light",
         font-size: 12px;
     }
 }
-//end of discover
 
+//end of discover
 //start of explore
 .title-explore {
     font-weight: 900;
@@ -708,50 +708,61 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .news-content {
-  
     .card {
         margin: 7px 20px;
         background-color: transparent;
-        box-shadow: none;
-        .item{
-                margin-right: 3px;
-    margin-left: 3px;
+      
+            box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21);
+        .item {
+            margin-right: 3px;
+            margin-left: 3px;
+              
         }
     }
-.item {
-    z-index: -3;
-   
-    margin: -10px;
+    .item {
+        z-index: -3;
+        margin: -10px;
+            padding-bottom: 5px;
+    }
 }
+
+.news-content {
     h3 {
-        font-weight: 900px;
+        font-weight:bold;
         margin-top: 0px;
         margin-bottom: 0px;
     }
     span {
         font-size: 10px;
+
         img {
             vertical-align: middle;
         }
     }
-    p {
-        font-size: 11px;
-                line-height: 14px;
+    
+}
+.detail-para{
+    margin-bottom: 15px;
+    p{
+ font-size: 11px;
+        line-height: 14px;
         margin-top: 0px;
-        padding-bottom: 10px;
+        color: #4b4b4b !important;
+        font-weight: 600;
     }
 }
-.date-time{
-    padding: 4px 0px;
+.date-time {
+   margin: 3px 0px;
 }
+
 .explore-icon {
     text-align: right;
     img {
         width: 12%;
         vertical-align: middle;
     }
-    span{
-        color:#bbbdbf;
+    span {
+        color: #bbbdbf;
     }
 }
 
@@ -774,10 +785,9 @@ $font-family-light-sans-serif: "Montserrat-Light",
     display: none;
 }
 
-.colorw{
+.colorw {
     color: white;
 }
-
 
 .w25 {
     width: 25%;
@@ -804,10 +814,9 @@ $font-family-light-sans-serif: "Montserrat-Light",
     width: 15%;
 }
 
-.display-inline{
+.display-inline {
     display: inline;
 }
-
 
 .no-header {
     top: 42px;
@@ -851,10 +860,9 @@ $font-family-light-sans-serif: "Montserrat-Light",
     border-right: 1px solid #d4d4d4;
 }
 
-.pad-left10{
+.pad-left10 {
     padding-left: 10px;
 }
-
 
 .pad0 {
     padding: 0px!important;
@@ -870,48 +878,45 @@ $font-family-light-sans-serif: "Montserrat-Light",
     border-top: solid 1px #b2b2b2;
 }
 
-
-
-
 //discovernewscsss
-.discover-navsearch{
+.discover-navsearch {
     text-align: right;
     font-size: 30px;
     padding-right: 15px;
 }
 
-.discover-navmenu{
+.discover-navmenu {
     width: 25%;
     margin: 5px;
-    img{
+    img {
         width: 100%;
     }
 }
 
-.discover-head{
+.discover-head {
     font-size: 18px;
     font-family: "Montserrat-Bold"
 }
 
-.discover-trend{
+.discover-trend {
     text-align: center;
     font-family: "Montserrat-Medium";
     font-size: 18px;
 }
 
-.discover-ionslide{
+.discover-ionslide {
     height: 200px!important;
     padding-top: 10px;
 }
 
-.bodyFont{
+.bodyFont {
     font-size: 14px;
 }
 
-.sliderdesc{
+.sliderdesc {
     color: white;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     bottom: 20%;
     left: 50%;
     width: 100%;
@@ -919,36 +924,38 @@ $font-family-light-sans-serif: "Montserrat-Light",
     font-size: 1.2em;
     padding: 10px;
 }
-.slidertime{
+
+.slidertime {
     position: absolute;
     bottom: 30%;
     left: 0%;
     padding-left: 10px;
     width: 100%;
-    label{
+    label {
         vertical-align: top;
         color: white;
         font-size: 1em;
     }
-    i{
+    i {
         color: white;
         vertical-align: inherit;
     }
 }
 
-.strip{
+.strip {
     position: absolute;
     bottom: 29%;
     right: 2%;
 }
 
-.stripDiv{
+.stripDiv {
     width: 10%;
 }
 
-.stripImg{
+.stripImg {
     width: 100%;
 }
+
 //discovernewsend
 // .discover-sliderbutton{
 //     .swiper-pagination {
