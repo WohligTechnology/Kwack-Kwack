@@ -10582,7 +10582,8 @@ a.button {
 .news-discover .card {
   margin: 7px 10px;
   background-color: transparent;
-  box-shadow: none; }
+  box-shadow: none;
+  box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.88); }
   .news-discover .card .item {
     margin-right: 3px;
     margin-left: 3px; }
@@ -10615,6 +10616,9 @@ a.button {
     padding: 5px; }
   .discover-icon span {
     color: white; }
+
+.viewImg {
+  width: 6%; }
 
 .back-img {
   position: relative; }

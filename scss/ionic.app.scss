@@ -989,6 +989,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
           margin: 7px 10px;
           background-color: transparent;
           box-shadow: none;
+          box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.88);
           .item{
                   margin-right: 3px;
       margin-left: 3px;
@@ -1028,6 +1029,10 @@ $font-family-light-sans-serif: "Montserrat-Light",
     span{
         color: white;
     }
+}
+
+.viewImg{
+    width: 6%;
 }
 //discovernewsend
 // .discover-sliderbutton{
