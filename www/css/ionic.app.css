@@ -10197,11 +10197,17 @@ a.button {
   font-size: 17px;
   display: none; }
 
+.colorw {
+  color: white; }
+
 .has-header {
   top: 60px; }
 
 .has-footer {
   bottom: 40px; }
+
+.display-inline {
+  display: inline; }
 
 .rel {
   position: relative; }
@@ -10214,9 +10220,75 @@ a.button {
 .border-r {
   border-right: 1px solid #d4d4d4; }
 
+.pad-left10 {
+  padding-left: 10px; }
+
 .pad0 {
   padding: 0px !important; }
 
 .sign-up {
   bottom: -29px;
   right: -37px; }
+
+.discover-navsearch {
+  text-align: right;
+  font-size: 30px;
+  padding-right: 15px; }
+
+.discover-navmenu {
+  width: 25%;
+  margin: 5px; }
+  .discover-navmenu img {
+    width: 100%; }
+
+.discover-head {
+  font-size: 18px;
+  font-family: "Montserrat-Bold"; }
+
+.discover-trend {
+  text-align: center;
+  font-family: "Montserrat-Medium";
+  font-size: 18px; }
+
+.discover-ionslide {
+  height: 200px !important;
+  padding-top: 10px; }
+
+.bodyFont {
+  font-size: 14px; }
+
+.sliderdesc {
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 20%;
+  left: 50%;
+  width: 100%;
+  /* display: block; */
+  font-size: 1.2em;
+  padding: 10px; }
+
+.slidertime {
+  position: absolute;
+  bottom: 30%;
+  left: 0%;
+  padding-left: 10px;
+  width: 100%; }
+  .slidertime label {
+    vertical-align: top;
+    color: white;
+    font-size: 1em; }
+  .slidertime i {
+    color: white;
+    vertical-align: inherit; }
+
+.strip {
+  position: absolute;
+  bottom: 29%;
+  right: 0%; }
+
+.stripDiv {
+  width: 10%; }
+
+.stripImg {
+  width: 100%; }
