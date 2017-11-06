@@ -10271,7 +10271,28 @@ a.button {
     padding-left: 9px; }
 
 .otp-input {
-  width: 50px; }
+  width: 50px;
+  background: transparent;
+  border-bottom: 1px solid rgba(136, 136, 136, 0.97) !important; }
+
+.otp {
+  margin-top: 18%; }
+  .otp p {
+    color: #5a5a5a; }
+  .otp a {
+    color: #5a5a5a;
+    text-decoration: underline;
+    font-size: 12px;
+    letter-spacing: 1px; }
+
+.input-mar {
+  margin: 0px 60px; }
+
+.mar-r {
+  margin-right: 10px; }
+
+.input-padd {
+  padding: 50px 5px 15px 5px; }
 
 .bg-color-yellow {
   background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%) !important; }

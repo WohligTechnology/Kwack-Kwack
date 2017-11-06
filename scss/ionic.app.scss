@@ -278,8 +278,6 @@ $font-family-light-sans-serif: "Montserrat-Light",
     margin-bottom: 20px;
 }
 
-
-
 .pad-left5 {
     padding-left: 5px;
 }
@@ -582,11 +580,40 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
 }
 
+//start of otp
 .otp-input {
     width: 50px;
+    background: transparent;
+    border-bottom: 1px solid rgba(136, 136, 136, 0.97) !important;
     // display: inline;
 }
 
+.otp {
+    margin-top: 18%;
+    p {
+        color: #5a5a5a;
+    }
+    a {
+        color: #5a5a5a;
+        text-decoration: underline;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+}
+
+.input-mar {
+    margin: 0px 60px;
+}
+
+.mar-r {
+    margin-right: 10px;
+}
+
+.input-padd {
+    padding: 50px 5px 15px 5px;
+}
+
+//end of otp
 //start of discover
 .bg-color-yellow {
     background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%)!important;
@@ -801,12 +828,11 @@ $font-family-light-sans-serif: "Montserrat-Light",
     display: none;
 }
 
-
-.pad-5{
+.pad-5 {
     padding: 5px;
 }
 
-.pad-15{
+.pad-15 {
     padding: 15px!important;
 }
 
@@ -814,10 +840,9 @@ $font-family-light-sans-serif: "Montserrat-Light",
     vertical-align: top;
 }
 
-.alignM{
+.alignM {
     vertical-align: middle;
 }
-
 
 .colorw {
     color: white;
@@ -990,59 +1015,55 @@ $font-family-light-sans-serif: "Montserrat-Light",
     width: 100%;
 }
 
-.discoverStrip{
+.discoverStrip {
     padding: 2px;
-    span{
+    span {
         padding-right: 8px;
         border-right: 1px solid #414141;
     }
-    
 }
 
-.discoverCardStrip{
+.discoverCardStrip {
     padding: 2px;
-    span{
+    span {
         padding-right: 8px;
         border-right: 1px solid #ececec;
     }
-    
 }
 
 .news-discover {
-    
-      .card {
-          margin: 7px 10px;
-          background-color: transparent;
-          box-shadow: none;
-          box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.88);
-          .item{
-                  margin-right: 3px;
-      margin-left: 3px;
-          }
-      }
-  .item {
-      z-index: -3;
-     
-      margin: -10px;
-  }
-      h3 {
-          font-weight: 900px;
-          margin-top: 0px;
-          margin-bottom: 0px;
-      }
-      span {
-          font-size: 10px;
-          img {
-              vertical-align: middle;
-          }
-      }
-      p {
-          font-size: 11px;
-                  line-height: 14px;
-          margin-top: 0px;
-          padding-bottom: 10px;
-      }
-  }
+    .card {
+        margin: 7px 10px;
+        background-color: transparent;
+        box-shadow: none;
+        box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.88);
+        .item {
+            margin-right: 3px;
+            margin-left: 3px;
+        }
+    }
+    .item {
+        z-index: -3;
+        margin: -10px;
+    }
+    h3 {
+        font-weight: 900px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    span {
+        font-size: 10px;
+        img {
+            vertical-align: middle;
+        }
+    }
+    p {
+        font-size: 11px;
+        line-height: 14px;
+        margin-top: 0px;
+        padding-bottom: 10px;
+    }
+}
 
 .discover-icon {
     text-align: right;
@@ -1051,12 +1072,12 @@ $font-family-light-sans-serif: "Montserrat-Light",
         vertical-align: middle;
         padding: 5px;
     }
-    span{
+    span {
         color: white;
     }
 }
 
-.viewImg{
+.viewImg {
     width: 6%;
 }
 
@@ -1130,6 +1151,12 @@ img{
     }
 }
 //endofdiscover
+//discovernewsend
+// .discover-sliderbutton{
+//     .swiper-pagination {
+//         bottom: 8px;
+//     }
+// }
 .back-img {
     position: relative;
 }
