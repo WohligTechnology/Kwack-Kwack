@@ -1,24 +1,24 @@
 <ion-view title="Discover" class="">
         <ion-nav-bar class="bar-stable schedule-bar  nav-height">
                 <div class="row">
-                        <div class="col col30 ">
+                        <div class="col col33 ">
                             <div class="discover-navmenu">
                                     <img src="img/discover/menu.png" alt="">
                             </div>
                 
                         </div>
-                        <div class="col col30">
-                            <div>
-                                
+                        <div class="col col33">
+                            <div class="kwackheaderImg">
+                                <img src="img/discover/kwack.png" alt="">
                             </div>
                                     </div>
-                                    <div class="col col30 discover-navsearch">
+                                    <div class="col col33 discover-navsearch">
                                     <i class="ion ion-search"></i>    
                                                 </div>
                     </div>
             
               </ion-nav-bar>
-  <ion-content class="bg-color">
+  <ion-content class="bg-color no-header">
       
           <div class="bodyFont">
                 
@@ -30,7 +30,8 @@
                     <div class="discover-trend">
                         TRENDING THIS WEEK
                     </div>
-                <ion-slides class="discover-ionslide discover-sliderbutton swipperbutton" options="sliderData.sliderOptions" slider="sliderData.sliderDelegate" >
+                   
+                <ion-slides class="discover-ionslide discover-sliderbutton swipperdiscover" options="sliderData.sliderOptions" slider="sliderData.sliderDelegate" >
                         
                 <ion-slide-page  ui-sref="app.requirement({productId:data._id})">
                         <div class="">
@@ -41,7 +42,7 @@
                             <div class="slidertime">
                                     <i class="ion ion-ios-clock"></i>
                                     <label for="">3m ago</label>
-                                    <label class="pad-left10" for=""> broadly.vice.com</label>
+                                    <label class="pad-left5" for=""> broadly.vice.com</label>
                             </div>
                         
                         </div>
@@ -54,12 +55,42 @@
                             </div>
                     </ion-slide-page>
                     <ion-slide-page  ui-sref="app.requirement({productId:data._id})">
-                            <div class="">
-                              <img class="img-responsive" src="img/discover/sliderimg.PNG" alt="">
-                            </div>
+                       
+                        <img class="img-responsive" src="img/discover/sliderimg.PNG" alt="">
+                      </div>
+                      <label class="sliderdesc" for="">Behold: The first high-quality photos of Apple's iPhone X in the wild</label>
+                      <div class="">
+                          <div class="slidertime">
+                                  <i class="ion ion-ios-clock"></i>
+                                  <label for="">3m ago</label>
+                                  <label class="pad-left5" for=""> broadly.vice.com</label>
+                          </div>
+                      
+                      </div>
+                      <div class="display-inline float-right discover-icon text-center strip">
+                              <label class="discoverStrip"> <img class="" src="img/discover/graph.png"><span class=" alignM"> 20</span></label>
+                              <label class="discoverStrip"><img class="img-responsive" src="img/discover/shield.png">
+                            <span class=" alignM">  42</span></label>
+                              <label class=""> <img src="img/discover/share.png">
+                              <span class="colorw alignM">20</span></label>
+                          </div>
                             
                         </ion-slide-page>
                     </ion-slides>
+                   
+                     
+                        
+                    <ion-scroll direction="x" class="wide-as-needed">
+                        <a class="scrollCategories inline-button">All</a>
+                        <a class="scrollCategories">Just now</a>
+                        <a class="scrollCategories">Politics</a>
+                        <a class="scrollCategories">Fashion</a>
+                        <a class="scrollCategories">Sports</a>
+                        <a class="scrollCategories">Technology</a>
+                      </ion-scroll>
+                      
+               
+            
                     <div class="news-discover">
                             <div class="list card">
                                 <div>

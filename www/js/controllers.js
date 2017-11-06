@@ -83,6 +83,8 @@ angular.module('starter.controllers', [])
 .controller('ExploreCtrl', function($scope) {
 })
 
+.controller('LocationCtrl', function($scope) {
+})
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {

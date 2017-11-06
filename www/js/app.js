@@ -117,6 +117,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
    
 
+    .state('location', {
+      url: '/location',
+      templateUrl: 'templates/location.html',
+      controller: 'LocationCtrl'
+
+    })
+
     .state('otp', {
       url: '/otp',
       templateUrl: 'templates/otp.html',
