@@ -736,7 +736,9 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
     p {
         font-size: 11px;
+                line-height: 14px;
         margin-top: 0px;
+        padding-bottom: 10px;
     }
 }
 .date-time{
@@ -752,13 +754,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
         color:#bbbdbf;
     }
 }
-.detail-para{
-     margin: 10px 0px;
-    p{
-        line-height: 14px;
-      
-    }
-}
+
 .padd-r {
     padding-right: 15px;
 }
