@@ -4,7 +4,7 @@ in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
 
-$light:                           #fff !default;
+
 $stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
@@ -15,6 +15,9 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$yellow: #ffc943 !default;
+$black:#000 !default;
+$light:#fff !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
@@ -33,12 +36,9 @@ $font-family: "Montserrat-Light",
 "Montserrat-SemiBold";
 $font-family-light-sans-serif: "Montserrat-Light",
 "Montserrat-Bold",
-"Montserrat-Regular"
-"Montserrat-Medium",
+"Montserrat-Regular" "Montserrat-Medium",
 "Montserrat-Italic",
 "Montserrat-SemiBold";
-
-
 // @mixin placeholder {
 //     $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
 //     @each $placeholder in $placeholders {
@@ -47,47 +47,40 @@ $font-family-light-sans-serif: "Montserrat-Light",
 //       }
 //     }
 //   }
-
 @font-face {
     font-family: 'Montserrat-Medium';
-    src: url("../fonts/Montserrat-Medium.ttf" ) ;
-  
-  }
+    src: url("../fonts/Montserrat-Medium.ttf");
+}
 
-  @font-face {
+@font-face {
     font-family: 'Montserrat-SemiBold';
-    src: url("../fonts/Montserrat-SemiBold.ttf" ) ;
-    
-  
-  }
+    src: url("../fonts/Montserrat-SemiBold.ttf");
+}
 
 @font-face {
     font-family: 'Montserrat-Light';
     src: url("../fonts/montserrat/Montserrat-Light.ttf");
 }
 
-
-  @font-face {
+@font-face {
     font-family: 'Montserrat-Italic';
     src: url("../fonts/Montserrat-Italic.ttf");
-  }
+}
 
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url("../fonts/Montserrat-Regular.ttf") ;
-  
-  }
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
 
 @font-face {
-  font-family: 'Montserrat-Bold';
-  src: url("../fonts/Montserrat-Bold.ttf");
+    font-family: 'Montserrat-Bold';
+    src: url("../fonts/Montserrat-Bold.ttf");
 }
 
 @font-face {
     font-family: 'Montserrat-Light';
     src: url("../fonts/Montserrat-Medium.ttf");
-  
-  }
+}
 
 @font-face {
     font-family: 'Montserrat-Bold';
@@ -100,7 +93,10 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 .relative {
     position: relative;
+}
 
+.button {
+    border-radius: 0px;
 }
 
 .bar.bar-stable {
@@ -171,29 +167,20 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
 }
 
-
-
-
-
-
 //   .bar  .title{
 //         line-height: 0px!important; 
 //         height: 0px!important;
 // }
 .closenavbar {
-
     font-size: 35px;
     padding: 5px 5px 0px 0px;
     color: #f9b90e;
 }
 
-
 // .bar{
 //     height: 0px!important;
 //     padding: 0px!important
 // }
-
-
 .Trailertitle {
     span {
         font-family: "Montserrat-Light";
@@ -202,84 +189,82 @@ $font-family-light-sans-serif: "Montserrat-Light",
     padding-top: 12px;
 }
 
-
-.trailerImage{
-    width:100%;
-    img{
+.trailerImage {
+    width: 100%;
+    img {
         width: 100%
     }
 }
 
-.trailerName{
-padding: 20px 20px 5px;
-text-align: left;
-label{
-    font-family: "Montserrat-Medium";
-    font-size: 18px;
-}
+.trailerName {
+    padding: 20px 20px 5px;
+    text-align: left;
+    label {
+        font-family: "Montserrat-Medium";
+        font-size: 18px;
+    }
 }
 
-.articleDate{
+.articleDate {
     font-family: "Montserrat-Regular";
     color: #afafaf
 }
 
-.readarticle{
+.readarticle {
     padding: 5px;
     font-family: "Montserrat-Italic";
     color: #afafaf
 }
 
-.chooseside{
-    height:200px;
+.chooseside {
+    height: 200px;
 }
 
-.bg-yellow{
+.bg-yellow {
     margin-top: 20px;
     padding: 15px 0px;
-    background-color:  #fcc230;
+    background-color: #fcc230;
     box-shadow: inset 0px -5px 20px rgba(0, 0, 0, 0.26);
-  text-align: center;
-  h3{
-      padding: 0px!important;
-      margin: 0px!important;
-      font-family: "Montserrat-SemiBold";
-      font-weight: 700;
-  }
-  label{
-color: white;
-font-size: 18px;
-font-family: "Montserrat-Regular";
-  }
+    text-align: center;
+    h3 {
+        padding: 0px!important;
+        margin: 0px!important;
+        font-family: "Montserrat-SemiBold";
+        font-weight: 700;
+    }
+    label {
+        color: white;
+        font-size: 18px;
+        font-family: "Montserrat-Regular";
+    }
 }
 
-.yourSide{
+.yourSide {
     margin-top: 20px;
     text-align: center;
-    img{
+    img {
         width: 70%
-
-    } 
-  
+    }
 }
 
-.yoursideright{
+.yoursideright {
     border-right: 1px solid #d4d4d4;
-    height: 35px;   
+    height: 35px;
     position: absolute;
     right: 0px;
     top: 33%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-.yourside-labelsel{
+.yourside-labelsel {
     font-family: "Montserrat-Bold";
 }
-.yourside-label{
+
+.yourside-label {
     font-family: "Montserrat-Regular";
 }
 
-.trailernext{
+.trailernext {
     display: block;
     margin: 0 auto;
     margin-top: 20px;
@@ -292,43 +277,45 @@ font-family: "Montserrat-Regular";
     border: none;
     margin-bottom: 20px;
 }
-.aligntop{
+
+.aligntop {
     vertical-align: top;
 }
-.pad-left5{
+
+.pad-left5 {
     padding-left: 5px;
 }
 
-.martop{
+.martop {
     margin-top: 10px;
 }
 
-.footerImg{
+.footerImg {
     text-align: center;
     padding: 8px 0px 0px 0px;
     width: 35%;
     display: block;
     margin: 0 auto;
-img{
-    width: 100%!important;
-}
+    img {
+        width: 100%!important;
+    }
 }
 
-.footerKwackImg{
+.footerKwackImg {
     text-align: center;
     padding: 8px 0px 0px 0px;
     width: 45%;
     display: block;
     margin: 0 auto;
-img{
-    width: 100%!important;
-}  
+    img {
+        width: 100%!important;
+    }
 }
 
-.yellowStrip{
+.yellowStrip {
     width: 100%;
     line-height: 10px;
-    img{
+    img {
         width: 100%;
     }
 }
@@ -417,19 +404,6 @@ img{
 
 //end of .sign-up
 //start of profile
-.w25 {
-    width: 25%;
-}
-
-.mar-auto {
-    margin: 0 auto;
-}
-
-.font-size {
-    font-size: 13px;
-    letter-spacing: 2px;
-}
-
 .profile-pic {
     width: 280px;
     height: 280px;
@@ -476,19 +450,323 @@ img{
     margin-top: 13px;
 }
 
-.plus-icon {
-    color: black;
-}
-
-.mar-t30 {
-    margin-top: 30%;
-}
-
 //end of .profile-pic
 //start of filter
-.bg-gray{
+.bg-gray {
     background-color: #f2f2f2;
 }
+
+.filter {
+    h4 {
+        color: #6b6b6b;
+        letter-spacing: 2px;
+        padding: 13px;
+        font-size: 16px;
+        box-shadow: inset 0px -2px 6px rgba(222, 216, 216, 0.46);
+    }
+    .button {
+        margin: 5px 3px;
+        border-radius: 0px;
+    }
+}
+
+.select-month {
+    padding: 9px 37px;
+    margin: 5px 0px 5px 35px;
+    background-color: $black;
+    color: $light;
+    border: none;
+}
+
+.select-year {
+    padding: 9px 41px;
+    margin: 5px 36px 5px 0px;
+    background-color: $yellow;
+    color: $black;
+    border: none;
+}
+
+.category-preferences {
+    background: linear-gradient(to top, white 39%, white 60%, rgba(224, 224, 224, 0.51) 90%) !important;
+    padding: 0px 25px;
+    .input-category {
+        width: 325px;
+        margin: 15px 0px;
+        box-shadow: inset 0px 0px 6px rgba(34, 33, 33, 0.22);
+    }
+    h6 {
+        font-size: 13px;
+        font-weight: bold;
+        color: #444444;
+        padding: 20px 0px 0px 20px;
+    }
+}
+
+.filter-btns {
+    margin-bottom: 15px;
+    .btn-sports {
+        padding: 0px 27px;
+    }
+    .btn-science {
+        padding: 0px 18px;
+    }
+    .btn-food {
+        padding: 0px 32px;
+    }
+    .btn-science {
+        padding: 0px 18px;
+    }
+    .btn-entertainment {
+        padding: 0px 53px;
+    }
+    .btn-fashion {
+        padding: 0px 21px;
+    }
+    .btn-international {
+        padding: 0px 60px;
+    }
+    .btn-health {
+        padding: 0px 26px;
+    }
+    .btn-books {
+        padding: 0px 26px;
+    }
+    .btn-comedy {
+        padding: 0px 21px;
+    }
+}
+
+.btn-tran {
+    background: transparent !important;
+}
+
+.all-category {
+    margin: 0px 10px;
+}
+
+.all {
+    width: 50px;
+    height: 50px;
+    margin: 20px 0px 20px 26px;
+    img {
+        width: 20px;
+        vertical-align: middle;
+    }
+    span {
+        padding-left: 9px;
+    }
+}
+
+.polls {
+    width: 70px;
+    height: 50px;
+    margin: 20px 0px 20px 33px;
+    ;
+    img {
+        width: 25px;
+        vertical-align: middle;
+    }
+    span {
+        padding-left: 9px;
+    }
+}
+
+.kwack {
+    width: 100px;
+    height: 50px;
+    margin: 20px 0px 20px 24px;
+    img {
+        width: 20px;
+        vertical-align: middle;
+    }
+    span {
+        padding-left: 9px;
+    }
+}
+
+.otp-input {
+    width: 50px;
+    // display: inline;
+}
+
+//start of discover
+.bg-color-yellow {
+    background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%)!important;
+}
+
+.title-discover {
+    font-weight: 900;
+    letter-spacing: 3px;
+    padding-top: 5px;
+}
+
+.discover-para {
+    font-weight: 600;
+    padding: 0px 50px;
+}
+
+.input-category {
+    width: 300px;
+    height: 45px !important;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    box-shadow: inset 0px 1px 21px rgba(34, 33, 33, 0.22);
+    background: #f0ab05;
+}
+
+.btn-bg {
+    background-color: #ffc943;
+    box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
+    margin: 7px 5px;
+    font-size: 13px;
+}
+
+.btn-bg-black {
+    background: linear-gradient(to right bottom, #000 30%, #000 57%, #2b2727 100%)!important;
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    margin: 7px 5px;
+}
+
+.align-right {
+    text-align: right;
+    margin-right: 40px;
+}
+
+.align-left {
+    text-align: left;
+    margin-left: 36px;
+}
+
+.btn-sports {
+    padding: 7px 23px;
+}
+
+.btn-comedy {
+    padding: 7px 18px;
+}
+
+.btn-food {
+    padding: 7px 29px;
+}
+
+.btn-science {
+    padding: 7px 18px;
+}
+
+.btn-entertainment {
+    padding: 7px 46px;
+}
+
+.btn-international {
+    padding: 7px 53px;
+}
+
+.btn-books {
+    padding: 7px 24px;
+}
+
+.btn-health {
+    padding: 7px 21px;
+}
+
+.cat-btn-plus {
+    top: 0px;
+    right: 0px;
+    .button {
+        background: transparent;
+        font-size: 12px;
+    }
+}
+
+//start of explore
+.title-explore {
+    font-weight: 900;
+    letter-spacing: 6px;
+    font-size: 16px;
+    position: relative;
+}
+
+.title-explore:before {
+    content: "";
+    position: absolute;
+    width: 104px;
+    top: 50%;
+    left: 3%;
+    border-bottom: 1px solid #bebebe;
+}
+
+.title-explore:after {
+    content: "";
+    width: 104px;
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    border-bottom: 1px solid#bebebe;
+}
+
+.news-content {
+  
+    .card {
+        margin: 7px 20px;
+        background-color: transparent;
+        box-shadow: none;
+        .item{
+                margin-right: 3px;
+    margin-left: 3px;
+        }
+    }
+.item {
+    z-index: -3;
+   
+    margin: -10px;
+}
+    h3 {
+        font-weight: 900px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    span {
+        font-size: 10px;
+        img {
+            vertical-align: middle;
+        }
+    }
+    p {
+        font-size: 11px;
+        margin-top: 0px;
+    }
+}
+.date-time{
+    padding: 4px 0px;
+}
+.explore-icon {
+    text-align: right;
+    img {
+        width: 12%;
+        vertical-align: middle;
+    }
+    span{
+        color:#bbbdbf;
+    }
+}
+.detail-para{
+     margin: 10px 0px;
+    p{
+        line-height: 14px;
+      
+    }
+}
+.padd-r {
+    padding-right: 15px;
+}
+
+.padd-lr {
+    padding: 0px 16px;
+}
+
+//end of explore
 //common classes and ionic classes start
 .bar-stable .button.button-clear {
     border-color: transparent;
@@ -503,44 +781,99 @@ img{
     color: white;
 }
 
-.has-header{
+
+.w25 {
+    width: 25%;
+}
+
+.mar-auto {
+    margin: 0 auto;
+}
+
+.font-size {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.has-header {
     top: 60px;
 }
 
-.has-footer{
-    bottom: 40px;  
+.w40 {
+    width: 40%;
+}
+
+.w15 {
+    width: 15%;
 }
 
 .display-inline{
     display: inline;
 }
 
-.rel{
+
+.no-header {
+    top: 42px;
+}
+
+.display-inline {
+    display: inline-block;
+}
+
+.dis-inline {
+    display: inline;
+}
+
+.plus-icon {
+    color: black;
+}
+
+.mar-t30 {
+    margin-top: 30%;
+}
+
+.has-footer {
+    bottom: 40px;
+}
+
+.float-right {
+    float: right;
+}
+
+.rel {
     position: relative;
 }
 
-.customFooter{
+.customFooter {
     margin: 0px!important;
     padding: 0px!important;
     box-shadow: 0px -15px 25px rgba(0, 0, 0, 0.11);
 }
 
-.border-r{
-   border-right: 1px solid #d4d4d4;
+.border-r {
+    border-right: 1px solid #d4d4d4;
 }
 
 .pad-left10{
     padding-left: 10px;
 }
 
-.pad0{
+
+.pad0 {
     padding: 0px!important;
 }
+
 .sign-up {
     bottom: -29px;
     right: -37px;
-
 }
+
+.invtfrndshdr {
+    top: 145px;
+    border-top: solid 1px #b2b2b2;
+}
+
+
 
 
 //discovercsss
@@ -625,3 +958,21 @@ img{
 //         bottom: 8px;
 //     }
 // }
+.back-img {
+    position: relative;
+}
+
+.back-img-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    img {
+        width: 100px;
+    }
+}

@@ -5,7 +5,7 @@ in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
 
-$light:                           #fff !default;
+
 $stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
@@ -9910,6 +9910,9 @@ a.button {
 .relative {
   position: relative; }
 
+.button {
+  border-radius: 0px; }
+
 .bar.bar-stable {
   background-color: transparent !important; }
 
@@ -10132,16 +10135,6 @@ a.button {
   height: 57px;
   background-color: black; }
 
-.w25 {
-  width: 25%; }
-
-.mar-auto {
-  margin: 0 auto; }
-
-.font-size {
-  font-size: 13px;
-  letter-spacing: 2px; }
-
 .profile-pic {
   width: 280px;
   height: 280px;
@@ -10180,14 +10173,250 @@ a.button {
   letter-spacing: 1px;
   margin-top: 13px; }
 
-.plus-icon {
-  color: black; }
-
-.mar-t30 {
-  margin-top: 30%; }
-
 .bg-gray {
   background-color: #f2f2f2; }
+
+.filter h4 {
+  color: #6b6b6b;
+  letter-spacing: 2px;
+  padding: 13px;
+  font-size: 16px;
+  box-shadow: inset 0px -2px 6px rgba(222, 216, 216, 0.46); }
+
+.filter .button {
+  margin: 5px 3px;
+  border-radius: 0px; }
+
+.select-month {
+  padding: 9px 37px;
+  margin: 5px 0px 5px 35px;
+  background-color: #000;
+  color: #fff;
+  border: none; }
+
+.select-year {
+  padding: 9px 41px;
+  margin: 5px 36px 5px 0px;
+  background-color: #ffc943;
+  color: #000;
+  border: none; }
+
+.category-preferences {
+  background: linear-gradient(to top, white 39%, white 60%, rgba(224, 224, 224, 0.51) 90%) !important;
+  padding: 0px 25px; }
+  .category-preferences .input-category {
+    width: 325px;
+    margin: 15px 0px;
+    box-shadow: inset 0px 0px 6px rgba(34, 33, 33, 0.22); }
+  .category-preferences h6 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #444444;
+    padding: 20px 0px 0px 20px; }
+
+.filter-btns {
+  margin-bottom: 15px; }
+  .filter-btns .btn-sports {
+    padding: 0px 27px; }
+  .filter-btns .btn-science {
+    padding: 0px 18px; }
+  .filter-btns .btn-food {
+    padding: 0px 32px; }
+  .filter-btns .btn-science {
+    padding: 0px 18px; }
+  .filter-btns .btn-entertainment {
+    padding: 0px 53px; }
+  .filter-btns .btn-fashion {
+    padding: 0px 21px; }
+  .filter-btns .btn-international {
+    padding: 0px 60px; }
+  .filter-btns .btn-health {
+    padding: 0px 26px; }
+  .filter-btns .btn-books {
+    padding: 0px 26px; }
+  .filter-btns .btn-comedy {
+    padding: 0px 21px; }
+
+.btn-tran {
+  background: transparent !important; }
+
+.all-category {
+  margin: 0px 10px; }
+
+.all {
+  width: 50px;
+  height: 50px;
+  margin: 20px 0px 20px 26px; }
+  .all img {
+    width: 20px;
+    vertical-align: middle; }
+  .all span {
+    padding-left: 9px; }
+
+.polls {
+  width: 70px;
+  height: 50px;
+  margin: 20px 0px 20px 33px; }
+  .polls img {
+    width: 25px;
+    vertical-align: middle; }
+  .polls span {
+    padding-left: 9px; }
+
+.kwack {
+  width: 100px;
+  height: 50px;
+  margin: 20px 0px 20px 24px; }
+  .kwack img {
+    width: 20px;
+    vertical-align: middle; }
+  .kwack span {
+    padding-left: 9px; }
+
+.otp-input {
+  width: 50px; }
+
+.bg-color-yellow {
+  background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%) !important; }
+
+.title-discover {
+  font-weight: 900;
+  letter-spacing: 3px;
+  padding-top: 5px; }
+
+.discover-para {
+  font-weight: 600;
+  padding: 0px 50px; }
+
+.input-category {
+  width: 300px;
+  height: 45px !important;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  box-shadow: inset 0px 1px 21px rgba(34, 33, 33, 0.22);
+  background: #f0ab05; }
+
+.btn-bg {
+  background-color: #ffc943;
+  box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
+  margin: 7px 5px;
+  font-size: 13px; }
+
+.btn-bg-black {
+  background: linear-gradient(to right bottom, #000 30%, #000 57%, #2b2727 100%) !important;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  margin: 7px 5px; }
+
+.align-right {
+  text-align: right;
+  margin-right: 40px; }
+
+.align-left {
+  text-align: left;
+  margin-left: 36px; }
+
+.btn-sports {
+  padding: 7px 23px; }
+
+.btn-comedy {
+  padding: 7px 18px; }
+
+.btn-food {
+  padding: 7px 29px; }
+
+.btn-science {
+  padding: 7px 18px; }
+
+.btn-entertainment {
+  padding: 7px 46px; }
+
+.btn-international {
+  padding: 7px 53px; }
+
+.btn-books {
+  padding: 7px 24px; }
+
+.btn-health {
+  padding: 7px 21px; }
+
+.cat-btn-plus {
+  top: 0px;
+  right: 0px; }
+  .cat-btn-plus .button {
+    background: transparent;
+    font-size: 12px; }
+
+.title-explore {
+  font-weight: 900;
+  letter-spacing: 6px;
+  font-size: 16px;
+  position: relative; }
+
+.title-explore:before {
+  content: "";
+  position: absolute;
+  width: 104px;
+  top: 50%;
+  left: 3%;
+  border-bottom: 1px solid #bebebe; }
+
+.title-explore:after {
+  content: "";
+  width: 104px;
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  border-bottom: 1px solid #bebebe; }
+
+.news-content .card {
+  margin: 7px 20px;
+  background-color: transparent;
+  box-shadow: none; }
+  .news-content .card .item {
+    margin-right: 3px;
+    margin-left: 3px; }
+
+.news-content .item {
+  z-index: -3;
+  margin: -10px; }
+
+.news-content h3 {
+  font-weight: 900px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.news-content span {
+  font-size: 10px; }
+  .news-content span img {
+    vertical-align: middle; }
+
+.news-content p {
+  font-size: 11px;
+  margin-top: 0px; }
+
+.date-time {
+  padding: 4px 0px; }
+
+.explore-icon {
+  text-align: right; }
+  .explore-icon img {
+    width: 12%;
+    vertical-align: middle; }
+  .explore-icon span {
+    color: #bbbdbf; }
+
+.detail-para {
+  margin: 10px 0px; }
+  .detail-para p {
+    line-height: 14px; }
+
+.padd-r {
+  padding-right: 15px; }
+
+.padd-lr {
+  padding: 0px 16px; }
 
 .bar-stable .button.button-clear {
   border-color: transparent;
@@ -10200,14 +10429,48 @@ a.button {
 .colorw {
   color: white; }
 
+.w25 {
+  width: 25%; }
+
+.mar-auto {
+  margin: 0 auto; }
+
+.font-size {
+  font-size: 13px;
+  letter-spacing: 2px; }
+
 .has-header {
   top: 60px; }
+
+.w40 {
+  width: 40%; }
+
+.w15 {
+  width: 15%; }
+
+.display-inline {
+  display: inline; }
+
+.no-header {
+  top: 42px; }
+
+.display-inline {
+  display: inline-block; }
+
+.dis-inline {
+  display: inline; }
+
+.plus-icon {
+  color: black; }
+
+.mar-t30 {
+  margin-top: 30%; }
 
 .has-footer {
   bottom: 40px; }
 
-.display-inline {
-  display: inline; }
+.float-right {
+  float: right; }
 
 .rel {
   position: relative; }
@@ -10229,6 +10492,10 @@ a.button {
 .sign-up {
   bottom: -29px;
   right: -37px; }
+
+.invtfrndshdr {
+  top: 145px;
+  border-top: solid 1px #b2b2b2; }
 
 .discover-navsearch {
   text-align: right;
@@ -10292,3 +10559,18 @@ a.button {
 
 .stripImg {
   width: 100%; }
+
+.back-img {
+  position: relative; }
+
+.back-img-title {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; }
+  .profile-img img {
+    width: 100px; }

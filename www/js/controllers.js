@@ -56,6 +56,10 @@ angular.module('starter.controllers', [])
 
 .controller('DiscoverCtrl', function($scope) {
 })
+
+.controller('DiscoverNewsCtrl', function($scope) {
+})
+
 .controller('ProfileCtrl', function($scope) {
 })
 
@@ -64,6 +68,23 @@ angular.module('starter.controllers', [])
 
 .controller('SignUpCtrl', function($scope) {
 })
+
+.controller('DiscoverCtrl', function($scope) {
+})
+
+.controller('OtpCtrl', function($scope) {
+})
+
+.controller('InviteFriendsCtrl', function($scope) {
+})
+
+.controller('SrartPollingCtrl', function($scope) {
+})
+
+
+.controller('ExploreCtrl', function($scope) {
+})
+
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {

@@ -88,6 +88,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'DiscoverCtrl'
     })
 
+    .state('discoverNews', {
+      url: '/discoverNews',
+        templateUrl: 'templates/discoverNews.html',
+        controller: 'DiscoverNewsCtrl'
+    })
+
       .state('profile', {
       url: '/profile',
 
@@ -109,7 +115,38 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'SignUpCtrl'
 
     })
+    .state('discover', {
+      url: '/discover',
+      templateUrl: 'templates/discover.html',
+      controller: 'DiscoverCtrl'
 
+    })
+
+    .state('otp', {
+      url: '/otp',
+      templateUrl: 'templates/otp.html',
+      controller: 'DiscoverCtrl'
+
+    })
+     .state('explore', {
+      url: '/explore',
+      templateUrl: 'templates/explore.html',
+      controller: 'ExploreCtrl'
+
+    })
+
+.state('inviteFriends', {
+      url: '/inviteFriends',
+      templateUrl: 'templates/inviteFriends.html',
+      controller: 'InviteFriendsCtrl'
+
+    })
+    .state('startPolling', {
+      url: '/startPolling',
+      templateUrl: 'templates/startPolling.html',
+      controller: 'SrartPollingCtrl'
+
+    })
   .state('tab.account', {
     url: '/account',
     views: {

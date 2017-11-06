@@ -1,86 +1,61 @@
-<ion-view title="Discover" class="">
-        <ion-nav-bar class="bar-stable schedule-bar  nav-height">
-                <div class="row">
-                        <div class="col col30 ">
-                            <div class="discover-navmenu">
-                                    <img src="img/discover/menu.png" alt="">
-                            </div>
-                
-                        </div>
-                        <div class="col col30">
-                            
-                                    </div>
-                                    <div class="col col30 discover-navsearch">
-                                    <i class="ion ion-search"></i>    
-                                                </div>
-                    </div>
-            
-              </ion-nav-bar>
-  <ion-content class="bg-color">
-      
-          <div class="bodyFont">
-                <div class="row">
-                        <div class="col col-30">
-              
-                        </div>
-                      <div class="col col-30">
-                          <label class="discover-head" for="">DISCOVER</label>
-                      </div>
-                      <div class="col col-30">
-              
-                      </div>
-                    </div>
-                    <div class="discover-trend">
-                        TRENDING THIS WEEK
-                    </div>
-                <ion-slides class="discover-ionslide discover-sliderbutton swipperbutton" options="sliderData.sliderOptions" slider="sliderData.sliderDelegate" >
-                        
-                <ion-slide-page  ui-sref="app.requirement({productId:data._id})">
-                        <div class="">
-                          <img class="img-responsive" src="img/discover/sliderimg.PNG" alt="">
-                        </div>
-                        <label class="sliderdesc" for="">Behold: The first high-quality photos of Apple's iPhone X in the wild</label>
-                        <div class="">
-                            <div class="slidertime">
-                                    <i class="ion ion-ios-clock"></i>
-                                    <label for="">3m ago</label>
-                                    <label class="pad-left10" for=""> broadly.vice.com</label>
-                            </div>
-                        
-                        </div>
-                        <div class="strip">
-                           
-                                    <div class=" stripDiv">
-                                        <div class="stripImg">
-                                                <img class="img-responsive stripImg" src="img/discover/graph.png" alt="">
-                                        </div>
-                                            
-                                            <div class="colorw" for="">21</div>
-                                        </div>
-                                        <!-- <div class=" stripImg">
-                                           
-                                           
-                                            <div class="colorw" for="">42</div>
-                                        </div> -->
-                                        <div class=" stripDiv">
-                                        <div class=" stripImg">
 
-                                                        <img class="img-responsive" src="img/discover/shield.png" alt="">
-                                            <div class="colorw" for="">12</div>
-                                        </div>
-                                    </div>
-                          
-                           
-                        </div>
-                    </ion-slide-page>
-                    <ion-slide-page  ui-sref="app.requirement({productId:data._id})">
-                            <div class="">
-                              <img class="img-responsive" src="img/discover/sliderimg.PNG" alt="">
-                            </div>
-                            
-                        </ion-slide-page>
-                    </ion-slides>
-          </div>
-           
-  </ion-content>
+<ion-view class="bg-color-yellow">
+    <ion-content>
+        <div>
+            <div class="w15 mar-auto">
+                <img src="img/black-icon.png" alt="logo" class="w100">
+            </div>
+            <div class="text-center">
+                <h2 class="title-discover">DISCOVER</h2>
+                <P class="discover-para">Choose from these category what interests you the most </P>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mar-auto relative">
+                <input type="text" placeholder="Enter Category" class="input-category ">
+                <div class="absolute cat-btn-plus">
+                <button class="button ">
+                           <i class="ion ion-plus-round"></i> 
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="text-center">
+                <button class="button btn-sports btn-bg-black"> Sports</button>
+                <button class="button btn-comedy btn-bg"> Comedy</button>
+                <button class="button btn-food btn-bg"> Food</button>
+            </div>
+            <div class="text-center">
+                <button class="button btn-science btn-bg"> Science</button>
+                <button class="button btn-entertainment btn-bg"> Entertaintment</button>
+            </div>
+            <div class="text-center">
+                <button class="button  btn-science btn-bg"> Fashion</button>
+                <button class="button btn-international btn-bg-black btn-bg"> International</button>
+            </div>
+            <div class="text-center">
+                <button class="button btn-books btn-bg-black "> Books</button>
+                <button class="button btn-comedy btn-bg"> Comedy</button>
+                <button class="button btn-health btn-bg"> Health</button>
+            </div>
+        </div>
+    </ion-content>
+    <div class="footer">
+        <div class="bar bar-footer bar-black">
+           <div class="row">
+            <div class="col-50">
+                <div class="skip align-left">
+                <span>SKIP</span>
+                </div>
+           </div>
+            <div class="col-50">
+                <div class="skip align-right">
+                <span>NEXT</span>
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>
+
 </ion-view>
