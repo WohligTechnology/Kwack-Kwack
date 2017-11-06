@@ -278,9 +278,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
     margin-bottom: 20px;
 }
 
-.aligntop {
-    vertical-align: top;
-}
+
 
 .pad-left5 {
     padding-left: 5px;
@@ -749,6 +747,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
     img {
         width: 12%;
         vertical-align: middle;
+        padding: 5px;
     }
     span{
         color:#bbbdbf;
@@ -772,6 +771,22 @@ $font-family-light-sans-serif: "Montserrat-Light",
     color: #444;
     font-size: 17px;
     display: none;
+}
+
+.pad-5{
+    padding: 5px;
+}
+
+.pad-15{
+    padding: 15px!important;
+}
+
+.aligntop {
+    vertical-align: top;
+}
+
+.alignM{
+    vertical-align: middle;
 }
 
 .colorw{
@@ -948,6 +963,71 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 .stripImg{
     width: 100%;
+}
+
+.discoverStrip{
+    padding: 2px;
+    span{
+        padding-right: 8px;
+        border-right: 1px solid #414141;
+    }
+    
+}
+
+.discoverCardStrip{
+    padding: 2px;
+    span{
+        padding-right: 8px;
+        border-right: 1px solid #ececec;
+    }
+    
+}
+
+.news-discover {
+    
+      .card {
+          margin: 7px 10px;
+          background-color: transparent;
+          box-shadow: none;
+          .item{
+                  margin-right: 3px;
+      margin-left: 3px;
+          }
+      }
+  .item {
+      z-index: -3;
+     
+      margin: -10px;
+  }
+      h3 {
+          font-weight: 900px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+      }
+      span {
+          font-size: 10px;
+          img {
+              vertical-align: middle;
+          }
+      }
+      p {
+          font-size: 11px;
+                  line-height: 14px;
+          margin-top: 0px;
+          padding-bottom: 10px;
+      }
+  }
+
+.discover-icon {
+    text-align: right;
+    img {
+        width: 12%;
+        vertical-align: middle;
+        padding: 5px;
+    }
+    span{
+        color: white;
+    }
 }
 //discovernewsend
 // .discover-sliderbutton{

@@ -10043,9 +10043,6 @@ a.button {
   border: none;
   margin-bottom: 20px; }
 
-.aligntop {
-  vertical-align: top; }
-
 .pad-left5 {
   padding-left: 5px; }
 
@@ -10394,7 +10391,9 @@ a.button {
 
 .news-content p {
   font-size: 11px;
-  margin-top: 0px; }
+  line-height: 14px;
+  margin-top: 0px;
+  padding-bottom: 10px; }
 
 .date-time {
   padding: 4px 0px; }
@@ -10403,14 +10402,10 @@ a.button {
   text-align: right; }
   .explore-icon img {
     width: 12%;
-    vertical-align: middle; }
+    vertical-align: middle;
+    padding: 5px; }
   .explore-icon span {
     color: #bbbdbf; }
-
-.detail-para {
-  margin: 10px 0px; }
-  .detail-para p {
-    line-height: 14px; }
 
 .padd-r {
   padding-right: 15px; }
@@ -10425,6 +10420,18 @@ a.button {
   color: #444;
   font-size: 17px;
   display: none; }
+
+.pad-5 {
+  padding: 5px; }
+
+.pad-15 {
+  padding: 15px !important; }
+
+.aligntop {
+  vertical-align: top; }
+
+.alignM {
+  vertical-align: middle; }
 
 .colorw {
   color: white; }
@@ -10559,6 +10566,55 @@ a.button {
 
 .stripImg {
   width: 100%; }
+
+.discoverStrip {
+  padding: 2px; }
+  .discoverStrip span {
+    padding-right: 8px;
+    border-right: 1px solid #414141; }
+
+.discoverCardStrip {
+  padding: 2px; }
+  .discoverCardStrip span {
+    padding-right: 8px;
+    border-right: 1px solid #ececec; }
+
+.news-discover .card {
+  margin: 7px 10px;
+  background-color: transparent;
+  box-shadow: none; }
+  .news-discover .card .item {
+    margin-right: 3px;
+    margin-left: 3px; }
+
+.news-discover .item {
+  z-index: -3;
+  margin: -10px; }
+
+.news-discover h3 {
+  font-weight: 900px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.news-discover span {
+  font-size: 10px; }
+  .news-discover span img {
+    vertical-align: middle; }
+
+.news-discover p {
+  font-size: 11px;
+  line-height: 14px;
+  margin-top: 0px;
+  padding-bottom: 10px; }
+
+.discover-icon {
+  text-align: right; }
+  .discover-icon img {
+    width: 12%;
+    vertical-align: middle;
+    padding: 5px; }
+  .discover-icon span {
+    color: white; }
 
 .back-img {
   position: relative; }
