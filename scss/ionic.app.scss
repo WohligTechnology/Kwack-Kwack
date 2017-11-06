@@ -404,19 +404,6 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 //end of .sign-up
 //start of profile
-.w25 {
-    width: 25%;
-}
-
-.mar-auto {
-    margin: 0 auto;
-}
-
-.font-size {
-    font-size: 13px;
-    letter-spacing: 2px;
-}
-
 .profile-pic {
     width: 280px;
     height: 280px;
@@ -461,14 +448,6 @@ $font-family-light-sans-serif: "Montserrat-Light",
     font-weight: 900;
     letter-spacing: 1px;
     margin-top: 13px;
-}
-
-.plus-icon {
-    color: black;
-}
-
-.mar-t30 {
-    margin-top: 30%;
 }
 
 //end of .profile-pic
@@ -557,14 +536,6 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
 }
 
-.display-inline {
-    display: inline-block;
-}
-
-.dis-inline {
-    display: inline;
-}
-
 .btn-tran {
     background: transparent !important;
 }
@@ -621,10 +592,6 @@ $font-family-light-sans-serif: "Montserrat-Light",
 //start of discover
 .bg-color-yellow {
     background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%)!important;
-}
-
-.w15 {
-    width: 15%;
 }
 
 .title-discover {
@@ -714,10 +681,6 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 //start of explore
-.w40 {
-    width: 40%;
-}
-
 .title-explore {
     font-weight: 900;
     letter-spacing: 6px;
@@ -744,11 +707,21 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .news-content {
+  
     .card {
         margin: 7px 20px;
         background-color: transparent;
         box-shadow: none;
+        .item{
+                margin-right: 3px;
+    margin-left: 3px;
+        }
     }
+.item {
+    z-index: -3;
+   
+    margin: -10px;
+}
     h3 {
         font-weight: 900px;
         margin-top: 0px;
@@ -765,13 +738,28 @@ $font-family-light-sans-serif: "Montserrat-Light",
         margin-top: 0px;
     }
 }
-
-.float-right {
-    float: right;
+.date-time{
+    padding: 4px 0px;
 }
-
-.w8 {
-    width: 8%;
+.explore-icon {
+    text-align: right;
+    img {
+        width: 12%;
+        vertical-align: middle;
+    }
+    span{
+        color:#bbbdbf;
+    }
+}
+.detail-para{
+     margin: 10px 0px;
+    p{
+        line-height: 14px;
+      
+    }
+}
+.padd-r {
+    padding-right: 15px;
 }
 
 .padd-lr {
@@ -789,16 +777,57 @@ $font-family-light-sans-serif: "Montserrat-Light",
     display: none;
 }
 
+.w25 {
+    width: 25%;
+}
+
+.mar-auto {
+    margin: 0 auto;
+}
+
+.font-size {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
 .has-header {
     top: 60px;
+}
+
+.w40 {
+    width: 40%;
+}
+
+.w15 {
+    width: 15%;
 }
 
 .no-header {
     top: 42px;
 }
 
+.display-inline {
+    display: inline-block;
+}
+
+.dis-inline {
+    display: inline;
+}
+
+.plus-icon {
+    color: black;
+}
+
+.mar-t30 {
+    margin-top: 30%;
+}
+
 .has-footer {
     bottom: 40px;
+}
+
+.float-right {
+    float: right;
 }
 
 .rel {

@@ -10135,16 +10135,6 @@ a.button {
   height: 57px;
   background-color: black; }
 
-.w25 {
-  width: 25%; }
-
-.mar-auto {
-  margin: 0 auto; }
-
-.font-size {
-  font-size: 13px;
-  letter-spacing: 2px; }
-
 .profile-pic {
   width: 280px;
   height: 280px;
@@ -10182,12 +10172,6 @@ a.button {
   font-weight: 900;
   letter-spacing: 1px;
   margin-top: 13px; }
-
-.plus-icon {
-  color: black; }
-
-.mar-t30 {
-  margin-top: 30%; }
 
 .bg-gray {
   background-color: #f2f2f2; }
@@ -10253,12 +10237,6 @@ a.button {
   .filter-btns .btn-comedy {
     padding: 0px 21px; }
 
-.display-inline {
-  display: inline-block; }
-
-.dis-inline {
-  display: inline; }
-
 .btn-tran {
   background: transparent !important; }
 
@@ -10300,9 +10278,6 @@ a.button {
 
 .bg-color-yellow {
   background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%) !important; }
-
-.w15 {
-  width: 15%; }
 
 .title-discover {
   font-weight: 900;
@@ -10373,9 +10348,6 @@ a.button {
     background: transparent;
     font-size: 12px; }
 
-.w40 {
-  width: 40%; }
-
 .title-explore {
   font-weight: 900;
   letter-spacing: 6px;
@@ -10402,6 +10374,13 @@ a.button {
   margin: 7px 20px;
   background-color: transparent;
   box-shadow: none; }
+  .news-content .card .item {
+    margin-right: 3px;
+    margin-left: 3px; }
+
+.news-content .item {
+  z-index: -3;
+  margin: -10px; }
 
 .news-content h3 {
   font-weight: 900px;
@@ -10417,11 +10396,24 @@ a.button {
   font-size: 11px;
   margin-top: 0px; }
 
-.float-right {
-  float: right; }
+.date-time {
+  padding: 4px 0px; }
 
-.w8 {
-  width: 8%; }
+.explore-icon {
+  text-align: right; }
+  .explore-icon img {
+    width: 12%;
+    vertical-align: middle; }
+  .explore-icon span {
+    color: #bbbdbf; }
+
+.detail-para {
+  margin: 10px 0px; }
+  .detail-para p {
+    line-height: 14px; }
+
+.padd-r {
+  padding-right: 15px; }
 
 .padd-lr {
   padding: 0px 16px; }
@@ -10434,14 +10426,45 @@ a.button {
   font-size: 17px;
   display: none; }
 
+.w25 {
+  width: 25%; }
+
+.mar-auto {
+  margin: 0 auto; }
+
+.font-size {
+  font-size: 13px;
+  letter-spacing: 2px; }
+
 .has-header {
   top: 60px; }
+
+.w40 {
+  width: 40%; }
+
+.w15 {
+  width: 15%; }
 
 .no-header {
   top: 42px; }
 
+.display-inline {
+  display: inline-block; }
+
+.dis-inline {
+  display: inline; }
+
+.plus-icon {
+  color: black; }
+
+.mar-t30 {
+  margin-top: 30%; }
+
 .has-footer {
   bottom: 40px; }
+
+.float-right {
+  float: right; }
 
 .rel {
   position: relative; }
