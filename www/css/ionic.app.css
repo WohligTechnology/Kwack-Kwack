@@ -10357,17 +10357,17 @@ a.button {
 .title-explore:before {
   content: "";
   position: absolute;
-  width: 104px;
+  width: 97px;
   top: 50%;
-  left: 3%;
+  left: 5%;
   border-bottom: 1px solid #bebebe; }
 
 .title-explore:after {
   content: "";
-  width: 104px;
+  width: 97px;
   position: absolute;
   top: 50%;
-  right: 3%;
+  right: 5%;
   border-bottom: 1px solid #bebebe; }
 
 .news-content .card {
@@ -10382,6 +10382,23 @@ a.button {
   z-index: -3;
   margin: -10px;
   padding-bottom: 5px; }
+
+.just-now-label {
+  top: 7%;
+  right: 15px;
+  background: #ffb600;
+  font-size: 10px;
+  padding: 3px 11px;
+  z-index: 1; }
+
+.movie-label {
+  bottom: 4%;
+  left: 5px;
+  background: black;
+  color: white;
+  font-size: 10px;
+  padding: 3px 13px;
+  letter-spacing: 1px; }
 
 .news-content h3 {
   font-weight: bold;
