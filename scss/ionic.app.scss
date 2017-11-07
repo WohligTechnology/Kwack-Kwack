@@ -620,9 +620,10 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .title-discover {
-    font-weight: 900;
-    letter-spacing: 3px;
+    font-weight: bold;
+    letter-spacing: 2px;
     padding-top: 5px;
+    font-size: 25px;
 }
 
 .discover-para {
@@ -821,9 +822,13 @@ $font-family-light-sans-serif: "Montserrat-Light",
 //start of invite friends
 .followers {
     width: 100%;
+    position: absolute;
+    margin-top: -18px;
+    box-shadow: 0px 0px 26px rgba(128, 128, 128, 0.47);
     .dis-table {
-        background-color: gray;
-        border-radius: 5px;
+        background-color: #fff;
+         box-shadow: inset 0px -3px 5px rgba(128, 128, 128, 0.13);
+    border-radius: 5px 5px 0px 0px;
         margin: 0 auto;
     }
     .dis-cell {
@@ -871,13 +876,14 @@ $font-family-light-sans-serif: "Montserrat-Light",
     display: none;
 }
 
-.pad-10{
-padding: 10px!important;
+.pad-10 {
+    padding: 10px!important;
 }
 
-.pad2010{
+.pad2010 {
     padding: 20px 10px;
 }
+
 .pad-5 {
     padding: 5px;
 }
@@ -1219,8 +1225,8 @@ padding: 10px!important;
 }
 
 .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -1229,7 +1235,7 @@ padding: 10px!important;
     color: #fff;
     font-weight: bold;
     letter-spacing: 1px;
-    font-size: 19px;
+    font-size: 17px;
     text-shadow: 1px solid red;
     text-shadow: 0px 0px 2px gray;
 }
@@ -1243,11 +1249,14 @@ padding: 10px!important;
     color: #fff;
     letter-spacing: 0.5px;
     line-height: 4px;
+    font-size: 12px;
 }
 
 .follow-btn {
+ vertical-align: middle;
     .button {
-     min-height: 27px;
+        margin-top: 7px;
+        min-height: 27px;
         line-height: 10px;
         font-size: 11px;
         padding: 0px 20px;
@@ -1307,53 +1316,57 @@ padding: 10px!important;
     margin-bottom: 0px!important;
     border: none;
     border-bottom: 2px solid #f2f2f2;
-
     // background-image: url("/img/plus.png");
     background-repeat: no-repeat;
     background-position: right center;
-  }
+}
 
-  .plusposition{
+.plusposition {
     position: absolute;
     top: 40%;
     /* transform: translate(-20%,-50%); */
     right: 5%;
-  }
+}
 
-  .locationtHead{
+.locationtHead {
     color: black!important;
     font-size: 1.2em;
-  }
+}
 
-  .cardBox{
-      .card{
+.cardBox {
+    .card {
         box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
-      }
-    
-  }
+    }
+}
 
-  .toggleyouKnow{
+.toggleyouKnow {
     width: 185px;
     /* text-align: right; */
     float: left;
-    padding: 10px 0px;
-     background: #f3f2f2;
+    padding: 5px 0px;
+    margin: 5px 0px 10px 0px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    background: #f3f2f2;
     border-radius: 25px;
     position: absolute;
     left: 5%;
-  }
+}
 
-  .toggleContacts{
+.toggleContacts {
     width: 185px;
     float: right;
-    padding: 10px 0px;
-     background: #f3f2f2;
+    padding: 5px 0px;
+    margin: 5px 0px 10px 0px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    background: #f3f2f2;
     border-radius: 25px;
     position: absolute;
     right: 4%;
-  }
+}
 
-  .select{
-      background: #ffb600;
-      z-index: 100;
-  }
+.select {
+    background: #ffb600;
+    z-index: 100;
+}

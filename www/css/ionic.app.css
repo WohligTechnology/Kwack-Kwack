@@ -10298,9 +10298,10 @@ a.button {
   background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%) !important; }
 
 .title-discover {
-  font-weight: 900;
-  letter-spacing: 3px;
-  padding-top: 5px; }
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-top: 5px;
+  font-size: 25px; }
 
 .discover-para {
   font-weight: 600;
@@ -10456,10 +10457,14 @@ a.button {
   padding: 0px 16px; }
 
 .followers {
-  width: 100%; }
+  width: 100%;
+  position: absolute;
+  margin-top: -18px;
+  box-shadow: 0px 0px 26px rgba(128, 128, 128, 0.47); }
   .followers .dis-table {
-    background-color: gray;
-    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: inset 0px -3px 5px rgba(128, 128, 128, 0.13);
+    border-radius: 5px 5px 0px 0px;
     margin: 0 auto; }
   .followers .dis-cell {
     padding: 20px;
@@ -10764,8 +10769,8 @@ a.button {
   left: 0; }
 
 .profile-img {
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
   border-radius: 50%;
   overflow: hidden; }
 
@@ -10773,7 +10778,7 @@ a.button {
   color: #fff;
   font-weight: bold;
   letter-spacing: 1px;
-  font-size: 19px;
+  font-size: 17px;
   text-shadow: 1px solid red;
   text-shadow: 0px 0px 2px gray; }
 
@@ -10784,25 +10789,28 @@ a.button {
 .designation {
   color: #fff;
   letter-spacing: 0.5px;
-  line-height: 4px; }
+  line-height: 4px;
+  font-size: 12px; }
 
-.follow-btn .button {
-  min-height: 27px;
-  line-height: 10px;
-  font-size: 11px;
-  padding: 0px 20px;
-  border-radius: 50px;
-  background: transparent;
-  color: #fff;
-  border-color: #fff;
-  letter-spacing: 0.5px; }
-
-.follow-btn .icon-left:before {
-  font-size: 12px;
-  line-height: 10px;
-  padding-right: 10px;
-  color: #ffb600;
-  font-weight: 600; }
+.follow-btn {
+  vertical-align: middle; }
+  .follow-btn .button {
+    margin-top: 7px;
+    min-height: 27px;
+    line-height: 10px;
+    font-size: 11px;
+    padding: 0px 20px;
+    border-radius: 50px;
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+    letter-spacing: 0.5px; }
+  .follow-btn .icon-left:before {
+    font-size: 12px;
+    line-height: 10px;
+    padding-right: 10px;
+    color: #ffb600;
+    font-weight: 600; }
 
 .theCombo {
   -webkit-appearance: none;
@@ -10864,7 +10872,10 @@ a.button {
   width: 185px;
   /* text-align: right; */
   float: left;
-  padding: 10px 0px;
+  padding: 5px 0px;
+  margin: 5px 0px 10px 0px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
   background: #f3f2f2;
   border-radius: 25px;
   position: absolute;
@@ -10873,7 +10884,10 @@ a.button {
 .toggleContacts {
   width: 185px;
   float: right;
-  padding: 10px 0px;
+  padding: 5px 0px;
+  margin: 5px 0px 10px 0px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
   background: #f3f2f2;
   border-radius: 25px;
   position: absolute;
