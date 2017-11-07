@@ -10455,6 +10455,39 @@ a.button {
 .padd-lr {
   padding: 0px 16px; }
 
+.followers {
+  width: 100%; }
+  .followers .dis-table {
+    background-color: gray;
+    border-radius: 5px;
+    margin: 0 auto; }
+  .followers .dis-cell {
+    padding: 20px;
+    position: relative; }
+
+.dis-table {
+  display: table; }
+
+.dis-cell {
+  display: table-cell; }
+
+.cell-follower {
+  padding: 0px 5px; }
+
+.r-border:after {
+  content: "";
+  height: 68px;
+  position: absolute;
+  top: 17%;
+  right: 0%;
+  border-right: 2px solid #bebebe; }
+
+.cell-kwacks {
+  padding: 0px 18px; }
+
+.cell-polls {
+  padding: 0px 18px; }
+
 .bar-stable .button.button-clear {
   border-color: transparent;
   background: none;
@@ -10731,11 +10764,45 @@ a.button {
   left: 0; }
 
 .profile-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; }
-  .profile-img img {
-    width: 100px; }
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden; }
+
+.user-name {
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 19px;
+  text-shadow: 1px solid red;
+  text-shadow: 0px 0px 2px gray; }
+
+.profile-padd {
+  vertical-align: middle;
+  padding: 10px 20px; }
+
+.designation {
+  color: #fff;
+  letter-spacing: 0.5px;
+  line-height: 4px; }
+
+.follow-btn .button {
+  min-height: 27px;
+  line-height: 10px;
+  font-size: 11px;
+  padding: 0px 20px;
+  border-radius: 50px;
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  letter-spacing: 0.5px; }
+
+.follow-btn .icon-left:before {
+  font-size: 12px;
+  line-height: 10px;
+  padding-right: 10px;
+  color: #ffb600;
+  font-weight: 600; }
 
 .theCombo {
   -webkit-appearance: none;
