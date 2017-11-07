@@ -74,6 +74,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('InviteFriendsCtrl', function($scope) {
+  $scope.toggle=true
+  $scope.people=function(){
+    $scope.toggle = true
+  }
+  $scope.contact = function(){
+    $scope.toggle = false
+  }
 })
 
 .controller('SrartPollingCtrl', function($scope) {
