@@ -10459,7 +10459,7 @@ a.button {
 .followers {
   width: 100%;
   position: absolute;
-  margin-top: -18px;
+  top: 90%;
   box-shadow: 0px 0px 26px rgba(128, 128, 128, 0.47); }
   .followers .dis-table {
     background-color: #fff;
@@ -10493,6 +10493,73 @@ a.button {
 .cell-polls {
   padding: 0px 18px; }
 
+.toggleyouKnow {
+  width: 185px;
+  /* text-align: right; */
+  float: left;
+  padding: 5px 0px;
+  margin: 5px 0px 10px 0px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  background: #f3f2f2;
+  border-radius: 25px;
+  position: absolute;
+  left: 5%; }
+
+.toggleContacts {
+  width: 185px;
+  float: right;
+  padding: 5px 0px;
+  margin: 5px 0px 10px 0px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  background: #f3f2f2;
+  border-radius: 25px;
+  position: absolute;
+  right: 4%; }
+
+.select {
+  background: #ffb600;
+  z-index: 100; }
+
+.listperson {
+  top: 88px;
+  overflow-y: scroll;
+  width: 100%;
+  max-height: 255px; }
+  .listperson .item {
+    border: none !important; }
+
+.borderF .cell-follower:after {
+  content: "";
+  position: absolute;
+  width: 75px;
+  border-bottom: 2px solid #f8b503;
+  bottom: -1%;
+  left: 17%; }
+
+.borderK .cell-kwacks:after {
+  content: "";
+  position: absolute;
+  width: 75px;
+  border-bottom: 2px solid #f8b503;
+  bottom: -1%;
+  left: 17%; }
+
+.borderp .cell-polls:after {
+  content: "";
+  position: absolute;
+  width: 75px;
+  border-bottom: 2px solid #f8b503;
+  bottom: -1%;
+  left: 17%; }
+
+.followersUn {
+  position: absolute;
+  width: 12%;
+  top: 35%;
+  right: 5%; }
+
 .bar-stable .button.button-clear {
   border-color: transparent;
   background: none;
@@ -10503,6 +10570,9 @@ a.button {
 
 .pad-10 {
   padding: 10px !important; }
+
+.padt10 {
+  padding-top: 10px; }
 
 .pad2010 {
   padding: 20px 10px; }
@@ -10584,8 +10654,7 @@ a.button {
   right: -37px; }
 
 .invtfrndshdr {
-  top: 145px;
-  border-top: solid 1px #b2b2b2; }
+  top: 160px; }
 
 .discover-navsearch {
   text-align: right;
@@ -10867,36 +10936,3 @@ a.button {
 
 .cardBox .card {
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3); }
-
-.toggleyouKnow {
-  width: 185px;
-  /* text-align: right; */
-  float: left;
-  padding: 5px 0px;
-
-  margin: 5px 0px 10px 0px;
-  font-size: 11px;
-  letter-spacing: 0.5px;
-
-  background: #f3f2f2;
-  border-radius: 25px;
-  position: absolute;
-  left: 5%; }
-
-.toggleContacts {
-  width: 185px;
-  float: right;
-  padding: 5px 0px;
-
-  margin: 5px 0px 10px 0px;
-  font-size: 11px;
-  letter-spacing: 0.5px;
-
-  background: #f3f2f2;
-  border-radius: 25px;
-  position: absolute;
-  right: 4%; }
-
-.select {
-  background: #ffb600;
-  z-index: 100; }

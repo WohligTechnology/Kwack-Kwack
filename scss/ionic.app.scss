@@ -823,7 +823,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
 .followers {
     width: 100%;
     position: absolute;
-    margin-top: -18px;
+    top: 90%;
     box-shadow: 0px 0px 26px rgba(128, 128, 128, 0.47);
     .dis-table {
         background-color: #fff;
@@ -866,6 +866,98 @@ $font-family-light-sans-serif: "Montserrat-Light",
     padding: 0px 18px;
 }
 
+.toggleyouKnow {
+    width: 185px;
+    /* text-align: right; */
+    float: left;
+    padding: 5px 0px;
+
+    margin: 5px 0px 10px 0px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    background: #f3f2f2;
+
+    border-radius: 25px;
+    position: absolute;
+    left: 5%;
+}
+
+.toggleContacts {
+    width: 185px;
+    float: right;
+    padding: 5px 0px;
+
+    margin: 5px 0px 10px 0px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    background: #f3f2f2;
+
+    border-radius: 25px;
+    position: absolute;
+    right: 4%;
+}
+
+.select {
+    background: #ffb600;
+    z-index: 100;
+}
+
+.listperson{
+    top: 88px;
+    overflow-y: scroll;
+    width: 100%;
+    max-height: 255px;
+    .item{
+        border: none!important;
+    }
+    
+}
+.borderF{
+    .cell-follower:after{
+        content: "";
+        position: absolute;
+        width: 75px;
+        border-bottom: 2px solid #f8b503;
+       
+        bottom: -1%;
+        left: 17%;
+    }
+}
+
+.borderK{
+    .cell-kwacks:after{
+        content: "";
+        position: absolute;
+        width: 75px;
+        border-bottom: 2px solid #f8b503;
+       
+        bottom: -1%;
+        left: 17%;
+    }
+
+}
+
+.borderp{
+    .cell-polls:after{
+        content: "";
+        position: absolute;
+        width: 75px;
+        border-bottom: 2px solid #f8b503;
+       
+        bottom: -1%;
+        left: 17%;
+    }
+
+}
+
+.followersUn{
+    position: absolute;
+    width: 12%;
+    top: 35%;
+    right: 5%;
+}
+
+
 //common classes and ionic classes start
 .bar-stable .button.button-clear {
     border-color: transparent;
@@ -878,6 +970,10 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 .pad-10 {
     padding: 10px!important;
+}
+
+.padt10{
+    padding-top: 10px;
 }
 
 .pad2010 {
@@ -985,8 +1081,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .invtfrndshdr {
-    top: 145px;
-    border-top: solid 1px #b2b2b2;
+    top: 160px;
 }
 
 //discovernewscsss
@@ -1339,38 +1434,5 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
 }
 
-.toggleyouKnow {
-    width: 185px;
-    /* text-align: right; */
-    float: left;
-    padding: 5px 0px;
 
-    margin: 5px 0px 10px 0px;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    background: #f3f2f2;
 
-    border-radius: 25px;
-    position: absolute;
-    left: 5%;
-}
-
-.toggleContacts {
-    width: 185px;
-    float: right;
-    padding: 5px 0px;
-
-    margin: 5px 0px 10px 0px;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    background: #f3f2f2;
-
-    border-radius: 25px;
-    position: absolute;
-    right: 4%;
-}
-
-.select {
-    background: #ffb600;
-    z-index: 100;
-}

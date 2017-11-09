@@ -1,5 +1,5 @@
 <ion-view>
-  <div class="text-center invthdrdiv">
+  <div class="text-center invthdrdiv padt10">
     <div class="w15 mar-auto">
       <img src="img/filter/7.png" alt="logo" class="w100">
     </div>
@@ -21,55 +21,109 @@ Contacts
     <div>
       <div class="back-img">
         <img src="img/inviteFriends/bg.jpg" alt="logo" class="w100">
-      </div>
-      <div class="back-img-title">
-        <div class="dis-table">
-          <div class="dis-cell profile-padd">
-            <div class="profile-img">
-              <img src="img/mike.png" alt="logo" class="w100">
+        <div class="back-img-title">
+          <div class="dis-table">
+            <div class="dis-cell profile-padd">
+              <div class="profile-img">
+                <img src="img/mike.png" alt="logo" class="w100">
+              </div>
+            </div>
+            <div class="dis-cell follow-btn">
+              <div>
+              <h3 class="user-name ">Viraj Kale</h3>
+              <h5 class="designation ">Freelance Blogger, Designer</h5>
+              <button class="button icon-left ion-android-add">Follow</button>
+              </div>
             </div>
           </div>
-          <div class="dis-cell follow-btn">
-            <div >
-            <h3 class="user-name ">Viraj Kale</h3>
-            <h5 class="designation ">Freelance Blogger, Designer</h5>
-            <button class="button icon-left ion-android-add">Follow</button>
+        </div>
+        <div class="followers">
+          <div class="dis-table ">
+            <div class="dis-cell r-border text-center" ng-class="{'borderF' : followersb}" ng-click="followers()">
+              <div class="cell-follower">
+              <h3>46</h3>
+              <span>Followers</span>
+              </div>
+            </div>
+            <div class="dis-cell r-border  text-center" ng-class="{'borderK' : kwacksb}" ng-click="kwacks()">
+              <div class="cell-kwacks">
+              <h3>46</h3>
+              <span>Kwacks</span>
+              </div>
+            </div>
+            <div class="dis-cell text-center" ng-class="{'borderp' : pollsb}" ng-click="polls()">
+              <div class="cell-polls">
+              <h3>67</h3>
+              <span>Polls</span>
+              </div>
+    
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="followers">
-      <div class="dis-table ">
-        <div class="dis-cell r-border text-center">
-          <div class="cell-follower">
-          <h3>46</h3>
-          <span>Followers</span>
-          </div>
-        </div>
-        <div class="dis-cell r-border  text-center">
-          <div class="cell-kwacks">
-          <h3>46</h3>
-          <span>Kwacks</span>
-          </div>
-        </div>
-        <div class="dis-cell text-center">
-          <div class="cell-polls">
-          <h3>67</h3>
-          <span>Polls</span>
-          </div>
-
-        </div>
+      <div class="list listperson">
+        <a class="item item-avatar">
+          
+          <img src="img/inviteFriends/Dp.png">
+          <h2>Jamila Mamawala</h2>
+          <p>jamie20</p>
+          <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png" alt="">
+          <img class="followersUn" ng-show="follow" ng-click='follow=false' src="img/inviteFriends/follow.png" alt="">
+        </a>
+        <a class="item item-avatar">
+          <img src="img/inviteFriends/Dp.png">
+          <h2>Apoorv Akhouri</h2>
+          <p>apoorv-08</p>
+          <img class="followersUn" ng-show="!follow1" ng-click='follow1=true' src="img/inviteFriends/Unfollow.png" alt="">
+          <img class="followersUn" ng-show="follow1" ng-click='follow1=false' src="img/inviteFriends/follow.png" alt="">
+        </a>
+        <a class="item item-avatar">
+            <img src="img/inviteFriends/Dp.png">
+            <h2>Apoorv Akhouri</h2>
+            <p>apoorv-08</p>
+            <img class="followersUn" ng-show="!follow1" ng-click='follow1=true' src="img/inviteFriends/Unfollow.png" alt="">
+            <img class="followersUn" ng-show="follow1" ng-click='follow1=false' src="img/inviteFriends/follow.png" alt="">
+          </a>
+          <a class="item item-avatar">
+              <img src="img/inviteFriends/Dp.png">
+              <h2>Apoorv Akhouri</h2>
+              <p>apoorv-08</p>
+              <img class="followersUn" ng-show="!follow1" ng-click='follow1=true' src="img/inviteFriends/Unfollow.png" alt="">
+              <img class="followersUn" ng-show="follow1" ng-click='follow1=false' src="img/inviteFriends/follow.png" alt="">
+            </a>
+            <a class="item item-avatar">
+                <img src="img/inviteFriends/Dp.png">
+                <h2>Apoorv Akhouri</h2>
+                <p>apoorv-08</p>
+                <img class="followersUn" ng-show="!follow1" ng-click='follow1=true' src="img/inviteFriends/Unfollow.png" alt="">
+                <img class="followersUn" ng-show="follow1" ng-click='follow1=false' src="img/inviteFriends/follow.png" alt="">
+              </a>
       </div>
     </div>
+  
     <!-- <div>
     </div> -->
-    <div class="list">
-      <a class="item item-avatar">
-        <img src="venkman.jpg">
-        <h2>Venkman</h2>
-        <p>Back off, man. I'm a scientist.</p>
-      </a>
-    </div>
+    
   </ion-content>
+  <div class="footer">
+    <div class="bar bar-footer bar-black">
+        <div class="col col-20">
+       <div class="arrow-back text-center">
+           <a class="button">
+               <i class="ion ion-ios-arrow-back"></i>
+           </a>
+       </div>
+        </div>
+        <div class="col col-50 text-center">
+            <div class="skip">
+            <span>SKIP</span>
+            </div>
+        </div>
+        <div class="col col-20 text-center">
+            <div class="skip text-center">
+            <span >NEXT</span>
+            </div>
+        </div>
+    </div>
+</div>
 </ion-view>
