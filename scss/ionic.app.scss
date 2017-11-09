@@ -88,9 +88,11 @@ $font-family-light-sans-serif: "Montserrat-Light",
     font-family: 'Montserrat-Bold';
     src: url("../fonts/montserrat/Montserrat-Bold.otf");
 }
-body{
-        font-family: 'Montserrat-Regular';
+
+body {
+    font-family: 'Montserrat-Regular';
 }
+
 .absolute {
     position: absolute;
 }
@@ -98,12 +100,15 @@ body{
 .relative {
     position: relative;
 }
-.text-right{
+
+.text-right {
     text-align: right;
 }
-.text-left{
+
+.text-left {
     text-align: left;
 }
+
 .button {
     border-radius: 0px;
 }
@@ -458,12 +463,14 @@ body{
 
 //end of .profile-pic
 //start of filter
-.reset{
-       font-family: 'Montserrat-Regular';
-       font-size: 12px;
-       letter-spacing: 0.5px;
-       color:#000;
+.reset {
+    font-family: 'Montserrat-Regular';
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-right: 23px;
+    color: #000;
 }
+
 .bg-gray {
     background-color: #f2f2f2;
 }
@@ -472,9 +479,9 @@ body{
     h4 {
         color: #6b6b6b;
         letter-spacing: 2px;
-        padding: 13px;
+         padding: 13px 0px 13px 46px;
         font-size: 16px;
-          font-family: 'Montserrat-Light';
+        font-family: 'Montserrat-Light';
         box-shadow: inset 0px -2px 6px rgba(222, 216, 216, 0.46);
     }
     .button {
@@ -482,16 +489,18 @@ body{
         border-radius: 0px;
     }
 }
-.mar-l15{
+
+.mar-l15 {
     margin-left: 15px;
 }
+
 .select-month {
-    padding: 9px 37px;
+    padding: 8px 32px;
     // margin: 5px 0px 5px 35px;
     background-color: $black;
     color: $light;
     border: none;
-      font-family: 'Montserrat-Regular';
+    font-family: 'Montserrat-Regular';
 }
 
 .select-year {
@@ -503,7 +512,7 @@ body{
 }
 
 .category-preferences {
-    background: linear-gradient(to top, white 39%, white 60%, rgba(224, 224, 224, 0.51) 90%) !important;
+  background: linear-gradient(to top, white 14%, white 36%, rgba(224, 224, 224, 0.41) 90%) !important;
     padding: 0px 25px;
     .input-category {
         width: 325px;
@@ -514,6 +523,7 @@ body{
         font-size: 13px;
         font-weight: bold;
         color: #444444;
+        font-family: 'Montserrat-Regular';
         padding: 20px 0px 0px 20px;
     }
 }
@@ -521,34 +531,34 @@ body{
 .filter-btns {
     margin-bottom: 15px;
     .btn-sports {
-        padding: 0px 27px;
+        padding: 0px 23px;
     }
     .btn-science {
-        padding: 0px 18px;
+        padding: 0px 14px;
     }
     .btn-food {
-        padding: 0px 32px;
+        padding: 0px 28px;
     }
     .btn-science {
-        padding: 0px 18px;
+        padding: 0px 14px;
     }
     .btn-entertainment {
-        padding: 0px 53px;
+             padding: 0px 39px;
     }
     .btn-fashion {
-        padding: 0px 21px;
+        padding: 0px 17px;
     }
     .btn-international {
-        padding: 0px 60px;
+          padding: 0px 49px;
     }
     .btn-health {
-        padding: 0px 26px;
+        padding: 0px 22px;
     }
     .btn-books {
-        padding: 0px 26px;
+        padding: 0px 22px;
     }
     .btn-comedy {
-        padding: 0px 21px;
+         padding: 0px 15px;
     }
 }
 
@@ -561,11 +571,11 @@ body{
 }
 
 .all {
-    width: 50px;
-    height: 50px;
-    margin: 20px 0px 20px 26px;
+    width: 51px;
+    // height: 50px;
+     margin: 20px 0px 20px 24px;
     img {
-        width: 20px;
+        width: 18px;
         vertical-align: middle;
     }
     span {
@@ -574,9 +584,9 @@ body{
 }
 
 .polls {
-    width: 70px;
-    height: 50px;
-    margin: 20px 0px 20px 33px;
+    width: 71px;
+    // height: 50px;
+  margin: 20px 0px 20px 4px;
     ;
     img {
         width: 25px;
@@ -588,11 +598,12 @@ body{
 }
 
 .kwack {
-    width: 100px;
-    height: 50px;
-    margin: 20px 0px 20px 24px;
+    width: 96px;
+    // height: 50px;
+ margin: 20px 0px 20px 0px;
+
     img {
-        width: 20px;
+        width: 17px;
         vertical-align: middle;
     }
     span {
@@ -647,9 +658,8 @@ body{
 }
 
 .discover-para {
- 
     padding: 0px 50px;
-       font-family: 'Montserrat-Regular';
+    font-family: 'Montserrat-Regular';
 }
 
 .input-category {
@@ -666,7 +676,7 @@ body{
     box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
     margin: 7px 5px;
     font-size: 13px;
-      font-family: 'Montserrat-Regular';
+    font-family: 'Montserrat-Regular';
 }
 
 .btn-bg-black {
@@ -674,7 +684,7 @@ body{
     border: none;
     color: #fff;
     font-size: 13px;
-      font-family: 'Montserrat-Regular';
+    font-family: 'Montserrat-Regular';
     margin: 7px 5px;
 }
 
