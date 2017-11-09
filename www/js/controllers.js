@@ -69,6 +69,9 @@ angular.module('starter.controllers', [])
 .controller('SignUpCtrl', function($scope) {
 })
 
+.controller('SocialCtrl', function($scope) {
+})
+
 
 .controller('OtpCtrl', function($scope) {
 })

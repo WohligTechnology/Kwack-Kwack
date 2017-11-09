@@ -10340,25 +10340,25 @@ a.button {
   padding: 7px 23px; }
 
 .btn-comedy {
-  padding: 7px 18px; }
+  padding: 7px 17px; }
 
 .btn-food {
   padding: 7px 29px; }
 
 .btn-science {
-  padding: 7px 18px; }
+  padding: 7px 17px; }
 
 .btn-entertainment {
-  padding: 7px 46px; }
+  padding: 7px 51px; }
 
 .btn-international {
-  padding: 7px 53px; }
+  padding: 7px 58px; }
 
 .btn-books {
   padding: 7px 24px; }
 
 .btn-health {
-  padding: 7px 21px; }
+  padding: 7px 24px; }
 
 .cat-btn-plus {
   top: 0px;
@@ -10389,18 +10389,19 @@ a.button {
   right: 5%;
   border-bottom: 1px solid #bebebe; }
 
-.news-content .card {
-  margin: 7px 20px;
-  background-color: transparent;
-  box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21); }
-  .news-content .card .item {
-    margin-right: 3px;
-    margin-left: 3px; }
-
-.news-content .item {
-  z-index: -3;
-  margin: -10px;
-  padding-bottom: 5px; }
+.news-content {
+  margin-bottom: 20px; }
+  .news-content .card {
+    margin: 7px 20px;
+    background-color: transparent;
+    box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21); }
+    .news-content .card .item {
+      margin-right: 3px;
+      margin-left: 3px; }
+  .news-content .item {
+    z-index: -3;
+    margin: -10px;
+    padding-bottom: 5px; }
 
 .just-now-label {
   top: 7%;
@@ -10936,3 +10937,74 @@ a.button {
 
 .cardBox .card {
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3); }
+<<<<<<< HEAD
+=======
+
+.toggleyouKnow {
+  width: 185px;
+  /* text-align: right; */
+  float: left;
+  padding: 5px 0px;
+  margin: 5px 0px 10px 0px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  background: #f3f2f2;
+  border-radius: 25px;
+  position: absolute;
+  left: 5%; }
+
+.toggleContacts {
+  width: 185px;
+  float: right;
+  padding: 5px 0px;
+  margin: 5px 0px 10px 0px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  background: #f3f2f2;
+  border-radius: 25px;
+  position: absolute;
+  right: 4%; }
+
+.select {
+  background: #ffb600;
+  z-index: 100; }
+
+.toi {
+  width: 70%;
+  margin: 0 auto; }
+
+.news-video p {
+  color: #bebebe;
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 14px;
+  padding-top: 11px; }
+
+.news-video span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0.5px; }
+
+.show-time {
+  margin-top: 10px; }
+  .show-time img {
+    width: 10%; }
+
+.mar-lr {
+  margin: 0px 20px; }
+
+.social-icons {
+  padding: 10px 0px;
+  border-bottom: 1px solid #f0e2e2; }
+
+.border-top {
+  border-top: 1px solid #f0e2e2;
+  margin: 25px 20px 5px 20px; }
+
+.color-yellow {
+  color: #ffc943 !important; }
+
+.w3 {
+  width: 3%; }
+>>>>>>> 0bb27665de7d4529992542b9eda8ad44614b8215

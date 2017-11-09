@@ -149,6 +149,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'SrartPollingCtrl'
 
     })
+     .state('social', {
+      url: '/social',
+      templateUrl: 'templates/social.html',
+      controller: 'SocialCtrl'
+
+    })
   .state('tab.account', {
     url: '/account',
     views: {

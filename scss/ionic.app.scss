@@ -670,7 +670,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .btn-comedy {
-    padding: 7px 18px;
+    padding: 7px 17px;
 }
 
 .btn-food {
@@ -678,15 +678,15 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .btn-science {
-    padding: 7px 18px;
+    padding: 7px 17px;
 }
 
 .btn-entertainment {
-    padding: 7px 46px;
+    padding: 7px 51px;
 }
 
 .btn-international {
-    padding: 7px 53px;
+    padding: 7px 58px;
 }
 
 .btn-books {
@@ -694,7 +694,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .btn-health {
-    padding: 7px 21px;
+    padding: 7px 24px;
 }
 
 .cat-btn-plus {
@@ -734,6 +734,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .news-content {
+    margin-bottom: 20px;
     .card {
         margin: 7px 20px;
         background-color: transparent;
@@ -1193,6 +1194,8 @@ $font-family-light-sans-serif: "Montserrat-Light",
         z-index: -3;
         margin: -10px;
     }
+}
+.news-discover {
     h3 {
         font-weight: 900px;
         margin-top: 0px;
@@ -1436,3 +1439,73 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 
 
+//     border-radius: 25px;
+//     position: absolute;
+//     left: 5%;
+// }
+
+.toggleContacts {
+    width: 185px;
+    float: right;
+    padding: 5px 0px;
+
+    margin: 5px 0px 10px 0px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    background: #f3f2f2;
+
+    border-radius: 25px;
+    position: absolute;
+    right: 4%;
+}
+
+.select {
+    background: #ffb600;
+    z-index: 100;
+}
+
+//start of social
+.toi{
+        width: 70%;
+    margin: 0 auto;
+}
+.news-video{
+    p{
+        color: #bebebe;
+        font-size: 11px;
+        letter-spacing: 1px;
+        line-height: 14px;
+        padding-top: 11px;
+      
+    }
+    span{
+        font-size: 11px;
+        font-weight: 600;
+        color:#000;
+        letter-spacing: 0.5px;
+      
+    }
+}
+.show-time{
+    margin-top: 10px;
+    img{
+        width: 10%
+    }
+}
+.mar-lr{
+    margin: 0px 20px;
+}
+.social-icons{
+     padding: 10px 0px;
+           border-bottom: 1px solid #f0e2e2;
+}
+.border-top{
+       border-top: 1px solid #f0e2e2;
+    margin: 25px 20px 5px 20px;
+}
+.color-yellow{
+    color: $yellow !important;
+}
+.w3{
+    width: 3%;
+}
