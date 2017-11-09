@@ -22,10 +22,12 @@ $light:#fff !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-$font-family-sans-serif: "Montserrat-Light",
+$font-family-sans-serif: "Montserrat",
+"AvenirNext-Bold",
 "Montserrat-Bold",
-"Montserrat-Regular";
-$font-family-light-sans-serif: "Montserrat-Light",
+"Montserrat-Regular",
+"Montserrat-SemiBold";
+$font-family-light-sans-serif: "Montserrat",
 "Montserrat-Bold",
 "Montserrat-Regular";
 $font-family: "Montserrat-Light",
@@ -54,27 +56,27 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 @font-face {
     font-family: 'Montserrat-SemiBold';
-    src: url("../fonts/Montserrat-SemiBold.ttf");
+    src: url("../lib/ionic/fonts/Montserrat-SemiBold.ttf");
 }
 
 @font-face {
     font-family: 'Montserrat-Light';
-    src: url("../fonts/montserrat/Montserrat-Light.ttf");
+    src: url("../lib/ionic/fonts/montserrat/Montserrat-Light.ttf");
 }
 
 @font-face {
     font-family: 'Montserrat-Italic';
-    src: url("../fonts/Montserrat-Italic.ttf");
+    src: url("../lib/ionic/fonts/Montserrat-Italic.ttf");
 }
 
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url("../fonts/Montserrat-Regular.ttf");
+    src: url("../lib/ionic/fonts/Montserrat-Regular.ttf");
 }
 
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url("../fonts/Montserrat-Bold.ttf");
+    src: url("../lib/ionic/fonts/Montserrat-Bold.ttf");
 }
 
 @font-face {
@@ -86,7 +88,9 @@ $font-family-light-sans-serif: "Montserrat-Light",
     font-family: 'Montserrat-Bold';
     src: url("../fonts/montserrat/Montserrat-Bold.otf");
 }
-
+body{
+        font-family: 'Montserrat-Regular';
+}
 .absolute {
     position: absolute;
 }
@@ -428,7 +432,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .arrow-back {
-    margin-top: 10px;
+    margin-top: 9px;
     .button {
         background: transparent;
         i {
@@ -443,11 +447,18 @@ $font-family-light-sans-serif: "Montserrat-Light",
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 1px;
-    margin-top: 13px;
+    margin-top: 12px;
+    font-family: 'Montserrat-Bold';
 }
 
 //end of .profile-pic
 //start of filter
+.reset{
+       font-family: 'Montserrat-Regular';
+       font-size: 12px;
+       letter-spacing: 0.5px;
+       color:#000;
+}
 .bg-gray {
     background-color: #f2f2f2;
 }
@@ -458,6 +469,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
         letter-spacing: 2px;
         padding: 13px;
         font-size: 16px;
+          font-family: 'Montserrat-Light';
         box-shadow: inset 0px -2px 6px rgba(222, 216, 216, 0.46);
     }
     .button {
@@ -465,13 +477,16 @@ $font-family-light-sans-serif: "Montserrat-Light",
         border-radius: 0px;
     }
 }
-
+.mar-l15{
+    margin-left: 15px;
+}
 .select-month {
     padding: 9px 37px;
     margin: 5px 0px 5px 35px;
     background-color: $black;
     color: $light;
     border: none;
+      font-family: 'Montserrat-Regular';
 }
 
 .select-year {
@@ -620,15 +635,16 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .title-discover {
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-family: 'Montserrat-Bold';
+    letter-spacing: 4px;
     padding-top: 5px;
-    font-size: 25px;
+    font-size: 26px;
 }
 
 .discover-para {
-    font-weight: 600;
+ 
     padding: 0px 50px;
+       font-family: 'Montserrat-Regular';
 }
 
 .input-category {
@@ -645,6 +661,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
     box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
     margin: 7px 5px;
     font-size: 13px;
+      font-family: 'Montserrat-Regular';
 }
 
 .btn-bg-black {
@@ -652,6 +669,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
     border: none;
     color: #fff;
     font-size: 13px;
+      font-family: 'Montserrat-Regular';
     margin: 7px 5px;
 }
 
@@ -682,11 +700,11 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 .btn-entertainment {
-    padding: 7px 51px;
+    padding: 7px 47px;
 }
 
 .btn-international {
-    padding: 7px 58px;
+    padding: 7px 56px;
 }
 
 .btn-books {
@@ -828,13 +846,20 @@ $font-family-light-sans-serif: "Montserrat-Light",
     box-shadow: 0px 0px 26px rgba(128, 128, 128, 0.47);
     .dis-table {
         background-color: #fff;
-         box-shadow: inset 0px -3px 5px rgba(128, 128, 128, 0.13);
-    border-radius: 5px 5px 0px 0px;
+        box-shadow: inset 0px -3px 5px rgba(128, 128, 128, 0.13);
+        border-radius: 5px 5px 0px 0px;
         margin: 0 auto;
     }
     .dis-cell {
         padding: 20px;
         position: relative;
+        h3 {
+            font-family: 'Montserrat-Light';
+        }
+        span {
+            font-family: 'Montserrat-Regular';
+            font-size: 13px;
+        }
     }
 }
 
@@ -869,15 +894,12 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 .toggleyouKnow {
     width: 185px;
-    /* text-align: right; */
     float: left;
     padding: 5px 0px;
-
     margin: 5px 0px 10px 0px;
     font-size: 11px;
-    letter-spacing: 0.5px;
+    font-family: 'Montserrat-Regular';
     background: #f3f2f2;
-
     border-radius: 25px;
     position: absolute;
     left: 5%;
@@ -887,12 +909,10 @@ $font-family-light-sans-serif: "Montserrat-Light",
     width: 185px;
     float: right;
     padding: 5px 0px;
-
     margin: 5px 0px 10px 0px;
     font-size: 11px;
-    letter-spacing: 0.5px;
+    font-family: 'Montserrat-Regular';
     background: #f3f2f2;
-
     border-radius: 25px;
     position: absolute;
     right: 4%;
@@ -903,61 +923,62 @@ $font-family-light-sans-serif: "Montserrat-Light",
     z-index: 100;
 }
 
-.listperson{
+.listperson {
     top: 88px;
     overflow-y: scroll;
     width: 100%;
     max-height: 255px;
-    .item{
+    .item {
         border: none!important;
     }
-    
+    h2 {
+        font-family: 'Montserrat-Regular';
+        font-size: 14px;
+    }
+    p {
+        font-family: 'Montserrat-Light';
+    }
 }
-.borderF{
-    .cell-follower:after{
+
+.borderF {
+    .cell-follower:after {
         content: "";
         position: absolute;
         width: 75px;
         border-bottom: 2px solid #f8b503;
-       
         bottom: -1%;
         left: 17%;
     }
 }
 
-.borderK{
-    .cell-kwacks:after{
+.borderK {
+    .cell-kwacks:after {
         content: "";
         position: absolute;
         width: 75px;
         border-bottom: 2px solid #f8b503;
-       
         bottom: -1%;
         left: 17%;
     }
-
 }
 
-.borderp{
-    .cell-polls:after{
+.borderp {
+    .cell-polls:after {
         content: "";
         position: absolute;
         width: 75px;
         border-bottom: 2px solid #f8b503;
-       
         bottom: -1%;
         left: 17%;
     }
-
 }
 
-.followersUn{
+.followersUn {
     position: absolute;
     width: 12%;
     top: 35%;
     right: 5%;
 }
-
 
 //common classes and ionic classes start
 .bar-stable .button.button-clear {
@@ -973,7 +994,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
     padding: 10px!important;
 }
 
-.padt10{
+.padt10 {
     padding-top: 10px;
 }
 
@@ -1195,6 +1216,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
         margin: -10px;
     }
 }
+
 .news-discover {
     h3 {
         font-weight: 900px;
@@ -1331,9 +1353,9 @@ $font-family-light-sans-serif: "Montserrat-Light",
 
 .user-name {
     color: #fff;
-    font-weight: bold;
     letter-spacing: 1px;
     font-size: 17px;
+    font-family: 'Montserrat-SemiBold';
     text-shadow: 1px solid red;
     text-shadow: 0px 0px 2px gray;
 }
@@ -1348,10 +1370,11 @@ $font-family-light-sans-serif: "Montserrat-Light",
     letter-spacing: 0.5px;
     line-height: 4px;
     font-size: 12px;
+    font-family: 'Montserrat-Regular';
 }
 
 .follow-btn {
- vertical-align: middle;
+    vertical-align: middle;
     .button {
         margin-top: 7px;
         min-height: 27px;
@@ -1363,6 +1386,7 @@ $font-family-light-sans-serif: "Montserrat-Light",
         color: #fff;
         border-color: #fff;
         letter-spacing: 0.5px;
+        font-family: 'Montserrat-Regular';
     }
     .icon-left:before {
         font-size: 12px;
@@ -1437,23 +1461,18 @@ $font-family-light-sans-serif: "Montserrat-Light",
     }
 }
 
-
-
 //     border-radius: 25px;
 //     position: absolute;
 //     left: 5%;
 // }
-
 .toggleContacts {
     width: 185px;
     float: right;
     padding: 5px 0px;
-
     margin: 5px 0px 10px 0px;
     font-size: 11px;
     letter-spacing: 0.5px;
     background: #f3f2f2;
-
     border-radius: 25px;
     position: absolute;
     right: 4%;
@@ -1465,47 +1484,52 @@ $font-family-light-sans-serif: "Montserrat-Light",
 }
 
 //start of social
-.toi{
-        width: 70%;
+.toi {
+    width: 70%;
     margin: 0 auto;
 }
-.news-video{
-    p{
+
+.news-video {
+    p {
         color: #bebebe;
         font-size: 11px;
         letter-spacing: 1px;
         line-height: 14px;
         padding-top: 11px;
-      
     }
-    span{
+    span {
         font-size: 11px;
         font-weight: 600;
-        color:#000;
+        color: #000;
         letter-spacing: 0.5px;
-      
     }
 }
-.show-time{
+
+.show-time {
     margin-top: 10px;
-    img{
+    img {
         width: 10%
     }
 }
-.mar-lr{
+
+.mar-lr {
     margin: 0px 20px;
 }
-.social-icons{
-     padding: 10px 0px;
-           border-bottom: 1px solid #f0e2e2;
+
+.social-icons {
+    padding: 10px 0px;
+    border-bottom: 1px solid #f0e2e2;
 }
-.border-top{
-       border-top: 1px solid #f0e2e2;
+
+.border-top {
+    border-top: 1px solid #f0e2e2;
     margin: 25px 20px 5px 20px;
 }
-.color-yellow{
+
+.color-yellow {
     color: $yellow !important;
 }
-.w3{
+
+.w3 {
     width: 3%;
 }

@@ -9878,23 +9878,23 @@ a.button {
 
 @font-face {
   font-family: 'Montserrat-SemiBold';
-  src: url("../fonts/Montserrat-SemiBold.ttf"); }
+  src: url("../lib/ionic/fonts/Montserrat-SemiBold.ttf"); }
 
 @font-face {
   font-family: 'Montserrat-Light';
-  src: url("../fonts/montserrat/Montserrat-Light.ttf"); }
+  src: url("../lib/ionic/fonts/montserrat/Montserrat-Light.ttf"); }
 
 @font-face {
   font-family: 'Montserrat-Italic';
-  src: url("../fonts/Montserrat-Italic.ttf"); }
+  src: url("../lib/ionic/fonts/Montserrat-Italic.ttf"); }
 
 @font-face {
   font-family: 'Montserrat-Regular';
-  src: url("../fonts/Montserrat-Regular.ttf"); }
+  src: url("../lib/ionic/fonts/Montserrat-Regular.ttf"); }
 
 @font-face {
   font-family: 'Montserrat-Bold';
-  src: url("../fonts/Montserrat-Bold.ttf"); }
+  src: url("../lib/ionic/fonts/Montserrat-Bold.ttf"); }
 
 @font-face {
   font-family: 'Montserrat-Light';
@@ -9903,6 +9903,9 @@ a.button {
 @font-face {
   font-family: 'Montserrat-Bold';
   src: url("../fonts/montserrat/Montserrat-Bold.otf"); }
+
+body {
+  font-family: 'Montserrat-Regular'; }
 
 .absolute {
   position: absolute; }
@@ -10156,7 +10159,7 @@ a.button {
       font-size: 13px; }
 
 .arrow-back {
-  margin-top: 10px; }
+  margin-top: 9px; }
   .arrow-back .button {
     background: transparent; }
     .arrow-back .button i {
@@ -10168,7 +10171,14 @@ a.button {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1px;
-  margin-top: 13px; }
+  margin-top: 12px;
+  font-family: 'Montserrat-Bold'; }
+
+.reset {
+  font-family: 'Montserrat-Regular';
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #000; }
 
 .bg-gray {
   background-color: #f2f2f2; }
@@ -10178,18 +10188,23 @@ a.button {
   letter-spacing: 2px;
   padding: 13px;
   font-size: 16px;
+  font-family: 'Montserrat-Light';
   box-shadow: inset 0px -2px 6px rgba(222, 216, 216, 0.46); }
 
 .filter .button {
   margin: 5px 3px;
   border-radius: 0px; }
 
+.mar-l15 {
+  margin-left: 15px; }
+
 .select-month {
   padding: 9px 37px;
   margin: 5px 0px 5px 35px;
   background-color: #000;
   color: #fff;
-  border: none; }
+  border: none;
+  font-family: 'Montserrat-Regular'; }
 
 .select-year {
   padding: 9px 41px;
@@ -10298,14 +10313,14 @@ a.button {
   background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%) !important; }
 
 .title-discover {
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-family: 'Montserrat-Bold';
+  letter-spacing: 4px;
   padding-top: 5px;
-  font-size: 25px; }
+  font-size: 26px; }
 
 .discover-para {
-  font-weight: 600;
-  padding: 0px 50px; }
+  padding: 0px 50px;
+  font-family: 'Montserrat-Regular'; }
 
 .input-category {
   width: 300px;
@@ -10319,13 +10334,15 @@ a.button {
   background-color: #ffc943;
   box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
   margin: 7px 5px;
-  font-size: 13px; }
+  font-size: 13px;
+  font-family: 'Montserrat-Regular'; }
 
 .btn-bg-black {
   background: linear-gradient(to right bottom, #000 30%, #000 57%, #2b2727 100%) !important;
   border: none;
   color: #fff;
   font-size: 13px;
+  font-family: 'Montserrat-Regular';
   margin: 7px 5px; }
 
 .align-right {
@@ -10349,10 +10366,10 @@ a.button {
   padding: 7px 17px; }
 
 .btn-entertainment {
-  padding: 7px 51px; }
+  padding: 7px 47px; }
 
 .btn-international {
-  padding: 7px 58px; }
+  padding: 7px 56px; }
 
 .btn-books {
   padding: 7px 24px; }
@@ -10470,6 +10487,11 @@ a.button {
   .followers .dis-cell {
     padding: 20px;
     position: relative; }
+    .followers .dis-cell h3 {
+      font-family: 'Montserrat-Light'; }
+    .followers .dis-cell span {
+      font-family: 'Montserrat-Regular';
+      font-size: 13px; }
 
 .dis-table {
   display: table; }
@@ -10496,12 +10518,11 @@ a.button {
 
 .toggleyouKnow {
   width: 185px;
-  /* text-align: right; */
   float: left;
   padding: 5px 0px;
   margin: 5px 0px 10px 0px;
   font-size: 11px;
-  letter-spacing: 0.5px;
+  font-family: 'Montserrat-Regular';
   background: #f3f2f2;
   border-radius: 25px;
   position: absolute;
@@ -10513,7 +10534,7 @@ a.button {
   padding: 5px 0px;
   margin: 5px 0px 10px 0px;
   font-size: 11px;
-  letter-spacing: 0.5px;
+  font-family: 'Montserrat-Regular';
   background: #f3f2f2;
   border-radius: 25px;
   position: absolute;
@@ -10530,6 +10551,11 @@ a.button {
   max-height: 255px; }
   .listperson .item {
     border: none !important; }
+  .listperson h2 {
+    font-family: 'Montserrat-Regular';
+    font-size: 14px; }
+  .listperson p {
+    font-family: 'Montserrat-Light'; }
 
 .borderF .cell-follower:after {
   content: "";
@@ -10846,9 +10872,9 @@ a.button {
 
 .user-name {
   color: #fff;
-  font-weight: bold;
   letter-spacing: 1px;
   font-size: 17px;
+  font-family: 'Montserrat-SemiBold';
   text-shadow: 1px solid red;
   text-shadow: 0px 0px 2px gray; }
 
@@ -10860,7 +10886,8 @@ a.button {
   color: #fff;
   letter-spacing: 0.5px;
   line-height: 4px;
-  font-size: 12px; }
+  font-size: 12px;
+  font-family: 'Montserrat-Regular'; }
 
 .follow-btn {
   vertical-align: middle; }
@@ -10874,7 +10901,8 @@ a.button {
     background: transparent;
     color: #fff;
     border-color: #fff;
-    letter-spacing: 0.5px; }
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat-Regular'; }
   .follow-btn .icon-left:before {
     font-size: 12px;
     line-height: 10px;
