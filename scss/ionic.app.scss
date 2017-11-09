@@ -98,7 +98,12 @@ body{
 .relative {
     position: relative;
 }
-
+.text-right{
+    text-align: right;
+}
+.text-left{
+    text-align: left;
+}
 .button {
     border-radius: 0px;
 }
@@ -482,7 +487,7 @@ body{
 }
 .select-month {
     padding: 9px 37px;
-    margin: 5px 0px 5px 35px;
+    // margin: 5px 0px 5px 35px;
     background-color: $black;
     color: $light;
     border: none;
@@ -491,7 +496,7 @@ body{
 
 .select-year {
     padding: 9px 41px;
-    margin: 5px 36px 5px 0px;
+    // margin: 5px 36px 5px 0px;
     background-color: $yellow;
     color: $black;
     border: none;
