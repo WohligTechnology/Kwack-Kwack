@@ -11024,3 +11024,19 @@ body {
 
 .w3 {
   width: 3%; }
+
+.tabimage {
+  background-image: url("/img/Footerhome.PNG");
+  background-repeat: no-repeat;
+  background-position: bottom center; }
+
+.has-footer.has-tabs {
+  bottom: 50px; }
+
+.placeholderCat input {
+  padding-left: 15px;
+  font-size: 14px; }
+
+.placeholderCat input::placeholder {
+  color: #4c4c4c;
+  font-family: "Montserrat-Regular"; }

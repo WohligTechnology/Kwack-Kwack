@@ -76,10 +76,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'HomeCtrl'
 
     })
-    .state('trailer', {
+    .state('tab.trailer', {
       url: '/trailer',
-        templateUrl: 'templates/trailer.html',
-        controller: 'TrailerCtrl'
+      views: {
+        'tab-trailer' : {
+          
+          templateUrl: 'templates/tab-trailer.html',
+          controller: 'TrailerCtrl'
+        }
+      }
+     
     })
 
     .state('discover', {
