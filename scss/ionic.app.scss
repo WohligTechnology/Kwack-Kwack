@@ -1,4 +1,4 @@
-/*
+    /*
 To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
 
@@ -453,8 +453,9 @@ body {
 }
 
 .plus-btn {
-    right: 75px;
-    bottom: 7px;
+    right: 14%;
+    top: 90%;
+    transform: translate(-50%, -50%);
     .button {
         min-width: 45px !important;
         min-height: 45px !important;
@@ -1662,35 +1663,33 @@ body {
     }
 }
 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) {
-    .discover-icon{
-        img{
+// css for iphone 5
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+    .discover-icon {
+        img {
             width: 10%
         }
-        span{
-           font-size: 12px;
+        span {
+            font-size: 12px;
         }
     }
-    .discoverStrip{
+    .discoverStrip {
         padding: 0px;
-        span{
+        span {
             padding-right: 5px;
         }
-    } 
+    }
     .sliderdesc {
         bottom: 21%;
-        font-size: 14px; 
+        font-size: 14px;
     }
-    .strip{
+    .strip {
         bottom: 37%;
         right: 1%
     }
-    .slidertime{
-       bottom:37%;
+    .slidertime {
+        bottom: 37%;
     }
-
     .title-explore {
         font-size: 15px;
         letter-spacing: 5px;
@@ -1707,26 +1706,71 @@ and (max-device-width : 568px) {
         right: 7%;
         border-bottom: 2px solid rgba(190, 190, 190, 0.56);
     }
+    .just-now-label {
+        top: 6%;
+    }
+    .toggleyouKnow {
+        width: 155px;
+        font-size: 10px;
+    }
+    .toggleContacts {
+        width: 155px;
+        font-size: 10px;
+    }
+    .followers .dis-cell {
+        padding: 14px;
+        position: relative;
+    }
+    .followers .dis-cell h3 {
+        font-size: 18px;
+    }
+    .followers .dis-cell span {
+        font-size: 12px;
+    }
+    .user-name {
+        font-size: 15px;
+    }
+    .designation {
+        line-height: 2px;
+        font-size: 11px;
+    }
+    .follow-btn .button {
+        margin-top: 5px;
+        min-height: 21px;
+        line-height: 10px;
+        font-size: 9px;
+        padding: 0px 16px;
+    }
+    .r-border:after {
+        height: 55px;
+    }
+    .listperson {
+        top: 70px;
+    }
+    .profile-img {
+        width: 75px;
+        height: 75px;
+    }
 }
-@media only screen 
-and (min-device-width : 375px) 
-and (max-device-width : 736px) 
-and (orientation : portrait) { 
-    .discover-icon{
-        img{
+
+// css for iphone 6 nd 6plus
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 736px) and (orientation: portrait) {
+    .discover-icon {
+        img {
             width: 12%
         }
-        span{
+        span {
             font-size: 14px;
         }
     }
-    .discoverStrip{
+    .discoverStrip {
         padding: 2px;
-        span{
+        span {
             padding-right: 8px;
         }
     }
-    .strip{
+    .strip {
         bottom: 29%;
         right: 2%;
     }
@@ -1734,12 +1778,9 @@ and (orientation : portrait) {
         bottom: 16%;
         font-size: 15px;
     }
-
-    .slidertime{
+    .slidertime {
         bottom: 30%;
     }
-
-
     .title-explore {
         font-size: 16px;
         letter-spacing: 5px;
@@ -1751,5 +1792,61 @@ and (orientation : portrait) {
     .title-explore:after {
         width: 100px !important;
         right: 5%;
+    }
+    .plus-btn {
+        right: 14%;
+        top: 90%;
+        transform: translate(-50%, -50%);
+    }
+    .followers {
+        .dis-cell {
+            padding: 20px;
+            position: relative;
+            h3 {
+                font-family: 'Montserrat-Light';
+                font-size: 24px;
+            }
+            span {
+                font-family: 'Montserrat-Regular';
+                font-size: 14px;
+            }
+        }
+    }
+    .toggleyouKnow {
+        width: 197px;
+        font-size: 12px;
+    }
+    .toggleContacts {
+        width: 197px;
+        font-size: 12px;
+    }
+    .profile-img {
+        width: 85px;
+        height: 85px;
+    }
+    .user-name {
+        font-size: 17px;
+    }
+    .designation {
+        line-height: 4px;
+        font-size: 12px;
+    }
+    .listperson {
+        top: 88px;
+    }
+    .r-border:after {
+        height: 63px;
+    }
+    .designation {
+        font-size: 12px;
+    }
+    .follow-btn {
+        .button {
+            margin-top: 7px;
+            min-height: 27px;
+            line-height: 10px;
+            font-size: 11px;
+            padding: 0px 20px;
+        }
     }
 }
