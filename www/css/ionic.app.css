@@ -11133,19 +11133,13 @@ body {
     bottom: 37%; }
   .title-explore {
     font-size: 15px;
-    font-family: 'Montserrat-Bold';
-    letter-spacing: 5px;
-    position: relative; }
+    letter-spacing: 5px; }
   .title-explore:before {
-    content: "";
-    position: absolute;
     width: 71px !important;
     top: 50%;
     left: 7%;
     border-bottom: 2px solid rgba(190, 190, 190, 0.56); }
   .title-explore:after {
-    content: "";
-    position: absolute;
     width: 71px !important;
     top: 50%;
     right: 7%;
@@ -11170,20 +11164,10 @@ body {
     bottom: 30%; }
   .title-explore {
     font-size: 16px;
-    font-family: 'Montserrat-Bold';
-    letter-spacing: 5px;
-    position: relative; }
+    letter-spacing: 5px; }
   .title-explore:before {
-    content: "";
-    position: absolute;
-    width: 90px !important;
-    top: 50%;
-    left: 7%;
-    border-bottom: 2px solid rgba(190, 190, 190, 0.56); }
+    width: 100px !important;
+    left: 5%; }
   .title-explore:after {
-    content: "";
-    position: absolute;
-    width: 90px !important;
-    top: 50%;
-    right: 7%;
-    border-bottom: 2px solid rgba(190, 190, 190, 0.56); } }
+    width: 100px !important;
+    right: 5%; } }
