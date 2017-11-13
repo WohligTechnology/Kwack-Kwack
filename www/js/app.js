@@ -79,77 +79,84 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab.trailer', {
       url: '/trailer',
       views: {
-        'tab-trailer' : {
-          
+        'tab-trailer': {
+
           templateUrl: 'templates/tab-trailer.html',
           controller: 'TrailerCtrl'
         }
       }
-     
+
     })
 
-    .state('discover', {
-      url: '/discover',
-        templateUrl: 'templates/discover.html',
-        controller: 'DiscoverCtrl'
-    })
-
-    .state('tab.discoverNews', {
-      url: '/discoverNews',
-      views: {
-        'tab-discoverNews' : {
-          
-          templateUrl: 'templates/tab-discoverNews.html',
-          controller: 'DiscoverNewsCtrl'
-        }
+  .state('tab.profile', {
+    url: '/profile',
+    views: {
+      'tab-profile': {
+        templateUrl: 'templates/tab-profile.html',
+        controller: 'ProfileCtrl'
       }
-     
-    })
 
-      .state('profile', {
-      url: '/profile',
+    }
 
-      templateUrl: 'templates/profile.html',
-      controller: 'ProfileCtrl'
 
-    })
-     .state('filter', {
-      url: '/filter',
+  })
 
-      templateUrl: 'templates/filter.html',
-      controller: 'FilterCtrl'
+  .state('discover', {
+    url: '/discover',
+    templateUrl: 'templates/discover.html',
+    controller: 'DiscoverCtrl'
+  })
 
-    })
-    
-     .state('signUp', {
-      url: '/signup',
-      templateUrl: 'templates/signUp.html',
-      controller: 'SignUpCtrl'
+  .state('tab.discoverNews', {
+    url: '/discoverNews',
+    views: {
+      'tab-discoverNews': {
 
-    })
-   
+        templateUrl: 'templates/tab-discoverNews.html',
+        controller: 'DiscoverNewsCtrl'
+      }
+    }
 
-    .state('location', {
-      url: '/location',
-      templateUrl: 'templates/location.html',
-      controller: 'LocationCtrl'
+  })
 
-    })
 
-    .state('otp', {
+  .state('filter', {
+    url: '/filter',
+
+    templateUrl: 'templates/filter.html',
+    controller: 'FilterCtrl'
+
+  })
+
+  .state('signUp', {
+    url: '/signup',
+    templateUrl: 'templates/signUp.html',
+    controller: 'SignUpCtrl'
+
+  })
+
+
+  .state('location', {
+    url: '/location',
+    templateUrl: 'templates/location.html',
+    controller: 'LocationCtrl'
+
+  })
+
+  .state('otp', {
       url: '/otp',
       templateUrl: 'templates/otp.html',
       controller: 'DiscoverCtrl'
 
     })
-     .state('explore', {
+    .state('explore', {
       url: '/explore',
       templateUrl: 'templates/explore.html',
       controller: 'ExploreCtrl'
 
     })
 
-.state('inviteFriends', {
+  .state('inviteFriends', {
       url: '/inviteFriends',
       templateUrl: 'templates/inviteFriends.html',
       controller: 'InviteFriendsCtrl'
@@ -164,22 +171,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab.social', {
       url: '/social',
       views: {
-        'tab-social' : {
+        'tab-social': {
           templateUrl: 'templates/tab-social.html',
           controller: 'SocialCtrl'
         }
       }
-     
+
     })
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+    .state('tab.account', {
+      url: '/account',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-account.html',
+          controller: 'AccountCtrl'
+        }
       }
-    }
-  });
+    });
 
 
 
