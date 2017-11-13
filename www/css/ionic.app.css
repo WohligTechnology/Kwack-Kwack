@@ -9983,6 +9983,12 @@ body {
     font-family: "Montserrat-Light";
     font-size: 16px; }
 
+.pollingtitle {
+  padding-top: 12px; }
+  .pollingtitle span {
+    font-family: "Montserrat-Light";
+    font-size: 15px; }
+
 .trailerImage {
   width: 100%; }
   .trailerImage img {
@@ -9993,16 +9999,18 @@ body {
   text-align: left; }
   .trailerName label {
     font-family: "Montserrat-Medium";
-    font-size: 18px; }
+    font-size: 14px; }
 
 .articleDate {
   font-family: "Montserrat-Regular";
-  color: #afafaf; }
+  color: #afafaf;
+  font-size: 10px; }
 
 .readarticle {
   padding: 5px;
   font-family: "Montserrat-Italic";
-  color: #afafaf; }
+  color: #afafaf;
+  font-size: 10px; }
 
 .chooseside {
   height: 200px; }
@@ -10017,11 +10025,16 @@ body {
     padding: 0px !important;
     margin: 0px !important;
     font-family: "Montserrat-SemiBold";
-    font-weight: 700; }
+    font-weight: 700;
+    font-size: 18px; }
   .bg-yellow label {
     color: white;
-    font-size: 18px;
+    font-size: 12px;
+    letter-spacing: 4px;
     font-family: "Montserrat-Regular"; }
+
+.fs-10 {
+  font-size: 10px; }
 
 .yourSide {
   margin-top: 20px;
@@ -10054,7 +10067,10 @@ body {
   height: 40px;
   width: 150px;
   border: none;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  font-family: 'Montserrat-Bold';
+  font-size: 12px;
+  letter-spacing: 1px; }
 
 .pad-left5 {
   padding-left: 5px; }
@@ -10718,7 +10734,8 @@ body {
 .discover-trend {
   text-align: center;
   font-family: "Montserrat-Medium";
-  font-size: 18px; }
+  font-size: 12px;
+  letter-spacing: 3px; }
 
 .discover-ionslide {
   height: 200px !important;
@@ -10731,11 +10748,12 @@ body {
   color: white;
   position: absolute;
   transform: translate(-50%, -50%);
-  bottom: 20%;
+  bottom: 16%;
   left: 50%;
   width: 100%;
   /* display: block; */
-  font-size: 1.2em;
+  font-size: 15px;
+  font-family: 'Montserrat-Regular';
   padding: 10px; }
 
 .slidertime {
@@ -10745,9 +10763,9 @@ body {
   padding-left: 10px;
   width: 100%; }
   .slidertime label {
-    vertical-align: top;
+    vertical-align: middle;
     color: white;
-    font-size: 1em; }
+    font-size: 11px; }
   .slidertime i {
     color: white;
     vertical-align: inherit; }
@@ -10789,8 +10807,9 @@ body {
   margin: -10px; }
 
 .news-discover h3 {
-  font-weight: 900px;
-  margin-top: 0px;
+  font-family: "Montserrat-Medium";
+  font-size: 14px;
+  margin-top: 7px;
   margin-bottom: 0px; }
 
 .news-discover span {
@@ -10800,8 +10819,9 @@ body {
 
 .news-discover p {
   font-size: 11px;
+  font-family: 'Montserrat-Regular';
   line-height: 14px;
-  margin-top: 0px;
+  margin-top: 7px;
   padding-bottom: 10px; }
 
 .discover-icon {
@@ -10868,7 +10888,8 @@ body {
 .scrollCategories {
   color: gray;
   padding: 5px;
-  font-size: 16px; }
+  font-size: 13px;
+  font-family: 'Montserrat-Regular'; }
 
 .swipperdiscover .swiper-pagination-bullet {
   background: #ffb600; }
