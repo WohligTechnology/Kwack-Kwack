@@ -1300,6 +1300,7 @@ body {
     }
     span {
         color: white;
+        font-size: 14px;
     }
 }
 
@@ -1662,8 +1663,32 @@ body {
 
 @media only screen 
 and (min-device-width : 320px) 
-and (max-device-width : 568px) { 
-
+and (max-device-width : 568px) {
+    .discover-icon{
+        img{
+            width: 10%
+        }
+        span{
+           font-size: 12px;
+        }
+    }
+    .discoverStrip{
+        padding: 0px;
+        span{
+            padding-right: 5px;
+        }
+    } 
+    .sliderdesc {
+        bottom: 21%;
+        font-size: 14px; 
+    }
+    .strip{
+        bottom: 37%;
+        right: 1%
+    }
+    .slidertime{
+       bottom:37%;
+    }
     .title-explore {
     font-size: 15px;
     font-family: 'Montserrat-Bold';
@@ -1689,9 +1714,34 @@ and (max-device-width : 568px) {
 }
 @media only screen 
 and (min-device-width : 375px) 
-and (max-device-width : 667px) 
+and (max-device-width : 736px) 
 and (orientation : portrait) { 
+    .discover-icon{
+        img{
+            width: 12%
+        }
+        span{
+            font-size: 14px;
+        }
+    }
+    .discoverStrip{
+        padding: 2px;
+        span{
+            padding-right: 8px;
+        }
+    }
+    .strip{
+        bottom: 29%;
+        right: 2%;
+    }
+    .sliderdesc {
+        bottom: 16%;
+        font-size: 15px;
+    }
 
+    .slidertime{
+        bottom: 30%;
+    }
     .title-explore {
     font-size: 16px;
     font-family: 'Montserrat-Bold';
