@@ -94,10 +94,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'DiscoverCtrl'
     })
 
-    .state('discoverNews', {
+    .state('tab.discoverNews', {
       url: '/discoverNews',
-        templateUrl: 'templates/discoverNews.html',
-        controller: 'DiscoverNewsCtrl'
+      views: {
+        'tab-discoverNews' : {
+          
+          templateUrl: 'templates/tab-discoverNews.html',
+          controller: 'DiscoverNewsCtrl'
+        }
+      }
+     
     })
 
       .state('profile', {
@@ -155,11 +161,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'SrartPollingCtrl'
 
     })
-     .state('social', {
+    .state('tab.social', {
       url: '/social',
-      templateUrl: 'templates/social.html',
-      controller: 'SocialCtrl'
-
+      views: {
+        'tab-social' : {
+          templateUrl: 'templates/tab-social.html',
+          controller: 'SocialCtrl'
+        }
+      }
+     
     })
   .state('tab.account', {
     url: '/account',

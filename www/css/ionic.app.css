@@ -11044,10 +11044,42 @@ body {
 .w3 {
   width: 3%; }
 
+.borderclass a {
+  border-right: 1px solid #f7f7f7; }
+
 .tabimage {
-  background-image: url("/img/Footerhome.PNG");
+  background-image: url("/img/footer/homeOn.png");
   background-repeat: no-repeat;
-  background-position: bottom center; }
+  background-position: center center; }
+
+.discoverImage {
+  background-image: url("/img/footer/discoverOn.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.socialImage {
+  background-image: url("/img/footer/socialOn.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.inviteFImage {
+  background-image: url("/img/footer/inviteOn.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.profileFImage {
+  background-image: url("/img/footer/profileOn.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.tab-header {
+  position: relative; }
+  .tab-header span {
+    position: absolute;
+    top: 88%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    font-size: 11px; }
 
 .has-footer.has-tabs {
   bottom: 50px; }
