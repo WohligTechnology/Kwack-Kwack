@@ -11116,7 +11116,77 @@ body {
   color: #000;
   font-family: "Montserrat-Regular"; }
 
+.placeholderDiscover input {
+  padding-left: 15px;
+  font-size: 14px; }
+
+.placeholderDiscover input::placeholder {
+  color: #6c4b01;
+  font-family: "Montserrat-Regular"; }
+
+.popupHeader {
+  top: 55px; }
+
+.w80 {
+  width: 80%; }
+
+.nav-height {
+  height: 65px; }
+
+.modal-bg {
+  background: transparent; }
+
+.divColor {
+  background: white; }
+
+.content-bg {
+  background: rgba(0, 0, 0, 0.68); }
+
+.closePopup {
+  text-align: center;
+  padding: 20px; }
+  .closePopup i {
+    font-size: 35px;
+    color: white; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .news-discover span {
+    font-size: 8px; }
+  .discoverCardStrip {
+    padding: 0px; }
+  .explore-icon img {
+    width: 10%;
+    vertical-align: middle;
+    padding: 1px; }
+  .discover-icon img {
+    width: 10%; }
+  .discover-icon span {
+    font-size: 12px; }
+  .discoverStrip {
+    padding: 0px; }
+    .discoverStrip span {
+      padding-right: 5px; }
+  .sliderdesc {
+    bottom: 21%;
+    font-size: 14px; }
+  .strip {
+    bottom: 37%;
+    right: 1%; }
+  .slidertime {
+    bottom: 37%; }
+  .title-explore {
+    font-size: 15px;
+    letter-spacing: 5px; }
+  .title-explore:before {
+    width: 71px !important;
+    top: 50%;
+    left: 7%;
+    border-bottom: 2px solid rgba(190, 190, 190, 0.56); }
+  .title-explore:after {
+    width: 71px !important;
+    top: 50%;
+    right: 7%;
+    border-bottom: 2px solid rgba(190, 190, 190, 0.56); }
   .discover-icon img {
     width: 10%; }
   .discover-icon span {
@@ -11191,6 +11261,41 @@ body {
     width: 19% !important; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+  .news-discover span {
+    font-size: 10px; }
+  .explore-icon img {
+    width: 12%;
+    padding: 4px; }
+  .discoverCardStrip {
+    padding: 2px; }
+    .discoverCardStrip span {
+      padding-right: 8px;
+      border-right: 1px solid #ececec; }
+  .discover-icon img {
+    width: 12%; }
+  .discover-icon span {
+    font-size: 14px; }
+  .discoverStrip {
+    padding: 2px; }
+    .discoverStrip span {
+      padding-right: 8px; }
+  .strip {
+    bottom: 29%;
+    right: 2%; }
+  .sliderdesc {
+    bottom: 16%;
+    font-size: 15px; }
+  .slidertime {
+    bottom: 30%; }
+  .title-explore {
+    font-size: 16px;
+    letter-spacing: 5px; }
+  .title-explore:before {
+    width: 100px !important;
+    left: 5%; }
+  .title-explore:after {
+    width: 100px !important;
+    right: 5%; }
   .discover-icon img {
     width: 12%; }
   .discover-icon span {
