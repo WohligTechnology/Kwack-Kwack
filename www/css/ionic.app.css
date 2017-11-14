@@ -11181,9 +11181,16 @@ body {
     height: 75px; }
   .btn-yellow {
     padding: 0px 40px;
-    font-size: 10px; } }
+    font-size: 10px; }
+  .social-icon p {
+    margin-right: 23px;
+    font-size: 10px; }
+  .social-icon {
+    margin-bottom: 60px; }
+  .social-icon li {
+    width: 19% !important; } }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 736px) and (orientation: portrait) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .discover-icon img {
     width: 12%; }
   .discover-icon span {
@@ -11250,4 +11257,17 @@ body {
     padding: 0px 20px; }
   .btn-yellow {
     padding: 7px 65px;
-    font-size: 14px; } }
+    font-size: 14px; }
+  .social-icon li {
+    width: 23% !important; }
+  .social-icon p {
+    margin-right: 50px;
+    font-size: 14px; }
+  .social-icon {
+    margin-bottom: 60px; } }
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+  .social-icon li {
+    width: 20% !important; }
+  .social-icon {
+    margin-bottom: 60px; } }
