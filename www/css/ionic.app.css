@@ -10168,15 +10168,13 @@ body {
   height: 280px;
   margin-top: 30px;
   padding: 40px 55px;
-  position: relative;
   background-color: white;
   box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
-  border-radius: 100%;
-  overflow: hidden; }
+  border-radius: 100%; }
 
 .plus-btn {
-  right: 14%;
-  top: 90%;
+  right: 5%;
+  top: 91%;
   transform: translate(-50%, -50%); }
   .plus-btn .button {
     min-width: 45px !important;
@@ -11154,6 +11152,9 @@ body {
     color: white; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .plus-btn {
+    right: 8%;
+    top: 92%; }
   .news-discover span {
     font-size: 8px; }
   .discoverCardStrip {
@@ -11262,13 +11263,7 @@ body {
   .social-icon {
     margin-bottom: 60px; }
   .social-icon li {
-    width: 19% !important; }
-  .all {
-    margin: 20px 0px 50px 0px; }
-  .polls {
-    margin: 20px 0px 50px 0px; }
-  .kwack {
-    margin: 20px 0px 50px 9px; } }
+    width: 19% !important; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .news-discover span {
@@ -11332,8 +11327,8 @@ body {
     width: 100px !important;
     right: 5%; }
   .plus-btn {
-    right: 14%;
-    top: 90%;
+    right: 8%;
+    top: 91%;
     transform: translate(-50%, -50%); }
   .followers .dis-cell {
     padding: 20px;
@@ -11379,20 +11374,10 @@ body {
     margin-right: 50px;
     font-size: 14px; }
   .social-icon {
-    margin-bottom: 60px; }
-  .all {
-    margin: 20px 0px 20px 24px; }
-  .polls {
-    margin: 20px 0px 20px 4px; }
-  .kwack {
-    margin: 20px 0px 20px 0px; } }
+    margin-bottom: 60px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .social-icon li {
     width: 20% !important; }
   .social-icon {
-    margin-bottom: 60px; }
-  .all {
-    margin: 20px 0px 20px 40px; }
-  .polls {
-    margin: 20px 0px 20px 10px; } }
+    margin-bottom: 60px; } }

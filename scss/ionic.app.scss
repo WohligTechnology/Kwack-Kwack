@@ -51,6 +51,8 @@ $dark:                            #444 !default;
     //       }
     //     }
     //   }
+    
+    
     @font-face {
         font-family: 'Montserrat-SemiBold';
         src: url("../lib/ionic/fonts/Montserrat-SemiBold.ttf");
@@ -85,6 +87,8 @@ $dark:                            #444 !default;
         font-family: 'Montserrat-Bold';
         src: url("../lib/ionic/fonts/Montserrat-Bold.ttf");
     }
+    
+  
     
     @font-face {
         font-family: 'Montserrat-Bold';
@@ -144,7 +148,7 @@ $dark:                            #444 !default;
     
     .slidertext {
         padding: 10px;
-        label {
+       label {
             font-size: 18px;
             font-family: 'Montserrat-ExtraLight';
         }
@@ -154,7 +158,7 @@ $dark:                            #444 !default;
         position: absolute;
         top: 97%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%,-50%);
         border-top: 2px solid #424242 !important;
         border-bottom: none;
         border-right: none;
@@ -165,6 +169,8 @@ $dark:                            #444 !default;
         font-size: 20px;
         line-height: 2px;
     }
+
+
     
     .sliderbutton {
         .swiper-pagination {
@@ -446,16 +452,14 @@ $dark:                            #444 !default;
         height: 280px;
         margin-top: 30px;
         padding: 40px 55px;
-        position: relative;
         background-color: white;
         box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
         border-radius: 100%;
-        overflow: hidden;
     }
     
     .plus-btn {
-        right: 14%;
-        top: 90%;
+        right: 5%;
+        top: 91%;
         transform: translate(-50%, -50%);
         .button {
             min-width: 45px !important;
@@ -1671,7 +1675,7 @@ $dark:                            #444 !default;
             // padding-left: 15px;
         }
     }
-    
+
     .signupPlaceholder {
         // input {
         //     padding-left: 15px;
@@ -1720,6 +1724,12 @@ $dark:                            #444 !default;
     //filterpopupend
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+
+        .plus-btn {
+            right: 8%;
+            top: 92%;
+        }
+
         .news-discover {
             span {
                 font-size: 8px;
@@ -1874,15 +1884,6 @@ $dark:                            #444 !default;
         .social-icon li {
             width: 19% !important;
         }
-        .all {
-            margin: 20px 0px 50px 0px;
-        }
-        .polls {
-            margin: 20px 0px 50px 0px;
-        }
-        .kwack {
-            margin: 20px 0px 50px 9px;
-        }
     }
     
     // css for iphone 6 nd 6plus
@@ -1980,8 +1981,8 @@ $dark:                            #444 !default;
             right: 5%;
         }
         .plus-btn {
-            right: 14%;
-            top: 90%;
+            right: 8%;
+            top: 91%;
             transform: translate(-50%, -50%);
         }
         .followers {
@@ -2049,15 +2050,6 @@ $dark:                            #444 !default;
         .social-icon {
             margin-bottom: 60px;
         }
-        .all {
-            margin: 20px 0px 20px 24px;
-        }
-        .polls {
-            margin: 20px 0px 20px 4px;
-        }
-        .kwack {
-            margin: 20px 0px 20px 0px;
-        }
     }
     
     @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
@@ -2067,10 +2059,5 @@ $dark:                            #444 !default;
         .social-icon {
             margin-bottom: 60px;
         }
-        .all {
-            margin: 20px 0px 20px 40px;
-        }
-        .polls {
-            margin: 20px 0px 20px 10px;
-        }
     }
+
