@@ -26,11 +26,13 @@ $dark:                            #444 !default;
     "AvenirNext-Bold",
     "Montserrat-Bold",
     "Montserrat-Regular",
-    "Montserrat-SemiBold";
+    "Montserrat-SemiBold",
+    "Montserrat-ExtraLight";
     $font-family-light-sans-serif: "Montserrat",
     "Montserrat-Bold",
     "Montserrat-Regular";
     $font-family: "Montserrat-Light",
+    "Montserrat-ExtraLight",
     "Montserrat-Bold",
     "Montserrat-Regular",
     "Montserrat-Medium",
@@ -49,10 +51,7 @@ $dark:                            #444 !default;
     //       }
     //     }
     //   }
-    @font-face {
-        font-family: 'Montserrat-Medium';
-        src: url("../fonts/Montserrat-Medium.ttf");
-    }
+    
     
     @font-face {
         font-family: 'Montserrat-SemiBold';
@@ -70,6 +69,11 @@ $dark:                            #444 !default;
     }
     
     @font-face {
+        font-family: 'Montserrat-ExtraLight';
+        src: url("../lib/ionic/fonts/Montserrat-ExtraLight.ttf");
+    }
+    
+    @font-face {
         font-family: 'Montserrat-Italic';
         src: url("../lib/ionic/fonts/Montserrat-Italic.ttf");
     }
@@ -84,10 +88,7 @@ $dark:                            #444 !default;
         src: url("../lib/ionic/fonts/Montserrat-Bold.ttf");
     }
     
-    @font-face {
-        font-family: 'Montserrat-Light';
-        src: url("../fonts/Montserrat-Medium.ttf");
-    }
+  
     
     @font-face {
         font-family: 'Montserrat-Bold';
@@ -142,12 +143,14 @@ $dark:                            #444 !default;
     
     .sliderlabel {
         font-size: 24px;
+        font-family: 'Montserrat-Regular';
     }
     
     .slidertext {
         padding: 15px;
-        label {
+       label {
             font-size: 18px;
+            font-family: 'Montserrat-ExtraLight';
         }
     }
     
@@ -1658,7 +1661,7 @@ $dark:                            #444 !default;
             font-family: "Montserrat-Regular";
         }
     }
-
+    
     .placeholderDiscover {
         input {
             padding-left: 15px;
@@ -1672,84 +1675,80 @@ $dark:                            #444 !default;
     }
     
     //filterpopupstart
-    .popupHeader{
+    .popupHeader {
         top: 55px;
     }
     
-.w80{
-    width: 80%
-}
-    .nav-height{
-        height: 65px;
-    }
-    .modal-bg{
-    background: transparent;
+    .w80 {
+        width: 80%
     }
     
-    .divColor{
+    .nav-height {
+        height: 65px;
+    }
+    
+    .modal-bg {
+        background: transparent;
+    }
+    
+    .divColor {
         background: white;
     }
     
-    .content-bg{
-    background: rgba(0, 0, 0, 0.68);
+    .content-bg {
+        background: rgba(0, 0, 0, 0.68);
     }
     
-    .closePopup{
+    .closePopup {
         text-align: center;
         padding: 20px;
-        i{
+        i {
             font-size: 35px;
             color: white;
         }
     }
-
+    
     //filterpopupend
-    
-    
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-
-        .news-discover{
-            span{
+        .news-discover {
+            span {
                 font-size: 8px;
             }
         }
-        
         .discoverCardStrip {
             padding: 0px;
         }
-    
         .explore-icon img {
             width: 10%;
             vertical-align: middle;
             padding: 1px;
         }
-        .discover-icon{
-            img{
+        .discover-icon {
+            img {
                 width: 10%
             }
-            span{
-               font-size: 12px;
+            span {
+                font-size: 12px;
             }
         }
-        .discoverStrip{
+        .discoverStrip {
             padding: 0px;
-            span{
+            span {
                 padding-right: 5px;
             }
-        } 
+        }
         .sliderdesc {
             bottom: 21%;
-            font-size: 14px; 
+            font-size: 14px;
         }
-        .strip{
+        .strip {
             bottom: 37%;
             right: 1%
         }
-        .slidertime{
-           bottom:37%;
+        .slidertime {
+            bottom: 37%;
         }
-    
         .title-explore {
             font-size: 15px;
             letter-spacing: 5px;
@@ -1766,8 +1765,6 @@ $dark:                            #444 !default;
             right: 7%;
             border-bottom: 2px solid rgba(190, 190, 190, 0.56);
         }
-    
-
         .discover-icon {
             img {
                 width: 10%
@@ -1872,68 +1869,61 @@ $dark:                            #444 !default;
     
     // css for iphone 6 nd 6plus
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
-        
-        .news-discover{
-            span{
+        .news-discover {
+            span {
                 font-size: 10px;
             }
         }
-            .explore-icon {
-                img {
-                    width: 12%;
-                    padding: 4px;
-                }
+        .explore-icon {
+            img {
+                width: 12%;
+                padding: 4px;
             }
-        
-            .discoverCardStrip {
-                padding: 2px;
-                span {
-                    padding-right: 8px;
-                    border-right: 1px solid #ececec;
-                }
+        }
+        .discoverCardStrip {
+            padding: 2px;
+            span {
+                padding-right: 8px;
+                border-right: 1px solid #ececec;
             }
-            .discover-icon{
-                img{
-                    width: 12%
-                }
-                span{
-                    font-size: 14px;
-                }
+        }
+        .discover-icon {
+            img {
+                width: 12%
             }
-            .discoverStrip{
-                padding: 2px;
-                span{
-                    padding-right: 8px;
-                }
+            span {
+                font-size: 14px;
             }
-            .strip{
-                bottom: 29%;
-                right: 2%;
+        }
+        .discoverStrip {
+            padding: 2px;
+            span {
+                padding-right: 8px;
             }
-            .sliderdesc {
-                bottom: 16%;
-                font-size: 15px;
-            }
-        
-            .slidertime{
-                bottom: 30%;
-            }
-        
-        
-            .title-explore {
-                font-size: 16px;
-                letter-spacing: 5px;
-            }
-            .title-explore:before {
-                width: 100px !important;
-                left: 5%;
-            }
-            .title-explore:after {
-                width: 100px !important;
-                right: 5%;
-            }
-        
-
+        }
+        .strip {
+            bottom: 29%;
+            right: 2%;
+        }
+        .sliderdesc {
+            bottom: 16%;
+            font-size: 15px;
+        }
+        .slidertime {
+            bottom: 30%;
+        }
+        .title-explore {
+            font-size: 16px;
+            letter-spacing: 5px;
+        }
+        .title-explore:before {
+            width: 100px !important;
+            left: 5%;
+        }
+        .title-explore:after {
+            width: 100px !important;
+            right: 5%;
+        }
         .discover-icon {
             img {
                 width: 12%

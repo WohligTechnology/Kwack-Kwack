@@ -9873,10 +9873,6 @@ a.button {
   transition-duration: 0s; }
 
 @font-face {
-  font-family: 'Montserrat-Medium';
-  src: url("../fonts/Montserrat-Medium.ttf"); }
-
-@font-face {
   font-family: 'Montserrat-SemiBold';
   src: url("../lib/ionic/fonts/Montserrat-SemiBold.ttf"); }
 
@@ -9889,6 +9885,10 @@ a.button {
   src: url("../lib/ionic/fonts/montserrat/Montserrat-Light.ttf"); }
 
 @font-face {
+  font-family: 'Montserrat-ExtraLight';
+  src: url("../lib/ionic/fonts/Montserrat-ExtraLight.ttf"); }
+
+@font-face {
   font-family: 'Montserrat-Italic';
   src: url("../lib/ionic/fonts/Montserrat-Italic.ttf"); }
 
@@ -9899,10 +9899,6 @@ a.button {
 @font-face {
   font-family: 'Montserrat-Bold';
   src: url("../lib/ionic/fonts/Montserrat-Bold.ttf"); }
-
-@font-face {
-  font-family: 'Montserrat-Light';
-  src: url("../fonts/Montserrat-Medium.ttf"); }
 
 @font-face {
   font-family: 'Montserrat-Bold';
@@ -9942,12 +9938,14 @@ body {
   height: 600px !important; }
 
 .sliderlabel {
-  font-size: 24px; }
+  font-size: 24px;
+  font-family: 'Montserrat-Regular'; }
 
 .slidertext {
   padding: 15px; }
   .slidertext label {
-    font-size: 18px; }
+    font-size: 18px;
+    font-family: 'Montserrat-ExtraLight'; }
 
 .skipButton {
   margin: 60px auto;
