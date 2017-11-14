@@ -147,7 +147,7 @@ $dark:                            #444 !default;
     }
     
     .slidertext {
-        padding: 15px;
+        padding: 10px;
        label {
             font-size: 18px;
             font-family: 'Montserrat-ExtraLight';
@@ -155,22 +155,26 @@ $dark:                            #444 !default;
     }
     
     .skipButton {
-        margin: 60px auto;
-        display: block;
-        border-top: 2px solid #424242!important;
+        position: absolute;
+        top: 97%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-top: 2px solid #424242 !important;
         border-bottom: none;
         border-right: none;
         border-left: none;
         background: transparent;
         border-radius: 0px;
-        min-height: 35px!important;
+        min-height: 35px !important;
         font-size: 20px;
         line-height: 2px;
     }
+
+
     
     .sliderbutton {
         .swiper-pagination {
-            bottom: 75px;
+            bottom: 60px;
         }
     }
     
@@ -1671,6 +1675,17 @@ $dark:                            #444 !default;
             color: #6c4b01;
             font-family: "Montserrat-Regular";
             // padding-left: 15px;
+        }
+    }
+
+    .signupPlaceholder {
+        // input {
+        //     padding-left: 15px;
+        //     font-size: 14px;
+        // }
+        input::placeholder {
+            color: #8f8f8f;
+            font-family: "Montserrat-Regular";
         }
     }
     

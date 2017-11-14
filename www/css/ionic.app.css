@@ -9942,14 +9942,16 @@ body {
   font-family: 'Montserrat-Regular'; }
 
 .slidertext {
-  padding: 15px; }
+  padding: 10px; }
   .slidertext label {
     font-size: 18px;
     font-family: 'Montserrat-ExtraLight'; }
 
 .skipButton {
-  margin: 60px auto;
-  display: block;
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-top: 2px solid #424242 !important;
   border-bottom: none;
   border-right: none;
@@ -9961,7 +9963,7 @@ body {
   line-height: 2px; }
 
 .sliderbutton .swiper-pagination {
-  bottom: 75px; }
+  bottom: 60px; }
 
 .swipperbutton .swiper-pagination-bullet {
   background: #444444; }
@@ -11120,6 +11122,10 @@ body {
 
 .placeholderDiscover input::placeholder {
   color: #6c4b01;
+  font-family: "Montserrat-Regular"; }
+
+.signupPlaceholder input::placeholder {
+  color: #8f8f8f;
   font-family: "Montserrat-Regular"; }
 
 .popupHeader {
