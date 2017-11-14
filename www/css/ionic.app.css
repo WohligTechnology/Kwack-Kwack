@@ -10330,7 +10330,8 @@ body {
     letter-spacing: 1px; }
 
 .input-mar {
-  margin: 0px 60px; }
+  margin: 0 auto;
+  text-align: center; }
 
 .mar-r {
   margin-right: 10px; }
@@ -11177,7 +11178,10 @@ body {
     top: 70px; }
   .profile-img {
     width: 75px;
-    height: 75px; } }
+    height: 75px; }
+  .btn-yellow {
+    padding: 0px 40px;
+    font-size: 10px; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 736px) and (orientation: portrait) {
   .discover-icon img {
@@ -11243,4 +11247,7 @@ body {
     min-height: 27px;
     line-height: 10px;
     font-size: 11px;
-    padding: 0px 20px; } }
+    padding: 0px 20px; }
+  .btn-yellow {
+    padding: 7px 65px;
+    font-size: 14px; } }

@@ -90,11 +90,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   .state('profile', {
     url: '/profile',
-  
-        templateUrl: 'templates/profile.html',
-        controller: 'ProfileCtrl'
-      
- })
+
+    templateUrl: 'templates/profile.html',
+    controller: 'ProfileCtrl'
+
+  })
 
   .state('discover', {
     url: '/discover',
