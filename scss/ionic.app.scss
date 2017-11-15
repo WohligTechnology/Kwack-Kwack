@@ -169,6 +169,7 @@ $dark:                            #444 !default;
         min-height: 35px !important;
         font-size: 20px;
         line-height: 2px;
+        z-index: 10;
     }
 
 
@@ -461,6 +462,21 @@ $dark:                            #444 !default;
         margin-right: 26px;
         font-family:'Montserrat-SemiBold' 
     }
+
+    .social-iconl {
+        text-align: right;
+        margin-right: -18px;
+        li {
+            width: 23% !important;
+            display: inline-block;
+        }
+        p {
+            margin-right: 50px;
+            font-family: "Montserrat-Regular";
+            padding-top: 7px;
+            letter-spacing: 1px;
+        }
+    }
     //loginends
     //start of profile
     .profile-pic {
@@ -493,6 +509,7 @@ $dark:                            #444 !default;
         margin-top: 9px;
         .button {
             background: transparent;
+            border: none;
             i {
                 color: #fff;
                 font-size: 20px;
@@ -1100,6 +1117,10 @@ $dark:                            #444 !default;
     .w25 {
         width: 25%;
     }
+
+    .w40{
+        width: 40%;
+    }
     
     .mar-auto {
         margin: 0 auto;
@@ -1489,6 +1510,11 @@ $dark:                            #444 !default;
     }
     
     //locationcssstart
+
+    .locationMargin{
+        margin: 18%  20px 0px;
+    }
+
     .theCombo {
         -webkit-appearance: none;
         -moz-appearance: none;

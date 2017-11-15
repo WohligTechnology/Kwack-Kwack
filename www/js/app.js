@@ -88,16 +88,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     })
 
-  .state('tab.profile', {
+  .state('profile', {
     url: '/profile',
-views:{
-  'tab-profile': {
     templateUrl: 'templates/tab-profile.html',
     controller: 'ProfileCtrl'
-  }
-}
-  
-
   })
 
   .state('discover', {
@@ -155,27 +149,30 @@ views:{
       controller: 'DiscoverCtrl'
 
     })
-    .state('explore', {
+    .state('tab.explore', {
       url: '/explore',
+      views: {
+        'tab-explore': {
       templateUrl: 'templates/explore.html',
       controller: 'ExploreCtrl'
-
+        }
+      }
     })
 
   .state('tab.inviteFriends', {
       url: '/inviteFriends',
-      views: {
-        'tab-inviteFriends': {
       templateUrl: 'templates/inviteFriends.html',
       controller: 'InviteFriendsCtrl'
-        }
-      }
     })
-    .state('startPolling', {
+
+    .state('tab.startPolling', {
       url: '/startPolling',
+      views: {
+        'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',
       controller: 'SrartPollingCtrl'
-
+        }
+      }
     })
     .state('tab.social', {
       url: '/social',
@@ -200,6 +197,6 @@ views:{
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/signup');
+  $urlRouterProvider.otherwise('/home');
 
 });

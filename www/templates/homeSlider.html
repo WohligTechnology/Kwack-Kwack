@@ -3,7 +3,7 @@
 
       <div>
           <ion-slides class="ionslide sliderbutton swipperbutton" options="sliderData.sliderOptions" slider="sliderData.sliderDelegate" >
-              <ion-slide-page  ui-sref="app.requirement({productId:data._id})">
+              <ion-slide-page  >
                   <div class="">
                     <img class="img-responsive" src="img/tag.png" alt="">
                   </div>
@@ -13,11 +13,11 @@
                   <div class="text-center slidertext">
                     <label>Lorem Ipsum is simply dummmy text of the printing and typesetting industry.</label>
                   </div>
-                  <button class=" skipButton">
+                  <!-- <button class=" skipButton">
                       SKIP
-                    </button>
+                    </button> -->
               </ion-slide-page>
-              <ion-slide-page  ui-sref="app.requirement({productId:data._id})">
+              <ion-slide-page  >
                   <div class="">
                     <img class="img-responsive" src="img/message.png" alt="">
                   </div>
@@ -27,11 +27,11 @@
                   <div class="text-center slidertext">
                     <label for="">Lorem Ipsum is simply dummmy text of the printing and typesetting industry.</label>
                   </div>
-                  <button class=" skipButton">
+                  <!-- <button class=" skipButton">
                       SKIP
-                    </button>
+                    </button> -->
               </ion-slide-page>
-              <ion-slide-page  ui-sref="app.requirement({productId:data._id})">
+              <ion-slide-page  >
                   <div class="">
                     <img class="img-responsive" src="img/message-amde.png" alt="">
                   </div>
@@ -41,11 +41,11 @@
                   <div class="text-center slidertext">
                     <label for="">Lorem Ipsum is simply dummmy text of the printing and typesetting industry.</label>
                   </div>
-                  <button class=" skipButton">
+                  <!-- <button class=" skipButton">
                       SKIP
-                    </button>
+                    </button> -->
               </ion-slide-page>
-              <ion-slide-page  ui-sref="app.requirement({productId:data._id})">
+              <ion-slide-page >
                   <div class="">
                     <img class="img-responsive" src="img/rocket.png" alt="">
                   </div>
@@ -55,11 +55,13 @@
                   <div class="text-center slidertext">
                     <label for="">Lorem Ipsum is simply dummmy text of the printing and typesetting industry.</label>
                   </div>
-                  <button class=" skipButton">
-                      SKIP
-                    </button>
+                  
               </ion-slide-page>
+             
             </ion-slides>
+            <button class=" skipButton" ui-sref="signUp">
+              SKIP
+            </button>
       </div>
 
     </ion-content>
