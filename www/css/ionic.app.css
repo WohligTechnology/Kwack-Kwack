@@ -9961,8 +9961,7 @@ body {
   border-radius: 0px;
   min-height: 35px !important;
   font-size: 20px;
-  line-height: 2px;
-  z-index: 10; }
+  line-height: 2px; }
 
 .sliderbutton .swiper-pagination {
   bottom: 60px; }
@@ -10175,18 +10174,6 @@ body {
   margin-right: 26px;
   font-family: 'Montserrat-SemiBold'; }
 
-.social-iconl {
-  text-align: right;
-  margin-right: -18px; }
-  .social-iconl li {
-    width: 23% !important;
-    display: inline-block; }
-  .social-iconl p {
-    margin-right: 50px;
-    font-family: "Montserrat-Regular";
-    padding-top: 7px;
-    letter-spacing: 1px; }
-
 .profile-pic {
   width: 280px;
   height: 280px;
@@ -10212,8 +10199,7 @@ body {
 .arrow-back {
   margin-top: 9px; }
   .arrow-back .button {
-    background: transparent;
-    border: none; }
+    background: transparent; }
     .arrow-back .button i {
       color: #fff;
       font-size: 20px; }
@@ -10682,9 +10668,6 @@ body {
 .w25 {
   width: 25%; }
 
-.w40 {
-  width: 40%; }
-
 .mar-auto {
   margin: 0 auto; }
 
@@ -10988,9 +10971,6 @@ body {
     padding-right: 10px;
     color: #ffb600;
     font-weight: 600; }
-
-.locationMargin {
-  margin: 18%  20px 0px; }
 
 .theCombo {
   -webkit-appearance: none;
@@ -11306,7 +11286,11 @@ body {
   .social-icon {
     margin-bottom: 60px; }
   .social-icon li {
-    width: 19% !important; } }
+    width: 19% !important; }
+  .btn-books {
+    margin-bottom: 65px; }
+  .kwack {
+    margin: 20px 0px 45px 0px; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .news-discover span {
