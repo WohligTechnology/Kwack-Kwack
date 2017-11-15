@@ -121,6 +121,7 @@ $dark:                            #444 !default;
     
     .bar.bar-stable {
         background-color: transparent!important;
+        border: none;
     }
     
     .bartitle {
@@ -441,7 +442,7 @@ $dark:                            #444 !default;
     .footer {
         .bar-footer {
             height: 57px;
-            background-color: black;
+            background-color: transparent;
         }
     }
     
@@ -1106,7 +1107,10 @@ $dark:                            #444 !default;
     .no-header {
         top: 42px;
     }
-    
+    .no-top {
+        top: 0px!important;
+    }  
+
     .display-inline {
         display: inline-block;
     }

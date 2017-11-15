@@ -9923,7 +9923,8 @@ body {
   border-radius: 0px; }
 
 .bar.bar-stable {
-  background-color: transparent !important; }
+  background-color: transparent !important;
+  border: none; }
 
 .bartitle .bar.bar-stable .title {
   color: transparent !important; }
@@ -10161,7 +10162,7 @@ body {
 
 .footer .bar-footer {
   height: 57px;
-  background-color: black; }
+  background-color: transparent; }
 
 .profile-pic {
   width: 280px;
@@ -10673,6 +10674,9 @@ body {
 
 .no-header {
   top: 42px; }
+
+.no-top {
+  top: 0px !important; }
 
 .display-inline {
   display: inline-block; }

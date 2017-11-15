@@ -88,11 +88,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     })
 
-  .state('profile', {
+  .state('tab.profile', {
     url: '/profile',
-
-    templateUrl: 'templates/profile.html',
+views:{
+  'tab-profile': {
+    templateUrl: 'templates/tab-profile.html',
     controller: 'ProfileCtrl'
+  }
+}
+  
 
   })
 
@@ -151,11 +155,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     })
 
-  .state('inviteFriends', {
+  .state('tab.inviteFriends', {
       url: '/inviteFriends',
+      views: {
+        'tab-inviteFriends': {
       templateUrl: 'templates/inviteFriends.html',
       controller: 'InviteFriendsCtrl'
-
+        }
+      }
     })
     .state('startPolling', {
       url: '/startPolling',
