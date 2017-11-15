@@ -10104,7 +10104,7 @@ body {
     width: 100%; }
 
 .content-mar {
-  margin: 0px 45px; }
+  margin: 60px 45px; }
   .content-mar .item {
     border: none; }
 
@@ -10163,6 +10163,16 @@ body {
 .footer .bar-footer {
   height: 57px;
   background-color: transparent; }
+
+.content-margin {
+  margin: 0px 45px; }
+  .content-margin .item {
+    border: none; }
+
+.forgotPassword {
+  text-align: right;
+  margin-right: 26px;
+  font-family: 'Montserrat-SemiBold'; }
 
 .profile-pic {
   width: 280px;
@@ -10628,6 +10638,9 @@ body {
   font-size: 17px;
   display: none; }
 
+.bar-black {
+  background: black !important; }
+
 .pad-10 {
   padding: 10px !important; }
 
@@ -10689,6 +10702,12 @@ body {
 
 .mar-t30 {
   margin-top: 30%; }
+
+.mart40 {
+  margin-top: 40px; }
+
+.mar60 {
+  margin-top: 60px; }
 
 .has-footer {
   bottom: 40px; }

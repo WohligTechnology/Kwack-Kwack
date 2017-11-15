@@ -134,6 +134,13 @@ views:{
 
   })
 
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
+
+  })
+
 
   .state('location', {
     url: '/location',
@@ -193,6 +200,6 @@ views:{
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/signup');
 
 });

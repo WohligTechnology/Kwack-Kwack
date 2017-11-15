@@ -125,6 +125,9 @@ angular.module('starter.controllers', [ 'starter.controllers'])
 .controller('LocationCtrl', function($scope) {
 })
 
+.controller('LoginCtrl', function($scope) {
+})
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

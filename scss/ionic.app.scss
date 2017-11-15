@@ -366,7 +366,7 @@ $dark:                            #444 !default;
     //**********css given by kishori**********
     //signup start
     .content-mar {
-        margin: 0px 45px;
+        margin: 60px 45px;
         .item {
             border: none;
         }
@@ -447,6 +447,21 @@ $dark:                            #444 !default;
     }
     
     //end of .sign-up
+
+    //logincsssatrts
+    .content-margin{
+        margin: 0px 45px;
+        .item {
+            border: none;
+        }
+    }
+
+    .forgotPassword{
+        text-align: right;
+        margin-right: 26px;
+        font-family:'Montserrat-SemiBold' 
+    }
+    //loginends
     //start of profile
     .profile-pic {
         width: 280px;
@@ -1046,6 +1061,10 @@ $dark:                            #444 !default;
         display: none;
     }
     
+.bar-black{
+    background: black!important;
+}
+
     .pad-10 {
         padding: 10px!important;
     }
@@ -1126,6 +1145,14 @@ $dark:                            #444 !default;
     .mar-t30 {
         margin-top: 30%;
     }
+
+    .mart40 {
+        margin-top: 40px;
+    }
+
+    .mar60{
+        margin-top: 60px;
+    }
     
     .has-footer {
         bottom: 40px;
@@ -1157,6 +1184,7 @@ $dark:                            #444 !default;
         padding: 0px!important;
     }
     
+
     .sign-up {
         bottom: -29px;
         right: -37px;
