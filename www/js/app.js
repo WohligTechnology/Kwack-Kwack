@@ -159,7 +159,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.inviteFriends', {
+  .state('inviteFriends', {
       url: '/inviteFriends',
       templateUrl: 'templates/inviteFriends.html',
       controller: 'InviteFriendsCtrl'
