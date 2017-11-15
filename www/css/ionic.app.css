@@ -11201,6 +11201,12 @@ body {
     font-size: 14px; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .social-iconll p {
+    margin-right: 26px;
+    margin-top: 30px;
+    font-size: 12px; }
+  .social-iconll li {
+    width: 18%; }
   .plus-btn {
     right: 8%;
     top: 92%; }
@@ -11427,10 +11433,23 @@ body {
     margin-right: 50px;
     font-size: 14px; }
   .social-icon {
-    margin-bottom: 60px; } }
+    margin-bottom: 60px; }
+  .social-iconll {
+    text-align: right;
+    margin-right: -18px;
+    margin-top: 0px; }
+    .social-iconll li {
+      width: 21%;
+      display: inline-block; }
+    .social-iconll p {
+      margin-right: 50px;
+      margin-top: 30px;
+      font-size: 14px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .social-icon li {
     width: 20% !important; }
   .social-icon {
-    margin-bottom: 60px; } }
+    margin-bottom: 60px; }
+  .social-iconll li {
+    width: 19%; } }

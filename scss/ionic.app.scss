@@ -1782,6 +1782,14 @@ $dark:                            #444 !default;
     //filterpopupend
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+        .social-iconll p {
+            margin-right: 26px;
+            margin-top: 30px;
+            font-size: 12px;
+        }
+        .social-iconll li {
+            width: 18%;
+        }
         .plus-btn {
             right: 8%;
             top: 92%;
@@ -2112,6 +2120,20 @@ $dark:                            #444 !default;
         .social-icon {
             margin-bottom: 60px;
         }
+        .social-iconll {
+            text-align: right;
+            margin-right: -18px;
+            margin-top: 0px;
+            li {
+                width: 21%;
+                display: inline-block;
+            }
+            p {
+                margin-right: 50px;
+                margin-top: 30px;
+                font-size: 14px;
+            }
+        }
     }
     
     @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
@@ -2120,5 +2142,8 @@ $dark:                            #444 !default;
         }
         .social-icon {
             margin-bottom: 60px;
+        }
+        .social-iconll li {
+            width: 19%;
         }
     }
