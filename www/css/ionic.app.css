@@ -10174,6 +10174,19 @@ body {
   margin-right: 26px;
   font-family: 'Montserrat-SemiBold'; }
 
+.social-iconl {
+  text-align: right;
+  margin-right: -18px;
+  margin-top: 0px; }
+  .social-iconl li {
+    width: 23% !important;
+    display: inline-block; }
+  .social-iconl p {
+    margin-right: 50px;
+    font-family: "Montserrat-Regular";
+    padding-top: 7px;
+    letter-spacing: 1px; }
+
 .profile-pic {
   width: 280px;
   height: 280px;
@@ -10199,7 +10212,8 @@ body {
 .arrow-back {
   margin-top: 9px; }
   .arrow-back .button {
-    background: transparent; }
+    background: transparent;
+    border: none; }
     .arrow-back .button i {
       color: #fff;
       font-size: 20px; }
