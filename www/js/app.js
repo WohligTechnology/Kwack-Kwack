@@ -90,7 +90,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   .state('profile', {
     url: '/profile',
-    templateUrl: 'templates/tab-profile.html',
+    templateUrl: 'templates/profile.html',
     controller: 'ProfileCtrl'
   })
 
