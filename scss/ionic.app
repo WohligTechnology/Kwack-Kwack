@@ -1645,15 +1645,19 @@ $dark:                            #444 !default;
     }
     
     //footer starts
-    .borderclass.tab-item {  
-            border-right: 1px solid #f7f7f7!important;          
+    .borderclass {
+         a{
+            border-right: 1px solid #000!important;
+        }    
     }
     
     .tabimage {
         background-image: url("/img/footer/homeOn.png");
         background-repeat: no-repeat;
         background-position: center center;
-        
+          a{
+            border-right: 1px solid #000!important;
+        } 
     }
     
     .discoverImage {
@@ -1692,10 +1696,6 @@ $dark:                            #444 !default;
         a{
             border-right: 1px solid gray;
         }
-    }
-
-    .bg-footer .tabs{
-       background: white!important;
     }
     
     //footerends

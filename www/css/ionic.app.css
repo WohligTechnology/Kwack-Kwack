@@ -11104,8 +11104,8 @@ body {
 .w3 {
   width: 3%; }
 
-.borderclass a {
-  border-right: 1px solid #f7f7f7; }
+.borderclass.tab-item {
+  border-right: 1px solid #f7f7f7 !important; }
 
 .tabimage {
   background-image: url("/img/footer/homeOn.png");
@@ -11140,6 +11140,11 @@ body {
     transform: translate(-50%, -50%);
     left: 50%;
     font-size: 11px; }
+  .tab-header a {
+    border-right: 1px solid gray; }
+
+.bg-footer .tabs {
+  background: white !important; }
 
 .has-footer.has-tabs {
   bottom: 50px; }
