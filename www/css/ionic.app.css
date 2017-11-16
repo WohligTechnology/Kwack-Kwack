@@ -9961,7 +9961,8 @@ body {
   border-radius: 0px;
   min-height: 35px !important;
   font-size: 20px;
-  line-height: 2px; }
+  line-height: 2px;
+  z-index: 10; }
 
 .sliderbutton .swiper-pagination {
   bottom: 60px; }
