@@ -9924,7 +9924,8 @@ body {
 
 .bar.bar-stable {
   background-color: transparent !important;
-  border: none; }
+  border: none;
+  background-image: none !important; }
 
 .bartitle .bar.bar-stable .title {
   color: transparent !important; }
@@ -9950,7 +9951,7 @@ body {
 
 .skipButton {
   position: absolute;
-  top: 97%;
+  top: 94%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-top: 2px solid #424242 !important;
@@ -9965,7 +9966,7 @@ body {
   z-index: 10; }
 
 .sliderbutton .swiper-pagination {
-  bottom: 60px; }
+  bottom: 75px; }
 
 .swipperbutton .swiper-pagination-bullet {
   background: #444444; }
@@ -10232,7 +10233,8 @@ body {
   font-size: 12px;
   letter-spacing: 0.5px;
   margin-right: 23px;
-  color: #000; }
+  color: #000;
+  padding-top: 2px; }
 
 .bg-gray {
   background-color: #f2f2f2; }
@@ -10450,7 +10452,7 @@ body {
   width: 97px;
   top: 50%;
   left: 5%;
-  border-bottom: 1px solid #bebebe; }
+  border-bottom: 1px solid #000000; }
 
 .title-explore:after {
   content: "";
@@ -10458,7 +10460,7 @@ body {
   position: absolute;
   top: 50%;
   right: 5%;
-  border-bottom: 1px solid #bebebe; }
+  border-bottom: 1px solid #000000; }
 
 .news-content {
   margin-bottom: 20px; }
@@ -10505,6 +10507,9 @@ body {
     vertical-align: middle;
     width: 3%; }
 
+.carddatecl {
+  color: #afafaf !important; }
+
 .detail-para {
   margin-bottom: 15px; }
   .detail-para p {
@@ -10536,7 +10541,7 @@ body {
   width: 100%;
   position: absolute;
   top: 90%;
-  box-shadow: 0px 0px 26px rgba(128, 128, 128, 0.47); }
+  box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.47); }
   .followers .dis-table {
     background-color: #fff;
     box-shadow: inset 0px -3px 5px rgba(128, 128, 128, 0.13);
@@ -10606,7 +10611,8 @@ body {
   top: 88px;
   overflow-y: scroll;
   width: 100%;
-  max-height: 255px; }
+  max-height: 255px;
+  margin-bottom: 60px !important; }
   .listperson .item {
     border: none !important; }
   .listperson h2 {
@@ -10652,6 +10658,16 @@ body {
   color: #444;
   font-size: 17px;
   display: none; }
+
+.bg-footer .tabs {
+  background: white !important;
+  top: initial !important; }
+
+.tabs.tabs-top {
+  bottom: 0px !important; }
+
+.tabs-top {
+  bottom: 0px !important; }
 
 .bar-black {
   background: black !important; }
@@ -10926,9 +10942,30 @@ body {
 
 .scrollCategories {
   color: gray;
-  padding: 5px;
-  font-size: 13px;
-  font-family: 'Montserrat-Regular'; }
+  margin: 5px;
+  font-size: 14px;
+  font-family: 'Montserrat-Regular';
+  border-bottom: 1px solid #ebebeb;
+  padding: 0px 8px;
+  margin: -2px; }
+
+.scrollFirst {
+  color: gray;
+  margin: 5px;
+  font-size: 14px;
+  font-family: 'Montserrat-Regular';
+  border-bottom: 1px solid #ebebeb;
+  padding: 0px 5px;
+  margin: 0px -3px 0px 5px; }
+
+.scrollLast {
+  color: gray;
+  margin: 5px;
+  font-size: 14px;
+  font-family: 'Montserrat-Regular';
+  border-bottom: 1px solid #ebebeb;
+  padding: 0px 5px;
+  margin: 0px 5px 0px -3px; }
 
 .swipperdiscover .swiper-pagination-bullet {
   background: #ffb600; }
@@ -10981,8 +11018,9 @@ body {
     letter-spacing: 0.5px;
     font-family: 'Montserrat-Regular'; }
   .follow-btn .icon-left:before {
-    font-size: 12px;
-    line-height: 10px;
+    font-size: 10px;
+    min-height: 0px;
+    line-height: 11px;
     padding-right: 10px;
     color: #ffb600;
     font-weight: 600; }
@@ -11008,7 +11046,7 @@ body {
   text-overflow: ellipsis;
   color: black;
   cursor: pointer;
-  padding: 10px;
+  padding: 9px;
   padding-right: 20px;
   outline: none;
   border: 2px solid black;
@@ -11042,6 +11080,7 @@ body {
   font-family: "Montserrat-Regular" !important; }
 
 .cardBox .card {
+  margin: 50px 30px;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3); }
 
 .toggleContacts {
@@ -11073,10 +11112,14 @@ body {
   padding-top: 11px; }
 
 .news-video span {
-  font-size: 12px;
+  font-size: 10px;
   font-family: 'Montserrat-SemiBold';
   color: #000;
   letter-spacing: 0.5px; }
+
+.active-tab {
+  border-bottom: 1px solid #ffb600;
+  z-index: 10000 !important; }
 
 .added {
   font-family: 'Montserrat-Light' !important;
@@ -11108,29 +11151,37 @@ body {
   border-right: 1px solid #f7f7f7 !important; }
 
 .tabimage {
-  background-image: url("/img/footer/homeOn.png");
-  background-repeat: no-repeat;
-  background-position: center center; }
+  background-image: url("../img/footer/homeOn.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important; }
 
 .discoverImage {
-  background-image: url("/img/footer/discoverOn.png");
-  background-repeat: no-repeat;
-  background-position: center center; }
+  background-image: url("../img/footer/discoverOn.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important; }
 
 .socialImage {
-  background-image: url("/img/footer/socialOn.png");
-  background-repeat: no-repeat;
-  background-position: center center; }
+  background-image: url("../img/footer/socialOn.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important; }
 
 .inviteFImage {
-  background-image: url("/img/footer/inviteOn.png");
-  background-repeat: no-repeat;
-  background-position: center center; }
+  background-image: url("../img/footer/inviteOn.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important; }
+
+.tabs-top.tabs-striped .tab-item.tab-item-active {
+  border-color: transparent !important;
+  color: transparent !important; }
+
+.tabs-top.tabs-striped .tab-item.tab-item-active, .tabs-top.tabs-striped .tab-item.active, .tabs-top.tabs-striped .tab-item.activated {
+  border-bottom: none;
+  border-right: 1px solid #f7f7f7 !important; }
 
 .profileFImage {
-  background-image: url("/img/footer/profileOn.png");
-  background-repeat: no-repeat;
-  background-position: center center; }
+  background-image: url("../img/footer/profileOn.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important; }
 
 .tab-header {
   position: relative; }
@@ -11247,12 +11298,12 @@ body {
     width: 71px !important;
     top: 50%;
     left: 7%;
-    border-bottom: 2px solid rgba(190, 190, 190, 0.56); }
+    border-bottom: 2px solid black; }
   .title-explore:after {
     width: 71px !important;
     top: 50%;
     right: 7%;
-    border-bottom: 2px solid rgba(190, 190, 190, 0.56); }
+    border-bottom: 2px solid black; }
   .discover-icon img {
     width: 10%; }
   .discover-icon span {
@@ -11276,19 +11327,19 @@ body {
     width: 71px !important;
     top: 50%;
     left: 7%;
-    border-bottom: 2px solid rgba(190, 190, 190, 0.56); }
+    border-bottom: 2px solid black; }
   .title-explore:after {
     width: 71px !important;
     top: 50%;
     right: 7%;
-    border-bottom: 2px solid rgba(190, 190, 190, 0.56); }
+    border-bottom: 2px solid black; }
   .just-now-label {
     top: 6%; }
   .toggleyouKnow {
-    width: 155px;
+    width: 165px;
     font-size: 10px; }
   .toggleContacts {
-    width: 155px;
+    width: 165px;
     font-size: 10px; }
   .followers .dis-cell {
     padding: 14px;
@@ -11316,10 +11367,10 @@ body {
     width: 75px;
     height: 75px; }
   .btn-yellow {
-    padding: 0px 40px;
-    font-size: 10px; }
+    padding: 6px 56px;
+    font-size: 11px; }
   .social-icon p {
-    margin-right: 23px;
+    margin-right: 38px;
     font-size: 10px; }
   .social-icon {
     margin-bottom: 60px; }
@@ -11329,6 +11380,44 @@ body {
     margin-bottom: 65px; }
   .kwack {
     margin: 20px 0px 45px 0px; } }
+
+@media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
+  .profile-padd {
+    padding: 17px 20px; }
+  .toggleyouKnow {
+    width: 175px;
+    font-size: 12px; }
+  .toggleContacts {
+    width: 175px;
+    font-size: 12px; }
+  .follow-btn .button {
+    margin-top: 7px;
+    min-height: 27px;
+    line-height: 10px;
+    font-size: 11px;
+    padding: 0px 20px; }
+    .follow-btn .button .icon-left:before {
+      font-size: 11px !important;
+      padding-top: 1px !important; } }
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
+  .profile-padd {
+    padding: 17px 20px; }
+  .toggleyouKnow {
+    width: 175px;
+    font-size: 12px; }
+  .toggleContacts {
+    width: 175px;
+    font-size: 12px; }
+  .follow-btn .button {
+    margin-top: 7px;
+    min-height: 27px;
+    line-height: 10px;
+    font-size: 12px;
+    padding: 0px 20px; }
+    .follow-btn .button .icon-left:before {
+      font-size: 13px !important;
+      padding-top: 0px !important; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .news-discover span {
@@ -11431,12 +11520,12 @@ body {
     font-size: 11px;
     padding: 0px 20px; }
   .btn-yellow {
-    padding: 7px 65px;
+    padding: 7px 76px;
     font-size: 14px; }
   .social-icon li {
     width: 23% !important; }
   .social-icon p {
-    margin-right: 50px;
+    margin-right: 40px;
     font-size: 14px; }
   .social-icon {
     margin-bottom: 60px; }
