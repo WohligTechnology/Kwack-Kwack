@@ -171,6 +171,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'InviteFriendsCtrl'
     })
 
+    .state('accountinside', {
+      url: '/accountinside',
+      templateUrl: 'templates/accountinside.html',
+      controller: 'AccountInsieCtrl'
+    })
+
+    .state('aboutinside', {
+      url: '/aboutinside',
+      templateUrl: 'templates/aboutinside.html',
+      controller: 'AboutInsieCtrl'
+    })
+
+    .state('edit', {
+      url: '/edit',
+      templateUrl: 'templates/edit.html',
+      controller: 'EditCtrl'
+    })
+
     .state('tab.startPolling', {
       url: '/startPolling',
       views: {

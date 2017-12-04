@@ -142,6 +142,9 @@ angular.module('starter.controllers', [ 'starter.controllers'])
 .controller('LocationCtrl', function($scope) {
 })
 
+.controller('InviteCtrl', function($scope) {
+})
+
 .controller('LoginCtrl', function($scope) {
 })
 

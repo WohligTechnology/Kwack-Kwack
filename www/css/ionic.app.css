@@ -9966,7 +9966,7 @@ body {
   z-index: 10; }
 
 .sliderbutton .swiper-pagination {
-  bottom: 75px; }
+  bottom: 70px; }
 
 .swipperbutton .swiper-pagination-bullet {
   background: #444444; }
@@ -9985,6 +9985,9 @@ body {
   .Trailertitle span {
     font-family: "Montserrat-Light";
     font-size: 16px; }
+
+.trailernav {
+  font-size: 30px; }
 
 .pollingtitle {
   padding-top: 12px; }
@@ -10010,10 +10013,12 @@ body {
   font-size: 10px; }
 
 .readarticle {
-  padding: 5px;
   font-family: "Montserrat-Italic";
   color: #afafaf;
   font-size: 10px; }
+
+.pad0 {
+  padding: 0px; }
 
 .chooseside {
   height: 200px; }
@@ -10708,7 +10713,7 @@ body {
   letter-spacing: 2px; }
 
 .has-header {
-  top: 60px; }
+  top: 52px; }
 
 .w40 {
   width: 40%; }
@@ -10973,11 +10978,6 @@ body {
 .back-img {
   position: relative; }
 
-.back-img-title {
-  position: absolute;
-  top: 0;
-  left: 0; }
-
 .profile-img {
   width: 85px;
   height: 85px;
@@ -11174,7 +11174,9 @@ body {
   border-color: transparent !important;
   color: transparent !important; }
 
-.tabs-top.tabs-striped .tab-item.tab-item-active, .tabs-top.tabs-striped .tab-item.active, .tabs-top.tabs-striped .tab-item.activated {
+.tabs-top.tabs-striped .tab-item.tab-item-active,
+.tabs-top.tabs-striped .tab-item.active,
+.tabs-top.tabs-striped .tab-item.activated {
   border-bottom: none;
   border-right: 1px solid #f7f7f7 !important; }
 
@@ -11257,7 +11259,184 @@ body {
     margin-top: 30px;
     font-size: 14px; }
 
+.invtNav {
+  height: 50px; }
+
+.mar-auto0 {
+  margin: auto 0; }
+
+.settings i {
+  font-size: 30px;
+  vertical-align: middle; }
+
+.settings label {
+  font-size: 15px;
+  vertical-align: middle;
+  font-family: 'Montserrat-Medium'; }
+
+.frnds {
+  font-size: 1.4em;
+  font-family: 'Montserrat-Bold';
+  letter-spacing: 8px; }
+
+.profile-invtimg {
+  width: 85px;
+  height: 85px;
+  overflow: hidden; }
+
+.listHead {
+  max-height: 255px;
+  overflow-y: scroll;
+  padding-top: 0px !important;
+  top: 86px !important;
+  padding-bottom: 20px; }
+  .listHead h2 {
+    white-space: normal;
+    font-size: 0.9em !important;
+    font-family: "Montserrat-Medium" !important;
+    margin: 0px !important; }
+  .listHead p {
+    font-family: 'Montserrat-Regular';
+    font-size: 0.7em;
+    color: #b6b6b6; }
+
+.imagePos .item {
+  border-color: #b8b8b8 !important; }
+
+.imagePos .item-thumbnail-left {
+  padding-top: 9px;
+  padding-left: 121px;
+  min-height: 98px; }
+
+.imagePos .item-thumbnail-left > img:first-child {
+  max-width: 104px !important;
+  height: auto !important;
+  width: auto !important; }
+
+.cncelNav {
+  font-size: 10px;
+  font-family: 'Montserrat-Medium'; }
+
+.navHead {
+  font-family: 'Montserrat-Bold';
+  letter-spacing: 4px; }
+
+.profileImg {
+  width: 20%;
+  margin: 0 auto; }
+  .profileImg img {
+    width: 100%;
+    border-radius: 50%; }
+
+.chngImg {
+  text-align: center;
+  font-size: 0.7em;
+  font-family: 'Montserrat-Medium'; }
+
+.editCard .card {
+  margin: 40px 50px !important;
+  z-index: 100;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2) !important; }
+
+.editName {
+  padding: 20px 15px 0px 15px; }
+  .editName label {
+    color: #9f9f9f;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    font-family: 'Montserrat-Medium'; }
+  .editName input {
+    width: 100%;
+    line-height: 74px;
+    height: 60px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.9em; }
+  .editName input::placeholder {
+    color: #000;
+    font-family: "Montserrat-Regular"; }
+
+.editBio {
+  padding: 15px; }
+  .editBio label {
+    color: #9f9f9f;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    font-family: 'Montserrat-Medium'; }
+  .editBio p {
+    padding-top: 10px !important;
+    font-size: 0.9em;
+    font-family: 'Montserrat-Regular'; }
+
+.accInMargin50 {
+  margin: 50px; }
+  .accInMargin50 h2 {
+    font-size: 1.2em;
+    font-family: 'Montserrat-Medium';
+    color: #9f9f9f;
+    padding-left: 20px;
+    letter-spacing: 2px; }
+  .accInMargin50 .card {
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2) !important;
+    padding: 0px !important;
+    margin: 0px !important; }
+  .accInMargin50 i {
+    font-size: 20px; }
+
+.userName {
+  margin: auto 15px !important;
+  padding: 25px 0px !important;
+  border-bottom: 1px solid #e5e5e5;
+  height: 80px;
+  width: auto; }
+  .userName div {
+    font-family: 'Monserrat-Regular';
+    font-size: 0.9em; }
+  .userName label {
+    font-family: 'Monserrat-Regular';
+    font-size: 1.1em; }
+
+.email {
+  padding: 30px 15px !important; }
+
+.arricon {
+  font-size: 20px;
+  padding-left: 15px;
+  color: black; }
+
+.emailText {
+  font-family: 'Monserrat-Regular';
+  font-size: 0.9em; }
+
+.emailId {
+  font-family: 'Montserrat-Regular';
+  font-size: 1 em;
+  color: #9a9a9a; }
+
+.delAcc {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  background: #d6d6d6;
+  width: 100%;
+  padding: 5px;
+  border-radius: 0px;
+  font-family: 'Montserrat-Medium';
+  font-size: 1.2em; }
+
+.aboutLblIos {
+  text-align: left;
+  width: 100%;
+  display: block;
+  font-family: 'Montserrat-Regular';
+  font-size: 0.9em;
+  padding: 20px 0px; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .back-img-title {
+    bottom: 0px !important; }
+  .listHead {
+    padding-top: 0px !important;
+    top: 71px !important; }
   .social-iconll p {
     margin-right: 26px;
     margin-top: 30px;
@@ -11382,6 +11561,10 @@ body {
     margin: 20px 0px 45px 0px; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
+  .back-img-title {
+    position: absolute;
+    bottom: 0;
+    left: 0; }
   .profile-padd {
     padding: 17px 20px; }
   .toggleyouKnow {
@@ -11401,6 +11584,13 @@ body {
       padding-top: 1px !important; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
+  .back-img-title {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .listHead {
+    padding-top: 0px !important;
+    top: 69px !important; }
   .profile-padd {
     padding: 17px 20px; }
   .toggleyouKnow {
@@ -11420,6 +11610,13 @@ body {
       padding-top: 0px !important; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+  .back-img-title {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .listHead {
+    padding-top: 0px !important;
+    top: 86px !important; }
   .news-discover span {
     font-size: 10px; }
   .explore-icon img {
@@ -11542,6 +11739,10 @@ body {
       font-size: 14px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+  .back-img-title {
+    position: absolute;
+    top: 0;
+    left: 0; }
   .social-icon li {
     width: 20% !important; }
   .social-icon {

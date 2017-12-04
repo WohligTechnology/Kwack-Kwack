@@ -9966,7 +9966,7 @@ body {
   z-index: 10; }
 
 .sliderbutton .swiper-pagination {
-  bottom: 75px; }
+  bottom: 70px; }
 
 .swipperbutton .swiper-pagination-bullet {
   background: #444444; }
@@ -11257,6 +11257,25 @@ body {
     margin-top: 30px;
     font-size: 14px; }
 
+.invtNav {
+  height: 50px; }
+
+.mar-auto0 {
+  margin: auto 0; }
+
+.settings i {
+  font-size: 30px;
+  vertical-align: middle; }
+
+.settings label {
+  font-size: 15px;
+  vertical-align: middle;
+  font-family: 'Montserrat-Medium'; }
+
+.frnds {
+  font-size: 16px;
+  font-family: 'Montserrat-Bold'; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .social-iconll p {
     margin-right: 26px;
@@ -11381,6 +11400,44 @@ body {
   .kwack {
     margin: 20px 0px 45px 0px; } }
 
+@media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
+  .profile-padd {
+    padding: 17px 20px; }
+  .toggleyouKnow {
+    width: 175px;
+    font-size: 12px; }
+  .toggleContacts {
+    width: 175px;
+    font-size: 12px; }
+  .follow-btn .button {
+    margin-top: 7px;
+    min-height: 27px;
+    line-height: 10px;
+    font-size: 11px;
+    padding: 0px 20px; }
+    .follow-btn .button .icon-left:before {
+      font-size: 11px !important;
+      padding-top: 1px !important; } }
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
+  .profile-padd {
+    padding: 17px 20px; }
+  .toggleyouKnow {
+    width: 175px;
+    font-size: 12px; }
+  .toggleContacts {
+    width: 175px;
+    font-size: 12px; }
+  .follow-btn .button {
+    margin-top: 7px;
+    min-height: 27px;
+    line-height: 10px;
+    font-size: 12px;
+    padding: 0px 20px; }
+    .follow-btn .button .icon-left:before {
+      font-size: 13px !important;
+      padding-top: 0px !important; } }
+
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .news-discover span {
     font-size: 10px; }
@@ -11502,44 +11559,6 @@ body {
       margin-right: 50px;
       margin-top: 30px;
       font-size: 14px; } }
-
-@media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
-  .profile-padd {
-    padding: 17px 20px; }
-  .toggleyouKnow {
-    width: 175px;
-    font-size: 12px; }
-  .toggleContacts {
-    width: 175px;
-    font-size: 12px; }
-  .follow-btn .button {
-    margin-top: 7px;
-    min-height: 27px;
-    line-height: 10px;
-    font-size: 11px;
-    padding: 0px 20px; }
-    .follow-btn .button .icon-left:before {
-      font-size: 11px !important;
-      padding-top: 1px !important; } }
-
-@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
-  .profile-padd {
-    padding: 17px 20px; }
-  .toggleyouKnow {
-    width: 175px;
-    font-size: 12px; }
-  .toggleContacts {
-    width: 175px;
-    font-size: 12px; }
-  .follow-btn .button {
-    margin-top: 7px;
-    min-height: 27px;
-    line-height: 10px;
-    font-size: 12px;
-    padding: 0px 20px; }
-    .follow-btn .button .icon-left:before {
-      font-size: 13px !important;
-      padding-top: 0px !important; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .social-icon li {

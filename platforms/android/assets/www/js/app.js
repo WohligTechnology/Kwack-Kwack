@@ -71,11 +71,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   .state('home', {
       url: '/home',
-
       templateUrl: 'templates/homeSlider.html',
       controller: 'HomeCtrl'
 
     })
+
+    .state('invite', {
+      url: '/invite',
+      templateUrl: 'templates/invite.html',
+      controller: 'InviteCtrl'
+    })
+
     .state('tab.trailer', {
       url: '/trailer',
       views: {
