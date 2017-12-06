@@ -1902,6 +1902,7 @@ $dark:                            #444 !default;
             max-width: 104px!important;
             height: auto!important;
             width: auto!important;
+            border-color: #b8b8b8 !important;
         }
     } //invitecssend
 
@@ -2058,7 +2059,33 @@ $dark:                            #444 !default;
     .kwack-card{
         .item h2{
             white-space: normal;
+            font-family: 'Montserrat-Medium';
+            font-size: 14px;
+            
         }
+        .item{
+            // border-style: none;
+            p{
+                font-size: 9px;
+            }
+            .explore-icon{
+                img{
+                    width: 11%;
+                }
+                span{
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+    .kwack-head{
+        font-family: 'Montserrat-Bold';
+    }
+    .kwackcard-padd{
+        padding: 0px 10px;
+    }
+    .border-bottom{
+        border-bottom: 1px solid black !important;
     }
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {

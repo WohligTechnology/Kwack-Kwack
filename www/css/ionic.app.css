@@ -11337,7 +11337,8 @@ body {
 .imagePos .item-thumbnail-left > img:first-child {
   max-width: 104px !important;
   height: auto !important;
-  width: auto !important; }
+  width: auto !important;
+  border-color: #b8b8b8 !important; }
 
 .cncelNav {
   font-size: 10px;
@@ -11458,7 +11459,27 @@ body {
   padding: 20px 0px; }
 
 .kwack-card .item h2 {
-  white-space: normal; }
+  white-space: normal;
+  font-family: 'Montserrat-Medium';
+  font-size: 14px; }
+
+.kwack-card .item p {
+  font-size: 9px; }
+
+.kwack-card .item .explore-icon img {
+  width: 11%; }
+
+.kwack-card .item .explore-icon span {
+  font-size: 11px; }
+
+.kwack-head {
+  font-family: 'Montserrat-Bold'; }
+
+.kwackcard-padd {
+  padding: 0px 10px; }
+
+.border-bottom {
+  border-bottom: 1px solid black !important; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
