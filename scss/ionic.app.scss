@@ -349,9 +349,43 @@ $dark:                            #444 !default;
         }
     }
 
+    .followNews{
+        width: 33%;
+        float: right;
+        margin: 0 auto;
+        img{
+            width: 100%;
+        }
+    }
+
+    .shieldNews{
+        width: 33%;
+        margin: 0 auto;
+        display: inline-block;
+        img{
+            width: 100%;
+        }
+        span{
+            vertical-align: top;
+        }
+    }
+
+    .shareNews{
+        width: 33%;
+        margin: 0 auto;
+        display: inline-block;
+        img{
+            width: 100%;
+        }
+        span{
+            vertical-align: top;
+        }
+    }
+
     .yellowStrip {
         width: 100%;
         line-height: 10px;
+        display: inline-block;
         img {
             width: 100%;
         }
