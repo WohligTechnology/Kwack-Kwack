@@ -177,6 +177,8 @@ angular.module('starter.controllers', [ 'starter.controllers'])
 .controller('AboutInsieCtrl', function($scope) {
 })
 
+.controller('KwackScreenCtrl', function($scope) {
+})
 .controller('EditCtrl', function($scope) {
 })
 .controller('AccountCtrl', function($scope) {

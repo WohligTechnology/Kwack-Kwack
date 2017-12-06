@@ -170,7 +170,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       templateUrl: 'templates/inviteFriends.html',
       controller: 'InviteFriendsCtrl'
     })
-
+    .state('kwackScreen', {
+      url: '/kwackScreen',
+      templateUrl: 'templates/kwack-screen.html',
+      controller: 'KwackScreenCtrl'
+    })
     .state('accountinside', {
       url: '/accountinside',
       templateUrl: 'templates/accountinside.html',

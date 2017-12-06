@@ -2053,7 +2053,13 @@ $dark:                            #444 !default;
         padding: 20px 0px;
     }
     //aboutInsidecssend
+    //kwack-screen start
 
+    .kwack-card{
+        .item h2{
+            white-space: normal;
+        }
+    }
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .back-img-title {

@@ -11457,6 +11457,9 @@ body {
   font-size: 0.9em;
   padding: 20px 0px; }
 
+.kwack-card .item h2 {
+  white-space: normal; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
     bottom: 0px !important; }
