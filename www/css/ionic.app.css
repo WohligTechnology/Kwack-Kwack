@@ -10283,7 +10283,10 @@ body {
   border-radius: 0px; }
 
 .mar-l15 {
-  margin-left: 15px; }
+  margin-left: 22px; }
+
+.mar-l10 {
+  margin-left: 10px; }
 
 .select-month {
   padding: 8px 32px;
@@ -11463,23 +11466,97 @@ body {
   font-family: 'Montserrat-Medium';
   font-size: 14px; }
 
-.kwack-card .item p {
-  font-size: 9px; }
+.kwack-card .item {
+  margin: 0px 17px;
+  border-bottom: 1px solid black;
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+  .kwack-card .item p {
+    font-size: 9px; }
+  .kwack-card .item .explore-icon img {
+    width: 11%; }
+  .kwack-card .item .explore-icon span {
+    font-size: 11px; }
 
-.kwack-card .item .explore-icon img {
-  width: 11%; }
+.kwack-card .imagePos .item-thumbnail-left > img:first-child {
+  max-width: 110px !important; }
 
-.kwack-card .item .explore-icon span {
-  font-size: 11px; }
+.kwack-card .item-thumbnail-left > img:first-child {
+  left: 0px; }
+
+.kwack-card .imagePos .item-thumbnail-left {
+  padding-left: 117px; }
 
 .kwack-head {
   font-family: 'Montserrat-Bold'; }
 
-.kwackcard-padd {
-  padding: 0px 10px; }
-
 .border-bottom {
   border-bottom: 1px solid black !important; }
+
+.settings .profileImg {
+  width: 40%;
+  float: right; }
+
+.settings .chngImg {
+  text-align: left;
+  margin-top: 27px;
+  margin-left: 15px; }
+
+.settings .editCard .card {
+  margin: 10px 50px !important; }
+
+.notification .toggle input:checked + .track {
+  border-color: #000;
+  background-color: #000; }
+
+.account {
+  color: #b8b8b8;
+  margin-left: 70px;
+  margin-top: 20px; }
+
+.settings-btns .btn-sports {
+  padding: 0px 18px; }
+
+.settings-btns .btn-science {
+  padding: 0px 14px; }
+
+.settings-btns .btn-food {
+  padding: 0px 20px; }
+
+.settings-btns .btn-science {
+  padding: 0px 10px; }
+
+.settings-btns .btn-entertainment {
+  padding: 0px 29px; }
+
+.settings-btns .btn-fashion {
+  padding: 0px 13px; }
+
+.settings-btns .btn-international {
+  padding: 0px 38px; }
+
+.settings-btns .btn-health {
+  padding: 0px 17px; }
+
+.settings-btns .btn-comedy {
+  padding: 0px 8px; }
+
+.settings-btns .btn-books {
+  padding: 0px 16px; }
+
+.settings i {
+  font-size: 20px; }
+
+.notification .toggle .track {
+  width: 52px;
+  height: 28px; }
+
+.notification .toggle .handle {
+  width: 17px;
+  height: 17px;
+  top: 10px;
+  left: 13px; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
@@ -11608,7 +11685,15 @@ body {
   .btn-books {
     margin-bottom: 65px; }
   .kwack {
-    margin: 20px 0px 45px 0px; } }
+    margin: 20px 0px 45px 0px; }
+  .kwack-card .item h2 {
+    font-size: 11px; }
+  .kwack-card .item p {
+    font-size: 8px; }
+  .kwack-card .item .explore-icon img {
+    width: 8%; }
+  .kwack-card .item .explore-icon span {
+    font-size: 10px; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
   .back-img-title {
@@ -11786,7 +11871,15 @@ body {
     .social-iconll p {
       margin-right: 50px;
       margin-top: 30px;
-      font-size: 14px; } }
+      font-size: 14px; }
+  .kwack-card .item h2 {
+    font-size: 14px; }
+  .kwack-card .item p {
+    font-size: 9px; }
+  .kwack-card .item .explore-icon img {
+    width: 11%; }
+  .kwack-card .item .explore-icon span {
+    font-size: 11px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .back-img-title {

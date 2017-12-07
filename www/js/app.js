@@ -94,6 +94,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     })
 
+    .state('tab.kwackScreen', {
+      url: '/kwackScreen',
+      views: {
+        'tab-trailer': {
+
+          templateUrl: 'templates/kwack-screen.html',
+          controller: 'KwackScreenCtrl'
+        }
+      }
+
+
+    })
+
   .state('profile', {
     url: '/profile',
     templateUrl: 'templates/profile.html',
@@ -170,11 +183,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       templateUrl: 'templates/inviteFriends.html',
       controller: 'InviteFriendsCtrl'
     })
-    .state('kwackScreen', {
-      url: '/kwackScreen',
-      templateUrl: 'templates/kwack-screen.html',
-      controller: 'KwackScreenCtrl'
-    })
+   
     .state('accountinside', {
       url: '/accountinside',
       templateUrl: 'templates/accountinside.html',
@@ -192,7 +201,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       templateUrl: 'templates/edit.html',
       controller: 'EditCtrl'
     })
-
+    .state('settings', {
+      url: '/settings',
+      templateUrl: 'templates/settings.html',
+      controller: 'SettingsCtrl'
+    })
     .state('tab.startPolling', {
       url: '/startPolling',
       views: {

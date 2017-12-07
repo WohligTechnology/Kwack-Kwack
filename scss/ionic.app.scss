@@ -203,7 +203,7 @@ $dark:                            #444 !default;
         }
     }
 
-    .trailernav{
+    .trailernav {
         font-size: 30px;
     }
 
@@ -244,7 +244,7 @@ $dark:                            #444 !default;
         font-size: 10px;
     }
 
-    .pad0{
+    .pad0 {
         padding: 0px;
     }
 
@@ -349,35 +349,35 @@ $dark:                            #444 !default;
         }
     }
 
-    .followNews{
+    .followNews {
         width: 33%;
         float: right;
         margin: 0 auto;
-        img{
+        img {
             width: 100%;
         }
     }
 
-    .shieldNews{
+    .shieldNews {
         width: 33%;
         margin: 0 auto;
         display: inline-block;
-        img{
+        img {
             width: 100%;
         }
-        span{
+        span {
             vertical-align: top;
         }
     }
 
-    .shareNews{
+    .shareNews {
         width: 33%;
         margin: 0 auto;
         display: inline-block;
-        img{
+        img {
             width: 100%;
         }
-        span{
+        span {
             vertical-align: top;
         }
     }
@@ -577,7 +577,11 @@ $dark:                            #444 !default;
     }
 
     .mar-l15 {
-        margin-left: 15px;
+        margin-left: 22px;
+    }
+
+    .mar-l10 {
+        margin-left: 10px;
     }
 
     .select-month {
@@ -1905,49 +1909,49 @@ $dark:                            #444 !default;
             border-color: #b8b8b8 !important;
         }
     } //invitecssend
-
     //editcssstart
-    .cncelNav{
+    .cncelNav {
         font-size: 10px;
         font-family: 'Montserrat-Medium';
     }
 
-    .navHead{
+    .navHead {
         font-family: 'Montserrat-Bold';
         letter-spacing: 4px;
     }
 
-    .profileImg{
+    .profileImg {
         width: 20%;
         margin: 0 auto;
-        img{
+        img {
             width: 100%;
             border-radius: 50%;
         }
     }
 
-    .chngImg{
+    .chngImg {
         text-align: center;
         font-size: 0.7em;
         font-family: 'Montserrat-Medium'
     }
 
-    .editCard{
-        .card{
+    .editCard {
+        .card {
             margin: 40px 50px!important;
             z-index: 100;
             box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2)!important;
         }
     }
-    .editName{
+
+    .editName {
         padding: 20px 15px 0px 15px;
-        label{
+        label {
             color: #9f9f9f;
             font-size: 0.9em;
             letter-spacing: 2px;
             font-family: 'Montserrat-Medium'
         }
-        input{
+        input {
             width: 100%;
             line-height: 74px;
             height: 60px;
@@ -1960,78 +1964,78 @@ $dark:                            #444 !default;
         }
     }
 
-    .editBio{
+    .editBio {
         padding: 15px;
-        label{
+        label {
             color: #9f9f9f;
             font-size: 0.9em;
             letter-spacing: 2px;
             font-family: 'Montserrat-Medium'
         }
-        p{
+        p {
             padding-top: 10px!important;
             font-size: 0.9em;
             font-family: 'Montserrat-Regular'
         }
-    }
-    //editcssends
-
+    } //editcssends
     //accountInsidecssStart
-    .accInMargin50{
+    .accInMargin50 {
         margin: 50px;
-        h2{
+        h2 {
             font-size: 1.2em;
             font-family: 'Montserrat-Medium';
-            color:#9f9f9f;
+            color: #9f9f9f;
             padding-left: 20px;
             letter-spacing: 2px;
         }
-        .card{
+        .card {
             box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2)!important;
             padding: 0px!important;
             margin: 0px!important;
         }
-      
-        i{
+        i {
             font-size: 20px;
         }
     }
-    .userName{
+
+    .userName {
         margin: auto 15px!important;
         padding: 25px 0px !important;
         border-bottom: 1px solid #e5e5e5;
         height: 80px;
         width: auto;
-        div{
+        div {
             font-family: 'Monserrat-Regular';
             font-size: 0.9em;
         }
-        label{
+        label {
             font-family: 'Monserrat-Regular';
             font-size: 1.1em;
         }
     }
 
-    .email{
+    .email {
         padding: 30px 15px!important;
-        
     }
-    .arricon{
+
+    .arricon {
         font-size: 20px;
         padding-left: 15px;
         color: black;
     }
-    .emailText{
+
+    .emailText {
         font-family: 'Monserrat-Regular';
         font-size: 0.9em;
     }
-    .emailId{
+
+    .emailId {
         font-family: 'Montserrat-Regular';
         font-size: 1 em;
         color: #9a9a9a
     }
 
-    .delAcc{
+    .delAcc {
         text-align: center;
         margin: 0 auto;
         margin-top: 15px;
@@ -2041,52 +2045,138 @@ $dark:                            #444 !default;
         border-radius: 0px;
         font-family: 'Montserrat-Medium';
         font-size: 1.2em;
-    }
-    //accountInsideEnd
-
+    } //accountInsideEnd
     //aboutInsidecssstart
-    .aboutLblIos{
+    .aboutLblIos {
         text-align: left;
         width: 100%;
         display: block;
         font-family: 'Montserrat-Regular';
         font-size: 0.9em;
         padding: 20px 0px;
-    }
-    //aboutInsidecssend
+    } //aboutInsidecssend
     //kwack-screen start
-
-    .kwack-card{
-        .item h2{
+    .kwack-card {
+        .item h2 {
             white-space: normal;
             font-family: 'Montserrat-Medium';
             font-size: 14px;
-            
         }
-        .item{
-            // border-style: none;
-            p{
+        .item {
+            margin: 0px 17px;
+            border-bottom: 1px solid black;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            p {
                 font-size: 9px;
             }
-            .explore-icon{
-                img{
+            .explore-icon {
+                img {
                     width: 11%;
                 }
-                span{
+                span {
                     font-size: 11px;
                 }
             }
         }
     }
-    .kwack-head{
+
+    .kwack-card {
+        .imagePos .item-thumbnail-left>img:first-child {
+            max-width: 110px !important;
+        }
+        .item-thumbnail-left>img:first-child,
+        {
+            left: 0px;
+        }
+        .imagePos .item-thumbnail-left {
+            padding-left: 117px;
+        }
+    }
+
+    .kwack-head {
         font-family: 'Montserrat-Bold';
     }
-    .kwackcard-padd{
-        padding: 0px 10px;
-    }
-    .border-bottom{
+
+    .border-bottom {
         border-bottom: 1px solid black !important;
+    } //end of kwack-screen
+    //start of settings
+    .settings {
+        .profileImg {
+            width: 40%;
+            float: right;
+        }
+        .chngImg {
+            text-align: left;
+            margin-top: 27px;
+            margin-left: 15px;
+        }
+        .editCard .card {
+            margin: 10px 50px !important;
+        }
+    } 
+    .notification{
+        .toggle input:checked + .track {
+            border-color: #000;
+            background-color: #000;
+        }
     }
+    .account{
+        color:#b8b8b8;
+        margin-left: 70px;
+        margin-top: 20px;
+    }
+    .settings-btns{
+         .btn-sports {
+            padding: 0px 18px;
+        }
+        .btn-science {
+            padding: 0px 14px;
+        }
+        .btn-food {
+            padding: 0px 20px;
+        }
+        .btn-science {
+            padding: 0px 10px;
+        }
+        .btn-entertainment {
+            padding: 0px 29px;
+        }
+        .btn-fashion {
+            padding: 0px 13px;
+        }
+        .btn-international {
+            padding: 0px 38px;
+        }
+        .btn-health {
+            padding: 0px 17px;
+        }
+        .btn-comedy {
+            padding: 0px 8px;
+        }
+        .btn-books {
+            padding: 0px 16px;
+        }
+    }
+    .settings i {
+        font-size: 20px;
+    }
+    .notification {
+        .toggle .track {
+            width: 52px;
+            height: 28px;
+        }
+        .toggle .handle{
+            width: 17px;
+            height: 17px;
+            top: 10px;
+            left: 13px;
+        }
+
+    }
+    
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .back-img-title {
@@ -2277,6 +2367,24 @@ $dark:                            #444 !default;
         }
         .kwack {
             margin: 20px 0px 45px 0px;
+        }
+        .kwack-card {
+            .item h2 {
+                font-size: 11px;
+            }
+            .item {
+                p {
+                    font-size: 8px;
+                }
+                .explore-icon {
+                    img {
+                        width: 8%;
+                    }
+                    span {
+                        font-size: 10px;
+                    }
+                }
+            }
         }
     }
 
@@ -2533,6 +2641,24 @@ $dark:                            #444 !default;
                 margin-right: 50px;
                 margin-top: 30px;
                 font-size: 14px;
+            }
+        }
+        .kwack-card {
+            .item h2 {
+                font-size: 14px;
+            }
+            .item {
+                p {
+                    font-size: 9px;
+                }
+                .explore-icon {
+                    img {
+                        width: 11%;
+                    }
+                    span {
+                        font-size: 11px;
+                    }
+                }
             }
         }
     }
