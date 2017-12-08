@@ -11468,6 +11468,7 @@ body {
 
 .kwack-card .item {
   margin: 0px 17px;
+  background-color: transparent;
   border-bottom: 1px solid black;
   border-top: none;
   border-right: none;
@@ -11494,17 +11495,31 @@ body {
 .border-bottom {
   border-bottom: 1px solid black !important; }
 
-.settings .profileImg {
+.setting .profileImg {
   width: 40%;
   float: right; }
 
-.settings .chngImg {
+.setting .chngImg {
   text-align: left;
   margin-top: 27px;
   margin-left: 15px; }
 
-.settings .editCard .card {
+.setting .editCard .card {
   margin: 10px 50px !important; }
+
+.setting .userName label {
+  font-size: 12px;
+  font-family: 'Montserrat-Regular'; }
+
+.setting .item-input-inset {
+  padding: 0px; }
+  .setting .item-input-inset i {
+    font-size: 14px;
+    color: #000; }
+
+.setting .item-input-inset .item-input-wrapper input {
+  height: 22px;
+  width: 76px; }
 
 .notification .toggle input:checked + .track {
   border-color: #000;
@@ -11543,20 +11558,52 @@ body {
   padding: 0px 8px; }
 
 .settings-btns .btn-books {
-  padding: 0px 16px; }
+  padding: 0px 16px;
+  margin-bottom: 0px; }
 
 .settings i {
   font-size: 20px; }
 
+.view-all {
+  padding: 20px; }
+  .view-all label {
+    font-size: 10px;
+    font-family: 'Montserrat-Regular'; }
+
+.font-7 {
+  font-size: 9px;
+  padding: 0px 8px; }
+
+.font-10 {
+  font-size: 12px;
+  padding: 0px 8px;
+  box-shadow: 3px 3px 6px 1px #b2b0b09c; }
+
+.font-14 {
+  font-size: 16px;
+  padding: 0px 8px; }
+
+.font-17 {
+  font-size: 19px;
+  padding: 0px 8px; }
+
+.userNamee {
+  margin: auto 15px !important;
+  padding: 25px 0px !important;
+  height: 70px;
+  width: auto; }
+  .userNamee label {
+    font-size: 12px; }
+
 .notification .toggle .track {
-  width: 52px;
-  height: 28px; }
+  width: 42px;
+  height: 23px; }
 
 .notification .toggle .handle {
-  width: 17px;
-  height: 17px;
+  width: 12px;
+  height: 12px;
   top: 10px;
-  left: 13px; }
+  left: 10px; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
