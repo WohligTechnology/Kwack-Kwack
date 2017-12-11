@@ -16,6 +16,16 @@ $dark:                            #444 !default;
 */
 
     $yellow: #ffc943 !default;
+    $yellow1: #f9b90e !default;
+    $yellow2: #fcc230 !default;
+    $yellow3: #ffb600 !default;
+    $darkGray: #424242 !default;
+    $darGray1: #444444 !default;
+    $darkGray2: #414141 !default;
+    $lightGray: #afafaf !default;
+    $lightGray1: #d4d4d4 !default;
+    $lightGray2: #ececec !default;
+    $lightGray3: #f2f2f2 !default;
     $black:#000 !default;
     $light:#fff !default; // The path for our ionicons font files, relative to the built CSS in www/css
     $ionicons-font-path: "../lib/ionic/fonts" !default; // Include all of Ionic
@@ -154,7 +164,7 @@ $dark:                            #444 !default;
         top: 94%;
         left: 50%;
         transform: translate(-50%, -50%);
-        border-top: 2px solid #424242 !important;
+        border-top: 2px solid $darkGray !important;
         border-bottom: none;
         border-right: none;
         border-left: none;
@@ -174,7 +184,7 @@ $dark:                            #444 !default;
 
     .swipperbutton {
         .swiper-pagination-bullet {
-            background: #444444;
+            background: $darGray1;
         }
     } //end of home slider css
     //trailerstart
@@ -190,7 +200,7 @@ $dark:                            #444 !default;
     .closenavbar {
         font-size: 35px;
         padding: 5px 5px 0px 0px;
-        color: #f9b90e;
+        color: $yellow1;
     } // .bar{
     //     height: 0px!important;
     //     padding: 0px!important
@@ -233,14 +243,14 @@ $dark:                            #444 !default;
 
     .articleDate {
         font-family: "Montserrat-Regular";
-        color: #afafaf;
+        color: $lightGray;
         font-size: 10px;
     }
 
     .readarticle {
         // padding: 5px;
         font-family: "Montserrat-Italic";
-        color: #afafaf;
+        color: $lightGray;
         font-size: 10px;
     }
 
@@ -255,7 +265,7 @@ $dark:                            #444 !default;
     .bg-yellow {
         margin-top: 20px;
         padding: 15px 0px;
-        background-color: #fcc230;
+        background-color: $yellow2;
         box-shadow: inset 0px -5px 20px rgba(0, 0, 0, 0.26);
         text-align: center;
         h3 {
@@ -286,7 +296,7 @@ $dark:                            #444 !default;
     }
 
     .yoursideright {
-        border-right: 1px solid #d4d4d4;
+        border-right: 1px solid $lightGray1;
         height: 35px;
         position: absolute;
         right: 0px;
@@ -423,7 +433,7 @@ $dark:                            #444 !default;
     }
 
     .back-white {
-        background-color: #fff;
+        background-color: $light;
         box-shadow: 0px 3px 9px rgba(136, 136, 136, 0.34);
         padding: 0px 20px 0px 10px;
         margin-top: 7px;
@@ -454,7 +464,7 @@ $dark:                            #444 !default;
     .title {
         h5 {
             // font-family: "Montserrat-Bold";
-            color: #fff;
+            color: $light;
             font-family: "Montserrat-Bold";
             padding: 10px;
             letter-spacing: 1px;
@@ -532,14 +542,14 @@ $dark:                            #444 !default;
             background: transparent;
             border: none;
             i {
-                color: #fff;
+                color: $light;
                 font-size: 20px;
             }
         }
     }
 
     .skip {
-        color: #fff;
+        color: $light;
         font-size: 11px;
         font-weight: 900;
         letter-spacing: 1px;
@@ -557,7 +567,7 @@ $dark:                            #444 !default;
     }
 
     .bg-gray {
-        background-color: #f2f2f2;
+        background-color: $lightGray3;
     }
 
     .filter {
@@ -608,7 +618,7 @@ $dark:                            #444 !default;
         }
         h6 {
             font-size: 13px;
-            color: #444444;
+            color: $darGray1;
             font-family: 'Montserrat-Regular';
             padding: 20px 0px 0px 20px;
         }
@@ -754,7 +764,7 @@ $dark:                            #444 !default;
     }
 
     .btn-bg {
-        background-color: #ffc943;
+        background-color: $yellow;
         box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
         margin: 7px 5px;
         font-size: 13px;
@@ -764,7 +774,7 @@ $dark:                            #444 !default;
     .btn-bg-black {
         background: linear-gradient(to right bottom,  $black 30%,  $black 57%, #2b2727 100%)!important;
         border: none;
-        color: #fff;
+        color: $light;
         font-size: 13px;
         font-family: 'Montserrat-Regular';
         margin: 7px 5px;
@@ -907,7 +917,7 @@ $dark:                            #444 !default;
     }
 
     .carddatecl {
-        color: #afafaf!important;
+        color: $lightGray!important;
     }
 
     .detail-para {
@@ -951,7 +961,7 @@ $dark:                            #444 !default;
         top: 90%;
         box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.47);
         .dis-table {
-            background-color: #fff;
+            background-color: $light;
             box-shadow: inset 0px -3px 5px rgba(128, 128, 128, 0.13);
             border-radius: 5px 5px 0px 0px;
             margin: 0 auto;
@@ -1221,7 +1231,7 @@ $dark:                            #444 !default;
     }
 
     .border-r {
-        border-right: 1px solid #d4d4d4;
+        border-right: 1px solid $lightGray1;
     }
 
     .pad-left10 {
@@ -1323,7 +1333,7 @@ $dark:                            #444 !default;
         padding: 2px;
         span {
             padding-right: 8px;
-            border-right: 1px solid #414141;
+            border-right: 1px solid $darkGray2;
         }
     }
 
@@ -1331,7 +1341,7 @@ $dark:                            #444 !default;
         padding: 2px;
         span {
             padding-right: 8px;
-            border-right: 1px solid #ececec;
+            border-right: 1px solid $lightGray2;
         }
     }
 
@@ -1503,7 +1513,7 @@ $dark:                            #444 !default;
     }
 
     .user-name {
-        color: #fff;
+        color: $light;
         letter-spacing: 1px;
         font-size: 17px;
         font-family: 'Montserrat-SemiBold';
@@ -1517,7 +1527,7 @@ $dark:                            #444 !default;
     }
 
     .designation {
-        color: #fff;
+        color: $light;
         letter-spacing: 0.5px;
         line-height: 4px;
         font-size: 12px;
@@ -1534,8 +1544,8 @@ $dark:                            #444 !default;
             padding: 0px 20px;
             border-radius: 50px;
             background: transparent;
-            color: #fff;
-            border-color: #fff;
+            color: $light;
+            border-color: $light;
             letter-spacing: 0.5px;
             font-family: 'Montserrat-Regular';
         }
@@ -1587,7 +1597,7 @@ $dark:                            #444 !default;
         padding-left: 1px!important;
         margin-bottom: 0px!important;
         border: none;
-        border-bottom: 2px solid #f2f2f2; // background-image: url("/img/plus.png");
+        border-bottom: 2px solid $lightGray3; // background-image: url("/img/plus.png");
         background-repeat: no-repeat;
         background-position: right center;
     }
@@ -2597,7 +2607,7 @@ $dark:                            #444 !default;
             padding: 2px;
             span {
                 padding-right: 8px;
-                border-right: 1px solid #ececec;
+                border-right: 1px solid $lightGray2;
             }
         }
         .discover-icon {
