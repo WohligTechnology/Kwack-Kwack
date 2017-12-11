@@ -206,6 +206,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       templateUrl: 'templates/settings.html',
       controller: 'SettingsCtrl'
     })
+    .state('polling-inside', {
+      url: '/pollinginside',
+      templateUrl: 'templates/polling-inside.html',
+      controller: 'PollingInsideCtrl'
+    })
+    .state('debate', {
+      url: '/debate',
+      templateUrl: 'templates/debate.html',
+      controller: 'DebateCtrl'
+    })
     .state('tab.startPolling', {
       url: '/startPolling',
       views: {

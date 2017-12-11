@@ -11356,7 +11356,8 @@ body {
   margin: 0 auto; }
   .profileImg img {
     width: 100%;
-    border-radius: 50%; }
+    border-radius: 50%;
+    box-shadow: 1px 10px 35px 0px #8f8f8f; }
 
 .chngImg {
   text-align: center;
@@ -11505,7 +11506,7 @@ body {
   margin-left: 15px; }
 
 .setting .editCard .card {
-  margin: 10px 50px !important; }
+  margin: 10px 40px !important; }
 
 .setting .userName label {
   font-size: 12px;
@@ -11740,7 +11741,40 @@ body {
   .kwack-card .item .explore-icon img {
     width: 8%; }
   .kwack-card .item .explore-icon span {
-    font-size: 10px; } }
+    font-size: 10px; }
+  .navHead {
+    letter-spacing: 2px; }
+  .setting .userName label {
+    font-size: 10px; }
+  .userNamee label {
+    font-size: 10px; }
+  .setting .item-input-inset .item-input-wrapper input {
+    height: 19px;
+    width: 46px; }
+  .settings-btns .btn-sports {
+    padding: 0px 14px; }
+  .settings-btns .btn-science {
+    padding: 0px 7px; }
+  .settings-btns .btn-food {
+    padding: 0px 15px; }
+  .settings-btns .btn-entertainment {
+    padding: 0px 22px; }
+  .settings-btns .btn-international {
+    padding: 0px 30px; }
+  .settings-btns .btn-fashion {
+    padding: 0px 9px; }
+  .settings-btns .btn-health {
+    padding: 0px 13px; }
+  .settings-btns .btn-comedy {
+    padding: 0px 5px; }
+  .settings-btns .btn-books {
+    padding: 0px 12px; }
+  .btn-bg-black {
+    font-size: 11px; }
+  .btn-bg {
+    font-size: 11px; }
+  .placeholder-icon:last-child {
+    padding-left: 15px; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
   .back-img-title {
@@ -11926,7 +11960,41 @@ body {
   .kwack-card .item .explore-icon img {
     width: 11%; }
   .kwack-card .item .explore-icon span {
-    font-size: 11px; } }
+    font-size: 11px; }
+  .navHead {
+    letter-spacing: 4px; }
+  .setting .userName label {
+    font-size: 12px; }
+  .userNamee label {
+    font-size: 12px; }
+  .setting .item-input-inset .item-input-wrapper input {
+    height: 22px;
+    width: 76px; }
+  .settings-btns .btn-sports {
+    padding: 0px 18px; }
+  .settings-btns .btn-science {
+    padding: 0px 14px; }
+  .settings-btns .btn-food {
+    padding: 0px 20px; }
+  .settings-btns .btn-science {
+    padding: 0px 10px; }
+  .settings-btns .btn-entertainment {
+    padding: 0px 29px; }
+  .settings-btns .btn-fashion {
+    padding: 0px 13px; }
+  .settings-btns .btn-international {
+    padding: 0px 38px; }
+  .settings-btns .btn-health {
+    padding: 0px 17px; }
+  .settings-btns .btn-comedy {
+    padding: 0px 8px; }
+  .settings-btns .btn-books {
+    padding: 0px 16px;
+    margin-bottom: 0px; }
+  .btn-bg-black {
+    font-size: 13px; }
+  .btn-bg {
+    font-size: 13px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .back-img-title {
@@ -11938,4 +12006,6 @@ body {
   .social-icon {
     margin-bottom: 60px; }
   .social-iconll li {
-    width: 19%; } }
+    width: 19%; }
+  .placeholder-icon:last-child {
+    padding-left: 30px; } }

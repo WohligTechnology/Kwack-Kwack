@@ -101,7 +101,8 @@ angular.module('starter.controllers', [ 'starter.controllers'])
 
 .controller('SocialCtrl', function($scope) {
 })
-
+.controller('DebateCtrl', function($scope) {
+})
 
 .controller('OtpCtrl', function($scope) {
 })
@@ -178,6 +179,8 @@ angular.module('starter.controllers', [ 'starter.controllers'])
 })
 
 .controller('KwackScreenCtrl', function($scope) {
+})
+.controller('PollingInsideCtrl', function($scope) {
 })
 .controller('SettingsCtrl', function($scope) {
 })
