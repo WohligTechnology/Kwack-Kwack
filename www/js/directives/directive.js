@@ -3,7 +3,7 @@
 
 
 
- .directive('card', function ($http, $filter) {
+ connector.directive('card', function ($http, $filter) {
     return {
         templateUrl: 'templates/directive/news.html',
         scope: {

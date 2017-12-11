@@ -1,4 +1,5 @@
-angular.module('starter.controllers', [ 'starter.controllers'])
+
+var connector=angular.module('starter.controllers', [ 'starter.controllers'])
 
 .controller('DashCtrl', function($scope) {})
 
