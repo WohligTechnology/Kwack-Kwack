@@ -452,7 +452,7 @@ $dark:                            #444 !default;
     .btn-yellow {
         color:  $black;
         background-color: rgb(255, 182, 0);
-        background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%)!important;
+        background: linear-gradient(to right top, $yellow3 30%, $yellow3 30%, #fbcf60 99%)!important;
         letter-spacing: 4px;
         font-size: 14px;
         font-family: "Montserrat-Regular";
@@ -528,7 +528,7 @@ $dark:                            #444 !default;
             min-width: 45px !important;
             min-height: 45px !important;
             border-radius: 93%;
-            background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%)!important;
+            background: linear-gradient(to right top, $yellow3 30%, $yellow3 30%, #fbcf60 99%)!important;
             color: black;
             i {
                 font-size: 13px;
@@ -739,7 +739,7 @@ $dark:                            #444 !default;
     } //end of otp
     //start of discover
     .bg-color-yellow {
-        background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%)!important;
+        background: linear-gradient(to right bottom, $yellow3 30%, $yellow3 56%, #f7c84e 99%)!important;
     }
 
     .title-discover {
@@ -881,7 +881,7 @@ $dark:                            #444 !default;
     .just-now-label {
         top: 7%;
         right: 15px;
-        background: #ffb600;
+        background: $yellow3;
         font-size: 10px;
         font-family: 'Montserrat-Regular';
         padding: 3px 11px;
@@ -1035,7 +1035,7 @@ $dark:                            #444 !default;
     }
 
     .select {
-        background: #ffb600;
+        background: $yellow3;
         z-index: 100;
     }
 
@@ -1492,7 +1492,7 @@ $dark:                            #444 !default;
 
     .swipperdiscover {
         .swiper-pagination-bullet {
-            background: #ffb600;
+            background: $yellow3;
         }
     } //endofdiscover
     //discovernewsend
@@ -1554,7 +1554,7 @@ $dark:                            #444 !default;
             min-height: 0px;
             line-height: 11px;
             padding-right: 10px;
-            color: #ffb600;
+            color: $yellow3;
             font-weight: 600;
         }
     } //locationcssstart
@@ -1638,7 +1638,7 @@ $dark:                            #444 !default;
     }
 
     .select {
-        background: #ffb600;
+        background: $yellow3;
         z-index: 100;
     } //start of social
     .toi {
@@ -1664,7 +1664,7 @@ $dark:                            #444 !default;
     }
 
     .active-tab {
-        border-bottom: 1px solid #ffb600;
+        border-bottom: 1px solid $yellow3;
         z-index: 10000!important;
     }
 
@@ -2407,7 +2407,7 @@ $dark:                            #444 !default;
         //     line-height: 11px;
         //     min-height: 0px;
         //     padding-right: 10px;
-        //     color: #ffb600;
+        //     color: $yellow3;
         //     font-weight: 600;
         // }
         .r-border:after {
