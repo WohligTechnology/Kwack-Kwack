@@ -10486,7 +10486,7 @@ body {
   width: 97px;
   top: 50%;
   left: 5%;
-  border-bottom: 1px solid #000000; }
+  border-bottom: 1px solid #000; }
 
 .title-explore:after {
   content: "";

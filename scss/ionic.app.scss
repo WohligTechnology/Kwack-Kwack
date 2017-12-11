@@ -440,7 +440,7 @@ $dark:                            #444 !default;
     }
 
     .btn-yellow {
-        color: #000;
+        color:  $black;
         background-color: rgb(255, 182, 0);
         background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%)!important;
         letter-spacing: 4px;
@@ -552,7 +552,7 @@ $dark:                            #444 !default;
         font-size: 12px;
         letter-spacing: 0.5px;
         margin-right: 23px;
-        color: #000;
+        color:  $black;
         padding-top: 2px;
     }
 
@@ -762,7 +762,7 @@ $dark:                            #444 !default;
     }
 
     .btn-bg-black {
-        background: linear-gradient(to right bottom, #000 30%, #000 57%, #2b2727 100%)!important;
+        background: linear-gradient(to right bottom,  $black 30%,  $black 57%, #2b2727 100%)!important;
         border: none;
         color: #fff;
         font-size: 13px;
@@ -838,7 +838,7 @@ $dark:                            #444 !default;
         width: 97px;
         top: 50%;
         left: 5%;
-        border-bottom: 1px solid #000000;
+        border-bottom: 1px solid  $black;
     }
 
     .title-explore:after {
