@@ -221,7 +221,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       views: {
         'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',
-      controller: 'SrartPollingCtrl'
+      controller: 'StartPollingCtrl'
         }
       }
     })
