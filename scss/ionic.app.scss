@@ -2248,7 +2248,27 @@ $dark:                            #444 !default;
             top: 10px;
             left: 10px;
         }
+
+        
     } 
+    //start of debate
+
+    .profile-w{
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    .debateprofile{
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        left: 0;
+       
+        border: 1px solid transparent;
+        overflow: hidden;
+        border-radius: 50%;
+        background: black;
+    }
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .back-img-title {
