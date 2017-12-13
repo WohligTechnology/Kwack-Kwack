@@ -11621,6 +11621,14 @@ body {
   border-radius: 50%;
   background: black; }
 
+.alignbM {
+  font-size: 8px;
+  padding-top: 6px; }
+
+.debate-icon img {
+  width: 16%;
+  padding: 0px 4px; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
     bottom: 0px !important; }

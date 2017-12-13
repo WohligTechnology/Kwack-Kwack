@@ -2269,6 +2269,18 @@ $dark:                            #444 !default;
         border-radius: 50%;
         background: black;
     }
+    .alignbM{
+        font-size: 8px;
+        padding-top: 6px;
+        // vertical-align: -webkit-baseline-middle;
+    }
+    .debate-icon{
+        img{
+            width: 16%;
+            padding: 0px 4px;
+        }
+       
+    }
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .back-img-title {
