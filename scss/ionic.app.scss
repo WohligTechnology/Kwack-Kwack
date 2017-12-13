@@ -2250,6 +2250,20 @@ $dark:                            #444 !default;
         }
        
     }
+
+    //polling css start
+    .pollingCounts{
+        font-size: 8px;
+        padding-top: 6px;
+        color: $lightGray;
+        // vertical-align: -webkit-baseline-middle;
+    }
+
+    .pollingBorder{
+        border-bottom: 1px solid #e3e3e3;
+        padding-bottom: 25px!important;
+    }
+    //polling css end
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .back-img-title {

@@ -11604,6 +11604,15 @@ body {
   width: 16%;
   padding: 0px 4px; }
 
+.pollingCounts {
+  font-size: 8px;
+  padding-top: 6px;
+  color: #afafaf; }
+
+.pollingBorder {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 25px !important; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
     bottom: 0px !important; }

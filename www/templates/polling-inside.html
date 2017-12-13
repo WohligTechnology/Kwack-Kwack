@@ -35,25 +35,25 @@
               Oct 9, 2017
             </span>
           </div>
-          <div class="row pad0">
+          <div class="row pad0 pollingBorder">
             <div class="col col-25 pad0">
               <span class="readarticle">
                 Read Article ...
               </span>
             </div>
-            <div class="col col-75 pad-0">
-              <div class="display-inline float-right followNews text-center">
+            <div class="col col-75 pad0">
+              <div class="display-inline float-right debate-icon text-center">
                 <label class="discoverCardStrip">
-                <img src="img/trailer/follow.png" alt="">
-                <span class="alignM"></span>
+                <img src="img/debate/proicon.png" alt="">
+                <span class="pollingCounts"></span>
                 </label>
                 <label class="discoverCardStrip">
-                <img src="img/trailer/shield.png">
-                <span class="alignM"> 20</span>
+                <img src="img/debate/poll.png">
+                <span class="pollingCounts"> 20</span>
                 </label>
                 <label>
                 <img src="img/debate/share.png">
-                <span class="colorw alignM">20</span>
+                <span class=" pollingCounts">20</span>
                 </label>
                 </div>
             </div>
@@ -64,7 +64,32 @@
        
         <div class="row">
          
-         
+         <div class="col-50">
+          <div class="card text-center">
+            <label for="">64</label>
+            <span>%</span>
+          </div>
+         </div>
+         <div class="col-50">
+           <div class="card  text-center"><round-progress
+            [current]="current"
+            [max]="max"
+            [color]="'#45ccce'"
+            [background]="'#eaeaea'"
+            [radius]="125"
+            [stroke]="20"
+            [semicircle]="true"
+            [rounded]="true"
+            [clockwise]="false"
+            [responsive]="false"
+            [duration]="800"
+            [animation]="'easeInOutQuart'"
+            [animationDelay]="0"
+            (onRender)="doSomethingWithCurrentValue($event)"></round-progress>
+            <label for="">36</label>
+            <span>%</span>
+           </div>
+         </div>
           
     
         </div>
