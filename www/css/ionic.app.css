@@ -10104,31 +10104,6 @@ body {
   .footerKwackImg img {
     width: 100% !important; }
 
-.followNews {
-  width: 33%;
-  float: right;
-  margin: 0 auto; }
-  .followNews img {
-    width: 100%; }
-
-.shieldNews {
-  width: 33%;
-  margin: 0 auto;
-  display: inline-block; }
-  .shieldNews img {
-    width: 100%; }
-  .shieldNews span {
-    vertical-align: top; }
-
-.shareNews {
-  width: 33%;
-  margin: 0 auto;
-  display: inline-block; }
-  .shareNews img {
-    width: 100%; }
-  .shareNews span {
-    vertical-align: top; }
-
 .yellowStrip {
   width: 100%;
   line-height: 10px;
@@ -11631,6 +11606,7 @@ body {
   width: 16%;
   padding: 0px 4px; }
 
+<<<<<<< HEAD
 .title-comments {
   font-size: 12px;
   letter-spacing: 2px;
@@ -11698,6 +11674,16 @@ body {
     font-family: 'Montserrat-Medium';
     color: #000;
     padding-right: 2px; }
+=======
+.pollingCounts {
+  font-size: 8px;
+  padding-top: 6px;
+  color: #afafaf; }
+
+.pollingBorder {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 25px !important; }
+>>>>>>> 40d1b3b61326a482774df217fa0ccba9bdc0a51b
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
