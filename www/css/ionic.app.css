@@ -10104,31 +10104,6 @@ body {
   .footerKwackImg img {
     width: 100% !important; }
 
-.followNews {
-  width: 33%;
-  float: right;
-  margin: 0 auto; }
-  .followNews img {
-    width: 100%; }
-
-.shieldNews {
-  width: 33%;
-  margin: 0 auto;
-  display: inline-block; }
-  .shieldNews img {
-    width: 100%; }
-  .shieldNews span {
-    vertical-align: top; }
-
-.shareNews {
-  width: 33%;
-  margin: 0 auto;
-  display: inline-block; }
-  .shareNews img {
-    width: 100%; }
-  .shareNews span {
-    vertical-align: top; }
-
 .yellowStrip {
   width: 100%;
   line-height: 10px;

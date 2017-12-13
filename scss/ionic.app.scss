@@ -359,38 +359,7 @@ $dark:                            #444 !default;
         }
     }
 
-    .followNews {
-        width: 33%;
-        float: right;
-        margin: 0 auto;
-        img {
-            width: 100%;
-        }
-    }
-    .shieldNews {
-        width: 33%;
-        margin: 0 auto;
-        display: inline-block;
-        img {
-            width: 100%;
-        }
-        span {
-            vertical-align: top;
-        }
-    }
-
-    .shareNews {
-        width: 33%;
-        margin: 0 auto;
-        display: inline-block;
-        img {
-            width: 100%;
-        }
-        span {
-            vertical-align: top;
-        }
-    }
-
+   
     .yellowStrip {
         width: 100%;
         line-height: 10px;
@@ -2269,6 +2238,10 @@ $dark:                            #444 !default;
         border-radius: 50%;
         background: black;
     }
+
+    //pollinginside css starts here
+
+    //poolinginside css ends here
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .back-img-title {
@@ -2880,3 +2853,4 @@ $dark:                            #444 !default;
             padding-left: 30px;
         }
     }
+
