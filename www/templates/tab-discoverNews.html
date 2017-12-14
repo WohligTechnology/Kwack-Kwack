@@ -78,89 +78,9 @@
               <a class="scrollLast" ng-class="{'active-tab':activeTab==6}" ng-click="changeTab(6)">Technology</a>
             </ion-scroll>
       </div>
-      
-
-      <div class="news-discover">
-        <div class="list card">
-          <div class="item item-body pad2010">
-            <img class="full-image" src="img/discover/newsimg.PNG">
-            <h3 class="pad0">India will play five-match ODI series against Australia at home.</h3>
-            <div>
-            </div>
-            <div class="detail-para">
-              <p class="pad0">
-                Australia thumped India Board President’s XI side by 103 runs on Tuesday in Chennai to start their campaign on a positive
-                note. But Marcus Stoinis has certainly expressed his views about the Indian team and suggested that Australia
-              </p>
-            </div>
-            <span><img src="img/explore/4.png" alt=""></span> <span>8 hours ago</span>
-            <span><img class="viewImg" src="img/discover/views.PNG" alt=""></span> <span>1.2k</span>
-            <div class="display-inline float-right explore-icon text-center ">
-              <label class="discoverCardStrip"> <img class="" src="img/explore/5.png"><span class=" alignM"> 20</span></label>
-              <label class="discoverCardStrip"><img class="img-responsive" src="img/explore/6.png">
-                <span class=" alignM">42</span></label>
-              <label><img src="img/explore/7.png">
-                <span class="colorw alignM">20</span></label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="news-discover">
-        <div class="list card">
-          <div>
-            <div class="item item-body pad2010">
-              <img class="full-image" src="img/discover/newsimg.PNG">
-              <h3 class="pad0">India will play five-match ODI series against Australia at home.</h3>
-              <div>
-              </div>
-              <div class="detail-para">
-                <p class="pad0">
-                  Australia thumped India Board President’s XI side by 103 runs on Tuesday in Chennai to start their campaign on a positive
-                  note. But Marcus Stoinis has certainly expressed his views about the Indian team and suggested that Australia
-                </p>
-              </div>
-              <span><img src="img/explore/4.png" alt=""></span> <span>8 hours ago</span>
-              <span><img class="viewImg" src="img/discover/views.PNG" alt=""></span> <span>1.2k</span>
-              <div class="display-inline float-right explore-icon text-center ">
-                <label class="discoverCardStrip"> <img class="" src="img/explore/5.png"><span class=" alignM"> 20</span></label>
-                <label class="discoverCardStrip"><img class="img-responsive" src="img/explore/6.png">
-                 <span class=" alignM">  42</span></label>
-                <label> <img src="img/explore/7.png">
-                  <span class="colorw alignM">20</span></label>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div ng-repeat="discover in discoverNews">
+        <discover></discover>
       </div>
       </div>
   </ion-content>
-  <!-- <div class="bar bar-footer customFooter footer-height">
-    <div class="row pad0">
-      <div class="pad0 border-r col col-20 ">
-        <div class="footerImg ">
-          <img class="img-responsive" src="img/Footerhome.PNG" alt="">
-        </div>
-      </div>
-      <div class="pad0 border-r col col-20 ">
-        <div class="footerImg ">
-          <img class="img-responsive" src="img/compass.PNG" alt="">
-        </div>
-      </div>
-      <div class="pad0 border-r col col-20 ">
-        <div class="footerKwackImg ">
-          <img class="img-responsive" src="img/kwackFooter.PNG" alt="">
-        </div>
-      </div>
-      <div class="pad0 border-r col col-20 ">
-        <div class="footerImg">
-          <img class="img-responsive" src="img/shareit.png" alt="">
-        </div>
-      </div>
-      <div class="pad0 border-r col col-20 ">
-        <div class="footerImg">
-          <img class="img-responsive" src="img/profileFooter.PNG" alt="">
-        </div>
-      </div>
-    </div>
-  </div> -->
-</ion-view>
+  </ion-view>

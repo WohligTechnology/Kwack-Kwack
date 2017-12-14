@@ -10068,14 +10068,14 @@ body {
   display: block;
   margin: 0 auto;
   margin-top: 20px;
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
   border-radius: 0px;
   padding: 0px 15px;
   height: 40px;
   width: 150px;
   border: none;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   font-family: 'Montserrat-Bold';
   font-size: 12px;
   letter-spacing: 1px; }
@@ -10103,31 +10103,6 @@ body {
   margin: 0 auto; }
   .footerKwackImg img {
     width: 100% !important; }
-
-.followNews {
-  width: 33%;
-  float: right;
-  margin: 0 auto; }
-  .followNews img {
-    width: 100%; }
-
-.shieldNews {
-  width: 33%;
-  margin: 0 auto;
-  display: inline-block; }
-  .shieldNews img {
-    width: 100%; }
-  .shieldNews span {
-    vertical-align: top; }
-
-.shareNews {
-  width: 33%;
-  margin: 0 auto;
-  display: inline-block; }
-  .shareNews img {
-    width: 100%; }
-  .shareNews span {
-    vertical-align: top; }
 
 .yellowStrip {
   width: 100%;
@@ -10225,7 +10200,7 @@ body {
   height: 280px;
   margin-top: 30px;
   padding: 40px 55px;
-  background-color: white;
+  background-color: #fff;
   box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
   border-radius: 100%; }
 
@@ -10494,7 +10469,7 @@ body {
   position: absolute;
   top: 50%;
   right: 5%;
-  border-bottom: 1px solid #000000; }
+  border-bottom: 1px solid #000; }
 
 .news-content {
   margin-bottom: 20px; }
@@ -10975,7 +10950,7 @@ body {
   border-width: 1px; }
 
 .scrollCategories {
-  color: gray;
+  color: #afafaf;
   margin: 5px;
   font-size: 14px;
   font-family: 'Montserrat-Regular';
@@ -10984,7 +10959,7 @@ body {
   margin: -2px; }
 
 .scrollFirst {
-  color: gray;
+  color: #afafaf;
   margin: 5px;
   font-size: 14px;
   font-family: 'Montserrat-Regular';
@@ -10993,7 +10968,7 @@ body {
   margin: 0px -3px 0px 5px; }
 
 .scrollLast {
-  color: gray;
+  color: #afafaf;
   margin: 5px;
   font-size: 14px;
   font-family: 'Montserrat-Regular';
@@ -11019,7 +10994,7 @@ body {
   font-size: 17px;
   font-family: 'Montserrat-SemiBold';
   text-shadow: 1px solid red;
-  text-shadow: 0px 0px 2px gray; }
+  text-shadow: 0px 0px 2px #afafaf; }
 
 .profile-padd {
   vertical-align: middle;
@@ -11223,10 +11198,10 @@ body {
     left: 50%;
     font-size: 11px; }
   .tab-header a {
-    border-right: 1px solid gray; }
+    border-right: 1px solid #afafaf; }
 
 .bg-footer .tabs {
-  background: white !important; }
+  background: #fff !important; }
 
 .has-footer.has-tabs {
   bottom: 50px; }
@@ -11248,7 +11223,7 @@ body {
   font-family: "Montserrat-Regular"; }
 
 .signupPlaceholder input::placeholder {
-  color: #8f8f8f;
+  color: #afafaf;
   font-family: "Montserrat-Regular"; }
 
 .popupHeader {
@@ -11264,7 +11239,7 @@ body {
   background: transparent; }
 
 .divColor {
-  background: white; }
+  background: #fff; }
 
 .content-bg {
   background: rgba(0, 0, 0, 0.68); }
@@ -11274,7 +11249,7 @@ body {
   padding: 20px; }
   .closePopup i {
     font-size: 35px;
-    color: white; }
+    color: #fff; }
 
 .social-iconll {
   text-align: right;
@@ -11327,10 +11302,10 @@ body {
   .listHead p {
     font-family: 'Montserrat-Regular';
     font-size: 0.7em;
-    color: #b6b6b6; }
+    color: #d4d4d4; }
 
 .imagePos .item {
-  border-color: #b8b8b8 !important; }
+  border-color: #d4d4d4 !important; }
 
 .imagePos .item-thumbnail-left {
   padding-top: 9px;
@@ -11341,7 +11316,7 @@ body {
   max-width: 104px !important;
   height: auto !important;
   width: auto !important;
-  border-color: #b8b8b8 !important; }
+  border-color: #d4d4d4 !important; }
 
 .cncelNav {
   font-size: 10px;
@@ -11357,7 +11332,7 @@ body {
   .profileImg img {
     width: 100%;
     border-radius: 50%;
-    box-shadow: 1px 10px 35px 0px #8f8f8f; }
+    box-shadow: 1px 10px 35px 0px #afafaf; }
 
 .chngImg {
   text-align: center;
@@ -11372,7 +11347,7 @@ body {
 .editName {
   padding: 20px 15px 0px 15px; }
   .editName label {
-    color: #9f9f9f;
+    color: #afafaf;
     font-size: 0.9em;
     letter-spacing: 2px;
     font-family: 'Montserrat-Medium'; }
@@ -11380,7 +11355,7 @@ body {
     width: 100%;
     line-height: 74px;
     height: 60px;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #ececec;
     font-size: 0.9em; }
   .editName input::placeholder {
     color: #000;
@@ -11432,7 +11407,7 @@ body {
 .arricon {
   font-size: 20px;
   padding-left: 15px;
-  color: black; }
+  color: #000; }
 
 .emailText {
   font-family: 'Monserrat-Regular';
@@ -11441,13 +11416,13 @@ body {
 .emailId {
   font-family: 'Montserrat-Regular';
   font-size: 1 em;
-  color: #9a9a9a; }
+  color: #afafaf; }
 
 .delAcc {
   text-align: center;
   margin: 0 auto;
   margin-top: 15px;
-  background: #d6d6d6;
+  background: #d4d4d4;
   width: 100%;
   padding: 5px;
   border-radius: 0px;
@@ -11470,7 +11445,7 @@ body {
 .kwack-card .item {
   margin: 0px 17px;
   background-color: transparent;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000;
   border-top: none;
   border-right: none;
   border-left: none; }
@@ -11494,7 +11469,7 @@ body {
   font-family: 'Montserrat-Bold'; }
 
 .border-bottom {
-  border-bottom: 1px solid black !important; }
+  border-bottom: 1px solid #000 !important; }
 
 .setting .profileImg {
   width: 40%;
@@ -11606,6 +11581,110 @@ body {
   top: 10px;
   left: 10px; }
 
+.profile-w {
+  max-width: 100%;
+  height: auto;
+  display: block; }
+
+.debateprofile {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left: 15px;
+  z-index: 3;
+  top: -8px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 1px 10px 35px 0px #d4d4d4; }
+
+.alignbM {
+  font-size: 8px;
+  padding-top: 6px;
+  color: #afafaf; }
+
+.debate-icon img {
+  width: 16%;
+  padding: 0px 4px; }
+
+<<<<<<< HEAD
+.title-comments {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-family: 'Montserrat-Medium'; }
+
+.title-comments:before {
+  content: "";
+  position: absolute;
+  border-bottom: 2px solid #ececec;
+  top: 157px;
+  width: 104px;
+  left: 17px; }
+
+.title-comments:after {
+  content: "";
+  position: absolute;
+  border-bottom: 2px solid #ececec;
+  top: 157px;
+  width: 104px;
+  right: 17px; }
+
+.debatetrailerName {
+  padding: 20px 7px 5px 16px;
+  text-align: left; }
+
+.debate-card .card {
+  margin: 20px 33px; }
+
+.debate-card .item-body {
+  padding: 8px; }
+
+.debate-card p {
+  font-size: 12px;
+  font-family: 'Montserrat-Light';
+  text-align: justify;
+  line-height: 14px;
+  margin-top: 0px;
+  padding: 5px 0px 10px 4px;
+  border-bottom: 2px solid #ececec; }
+
+.debate-user img {
+  width: 15%; }
+
+.debate-user label {
+  font-size: 14px;
+  padding: 0px 4px;
+  font-family: 'Montserrat-Medium'; }
+
+.watch-w img {
+  width: 15%; }
+
+.debate-time {
+  font-size: 11px;
+  vertical-align: top; }
+
+.likes {
+  padding-top: 15px; }
+  .likes label {
+    font-size: 12px;
+    font-family: 'Montserrat-Regular';
+    color: #afafaf;
+    padding-right: 6px; }
+  .likes span {
+    font-size: 12px;
+    font-family: 'Montserrat-Medium';
+    color: #000;
+    padding-right: 2px; }
+=======
+.pollingCounts {
+  font-size: 8px;
+  padding-top: 6px;
+  color: #afafaf; }
+
+.pollingBorder {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 25px !important; }
+>>>>>>> 40d1b3b61326a482774df217fa0ccba9bdc0a51b
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
     bottom: 0px !important; }
@@ -11652,12 +11731,12 @@ body {
     width: 71px !important;
     top: 50%;
     left: 7%;
-    border-bottom: 2px solid black; }
+    border-bottom: 1px solid #000; }
   .title-explore:after {
     width: 71px !important;
     top: 50%;
     right: 7%;
-    border-bottom: 2px solid black; }
+    border-bottom: 1px solid #000; }
   .discover-icon img {
     width: 10%; }
   .discover-icon span {
@@ -11681,12 +11760,12 @@ body {
     width: 71px !important;
     top: 50%;
     left: 7%;
-    border-bottom: 2px solid black; }
+    border-bottom: 1px solid #000; }
   .title-explore:after {
     width: 71px !important;
     top: 50%;
     right: 7%;
-    border-bottom: 2px solid black; }
+    border-bottom: 1px solid #000; }
   .just-now-label {
     top: 6%; }
   .toggleyouKnow {

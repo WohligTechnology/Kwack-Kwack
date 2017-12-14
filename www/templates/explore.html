@@ -22,72 +22,8 @@
         <div class="text-center">
             <h4 class="pad0 title-explore">EXPLORE</h4>
         </div>
-        <div class="news-content">
-            <div>
-                <label class="absolute just-now-label">Just Now</label>
-            </div>
-            <div class="list card">
-                <div class="relative">
-                    <img class="full-image" src="img/explore/1.jpg">
-                    <label class="absolute movie-label">Movie</label>
-                </div>
-                <div class="item item-body">
-                    <h3 class="pad0">Game of Thrones: HBO hacker threaten leak of season finale</h3>
-                    <div class="date-time">
-                        <span class="carddatecl">Thursday,</span><span class="carddatecl"> 19 Aug 2017</span>
-                        <span class="padd-lr carddatecl">broadly.voice.com</span>
-                        <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">8 hours ago</span>
-                    </div>
-                    <div class="detail-para">
-                        <p class="pad0">
-                            Attackers dump HBO social media account passwords on the internet following hacks and leaks of unaired TV shows and confidential
-                            data
-                        </p>
-                    </div>
-                    <div class="display-inline">
-                        <div class="w56"><img src="img/explore/3.png" class="w100"></div>
-                    </div>
-                    <div class="display-inline float-right explore-icon text-center">
-                        <label class="discoverCardStrip"> <img src="img/explore/5.png"><span class="alignM"> 20</span></label>
-                        <label class="discoverCardStrip"><img class="img-responsive" src="img/explore/6.png">
-                              <span class="alignM">42</span></label>
-                        <label><img src="img/explore/7.png"><span class="colorw alignM">20</span></label>
-                    </div>
-                </div>
-            </div>
+        <div ng-repeat="news in exploreNews">
+            <explore> </explore>
         </div>
-        <div class="news-content">
-            <div class="list card">
-                <div class="relative">
-                    <img class="full-image" src="img/explore/2.jpg">
-                    <label class="absolute movie-label">Technology</label>
-                </div>
-                <div class="item item-body">
-                    <h3 class="pad0">OnePlus 5 Slate Gray colour variant with 8GB RAM, 128GB Storage luanched in India</h3>
-                    
-                            <div class="date-time">
-                                    <span class="carddatecl">Thursday,</span><span class="carddatecl"> 19 Aug 2017</span>
-                                    <span class="padd-lr carddatecl">broadly.voice.com</span>
-                                    <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">8 hours ago</span>
-                                </div>
-                    
-                    <div class="detail-para">
-                        <p class="pad0">
-                            Attackers dump HBO social media account passwords on the internet following hacks and leaks of unaired TV shows and confidential
-                            data
-                        </p>
-                    </div>
-                    <div class="display-inline">
-                        <div class="w56"><img src="img/explore/3.png" class="w100"></div>
-                    </div>
-                    <div class="display-inline float-right explore-icon text-center">
-                        <label><img src="img/explore/5.png"><span class="padd-r"> 20</span></label>
-                        <label><img src="img/explore/6.png">
-                          <span class="padd-r">42</span></label>
-                        <label><img src="img/explore/7.png">
-                         <span>20</span></label>
-                    </div>
-                </div>
-            </div>
     </ion-content>
-</ion-view>
+   </ion-view>
