@@ -1,5 +1,5 @@
 
-var connector=angular.module('starter.controllers', [ 'starter.controllers'])
+var connector=angular.module('starter.controllers', [ 'starter.controllers', 'angular-svg-round-progressbar','ngAnimate', 'ngCordova'])
 
 .controller('DashCtrl', function($scope) {})
 

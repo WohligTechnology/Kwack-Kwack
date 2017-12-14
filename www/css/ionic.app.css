@@ -10017,6 +10017,12 @@ body {
   color: #afafaf;
   font-size: 10px; }
 
+.readarticleKwack {
+  padding: 5px;
+  font-family: "Montserrat-Italic";
+  color: #afafaf;
+  font-size: 10px; }
+
 .pad0 {
   padding: 0px; }
 
@@ -11612,6 +11618,54 @@ body {
 .pollingBorder {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 25px !important; }
+
+.pollRight {
+  width: 30%;
+  position: absolute;
+  top: 18%;
+  left: 30%;
+  z-index: 1;
+  transform: translate(-50%, -50%); }
+  .pollRight img {
+    width: 100%; }
+
+.pollUpDown {
+  position: absolute;
+  width: 8%;
+  right: 6%;
+  top: 4%; }
+  .pollUpDown img {
+    width: 100%; }
+
+.pollWrong {
+  width: 30%;
+  position: absolute;
+  top: 18%;
+  left: 78%;
+  z-index: 1;
+  transform: translate(-50%, -50%); }
+  .pollWrong img {
+    width: 100%; }
+
+.pollRoProBar {
+  margin-top: 20px; }
+
+.pollPercent label {
+  font-size: 40px;
+  vertical-align: middle;
+  font-family: 'Montserrat-Regular'; }
+
+.pollPercent span {
+  font-size: 18px;
+  font-family: 'Montserrat-Regular'; }
+
+.pollAnswer {
+  font-family: 'Montserrat-Medium';
+  font-size: 13px;
+  letter-spacing: 2px; }
+
+.pollCardpad {
+  padding: 20px 0px 20px 0px; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
