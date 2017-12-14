@@ -10042,7 +10042,7 @@ body {
     font-weight: 700;
     font-size: 18px; }
   .bg-yellow label {
-    color: white;
+    color: #fff;
     font-size: 12px;
     letter-spacing: 4px;
     font-family: "Montserrat-Regular"; }
@@ -10182,7 +10182,7 @@ body {
 .btn-yellow {
   color: #000;
   background-color: #ffb600;
-  background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%) !important;
+  background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #ffc943 99%) !important;
   letter-spacing: 4px;
   font-size: 14px;
   font-family: "Montserrat-Regular";
@@ -10244,7 +10244,7 @@ body {
     min-height: 45px !important;
     border-radius: 93%;
     background: linear-gradient(to right top, #ffb600 30%, #ffb600 30%, #fbcf60 99%) !important;
-    color: black; }
+    color: #000; }
     .plus-btn .button i {
       font-size: 13px; }
 
@@ -10277,7 +10277,7 @@ body {
   background-color: #f2f2f2; }
 
 .filter h4 {
-  color: #6b6b6b;
+  color: #b2b0b09c;
   letter-spacing: 2px;
   padding: 13px 0px 13px 46px;
   font-size: 16px;
@@ -10308,7 +10308,7 @@ body {
   border: none; }
 
 .category-preferences {
-  background: linear-gradient(to top, white 14%, white 36%, rgba(224, 224, 224, 0.41) 90%) !important;
+  background: linear-gradient(to top, #fff 14%, #fff 36%, rgba(224, 224, 224, 0.41) 90%) !important;
   padding: 0px 25px; }
   .category-preferences .input-category {
     width: 325px;
@@ -10387,9 +10387,9 @@ body {
 .otp {
   margin-top: 18%; }
   .otp p {
-    color: #5a5a5a; }
+    color: #424242; }
   .otp a {
-    color: #5a5a5a;
+    color: #424242;
     text-decoration: underline;
     font-size: 12px;
     font-family: "Montserrat-Regular";
@@ -10406,7 +10406,7 @@ body {
   padding: 50px 5px 15px 5px; }
 
 .bg-color-yellow {
-  background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #f7c84e 99%) !important; }
+  background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #ffc943 99%) !important; }
 
 .title-discover {
   font-family: 'Montserrat-Bold';
@@ -10424,7 +10424,7 @@ body {
   border-radius: 25px;
   margin-bottom: 10px;
   box-shadow: inset 0px 1px 21px rgba(34, 33, 33, 0.22);
-  background: #f0ab05; }
+  background: #ffc943; }
 
 .btn-bg {
   background-color: #ffc943;
@@ -10434,7 +10434,7 @@ body {
   font-family: 'Montserrat-Regular'; }
 
 .btn-bg-black {
-  background: linear-gradient(to right bottom, #000 30%, #000 57%, #2b2727 100%) !important;
+  background: linear-gradient(to right bottom, #000 30%, #000 57%, #414141 100%) !important;
   border: none;
   color: #fff;
   font-size: 13px;
@@ -10528,8 +10528,8 @@ body {
 .movie-label {
   bottom: 4%;
   left: 5px;
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
   font-size: 10px;
   font-family: 'Montserrat-Regular';
   padding: 3px 13px;
@@ -10569,7 +10569,7 @@ body {
     vertical-align: middle;
     padding: 4px; }
   .explore-icon span {
-    color: #bbbdbf; }
+    color: #afafaf; }
 
 .padd-r {
   padding-right: 15px; }
@@ -10611,7 +10611,7 @@ body {
   position: absolute;
   top: 17%;
   right: 0%;
-  border-right: 2px solid #bebebe; }
+  border-right: 2px solid #afafaf; }
 
 .cell-kwacks {
   padding: 0px 18px; }
@@ -11170,10 +11170,10 @@ body {
 
 .social-icons {
   padding: 10px 0px;
-  border-bottom: 1px solid #f0e2e2; }
+  border-bottom: 1px solid #d4d4d4; }
 
 .border-top {
-  border-top: 1px solid #f0e2e2;
+  border-top: 1px solid #d4d4d4;
   margin: 25px 20px 5px 20px; }
 
 .color-yellow {
@@ -11183,7 +11183,7 @@ body {
   width: 3%; }
 
 .borderclass.tab-item {
-  border-right: 1px solid #f7f7f7 !important; }
+  border-right: 1px solid #fff !important; }
 
 .tabimage {
   background-image: url("../img/footer/homeOn.png") !important;
@@ -11395,7 +11395,7 @@ body {
 .editBio {
   padding: 15px; }
   .editBio label {
-    color: #9f9f9f;
+    color: #afafaf;
     font-size: 0.9em;
     letter-spacing: 2px;
     font-family: 'Montserrat-Medium'; }
@@ -11422,7 +11422,7 @@ body {
 .userName {
   margin: auto 15px !important;
   padding: 25px 0px !important;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #afafaf;
   height: 80px;
   width: auto; }
   .userName div {
@@ -11533,7 +11533,7 @@ body {
   background-color: #000; }
 
 .account {
-  color: #b8b8b8;
+  color: #afafaf;
   margin-left: 70px;
   margin-top: 20px; }
 
@@ -11663,10 +11663,13 @@ body {
   text-align: left; }
 
 .debate-card .card {
-  margin: 20px 33px; }
+  margin: 20px 33px 0px; }
+
+.debate-card .list:last-child.card {
+  margin-bottom: 0px; }
 
 .debate-card .item-body {
-  padding: 8px; }
+  padding: 7px 8px 0px; }
 
 .debate-card p {
   font-size: 12px;
@@ -11730,7 +11733,7 @@ body {
   color: #afafaf; }
 
 .pollingBorder {
-  border-bottom: 1px solid #e3e3e3;
+  border-bottom: 1px solid #ececec;
   padding-bottom: 25px !important; }
 
 .pollRight {
@@ -11949,7 +11952,21 @@ body {
   .btn-bg {
     font-size: 11px; }
   .placeholder-icon:last-child {
-    padding-left: 15px; } }
+    padding-left: 15px; }
+  .debate-user span {
+    font-size: 11px; }
+  .debate-time {
+    font-size: 10px; }
+  .debate-card p {
+    font-size: 11px; }
+  .likes label {
+    font-size: 11px; }
+  .title-comments:before {
+    top: 175px;
+    width: 81px; }
+  .title-comments:after {
+    top: 175px;
+    width: 81px; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
   .back-img-title {
@@ -12169,7 +12186,21 @@ body {
   .btn-bg-black {
     font-size: 13px; }
   .btn-bg {
-    font-size: 13px; } }
+    font-size: 13px; }
+  .debate-user span {
+    font-size: 14px; }
+  .debate-time {
+    font-size: 11px; }
+  .debate-card p {
+    font-size: 12px; }
+  .likes label {
+    font-size: 12px; }
+  .title-comments:before {
+    top: 157px;
+    width: 108px; }
+  .title-comments:after {
+    top: 157px;
+    width: 108px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .back-img-title {
