@@ -1,0 +1,37 @@
+<div class="debate-card relative">
+    <div class="debateprofile">
+        <img ng-src="{{news.img}}" alt="profile-img" class="profile-w">
+    </div>
+    <div class="list card">
+       <div class="item item-body">
+            <div class="row">
+               <div class="col col-20 relative">
+                </div>
+                <div class="col col-80">
+                    <div class="test">
+                            <div class="debate-user user-flex">
+                                    <span>{{news.name}}</span>
+                                    <img ng-src="{{news.thumicon}}">
+                                </div>
+                           <div class="time-flex text-right" ng-if="news.time !='' && news.time">
+                                    <span class="carddatecl watch-w">
+                                        <img src="img/explore/4.png">
+                                    </span>
+                                    <span class="carddatecl debate-time">{{news.time}}</span>
+                                </div>
+                                </div>
+                             <div>
+                               <p>{{news.desc}}</p>
+                             </div>
+                        <div class="likes">
+                            <span>{{news.likes}}</span>
+                            <label ng-if="news.likes!=''">LIKES</label>
+                            <span>{{news.replies}}</span>
+                            <label ng-if="news.replies !=''">REPLIES</label>
+                        </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 

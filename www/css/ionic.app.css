@@ -10104,6 +10104,31 @@ body {
   .footerKwackImg img {
     width: 100% !important; }
 
+.followNews {
+  width: 33%;
+  float: right;
+  margin: 0 auto; }
+  .followNews img {
+    width: 100%; }
+
+.shieldNews {
+  width: 33%;
+  margin: 0 auto;
+  display: inline-block; }
+  .shieldNews img {
+    width: 100%; }
+  .shieldNews span {
+    vertical-align: top; }
+
+.shareNews {
+  width: 33%;
+  margin: 0 auto;
+  display: inline-block; }
+  .shareNews img {
+    width: 100%; }
+  .shareNews span {
+    vertical-align: top; }
+
 .yellowStrip {
   width: 100%;
   line-height: 10px;
@@ -11587,12 +11612,12 @@ body {
   display: block; }
 
 .debateprofile {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   position: absolute;
-  left: 15px;
+  left: 23px;
   z-index: 3;
-  top: -8px;
+  top: -7px;
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 1px 10px 35px 0px #d4d4d4; }
@@ -11606,7 +11631,6 @@ body {
   width: 16%;
   padding: 0px 4px; }
 
-<<<<<<< HEAD
 .title-comments {
   font-size: 12px;
   letter-spacing: 2px;
@@ -11648,19 +11672,21 @@ body {
   border-bottom: 2px solid #ececec; }
 
 .debate-user img {
-  width: 15%; }
+  width: 14px; }
 
-.debate-user label {
+.debate-user span {
   font-size: 14px;
   padding: 0px 4px;
   font-family: 'Montserrat-Medium'; }
 
 .watch-w img {
-  width: 15%; }
+  vertical-align: middle;
+  width: 12px; }
 
 .debate-time {
   font-size: 11px;
-  vertical-align: top; }
+  vertical-align: top;
+  padding-left: 6px; }
 
 .likes {
   padding-top: 15px; }
@@ -11674,7 +11700,24 @@ body {
     font-family: 'Montserrat-Medium';
     color: #000;
     padding-right: 2px; }
-=======
+
+.test {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center; }
+
+.user-flex {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center; }
+
+.time-flex {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+
 .pollingCounts {
   font-size: 8px;
   padding-top: 6px;
@@ -11683,7 +11726,6 @@ body {
 .pollingBorder {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 25px !important; }
->>>>>>> 40d1b3b61326a482774df217fa0ccba9bdc0a51b
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {

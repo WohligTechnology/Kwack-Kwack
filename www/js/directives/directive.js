@@ -21,4 +21,12 @@ connector.directive('card', function ($http, $filter) {
            
         }
     };
+  }),
+  connector.directive('debate', function ($http, $filter) {
+    return {
+        templateUrl: 'templates/directive/debate.html',
+        link: function ($scope, element, attrs) {
+           
+        }
+    };
   })

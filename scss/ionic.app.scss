@@ -2258,12 +2258,12 @@ $dark:                            #444 !default;
     }
 
     .debateprofile {
-        width: 75px;
-        height: 75px;
+        width: 65px;
+        height: 65px;
         position: absolute;
-        left: 15px;
+        left: 23px;
         z-index: 3;
-        top: -8px;
+        top: -7px;
         overflow: hidden;
         border-radius: 50%;
         box-shadow: 1px 10px 35px 0px $lightGray1;
@@ -2331,9 +2331,10 @@ $dark:                            #444 !default;
 
     .debate-user {
         img {
-            width: 15%;
+            // width: 15%;
+            width:14px;
         }
-        label {
+       span {
             font-size: 14px;
           padding: 0px 4px;
             font-family: 'Montserrat-Medium';
@@ -2342,13 +2343,16 @@ $dark:                            #444 !default;
 
     .watch-w {
         img {
-            width: 15%;
+            // width: 15%;
+            vertical-align: middle;
+            width: 12px;
         }
     }
 
     .debate-time {
         font-size: 11px;
         vertical-align: top;
+        padding-left: 6px;
     }
 
     .likes {
@@ -2365,7 +2369,25 @@ $dark:                            #444 !default;
             color: $black;
             padding-right: 2px;
         }
-    } // css for iphone 5
+    } 
+    .test{
+        display: flex;
+        flex: 1;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .user-flex{
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    .time-flex{
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    // css for iphone 5
     //polling css start
     .pollingCounts{
         font-size: 8px;

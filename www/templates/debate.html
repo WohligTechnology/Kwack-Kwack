@@ -59,43 +59,8 @@
         <div class="text-center">
             <h4 class="pad0 title-comments">2 COMMENTS</h4>
         </div>
-        <div class="debate-card relative">
-            <div class="debateprofile">
-                <img src="img/debate/profile1.png" alt="profile-img" class="profile-w">
-            </div>
-            <div class="list card">
-               <div class="item item-body">
-                    <div class="row">
-                       <div class="col col-20 relative">
-                        </div>
-                        <div class="col col-80">
-                                <div class="debate-user display-inline">
-                                        <label>Viraj Kale</label>
-                                        <img src="img/debate/1.png">
-                                    </div>
-                               <div class="display-inline text-right float-right ">
-                                        <span class="carddatecl watch-w">
-                                            <img src="img/explore/4.png">
-                                        </span>
-                                        <span class="carddatecl debate-time">8 hours ago</span>
-                                    </div>
-                               <div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, officiis. Repellendus qui,
-                                    aspernatur obcaecati, explicabo eveniet.
-                                </p>
-                            </div>
-                            <div class="likes">
-                                <span>3</span>
-                                <label>LIKES</label>
-                                <span>5</span>
-                                <label>REPLIES</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div ng-repeat="news in debate">
+            <debate></debate>
         </div>
-      
-       
     </ion-content>
 </ion-view>
