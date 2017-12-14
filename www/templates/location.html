@@ -14,10 +14,10 @@
                                 <div class="plusposition">
                                     <img src="img/plus1.png" alt="">
                                 </div>
-                                <select id="theComboExample" class="theCombo">
+                                <select ng-model="data.country" ng-change="addCountry(data)"  class="theCombo">
                                   <option value="">Select Country</option>
-                                  <option value="1">India</option>
-                                  <option value="2">USA</option>
+                                  <option value="India">India</option>
+                                  <option value="USA">USA</option>
                                 </select>
                               
                               </form>
@@ -25,10 +25,11 @@
                                     <div class="plusposition">
                                         <img src="img/plus1.png" alt="">
                                     </div>
-                                    <select id="theComboExample" class="theCombo">
+                                    
+                                    <select ng-model="data.state" ng-change="addState(data)" class="theCombo">
                                       <option value="">Select State</option>
-                                      <option value="1">Delhi</option>
-                                      <option value="2">California</option>
+                                      <option value="Delhi">Delhi</option>
+                                      <option value="California">California</option>
                                     </select>
                                   
                                   </form>
@@ -48,6 +49,7 @@
                 </div>
             </div>
             <div class="col-75" ui-sref="discover">
+                <div class="col-75" ng-click="addCountryState(data)">
                 <div class="skip text-right mar-r">
                     <span>NEXT</span>
                 </div>
