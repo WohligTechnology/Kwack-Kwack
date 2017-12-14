@@ -23,7 +23,6 @@ var connector = angular.module('starter.controllers', ['starter.controllers'])
 
   .controller('HomeCtrl', function ($scope, $stateParams, Chats) {
     $scope.sliderData = {};
-    console.log("after api called login")
 
     var setupSlider = function () {
       //some options to pass to our slider
@@ -81,6 +80,7 @@ var connector = angular.module('starter.controllers', ['starter.controllers'])
   .controller('FilterCtrl', function ($scope) {})
 
   .controller('SignUpCtrl', function ($scope, Chats, $state) {
+    console.log("inside sign up",info)
     $scope.saveUser = function (info) {
       if (info.password == info.forgotPassword) {
         Chats.apiCallWithData("User/save", info, function (data) {
