@@ -156,9 +156,15 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
 
   .state('location', {
-    url: '/location',
+    url: '/location/:userEmail',
     templateUrl: 'templates/location.html',
     controller: 'LocationCtrl'
+
+  })
+  .state('parampage', {
+    url: '/parampage',
+    templateUrl: 'templates/parampage.html',
+    controller: 'ParampageCtrl'
 
   })
 

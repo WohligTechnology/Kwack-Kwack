@@ -1,6 +1,10 @@
+// var adminurl = "http://localhost:80/api/";
+var adminurl = "http://wohlig.io/api/";
+var imgurl = adminurl + "upload/";
+var imgpath = imgurl + "readFile?file=";
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Chats', function($http) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -35,9 +39,14 @@ angular.module('starter.services', [])
     all: function() {
       return chats;
     },
+     getNavigation: function () {
+            return chats;
+        },
     remove: function(chat) {
       chats.splice(chats.indexOf(chat), 1);
-    },
+    }, removeAccessToken: function (data, callback) {
+            $.jStorage.flush();
+        },
     get: function(chatId) {
       for (var i = 0; i < chats.length; i++) {
         if (chats[i].id === parseInt(chatId)) {
@@ -45,6 +54,21 @@ angular.module('starter.services', [])
         }
       }
       return null;
-    }
+    },
+       apiCallWithData: function (url, formData, callback) {
+                $http.post(adminurl + url, formData).then(function (data) {
+                    data = data.data;
+                    callback(data);
+
+                });
+            },
+
+            apiCallWithoutData: function (url, callback) {
+                $http.post(adminurl + url).then(function (data) {
+                    data = data.data;
+                    callback(data);
+
+                });
+            },
   };
 });
