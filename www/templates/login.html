@@ -9,14 +9,14 @@
                     <div class="list signupPlaceholder">
                         <label class="item item-input item-floating-label">
                         <span></span>
-                         <input type="text" class="border-bot" placeholder="Email id">
+                         <input type="text" class="border-bot" ng-model="data.email" placeholder="Email id">
                      </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
-                      <input type="password" class="border-bot" placeholder="Password">
+                      <input type="password" class="border-bot" ng-model="data.password" placeholder="Password">
                       </label>
-                        <div class="absolute sign-up" ui-sref="otp">
-                            <button class="button  btn-yellow">LOG IN</button>
+                        <div class="absolute sign-up">
+                            <button class="button  btn-yellow" ng-click="verifyUser(data)">LOG IN</button>
                         </div>
                        
                     </div>
@@ -29,10 +29,10 @@
                         <p>OR LOG IN VIA</p>
                         <ul>
                             <li>
-                                <a><img src="img/signup/2.png" alt="facebook" class="w100"></a>
+                                <a  ng-href="http://wohlig.io/api/User/loginFacebook?returnUrl={{currentHost}}/%23!/login" target="_blank"><img src="img/signup/2.png"  class="w100" ></a>
                             </li>
                             <li>
-                                <a><img src="img/signup/1.png" alt="twitter" class="w100"></a>
+                                <a ng-href="http://wohlig.io/api/User/loginTwitter?returnUrl={{currentHost}}/%23!/login" target="_blank"><img src="img/signup/1.png" alt="twitter" class="w100"></a>
                             </li>
                             <li>
                                 <a><img src="img/signup/3.png" alt="twitter" class="w100"></a>
