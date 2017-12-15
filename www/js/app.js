@@ -213,6 +213,13 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       templateUrl: 'templates/edit.html',
       controller: 'EditCtrl'
     })
+    
+    .state('discoverFull', {
+      url: '/discoverfull',
+      templateUrl: 'templates/discover-full.html',
+      controller: 'DiscoverFullCtrl'
+    })
+
     .state('settings', {
       url: '/settings',
       templateUrl: 'templates/settings.html',
