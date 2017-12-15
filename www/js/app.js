@@ -76,6 +76,12 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     })
 
+    .state('exploremore', {
+      url: '/exploremore',
+      templateUrl: 'templates/exploremore.html',
+      controller: 'ExploremoreCtrl'
+    })
+
     .state('invite', {
       url: '/invite',
       templateUrl: 'templates/invite.html',
