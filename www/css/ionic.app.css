@@ -11305,16 +11305,17 @@ body {
   vertical-align: middle; }
 
 .settings label {
-  font-size: 15px;
+  font-size: 10px;
   vertical-align: middle;
-  font-family: 'Montserrat-Medium'; }
+  font-family: 'Montserrat-Medium';
+  letter-spacing: 1px; }
 
 .frnds {
-  font-size: 1.4em;
+  font-size: 14px;
   font-family: 'Montserrat-Bold';
   letter-spacing: 8px; }
 
-.profile-invtimg {
+0 .profile-invtimg {
   width: 85px;
   height: 85px;
   overflow: hidden; }

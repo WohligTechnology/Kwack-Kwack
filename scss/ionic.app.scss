@@ -1872,18 +1872,20 @@ $dark:                            #444 !default;
             vertical-align: middle;
         }
         label {
-            font-size: 15px;
+            font-size: 10px;
             vertical-align: middle;
-            font-family: 'Montserrat-Medium'
+            font-family: 'Montserrat-Medium';
+            letter-spacing: 1px;
+
         }
     }
 
     .frnds {
-        font-size: 1.4em;
+        font-size: 14px;
         font-family: 'Montserrat-Bold';
         letter-spacing: 8px;
     }
-
+0
     .profile-invtimg {
         width: 85px;
         height: 85px;
