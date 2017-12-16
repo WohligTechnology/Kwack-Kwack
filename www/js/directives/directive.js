@@ -30,3 +30,11 @@ connector.directive('card', function ($http, $filter) {
         }
     };
   })
+  connector.directive('exploremore', function ($http, $filter) {
+    return {
+        templateUrl: 'templates/directive/exploremore.html',
+        link: function ($scope, element, attrs) {
+           
+        }
+    };
+  })

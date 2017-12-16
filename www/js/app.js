@@ -76,10 +76,14 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     })
 
-    .state('exploremore', {
+    .state('tab.exploremore', {
       url: '/exploremore',
-      templateUrl: 'templates/exploremore.html',
-      controller: 'ExploremoreCtrl'
+      views: {
+        'tab-explore': {
+          templateUrl: 'templates/exploremore.html',
+          controller: 'ExploremoreCtrl'
+        }
+      }
     })
 
     .state('invite', {
@@ -189,7 +193,11 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
         }
       }
     })
-
+    .state('exploreDetail', {
+      url: '/exploredetail',
+      templateUrl: 'templates/exploreDetail.html',
+      controller: 'ExploreDetailCtrl'
+    })
   .state('inviteFriends', {
       url: '/inviteFriends',
       templateUrl: 'templates/inviteFriends.html',

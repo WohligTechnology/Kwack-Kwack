@@ -1885,7 +1885,7 @@ $dark:                            #444 !default;
         font-family: 'Montserrat-Bold';
         letter-spacing: 8px;
     }
-0
+
     .profile-invtimg {
         width: 85px;
         height: 85px;
@@ -2479,6 +2479,36 @@ $dark:                            #444 !default;
         padding: 20px 0px 20px 0px;
     }
     //polling css end
+
+    //start of explore more
+  .explore-more{
+    .news-content {
+      margin-bottom: 0px;
+    }
+    .list:last-child.card {
+        margin-bottom: 0px;
+    }
+    .card{
+        box-shadow: none !important;
+    }
+    .news-content .card {
+        box-shadow: none !important;
+    }
+  }
+.related-stories{
+    font-size: 15px;
+    font-family: 'Montserrat-Medium';
+    color: $yellow;
+}
+  .box-inside{
+    box-shadow: inset 0px 0px 47px 2px rgba(128, 128, 128, 0.26);
+  }
+.cont-read{
+    font-size: 10px;
+    color: $lightGray;
+    font-family: 'Montserrat-Italic' !important;
+}
+
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
 
