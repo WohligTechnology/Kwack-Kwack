@@ -29,4 +29,13 @@ connector.directive('card', function ($http, $filter) {
            
         }
     };
+  }),
+
+  connector.directive('discoverfull', function ($http, $filter) {
+    return {
+        templateUrl: 'templates/directive/discoverfull.html',
+        link: function ($scope, element, attrs) {
+           
+        }
+    };
   })
