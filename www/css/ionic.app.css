@@ -11318,7 +11318,7 @@ body {
   font-family: 'Montserrat-Bold';
   letter-spacing: 8px; }
 
-0 .profile-invtimg {
+.profile-invtimg {
   width: 85px;
   height: 85px;
   overflow: hidden; }
@@ -11835,6 +11835,31 @@ body {
   color: #ffb600 !important;
   font-size: 13px !important;
   font-family: "Montserrat-Medium"; }
+
+.explore-more .news-content {
+  margin-bottom: 0px; }
+
+.explore-more .list:last-child.card {
+  margin-bottom: 0px; }
+
+.explore-more .card {
+  box-shadow: none !important; }
+
+.explore-more .news-content .card {
+  box-shadow: none !important; }
+
+.related-stories {
+  font-size: 15px;
+  font-family: 'Montserrat-Medium';
+  color: #ffc943; }
+
+.box-inside {
+  box-shadow: inset 0px 0px 47px 2px rgba(128, 128, 128, 0.26); }
+
+.cont-read {
+  font-size: 10px;
+  color: #afafaf;
+  font-family: 'Montserrat-Italic' !important; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {

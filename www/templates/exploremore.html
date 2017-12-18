@@ -1,0 +1,44 @@
+<ion-view>
+    <div class="bar bar-header bar-light">
+        <div class="row">
+            <div class="col col-33">
+                    <div  ui-sref="tab.explore">
+                        <i class="ion ion-ios-arrow-left trailernav"></i>
+                        </div>
+            </div>
+            <div class="col col-33 text-center">
+                <div>
+                    <img src="img/filter/7.png" class="w40">
+                </div>
+            </div>
+            <div class="col col-33">
+                <div class="text-right ">
+                    <img src="img/filter/5.png" class="w15">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ion-content class="has-header">
+        <div class="text-center">
+            <h4 class="pad0 title-explore">EXPLORE</h4>
+        </div>
+        <div ng-repeat="news in exploreNews" >
+            <exploremore> </exploremore>
+        </div>
+        <div class="explore-more">
+        <div class="news-content box-inside">
+          <div class="list card ">
+              <div class="item item-body">
+                        <h4 class="related-stories">Related Stories</h4>
+                    <h3 class="pad0">Game of Thrones: HBO hacker threaten leak of season finale</h3>
+                    <div class="date-time">
+                        <span class="carddatecl">Thursday</span><span class="carddatecl"> 19 Aug 2017</span>
+                        <span class="padd-lr carddatecl">broadly.voice.com</span>
+                        <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">8 hours ago</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </ion-content>
+   </ion-view>
