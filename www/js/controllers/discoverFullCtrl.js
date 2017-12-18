@@ -1,6 +1,6 @@
 connector.controller('DiscoverFullCtrl', function($scope) {
     $scope.discoverFull = [{
-        "img":"img/explore/1.jpg",
+        "img":"img/discoverFull/cardimg1.png",
         "news":"Game of Thrones: HBO hacker threaten leak of season finale",
         "day":"Thursday",
         "date":"19 Aug 2017",
