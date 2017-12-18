@@ -400,7 +400,6 @@ $dark:                            #444 !default;
         }
     }
 
-   
     .yellowStrip {
         width: 100%;
         line-height: 10px;
@@ -462,7 +461,7 @@ $dark:                            #444 !default;
     .btn-yellow {
         color: $black;
         background-color: rgb(255, 182, 0);
-        background: linear-gradient(to right top, $yellow3 30%, $yellow3 30%,  $yellow 99%)!important;
+        background: linear-gradient(to right top, $yellow3 30%, $yellow3 30%, $yellow 99%)!important;
         letter-spacing: 4px;
         font-size: 14px;
         font-family: "Montserrat-Regular";
@@ -749,7 +748,7 @@ $dark:                            #444 !default;
     } //end of otp
     //start of discover
     .bg-color-yellow {
-        background: linear-gradient(to right bottom, $yellow3 30%, $yellow3 56%,  $yellow 99%)!important;
+        background: linear-gradient(to right bottom, $yellow3 30%, $yellow3 56%, $yellow 99%)!important;
     }
 
     .title-discover {
@@ -770,7 +769,7 @@ $dark:                            #444 !default;
         border-radius: 25px;
         margin-bottom: 10px;
         box-shadow: inset 0px 1px 21px rgba(34, 33, 33, 0.22);
-        background:  $yellow;
+        background: $yellow;
     }
 
     .btn-bg {
@@ -782,7 +781,7 @@ $dark:                            #444 !default;
     }
 
     .btn-bg-black {
-        background: linear-gradient(to right bottom, $black 30%, $black 57%,  $darkGray2 100%)!important;
+        background: linear-gradient(to right bottom, $black 30%, $black 57%, $darkGray2 100%)!important;
         border: none;
         color: $light;
         font-size: 13px;
@@ -1007,7 +1006,7 @@ $dark:                            #444 !default;
         position: absolute;
         top: 17%;
         right: 0%;
-        border-right: 2px solid  $lightGray;
+        border-right: 2px solid $lightGray;
     }
 
     .cell-kwacks {
@@ -1139,9 +1138,11 @@ $dark:                            #444 !default;
     .padt10 {
         padding-top: 10px;
     }
+
     .padb5 {
         padding: 0px 0px 5px 0px!important;
     }
+
     .pad2010 {
         padding: 20px 10px;
     }
@@ -1698,11 +1699,11 @@ $dark:                            #444 !default;
 
     .social-icons {
         padding: 10px 0px;
-        border-bottom: 1px solid  $lightGray1;
+        border-bottom: 1px solid $lightGray1;
     }
 
     .border-top {
-        border-top: 1px solid  $lightGray1;
+        border-top: 1px solid $lightGray1;
         margin: 25px 20px 5px 20px;
     }
 
@@ -1878,7 +1879,6 @@ $dark:                            #444 !default;
             vertical-align: middle;
             font-family: 'Montserrat-Medium';
             letter-spacing: 1px;
-
         }
     }
 
@@ -2025,7 +2025,7 @@ $dark:                            #444 !default;
     .userName {
         margin: auto 15px!important;
         padding: 25px 0px !important;
-        border-bottom: 1px solid  $lightGray;
+        border-bottom: 1px solid $lightGray;
         height: 80px;
         width: auto;
         div {
@@ -2036,12 +2036,9 @@ $dark:                            #444 !default;
             font-family: 'Monserrat-Regular';
             font-size: 1.1em;
         }
-    }
-
-    // .aboutInside{
+    } // .aboutInside{
     //         font-family: 'Monserrat-Regular'!important;
     //         font-size: 1.1em;
-   
     // }
     .email {
         padding: 30px 15px!important;
@@ -2174,7 +2171,7 @@ $dark:                            #444 !default;
     }
 
     .account {
-        color:  $lightGray;
+        color: $lightGray;
         margin-left: 70px;
         margin-top: 20px;
     }
@@ -2233,7 +2230,7 @@ $dark:                            #444 !default;
     .font-10 {
         font-size: 12px;
         padding: 0px 8px;
-        box-shadow: 3px 3px 6px 1px   $darkgray3;
+        box-shadow: 3px 3px 6px 1px $darkgray3;
     }
 
     .font-14 {
@@ -2333,7 +2330,7 @@ $dark:                            #444 !default;
             margin: 20px 33px 0px;
         }
         .list:last-child.card {
-             margin-bottom: 0px; 
+            margin-bottom: 0px;
         }
         .item-body {
             padding: 7px 8px 0px;
@@ -2352,11 +2349,11 @@ $dark:                            #444 !default;
     .debate-user {
         img {
             // width: 15%;
-            width:14px;
+            width: 14px;
         }
-       span {
+        span {
             font-size: 14px;
-          padding: 0px 4px;
+            padding: 0px 4px;
             font-family: 'Montserrat-Medium';
         }
     }
@@ -2389,193 +2386,235 @@ $dark:                            #444 !default;
             color: $black;
             padding-right: 2px;
         }
-    } 
-    .test{
+    }
+
+    .test {
         display: flex;
         flex: 1;
         justify-content: flex-start;
         align-items: center;
     }
-    .user-flex{
+
+    .user-flex {
         display: flex;
         /* justify-content: center; */
         align-items: center;
     }
-    .time-flex{
+
+    .time-flex {
         flex: 1;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-    }
-    //polling css start
-    .pollingCounts{
+    } //polling css start
+    .pollingCounts {
         font-size: 8px;
         padding-top: 6px;
-        color: $lightGray;
-        // vertical-align: -webkit-baseline-middle;
+        color: $lightGray; // vertical-align: -webkit-baseline-middle;
     }
 
-    .pollingBorder{
-        border-bottom: 1px solid  $lightGray2;
+    .pollingBorder {
+        border-bottom: 1px solid $lightGray2;
         padding-bottom: 25px!important;
     }
 
-    .pollRight{
+    .pollRight {
         width: 30%;
         position: absolute;
         top: 18%;
         left: 30%;
         z-index: 1;
         transform: translate(-50%, -50%);
-        img{
+        img {
             width: 100%;
         }
     }
 
-    .pollUpDown{
+    .pollUpDown {
         position: absolute;
         width: 8%;
         right: 6%;
         top: 4%;
-        img{
+        img {
             width: 100%;
         }
     }
 
-    .pollWrong{
+    .pollWrong {
         width: 30%;
         position: absolute;
         top: 18%;
         left: 78%;
         z-index: 1;
         transform: translate(-50%, -50%);
-        img{
+        img {
             width: 100%;
         }
     }
 
-    .pollRoProBar{
+    .pollRoProBar {
         margin-top: 20px;
     }
 
-    .pollPercent{
-        label{
+    .pollPercent {
+        label {
             font-size: 40px;
             vertical-align: middle;
             font-family: 'Montserrat-Regular';
         }
-        span{
+        span {
             font-size: 18px;
             font-family: 'Montserrat-Regular';
         }
     }
 
-    .pollAnswer{
+    .pollAnswer {
         font-family: 'Montserrat-Medium';
         font-size: 13px;
         letter-spacing: 2px;
     }
 
-    .pollCardpad{
+    .pollCardpad {
         padding: 20px 0px 20px 0px;
+    } //polling css end
+    //css for discoverFull start
+    .discover-item{
+        .item-input-inset {
+            padding: 24.66667px !important;
+        }
+        .placeholderDiscover {
+            i {
+                
+                color: $lightGray !important;
+            }
+            input::placeholder {
+                color: $lightGray!important;
+               
+            }
+        }
     }
-    //polling css end
-    
-//css for discoverFull start
-.discoverHead{
-    .item-thumbnail-left{
-        padding-top: 8px;
-        padding-left: 106px;
-        min-height: 120px;
+    .discoverHead {
+        .item-thumbnail-left {
+            padding-top: 15px !important;
+            padding-left: 106px !important;
+            min-height: 120px;
+          
+        }
+        .item h2 {
+            white-space: normal;
+            font-family: 'Montserrat-Medium';
+            font-size: 14px;
+        }
+        .item {
+            margin: 0px 10px;
+            background-color: transparent;
+            border-bottom: 1px solid $lightGray1;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            padding: 16px 4px 16px 16px;
+        }
+        .item p {
+            color: #666;
+            font-size: 10px;
+            margin-bottom: 2px;
+            font-family: 'Montserrat-Regular';
+        }
     }
-    .item h2 {
-        white-space: normal;
-        font-family: 'Montserrat-Medium';
-        font-size: 14px;
-    }
-    .item {
-        margin: 0px 10px;
-        background-color: transparent;
-        border-bottom: 1px solid $lightGray1;
-        border-top: none;
-        border-right: none;
-        border-left: none;
-    }
-    .item p{
-        color: #666;
-        font-size: 10px;
-        margin-bottom: 2px;
-        font-family: 'Montserrat-Regular';
-    }
-    
-}
 
-.discoverFullTime {
-    font-size: 11px;
-    vertical-align: top;
-}
-
-.operator{
-    font-family: 'Montserrat-SemiBold';
-    font-size: 12px;
-    color: $darkGray;
-}
-
-.placeholderDiscover {
-    i{
-        font-size: 15px;
-        font-family: "Montserrat-Regular";
-        color: $darGray1;
+    .discoverFullTime {
+        font-size: 11px;
+        vertical-align: top;
     }
-    input::placeholder {
-        color: $darGray1;
+
+    .operator {
+        font-family: 'Montserrat-SemiBold';
         font-size: 12px;
-        font-family: "Montserrat-Regular";
+        color: $darkGray;
     }
 
-}
+    .placeholderDiscover {
+        i {
+            font-size: 15px;
+            font-family: "Montserrat-Regular";
+            color: $darGray1 ;
+        }
+        input::placeholder {
+            color: $darGray1 ;
+            font-size: 12px;
+            font-family: "Montserrat-Regular";
+        }
+    }
 
-.searchCancel{
+    .searchCancel {
         color: #ffb600!important;
         font-size: 13px!important;
-        font-family: "Montserrat-Medium"          
-}
+        font-family: "Montserrat-Medium"
+    }
 
- //css for discoverFull end
-
+    .discoverfull {
+        padding: 0px 15px;
+        .imagePos {
+            .item-thumbnail-left>img:first-child {
+                left:3px!important;
+                top:21px !important;
+            }
+        }
+        .watch-w img{
+            width: 10px;
+        }
+        
+    } 
+    
+    //css for discoverFull end
     //start of explore more
-  .explore-more{
-    .news-content {
-      margin-bottom: 0px;
+    .explore-more {
+        .news-content {
+            margin-bottom: 0px;
+        }
+        .list:last-child.card {
+            margin-bottom: 0px;
+        }
+        .card {
+            box-shadow: none !important;
+        }
+        .news-content .card {
+            box-shadow: none !important;
+        }
     }
-    .list:last-child.card {
-        margin-bottom: 0px;
-    }
-    .card{
-        box-shadow: none !important;
-    }
-    .news-content .card {
-        box-shadow: none !important;
-    }
-  }
-.related-stories{
-    font-size: 15px;
-    font-family: 'Montserrat-Medium';
-    color: $yellow;
-}
-  .box-inside{
-    box-shadow: inset 0px 0px 47px 2px rgba(128, 128, 128, 0.26);
-  }
-.cont-read{
-    font-size: 10px;
-    color: $lightGray;
-    font-family: 'Montserrat-Italic' !important;
-}
 
+    .related-stories {
+        font-size: 15px;
+        font-family: 'Montserrat-Medium';
+        color: $yellow;
+    }
+
+    .box-inside {
+        box-shadow: inset 0px 0px 47px 2px rgba(128, 128, 128, 0.26);
+    }
+
+    .cont-read {
+        font-size: 10px;
+        color: $lightGray;
+        font-family: 'Montserrat-Italic' !important;
+    }
+    
+    .list .item.item-accordion {
+        line-height: 38px;
+        padding-top: 0;
+        padding-bottom: 0;
+        transition: 0.09s all linear;
+      }
+      .list .item.item-accordion.ng-hide {
+        line-height: 0px;
+      }
+      .list .item.item-accordion.ng-hide-add,
+      .list .item.item-accordion.ng-hide-remove {
+        display: block !important;
+      }
+    
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-
-       
         .back-img-title {
             bottom: 0px!important;
         }
@@ -2831,10 +2870,8 @@ $dark:                            #444 !default;
         }
         .placeholder-icon:last-child {
             padding-left: 15px;
-        }
-         //debate start
-
-         .debate-user span {
+        } //debate start
+        .debate-user span {
             font-size: 11px;
         }
         .debate-time {
@@ -3180,10 +3217,8 @@ $dark:                            #444 !default;
         }
         .btn-bg {
             font-size: 13px;
-        }
-         //debate start
-
-         .debate-user span {
+        } //debate start
+        .debate-user span {
             font-size: 14px;
         }
         .debate-time {
@@ -3199,10 +3234,9 @@ $dark:                            #444 !default;
             top: 157px;
             width: 108px;
         }
-        .title-comments:after { 
+        .title-comments:after {
             top: 157px;
             width: 108px;
-        
         }
     }
 
@@ -3225,4 +3259,3 @@ $dark:                            #444 !default;
             padding-left: 30px;
         }
     }
-

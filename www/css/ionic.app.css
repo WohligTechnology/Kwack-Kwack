@@ -11788,9 +11788,18 @@ body {
 .pollCardpad {
   padding: 20px 0px 20px 0px; }
 
+.discover-item .item-input-inset {
+  padding: 24.66667px !important; }
+
+.discover-item .placeholderDiscover i {
+  color: #afafaf !important; }
+
+.discover-item .placeholderDiscover input::placeholder {
+  color: #afafaf !important; }
+
 .discoverHead .item-thumbnail-left {
-  padding-top: 8px;
-  padding-left: 106px;
+  padding-top: 15px !important;
+  padding-left: 106px !important;
   min-height: 120px; }
 
 .discoverHead .item h2 {
@@ -11804,7 +11813,8 @@ body {
   border-bottom: 1px solid #d4d4d4;
   border-top: none;
   border-right: none;
-  border-left: none; }
+  border-left: none;
+  padding: 16px 4px 16px 16px; }
 
 .discoverHead .item p {
   color: #666;
@@ -11836,6 +11846,14 @@ body {
   font-size: 13px !important;
   font-family: "Montserrat-Medium"; }
 
+.discoverfull {
+  padding: 0px 15px; }
+  .discoverfull .imagePos .item-thumbnail-left > img:first-child {
+    left: 3px !important;
+    top: 21px !important; }
+  .discoverfull .watch-w img {
+    width: 10px; }
+
 .explore-more .news-content {
   margin-bottom: 0px; }
 
@@ -11860,6 +11878,19 @@ body {
   font-size: 10px;
   color: #afafaf;
   font-family: 'Montserrat-Italic' !important; }
+
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear; }
+
+.list .item.item-accordion.ng-hide {
+  line-height: 0px; }
+
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {

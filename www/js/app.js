@@ -140,7 +140,18 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     }
 
   })
+  .state('tab.discoverfull', {
+    url: '/discoverfull',
+  
+   views: {
+      'tab-discoverNews': {
 
+        templateUrl: 'templates/discover-full.html',
+        controller: 'DiscoverFullCtrl'
+      }
+    }
+
+ })
 
   .state('filter', {
     url: '/filter',
@@ -222,13 +233,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'EditCtrl'
     })
     
-    .state('discoverfull', {
-      url: '/discoverfull',
-      templateUrl: 'templates/discover-full.html',
-      controller: 'DiscoverFullCtrl'
-    })
-
-    .state('settings', {
+  .state('settings', {
       url: '/settings',
       templateUrl: 'templates/settings.html',
       controller: 'SettingsCtrl'

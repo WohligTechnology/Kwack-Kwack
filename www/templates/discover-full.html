@@ -22,10 +22,12 @@
         </div>
       <div>
       </div>
+      <div class="discover-item ">
       <div class="bar bar-header item-input-inset placeholderDiscover">
+         
             <label class="item-input-wrapper" >
               <i class="icon ion-search placeholder-icon"></i>
-              <input type="search" placeholder="Search" ng-model="search.search">
+              <input type="search" placeholder="Business" ng-model="search.search">
               
             </label>
             <!-- <i class="ion ion-ios-close" ng-click="searchCancel()" ng-if="search.search!=''"></i> -->
@@ -33,8 +35,10 @@
             <button class="button button-clear searchCancel">
               Cancel
             </button>
+        </div>
           </div>
-          <div ng-repeat="discover in discoverFull"><discoverfull></discoverfull>
+          <div ng-repeat="discover in discoverFull" >
+              <discoverfull ui-sref="tab.discoverNews"></discoverfull>
           </div>
       
             </div>
