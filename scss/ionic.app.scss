@@ -2686,6 +2686,19 @@ $dark:                            #444 !default;
     }
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+        .accordian{
+            label{
+                font-size:10px!important;
+            }
+            
+        }
+        .padr{
+            padding-right: 0px;
+        }
+    
+        .padl{
+            padding-left: 0px;
+        }
         .back-img-title {
             bottom: 0px!important;
         }
@@ -2965,6 +2978,20 @@ $dark:                            #444 !default;
     }
 
     @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
+        .accordian{
+            label{
+                font-size:12px!important;
+            }
+            
+        }
+        .padr{
+            padding-right: 8px;
+        }
+    
+        .padl{
+            padding-left: 8px;
+        }
+        
         .back-img-title {
             position: absolute;
             bottom: 0;
@@ -2995,6 +3022,20 @@ $dark:                            #444 !default;
     }
 
     @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
+        .accordian{
+            label{
+                font-size:12px!important;
+            }
+            
+        }
+        .padr{
+            padding-right: 8px;
+        }
+    
+        .padl{
+            padding-left: 8px;
+        }
+        
         .back-img-title {
             position: absolute;
             top: 0;
@@ -3031,6 +3072,20 @@ $dark:                            #444 !default;
         }
     } // css for iphone 6 nd 6plus
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+        .accordian{
+            label{
+                font-size:12px!important;
+            }
+            
+        }
+        .padr{
+            padding-right: 8px;
+        }
+    
+        .padl{
+            padding-left: 8px;
+        }
+       
         .back-img-title {
             position: absolute;
             top: 0;
@@ -3312,6 +3367,20 @@ $dark:                            #444 !default;
     }
 
     @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+        .accordian{
+            label{
+                font-size:12px!important;
+            }
+            
+        }
+        .padr{
+            padding-right: 8px;
+        }
+    
+        .padl{
+            padding-left: 8px;
+        }
+        
         .back-img-title {
             position: absolute;
             top: 0;
