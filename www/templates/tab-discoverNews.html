@@ -8,7 +8,7 @@
       </div>
       <div class="col col33">
         <div class="kwackheaderImg">
-          <img src="img/discover/kwack.png">
+          <img src="img/discover/kwack.png" ui-sref="home">
         </div>
       </div>
       <div class="col col33 discover-navsearch">
@@ -79,7 +79,7 @@
             </ion-scroll>
       </div>
       <div ng-repeat="discover in discoverNews">
-        <discover></discover>
+        <discover ui-sref="tab.discoverfull"></discover>
       </div>
       </div>
   </ion-content>

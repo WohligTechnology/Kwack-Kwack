@@ -9925,7 +9925,8 @@ body {
 .bar.bar-stable {
   background-color: transparent !important;
   border: none;
-  background-image: none !important; }
+  background-image: none !important;
+  display: none; }
 
 .bartitle .bar.bar-stable .title {
   color: transparent !important; }
@@ -10459,10 +10460,10 @@ body {
   padding: 7px 29px; }
 
 .btn-science {
-  padding: 7px 17px; }
+  padding: 7px 18px; }
 
 .btn-entertainment {
-  padding: 7px 47px; }
+  padding: 7px 50px; }
 
 .btn-international {
   padding: 7px 56px; }
@@ -12233,7 +12234,7 @@ body {
     font-size: 11px;
     padding: 0px 20px; }
   .btn-yellow {
-    padding: 7px 76px;
+    padding: 7px 65px;
     font-size: 14px; }
   .social-icon li {
     width: 23% !important; }
@@ -12322,4 +12323,7 @@ body {
   .social-iconll li {
     width: 19%; }
   .placeholder-icon:last-child {
-    padding-left: 30px; } }
+    padding-left: 30px; }
+  .btn-yellow {
+    padding: 7px 65px;
+    font-size: 14px; } }
