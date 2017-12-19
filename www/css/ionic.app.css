@@ -10733,6 +10733,9 @@ body {
 .aligntop {
   vertical-align: top; }
 
+.alignbot {
+  vertical-align: bottom; }
+
 .alignM {
   vertical-align: middle; }
 
@@ -11891,6 +11894,60 @@ body {
 .list .item.item-accordion.ng-hide-add,
 .list .item.item-accordion.ng-hide-remove {
   display: block !important; }
+
+.accordian .item-stable {
+  margin: 3px 20px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  margin: 10px;
+  text-align: center;
+  padding: 5px;
+  background: white;
+  font-family: 'Montserrat-Medium';
+  color: black; }
+
+.accordian label {
+  font-size: 12px !important; }
+
+.padr {
+  padding-right: 10px; }
+
+.padl {
+  padding-left: 10px; }
+
+.nospacing {
+  margin: 0px;
+  padding: 0px;
+  background: transparent; }
+
+.accordiancontent .card {
+  margin: 0px 20px;
+  background-color: transparent;
+  box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21); }
+  .accordiancontent .card .item {
+    margin-right: 3px;
+    margin-left: 3px;
+    border: none; }
+
+.accordiancontent .list:last-child.card {
+  margin-bottom: 0px; }
+
+.accordiancontent .item {
+  z-index: -3;
+  margin: -10px;
+  padding-bottom: 5px; }
+
+.accordiancontent h3 {
+  font-family: 'Montserrat-Medium';
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.accordiancontent span {
+  font-size: 9px;
+  font-family: 'Montserrat-Regular'; }
+  .accordiancontent span img {
+    vertical-align: middle;
+    width: 3%; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .back-img-title {
