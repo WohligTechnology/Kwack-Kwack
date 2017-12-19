@@ -151,11 +151,12 @@ connector.controller('ExploreDetailCtrl', function($scope) {
         items: [],
         news:$scope.news[i]
       };
-      for (var j=0; j<$scope.news.length; j++) {
-        
-      }
-      $scope.groups[i].items.push(i + '-' + j);
     }
+      for (var j=0; j<$scope.news.length; j++) {
+      }
+    //   }
+    //   $scope.groups[i].items.push(i + '-' + j);
+    // }
 
     $scope.toggleGroup = function(value) {
       console.log("showmeindex",value)

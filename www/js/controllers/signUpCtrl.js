@@ -1,17 +1,17 @@
 connector.controller('SignUpCtrl', function ($scope, Chats, $state) {
-        console.log("inside sign up")
-    $scope.saveUser = function (info) {
-      if (info.password == info.forgotPassword) {
-        Chats.apiCallWithData("User/save", info, function (data) {
-          console.log("data is", data)
-          if (data.value == true) {
-            $scope.data = data;
+    //     console.log("inside sign up")
+    // $scope.saveUser = function (info) {
+    //   if (info.password == info.forgotPassword) {
+    //     Chats.apiCallWithData("User/save", info, function (data) {
+    //       console.log("data is", data)
+    //       if (data.value == true) {
+    //         $scope.data = data;
 
-            $state.go("otp")
-          }
-        })
-      } else {
-        console.log("inside else")
-      }
-    }
+    //         $state.go("otp")
+    //       }
+    //     })
+    //   } else {
+    //     console.log("inside else")
+    //   }
+    // }
 })

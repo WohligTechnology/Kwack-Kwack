@@ -9925,7 +9925,8 @@ body {
 .bar.bar-stable {
   background-color: transparent !important;
   border: none;
-  background-image: none !important; }
+  background-image: none !important;
+  display: none; }
 
 .bartitle .bar.bar-stable .title {
   color: transparent !important; }
@@ -10459,10 +10460,10 @@ body {
   padding: 7px 29px; }
 
 .btn-science {
-  padding: 7px 17px; }
+  padding: 7px 18px; }
 
 .btn-entertainment {
-  padding: 7px 47px; }
+  padding: 7px 50px; }
 
 .btn-international {
   padding: 7px 56px; }
@@ -11909,6 +11910,15 @@ body {
 .accordian label {
   font-size: 12px !important; }
 
+.just-now-labelexplore {
+  top: 7%;
+  right: 12px;
+  background: #ffb600;
+  font-size: 10px;
+  font-family: 'Montserrat-Regular';
+  padding: 3px 11px;
+  z-index: 1; }
+
 .padr {
   padding-right: 10px; }
 
@@ -11921,7 +11931,7 @@ body {
   background: transparent; }
 
 .accordiancontent .card {
-  margin: 0px 20px;
+  margin: 0px 18px;
   background-color: transparent;
   box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21); }
   .accordiancontent .card .item {
@@ -11952,6 +11962,8 @@ body {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .accordian label {
     font-size: 10px !important; }
+  .accordiancontent span {
+    font-size: 7px; }
   .padr {
     padding-right: 0px; }
   .padl {
@@ -12141,11 +12153,13 @@ body {
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
   .accordian label {
-    font-size: 12px !important; }
+    font-size: 10px !important; }
+  .accordiancontent span {
+    font-size: 7px; }
   .padr {
-    padding-right: 8px; }
+    padding-right: 0px; }
   .padl {
-    padding-left: 8px; }
+    padding-left: 0px; }
   .back-img-title {
     position: absolute;
     bottom: 0;
@@ -12171,6 +12185,8 @@ body {
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
     font-size: 12px !important; }
+  .accordiancontent span {
+    font-size: 9px; }
   .padr {
     padding-right: 8px; }
   .padl {
@@ -12203,6 +12219,8 @@ body {
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .accordian label {
     font-size: 12px !important; }
+  .accordiancontent span {
+    font-size: 9px; }
   .padr {
     padding-right: 8px; }
   .padl {
@@ -12314,7 +12332,7 @@ body {
     font-size: 11px;
     padding: 0px 20px; }
   .btn-yellow {
-    padding: 7px 76px;
+    padding: 7px 65px;
     font-size: 14px; }
   .social-icon li {
     width: 23% !important; }
@@ -12394,6 +12412,8 @@ body {
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .accordian label {
     font-size: 12px !important; }
+  .accordiancontent span {
+    font-size: 9px; }
   .padr {
     padding-right: 8px; }
   .padl {
@@ -12409,4 +12429,7 @@ body {
   .social-iconll li {
     width: 19%; }
   .placeholder-icon:last-child {
-    padding-left: 30px; } }
+    padding-left: 30px; }
+  .btn-yellow {
+    padding: 7px 65px;
+    font-size: 14px; } }

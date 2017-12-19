@@ -127,6 +127,7 @@ $dark:                            #444 !default;
         background-color: transparent!important;
         border: none;
         background-image: none!important;
+        display: none;
     }
 
     .bartitle {
@@ -812,11 +813,11 @@ $dark:                            #444 !default;
     }
 
     .btn-science {
-        padding: 7px 17px;
+        padding: 7px 18px;
     }
 
     .btn-entertainment {
-        padding: 7px 47px;
+        padding: 7px 50px;
     }
 
     .btn-international {
@@ -2636,6 +2637,16 @@ $dark:                            #444 !default;
         }
     }
     
+
+    .just-now-labelexplore {
+        top: 7%;
+        right: 12px;
+        background: $yellow3;
+        font-size: 10px;
+        font-family: 'Montserrat-Regular';
+        padding: 3px 11px;
+        z-index: 1;
+    }
     .padr{
         padding-right: 10px;
     }
@@ -2652,7 +2663,7 @@ $dark:                            #444 !default;
     .accordiancontent {
      
         .card {
-            margin: 0px 20px;
+            margin: 0px 18px;
             background-color: transparent;
             box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21);
             .item {
@@ -2691,6 +2702,12 @@ $dark:                            #444 !default;
                 font-size:10px!important;
             }
             
+        }
+
+        .accordiancontent {
+        span{
+            font-size: 7px;
+        }
         }
         .padr{
             padding-right: 0px;
@@ -2980,16 +2997,22 @@ $dark:                            #444 !default;
     @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
         .accordian{
             label{
-                font-size:12px!important;
+                font-size:10px!important;
             }
             
         }
+
+        .accordiancontent {
+            span{
+                font-size: 7px;
+            }
+            }
         .padr{
-            padding-right: 8px;
+            padding-right: 0px;
         }
     
         .padl{
-            padding-left: 8px;
+            padding-left: 0px;
         }
         
         .back-img-title {
@@ -3028,6 +3051,13 @@ $dark:                            #444 !default;
             }
             
         }
+
+        .accordiancontent {
+            span{
+                font-size: 9px;
+            }
+            }
+
         .padr{
             padding-right: 8px;
         }
@@ -3078,6 +3108,12 @@ $dark:                            #444 !default;
             }
             
         }
+
+        .accordiancontent {
+            span{
+                font-size: 9px;
+            }
+            }
         .padr{
             padding-right: 8px;
         }
@@ -3247,7 +3283,7 @@ $dark:                            #444 !default;
             }
         }
         .btn-yellow {
-            padding: 7px 76px;
+            padding: 7px 65px;
             font-size: 14px;
         }
         .social-icon li {
@@ -3373,6 +3409,12 @@ $dark:                            #444 !default;
             }
             
         }
+
+        .accordiancontent {
+            span{
+                font-size: 9px;
+            }
+            }
         .padr{
             padding-right: 8px;
         }
@@ -3397,5 +3439,9 @@ $dark:                            #444 !default;
         }
         .placeholder-icon:last-child {
             padding-left: 30px;
+        }
+        .btn-yellow {
+            padding: 7px 65px;
+            font-size: 14px;
         }
     }

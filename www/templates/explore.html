@@ -1,5 +1,5 @@
 <ion-view>
-    <div class="bar bar-header bar-light">
+    <div class="">
         <div class="row">
             <div class="col col-33">
                 <div>
@@ -8,7 +8,7 @@
             </div>
             <div class="col col-33 text-center">
                 <div>
-                    <img src="img/filter/7.png" class="w40">
+                    <img src="img/filter/7.png" class="w40" ui-sref="home">
                 </div>
             </div>
             <div class="col col-33">
@@ -23,7 +23,7 @@
             <h4 class="pad0 title-explore">EXPLORE</h4>
         </div>
         <div ng-repeat="news in exploreNews">
-            <explore  ui-sref="tab.exploremore"> </explore>
+            <explore  ui-sref="tab.exploreDetail"> </explore>
         </div>
     </ion-content>
    </ion-view>

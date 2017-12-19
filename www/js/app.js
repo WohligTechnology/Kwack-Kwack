@@ -204,10 +204,14 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
         }
       }
     })
-    .state('exploreDetail', {
+    .state('tab.exploreDetail', {
+      views: {
+        'tab-explore': {
       url: '/exploredetail',
       templateUrl: 'templates/exploreDetail.html',
       controller: 'ExploreDetailCtrl'
+        }
+      }
     })
   .state('inviteFriends', {
       url: '/inviteFriends',

@@ -9,51 +9,48 @@
                 <P class="locationtHead">Get the best from your region</P>
             </div>
             <div class="cardBox">
-                    <div class="card pad2010">
-                            <form action="#theCombo" class="rel pad-10">
-                                <div class="plusposition">
-                                    <img src="img/plus1.png" alt="">
-                                </div>
-                                <select ng-model="data.country" ng-change="addCountry(data)"  class="theCombo">
-                                  <option value="">Select Country</option>
-                                  <option value="India">India</option>
-                                  <option value="USA">USA</option>
-                                </select>
-                              
-                              </form>
-                              <form action="#theCombo" class="rel pad-10">
-                                    <div class="plusposition">
-                                        <img src="img/plus1.png" alt="">
-                                    </div>
-                                    
-                                    <select ng-model="data.state" ng-change="addState(data)" class="theCombo">
-                                      <option value="">Select State</option>
-                                      <option value="Delhi">Delhi</option>
-                                      <option value="California">California</option>
-                                    </select>
-                                  
-                                  </form>
-                          </div>
+                <div class="card pad2010">
+                    <form action="#theCombo" class="rel pad-10">
+                        <div class="plusposition">
+                            <img src="img/plus1.png" alt="">
+                        </div>
+                        <select ng-model="data.country" ng-change="addCountry(data)" class="theCombo">
+                            <option value="">Select Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </form>
+                    <form action="#theCombo" class="rel pad-10">
+                        <div class="plusposition">
+                            <img src="img/plus1.png" alt="">
+                        </div>
+                         <select ng-model="data.state" ng-change="addState(data)" class="theCombo">
+                            <option value="">Select State</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="California">California</option>
+                        </select>
+
+                    </form>
+                </div>
             </div>
-            
-           
         </div>
     </ion-content>
     <div class="footer">
         <div class="bar bar-footer bar-black">
-            <div class="col-20"  ui-sref="otp">
+            <div class="col-20" ui-sref="signUp">
                 <div class="arrow-back text-center">
                     <a class="button">
                         <i class="ion ion-ios-arrow-back"></i>
                     </a>
                 </div>
             </div>
-            <div class="col-75" ui-sref="discover">
-                <div class="col-75" ng-click="addCountryState(data)">
+            <div class="col-75" >
+                <!-- <div class="col-75" ng-click="addCountryState(data)">
+                   
+                </div> -->
                 <div class="skip text-right mar-r">
-                    <span>NEXT</span>
+                    <span ui-sref="discover">NEXT</span>
                 </div>
             </div>
         </div>
-    </div>
 </ion-view>

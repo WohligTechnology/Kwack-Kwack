@@ -1,7 +1,7 @@
 <ion-view>
         <div class="bar bar-header bar-light">
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-33" ui-sref="tab.explore">
                     <div>
                         <img src="img/filter/6.png" class="w15">
                     </div>
@@ -51,14 +51,13 @@
 
                           </div>
                               <!-- {{group.news}} -->
-                          </ion-item>
+                          </ion-item >
                           <ion-item class="item-accordion nospacing"
-                                   
                                     ng-show="isGroupShown($index)">
-                                    <div ng-repeat="news in exploreNews">
+                                    <div ng-repeat="news in exploreNews" ui-sref="tab.exploremore">
                                     <div class="accordiancontent">
                                             <div>
-                                                <label class="absolute just-now-label">{{news.just}}</label>
+                                                <label class="absolute just-now-labelexplore">{{news.just}}</label>
                                             </div>
                                             <div class="list card" >
                                                 <div class="relative">
