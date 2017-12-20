@@ -192,7 +192,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
   .state('otp', {
       url: '/otp',
       templateUrl: 'templates/otp.html',
-      controller: 'DiscoverCtrl'
+      controller: 'OtpCtrl'
 
     })
     .state('tab.explore', {
