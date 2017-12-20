@@ -9,30 +9,31 @@
                     <div class="list signupPlaceholder">
                         <label class="item item-input item-floating-label">
                         <span class="mar-t"></span>
-                       <input type="text" class="border-bot" placeholder="Full Name">
+                       <input type="text" class="border-bot" ng-model="data.name" placeholder="Full Name">
                      </label>
                         <label class="item item-input item-floating-label">
                         <span clas></span>
-                   <input type="text" class="border-bot" placeholder="Username">
+                   <input type="text" class="border-bot" ng-model="data.userName" placeholder="Username">
                     </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
-                         <input type="text" class="border-bot" placeholder="Email id">
+                         <input type="text" class="border-bot" ng-model="data.email" placeholder="Email id">
                      </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
-                        <input type="tel" class="border-bot" placeholder="Mobile Number">
+                        <input type="tel" class="border-bot" ng-model="data.mobile" placeholder="Mobile Number">
                     </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
-                      <input type="password" class="border-bot" placeholder="Password">
+                      <input type="password" class="border-bot" ng-model="data.password" placeholder="Password">
                       </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
-                         <input type="password" class="border-bot" placeholder="Confirm Password">
+                         <input type="password" class="border-bot" ng-model="data.forgotPassword" placeholder="Confirm Password">
                       </label>
-                        <div class="absolute sign-up" ui-sref="otp">
-                            <button class="button  btn-yellow">SIGN UP</button>
+                        <div class="absolute sign-up" >
+                            <!-- <button class="button  btn-yellow"  ng-click="saveUser(data)">SIGN UP</button> -->
+                            <button class="button  btn-yellow" ui-sref="otp">SIGN UP</button>
                         </div>
                     </div>
                 </div>
