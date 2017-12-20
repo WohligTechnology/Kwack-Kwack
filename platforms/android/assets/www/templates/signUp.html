@@ -10,8 +10,7 @@
                          <form name="formName">
                         <label class="item item-input item-floating-label">
                         <span class="mar-t"></span>
-                       <input type="text" class="border-bot" ng-model="data.name" placeholder="Full Name" required>
-                       <span ng-show="formName.name.$touched && formName.name.$invalid">Full Name is required.</span>
+                       <input type="text" class="border-bot" ng-model="data.name" placeholder="Full Name">
                      </label>
                         <label class="item item-input item-floating-label">
                         <span clas></span>
@@ -33,10 +32,9 @@
                         <span></span>
                          <input type="password" class="border-bot" ng-model="data.forgotPassword" placeholder="Confirm Password">
                       </label>
-                    </form>
                         <div class="absolute sign-up" >
-                            <!-- <button class="button  btn-yellow" ng-disabled="formName.$invalid"  ng-click="saveUser(data,formName )" >SIGN UP</button> -->
-                            <button class="button  btn-yellow" ui-sref="otp" >SIGN UP</button>
+                             <button class="button  btn-yellow"  ng-click="saveUser(data)">SIGN UP</button> 
+                            <!--<button class="button  btn-yellow" ui-sref="otp">SIGN UP</button>-->
                         </div>
                     </div>
                 </div>
