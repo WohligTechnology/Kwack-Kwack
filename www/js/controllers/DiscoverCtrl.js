@@ -1,4 +1,4 @@
-connector.controller('DiscoverCtrl', function($scope, $ionicModal) {
+connector.controller('DiscoverCtrl', function($scope,Chats, $ionicModal) {
     $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
       scope: $scope,
       animation: 'slide-in-up'
@@ -12,8 +12,8 @@ connector.controller('DiscoverCtrl', function($scope, $ionicModal) {
     $scope.closeModal = function () {
       $scope.modal.hide();
     };
-        Chats.apiCallWithData("Interests/getAllInterests", function (data) {
-        console.log("data is", data)
+        Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
+        console.log("data is*****************", data)
        
       })
   })
