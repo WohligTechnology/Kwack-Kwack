@@ -15,31 +15,161 @@ connector.controller('ExploreDetailCtrl', function($scope) {
         "just":"just now"
     }
     ]
-    $scope.groups = [{
-        "news":"Gotham City Police Department",
-        "date":"12"
+    $scope.groups= []
+    $scope.news = [{
+        "news1":"Gotham City Police Department",
+        "date1":"Thrusday, 19 Aug 2017",
+        "value1": false,
+        "img":"img/explore/1.jpg",
+        "news":"Game of Thrones: HBO hacker threaten leak of season finale",
+        "day":"Thursday",
+        "date":"19 Aug 2017",
+        "email":"broadly.voice.com",
+        "time1":"5m ago",
+        "desc":"Attackers dump HBO social media account passwords on the internet following hacks and leaks of unaired TV shows and confidential data",
+        "poll":"20",
+        "kwack":"42",
+        "share":"20",
+        "movie":"Movie",
+        "just":"just now"
       
-    }];
-    // for (var i=0; i<10; i++) {
-    //   $scope.groups[i] = {
-    //     name: i,
-    //     items: []
-    //   };
-    //   for (var j=0; j<3; j++) {
-        
+    },
+    {
+      "news1":"Wayne Enterprises",
+      "date1":"Thrusday, 19 Aug 2017",
+      "value1": false,
+      "img":"img/explore/1.jpg",
+      "news":"Game of Thrones: HBO hacker threaten leak of season finale",
+      "day":"Thursday",
+      "date":"19 Aug 2017",
+      "email":"broadly.voice.com",
+      "time1":"5m ago",
+      "desc":"Attackers dump HBO social media account passwords on the internet following hacks and leaks of unaired TV shows and confidential data",
+      "poll":"20",
+      "kwack":"42",
+      "share":"20",
+      "movie":"Movie",
+      "just":"just now"
+    
+  },
+  {
+    "news1":"Penguin’s Secret Base",
+    "date1":"Thrusday, 19 Aug 2017",
+    "value1": false,
+    "img":"img/explore/1.jpg",
+    "news":"Game of Thrones: HBO hacker threaten leak of season finale",
+    "day":"Thursday",
+    "date":"19 Aug 2017",
+    "email":"broadly.voice.com",
+    "time1":"5m ago",
+    "desc":"Attackers dump HBO social media account passwords on the internet following hacks and leaks of unaired TV shows and confidential data",
+    "poll":"20",
+    "kwack":"42",
+    "share":"20",
+    "movie":"Movie",
+    "just":"just now"
+  
+},
+{
+  "news1":"Falcone Crime Family",
+  "date1":"Thrusday, 19 Aug 2017",
+  "value1": false,
+  "img":"img/explore/1.jpg",
+  "news":"Game of Thrones: HBO hacker threaten leak of season finale",
+  "day":"Thursday",
+  "date":"19 Aug 2017",
+  "email":"broadly.voice.com",
+  "time1":"5m ago",
+  "desc":"Attackers dump HBO social media account passwords on the internet following hacks and leaks of unaired TV shows and confidential data",
+  "poll":"20",
+  "kwack":"42",
+  "share":"20",
+  "movie":"Movie",
+  "just":"just now"
+
+},
+{
+  "news1":"Arkham Asylum",
+  "date1":"Thrusday, 19 Aug 2017",
+  "value1": false,
+  "img":"img/explore/1.jpg",
+  "news":"Game of Thrones: HBO hacker threaten leak of season finale",
+  "day":"Thursday",
+  "date":"19 Aug 2017",
+  "email":"broadly.voice.com",
+  "time1":"5m ago",
+  "desc":"Attackers dump HBO social media account passwords on the internet following hacks and leaks of unaired TV shows and confidential data",
+  "poll":"20",
+  "kwack":"42",
+  "share":"20",
+  "movie":"Movie",
+  "just":"just now"
+
+},
+{
+  "news1":"Gotham City Police Department",
+  "date1":"Thrusday, 19 Aug 2017",
+  "value1": false,
+  "img":"img/explore/1.jpg",
+  "news":"Game of Thrones: HBO hacker threaten leak of season finale",
+  "day":"Thursday",
+  "date":"19 Aug 2017",
+  "email":"broadly.voice.com",
+  "time1":"5m ago",
+  "desc":"Attackers dump HBO social media account passwords on the internet following hacks and leaks of unaired TV shows and confidential data",
+  "poll":"20",
+  "kwack":"42",
+  "share":"20",
+  "movie":"Movie",
+  "just":"just now"
+
+},
+    {
+      "news1":"Gotham City Police Department",
+      "date1":"Thrusday, 19 Aug 2017",
+      "value1": false,
+      "img":"img/explore/1.jpg",
+      "news":"Game of Thrones: HBO hacker threaten leak of season finale",
+      "day":"Thursday",
+      "date":"19 Aug 2017",
+      "email":"broadly.voice.com",
+      "time1":"5m ago",
+      "desc":"Attackers dump HBO social media account passwords on the internet following hacks and leaks of unaired TV shows and confidential data",
+      "poll":"20",
+      "kwack":"42",
+      "share":"20",
+      "movie":"Movie",
+      "just":"just now"
+  }]
+
+  $scope.headerHide=function(value){
+    console.log("showmeindex",value)
+  }
+    for (var i=0; i<$scope.news.length; i++) {
+      $scope.groups[i] = {
+        name: i,
+        items: [],
+        news:$scope.news[i]
+      };
+    }
+      for (var j=0; j<$scope.news.length; j++) {
+      }
     //   }
     //   $scope.groups[i].items.push(i + '-' + j);
     // }
 
-    $scope.toggleGroup = function(group) {
-        if ($scope.isGroupShown(group)) {
+    $scope.toggleGroup = function(value) {
+      console.log("showmeindex",value)
+      $scope.index=value
+        if ($scope.isGroupShown(value)) {
           $scope.shownGroup = null;
         } else {
-          $scope.shownGroup = group;
+          $scope.shownGroup = value;
         }
       };
-      $scope.isGroupShown = function(group) {
-        return $scope.shownGroup === group;
+      $scope.isGroupShown = function(value) {
+        return $scope.shownGroup == value;
+        console.log($scope.shownGroup)
       };
       
 })

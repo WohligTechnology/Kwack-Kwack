@@ -1,7 +1,7 @@
 <ion-view>
         <div class="bar bar-header bar-light">
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-33" ui-sref="tab.explore">
                     <div>
                         <img src="img/filter/6.png" class="w15">
                     </div>
@@ -22,23 +22,74 @@
             <div class="text-center">
                 <h4 class="pad0 title-explore">EXPLORE</h4>
             </div>
-            <div ng-repeat="news in exploreNews">
+            <!-- <div ng-repeat="news in exploreNews">
                     <explore  ui-sref="tab.exploremore"> </explore>
-                </div>
-                <div> <ion-list>
-                        <div ng-repeat="group in groups">
+                </div> -->
+                <div> <ion-list >
+                        <div  class="accordian"  ng-repeat="new in news track by $index">
                           <ion-item class="item-stable"
-                                    ng-click="toggleGroup(group)"
-                                    ng-class="{active: isGroupShown(group)}">
-                              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
-                           {{group.news}}
-                          </ion-item>
-                          <ion-item class="item-accordion"
-                                    ng-repeat="item in group.items"
-                                    ng-show="isGroupShown(group)">
-                                    <div ng-repeat="news in exploreNews">
-                                            <explore  ui-sref="tab.exploremore"> </explore>
+                                    ng-click="toggleGroup($index)" ng-if="index!=$index">
+                              <!-- <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
+                          <div  >{{new.length}}
+<label>{{new.news1}}</label>
+<div class="row pad0">
+        <div class="col-33 text-left padl">
+    <label for="" class="readarticle alignbot">Read Article...</label>
+        </div>
+        <div class="col-33">
+    <label for="" class="articleDate aligntop">{{new.date1}}</label>
+        </div>
+        <div class="col-33">
+                <div class="text-right alignbot padr">
+                        <span class="carddatecl watch-w">
+                            <img src="img/explore/4.png">
+                        </span>
+                        <span class="carddatecl discoverFullTime">{{new.time1}}</span>
+                    </div>
+        </div>
+    </div>
+
+                          </div>
+                              <!-- {{group.news}} -->
+                          </ion-item >
+                          <ion-item class="item-accordion nospacing"
+                                    ng-show="isGroupShown($index)">
+                                    <div ng-repeat="news in exploreNews" ui-sref="tab.exploremore">
+                                    <div class="accordiancontent">
+                                            <div>
+                                                <label class="absolute just-now-labelexplore">{{news.just}}</label>
+                                            </div>
+                                            <div class="list card" >
+                                                <div class="relative">
+                                                    <img class="full-image" ng-src="{{news.img}}">
+                                                    <label class="absolute movie-label">{{news.movie}}</label>
+                                                </div>
+                                                <div class="item item-body">
+                                                    <h3 class="pad0">{{news.news}}</h3>
+                                                    <div class="date-time">
+                                                        <span class="carddatecl">{{news.day}},</span><span class="carddatecl"> {{news.date}}</span>
+                                                        <span class="padd-lr carddatecl">{{news.email}}</span>
+                                                        <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">{{news.time}}</span>
+                                                    </div>
+                                                    <div class="detail-para">
+                                                        <p class="pad0">
+                                                            {{news.desc}}
+                                                        </p>
+                                                    </div>
+                                                    <div class="display-inline">
+                                                        <div class="w56"><img src="img/explore/3.png" class="w100"></div>
+                                                    </div>
+                                                    <div class="display-inline float-right explore-icon text-center">
+                                                        <label class="discoverCardStrip"> <img src="img/explore/5.png"><span class="alignM"> {{news.poll}}</span></label>
+                                                        <label class="discoverCardStrip"><img class="img-responsive" src="img/explore/6.png">
+                                                              <span class="alignM">{{news.kwack}}</span></label>
+                                                        <label><img src="img/explore/7.png"><span class="colorw alignM">{{news.share}}</span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+                                     </div>
+                                       
                                   
                           </ion-item>
                         </div>

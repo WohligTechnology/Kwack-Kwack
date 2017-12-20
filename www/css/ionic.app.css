@@ -10734,6 +10734,9 @@ body {
 .aligntop {
   vertical-align: top; }
 
+.alignbot {
+  vertical-align: bottom; }
+
 .alignM {
   vertical-align: middle; }
 
@@ -11893,7 +11896,78 @@ body {
 .list .item.item-accordion.ng-hide-remove {
   display: block !important; }
 
+.accordian .item-stable {
+  margin: 3px 20px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  margin: 10px;
+  text-align: center;
+  padding: 5px;
+  background: white;
+  font-family: 'Montserrat-Medium';
+  color: black; }
+
+.accordian label {
+  font-size: 12px !important; }
+
+.just-now-labelexplore {
+  top: 7%;
+  right: 12px;
+  background: #ffb600;
+  font-size: 10px;
+  font-family: 'Montserrat-Regular';
+  padding: 3px 11px;
+  z-index: 1; }
+
+.padr {
+  padding-right: 10px; }
+
+.padl {
+  padding-left: 10px; }
+
+.nospacing {
+  margin: 0px;
+  padding: 0px;
+  background: transparent; }
+
+.accordiancontent .card {
+  margin: 0px 18px;
+  background-color: transparent;
+  box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21); }
+  .accordiancontent .card .item {
+    margin-right: 3px;
+    margin-left: 3px;
+    border: none; }
+
+.accordiancontent .list:last-child.card {
+  margin-bottom: 0px; }
+
+.accordiancontent .item {
+  z-index: -3;
+  margin: -10px;
+  padding-bottom: 5px; }
+
+.accordiancontent h3 {
+  font-family: 'Montserrat-Medium';
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.accordiancontent span {
+  font-size: 9px;
+  font-family: 'Montserrat-Regular'; }
+  .accordiancontent span img {
+    vertical-align: middle;
+    width: 3%; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .accordian label {
+    font-size: 10px !important; }
+  .accordiancontent span {
+    font-size: 7px; }
+  .padr {
+    padding-right: 0px; }
+  .padl {
+    padding-left: 0px; }
   .back-img-title {
     bottom: 0px !important; }
   .listHead {
@@ -12078,6 +12152,14 @@ body {
     width: 81px; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
+  .accordian label {
+    font-size: 10px !important; }
+  .accordiancontent span {
+    font-size: 7px; }
+  .padr {
+    padding-right: 0px; }
+  .padl {
+    padding-left: 0px; }
   .back-img-title {
     position: absolute;
     bottom: 0;
@@ -12101,6 +12183,14 @@ body {
       padding-top: 1px !important; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
+  .accordian label {
+    font-size: 12px !important; }
+  .accordiancontent span {
+    font-size: 9px; }
+  .padr {
+    padding-right: 8px; }
+  .padl {
+    padding-left: 8px; }
   .back-img-title {
     position: absolute;
     top: 0;
@@ -12127,6 +12217,14 @@ body {
       padding-top: 0px !important; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+  .accordian label {
+    font-size: 12px !important; }
+  .accordiancontent span {
+    font-size: 9px; }
+  .padr {
+    padding-right: 8px; }
+  .padl {
+    padding-left: 8px; }
   .back-img-title {
     position: absolute;
     top: 0;
@@ -12312,6 +12410,14 @@ body {
     width: 108px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+  .accordian label {
+    font-size: 12px !important; }
+  .accordiancontent span {
+    font-size: 9px; }
+  .padr {
+    padding-right: 8px; }
+  .padl {
+    padding-left: 8px; }
   .back-img-title {
     position: absolute;
     top: 0;
