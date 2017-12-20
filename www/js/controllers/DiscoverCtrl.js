@@ -12,4 +12,8 @@ connector.controller('DiscoverCtrl', function($scope, $ionicModal) {
     $scope.closeModal = function () {
       $scope.modal.hide();
     };
+        Chats.apiCallWithData("Interests/getAllInterests", function (data) {
+        console.log("data is", data)
+       
+      })
   })

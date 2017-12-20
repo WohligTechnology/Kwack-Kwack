@@ -1,4 +1,5 @@
-angular.module('starter.controllers', [ 'starter.controllers'])
+
+var connector=angular.module('starter.controllers',  [ 'starter.controllers', 'angular-svg-round-progressbar', 'ngCordova',])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -51,105 +52,41 @@ angular.module('starter.controllers', [ 'starter.controllers'])
   setupSlider();
 })
 
-.controller('TrailerCtrl', function($scope, $ionicModal) {
-  $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function (modal) {
-    $scope.modal = modal;
-  });
-  $scope.openModal = function () {
-    $scope.modal.show();
-  }
-
-  $scope.closeModal = function () {
-    $scope.modal.hide();
-  };
-})
-
-.controller('DiscoverCtrl', function($scope, $ionicModal) {
-  $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function (modal) {
-    $scope.modal = modal;
-  });
-  $scope.openModal = function () {
-    $scope.modal.show();
-  }
-
-  $scope.closeModal = function () {
-    $scope.modal.hide();
-  };
-})
-
-.controller('DiscoverNewsCtrl', function($scope) {
-  $scope.activeTab=1;
-  $scope.changeTab=function(num){
-    $scope.activeTab=num;
-  }
-})
-
-.controller('ProfileCtrl', function($scope) {
-})
-
-.controller('FilterCtrl', function($scope) {
-})
-
-.controller('SignUpCtrl', function($scope) {
-})
-
-.controller('SocialCtrl', function($scope) {
-})
 
 
-.controller('OtpCtrl', function($scope) {
-})
-
-.controller('InviteFriendsCtrl', function($scope) {
-  $scope.toggle=true
-  $scope.people=function(){
-    $scope.toggle = true
-  }
-  $scope.contact = function(){
-    $scope.toggle = false
-  }
-   $scope.followersb = true;
-  $scope.followers=function(){
-    $scope.followersb = true;
-    $scope.kwacksb = false;
-    $scope.pollsb = false;
-  }
-  $scope.kwacks=function(){
-    $scope.followersb = false;
-    $scope.kwacksb = true;
-    $scope.pollsb = false;
-  }
-  $scope.polls=function(){
-    $scope.followersb = false;
-    $scope.pollsb = true;
-    $scope.kwacksb = false;
-  }
-})
-
-.controller('SrartPollingCtrl', function($scope) {
-})
 
 
-.controller('ExploreCtrl', function($scope) {
-})
 
-.controller('LocationCtrl', function($scope) {
-})
 
-.controller('InviteCtrl', function($scope) {
-})
 
-.controller('LoginCtrl', function($scope) {
-})
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

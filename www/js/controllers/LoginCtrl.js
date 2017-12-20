@@ -1,18 +1,18 @@
 connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams) {
 
-    // $scope.verifyUser = function (info) {
-    //   Chats.apiCallWithData("User/VerifyUser", info, function (data) {
-    //     console.log("data is", data)
-    //     if (data.value == true) {
-    //       $scope.data = data;
-    //       $.jStorage.set("user", $scope.data.data);
-    //       $state.go("otp")
-    //     } else {
-    //       toastr.error("incorrect");
-    //     }
-    //   })
+    $scope.verifyUser = function (info) {
+      Chats.apiCallWithData("User/VerifyUser", info, function (data) {
+        console.log("data is", data)
+        if (data.value == true) {
+          $scope.data = data;
+          $.jStorage.set("user", $scope.data.data);
+          $state.go("otp")
+        } else {
+          toastr.error("incorrect");
+        }
+      })
 
-    // }
+    }
     // $scope.navigation = Chats.getNavigation();
     // $scope.currentHost = window.location.origin;
     // console.log($state.current.name);

@@ -5,38 +5,48 @@
                 <img src="img/signup/bar.png" alt="logo" class="w100">
             </div>
          
+              <form name="formName">
                 <div class="back-white">
                     <div class="list signupPlaceholder">
+                        
                         <label class="item item-input item-floating-label">
                         <span class="mar-t"></span>
-                       <input type="text" class="border-bot" ng-model="data.name" placeholder="Full Name">
+                       <input type="text" class="border-bot" ng-model="data.name" name="name" placeholder="Full Name" required>
+                       <span class="error-msg" ng-show="formName.name.$touched && formName.name.$invalid">Full Name is required.</span>
                      </label>
                         <label class="item item-input item-floating-label">
                         <span clas></span>
-                   <input type="text" class="border-bot" ng-model="data.userName" placeholder="Username">
+                   <input type="text" class="border-bot" ng-model="data.userName" name="userName" placeholder="Username" required>
+                   <span class="error-msg" ng-show="formName.userName.$touched && formName.userName.$invalid">Please enter a valid email</span>
                     </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
-                         <input type="text" class="border-bot" ng-model="data.email" placeholder="Email id">
+                         <input type="text" class="border-bot" ng-model="data.email" name="email" placeholder="Email id" required>
+                         <span class="error-msg" ng-show="formName.email.$touched && formName.email.$invalid">Please enter a valid email</span>
                      </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
-                        <input type="tel" class="border-bot" ng-model="data.mobile" placeholder="Mobile Number">
+                        <input type="tel" class="border-bot" ng-model="data.mobile" name="mobile" placeholder="Mobile Number" minlength="10" maxlength="10" required>
+                        <span class="error-msg" ng-show="formName.mobile.$touched && formName.mobile.$invalid">Please enter a valid Phone Number</span>
                     </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
-                      <input type="password" class="border-bot" ng-model="data.password" placeholder="Password">
+                      <input type="password" class="border-bot" ng-model="data.password" name="password" placeholder="Password" required>
+                      <span class="error-msg" ng-show="formName.password.$touched && formName.password.$invalid">Please enter a valid Password</span>
                       </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
-                         <input type="password" class="border-bot" ng-model="data.forgotPassword" placeholder="Confirm Password">
+                         <input type="password" class="border-bot" ng-model="data.forgotPassword" placeholder="Confirm Password" required>
+                         <span ng-show="formName.forgotPassword.$touched && formName.forgotPassword.$invalid">Please enter a valid Password</span>
+                         <span class="error-msg" ng-if="showMassage">Please enter a valid Password </span>
                       </label>
-                        <div class="absolute sign-up" >
-                            <!-- <button class="button  btn-yellow"  ng-click="saveUser(data)">SIGN UP</button> -->
-                            <button class="button  btn-yellow" ui-sref="otp">SIGN UP</button>
+                      <div class="absolute sign-up">
+                            <button class="button  btn-yellow"  ng-click="saveUser(data,formName )" ng-disabled="formName.$invalid">SIGN UP</button>
+                            <!-- <button class="button  btn-yellow" ui-sref="otp"  >SIGN UP</button> -->
                         </div>
                     </div>
                 </div>
+            </form>
                 <div class="social-icon">
                     <p>OR SIGN UP VIA</p>
                     <ul>

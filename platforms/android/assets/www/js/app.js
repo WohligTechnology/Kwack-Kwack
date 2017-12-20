@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
 .run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
@@ -76,6 +76,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     })
 
+    .state('tab.exploremore', {
+      url: '/exploremore',
+      views: {
+        'tab-explore': {
+          templateUrl: 'templates/exploremore.html',
+          controller: 'ExploremoreCtrl'
+        }
+      }
+    })
+
     .state('invite', {
       url: '/invite',
       templateUrl: 'templates/invite.html',
@@ -94,8 +104,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     })
 
+    .state('tab.kwackScreen', {
+      url: '/kwackScreen',
+      views: {
+        'tab-trailer': {
+
+          templateUrl: 'templates/kwack-screen.html',
+          controller: 'KwackScreenCtrl'
+        }
+      }
+
+
+    })
+
   .state('profile', {
-    url: '/profile',
+    url: '/profile/:userId',
     templateUrl: 'templates/profile.html',
     controller: 'ProfileCtrl'
   })
@@ -117,7 +140,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
 
   })
+  .state('tab.discoverfull', {
+    url: '/discoverfull',
+  
+   views: {
+      'tab-discoverNews': {
 
+        templateUrl: 'templates/discover-full.html',
+        controller: 'DiscoverFullCtrl'
+      }
+    }
+
+ })
 
   .state('filter', {
     url: '/filter',
@@ -143,16 +177,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
   .state('location', {
-    url: '/location',
+    url: '/location/:userEmail',
     templateUrl: 'templates/location.html',
     controller: 'LocationCtrl'
 
   })
+  .state('parampage', {
+    url: '/parampage',
+    templateUrl: 'templates/parampage.html',
+    controller: 'ParampageCtrl'
+
+  })
 
   .state('otp', {
-      url: '/otp',
+      url: '/otp/:userId',
       templateUrl: 'templates/otp.html',
-      controller: 'DiscoverCtrl'
+      controller: 'OtpCtrl'
 
     })
     .state('tab.explore', {
@@ -164,19 +204,60 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-
+    .state('tab.exploreDetail', {
+      views: {
+        'tab-explore': {
+      url: '/exploredetail',
+      templateUrl: 'templates/exploreDetail.html',
+      controller: 'ExploreDetailCtrl'
+        }
+      }
+    })
   .state('inviteFriends', {
       url: '/inviteFriends',
       templateUrl: 'templates/inviteFriends.html',
       controller: 'InviteFriendsCtrl'
     })
+   
+    .state('accountinside', {
+      url: '/accountinside',
+      templateUrl: 'templates/accountinside.html',
+      controller: 'AccountInsieCtrl'
+    })
 
+    .state('aboutinside', {
+      url: '/aboutinside',
+      templateUrl: 'templates/aboutinside.html',
+      controller: 'AboutInsieCtrl'
+    })
+
+    .state('edit', {
+      url: '/edit',
+      templateUrl: 'templates/edit.html',
+      controller: 'EditCtrl'
+    })
+    
+  .state('settings', {
+      url: '/settings',
+      templateUrl: 'templates/settings.html',
+      controller: 'SettingsCtrl'
+    })
+    .state('polling-inside', {
+      url: '/pollinginside',
+      templateUrl: 'templates/polling-inside.html',
+      controller: 'PollingInsideCtrl'
+    })
+    .state('debate', {
+      url: '/debate',
+      templateUrl: 'templates/debate.html',
+      controller: 'DebateCtrl'
+    })
     .state('tab.startPolling', {
       url: '/startPolling',
       views: {
         'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',
-      controller: 'SrartPollingCtrl'
+      controller: 'StartPollingCtrl'
         }
       }
     })
@@ -200,9 +281,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     });
 
-
-
+   
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');
 
 });
+
