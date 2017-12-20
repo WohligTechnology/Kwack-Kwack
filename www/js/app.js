@@ -118,7 +118,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     })
 
   .state('profile', {
-    url: '/profile',
+    url: '/profile/:userId',
     templateUrl: 'templates/profile.html',
     controller: 'ProfileCtrl'
   })
@@ -190,9 +190,9 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
   })
 
   .state('otp', {
-      url: '/otp',
+      url: '/otp/:userId',
       templateUrl: 'templates/otp.html',
-      controller: 'DiscoverCtrl'
+      controller: 'OtpCtrl'
 
     })
     .state('tab.explore', {

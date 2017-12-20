@@ -4,9 +4,10 @@
             <div class="w56">
                 <img src="img/signup/bar.png" alt="logo" class="w100">
             </div>
-         
+       
                 <div class="back-white">
                     <div class="list signupPlaceholder">
+                         <form name="formName">
                         <label class="item item-input item-floating-label">
                         <span class="mar-t"></span>
                        <input type="text" class="border-bot" ng-model="data.name" placeholder="Full Name">
@@ -32,11 +33,12 @@
                          <input type="password" class="border-bot" ng-model="data.forgotPassword" placeholder="Confirm Password">
                       </label>
                         <div class="absolute sign-up" >
-                            <!-- <button class="button  btn-yellow"  ng-click="saveUser(data)">SIGN UP</button> -->
-                            <button class="button  btn-yellow" ui-sref="otp">SIGN UP</button>
+                             <button class="button  btn-yellow"  ng-click="saveUser(data)">SIGN UP</button> 
+                            <!--<button class="button  btn-yellow" ui-sref="otp">SIGN UP</button>-->
                         </div>
                     </div>
                 </div>
+              
                 <div class="social-icon">
                     <p>OR SIGN UP VIA</p>
                     <ul>

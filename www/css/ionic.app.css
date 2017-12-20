@@ -10143,6 +10143,10 @@ body {
   .yellowStrip img {
     width: 100%; }
 
+.error-msg {
+  font-size: 12px;
+  color: #ff0000; }
+
 .content-mar {
   margin: 60px 45px; }
   .content-mar .item {
@@ -10190,6 +10194,9 @@ body {
   padding: 7px 65px;
   border-radius: 0px !important;
   border: none; }
+
+button.btn-yellow.button[disabled] {
+  opacity: 0.8; }
 
 .title h5 {
   color: #fff;

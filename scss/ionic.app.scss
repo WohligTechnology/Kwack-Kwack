@@ -27,6 +27,7 @@ $dark:                            #444 !default;
     $lightGray1: #d4d4d4 !default;
     $lightGray2: #ececec !default;
     $lightGray3: #f2f2f2 !default;
+    $red:#ff0000 !default;
     $black:#000 !default;
     $light:#fff !default; // The path for our ionicons font files, relative to the built CSS in www/css
     $ionicons-font-path: "../lib/ionic/fonts" !default; // Include all of Ionic
@@ -411,6 +412,10 @@ $dark:                            #444 !default;
     } //trailercssendshere
     //**********css given by kishori**********
     //signup start
+    .error-msg{
+        font-size: 12px;
+        color:$red;
+    }
     .content-mar {
         margin: 60px 45px;
         .item {
@@ -469,8 +474,11 @@ $dark:                            #444 !default;
         padding: 7px 65px;
         border-radius: 0px!important;
         border: none; // font-family: "Montserrat-Regular";
+   
     }
-
+    button.btn-yellow.button[disabled] {
+        opacity: 0.8;
+    }
     .title {
         h5 {
             // font-family: "Montserrat-Bold";
@@ -3328,6 +3336,7 @@ $dark:                            #444 !default;
                 }
             }
         } //settings
+
         .navHead {
             letter-spacing: 4px;
         }
