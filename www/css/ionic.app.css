@@ -10528,7 +10528,7 @@ button.btn-yellow.button[disabled] {
   top: 7%;
   right: 15px;
   background: #ffb600;
-  font-size: 10px;
+  font-size: 10px !important;
   font-family: 'Montserrat-Regular';
   padding: 3px 11px;
   z-index: 1; }
@@ -11969,6 +11969,12 @@ button.btn-yellow.button[disabled] {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .accordian label {
     font-size: 10px !important; }
+  .accordian .news-label {
+    font-size: 12px !important; }
+  .accordian .movie-label {
+    bottom: 9% !important; }
+  .accordian .just-now-labelexplore {
+    top: 3% !important; }
   .accordiancontent span {
     font-size: 7px; }
   .padr {
@@ -12191,7 +12197,11 @@ button.btn-yellow.button[disabled] {
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
-    font-size: 12px !important; }
+    font-size: 10px; }
+  .accordian .movie-label {
+    bottom: 9% !important; }
+  .accordian .just-now-labelexplore {
+    top: 3% !important; }
   .accordiancontent span {
     font-size: 9px; }
   .padr {
@@ -12225,7 +12235,13 @@ button.btn-yellow.button[disabled] {
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .accordian label {
-    font-size: 12px !important; }
+    font-size: 10px; }
+  .accordian .news-label {
+    font-size: 12px; }
+  .accordian .movie-label {
+    bottom: 9% !important; }
+  .accordian .just-now-labelexplore {
+    top: 3% !important; }
   .accordiancontent span {
     font-size: 9px; }
   .padr {
@@ -12417,8 +12433,10 @@ button.btn-yellow.button[disabled] {
     width: 108px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
-  .accordian label {
+  .accordian .news-label {
     font-size: 12px !important; }
+  .accordian label {
+    font-size: 10px; }
   .accordiancontent span {
     font-size: 9px; }
   .padr {
