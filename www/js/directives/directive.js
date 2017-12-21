@@ -44,6 +44,7 @@ connector.directive('card', function ($http, $filter) {
         }
     };
   }),
+
   connector.directive('uploadImage', function ($http, $filter, $timeout) {
     return {
         templateUrl: 'templates/directive/uploadFile.html',
