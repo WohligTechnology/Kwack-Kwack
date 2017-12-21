@@ -2,7 +2,7 @@ connector.controller('DiscoverFullCtrl', function($scope) {
     $scope.discoverFull = [{
         "img":"img/discoverFull/cardimg1.png",
         "news":"Bullet train will boost GSDP of Maharashtra, Gujarat: Devendra Fadnavis",
-        "operator":"Smooth Operator",
+        "operator":"Smooth Operators",
         "day":"Thursday",
         "date":"19 Aug 2017",
         "email":"vultures.com",
@@ -14,8 +14,8 @@ connector.controller('DiscoverFullCtrl', function($scope) {
     },
     {
         "img":"img/discoverFull/cardimg2.png",
-        "news":"Negative outlook by Fitch; crisil predicts rise in NPAs: Rating agencies raise red flag on",
-        "operator":"Smooth Operator",
+        "news":"Negative outlook by Fitch; crisil predicts rise in NPAs: Rating agencies raise red flag on banks performance",
+        "operator":"Smooth Operators",
         "day":"Thursday",
         "date":"19 Aug 2017",
         "email":"bombaytimes.com",
@@ -29,10 +29,10 @@ connector.controller('DiscoverFullCtrl', function($scope) {
     {
         "img":"img/discoverFull/cardimg3.png",
         "news":"Here’s why there is a sharp surge in petrol, diesel prices",
-        "operator":"vice.com",
+        "operator":"Prices Hike",
         "day":"Thursday",
         "date":"19 Aug 2017",
-        "email":"broadly.voice.com",
+        "email":"vice.com",
         "time":"8 hours ago",
         "poll":"20",
         "kwack":"42",

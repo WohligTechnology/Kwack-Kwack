@@ -11420,7 +11420,7 @@ button.btn-yellow.button[disabled] {
     font-family: 'Montserrat-Regular'; }
 
 .accInMargin50 {
-  margin: 50px; }
+  margin: 15px 50px; }
   .accInMargin50 h2 {
     font-size: 1.2em;
     font-family: 'Montserrat-Medium';
@@ -11440,15 +11440,13 @@ button.btn-yellow.button[disabled] {
   border-bottom: 1px solid #afafaf;
   height: 80px;
   width: auto; }
-  .userName div {
-    font-family: 'Monserrat-Regular';
-    font-size: 0.9em; }
   .userName label {
-    font-family: 'Monserrat-Regular';
-    font-size: 1.1em; }
+    font-size: 12px; }
 
 .email {
   padding: 30px 15px !important; }
+  .email label {
+    font-size: 12px; }
 
 .arricon {
   font-size: 20px;
@@ -11456,7 +11454,6 @@ button.btn-yellow.button[disabled] {
   color: #000; }
 
 .emailText {
-  font-family: 'Monserrat-Regular';
   font-size: 0.9em; }
 
 .emailId {
@@ -11480,13 +11477,13 @@ button.btn-yellow.button[disabled] {
   width: 100%;
   display: block;
   font-family: 'Montserrat-Regular';
-  font-size: 0.9em;
+  font-size: 10px;
   padding: 20px 0px; }
 
 .kwack-card .item h2 {
   white-space: normal;
   font-family: 'Montserrat-Medium';
-  font-size: 14px; }
+  font-size: 12px; }
 
 .kwack-card .item {
   margin: 0px 17px;
@@ -11530,8 +11527,7 @@ button.btn-yellow.button[disabled] {
   margin: 10px 40px !important; }
 
 .setting .userName label {
-  font-size: 12px;
-  font-family: 'Montserrat-Regular'; }
+  font-size: 12px; }
 
 .setting .item-input-inset {
   padding: 0px; }
@@ -12231,7 +12227,9 @@ button.btn-yellow.button[disabled] {
     padding: 0px 20px; }
     .follow-btn .button .icon-left:before {
       font-size: 13px !important;
-      padding-top: 0px !important; } }
+      padding-top: 0px !important; }
+  .placeholder-icon:last-child {
+    padding-left: 36px; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .accordian label {
@@ -12376,7 +12374,7 @@ button.btn-yellow.button[disabled] {
       margin-top: 30px;
       font-size: 14px; }
   .kwack-card .item h2 {
-    font-size: 14px; }
+    font-size: 12px; }
   .kwack-card .item p {
     font-size: 9px; }
   .kwack-card .item .explore-icon img {
