@@ -900,7 +900,7 @@ $dark:                            #444 !default;
         top: 7%;
         right: 15px;
         background: $yellow3;
-        font-size: 10px;
+        font-size: 10px !important;
         font-family: 'Montserrat-Regular';
         padding: 3px 11px;
         z-index: 1;
@@ -2017,7 +2017,7 @@ $dark:                            #444 !default;
     } //editcssends
     //accountInsidecssStart
     .accInMargin50 {
-        margin: 50px;
+        margin:15px 50px;
         h2 {
             font-size: 1.2em;
             font-family: 'Montserrat-Medium';
@@ -2041,20 +2041,26 @@ $dark:                            #444 !default;
         border-bottom: 1px solid $lightGray;
         height: 80px;
         width: auto;
-        div {
-            font-family: 'Monserrat-Regular';
-            font-size: 0.9em;
-        }
+        // div {
+        //     font-family: 'Monserrat-Regular';
+        //     font-size: 0.9em;
+        // }
         label {
-            font-family: 'Monserrat-Regular';
-            font-size: 1.1em;
+           
+            font-size: 12px;
         }
-    } // .aboutInside{
+        
+    }
+    
+     // .aboutInside{
     //         font-family: 'Monserrat-Regular'!important;
     //         font-size: 1.1em;
     // }
     .email {
         padding: 30px 15px!important;
+       label{
+           font-size: 12px;
+       }
     }
 
     .arricon {
@@ -2064,7 +2070,7 @@ $dark:                            #444 !default;
     }
 
     .emailText {
-        font-family: 'Monserrat-Regular';
+        // font-family: 'Monserrat-Regular';
         font-size: 0.9em;
     }
 
@@ -2091,7 +2097,7 @@ $dark:                            #444 !default;
         width: 100%;
         display: block;
         font-family: 'Montserrat-Regular';
-        font-size: 0.9em;
+        font-size: 10px;
         padding: 20px 0px;
     } //aboutInsidecssend
     //kwack-screen start
@@ -2099,7 +2105,7 @@ $dark:                            #444 !default;
         .item h2 {
             white-space: normal;
             font-family: 'Montserrat-Medium';
-            font-size: 14px;
+            font-size: 12px;
         }
         .item {
             margin: 0px 17px;
@@ -2158,7 +2164,7 @@ $dark:                            #444 !default;
         }
         .userName label {
             font-size: 12px;
-            font-family: 'Montserrat-Regular';
+            // font-family: 'Montserrat-Regular';
         }
     }
 
@@ -2709,7 +2715,15 @@ $dark:                            #444 !default;
             label{
                 font-size:10px!important;
             }
-            
+            .news-label{
+                font-size:12px!important;
+            }
+            .movie-label {
+                bottom: 9% !important;
+               }
+               .just-now-labelexplore {
+                top: 3% !important;
+               }
         }
 
         .accordiancontent {
@@ -3055,8 +3069,14 @@ $dark:                            #444 !default;
     @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
         .accordian{
             label{
-                font-size:12px!important;
+                font-size:10px;
             }
+            .movie-label {
+                bottom: 9% !important;
+               }
+               .just-now-labelexplore {
+                top: 3% !important;
+               }
             
         }
 
@@ -3108,13 +3128,24 @@ $dark:                            #444 !default;
                 padding-top: 0px!important;
             }
         }
+        .placeholder-icon:last-child {
+            padding-left: 36px;
+        }
     } // css for iphone 6 nd 6plus
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
         .accordian{
             label{
-                font-size:12px!important;
+                font-size:10px;
             }
-            
+           .news-label{
+               font-size: 12px;
+           } 
+           .movie-label {
+            bottom: 9% !important;
+           }
+           .just-now-labelexplore {
+            top: 3% !important;
+           }
         }
 
         .accordiancontent {
@@ -3320,7 +3351,7 @@ $dark:                            #444 !default;
         }
         .kwack-card {
             .item h2 {
-                font-size: 14px;
+                font-size: 12px;
             }
             .item {
                 p {
@@ -3413,8 +3444,11 @@ $dark:                            #444 !default;
 
     @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
         .accordian{
-            label{
+            .news-label{
                 font-size:12px!important;
+            }
+            label{
+                font-size: 10px;
             }
             
         }

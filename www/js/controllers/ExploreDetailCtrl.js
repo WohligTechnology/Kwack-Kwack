@@ -12,13 +12,13 @@ connector.controller('ExploreDetailCtrl', function($scope) {
         "kwack":"42",
         "share":"20",
         "movie":"Movie",
-        "just":"just now"
+        "just":"Just Now"
     }
     ]
     $scope.groups= []
     $scope.news = [{
         "news1":"Gotham City Police Department",
-        "date1":"Thrusday, 19 Aug 2017",
+        "date1":"Thursday, 19 Aug 2017",
         "value1": false,
         "img":"img/explore/1.jpg",
         "news":"Game of Thrones: HBO hacker threaten leak of season finale",
@@ -31,12 +31,12 @@ connector.controller('ExploreDetailCtrl', function($scope) {
         "kwack":"42",
         "share":"20",
         "movie":"Movie",
-        "just":"just now"
+        "just":"Just Now"
       
     },
     {
       "news1":"Wayne Enterprises",
-      "date1":"Thrusday, 19 Aug 2017",
+      "date1":"Thursday, 19 Aug 2017",
       "value1": false,
       "img":"img/explore/1.jpg",
       "news":"Game of Thrones: HBO hacker threaten leak of season finale",
@@ -54,7 +54,7 @@ connector.controller('ExploreDetailCtrl', function($scope) {
   },
   {
     "news1":"Penguin’s Secret Base",
-    "date1":"Thrusday, 19 Aug 2017",
+    "date1":"Thursday, 19 Aug 2017",
     "value1": false,
     "img":"img/explore/1.jpg",
     "news":"Game of Thrones: HBO hacker threaten leak of season finale",
@@ -67,12 +67,12 @@ connector.controller('ExploreDetailCtrl', function($scope) {
     "kwack":"42",
     "share":"20",
     "movie":"Movie",
-    "just":"just now"
+    "just":"Just Now"
   
 },
 {
   "news1":"Falcone Crime Family",
-  "date1":"Thrusday, 19 Aug 2017",
+  "date1":"Thursday, 19 Aug 2017",
   "value1": false,
   "img":"img/explore/1.jpg",
   "news":"Game of Thrones: HBO hacker threaten leak of season finale",
@@ -85,12 +85,12 @@ connector.controller('ExploreDetailCtrl', function($scope) {
   "kwack":"42",
   "share":"20",
   "movie":"Movie",
-  "just":"just now"
+  "just":"Just Now"
 
 },
 {
   "news1":"Arkham Asylum",
-  "date1":"Thrusday, 19 Aug 2017",
+  "date1":"Thursday, 19 Aug 2017",
   "value1": false,
   "img":"img/explore/1.jpg",
   "news":"Game of Thrones: HBO hacker threaten leak of season finale",
@@ -103,12 +103,12 @@ connector.controller('ExploreDetailCtrl', function($scope) {
   "kwack":"42",
   "share":"20",
   "movie":"Movie",
-  "just":"just now"
+  "just":"Just Now"
 
 },
 {
   "news1":"Gotham City Police Department",
-  "date1":"Thrusday, 19 Aug 2017",
+  "date1":"Thursday, 19 Aug 2017",
   "value1": false,
   "img":"img/explore/1.jpg",
   "news":"Game of Thrones: HBO hacker threaten leak of season finale",
@@ -121,12 +121,12 @@ connector.controller('ExploreDetailCtrl', function($scope) {
   "kwack":"42",
   "share":"20",
   "movie":"Movie",
-  "just":"just now"
+  "just":"Just Now"
 
 },
     {
       "news1":"Gotham City Police Department",
-      "date1":"Thrusday, 19 Aug 2017",
+      "date1":"Thursday, 19 Aug 2017",
       "value1": false,
       "img":"img/explore/1.jpg",
       "news":"Game of Thrones: HBO hacker threaten leak of season finale",
@@ -139,7 +139,7 @@ connector.controller('ExploreDetailCtrl', function($scope) {
       "kwack":"42",
       "share":"20",
       "movie":"Movie",
-      "just":"just now"
+      "just":"Just Now"
   }]
 
   $scope.headerHide=function(value){
