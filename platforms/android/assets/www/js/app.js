@@ -107,7 +107,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     .state('tab.kwackScreen', {
       url: '/kwackScreen',
       views: {
-        'tab-trailer': {
+        'tab-kwackScreen': {
 
           templateUrl: 'templates/kwack-screen.html',
           controller: 'KwackScreenCtrl'
@@ -236,7 +236,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       templateUrl: 'templates/edit.html',
       controller: 'EditCtrl'
     })
-    
+   
   .state('settings', {
       url: '/settings',
       templateUrl: 'templates/settings.html',
@@ -283,7 +283,9 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
    
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/profile');
+
+  $urlRouterProvider.otherwise('/login');
+
 
 })
 
