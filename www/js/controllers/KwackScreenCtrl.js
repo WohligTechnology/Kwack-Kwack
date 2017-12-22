@@ -1,4 +1,17 @@
-connector.controller('KwackScreenCtrl', function($scope) {
+connector.controller('KwackScreenCtrl', function($scope,$ionicModal) {
+    $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function (modal) {
+        $scope.modal = modal;
+      });
+      $scope.openModal = function () {
+        $scope.modal.show();
+      }
+    
+      $scope.closeModal = function () {
+        $scope.modal.hide();
+      };
 
     $scope.news = [{
         "img": "img/invite/padthumb.jpg",

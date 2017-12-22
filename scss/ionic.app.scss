@@ -1033,7 +1033,7 @@ $dark:                            #444 !default;
         margin: 5px 0px 10px 0px;
         font-size: 11px;
         font-family: 'Montserrat-Regular';
-        background: #f3f2f2;
+        background:  $lightGray2;
         border-radius: 25px;
         position: absolute;
         left: 5%;
@@ -1046,7 +1046,7 @@ $dark:                            #444 !default;
         margin: 5px 0px 10px 0px;
         font-size: 11px;
         font-family: 'Montserrat-Regular';
-        background: #f3f2f2;
+        background:  $lightGray2;
         border-radius: 25px;
         position: absolute;
         right: 4%;
@@ -1118,13 +1118,13 @@ $dark:                            #444 !default;
         border-color: transparent;
         background: none;
         box-shadow: none;
-        color: #444;
+        color: $darGray1;
         font-size: 17px;
         display: none;
     }
 
     .bg-footer .tabs {
-        background: white !important;
+        background: $light !important;
         top: initial!important;
     }
 
@@ -1177,7 +1177,7 @@ $dark:                            #444 !default;
     }
 
     .colorw {
-        color: white;
+        color: $light;
     }
 
     .w25 {
@@ -1276,6 +1276,11 @@ $dark:                            #444 !default;
     .invtfrndshdr {
         top: 160px;
     } //discovernewscsss
+    .item-index{
+        .item {
+            z-index: 0 !important;
+        }
+    }
     .discover-navsearch {
         text-align: right;
         font-size: 30px;
@@ -1312,7 +1317,7 @@ $dark:                            #444 !default;
     }
 
     .sliderdesc {
-        color: white;
+        color: $light;
         position: absolute;
         transform: translate(-50%, -50%);
         bottom: 16%;
@@ -1332,11 +1337,11 @@ $dark:                            #444 !default;
         width: 100%;
         label {
             vertical-align: middle;
-            color: white;
+            color: $light;
             font-size: 11px;
         }
         i {
-            color: white;
+            color: $light;
             vertical-align: inherit;
         }
     }
@@ -1373,7 +1378,8 @@ $dark:                            #444 !default;
 
     .news-discover {
         .card {
-            margin: 7px 10px;
+            // margin: 7px 10px;
+            margin: 7px 15px;
             background-color: transparent;
             box-shadow: none;
             box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.88);
@@ -1419,7 +1425,7 @@ $dark:                            #444 !default;
             padding: 5px;
         }
         span {
-            color: white;
+            color: $light;
             font-size: 14px;
         }
     }
@@ -1491,7 +1497,7 @@ $dark:                            #444 !default;
         margin: 5px;
         font-size: 14px;
         font-family: 'Montserrat-Regular';
-        border-bottom: 1px solid #ebebeb;
+        border-bottom: 1px solid   $lightGray2;
         padding: 0px 8px;
         margin: -2px;
     }
@@ -1501,7 +1507,7 @@ $dark:                            #444 !default;
         margin: 5px;
         font-size: 14px;
         font-family: 'Montserrat-Regular';
-        border-bottom: 1px solid #ebebeb;
+        border-bottom: 1px solid   $lightGray2;
         padding: 0px 5px;
         margin: 0px -3px 0px 5px
     }
@@ -1511,7 +1517,7 @@ $dark:                            #444 !default;
         margin: 5px;
         font-size: 14px;
         font-family: 'Montserrat-Regular';
-        border-bottom: 1px solid #ebebeb;
+        border-bottom: 1px solid   $lightGray2;
         padding: 0px 5px;
         margin: 0px 5px 0px -3px
     }
@@ -1547,7 +1553,7 @@ $dark:                            #444 !default;
         letter-spacing: 1px;
         font-size: 17px;
         font-family: 'Montserrat-SemiBold';
-        text-shadow: 1px solid red;
+        text-shadow: 1px solid $red;
         text-shadow: 0px 0px 2px $lightGray;
     }
 
@@ -1607,12 +1613,12 @@ $dark:                            #444 !default;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        color: black;
+        color: $black;
         cursor: pointer;
         padding: 9px;
         padding-right: 20px;
         outline: none;
-        border: 2px solid black;
+        border: 2px solid $black;
         width: 100%;
         height: 35px;
         line-height: 25px;
@@ -1640,7 +1646,7 @@ $dark:                            #444 !default;
     }
 
     .locationtHead {
-        color: black!important;
+        color: $black!important;
         font-size: 1.2em;
         font-family: "Montserrat-Regular" !important;
     }
@@ -1661,7 +1667,7 @@ $dark:                            #444 !default;
         margin: 5px 0px 10px 0px;
         font-size: 11px;
         letter-spacing: 0.5px;
-        background: #f3f2f2;
+        background:  $lightGray2;
         border-radius: 25px;
         position: absolute;
         right: 4%;
@@ -1678,7 +1684,7 @@ $dark:                            #444 !default;
 
     .news-video {
         p {
-            color: #000;
+            color: $black;
             font-size: 12px;
             font-family: 'Montserrat-Regular';
             letter-spacing: 1px;
@@ -1688,7 +1694,7 @@ $dark:                            #444 !default;
         span {
             font-size: 10px;
             font-family: 'Montserrat-SemiBold';
-            color: #000;
+            color: $black;
             letter-spacing: 0.5px;
         }
     }
@@ -1700,7 +1706,7 @@ $dark:                            #444 !default;
 
     .added {
         font-family: 'Montserrat-Light' !important;
-        color: #bebebe !important;
+        color: $lightGray !important;
     }
 
     .show-time {
@@ -1768,7 +1774,7 @@ $dark:                            #444 !default;
     .tabs-top.tabs-striped .tab-item.active,
     .tabs-top.tabs-striped .tab-item.activated {
         border-bottom: none;
-        border-right: 1px solid #f7f7f7!important;
+        border-right: 1px solid  $lightGray3!important;
     }
 
     .profileFImage {
@@ -2025,7 +2031,7 @@ $dark:                            #444 !default;
         h2 {
             font-size: 1.2em;
             font-family: 'Montserrat-Medium';
-            color: #9f9f9f;
+            color: f  $lightGray;
             padding-left: 20px;
             letter-spacing: 2px;
         }
@@ -2350,7 +2356,7 @@ $dark:                            #444 !default;
 
     .debate-card {
         .card {
-            margin: 20px 33px 0px;
+            margin: 10px 33px 0px;
         }
         .list:last-child.card {
             margin-bottom: 0px;
@@ -2358,7 +2364,8 @@ $dark:                            #444 !default;
         .item-body {
             padding: 7px 8px 0px;
         }
-        p {
+        p ,textarea {
+            color:  $darkGray2;
             font-size: 12px;
             font-family: 'Montserrat-Light';
             text-align: justify;
@@ -2570,7 +2577,7 @@ $dark:                            #444 !default;
     }
 
     .searchCancel {
-        color: #ffb600!important;
+        color: $yellow!important;
         font-size: 13px!important;
         font-family: "Montserrat-Medium"
     }
@@ -2646,9 +2653,9 @@ $dark:                            #444 !default;
             margin: 10px;
             text-align: center;
             padding: 5px;
-            background: white;
+            background: $light;
             font-family: 'Montserrat-Medium';
-            color: black;
+            color: $black;
         }
         label{
             font-size: 12px!important;

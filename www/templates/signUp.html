@@ -4,12 +4,10 @@
             <div class="w56">
                 <img src="img/signup/bar.png" alt="logo" class="w100">
             </div>
-         
-              <form name="formName">
+             <form name="formName">
                 <div class="back-white">
                     <div class="list signupPlaceholder">
-                        
-                        <label class="item item-input item-floating-label">
+                       <label class="item item-input item-floating-label">
                         <span class="mar-t"></span>
                        <input type="text" class="border-bot" ng-model="data.name" name="name" placeholder="Full Name" required>
                        <span class="error-msg" ng-show="formName.name.$touched && formName.name.$invalid">Full Name is required.</span>
@@ -61,13 +59,12 @@
                         </li>
                     </ul>
                 </div>
-       
         </div>
     </ion-content>
     <div class="footer" ui-sref="login">
         <div class="bar bar-footer bar-black">
             <div class="title">
-                <h5>EXISITING USER? <span> LOGIN</span></h5>
+                <h5>EXISITING USER? <span ui-sref="login"> LOGIN</span></h5>
             </div>
         </div>
     </div>

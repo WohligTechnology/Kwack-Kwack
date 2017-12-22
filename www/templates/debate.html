@@ -2,7 +2,7 @@
     <div class="bar bar-header bar-light">
         <div class="row">
             <div class="col col-33">
-                <div>
+                <div ui-sref="tab.trailer">
                     <i class="ion ion-ios-arrow-left trailernav"></i>
                 </div>
             </div>
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <ion-content class="has-header bg-color has-footer">
+    <ion-content class="has-header bg-color ">
         <div class="text-center">
             <h4 class="pad0 title-explore">KWACK</h4>
         </div>
@@ -61,6 +61,36 @@
         </div>
         <div ng-repeat="news in debate">
             <debate></debate>
+        </div>
+        <div>
+            <div class="debate-card relative">
+                <div class="debateprofile">
+                    <img ng-src="img/debate/profile3.png" alt="profile-img" class="profile-w">
+                </div>
+                <div class="list card">
+                    <div class="item item-body">
+                        <div class="row">
+                            <div class="col col-20 relative">
+                            </div>
+                            <div class="col col-80">
+                                <div class="test">
+                                    <div class="debate-user user-flex">
+                                        <span>Comments</span>
+                                        <img ng-src="img/debate/3.png">
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- <p>{{news.desc}}</p> -->
+                                    <textarea class="text-area" placeholder="Enter your Text" rows="3" cols="28"></textarea>
+                                </div>
+                                <div class="likes">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </ion-content>
 </ion-view>
