@@ -19,17 +19,7 @@ connector.controller('DebateCtrl', function($scope) {
         "likes":"1",
         "replies":"5"
     },
-    {
-        "img":"img/debate/profile3.png",
-        "name":"Comments",
-        "thumicon":"img/debate/3.png",
-        "likes":"",
-        "replies":""
-        
-       
-    }
+   
     ]
 
-    
-
-})
+    })

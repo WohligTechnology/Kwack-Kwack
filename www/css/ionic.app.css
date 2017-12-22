@@ -10905,7 +10905,7 @@ button.btn-yellow.button[disabled] {
     border-right: 1px solid #ececec; }
 
 .news-discover .card {
-  margin: 7px 10px;
+  margin: 7px 15px;
   background-color: transparent;
   box-shadow: none;
   box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.88); }
@@ -11677,7 +11677,7 @@ button.btn-yellow.button[disabled] {
   text-align: left; }
 
 .debate-card .card {
-  margin: 20px 33px 0px; }
+  margin: 10px 33px 0px; }
 
 .debate-card .list:last-child.card {
   margin-bottom: 0px; }
@@ -11685,7 +11685,8 @@ button.btn-yellow.button[disabled] {
 .debate-card .item-body {
   padding: 7px 8px 0px; }
 
-.debate-card p {
+.debate-card p, .debate-card textarea {
+  color: #414141;
   font-size: 12px;
   font-family: 'Montserrat-Light';
   text-align: justify;
