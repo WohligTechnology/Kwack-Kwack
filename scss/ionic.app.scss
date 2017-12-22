@@ -1276,6 +1276,11 @@ $dark:                            #444 !default;
     .invtfrndshdr {
         top: 160px;
     } //discovernewscsss
+    .item-index{
+        .item {
+            z-index: 0 !important;
+        }
+    }
     .discover-navsearch {
         text-align: right;
         font-size: 30px;

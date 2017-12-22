@@ -11,7 +11,7 @@
           <img src="img/discover/kwack.png" ui-sref="home">
         </div>
       </div>
-      <div class="col col33 discover-navsearch">
+      <div class="col col33 discover-navsearch" ui-sref="tab.discoverfull">
         <i class="ion ion-search"></i>
       </div>
     </div>
@@ -29,7 +29,7 @@
           <div>
             <img class="img-responsive" src="img/discover/sliderimg.PNG">
           </div>
-          <p class="sliderdesc">Behold: The first high-quality photos of Apple's iPhone X in the wild</p>
+          <p class="sliderdesc" >Behold: The first high-quality photos of Apple's iPhone X in the wild</p>
           <div>
             <div class="slidertime">
               <i class="ion ion-ios-clock"></i>
@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="display-inline float-right discover-icon text-center strip">
-            <label class="discoverStrip"> <img  src="img/discover/graph.png"><span class="alignM"> 20</span></label>
+            <label class="discoverStrip"><img  src="img/discover/graph.png"><span class="alignM">20</span></label>
             <label class="discoverStrip"><img class="img-responsive" src="img/discover/shield.png">
               <span class="alignM">42</span></label>
             <label><img src="img/discover/share.png">
@@ -79,7 +79,7 @@
             </ion-scroll>
       </div>
       <div ng-repeat="discover in discoverNews">
-        <discover ui-sref="tab.discoverfull"></discover>
+        <discover></discover>
       </div>
       </div>
   </ion-content>

@@ -107,7 +107,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     .state('tab.kwackScreen', {
       url: '/kwackScreen',
       views: {
-        'tab-trailer': {
+        'tab-kwackScreen': {
 
           templateUrl: 'templates/kwack-screen.html',
           controller: 'KwackScreenCtrl'
