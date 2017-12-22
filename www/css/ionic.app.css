@@ -11024,6 +11024,9 @@ button.btn-yellow.button[disabled] {
 .swipperdiscover .swiper-pagination-bullet {
   background: #ffb600; }
 
+.black {
+  background: #ff0000 !important; }
+
 .back-img {
   position: relative; }
 

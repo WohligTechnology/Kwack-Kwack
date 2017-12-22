@@ -118,7 +118,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     })
 
   .state('profile', {
-    url: '/profile/:userId',
+    url: '/profile',
     templateUrl: 'templates/profile.html',
     controller: 'ProfileCtrl'
   })
@@ -283,7 +283,29 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
    
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/profile');
 
+})
+
+.filter('uploadpath', function () {
+  return function (input, width, height, style) {
+    var other = "";
+    if (width && width != "") {
+      other += "&width=" + width;
+    }
+    if (height && height != "") {
+      other += "&height=" + height;
+    }
+    if (style && style != "") {
+      other += "&style=" + style;
+    }
+    if (input) {
+      if (input.indexOf('https://') == -1) {
+        return imgpath + input + other;
+
+      } else {
+        return input;
+      }
+    }
+  };
 });
-
