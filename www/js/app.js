@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova','ionic-toast'])
 
 .run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
