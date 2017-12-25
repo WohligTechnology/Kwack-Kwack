@@ -1,7 +1,7 @@
 connector.controller('LocationCtrl', function ($scope, Chats, $state, $stateParams) {
 
   $scope.dataToSave = {
-    _id: $stateParams.userEmail
+    _id:$.jStorage.get("user")._id
   }
   $scope.addCountry = function (data) {
     if (data.state && data.country) {
@@ -35,14 +35,15 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
     }
   }
   $scope.goTOProfile = function () {
-if( $scope.dataToSave.state &&  $scope.dataToSave.country){
-$state.go("profile",{
-              userId: $scope.dataToSave._id
-            })
-}else{
-  console.log("Enter state and country")
-}
-    
+    if ($scope.dataToSave.state && $scope.dataToSave.country) {
+      $state.go("profile", {
+        userId: $scope.dataToSave._id
+      })
+    } else {
+      
+      console.log("Enter state and country")
+    }
+
   }
   //  if($stateParams.userEmail){
   // $scope.emailData={
