@@ -11028,7 +11028,8 @@ button.btn-yellow.button[disabled] {
   background: #ffb600; }
 
 .black {
-  background: #ff0000 !important; }
+  background: #000 !important;
+  color: #fff; }
 
 .back-img {
   position: relative; }
@@ -11133,6 +11134,12 @@ button.btn-yellow.button[disabled] {
   color: #000 !important;
   font-size: 1.2em;
   font-family: "Montserrat-Regular" !important; }
+  .locationtHead input {
+    padding-left: 5px;
+    font-size: 16px; }
+  .locationtHead input::placeholder {
+    color: #000;
+    font-family: "Montserrat-Regular" !important; }
 
 .cardBox .card {
   margin: 50px 30px;
