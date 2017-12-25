@@ -1,4 +1,4 @@
-connector.controller('LocationCtrl', function ($scope, Chats, $state, $stateParams ) {
+connector.controller('LocationCtrl', function ($scope, Chats, $state, $stateParams,ionicToast ) {
 
   $scope.dataToSave = {
     _id:$.jStorage.get("user")._id
@@ -43,7 +43,7 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
     } else {
       
       console.log("Enter state and country")
-      // ionicToast.show('This is a toast at the top.', 'top', true, 2500);
+      ionicToast.show('enter state and country.', 'top', true, 2500);
     }
 
   }

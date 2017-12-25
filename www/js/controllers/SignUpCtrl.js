@@ -1,4 +1,4 @@
-connector.controller('SignUpCtrl', function ($scope, Chats, $state) {
+connector.controller('SignUpCtrl', function ($scope, Chats, $state,ionicToast) {
     console.log("inside sign up")
     $scope.showMassage = false
     $scope.saveUser = function (info) {
@@ -13,7 +13,7 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state) {
                     $state.go("otp")
                 } else {
                     console.log("invalid email")
-                    // ionicToast.show('This is a toast at the top.', 'top', true, 2500);
+                    ionicToast.show('enter valid details .', 'top', true, 2500);
                 }
             })
         } else {
