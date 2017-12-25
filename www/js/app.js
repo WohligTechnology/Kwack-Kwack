@@ -190,7 +190,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
   })
 
   .state('otp', {
-      url: '/otp/:userId',
+      url: '/otp',
       templateUrl: 'templates/otp.html',
       controller: 'OtpCtrl'
 
