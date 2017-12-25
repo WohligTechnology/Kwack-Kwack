@@ -10,7 +10,7 @@
             </div>
             <div class="cardBox">
                 <div class="card pad2010">
-                    <form action="#theCombo" class="rel pad-10">
+                    <!-- <form class="rel pad-10">
                         <div class="plusposition">
                             <img src="img/plus1.png" alt="">
                         </div>
@@ -20,7 +20,7 @@
                             <option value="USA">USA</option>
                         </select>
                     </form>
-                    <form action="#theCombo" class="rel pad-10">
+                    <form class="rel pad-10">
                         <div class="plusposition">
                             <img src="img/plus1.png" alt="">
                         </div>
@@ -29,7 +29,35 @@
                             <option value="Delhi">Delhi</option>
                             <option value="California">California</option>
                         </select>
-
+                    </form> -->
+                    <form class="rel pad-10">
+                        <div class="plusposition">
+                            <img src="img/plus1.png" alt="">
+                        </div>
+                        <!-- <select ng-model="data.country" ng-change="addCountry(data)" class="theCombo">
+                            <option value="">Select Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                        </select> -->
+                        <select class="form-control locationtHead" ng-options="c.countryName for c in countryData track by c._id" ng-model="selectedCountry"
+                        placeholder="Select" ng-change="addCountry(selectedCountry)">
+                        <option value="">Select Country</option>
+                        </select>
+                    </form>
+                    <form class="rel pad-10" ng-if="selectedCountry.countryName == 'India'">
+                        <div class="plusposition">
+                            <img src="img/plus1.png" >
+                        </div>
+                        <select class="form-control locationtHead" ng-options="st.stateName for st in stateData track by st._id" ng-model="selectedState"
+                        placeholder="Select" ng-change="addState(selectedState)">
+                        <option value="">Select State</option>
+                        </select>
+                    </form>
+                    <form class="rel pad-10 locationtHead"  ng-if="selectedCountry.countryName != 'India'">
+                        <div class="plusposition">
+                            <img src="img/plus1.png" >
+                        </div>
+                         <input type="text" ng-model="selectedState" placeholder="Enter State"/>
                     </form>
                 </div>
             </div>

@@ -1528,7 +1528,8 @@ $dark:                            #444 !default;
         }
     } 
     .black{
-        background: $red!important;
+        background: $black!important;
+        color:$light;
     }
     //endofdiscover
     //discovernewsend
@@ -1643,12 +1644,25 @@ $dark:                            #444 !default;
         top: 40%;
         /* transform: translate(-20%,-50%); */
         right: 5%;
+
     }
 
     .locationtHead {
         color: $black!important;
         font-size: 1.2em;
         font-family: "Montserrat-Regular" !important;
+      
+            input {
+                padding-left: 5px;
+                font-size: 16px;
+               
+            }
+            input::placeholder {
+                color: $black;
+                font-family: "Montserrat-Regular" !important;
+                
+            }
+        
     }
 
     .cardBox {
