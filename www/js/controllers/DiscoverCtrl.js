@@ -38,9 +38,9 @@ $scope.selectinterest=[{
 
 ]
   $scope.jstorage={}
-// $scope.jstorage = $.jStorage.get('user');
+$scope.jstorage = $.jStorage.get('user');
 $scope.addInterest={}
-// $scope.addInterest.userId= $scope.jstorage._id
+$scope.addInterest.userId= $scope.jstorage._id
 $scope.addInterest.interest=[]
 console.log("heyyjstorage",$scope.addInterest)
 $scope.colorchange={}

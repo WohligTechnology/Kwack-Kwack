@@ -1,14 +1,15 @@
 connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams) {
-
+ $scope.showerrMsg=false
     $scope.verifyUser = function (info) {
       Chats.apiCallWithData("User/VerifyUser", info, function (data) {
         console.log("data is", data)
         if (data.value == true) {
           $scope.data = data;
           $.jStorage.set("user", $scope.data.data);
-          $state.go("otp")
+          $state.go("tab.discoverNews")
         } else {
-          toastr.error("incorrect");
+          $scope.showerrMsg=true
+          // toastr.error("incorrect");
         }
       })
 
