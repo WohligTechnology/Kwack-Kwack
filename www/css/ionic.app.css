@@ -11126,9 +11126,9 @@ button.btn-yellow.button[disabled] {
 
 .plusposition {
   position: absolute;
-  top: 40%;
+  top: 24%;
   /* transform: translate(-20%,-50%); */
-  right: 5%; }
+  right: 13px; }
 
 .locationtHead {
   color: #000 !important;
@@ -11140,6 +11140,11 @@ button.btn-yellow.button[disabled] {
   .locationtHead input::placeholder {
     color: #000;
     font-family: "Montserrat-Regular" !important; }
+
+.locationWidth {
+  width: 260px;
+  border: none;
+  background: transparent; }
 
 .cardBox .card {
   margin: 50px 30px;
