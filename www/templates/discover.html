@@ -20,24 +20,24 @@
                         </div>
                     </div>
                     <div>
-                        <div class="text-center">
-                            <button class="button btn-sports btn-bg-black"  ng-class="{'black' : selectinterest[0].value==true}" ng-click="select('Sports')"> Sports</button>
-                            <button class="button btn-comedy btn-bg" ng-class="{'black' : selectinterest[1].value==true}" ng-click="select('Comedy')"> Comedy</button>
-                            <button class="button btn-food btn-bg" ng-class="{'black' : selectinterest[2].value==true}" ng-click="select('Food')"> Food</button>
+                        <div class="text-center" ng-repeat="interests in interest">
+                            <button class="button btn-sports btn-bg" ng-repeat="interest1 in interests" ng-class="{'black' : colorchange == undefined}" ng-click="select(interest1.name)"> {{interest1.name}}</button>
+                            <!-- <button class="button btn-comedy btn-bg" ng-class="{'black' : selectinterest[1].value==true}" ng-click="select('Comedy')"> Comedy</button>
+                            <button class="button btn-food btn-bg" ng-class="{'black' : selectinterest[2].value==true}" ng-click="select('Food')"> Food</button> -->
                         </div>
-                        <div class="text-center">
+                        <!-- <div class="text-center">
                             <button class="button btn-science btn-bg" ng-class="{'black' : selectinterest[3].value==true}" ng-click="select('Science')"> Science</button>
                             <button class="button btn-entertainment btn-bg" ng-class="{'black' : selectinterest[4].value==true}" ng-click="select('Entertainment')"> Entertainment</button>
-                        </div>
-                        <div class="text-center">
+                        </div> -->
+                        <!-- <div class="text-center">
                             <button class="button  btn-science btn-bg" ng-class="{'black' : selectinterest[5].value==true}" ng-click="select('Fashion')"> Fashion</button>
                             <button class="button btn-international btn-bg-black btn-bg"  ng-class="{'black' : selectinterest[6].value==true}" ng-click="select('International')"> International</button>
-                        </div>
-                        <div class="text-center">
+                        </div> -->
+                        <!-- <div class="text-center">
                             <button class="button btn-books btn-bg-black " ng-class="{'black' : selectinterest[7].value==true}" ng-click="select('Books')"> Books</button>
                             <button class="button btn-comedy btn-bg" ng-click="select('Comedy')"> Comedy</button>
                             <button class="button btn-health btn-bg" ng-class="{'black' : selectinterest[8].value==true}" ng-click="select('Health')"> Health</button>
-                        </div>
+                        </div> -->
                     </div>
         </div>
        
