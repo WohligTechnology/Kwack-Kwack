@@ -20,8 +20,8 @@
                         </div>
                     </div>
                     <div>
-                        <div class="text-center" ng-repeat="interests in interest">
-                            <button class="button btn-sports btn-bg" ng-repeat="interest1 in interests" ng-class="{'black' : colorchange == undefined}" ng-click="select(interest1.name)"> {{interest1.name}}</button>
+                        <div class="text-center" ng-repeat="int in interestdup">
+                            <button class="button btn-sports btn-bg" ng-repeat="int1 in int"  ng-click="select(int1.name)" ng-class="{'black' : int1.value==true}"> {{int1.name}}</button>
                             <!-- <button class="button btn-comedy btn-bg" ng-class="{'black' : selectinterest[1].value==true}" ng-click="select('Comedy')"> Comedy</button>
                             <button class="button btn-food btn-bg" ng-class="{'black' : selectinterest[2].value==true}" ng-click="select('Food')"> Food</button> -->
                         </div>
