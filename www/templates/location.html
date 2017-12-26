@@ -40,7 +40,7 @@
                             <option value="India">India</option>
                             <option value="USA">USA</option>
                         </select> -->
-                        <select class="form-control locationtHead" ng-options="c.countryName for c in countryData track by c._id" ng-model="formName.selectedCountry"
+                        <select class="form-control locationtHead locationWidth" ng-options="c.countryName for c in countryData track by c._id" ng-model="formName.selectedCountry"
                         placeholder="Select" >
                         <option value="">Select Country</option>
                         </select>
@@ -49,15 +49,15 @@
                         <div class="plusposition">
                             <img src="img/plus1.png" >
                         </div>
-                        <select class="form-control locationtHead" ng-options="st.stateName for st in stateData track by st._id" ng-model="formName.selectedState"
+                        <select class="form-control locationtHead locationWidth" ng-options="st.stateName for st in stateData track by st._id" ng-model="formName.selectedState"
                         placeholder="Select" >
                         <option value="">Select State</option>
                         </select>
                     </div>
                     <div class="rel pad-10 locationtHead"  ng-if="formName.selectedCountry.countryName != 'India'">
-                        <div class="plusposition">
+                        <!--<div class="plusposition">
                             <img src="img/plus1.png">
-                        </div>
+                        </div>-->
                          <input type="text" ng-model="formName.selectedState" placeholder="Enter State"/>
                     </div>
                 </div>
