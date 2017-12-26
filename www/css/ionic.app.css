@@ -11028,8 +11028,7 @@ button.btn-yellow.button[disabled] {
   background: #ffb600; }
 
 .black {
-  background: #000 !important;
-  color: #fff; }
+  background: linear-gradient(to right bottom, #000 30%, #000 57%, #414141 100%) !important; }
 
 .back-img {
   position: relative; }
