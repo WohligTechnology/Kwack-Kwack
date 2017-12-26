@@ -1641,9 +1641,9 @@ $dark:                            #444 !default;
 
     .plusposition {
         position: absolute;
-        top: 40%;
+        top: 24%;
         /* transform: translate(-20%,-50%); */
-        right: 5%;
+         right: 13px;
 
     }
 
@@ -1664,6 +1664,13 @@ $dark:                            #444 !default;
             }
         
     }
+    .locationWidth{
+             width: 260px;
+    border: none;
+    background: transparent;
+
+    }
+   
 
     .cardBox {
         .card {

@@ -1,4 +1,4 @@
-connector.controller('SignUpCtrl', function ($scope, Chats, $state,ionicToast) {
+connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast) {
     console.log("inside sign up")
     $scope.showMassage = false
     $scope.saveUser = function (info) {
@@ -8,6 +8,9 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state,ionicToast) {
             Chats.apiCallWithData("User/save", info, function (data) {
                 console.log("data is", data)
                 if (data.value == true) {
+                    Chats.apiCallWithData("User/sendOtp", info, function (data) {
+
+                    })
                     $scope.data = data;
                     $.jStorage.set("user", $scope.data.data);
                     $state.go("otp")
@@ -17,7 +20,7 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state,ionicToast) {
                 }
             })
         } else {
-             console.log("inside else")
+            console.log("inside else")
             $scope.showMassage = true
             console.log("inside else")
         }
