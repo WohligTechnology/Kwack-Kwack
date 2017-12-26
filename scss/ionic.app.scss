@@ -412,10 +412,11 @@ $dark:                            #444 !default;
     } //trailercssendshere
     //**********css given by kishori**********
     //signup start
-    .error-msg{
+    .error-msg {
         font-size: 12px;
-        color:$red;
+        color: $red;
     }
+
     .content-mar {
         margin: 60px 45px;
         .item {
@@ -474,11 +475,12 @@ $dark:                            #444 !default;
         padding: 7px 65px;
         border-radius: 0px!important;
         border: none; // font-family: "Montserrat-Regular";
-   
     }
+
     button.btn-yellow.button[disabled] {
         opacity: 0.8;
     }
+
     .title {
         h5 {
             // font-family: "Montserrat-Bold";
@@ -1033,7 +1035,7 @@ $dark:                            #444 !default;
         margin: 5px 0px 10px 0px;
         font-size: 11px;
         font-family: 'Montserrat-Regular';
-        background:  $lightGray2;
+        background: $lightGray2;
         border-radius: 25px;
         position: absolute;
         left: 5%;
@@ -1046,7 +1048,7 @@ $dark:                            #444 !default;
         margin: 5px 0px 10px 0px;
         font-size: 11px;
         font-family: 'Montserrat-Regular';
-        background:  $lightGray2;
+        background: $lightGray2;
         border-radius: 25px;
         position: absolute;
         right: 4%;
@@ -1276,11 +1278,12 @@ $dark:                            #444 !default;
     .invtfrndshdr {
         top: 160px;
     } //discovernewscsss
-    .item-index{
+    .item-index {
         .item {
             z-index: 0 !important;
         }
     }
+
     .discover-navsearch {
         text-align: right;
         font-size: 30px;
@@ -1497,7 +1500,7 @@ $dark:                            #444 !default;
         margin: 5px;
         font-size: 14px;
         font-family: 'Montserrat-Regular';
-        border-bottom: 1px solid   $lightGray2;
+        border-bottom: 1px solid $lightGray2;
         padding: 0px 8px;
         margin: -2px;
     }
@@ -1507,7 +1510,7 @@ $dark:                            #444 !default;
         margin: 5px;
         font-size: 14px;
         font-family: 'Montserrat-Regular';
-        border-bottom: 1px solid   $lightGray2;
+        border-bottom: 1px solid $lightGray2;
         padding: 0px 5px;
         margin: 0px -3px 0px 5px
     }
@@ -1517,7 +1520,7 @@ $dark:                            #444 !default;
         margin: 5px;
         font-size: 14px;
         font-family: 'Montserrat-Regular';
-        border-bottom: 1px solid   $lightGray2;
+        border-bottom: 1px solid $lightGray2;
         padding: 0px 5px;
         margin: 0px 5px 0px -3px
     }
@@ -1526,12 +1529,12 @@ $dark:                            #444 !default;
         .swiper-pagination-bullet {
             background: $yellow3;
         }
-    } 
-    .black{
-     background: linear-gradient(to right bottom, $black 30%, $black 57%, $darkGray2 100%)!important;
-        // color:$light;
     }
-    //endofdiscover
+
+    .black {
+        background: linear-gradient(to right bottom, $black 30%, $black 57%, $darkGray2 100%)!important;
+        color: $light;
+    } //endofdiscover
     //discovernewsend
     // .discover-sliderbutton{
     //     .swiper-pagination {
@@ -1643,34 +1646,28 @@ $dark:                            #444 !default;
         position: absolute;
         top: 24%;
         /* transform: translate(-20%,-50%); */
-         right: 13px;
-
+        right: 13px;
     }
 
     .locationtHead {
         color: $black!important;
         font-size: 1.2em;
         font-family: "Montserrat-Regular" !important;
-      
-            input {
-                padding-left: 5px;
-                font-size: 16px;
-               
-            }
-            input::placeholder {
-                color: $black;
-                font-family: "Montserrat-Regular" !important;
-                
-            }
-        
+        input {
+            padding-left: 5px;
+            font-size: 16px;
+        }
+        input::placeholder {
+            color: $black;
+            font-family: "Montserrat-Regular" !important;
+        }
     }
-    .locationWidth{
-             width: 260px;
-    border: none;
-    background: transparent;
 
+    .locationWidth {
+        width: 260px;
+        border: none;
+        background: transparent;
     }
-   
 
     .cardBox {
         .card {
@@ -1688,7 +1685,7 @@ $dark:                            #444 !default;
         margin: 5px 0px 10px 0px;
         font-size: 11px;
         letter-spacing: 0.5px;
-        background:  $lightGray2;
+        background: $lightGray2;
         border-radius: 25px;
         position: absolute;
         right: 4%;
@@ -1795,7 +1792,7 @@ $dark:                            #444 !default;
     .tabs-top.tabs-striped .tab-item.active,
     .tabs-top.tabs-striped .tab-item.activated {
         border-bottom: none;
-        border-right: 1px solid  $lightGray3!important;
+        border-right: 1px solid $lightGray3!important;
     }
 
     .profileFImage {
@@ -2048,11 +2045,11 @@ $dark:                            #444 !default;
     } //editcssends
     //accountInsidecssStart
     .accInMargin50 {
-        margin:15px 50px;
+        margin: 15px 50px;
         h2 {
             font-size: 1.2em;
             font-family: 'Montserrat-Medium';
-            color: f  $lightGray;
+            color: f $lightGray;
             padding-left: 20px;
             letter-spacing: 2px;
         }
@@ -2071,27 +2068,22 @@ $dark:                            #444 !default;
         padding: 25px 0px !important;
         border-bottom: 1px solid $lightGray;
         height: 80px;
-        width: auto;
-        // div {
+        width: auto; // div {
         //     font-family: 'Monserrat-Regular';
         //     font-size: 0.9em;
         // }
         label {
-           
             font-size: 12px;
         }
-        
-    }
-    
-     // .aboutInside{
+    } // .aboutInside{
     //         font-family: 'Monserrat-Regular'!important;
     //         font-size: 1.1em;
     // }
     .email {
         padding: 30px 15px!important;
-       label{
-           font-size: 12px;
-       }
+        label {
+            font-size: 12px;
+        }
     }
 
     .arricon {
@@ -2194,8 +2186,7 @@ $dark:                            #444 !default;
             margin: 10px 40px !important;
         }
         .userName label {
-            font-size: 12px;
-            // font-family: 'Montserrat-Regular';
+            font-size: 12px; // font-family: 'Montserrat-Regular';
         }
     }
 
@@ -2385,8 +2376,9 @@ $dark:                            #444 !default;
         .item-body {
             padding: 7px 8px 0px;
         }
-        p ,textarea {
-            color:  $darkGray2;
+        p,
+        textarea {
+            color: $darkGray2;
             font-size: 12px;
             font-family: 'Montserrat-Light';
             text-align: justify;
@@ -2529,27 +2521,25 @@ $dark:                            #444 !default;
         padding: 20px 0px 20px 0px;
     } //polling css end
     //css for discoverFull start
-    .discover-item{
+    .discover-item {
         .item-input-inset {
             padding: 24.66667px !important;
         }
         .placeholderDiscover {
             i {
-                
                 color: $lightGray !important;
             }
             input::placeholder {
                 color: $lightGray!important;
-               
             }
         }
     }
+
     .discoverHead {
         .item-thumbnail-left {
             padding-top: 15px !important;
             padding-left: 106px !important;
             min-height: 120px;
-          
         }
         .item h2 {
             white-space: normal;
@@ -2588,10 +2578,10 @@ $dark:                            #444 !default;
         i {
             font-size: 15px;
             font-family: "Montserrat-Regular";
-            color: $darGray1 ;
+            color: $darGray1;
         }
         input::placeholder {
-            color: $darGray1 ;
+            color: $darGray1;
             font-size: 12px;
             font-family: "Montserrat-Regular";
         }
@@ -2607,17 +2597,14 @@ $dark:                            #444 !default;
         padding: 0px 15px;
         .imagePos {
             .item-thumbnail-left>img:first-child {
-                left:3px!important;
-                top:21px !important;
+                left: 3px!important;
+                top: 21px !important;
             }
         }
-        .watch-w img{
+        .watch-w img {
             width: 10px;
         }
-        
-    } 
-    
-    //css for discoverFull end
+    } //css for discoverFull end
     //start of explore more
     .explore-more {
         .news-content {
@@ -2649,25 +2636,25 @@ $dark:                            #444 !default;
         color: $lightGray;
         font-family: 'Montserrat-Italic' !important;
     }
-    
+
     .list .item.item-accordion {
         line-height: 38px;
         padding-top: 0;
         padding-bottom: 0;
         transition: 0.09s all linear;
-      }
-      .list .item.item-accordion.ng-hide {
-        line-height: 0px;
-      }
-      .list .item.item-accordion.ng-hide-add,
-      .list .item.item-accordion.ng-hide-remove {
-        display: block !important;
-      }
-    //end of explore more
+    }
 
+    .list .item.item-accordion.ng-hide {
+        line-height: 0px;
+    }
+
+    .list .item.item-accordion.ng-hide-add,
+    .list .item.item-accordion.ng-hide-remove {
+        display: block !important;
+    } //end of explore more
     //start of explore detail css
-    .accordian{
-         .item-stable{
+    .accordian {
+        .item-stable {
             margin: 3px 20px!important;
             border: none!important;
             border-radius: 0px!important;
@@ -2678,11 +2665,10 @@ $dark:                            #444 !default;
             font-family: 'Montserrat-Medium';
             color: $black;
         }
-        label{
+        label {
             font-size: 12px!important;
         }
     }
-    
 
     .just-now-labelexplore {
         top: 7%;
@@ -2693,21 +2679,22 @@ $dark:                            #444 !default;
         padding: 3px 11px;
         z-index: 1;
     }
-    .padr{
+
+    .padr {
         padding-right: 10px;
     }
 
-    .padl{
+    .padl {
         padding-left: 10px;
     }
-    .nospacing{
+
+    .nospacing {
         margin: 0px;
         padding: 0px;
         background: transparent;
     }
 
     .accordiancontent {
-     
         .card {
             margin: 0px 18px;
             background-color: transparent;
@@ -2740,36 +2727,31 @@ $dark:                            #444 !default;
                 width: 3%;
             }
         }
-    }
-
-
-    // css for iphone 5
+    } // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-        .accordian{
-            label{
-                font-size:10px!important;
+        .accordian {
+            label {
+                font-size: 10px!important;
             }
-            .news-label{
-                font-size:12px!important;
+            .news-label {
+                font-size: 12px!important;
             }
             .movie-label {
                 bottom: 9% !important;
-               }
-               .just-now-labelexplore {
+            }
+            .just-now-labelexplore {
                 top: 3% !important;
-               }
+            }
         }
-
         .accordiancontent {
-        span{
-            font-size: 7px;
+            span {
+                font-size: 7px;
+            }
         }
-        }
-        .padr{
+        .padr {
             padding-right: 0px;
         }
-    
-        .padl{
+        .padl {
             padding-left: 0px;
         }
         .back-img-title {
@@ -3051,26 +3033,22 @@ $dark:                            #444 !default;
     }
 
     @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
-        .accordian{
-            label{
-                font-size:10px!important;
+        .accordian {
+            label {
+                font-size: 10px!important;
             }
-            
         }
-
         .accordiancontent {
-            span{
+            span {
                 font-size: 7px;
             }
-            }
-        .padr{
+        }
+        .padr {
             padding-right: 0px;
         }
-    
-        .padl{
+        .padl {
             padding-left: 0px;
         }
-        
         .back-img-title {
             position: absolute;
             bottom: 0;
@@ -3101,33 +3079,28 @@ $dark:                            #444 !default;
     }
 
     @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
-        .accordian{
-            label{
-                font-size:10px;
+        .accordian {
+            label {
+                font-size: 10px;
             }
             .movie-label {
                 bottom: 9% !important;
-               }
-               .just-now-labelexplore {
+            }
+            .just-now-labelexplore {
                 top: 3% !important;
-               }
-            
+            }
         }
-
         .accordiancontent {
-            span{
+            span {
                 font-size: 9px;
             }
-            }
-
-        .padr{
+        }
+        .padr {
             padding-right: 8px;
         }
-    
-        .padl{
+        .padl {
             padding-left: 8px;
         }
-        
         .back-img-title {
             position: absolute;
             top: 0;
@@ -3167,34 +3140,31 @@ $dark:                            #444 !default;
         }
     } // css for iphone 6 nd 6plus
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
-        .accordian{
-            label{
-                font-size:10px;
+        .accordian {
+            label {
+                font-size: 10px;
             }
-           .news-label{
-               font-size: 12px;
-           } 
-           .movie-label {
-            bottom: 9% !important;
-           }
-           .just-now-labelexplore {
-            top: 3% !important;
-           }
+            .news-label {
+                font-size: 12px;
+            }
+            .movie-label {
+                bottom: 9% !important;
+            }
+            .just-now-labelexplore {
+                top: 3% !important;
+            }
         }
-
         .accordiancontent {
-            span{
+            span {
                 font-size: 9px;
             }
-            }
-        .padr{
+        }
+        .padr {
             padding-right: 8px;
         }
-    
-        .padl{
+        .padl {
             padding-left: 8px;
         }
-       
         .back-img-title {
             position: absolute;
             top: 0;
@@ -3401,7 +3371,6 @@ $dark:                            #444 !default;
                 }
             }
         } //settings
-
         .navHead {
             letter-spacing: 4px;
         }
@@ -3477,29 +3446,25 @@ $dark:                            #444 !default;
     }
 
     @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
-        .accordian{
-            .news-label{
-                font-size:12px!important;
+        .accordian {
+            .news-label {
+                font-size: 12px!important;
             }
-            label{
+            label {
                 font-size: 10px;
             }
-            
         }
-
         .accordiancontent {
-            span{
+            span {
                 font-size: 9px;
             }
-            }
-        .padr{
+        }
+        .padr {
             padding-right: 8px;
         }
-    
-        .padl{
+        .padl {
             padding-left: 8px;
         }
-        
         .back-img-title {
             position: absolute;
             top: 0;
