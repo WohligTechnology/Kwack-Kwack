@@ -213,12 +213,12 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
   $scope.goTOProfile = function (data) {
 
     if (data.selectedCountry && data.selectedState) {
-      console.log("inside next button click", data)
+      
       if (data.selectedCountry.countryName && data.selectedState.stateName) {
         console.log("inside if 1 India", $scope.dataToSave)
         $scope.dataToSave.country = data.selectedCountry.countryName
         $scope.dataToSave.state = data.selectedState.stateName
-        console.log("data to be save", $scope.dataToSave)
+      
         Chats.apiCallWithData("User/save", $scope.dataToSave, function (data) {
           if (data.value == true) {
   
@@ -230,7 +230,7 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
         console.log("inside if 2nd Usa")
         $scope.dataToSave.country = data.selectedCountry.countryName
         $scope.dataToSave.state = data.selectedState
-        console.log("data to be save", $scope.dataToSave)
+        
         Chats.apiCallWithData("User/save", $scope.dataToSave, function (data) {
           if (data.value == true) {
   
