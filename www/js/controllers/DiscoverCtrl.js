@@ -1,49 +1,11 @@
 connector.controller('DiscoverCtrl', function($scope,Chats, $ionicModal) {
-// $scope.selectinterest=[{
-//   "name":"Sports",
-//   "value":false
-// },
-// {
-//   "name":"Comedy",
-//   "value":false
-// },
-// {
-//   "name":"Food",
-//   "value":false
-// },
-// {
-//   "name":"Science",
-//   "value":false
-// },
-// {
-//   "name":"Entertainment",
-//   "value":false
-// },
-// {
-//   "name":"Fashion",
-//   "value":false
-// },
-// {
-//   "name":"International",
-//   "value":false
-// },
-// {
-//   "name":"Books",
-//   "value":false
-// },
-// {
-//   "name":"Health",
-//   "value":false
-// },
-
-// ]
   $scope.jstorage={}
+  $scope.allInterest=[]
 $scope.jstorage = $.jStorage.get('user');
 $scope.addInterest={}
 $scope.addInterest.userId= $scope.jstorage._id
 $scope.addInterest.interest=[]
 console.log("heyyjstorage",$scope.addInterest)
-$scope.colorchange={}
 $scope.interestarr=[]
     $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
       scope: $scope,
@@ -55,18 +17,18 @@ $scope.interestarr=[]
       $scope.modal.show();
     }
   $scope.select = function(interest){
-     console.log("addinterest",interest)
+    console.log("$scope.allInterest",interest);
+    
   
-  //   _.forEach($scope.selectinterest, function(value){
-  //     console.log('hellomoto',value);
-  //     console.log("seevalue",interest)
-  //     console.log("seevalue",value.name)
-  //     // if(value.name==interest){
-  //     //   value.value=!value.value
-  //     //   console.log("seethis",value.value)
-  //     //   $scope.selectinterest.push({value:value.value})
-  //     // }
-  // });
+    _.forEach($scope.allInterest, function(value){
+      
+      //  $scope.selectinterest.push({value:true})
+      console.log("helloworld",$scope.allInterest)
+     if(value.name==interest){
+         value.value=!value.value
+      //   console.log("seethis",value.value)
+      }
+    });
     
     var interestEdit = _.find($scope.interestarr, function (o){
       // console.log("interestarray",o)
@@ -77,7 +39,7 @@ $scope.interestarr=[]
       
     });
     if (interestEdit === undefined) {
-    $scope.interestarr.push({name:interest})
+     $scope.interestarr.push({name:interest})
   
      $scope.addInterest.interest = $scope.interestarr
     $scope.colorchange = interestEdit
@@ -89,17 +51,19 @@ $scope.interestarr=[]
       console.log("checknow", $scope.interestarr)
     }
     Chats.apiCallWithData("User/addInterests", $scope.addInterest, function (data) {
-      // console.log("data is*****************", data)
+       console.log("data is*****************", data)
      
     })
   }
+
+
   Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
     $scope.allInterest = data.data
-  // console.log("data is*****************", data.data)
- $scope.interest = _.chunk($scope.allInterest, 3);
- $scope.selectinterest= $scope.interest;
-//  console.log("chunckofInterest",$scope.selectinterest)
+
+   console.log("data is*****************", $scope.allInterest)
+ $scope.interestdup = _.chunk($scope.allInterest, 3); 
 })
+
     // $scope.closeModal = function () {
     //   $scope.modal.hide();
     // };
