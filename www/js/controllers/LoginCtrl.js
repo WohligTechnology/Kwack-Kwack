@@ -10,7 +10,7 @@ connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams,
         } else {
           $scope.showerrMsg=true
           // toastr.error("incorrect");
-          ionicToast.show('incorrect credentials', 'top', true, 2500);
+          ionicToast.show('incorrect credentials', 'top', false, 2500);
         }
       })
 

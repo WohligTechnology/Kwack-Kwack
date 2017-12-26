@@ -6,7 +6,7 @@ connector.controller('OtpCtrl', function ($scope, $stateParams, $state, Chats, i
         $scope.data.email = $.jStorage.get("user").email
         Chats.apiCallWithData("User/sendOtp", $scope.data, function (info) {
             if (info.value == true) {
-                ionicToast.show('otp sent successfully', 'top', true, 2500);
+                ionicToast.show('Otp Sent Successfully', 'top', false, 2500);
 
             }
         })
@@ -25,11 +25,12 @@ connector.controller('OtpCtrl', function ($scope, $stateParams, $state, Chats, i
 
                 } else {
                     console.log("Incorrect OTP!");
+                    ionicToast.show('Incorrect OTP!', 'top', false, 2500);
                 }
             });
         } else {
             console.log("enter all the field")
-
+            ionicToast.show('Please enter all the field', 'top', false, 2500);
         }
 
     }

@@ -13,10 +13,129 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
   $scope.countryData = [{
     "countryName": "India",
     "_id": "1"
-  }, {
+  }, 
+   {
+    "countryName": "Afghanistan",
+    "_id": "10"
+  },
+  {
+    "countryName": "Australia",
+    "_id": "11"
+  }
+  , {
+    "countryName": "Bangladesh",
+    "_id": "12"
+  }
+  , {
+    "countryName": "Belgium",
+    "_id": "13"
+  }
+  , {
+    "countryName": "Bhutan",
+    "_id": "14"
+  }
+  , {
+    "countryName": "Canada",
+    "_id": "15"
+  }
+  , {
+    "countryName": "China",
+    "_id": "16"
+  }
+  , {
+    "countryName": "Colombia",
+    "_id": "17"
+  }
+  , {
+    "countryName": "Egypt",
+    "_id": "18"
+  } 
+  
+  , {
+    "countryName": "France",
+    "_id": "19"
+  }
+  , {
+    "countryName": "Germany",
+    "_id": "7"
+  }
+  , {
+    "countryName": "Ghana",
+    "_id": "21"
+  }
+  , {
+    "countryName": "Iran",
+    "_id": "22"
+  }
+  , {
+    "countryName": "Maldives",
+    "_id": "23"
+  }
+  , {
+    "countryName": "Mexico",
+    "_id": "24"
+  }
+  , {
+    "countryName": "Nepal",
+    "_id": "25"
+  }
+  , {
+    "countryName": "Netherlands",
+    "_id": "26"
+  }
+  , {
+    "countryName": "Poland",
+    "_id": "27"
+  },
+  {
+    "countryName": "Romania",
+    "_id": "27"
+  },
+  {
+    "countryName": "Saudi Arabia",
+    "_id": "27"
+  },
+  {
+    "countryName": "Singapore",
+    "_id": "27"
+  },
+  {
+    "countryName": "South Africa",
+    "_id": "27"
+  },
+  {
+    "countryName": "Spain",
+    "_id": "27"
+  },
+  {
+    "countryName": "Sri Lanka",
+    "_id": "27"
+  },
+  {
+    "countryName": "Switzerland",
+    "_id": "27"
+  },
+  {
+    "countryName": "Turkey",
+    "_id": "27"
+  },
+  {
     "countryName": "USA",
-    "_id": "2"
-  }];
+    "_id": "27"
+  },
+  {
+    "countryName": "Vietnam",
+    "_id": "27"
+  },
+  {
+    "countryName": "Zambia",
+    "_id": "27"
+  },
+  {
+    "countryName": "Zimbabwe",
+    "_id": "27"
+  }
+];
 
   $scope.stateData = [{
       "_id": "1",
@@ -196,7 +315,8 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
         console.log("inside else part")
       }
     } else {
-      console.log("plase enter state and country")
+      console.log("please enter state and country")
+      ionicToast.show('Please enter state and country', 'top', false, 2500);
     }
 
   }
