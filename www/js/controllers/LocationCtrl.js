@@ -180,15 +180,15 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
   //   }
 
   // if (data.state && data.country) {
-    // $scope.dataToSave.country = data.country,
-    //   $scope.dataToSave.state = data.state,
-    //   Chats.apiCallWithData("User/save", $scope.dataToSave, function (data) {
-    //     if (data.value == true) {
+  // $scope.dataToSave.country = data.country,
+  //   $scope.dataToSave.state = data.state,
+  //   Chats.apiCallWithData("User/save", $scope.dataToSave, function (data) {
+  //     if (data.value == true) {
 
-    //     } else {
+  //     } else {
 
-    //     }
-    //   })
+  //     }
+  //   })
   // } else {
   //   console.log("inside else part")
   // }
@@ -213,29 +213,29 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
   $scope.goTOProfile = function (data) {
 
     if (data.selectedCountry && data.selectedState) {
-      
+
       if (data.selectedCountry.countryName && data.selectedState.stateName) {
         console.log("inside if 1 India", $scope.dataToSave)
         $scope.dataToSave.country = data.selectedCountry.countryName
         $scope.dataToSave.state = data.selectedState.stateName
-      
+
         Chats.apiCallWithData("User/save", $scope.dataToSave, function (data) {
           if (data.value == true) {
-  
+            $state.go("profile")
           } else {
-  
+
           }
         })
       } else if (data.selectedCountry.countryName && data.selectedState) {
         console.log("inside if 2nd Usa")
         $scope.dataToSave.country = data.selectedCountry.countryName
         $scope.dataToSave.state = data.selectedState
-        
+
         Chats.apiCallWithData("User/save", $scope.dataToSave, function (data) {
           if (data.value == true) {
-  
+            $state.go("profile")
           } else {
-  
+
           }
         })
       } else {
@@ -244,17 +244,6 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
     } else {
       console.log("plase enter state and country")
     }
-
-
-    // if ($scope.dataToSave.state && $scope.dataToSave.country) {
-    //   $state.go("profile", {
-    //     userId: $scope.dataToSave._id
-    //   })
-    // } else {
-
-    //   console.log("Enter state and country")
-    //   ionicToast.show('enter state and country.', 'top', true, 2500);
-    // }
 
   }
   // $scope.hideToast = function(){
