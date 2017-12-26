@@ -10707,7 +10707,7 @@ button.btn-yellow.button[disabled] {
   font-size: 17px;
   display: none; }
 
-.bg-footer .tabs {
+.has-footer .bg-footer .tabs {
   background: #fff !important;
   top: initial !important; }
 
@@ -10796,6 +10796,9 @@ button.btn-yellow.button[disabled] {
 
 .has-footer {
   bottom: 40px; }
+
+.has-bottom {
+  bottom: 58px; }
 
 .float-right {
   float: right; }
@@ -11880,6 +11883,13 @@ button.btn-yellow.button[disabled] {
     top: 21px !important; }
   .discoverfull .watch-w img {
     width: 10px; }
+
+.list-padd {
+  padding: 0px 20px;
+  background-color: #fcc230;
+  margin-top: -17px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 36px 1px #777474; }
 
 .explore-more .news-content {
   margin-bottom: 0px; }

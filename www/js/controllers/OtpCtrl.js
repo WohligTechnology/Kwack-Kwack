@@ -30,7 +30,7 @@ connector.controller('OtpCtrl', function ($scope, $stateParams, $state, Chats, i
             });
         } else {
             console.log("enter all the field")
-            ionicToast.show('Please enter all the field', 'top', false, 2500);
+            ionicToast.show('Please Enter OTP', 'top', false, 2500);
         }
 
     }

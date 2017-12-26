@@ -22,7 +22,7 @@ $dark:                            #444 !default;
     $darkGray: #424242 !default;
     $darGray1: #444444 !default;
     $darkGray2: #414141 !default;
-    $darkgray3:#b2b0b09c !default;
+    $darkgray3: #b2b0b09c !default;
     $lightGray: #afafaf !default;
     $lightGray1: #d4d4d4 !default;
     $lightGray2: #ececec !default;
@@ -1125,6 +1125,8 @@ $dark:                            #444 !default;
         display: none;
     }
 
+    .has-footer
+
     .bg-footer .tabs {
         background: $light !important;
         top: initial!important;
@@ -1242,6 +1244,9 @@ $dark:                            #444 !default;
 
     .has-footer {
         bottom: 40px;
+    }
+     .has-bottom {
+        bottom: 58px;
     }
 
     .float-right {
@@ -2604,7 +2609,17 @@ $dark:                            #444 !default;
         .watch-w img {
             width: 10px;
         }
-    } //css for discoverFull end
+    } 
+    
+    .list-padd{
+        padding:0px 20px;
+        background-color: $yellow2;
+            margin-top: -17px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 36px 1px #777474;
+    }
+    
+    //css for discoverFull end
     //start of explore more
     .explore-more {
         .news-content {
