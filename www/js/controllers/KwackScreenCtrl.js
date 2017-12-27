@@ -1,4 +1,4 @@
-connector.controller('KwackScreenCtrl', function($scope,$ionicModal) {
+connector.controller('KwackScreenCtrl', function($scope,$ionicModal,Chats) {
     $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
         scope: $scope,
         animation: 'slide-in-up'
@@ -13,46 +13,41 @@ connector.controller('KwackScreenCtrl', function($scope,$ionicModal) {
         $scope.modal.hide();
       };
 
-    $scope.news = [{
-        "img": "img/invite/padthumb.jpg",
-        "news":"'Padmavati' trailer: Deepika Padukone-Shahid Kapoor and",
-        "date":"Thursday, 19 Aug 2017",
-        "poll":"21",
-        "kwack":"42",
-        "share":"12"
-    },
-    {
-        "img": "img/invite/justthumb.jpg",
-        "news":"'The Flash season 4: New episodes, release date, cast, villain and",
-        "date":"Thursday, 19 Aug 2017",
-        "poll":"21",
-        "kwack":"42",
-        "share":"12"
-    },
-    {
-        "img": "img/invite/modithumb.jpg",
-        "news":"'PM Modi wraps up Myanmar trip with visit to 2500-year-old Shwedagon Pagoda",
-        "date":"Thursday, 19 Aug 2017",
-        "poll":"21",
-        "kwack":"42",
-        "share":"12"
-    },
-    {
-        "img": "img/invite/1+5Tthumb.jpg",
-        "news":"'Vivo V7+ with FullView display launching in India, pre-orders to begin today",
-        "date":"Thursday, 19 Aug 2017",
-        "poll":"21",
-        "kwack":"42",
-        "share":"12"
-    },
-    {
-        "img": "img/invite/1+5Tthumb.jpg",
-        "news":"'Vivo V7+ with FullView display launching in India, pre-orders to begin today",
-        "date":"Thursday, 19 Aug 2017",
-        "poll":"21",
-        "kwack":"42",
-        "share":"12"
-    }
+      Chats.apiCallWithoutData("NewsInfo/getAllNews", function (data) {
+        $scope.news = data.data
+    })
 
-    ]
+    $scope.doRefresh = function (val) {
+        $scope.pagination = {
+          shouldLoadMore: true,
+          currentPage: 0,
+          result: []
+        };
+        if (!val) {
+          $scope.loadMore();
+        }
+      };
+      $scope.loadMore = function () {
+        $scope.pagination.shouldLoadMore = false;
+        $scope.pagination.currentPage++;
+        var url = 'Assignment/tasklist';
+        if (LocalStorageService.getOnlineStatus()) {
+          MyServices.getData(url, { page: $scope.pagination.currentPage }, function (data) {
+            $scope.pagination.result = _.concat($scope.pagination.result, data.data);
+            if (data.data.length == 10) {
+              $scope.pagination.shouldLoadMore = true;
+            }
+            LocalStorageService.isItLocalStorageData($scope.pagination.result);
+            LocalStorageService.saveTaskOnLocalStorage($scope.pagination.result, "task");
+            $scope.pagination.resultGroup = LocalStorageService.groupDataByMonth($scope.pagination.result);
+            $scope.$broadcast('scroll.refreshComplete');
+          });
+        } else if (!LocalStorageService.getOnlineStatus()) {
+          $scope.pagination.result = LocalStorageService.getTaskFromLocalStorage("task");
+          LocalStorageService.isItLocalStorageData($scope.pagination.result);
+          $scope.pagination.resultGroup = LocalStorageService.groupDataByMonth($scope.pagination.result);
+        }
+      };
+
+
 })

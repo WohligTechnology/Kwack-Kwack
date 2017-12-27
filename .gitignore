@@ -3,6 +3,7 @@
 bower_components
 node_modules
 platforms
+platforms/android
 plugins
 .DS_Store
 *.zip
