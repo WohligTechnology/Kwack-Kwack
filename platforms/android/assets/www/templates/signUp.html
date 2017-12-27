@@ -15,32 +15,32 @@
                         <label class="item item-input item-floating-label">
                         <span clas></span>
                    <input type="text" class="border-bot" ng-model="data.userName" name="userName" placeholder="Username" required>
-                   <span class="error-msg" ng-show="formName.userName.$touched && formName.userName.$invalid">Please enter a valid email</span>
+                   <span class="error-msg" ng-show="formName.userName.$touched && formName.userName.$invalid">User Name is required</span>
                     </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
                          <input type="text" class="border-bot" ng-model="data.email" name="email" placeholder="Email id" required>
-                         <span class="error-msg" ng-show="formName.email.$touched && formName.email.$invalid">Please enter a valid email</span>
+                         <span class="error-msg" ng-show="formName.email.$touched && formName.email.$invalid">Email is required</span>
                      </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
                         <input type="tel" class="border-bot" ng-model="data.mobile" name="mobile" placeholder="Mobile Number" minlength="10" maxlength="10" required>
-                        <span class="error-msg" ng-show="formName.mobile.$touched && formName.mobile.$invalid">Please enter a valid Phone Number</span>
+                        <span class="error-msg" ng-show="formName.mobile.$touched && formName.mobile.$invalid">Mobile Number is required</span>
                     </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
                       <input type="password" class="border-bot" ng-model="data.password" name="password" placeholder="Password" required>
-                      <span class="error-msg" ng-show="formName.password.$touched && formName.password.$invalid">Please enter a valid Password</span>
+                      <span class="error-msg" ng-show="formName.password.$touched && formName.password.$invalid">Password is required</span>
                       </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
                          <input type="password" class="border-bot" ng-model="data.forgotPassword" placeholder="Confirm Password" required>
-                         <span ng-show="formName.forgotPassword.$touched && formName.forgotPassword.$invalid">Please enter a valid Password</span>
-                         <span class="error-msg" ng-if="showMassage">Please enter a valid Password </span>
+                         <span ng-show="formName.forgotPassword.$touched && formName.forgotPassword.$invalid">Confirm Password is required</span>
+                         <span class="error-msg" ng-if="showMassage">Passwords did not match.</span>
                       </label>
                       <div class="absolute sign-up">
-                            <!-- <button class="button  btn-yellow"  ng-click="saveUser(data,formName )" ng-disabled="formName.$invalid">SIGN UP</button> -->
-                            <button class="button  btn-yellow" ui-sref="otp"  >SIGN UP</button>
+                             <button class="button  btn-yellow"  ng-click="saveUser(data,formName )" ng-disabled="formName.$invalid">SIGN UP</button> 
+                            <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
                         </div>
                     </div>
                 </div>

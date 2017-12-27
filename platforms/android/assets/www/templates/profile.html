@@ -10,9 +10,10 @@
                 <h6 class="font-size">Upload Profile Picture </h6>
             </div>
             <div class="">
-                <div class="profile-pic mar-auto relative" >
-                    <!-- <img src="{{profileImage.image | uploadpath}}"  alt="logo" class="w100">{{$scope.profileImage.image}} -->
-                    <img src="img/profile/1.png" alt="logo" class="w100">
+                <div class="profile-pic mar-auto relative" ng-click="showActionsheet('image')">
+                    <img ng-if="profileImage.image && profileImage.image!=''" ng-src="{{profileImage.image | uploadpath}}"  alt="logo" class="w100">
+                    <img src="img/profile/1.png" ng-if="!profileImage.image || profileImage.image==''" alt="logo" class="w100">
+                    <!-- <img ng-src="{{profileImage.image}}">                     -->
                     <div class="absolute plus-btn">
                         <button class="button">
                                <i class="ion ion-plus-round"></i> 

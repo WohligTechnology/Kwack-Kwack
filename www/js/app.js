@@ -284,30 +284,41 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
    
   // if none of the above states are matched, use this as the fallback
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/profile');
 
 
 })
 
 .filter('uploadpath', function () {
+  return function (input) {
+      if (input){
+        console.log(adminurl + "upload/readFile?file=" + input);
+        return adminurl + "upload/readFile?file=" + input;
+      }
+  };
+})
+
+.filter('serverimage', function () {
   return function (input, width, height, style) {
-    var other = "";
-    if (width && width != "") {
-      other += "&width=" + width;
-    }
-    if (height && height != "") {
-      other += "&height=" + height;
-    }
-    if (style && style != "") {
-      other += "&style=" + style;
-    }
-    if (input) {
-      if (input.indexOf('https://') == -1) {
-        return imgpath + input + other;
+      if (input) {
+          if (input.substr(0, 4) == "http") {
+              return input;
+          } else {
+              image = imgpath + "?file=" + input;
+              if (width) {
+                  image += "&width=" + width;
+              }
+              if (height) {
+                  image += "&height=" + height;
+              }
+              if (style) {
+                  image += "&style=" + style;
+              }
+              return image;
+          }
 
       } else {
-        return input;
+          return ;
       }
-    }
   };
-});
+})
