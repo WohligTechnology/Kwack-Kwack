@@ -61,7 +61,7 @@ connector.controller('ProfileCtrl', function($scope,$cordovaCamera,Chats,$ionicA
             quantityuality: 80 // Higher is better
         };
         $cordovaImagePicker.getPictures(options).then(function(results) {
-            console.log(results);
+            console.log(results[0]);
             $scope.uploadImage(results[0], card);
         }, function(error) {
             console.log('Error: ' + JSON.stringify(error)); // In case of error
@@ -73,10 +73,10 @@ connector.controller('ProfileCtrl', function($scope,$cordovaCamera,Chats,$ionicA
         // $scope.showLoading('Uploading Image...', 10000);
         $cordovaFileTransfer.upload(adminurl + 'upload', imageURI)
             .then(function(result) {
+                console.log("donewithprofile",result)
                 // Success!
                 // $scope.hideLoading();
                 result.response = JSON.parse(result.response);
-                console.log(result.response.data[0]);
                 $scope.profileImage.image = result.response.data[0];
                 console.log("changes",$scope.profileImage.image)
                

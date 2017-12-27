@@ -1125,6 +1125,14 @@ $dark:                            #444 !default;
         display: none;
     }
 
+    .tabs-top > .tabs, .tabs.tabs-top{
+        bottom: 0px!important;
+    }
+
+    .nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs{
+bottom: 0px!important;
+    }
+
     .has-footer
 
     .bg-footer .tabs {
