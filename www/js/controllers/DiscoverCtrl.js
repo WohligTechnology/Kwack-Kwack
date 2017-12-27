@@ -64,8 +64,27 @@ $scope.interestarr=[]
  $scope.interestdup = _.chunk($scope.allInterest, 3); 
 })
 
+
     // $scope.closeModal = function () {
     //   $scope.modal.hide();
     // };
+    $scope.searchText = {};
+     $scope.search = function (value) {
+    $scope.companyCategory = [];
+    $scope.isText = true;
+
+    if (value.searchText != "") {
+      Chats.apiCallWithData("Interests/globalSearch", value, function (data) {
+        console.log("data is", data)
+        if (data.value) {
+          $scope.Interestsname = data.data.Interests;
+          console.log("inside if")
+        } else {
+          console.log("Event data false");
+        }
+      });
+    }
+  };
       
   })
+

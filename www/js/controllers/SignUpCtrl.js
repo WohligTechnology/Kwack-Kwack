@@ -16,7 +16,7 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast) 
                     $state.go("otp")
                 } else {
                     console.log("invalid email")
-                    ionicToast.show('enter valid details .', 'top', true, 2500);
+                    ionicToast.show('Enter valid Details', 'top', false, 2500);
                 }
             })
         } else {
