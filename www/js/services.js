@@ -1,4 +1,4 @@
-var adminurl = "http://192.168.1.120:80/api/";
+var adminurl = "http://192.168.2.22:80/api/";
 // var adminurl = "http://wohlig.io/api/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile?file=";
