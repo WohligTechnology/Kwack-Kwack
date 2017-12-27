@@ -2,7 +2,7 @@
      <div class="bar bar-header bar-light">
         <div class="row">
           <div class="col col-33">
-            <div ui-sref="tab.startPolling">
+            <div ui-sref="tab.discoverNews">
               <i class="ion ion-ios-arrow-left trailernav"></i>
             </div>
           </div>
@@ -23,10 +23,10 @@
           <h4 class="pad0 title-explore">KWACK</h4>
         </div>
         <div class="trailerImage">
-          <img class="img-responsive" src="img/padmavathi.png" alt="">
+          <img class="img-responsive" src="{{newsInfo.imageUrl}}" alt="">
         </div>
         <div class="trailerName">
-          <label for="">'Padmavati' trailer: Deepika Padukone-Shahid Kapoor and Ranveer Singh's historical saga...</label>
+          <label for="">{{newsInfo.title}}</label>
           <div>
             <span class="articleDate">
               Monday,
@@ -49,7 +49,7 @@
                 </label>
                 <label class="discoverCardStrip">
                 <img src="img/debate/poll.png">
-                <span class="pollingCounts"> 20</span>
+                <span class="pollingCounts"> {{TotalPoll}}</span>
                 </label>
                 <label>
                 <img src="img/debate/share.png">
