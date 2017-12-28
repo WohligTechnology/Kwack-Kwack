@@ -6,7 +6,7 @@
         </div>
         <div class="col col-90">
             <div class="pollingtitle">
-                    <span class="" for="">The Flash season 4: New episodes, release date...</label>
+                    <span class="" for="">{{newsInfo.title}}</label>
             </div>
         </div>
             
@@ -16,10 +16,10 @@
            <img src="img/yellowstrip.png" alt="">
        </div>
 <div class="trailerImage">
-    <img class="img-responsive" src="img/polling.jpg" alt="">
+    <img class="img-responsive" src="{{newsInfo.imageUrl}}" alt="">
 </div>
 <div class="trailerName">
-    <label for="">The Flash season 4: New episodes, release date cast, villain and everything you need to know...</label>
+    <label for="">{{newsInfo.title}}</label>
     <div>
             <span class="articleDate">
         Monday,
@@ -39,14 +39,14 @@
 </div>
 <div class="row">
     <div class="col col-50 yourSide rel">
-        <div><img src="img/polling/right.png" alt="">
+        <div ng-click="savePoll('YES')"><img src="img/polling/right.png" alt="">
             <div class="yoursideright"></div>
         </div>
 
-    <label for="" class="yourside-labelsel">YES</label>
+    <label for="" class="yourside-labelsel" >YES</label>
     </div>
     <div class="col col-50 yourSide">
-        <div>
+        <div ng-click="savePoll('NO')">
                 <img src="img/polling/wrong.png" alt="">
                 <div class="yoursideright"></div>
         </div>
@@ -54,7 +54,7 @@
     </div>
                           
 </div>
-<button class=" trailernext" ui-sref="polling-inside">
+<button class=" trailernext" ng-click="nextPage()">
         NEXT
       </button>
     </ion-content>

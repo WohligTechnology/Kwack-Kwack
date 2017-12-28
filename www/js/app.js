@@ -243,7 +243,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'SettingsCtrl'
     })
     .state('polling-inside', {
-      url: '/pollinginside',
+      url: '/pollinginside/:newsid',
       templateUrl: 'templates/polling-inside.html',
       controller: 'PollingInsideCtrl'
     })
@@ -253,7 +253,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'DebateCtrl'
     })
     .state('tab.startPolling', {
-      url: '/startPolling/:newsId',
+      url: '/startPolling/:newsid',
       views: {
         'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',
@@ -284,7 +284,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
    
   // if none of the above states are matched, use this as the fallback
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/profile');
 
 
 })

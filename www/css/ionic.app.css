@@ -5088,7 +5088,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
 /* If you change this, change platform.scss as well */
 .tabs-top > .tabs,
 .tabs.tabs-top {
-  top: 44px;
+  bottom: 0px!important;
   padding-top: 0;
   background-position: bottom;
   border-top-width: 0;
@@ -5255,7 +5255,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   pointer-events: none; }
 
 .nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
-  top: 0; }
+  bottom: 0; }
 
 .pane[hide-nav-bar="true"] .has-tabs-top {
   top: 49px; }
@@ -5362,7 +5362,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
       margin-top: 0; }
   .platform-ios.platform-cordova .modal-wrapper .modal .tabs-top > .tabs,
   .platform-ios.platform-cordova .modal-wrapper .modal .tabs.tabs-top {
-    top: 44px; }
+    bottom: 44px; }
   .platform-ios.platform-cordova .modal-wrapper .modal .has-header,
   .platform-ios.platform-cordova .modal-wrapper .modal .bar-subheader {
     top: 44px; }
@@ -10706,6 +10706,12 @@ button.btn-yellow.button[disabled] {
   color: #444444;
   font-size: 17px;
   display: none; }
+
+.tabs-top > .tabs, .tabs.tabs-top {
+  bottom: 0px !important; }
+
+.nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
+  bottom: 0px !important; }
 
 .has-footer .bg-footer .tabs {
   background: #fff !important;
