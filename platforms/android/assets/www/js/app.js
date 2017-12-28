@@ -253,7 +253,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'DebateCtrl'
     })
     .state('tab.startPolling', {
-      url: '/startPolling',
+      url: '/startPolling/:newsId',
       views: {
         'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',

@@ -10238,7 +10238,7 @@ button.btn-yellow.button[disabled] {
   width: 280px;
   height: 280px;
   margin-top: 30px;
-  padding: 40px 55px;
+  overflow: hidden;
   background-color: #fff;
   box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
   border-radius: 100%; }
@@ -10706,6 +10706,12 @@ button.btn-yellow.button[disabled] {
   color: #444444;
   font-size: 17px;
   display: none; }
+
+.tabs-top > .tabs, .tabs.tabs-top {
+  bottom: 0px !important; }
+
+.nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
+  bottom: 0px !important; }
 
 .has-footer .bg-footer .tabs {
   background: #fff !important;
@@ -12019,7 +12025,7 @@ button.btn-yellow.button[disabled] {
   .social-iconll li {
     width: 18%; }
   .plus-btn {
-    right: 8%;
+    right: 16%;
     top: 92%; }
   .news-discover span {
     font-size: 8px; }
@@ -12344,7 +12350,7 @@ button.btn-yellow.button[disabled] {
     width: 100px !important;
     right: 5%; }
   .plus-btn {
-    right: 8%;
+    right: 16%;
     top: 91%;
     transform: translate(-50%, -50%); }
   .followers .dis-cell {

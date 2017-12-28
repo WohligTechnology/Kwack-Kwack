@@ -1,6 +1,6 @@
 
 <ion-view title="Discover" class="bg-color-yellow">
-    <ion-content class="no-top">
+    <ion-content class="no-top has-bottom" >
         <div class="otp">
                 <div class="w15 mar-auto">
                             <img src="img/black-icon.png" alt="logo" class="w100">
@@ -9,11 +9,18 @@
                             <h2 class="title-discover">DISCOVER</h2>
                             <P class="discover-para">Choose from these category what interests you the most </P>
                         </div>
-                <div class="row">
+                    <div class="row">
                         <div class="mar-auto relative  placeholderCat">
-                            <input type="text" placeholder="Enter category" class="input-category ">
+                            <input type="text" placeholder="Enter category" ng-model="searchText.searchText" ng-change="search(searchText)" class="input-category ">
+                            <div ng-if="searchText.searchText != '' && isText == true">
+                              <ul class="list-unstyled list-padd">
+                                   <li class="search-item" ng-repeat="item in Interestsname" ng-if="Interestsname.length > 0">
+                                      <p class="text-wrapper" >{{item.name}}</p>
+                                   </li>
+                             </ul>
+                            </div>
                             <div class="absolute cat-btn-plus">
-                            <button class="button ">
+                            <button class="button">
                                        <i class="ion ion-plus-round"></i> 
                             </button>
                             </div>
