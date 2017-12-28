@@ -1,17 +1,73 @@
- connector.controller('DiscoverNewsCtrl', function ($scope, Chats, $stateParams, $state) {
+ connector.controller('DiscoverNewsCtrl', function ($scope,$ionicScrollDelegate, Chats, $stateParams, $state, $ionicPlatform, $ionicLoading) {
    $scope.activeTab = 1;
    $scope.changeTab = function (num) {
      $scope.activeTab = num;
    }
+   $scope.jstorage = $.jStorage.get('user');
+   $scope.pollKwack= $scope.jstorage._id
+$scope.discoverNews=[]
+   $scope.doRefresh = function (val) {
+    $scope.discoverNews=[],
+    $scope.pagination = {
+      shouldLoadMore: true,
+      currentPage: 0,
+     
+    };
+    if (!val) {
+      $scope.loadMore();
+    }
+  };
+  $scope.poll={}
+  $scope.doRefresh(true);
+  $scope.loadMore = function () {
+    $ionicScrollDelegate.resize()
+    console.log("hellowassup")
+    $scope.pagination.shouldLoadMore = false;
+    $scope.pagination.currentPage++;
+    console.log("hellocount",$scope.pagination.currentPage)
+    $scope.pagination1={
+      "page":$scope.pagination.currentPage,
+    }
+      Chats.apiCallWithData("NewsInfo/getAllNews1",$scope.pagination1, function (data) {
+        console.log("$scope.pagination1",data.data.results.length )
+        $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
+        console.log("heyya s", $scope.discoverNews)
+        if (data.data.results.length == 10) {
+          $scope.pagination.shouldLoadMore = true;
+          console.log("heyya s", $scope.discoverNews)
+          var value =true
+          _.forEach($scope.discoverNews,function(value) {
+            _.forEach(value.polls,function(polls1){
 
-   Chats.apiCallWithoutData("NewsInfo/getAllNews", function (data) {
-     $state.reload();
-   
-     $scope.discoverNews = data.data
-  console.log("heyya saw me length count",$scope.discoverNews )
-    //  console.log("data is*****************", $scope.discoverNews)
+if(polls1.poll==null){
+console.log("hellonull")
+value.temp=false
+}else{
+  if($scope.pollKwack==polls1.poll.user){
+    value.temp=true
+     }else{
+       $scope.color=false;
+       value.value=value.value;
+     }
+}
+            })
+          
+          })
+        }else{
+          
+        }
+    
+      });
+    
+  };
 
-   })
+  //  Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.data, function (data) {
+  //    $scope.discoverNews = data.data.results
+  // console.log("heyya saw me length count",$scope.discoverNews )
+  // $scope.doRefresh()
+  //   //  console.log("data is*****************", $scope.discoverNews)
+
+  //  })
    $scope.nextPage = function (data) {
      console.log("num", data)
      var data1 = {}
