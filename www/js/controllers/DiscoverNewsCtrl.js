@@ -29,7 +29,7 @@ $scope.discoverNews=[]
       "page":$scope.pagination.currentPage,
     }
       Chats.apiCallWithData("NewsInfo/getAllNews1",$scope.pagination1, function (data) {
-        console.log("$scope.pagination1",data.data.results.length )
+        // console.log("$scope.pagination1",data.data.results.length )
         $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
         console.log("heyya s", $scope.discoverNews)
         if (data.data.results.length == 10) {
