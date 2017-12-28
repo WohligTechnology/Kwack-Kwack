@@ -93,7 +93,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     })
 
     .state('tab.trailer', {
-      url: '/trailer',
+      url: '/trailer/:newsid',
       views: {
         'tab-trailer': {
 
@@ -131,11 +131,13 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
   .state('tab.discoverNews', {
     url: '/discoverNews',
+     cache:false,
     views: {
       'tab-discoverNews': {
 
         templateUrl: 'templates/tab-discoverNews.html',
-        controller: 'DiscoverNewsCtrl'
+        controller: 'DiscoverNewsCtrl',
+       
       }
     }
 
@@ -243,17 +245,17 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'SettingsCtrl'
     })
     .state('polling-inside', {
-      url: '/pollinginside',
+      url: '/pollinginside/:newsid',
       templateUrl: 'templates/polling-inside.html',
       controller: 'PollingInsideCtrl'
     })
     .state('debate', {
-      url: '/debate',
+      url: '/debate/:kwackId/:newsId',
       templateUrl: 'templates/debate.html',
       controller: 'DebateCtrl'
     })
     .state('tab.startPolling', {
-      url: '/startPolling/:newsId',
+      url: '/startPolling/:newsid',
       views: {
         'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',
@@ -284,7 +286,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
    
   // if none of the above states are matched, use this as the fallback
 
-  $urlRouterProvider.otherwise('/profile');
+  $urlRouterProvider.otherwise('/login');
 
 
 })

@@ -21,10 +21,10 @@ $scope.discoverNews=[]
   $scope.doRefresh(true);
   $scope.loadMore = function () {
     $ionicScrollDelegate.resize()
-    console.log("hellowassup")
+    // console.log("hellowassup")
     $scope.pagination.shouldLoadMore = false;
     $scope.pagination.currentPage++;
-    console.log("hellocount",$scope.pagination.currentPage)
+    // console.log("hellocount",$scope.pagination.currentPage)
     $scope.pagination1={
       "page":$scope.pagination.currentPage,
     }
@@ -34,7 +34,7 @@ $scope.discoverNews=[]
         console.log("heyya s", $scope.discoverNews)
         if (data.data.results.length == 10) {
           $scope.pagination.shouldLoadMore = true;
-          console.log("heyya s", $scope.discoverNews)
+          // console.log("heyya s", $scope.discoverNews)
           var value =true
           _.forEach($scope.discoverNews,function(value) {
             _.forEach(value.polls,function(polls1){
@@ -74,9 +74,9 @@ value.temp=false
      data1.newsId = data,
        data1.userId = $.jStorage.get("user")._id
      Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
-       console.log("data is",data1)
+      //  console.log("data is",data1)
        if (data1.value == true) {
-         console.log("inside if found")
+        //  console.log("inside if found")
          $state.go("polling-inside",{
            newsid:data
           })
