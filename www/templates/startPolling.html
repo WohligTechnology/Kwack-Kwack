@@ -39,18 +39,25 @@
 </div>
 <div class="row">
     <div class="col col-50 yourSide rel">
-        <div ng-click="savePoll('YES')"><img src="img/polling/right.png" alt="">
+        <div ng-if=" data=='NO' || data==null" ng-click="savePoll('YES')"><img src="img/polling/right.png" alt="">
+            <div class="yoursideright"></div>
+        </div>
+        <div ng-if="data=='YES'" ng-click="savePoll('YES')"><img src="img/polling/rightclick.png" alt="">
             <div class="yoursideright"></div>
         </div>
 
-    <label for="" class="yourside-labelsel" >YES</label>
+    <label for="" ng-class="{'yourside-labelsel': data=='YES'}" class="yourside-label" >YES</label>
     </div>
     <div class="col col-50 yourSide">
-        <div ng-click="savePoll('NO')">
+        <div ng-if=" data=='YES' || data==null" ng-click="savePoll('NO')">
                 <img src="img/polling/wrong.png" alt="">
                 <div class="yoursideright"></div>
         </div>
-        <label class="yourside-label" for="">NO</label>
+        <div ng-if="data=='NO'" ng-click="savePoll('NO')">
+            <img src="img/polling/wrongclick.png" alt="">
+            <div class="yoursideright"></div>
+    </div>
+        <label ng-class="{'yourside-labelsel': data=='NO'}" class="yourside-label" for="">NO</label>
     </div>
                           
 </div>

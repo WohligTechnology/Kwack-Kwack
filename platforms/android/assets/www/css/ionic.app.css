@@ -5088,7 +5088,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
 /* If you change this, change platform.scss as well */
 .tabs-top > .tabs,
 .tabs.tabs-top {
-  bottom: 0px!important;
+  top: 44px;
   padding-top: 0;
   background-position: bottom;
   border-top-width: 0;
@@ -5255,7 +5255,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   pointer-events: none; }
 
 .nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
-  bottom: 0; }
+  top: 0; }
 
 .pane[hide-nav-bar="true"] .has-tabs-top {
   top: 49px; }
@@ -5362,7 +5362,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
       margin-top: 0; }
   .platform-ios.platform-cordova .modal-wrapper .modal .tabs-top > .tabs,
   .platform-ios.platform-cordova .modal-wrapper .modal .tabs.tabs-top {
-    bottom: 44px; }
+    top: 44px; }
   .platform-ios.platform-cordova .modal-wrapper .modal .has-header,
   .platform-ios.platform-cordova .modal-wrapper .modal .bar-subheader {
     top: 44px; }
@@ -10238,7 +10238,7 @@ button.btn-yellow.button[disabled] {
   width: 280px;
   height: 280px;
   margin-top: 30px;
-  padding: 40px 55px;
+  overflow: hidden;
   background-color: #fff;
   box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
   border-radius: 100%; }
@@ -12025,7 +12025,7 @@ button.btn-yellow.button[disabled] {
   .social-iconll li {
     width: 18%; }
   .plus-btn {
-    right: 8%;
+    right: 16%;
     top: 92%; }
   .news-discover span {
     font-size: 8px; }
@@ -12350,7 +12350,7 @@ button.btn-yellow.button[disabled] {
     width: 100px !important;
     right: 5%; }
   .plus-btn {
-    right: 8%;
+    right: 16%;
     top: 91%;
     transform: translate(-50%, -50%); }
   .followers .dis-cell {

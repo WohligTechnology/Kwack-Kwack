@@ -5,7 +5,7 @@
         </div>
         <div class="col col-90">
             <div class="">
-                    <span class="" for="">'Padmavati' trailer: Deepika Padukone-Shahid Ka...</span>
+                    <span class="" for="">{{newsInfo.title}}</span>
             </div>
         </div>
    </div>         
@@ -14,10 +14,10 @@
       <h4 class="pad0 title-explore">KWACK</h4>
     </div>
     <div class="trailerImage">
-      <img class="img-responsive" src="img/padmavathi.png" alt="">
+      <img class="img-responsive" src="{{newsInfo.imageUrl}}" alt="">
     </div>
     <div class="trailerName" >
-      <label for="">'Padmavati' trailer: Deepika Padukone-Shahid Kapoor and Ranveer Singh's historical saga...</label>
+      <label for="">{{newsInfo.title}}</label>
       <div><span class="articleDate"> Monday,</span>
         <span class="articleDate"> Oct 9, 2017</span>
         <span class="readarticleKwack">Read Article ...</span>
@@ -33,22 +33,37 @@
     </div>
     <div class="row">
       <div class="col col-30 yourSide rel">
-        <div>
-          <img src="img/43.PNG" alt="">
+        <div ng-if="!kwack1 || kwack1=='AGAINST' || kwack1=='NEUTRAL'" ng-click="saveKwack('FOR')"> 
+          <img src="img/trailer/for.png" alt="">
           <div class="yoursideright"></div>
         </div>
-        <label  class="yourside-labelsel">FOR</label>
+        <div ng-if="kwack1=='FOR'" ng-click="saveKwack('FOR')"> 
+          <img src="img/trailer/forclick.png" alt="">
+          <div class="yoursideright"></div>
+        </div>
+        <label ng-class="{'yourside-labelsel': kwack1=='FOR'}" class="yourside-label">FOR</label>
       </div>
       <div class="col col-30 yourSide rel">
-        <div>
-          <img src="img/34231233.PNG" alt="">
+        <div ng-if="!kwack1 || kwack1=='FOR' || kwack1=='NEUTRAL'" ng-click="saveKwack('AGAINST')">
+          <img src="img/trailer/against.png" alt="">
           <div class="yoursideright"></div>
         </div>
-        <label class="yourside-label" for="">AGAINST</label>
+        <div ng-if="kwack1=='AGAINST'" ng-click="saveKwack('AGAINST')">
+          <img src="img/trailer/againstclick.png" alt="">
+          <div class="yoursideright"></div>
+        </div>
+        <label ng-class="{'yourside-labelsel': kwack1=='AGAINST'}"  class="yourside-label" for="">AGAINST</label>
       </div>
-      <div class="col col-30 yourSide">
-      <img src="img/Untitled-4 copy.PNG" alt="">
-      <label class="yourside-label" for="">NEUTRAL</label>
+      <div class="col col-30 yourSide" >
+        <div ng-if="!kwack1 || kwack1=='AGAINST' || kwack1=='FOR'" ng-click="saveKwack('NEUTRAL')">
+      <img src="img/trailer/neutral.png" alt="">
+      <div class="yoursideright"></div>
+      </div>
+      <div ng-if="kwack1=='NEUTRAL'" ng-click="saveKwack('NEUTRAL')">
+          <img src="img/trailer/neutralclick.png" alt="">
+          <div class="yoursideright"></div>
+          </div>
+      <label ng-class="{'yourside-labelsel': kwack1=='NEUTRAL'}" class="yourside-label" for="">NEUTRAL</label>
      </div>
     </div>
     <div class="text-center martop">
@@ -56,7 +71,8 @@
       <label class="pad-left5 fs-10">CHECK TO GO ANONYMOUS</label>
     </div>
     <!-- <button class=" trailernext" ng-click="openModal()"> -->
-        <button class=" trailernext" ui-sref="debate">
+        <!--<button class=" trailernext" ui-sref="debate">-->
+           <button class=" trailernext"  ng-click="nextPage()">
       NEXT
     </button>
   </ion-content>
