@@ -27,7 +27,9 @@
                             <span>{{news.likes}}</span>
                             <label ng-if="news.likes!=''">LIKES</label>
                             <span>{{news.replies}}</span>
-                            <label ng-if="news.replies !=''">REPLIES</label>
+                            <label  ng-click='REPLIES=true'>REPLIES</label>
+                        </div>
+                        <div ng-show="REPLIES"><textarea rows="1" cols="28"></textarea>
                         </div>
                   </div>
             </div>
