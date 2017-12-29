@@ -74,10 +74,10 @@
                <div class="card text-center relative pollCardpad">
                  <div class="pollUpDown">
                    <img src="img/pollingInside/Up.png" alt="">
-                 </div>
+                 </div><pre></pre>
                  <div class="pollRoProBar"><round-progress
                    max="100"
-                   current="64"
+                   current="yespercent"
                    color="#ffc943"
                    bgcolor="#eaeaea"
                    radius="50"
@@ -90,7 +90,8 @@
                    animation="easeInOutQuart"
                    animation-delay="0"></round-progress></div>
                    <div class="pollPercent">
-                      <label for="">64</label>
+                      <label ng-if="yespercent" for="">{{yespercent}}</label>
+                      <label ng-if="!yespercent" for="">0</label>
                       <span>%</span>
                    </div>
                    <label class="pollAnswer" for="">Yes</label>
@@ -103,7 +104,7 @@
                       </div>
                    <div class="pollRoProBar"><round-progress
                      max="100"
-                     current="36"
+                     current="nopercent"
                      color="#000000"
                      bgcolor="#eaeaea"
                      radius="50"
@@ -116,7 +117,8 @@
                      animation="easeInOutQuart"
                      animation-delay="0"></round-progress></div>
                      <div class="pollPercent">
-                        <label for="">36</label>
+                        <label ng-if="nopercent" for="">{{nopercent}}</label>
+                        <label ng-if="!nopercent" for="">0</label>
                         <span>%</span>
                      </div>
                      <label class="pollAnswer" for="">No</label>
