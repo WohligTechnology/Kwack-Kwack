@@ -13,7 +13,9 @@
             <div class="display-inline float-right explore-icon text-center">
               <!--<label class="discoverCardStrip"  ui-sref="tab.startPolling"> <img  src="img/explore/5.png"><span class="alignM"> {{discover.poll}}</span></label>-->
                <label class="discoverCardStrip"  ng-click="nextPage(discover._id)"> <img ng-if="!discover.temp"  src="img/explore/5.png"> <img ng-if="discover.temp==true" src="img/filter/2.png"><span class="alignM"> {{discover.polls.length}}</span></label>
-              <label class="discoverCardStrip" ui-sref="tab.trailer"><a href="discover"><img class="img-responsive" src="img/explore/6.png"></a>
+              <!--<label class="discoverCardStrip" ui-sref="tab.trailer"><a href="discover"><img class="img-responsive" src="img/explore/6.png"></a>
+                <span class="alignM">{{discover.kwack}}</span></label>-->
+                  <label class="discoverCardStrip"  ng-click="nextPageforKwack(discover._id)"><a><img class="img-responsive" src="img/explore/6.png"></a>
                 <span class="alignM">{{discover.kwack}}</span></label>
               <label><img src="img/explore/7.png">
                 <span class="colorw alignM">{{discover.share}}</span></label>
