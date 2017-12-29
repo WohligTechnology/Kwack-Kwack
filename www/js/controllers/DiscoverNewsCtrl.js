@@ -88,7 +88,14 @@ value.temp=false
        }
      })
    }
-
+ $scope.nextPageforKwack = function (data) {
+     console.log("num", data)
+    
+         $state.go("tab.trailer",{
+           newsid:data
+          })
+      
+   }
    // $scope.newsId = {
    //   _id: $stateParams.discover
    // };

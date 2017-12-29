@@ -1,6 +1,6 @@
 <div class="debate-card relative">
     <div class="debateprofile">
-        <img ng-src="{{news.img}}" alt="profile-img" class="profile-w">
+        <img ng-src="{{debate.comment.user.photo | uploadpath}}" alt="profile-img" class="profile-w">
     </div>
     <div class="list card">
        <div class="item item-body">
@@ -10,7 +10,7 @@
                 <div class="col col-80">
                     <div class="test">
                             <div class="debate-user user-flex">
-                                    <span>{{news.name}}</span>
+                                    <span>{{debate.comment.user.name}}</span>
                                     <img ng-src="{{news.thumicon}}">
                                 </div> 
                            <div class="time-flex text-right" ng-if="news.time !='' && news.time">
@@ -21,11 +21,11 @@
                                 </div>
                                 </div>
                              <div>
-                               <p>{{news.desc}}</p>
+                                  <p>{{debate.comment.comment}}</p>
                              </div>
                         <div class="likes">
                             <span>{{news.likes}}</span>
-                            <label ng-if="news.likes!=''">LIKES</label>
+                            <label ng-click="addLike(debate.comment._id)">LIKES</label>
                             <span>{{news.replies}}</span>
                             <label  ng-click='REPLIES=true'>REPLIES</label>
                         </div>
