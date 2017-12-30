@@ -25,7 +25,7 @@
      $scope.interest = data.data.interests
    })
 
-   
+
    $scope.doRefresh(true);
 
    $scope.loadMore = function () {
@@ -41,46 +41,45 @@
          if (data.data.results.length == 10) {
            $scope.pagination.shouldLoadMore = true;
          }
-           $scope.paginationCode();
-       });
-     } else if($scope.activeTab=='Just now') {
-       Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
-        $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-        if (data.data.results.length == 10) {
-          $scope.pagination.shouldLoadMore = true;
-        }
-          $scope.paginationCode();
-      });
-     }else{
-      $scope.interestData = {
-        "page": $scope.pagination.currentPage,
-        "userInterest": $scope.activeTab
-      }
-      Chats.apiCallWithData("NewsInfo/getNewsByInterest", $scope.interestData, function (data) {
-        $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-        if (data.data.results.length == 10) {
-          $scope.pagination.shouldLoadMore = true;
-        }
          $scope.paginationCode();
-      });
+       });
+     } else if ($scope.activeTab == 'Just now') {
+       Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
+         $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
+         if (data.data.results.length == 10) {
+           $scope.pagination.shouldLoadMore = true;
+         }
+         $scope.paginationCode();
+       });
+     } else {
+       $scope.interestData = {
+         "page": $scope.pagination.currentPage,
+         "userInterest": $scope.activeTab
+       }
+       Chats.apiCallWithData("NewsInfo/getNewsByInterest", $scope.interestData, function (data) {
+         $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
+         if (data.data.results.length == 10) {
+           $scope.pagination.shouldLoadMore = true;
+         }
+         $scope.paginationCode();
+       });
      }
    };
 
-   $scope.paginationCode = function(){
-      _.forEach($scope.discoverNews, function (value) {
-        _.forEach(value.polls, function (polls1) {
-          if (polls1.poll == null) {
-          } else {
-            if ($scope.pollKwack._id == polls1.poll.user) {
-              value.temp = true
-            } else {
-              $scope.color = false;
-              value.value = value.value;
-            }
-          }
-        })
+   $scope.paginationCode = function () {
+     _.forEach($scope.discoverNews, function (value) {
+       _.forEach(value.polls, function (polls1) {
+         if (polls1.poll == null) {} else {
+           if ($scope.pollKwack._id == polls1.poll.user) {
+             value.temp = true
+           } else {
+             $scope.color = false;
+             value.value = value.value;
+           }
+         }
+       })
 
-      }) 
+     })
    }
 
    $scope.nextPage = function (data) {
