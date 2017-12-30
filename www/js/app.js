@@ -301,6 +301,12 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
   };
 })
 
+.filter('fromNow', function () {
+  return function (date) {
+    return moment(date).fromNow();
+  };
+})
+
 .filter('serverimage', function () {
   return function (input, width, height, style) {
       if (input) {

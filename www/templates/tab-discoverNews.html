@@ -27,29 +27,29 @@
       <div class="discover-trend">
         TRENDING THIS WEEK
       </div>
-      <ion-slides class="discover-ionslide discover-sliderbutton swipperdiscover" options="sliderData.sliderOptions" slider="sliderData.sliderDelegate">
-        <ion-slide-page ui-sref="app.requirement({productId:data._id})">
-          <div>
-            <img class="img-responsive" src="img/discover/sliderimg.PNG">
+      <ion-slides class="discover-ionslide discover-sliderbutton swipperdiscover"  options="sliderData.sliderOptions" slider="sliderData.sliderDelegate">
+        <ion-slide-page ng-repeat="trendingweek in trending">
+          <div class="swipperImg">
+            <img class="img-responsive" ng-src="{{trendingweek.imageUrl}}">
           </div>
-          <p class="sliderdesc" >Behold: The first high-quality photos of Apple's iPhone X in the wild</p>
+          <p class="sliderdesc" >{{trendingweek.title}}</p>
           <div>
             <div class="slidertime">
               <i class="ion ion-ios-clock"></i>
-              <label>3m ago</label>
+              <label>{{trendingweek.createdAt | fromNow}}</label>
               <label class="pad-left5"> broadly.vice.com</label>
             </div>
           </div>
           <div class="display-inline float-right discover-icon text-center strip">
-            <label class="discoverStrip"><img  src="img/discover/graph.png"><span class="alignM">20</span></label>
-            <label class="discoverStrip"><img class="img-responsive" src="img/discover/shield.png">
-              <span class="alignM">42</span></label>
+            <label ng-click="nextPage(trendingweek._id)" class="discoverStrip"><img ng-if="!trendingweek.temp"  src="img/explore/5.png"> <img ng-if="trendingweek.temp==true" src="img/filter/2.png"><span class="alignM">{{trendingweek.polls.length}}</span></label>
+            <label ng-click="nextPageforKwack(trendingweek._id)" class="discoverStrip"><img class="img-responsive" src="img/discover/shield.png">
+              <span class="alignM" >{{trendingweek.comments.length}}</span></label>
             <label><img src="img/discover/share.png">
                 <span class="colorw alignM">20</span>
             </label>
           </div>
         </ion-slide-page>
-        <ion-slide-page ui-sref="app.requirement({productId:data._id})">
+        <!-- <ion-slide-page ui-sref="app.requirement({productId:data._id})">
           <div>
             <img class="img-responsive" src="img/discover/sliderimg.PNG">
           </div>
@@ -69,7 +69,7 @@
                 <span class="colorw alignM">20</span>
             </label>
           </div>
-        </ion-slide-page>
+        </ion-slide-page> -->
       </ion-slides>
       <div>
           <ion-scroll direction="x" class="wide-as-needed ">
