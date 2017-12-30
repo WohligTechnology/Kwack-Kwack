@@ -8,7 +8,7 @@
             <div class="detail-para">
               <p class="pad0">{{discover.description}}</p>
             </div>
-            <span><img src="img/explore/4.png"></span> <span>{{discover.time}}</span>
+            <span><img src="img/explore/4.png"></span> <span>{{discover.createdAt | fromNow}}</span>
             <span><img class="viewImg" src="img/discover/views.PNG" alt=""></span> <span>{{discover.realTotalCount}}</span>{{discover.value}}
             <div class="display-inline float-right explore-icon text-center">
               <!--<label class="discoverCardStrip"  ui-sref="tab.startPolling"> <img  src="img/explore/5.png"><span class="alignM"> {{discover.poll}}</span></label>-->

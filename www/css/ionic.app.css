@@ -9965,6 +9965,11 @@ body {
 .sliderbutton .swiper-pagination {
   bottom: 70px; }
 
+.swipperImg {
+  height: 150px; }
+  .swipperImg img {
+    width: 100%; }
+
 .swipperbutton .swiper-pagination-bullet {
   background: #444444; }
 
@@ -10854,8 +10859,14 @@ button.btn-yellow.button[disabled] {
   letter-spacing: 3px; }
 
 .discover-ionslide {
-  height: 200px !important;
+  height: 190px !important;
   padding-top: 10px; }
+
+.swiper-container {
+  height: 185px !important; }
+
+.swiper-slide {
+  height: 210px; }
 
 .bodyFont {
   font-size: 14px; }
@@ -10870,7 +10881,7 @@ button.btn-yellow.button[disabled] {
   /* display: block; */
   font-size: 15px;
   font-family: 'Montserrat-Regular';
-  padding: 10px; }
+  padding: 5px 10px; }
 
 .slidertime {
   position: absolute;

@@ -185,6 +185,13 @@ $dark:                            #444 !default;
         }
     }
 
+    .swipperImg{
+        height: 150px;
+        img{
+            width: 100%;
+        }
+    }
+
     .swipperbutton {
         .swiper-pagination-bullet {
             background: $darGray1;
@@ -1325,8 +1332,16 @@ bottom: 0px!important;
     }
 
     .discover-ionslide {
-        height: 200px!important;
+        height: 190px!important;
         padding-top: 10px;
+       
+    }
+    .swiper-container{
+        height: 185px!important;
+    }
+
+    .swiper-slide{
+        height: 210px;
     }
 
     .bodyFont {
@@ -1343,7 +1358,7 @@ bottom: 0px!important;
         /* display: block; */
         font-size: 15px;
         font-family: 'Montserrat-Regular';
-        padding: 10px;
+        padding: 5px 10px;
     }
 
     .slidertime {

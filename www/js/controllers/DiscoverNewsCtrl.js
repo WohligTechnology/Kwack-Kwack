@@ -21,6 +21,24 @@
      }
    };
 
+   Chats.apiCallWithoutData("NewsInfo/getTrendingNews", function (data) {
+     $scope.trending=data.data
+     _.forEach($scope.trending, function (value) {
+      _.forEach(value.polls, function (polls1) {
+        if (polls1.poll == null) {} else {
+          if ($scope.pollKwack._id == polls1.poll.user) {
+            value.temp = true
+          } else {
+            $scope.color = false;
+            value.value = value.value;
+          }
+        }
+      })
+
+    })
+    console.log("$scope.trending",$scope.trending)
+  })
+
    Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
      $scope.interest = data.data.interests
    })
@@ -83,6 +101,7 @@
    }
 
    $scope.nextPage = function (data) {
+     console.log("idplease",data)
      var data1 = {}
      data1.newsId = data,
        data1.userId = $.jStorage.get("user")._id
