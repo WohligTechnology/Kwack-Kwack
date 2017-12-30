@@ -11517,7 +11517,8 @@ button.btn-yellow.button[disabled] {
 .kwack-card .item h2 {
   white-space: normal;
   font-family: 'Montserrat-Medium';
-  font-size: 12px; }
+  font-size: 12px;
+  padding-left: 10px; }
 
 .kwack-card .item {
   margin: 0px 17px;

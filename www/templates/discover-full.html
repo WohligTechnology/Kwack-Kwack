@@ -26,8 +26,8 @@
       <div class="bar bar-header item-input-inset placeholderDiscover">
          
             <label class="item-input-wrapper" >
-              <i class="icon ion-search placeholder-icon"></i>
-              <input type="search" placeholder="Business" ng-model="search.search">
+              <i class="icon ion-search placeholder-icon"></i>              
+              <input type="text" placeholder="Business" ng-model="searchText.searchText" ng-change="search(searchText)" name="keyword">
               
             </label>
             <!-- <i class="ion ion-ios-close" ng-click="searchCancel()" ng-if="search.search!=''"></i> -->
