@@ -10066,7 +10066,7 @@ body {
   transform: translate(-50%, -50%); }
 
 .yourside-labelsel {
-  font-family: "Montserrat-Bold"; }
+  font-family: "Montserrat-Bold" !important; }
 
 .yourside-label {
   font-family: "Montserrat-Regular"; }
