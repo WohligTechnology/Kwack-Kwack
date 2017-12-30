@@ -251,6 +251,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     })
     .state('debate', {
       url: '/debate/:kwackId/:newsId',
+        cache:false,
       templateUrl: 'templates/debate.html',
       controller: 'DebateCtrl'
     })
