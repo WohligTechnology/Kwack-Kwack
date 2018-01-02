@@ -11528,7 +11528,8 @@ button.btn-yellow.button[disabled] {
   border-right: none;
   border-left: none; }
   .kwack-card .item p {
-    font-size: 9px; }
+    font-size: 9px;
+    padding-left: 10px; }
   .kwack-card .item .explore-icon img {
     width: 11%; }
   .kwack-card .item .explore-icon span {

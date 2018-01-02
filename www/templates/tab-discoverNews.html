@@ -42,7 +42,7 @@
           </div>
           <div class="display-inline float-right discover-icon text-center strip">
             <label ng-click="nextPage(trendingweek._id)" class="discoverStrip"><img ng-if="!trendingweek.temp"  src="img/explore/5.png"> <img ng-if="trendingweek.temp==true" src="img/filter/2.png"><span class="alignM">{{trendingweek.polls.length}}</span></label>
-            <label ng-click="nextPageforKwack(trendingweek._id)" class="discoverStrip"><img class="img-responsive" src="img/discover/shield.png">
+            <label ng-click="nextPageforKwack(trendingweek._id)" class="discoverStrip"><img ng-if="!trendingweek.kwack" class="img-responsive" src="img/discover/shield.png"> <img ng-if="trendingweek.kwack==true" class="img-responsive" src="img/discover/shieldclick.png">
               <span class="alignM" >{{trendingweek.comments.length}}</span></label>
             <label><img src="img/discover/share.png">
                 <span class="colorw alignM">20</span>
