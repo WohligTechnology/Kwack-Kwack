@@ -32,15 +32,13 @@
           <div class="swipperImg">
             <img class="img-responsive" ng-src="{{trendingweek.imageUrl}}">
           </div>
-          <p class="sliderdesc" >{{trendingweek.title}}</p>
-          <div>
-            <div class="slidertime">
+          <div class="sliderdesc"><p class="">{{trendingweek.title}}</p></div>
+        <div class="slidertime">
               <i class="ion ion-ios-clock"></i>
               <label>{{trendingweek.createdAt | fromNow}}</label>
               <label class="pad-left5"> broadly.vice.com</label>
             </div>
-          </div>
-          <div class="display-inline float-right discover-icon text-center strip">
+         <div class="display-inline float-right discover-icon text-center strip">
             <label ng-click="nextPage(trendingweek._id)" class="discoverStrip"><img ng-if="!trendingweek.temp"  src="img/explore/5.png"> <img ng-if="trendingweek.temp==true" src="img/filter/2.png"><span class="alignM">{{trendingweek.polls.length}}</span></label>
             <label ng-click="nextPageforKwack(trendingweek._id)" class="discoverStrip"><img class="img-responsive" src="img/discover/shield.png">
               <span class="alignM" >{{trendingweek.comments.length}}</span></label>
