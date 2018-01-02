@@ -186,7 +186,6 @@ $dark:                            #444 !default;
     }
 
     .swipperImg{
-        height: 150px;
         img{
             width: 100%;
         }
@@ -1336,13 +1335,13 @@ bottom: 0px!important;
         padding-top: 10px;
        
     }
-    .swiper-container{
-        height: 185px!important;
-    }
+    // .swiper-container{
+    //     height: 185px!important;
+    // }
 
-    .swiper-slide{
-        height: 210px;
-    }
+    // .swiper-slide{
+    //     height: 210px;
+    // }
 
     .bodyFont {
         font-size: 14px;

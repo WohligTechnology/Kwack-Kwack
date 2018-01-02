@@ -94,6 +94,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.trailer', {
       url: '/trailer/:newsid',
+      cache:false,
       views: {
         'tab-trailer': {
 
@@ -246,17 +247,19 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     })
     .state('polling-inside', {
       url: '/pollinginside/:newsid',
+      cache:false,
       templateUrl: 'templates/polling-inside.html',
       controller: 'PollingInsideCtrl'
     })
     .state('debate', {
-      url: '/debate/:kwackId/:newsId',
+      url: '/debate/:kwackId/:newsid',
         cache:false,
       templateUrl: 'templates/debate.html',
       controller: 'DebateCtrl'
     })
     .state('tab.startPolling', {
       url: '/startPolling/:newsid',
+      cache:false,
       views: {
         'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',

@@ -22,8 +22,9 @@ connector.controller('TrailerCtrl', function($scope, $ionicModal,Chats,$statePar
     }else{
                 $state.go("debate",{
              kwackId: $scope.kwack1,
-             newsId:$stateParams.newsid
+             newsid:$stateParams.newsid
           })
+          console.log("hellokwackans",$scope.kwack1)
       
     }
    

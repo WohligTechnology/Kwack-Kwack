@@ -1,33 +1,59 @@
 connector.controller('DebateCtrl', function($scope, $stateParams,Chats, $state) {
-        $scope.newsId = $stateParams.newsId
+        $scope.newsId = $stateParams.newsid
+        $scope.kwackAns = $stateParams.kwackId
+        console.log("helloanswwer",$scope.kwackAns)
     data = {}
     data.newsId =  $scope.newsId
-    console.log(" $scope.newsId", $scope.kwackId)
+    console.log(" $scope.newsId", $scope.kwackid)
+    $scope.kwackSide={}
+    $scope.kwackSide.userId=$.jStorage.get("user")._id
+    $scope.kwackSide.newsId = $scope.newsId
+
+    Chats.apiCallWithData("Comment/getKwack", $scope.kwackSide, function (data) {
+        console.log("hellodata",data.data)
+        $scope.kwackAns= data.data.kwack
+     })
+
     Chats.apiCallWithData("NewsInfo/getOneNews", data, function (data1) {
        if (data1.value == true) {
           console.log("data is",data1)
           $scope.newsInfo=data1.data,
           $scope.commentInfo=data1.data.comments
-          console.log("  $scope.commentInfo", $scope.commentInfo)
+          console.log("helloinfo",$scope.commentInfo)
         
         } else {
 
             console.log("inside else not found")
         }
     })
+
+$scope.saveReply= function(replyText, debateid){
+$scope.reply={}
+$scope.reply.commentId=debateid
+$scope.reply.reply=replyText
+$scope.reply.user=$.jStorage.get("user")._id
+console.log("reply",$scope.reply)
+Chats.apiCallWithData("Comment/addReply", $scope.reply, function (data) {
+    console.log("hellodata",data)
+    
+ })
+}
+
      $scope.saveComment = function (kwack) {
   
        console.log("comment is",kwack)
 dataToSave={}
 dataToSave.userId=$.jStorage.get("user")._id
-dataToSave.newsId=$stateParams.newsId
+dataToSave.newsId=$stateParams.newsid
 dataToSave.comment=kwack
-dataToSave.kwack=$stateParams.kwackId
+dataToSave.kwack=$scope.kwackAns
 console.log("datatosave",dataToSave)
+
+
       Chats.apiCallWithData("Comment/addComment", dataToSave, function (data1) {
        if (data1.value == true) {
           console.log("data is",data1)
-          $scope.newsInfo=data1.data.news
+          $scope.newsInfo=data1.data
           $state.reload()
           console.log(" $scope.newsInfo", $scope.newsInfo)
         
