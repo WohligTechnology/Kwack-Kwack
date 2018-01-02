@@ -36,6 +36,19 @@
       })
 
     })
+
+    _.forEach($scope.trending, function (comments) {
+      _.forEach(comments.comments, function (comments1) {
+        if (comments1.comment == null) {} else {
+          if ($scope.pollKwack._id == comments1.comment.user) {
+            comments.kwack = true
+          } else {
+            comments.kwack = false;
+          }
+        }
+      })
+
+    })
     console.log("$scope.trending",$scope.trending)
   })
 
@@ -56,6 +69,7 @@
      if ($scope.activeTab == 'All') {
        Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
          $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
+        
          if (data.data.results.length == 10) {
            $scope.pagination.shouldLoadMore = true;
          }
@@ -91,20 +105,33 @@
            if ($scope.pollKwack._id == polls1.poll.user) {
              value.temp = true
            } else {
-             $scope.color = false;
-             value.value = value.value;
+             value.temp = false;
            }
          }
        })
 
      })
+     _.forEach($scope.discoverNews, function (comments) {
+      _.forEach(comments.comments, function (comments1) {
+        console.log("hellocomments",comments1)
+        if (comments1.comment == null) {} else {
+          if ($scope.pollKwack._id == comments1.comment.user) {
+            comments.kwack = true
+          } else {
+            // comments.kwack = false;
+          }
+        }
+      })
+
+    })
+    console.log("checking",$scope.discoverNews)
    }
 
-   $scope.nextPage = function (data) {
-     console.log("idplease",data)
+   $scope.nextPage = function (data, kwackPoll) {
      var data1 = {}
      data1.newsId = data,
        data1.userId = $.jStorage.get("user")._id
+       if(kwackPoll=='poll'){
      Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
        if (data1.value == true) {
          $state.go("polling-inside", {
@@ -116,10 +143,25 @@
          })
        }
      })
+    }else{
+      console.log("inside else")
+      Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
+        console.log("idplease",data1)
+        // if (data1.value == true) {
+        //   $state.go("polling-inside", {
+        //     newsid: data
+        //   })
+        // } else {
+        //   $state.go("tab.startPolling", {
+        //     newsid: data
+        //   })
+        // }
+      })
+    }
    }
-   $scope.nextPageforKwack = function (data) {
-     $state.go("tab.trailer", {
-       newsid: data
-     })
-   }
+  //  $scope.nextPageforKwack = function (data) {
+  //    $state.go("tab.trailer", {
+  //      newsid: data
+  //    })
+  //  }
  })
