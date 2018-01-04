@@ -49,7 +49,6 @@
       })
 
     })
-    console.log("$scope.trending",$scope.trending)
   })
 
    Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
@@ -73,6 +72,7 @@
          if (data.data.results.length == 10) {
            $scope.pagination.shouldLoadMore = true;
          }
+         console.log("hellorecords", $scope.discoverNews)
          $scope.paginationCode();
        });
      } else if ($scope.activeTab == 'Just now') {
@@ -113,18 +113,16 @@
      })
      _.forEach($scope.discoverNews, function (comments) {
       _.forEach(comments.comments, function (comments1) {
-        console.log("hellocomments",comments1)
         if (comments1.comment == null) {} else {
           if ($scope.pollKwack._id == comments1.comment.user) {
             comments.kwack = true
           } else {
-            // comments.kwack = false;
+            comments.kwack = false;
           }
         }
       })
 
     })
-    console.log("checking",$scope.discoverNews)
    }
 
    $scope.nextPage = function (data, kwackPoll) {
@@ -140,22 +138,23 @@
        } else {
          $state.go("tab.startPolling", {
            newsid: data
+          
          })
+        
        }
      })
     }else{
-      console.log("inside else")
       Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
-        console.log("idplease",data1)
-        // if (data1.value == true) {
-        //   $state.go("polling-inside", {
-        //     newsid: data
-        //   })
-        // } else {
-        //   $state.go("tab.startPolling", {
-        //     newsid: data
-        //   })
-        // }
+         console.log("hellodata",data1)
+        if (data1.value == true) {
+          $state.go("debate", {
+            newsid: data
+          })
+        } else {
+          $state.go("tab.trailer", {
+            newsid: data
+          })
+        }
       })
     }
    }
