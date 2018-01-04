@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-var adminurl = "http://192.168.1.104:80/api/";
-=======
+// var adminurl = "http://192.168.1.104:80/api/";
 var adminurl = "http://localhost:80/api/";
->>>>>>> d13a866e8565492991e12aafe1a03adb044b282f
-// var adminurl = "http://wohlig.io/api/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile?file=";
 angular.module('starter.services', [])
