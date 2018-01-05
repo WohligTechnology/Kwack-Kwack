@@ -124,7 +124,7 @@
 
     })
    }
-
+  
    $scope.nextPage = function (data, kwackPoll) {
      var data1 = {}
      data1.newsId = data,

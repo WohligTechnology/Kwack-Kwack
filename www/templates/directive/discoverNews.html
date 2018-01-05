@@ -3,9 +3,6 @@
           <div class="item item-body pad2010" >
             <img class="full-image" ng-src="{{discover.imageUrl}}">
             <h3 class="pad0" >{{discover.title}}</h3>
-            <div>
-              
-            </div>
             <div class="detail-para">
               <p class="pad0">{{discover.description}}</p>
             </div>
@@ -14,13 +11,21 @@
             <div class="display-inline float-right explore-icon text-center">
               <!--<label class="discoverCardStrip"  ui-sref="tab.startPolling"> <img  src="img/explore/5.png"><span class="alignM"> {{discover.poll}}</span></label>-->
                <label class="discoverCardStrip"  ng-click="nextPage(discover._id,'poll')"> <img ng-if="!discover.temp"  src="img/explore/5.png"> <img ng-if="discover.temp==true" src="img/filter/2.png"><span class="alignM"> {{discover.polls.length}}</span></label>
-              <!--<label class="discoverCardStrip" ui-sref="tab.trailer"><a href="discover"><img class="img-responsive" src="img/explore/6.png"></a>
-                <span class="alignM">{{discover.kwack}}</span></label>-->
+              <!-- <label class="discoverCardStrip" ui-sref="tab.trailer"><a href="discover"><img class="img-responsive" src="img/explore/6.png"></a>
+                <span class="alignM">{{discover.kwack}}</span></label> -->
                   <label class="discoverCardStrip"  ng-click="nextPage(discover._id,'kwack')"><a><img ng-if="!discover.kwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="discover.kwack==true" class="img-responsive" src="img/discover/shieldclick.png"></a>
                 <span class="alignM">{{discover.comments.length}}</span></label>
               <label><img src="img/explore/7.png">
                 <span class="colorw alignM">{{discover.share}}</span></label>
             </div>
+            <!-- <div class="display-flex">
+                <div class="flex-end"><img src="img/explore/5.png"></div>
+                <div><span>20</span></div>
+                <div  class="flex-end"><img src="img/explore/6.png"></div>
+                <div><span>23</span></div>
+                <div class="flex-end"><img src="img/explore/7.png"></div>
+                <div><span>20</span></div>
+            </div> -->
           </div>
         </div>
       </div>

@@ -39,9 +39,11 @@
               <label class="pad-left5"> broadly.vice.com</label>
             </div>
          <div class="display-inline float-right discover-icon text-center strip">
-            <label ng-click="nextPage(trendingweek._id)" class="discoverStrip"><img ng-if="!trendingweek.temp"  src="img/explore/5.png"> <img ng-if="trendingweek.temp==true" src="img/filter/2.png"><span class="alignM">{{trendingweek.polls.length}}</span></label>
-            <label ng-click="nextPageforKwack(trendingweek._id)" class="discoverStrip"><img ng-if="!trendingweek.kwack" class="img-responsive" src="img/discover/shield.png"> <img ng-if="trendingweek.kwack==true" class="img-responsive" src="img/discover/shieldclick.png">
-              <span class="alignM" >{{trendingweek.comments.length}}</span></label>
+            <label ng-click="nextPage(trendingweek._id,'poll')" class="discoverStrip"><img ng-if="!trendingweek.temp"  src="img/explore/5.png"> <img ng-if="trendingweek.temp==true" src="img/filter/2.png"><span class="alignM">{{trendingweek.polls.length}}</span></label>
+            <!-- <label ng-click="nextPageforKwack(trendingweek._id)" class="discoverStrip"><img ng-if="!trendingweek.kwack" class="img-responsive" src="img/discover/shield.png"> <img ng-if="trendingweek.kwack==true" class="img-responsive" src="img/discover/shieldclick.png">
+              <span class="alignM" >{{trendingweek.comments.length}}</span></label> -->
+              <label class="discoverCardStrip"  ng-click="nextPage(trendingweek._id,'kwack')"><a><img ng-if="!trendingweek.kwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="trendingweek.kwack==true" class="img-responsive" src="img/discover/shieldclick.png"></a>
+                <span class="alignM">{{trendingweek.comments.length}}</span></label>
             <label><img src="img/discover/share.png">
                 <span class="colorw alignM">20</span>
             </label>
