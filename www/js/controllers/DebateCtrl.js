@@ -3,30 +3,41 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.newsId = $stateParams.newsid
     $scope.kwackAns = $stateParams.kwackId
     console.log("helloanswwer", $scope.kwackAns)
-    data = {}
-    data.newsId = $scope.newsId
+    $scope.news = {}
+    $scope.news.newsId = $scope.newsId
     // console.log(" $scope.newsId", $scope.kwackid)
     $scope.kwackSide = {}
     $scope.kwackSide.userId = $.jStorage.get("user")._id
     $scope.kwackSide.newsId = $scope.newsId
 
-    Chats.apiCallWithData("Comment/getKwack", $scope.kwackSide, function (data) {
-        console.log("hellodata", data.data)
-        $scope.kwackAns = data.data.kwack
-    })
+    $scope.getOneNewsApi = function () {
+        Chats.apiCallWithData("NewsInfo/getOneNews", $scope.news, function (data1) {
+            if (data1.value == true) {
+                $scope.newsInfo = data1.data;
+                $scope.commentInfo = data1.data.comments;
+                console.log("commentinfo", $scope.commentInfo)
+                _.forEach($scope.commentInfo, function (like) {
+                    _.forEach(like.comment.likes, function (likes) {
+                        if (likes.userId == $scope.kwackSide.userId) {
+                            like.value = true;
+                        }else{
+                            like.value=false;
+                        }
+                    });
 
-    Chats.apiCallWithData("NewsInfo/getOneNews", data, function (data1) {
-        if (data1.value == true) {
-            console.log("data is", data1)
-            $scope.newsInfo = data1.data,
-                $scope.commentInfo = data1.data.comments
-            console.log("helloinfo", $scope.commentInfo)
 
-        } else {
+                });
 
-            console.log("inside else not found")
-        }
-    })
+            } else {
+
+                console.log("inside else not found")
+            }
+        })
+    }
+
+
+    //api for getting news data 
+    $scope.getOneNewsApi();
 
     $scope.saveReply = function (replyText, debateid) {
         $scope.reply = {}
@@ -60,21 +71,14 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
 
             } else {
 
-
-
-
-
-
-
                 console.log("inside else not found")
             }
         })
     }
     $scope.addLike = function (data) {
-       
+
         // $state.reload();
         console.log("****************************************", data)
-        $scope.lellow = true;
         $scope.dataToSend = {}
         $scope.commentId = data;
         $scope.dataToSend.commentId = data;
@@ -83,17 +87,14 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
 
         Chats.apiCallWithData("Comment/addOrRemoveLike", $scope.dataToSend, function (data) {
             console.log("data", data)
+            $scope.getOneNewsApi();
         })
-        _.forEach($scope.commentInfo, function (like) {
-            console.log("hellolike", $scope.commentInfo)
-            if (like.comment._id == data) {
-                like.value = true;
-            } else {
-                like.value = true;
-            }
 
-        });
+
+
     };
+
+
     $scope.debate = [{
             "img": "img/debate/profile1.png",
             "name": "Viraj Kale",
