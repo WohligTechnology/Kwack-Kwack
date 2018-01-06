@@ -11619,7 +11619,9 @@ button.btn-yellow.button[disabled] {
 
 .font-10 {
   font-size: 12px;
-  padding: 0px 8px;
+  padding: 0px 8px; }
+
+.font-shadow {
   box-shadow: 3px 3px 6px 1px #b2b0b09c; }
 
 .font-14 {
