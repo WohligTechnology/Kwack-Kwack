@@ -976,6 +976,16 @@ $dark:                            #444 !default;
     .padd-lr {
         padding: 0px 16px;
     } //end of explore
+    //start of friends
+    .friends{
+        top: 88px;
+        // bottom: 60px;
+        max-height: 470px;
+      
+        overflow-y: scroll;
+       
+    }
+    //end of friends
     //start of invite friends
     .followers {
         width: 100%;
@@ -1060,13 +1070,7 @@ $dark:                            #444 !default;
         background: $yellow3;
         z-index: 100;
     }
-
-    .listperson {
-        top: 88px;
-        overflow-y: scroll;
-        width: 100%;
-        max-height: 255px;
-        margin-bottom: 60px!important;
+      .listdetail{
         .item {
             border: none!important;
         }
@@ -1077,6 +1081,15 @@ $dark:                            #444 !default;
         p {
             font-family: 'Montserrat-Light';
         }
+      
+      }
+    .listperson {
+        top: 88px;
+        overflow-y: scroll;
+        max-height: 255px;
+        width: 100%;  
+        margin-bottom: 60px!important;
+       
     }
 
     .borderF {

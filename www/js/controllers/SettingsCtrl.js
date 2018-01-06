@@ -1,7 +1,7 @@
 connector.controller('SettingsCtrl', function($scope) {
-
-     $scope.changefont = false;
-    $scope.changesize = function(){
-        $scope.changefont = true;
+   
+    $scope.font = '';
+    $scope.changesize = function(data){
+       $scope.font = data;
     }
 })

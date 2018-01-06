@@ -75,7 +75,12 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'HomeCtrl'
 
     })
+    .state('friends', {
+      url: '/friends',
+      templateUrl: 'templates/friends.html',
+      controller: 'FriendsCtrl'
 
+    })
     .state('tab.exploremore', {
       url: '/exploremore',
       views: {

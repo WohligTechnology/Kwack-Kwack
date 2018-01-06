@@ -10581,6 +10581,11 @@ button.btn-yellow.button[disabled] {
 .padd-lr {
   padding: 0px 16px; }
 
+.friends {
+  top: 88px;
+  max-height: 470px;
+  overflow-y: scroll; }
+
 .followers {
   width: 100%;
   position: absolute;
@@ -10651,19 +10656,22 @@ button.btn-yellow.button[disabled] {
   background: #ffb600;
   z-index: 100; }
 
+.listdetail .item {
+  border: none !important; }
+
+.listdetail h2 {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px; }
+
+.listdetail p {
+  font-family: 'Montserrat-Light'; }
+
 .listperson {
   top: 88px;
   overflow-y: scroll;
-  width: 100%;
   max-height: 255px;
+  width: 100%;
   margin-bottom: 60px !important; }
-  .listperson .item {
-    border: none !important; }
-  .listperson h2 {
-    font-family: 'Montserrat-Regular';
-    font-size: 14px; }
-  .listperson p {
-    font-family: 'Montserrat-Light'; }
 
 .borderF .cell-follower:after {
   content: "";
