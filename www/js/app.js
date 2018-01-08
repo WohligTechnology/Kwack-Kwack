@@ -81,6 +81,42 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'FriendsCtrl'
 
     })
+    .state('tab.privacy', {
+      url: '/privacy',
+      views: {
+        'tab-explore': {
+          templateUrl: 'templates/privacy.html',
+      controller: 'PrivacyCtrl'
+        }
+      }
+   })
+   .state('tab.terms', {
+    url: '/terms',
+    views: {
+      'tab-explore': {
+        templateUrl: 'templates/terms.html',
+    controller: 'TermsCtrl'
+      }
+    }
+ })
+ .state('tab.about', {
+  url: '/about',
+  views: {
+    'tab-explore': {
+      templateUrl: 'templates/about.html',
+  controller: 'AboutCtrl'
+    }
+  }
+})
+.state('tab.guidelines', {
+  url: '/guidelines',
+  views: {
+    'tab-explore': {
+      templateUrl: 'templates/guidelines.html',
+  controller: 'GuidelinesCtrl'
+    }
+  }
+})
     .state('tab.exploremore', {
       url: '/exploremore',
       views: {

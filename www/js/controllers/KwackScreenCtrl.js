@@ -1,5 +1,58 @@
-connector.controller('KwackScreenCtrl', function($scope,$ionicModal,Chats) {
-    $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
+connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$ionicModal,Chats) {
+
+      $scope.news = []
+ 
+
+      Chats.apiCallWithoutData("NewsInfo/getAllNews", function (data) {
+        $scope.news = data.data
+    })
+
+    $scope.doRefresh = function (val) {
+      $scope.news = [],
+        $scope.pagination = {
+          shouldLoadMore: true,
+          currentPage: 0,
+        };
+ 
+      if (!val) {
+        $scope.loadMore();
+      }
+    };
+
+    $scope.doRefresh(true);
+
+    $scope.loadMore = function () {
+      $ionicScrollDelegate.resize()
+      $scope.pagination.shouldLoadMore = false;
+      $scope.pagination.currentPage++;
+      $scope.pagination1 = {
+        "page": $scope.pagination.currentPage,
+      }
+     
+        Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
+          $scope.news = _.concat($scope.news, data.data);
+         
+          if (data.data.results.length == 10) {
+            $scope.pagination.shouldLoadMore = true;
+          }
+          console.log("hellorecords", $scope.news)
+          $scope.paginationCode();
+        });
+      
+    };
+    $scope.paginationCode = function () {
+      // _.forEach($scope.news, function (value) {
+      
+      //   value.temp = true
+      // })
+    //   _.forEach($scope.news, function (comments) {
+    //     value.temp = true
+ 
+    //  })
+    }
+
+      //filter modal
+      $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
         scope: $scope,
         animation: 'slide-in-up'
       }).then(function (modal) {
@@ -13,41 +66,6 @@ connector.controller('KwackScreenCtrl', function($scope,$ionicModal,Chats) {
         $scope.modal.hide();
       };
 
-      Chats.apiCallWithoutData("NewsInfo/getAllNews", function (data) {
-        $scope.news = data.data
-    })
-
-    $scope.doRefresh = function (val) {
-        $scope.pagination = {
-          shouldLoadMore: true,
-          currentPage: 0,
-          result: []
-        };
-        if (!val) {
-          $scope.loadMore();
-        }
-      };
-      $scope.loadMore = function () {
-        $scope.pagination.shouldLoadMore = false;
-        $scope.pagination.currentPage++;
-        var url = 'Assignment/tasklist';
-        if (LocalStorageService.getOnlineStatus()) {
-          MyServices.getData(url, { page: $scope.pagination.currentPage }, function (data) {
-            $scope.pagination.result = _.concat($scope.pagination.result, data.data);
-            if (data.data.length == 10) {
-              $scope.pagination.shouldLoadMore = true;
-            }
-            LocalStorageService.isItLocalStorageData($scope.pagination.result);
-            LocalStorageService.saveTaskOnLocalStorage($scope.pagination.result, "task");
-            $scope.pagination.resultGroup = LocalStorageService.groupDataByMonth($scope.pagination.result);
-            $scope.$broadcast('scroll.refreshComplete');
-          });
-        } else if (!LocalStorageService.getOnlineStatus()) {
-          $scope.pagination.result = LocalStorageService.getTaskFromLocalStorage("task");
-          LocalStorageService.isItLocalStorageData($scope.pagination.result);
-          $scope.pagination.resultGroup = LocalStorageService.groupDataByMonth($scope.pagination.result);
-        }
-      };
 
 
 })

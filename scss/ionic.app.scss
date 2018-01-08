@@ -978,13 +978,15 @@ $dark:                            #444 !default;
     } //end of explore
     //start of friends
     .friends{
-        top: 88px;
+        top: 50px;
+        padding: 0px 10px;
         // bottom: 60px;
-        max-height: 470px;
+        max-height: 500px;
       
         overflow-y: scroll;
        
     }
+    
     //end of friends
     //start of invite friends
     .followers {
