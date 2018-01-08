@@ -65,7 +65,7 @@
         <div>
             <div class="debate-card relative">
                 <div class="debateprofile">
-                    <img ng-src="img/debate/profile3.png" alt="profile-img" class="profile-w">
+                    <img ng-src="{{currentUserInfo.photo | uploadpath}}" alt="profile-img" class="profile-w">
                 </div>
                 <div class="list card">
                     <div class="item item-body">
@@ -75,7 +75,7 @@
                             <div class="col col-80">
                                 <div class="test">
                                     <div class="debate-user user-flex">
-                                        <span>Comments</span>
+                                        <span>{{currentUserInfo.name}} </span>
                                         <img ng-src="img/debate/3.png">
                                     </div>
                                 </div>

@@ -20,8 +20,8 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
                     _.forEach(like.comment.likes, function (likes) {
                         if (likes.userId == $scope.kwackSide.userId) {
                             like.value = true;
-                        }else{
-                            like.value=false;
+                        } else {
+                            like.value = false;
                         }
                     });
 
@@ -34,8 +34,18 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
             }
         })
     }
+    $scope.userData = {}
+    $scope.userData._id = $.jStorage.get("user")._id
+    Chats.apiCallWithData("User/getOne", $scope.userData, function (data1) {
+        if (data1.value == true) {
+            $scope.currentUserInfo=data1.data
+            console.log('after api called sucefully',  $scope.currentUserInfo)
 
+        } else {
 
+            console.log("inside else not found")
+        }
+    })
     //api for getting news data 
     $scope.getOneNewsApi();
 
