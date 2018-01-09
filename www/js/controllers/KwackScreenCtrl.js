@@ -33,12 +33,16 @@ connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$io
       }
      
         Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
-          $scope.news = _.concat($scope.news, data.data);
-          $scope.pagination.shouldLoadMore = false;
-          if (data.data.length == 10) {
+          
+          $scope.news = _.concat($scope.news, data.data.results);
+          console.log("hellorecords",$scope.news)
+          if (data.data.results.length == 10) {
             $scope.pagination.shouldLoadMore = true;
           }
-          console.log("hellorecords", $scope.news)
+          _.each($scope.news,function(value){
+      value.year=new Date(value.createdAt).getMonth();
+    })
+  $scope.dynamicYear =  _.uniqBy($scope.news, 'year');
           $scope.paginationCode();
         });
       
@@ -153,24 +157,21 @@ connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$io
   };
 
   Chats.apiCallWithoutData("NewsInfo/getAllNews", function (data) {
-    $scope.news = data.data
+    $scope.news1 = data.data
    
-    _.each($scope.news,function(value){
-      value.year=new Date(value.createdAt).getFullYear();
-    })
-  $scope.dynamicYear =  _.uniqBy($scope.news, 'year');
+    
   })
 
-  $scope.doRefresh = function (val) {
-    $scope.pagination = {
-      shouldLoadMore: true,
-      currentPage: 0,
-      result: []
-    };
-    if (!val) {
-      $scope.loadMore();
-    }
-  };
+  // $scope.doRefresh = function (val) {
+  //   $scope.pagination = {
+  //     shouldLoadMore: true,
+  //     currentPage: 0,
+  //     result: []
+  //   };
+  //   if (!val) {
+  //     $scope.loadMore();
+  //   }
+  // };
  
 
 

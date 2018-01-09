@@ -35,6 +35,9 @@ connector.controller('ExploreCtrl', function($scope, $ionicScrollDelegate, Chats
         
       };
 
+      $scope.click=function(data){
+          console.log('helloclick',data)
+      }
       $scope.paginationCode = function () {
         _.forEach($scope.exploreNews, function (value) {
           _.forEach(value.polls, function (polls1) {
