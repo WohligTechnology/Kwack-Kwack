@@ -1,33 +1,34 @@
 <div class="news-content">
         <div>
-            <label class="absolute just-now-label">{{news.just}}</label>
+            <label class="absolute just-now-label">just now</label>
         </div>
         <div class="list card" >
             <div class="relative">
-                <img class="full-image" ng-src="{{news.img}}">
-                <label class="absolute movie-label">{{news.movie}}</label>
+                <img class="full-image" ng-src="{{news.imageUrl}}">
+                <label ng-if="news.interest" class="absolute movie-label">{{news.interest}}</label>
             </div>
             <div class="item item-body">
-                <h3 class="pad0">{{news.news}}</h3>
+                <h3 class="pad0">{{news.title}}</h3>
                 <div class="date-time">
                     <span class="carddatecl">{{news.day}},</span><span class="carddatecl"> {{news.date}}</span>
-                    <span class="padd-lr carddatecl">{{news.email}}</span>
-                    <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">{{news.time}}</span>
+                    <span class="padd-lr carddatecl">{{news.sourceId}}</span>
+                    <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">{{news.createdAt | fromNow}}</span>
                 </div>
                 <div class="detail-para">
                     <p class="pad0">
-                        {{news.desc}}
+                        {{news.description}}
                     </p>
                 </div>
-                <div class="display-inline">
-                    <div class="w56"><img src="img/explore/3.png" class="w100"></div>
+                <div class="display-inline" ui-sref="tab.exploremore">
+                    <div class="w56" ><img src="img/explore/3.png" class="w100"></div>
                 </div>
                 <div class="display-inline float-right explore-icon text-center">
-                    <label class="discoverCardStrip"> <img src="img/explore/5.png"><span class="alignM"> {{news.poll}}</span></label>
-                    <label class="discoverCardStrip"><img class="img-responsive" src="img/explore/6.png">
-                          <span class="alignM">{{news.kwack}}</span></label>
-                    <label><img src="img/explore/7.png"><span class="colorw alignM">{{news.share}}</span></label>
-                </div>
+                        <label class="discoverCardStrip"  ng-click="nextPage(news._id,'poll')"> <img ng-if="!news.temp"  src="img/explore/5.png"> <img ng-if="news.temp==true" src="img/filter/2.png"><span class="alignM"> {{news.polls.length}}</span></label>
+                           <label class="discoverCardStrip"  ng-click="nextPage(news._id,'kwack')"><a><img ng-if="!news.kwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="news.kwack==true" class="img-responsive" src="img/discover/shieldclick.png"></a>
+                         <span class="alignM">{{news.comments.length}}</span></label>
+                       <label><img src="img/explore/7.png">
+                         <span class="colorw alignM">{{news.share}}</span></label>
+                     </div>
             </div>
         </div>
     </div>

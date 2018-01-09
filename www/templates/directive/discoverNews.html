@@ -9,10 +9,7 @@
             <span><img src="img/explore/4.png"></span> <span>{{discover.createdAt | fromNow}}</span>
             <span><img class="viewImg" src="img/discover/views.PNG" alt=""></span> <span>{{discover.realTotalCount}}</span>{{discover.value}}
             <div class="display-inline float-right explore-icon text-center">
-              <!--<label class="discoverCardStrip"  ui-sref="tab.startPolling"> <img  src="img/explore/5.png"><span class="alignM"> {{discover.poll}}</span></label>-->
                <label class="discoverCardStrip"  ng-click="nextPage(discover._id,'poll')"> <img ng-if="!discover.temp"  src="img/explore/5.png"> <img ng-if="discover.temp==true" src="img/filter/2.png"><span class="alignM"> {{discover.polls.length}}</span></label>
-              <!-- <label class="discoverCardStrip" ui-sref="tab.trailer"><a href="discover"><img class="img-responsive" src="img/explore/6.png"></a>
-                <span class="alignM">{{discover.kwack}}</span></label> -->
                   <label class="discoverCardStrip"  ng-click="nextPage(discover._id,'kwack')"><a><img ng-if="!discover.kwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="discover.kwack==true" class="img-responsive" src="img/discover/shieldclick.png"></a>
                 <span class="alignM">{{discover.comments.length}}</span></label>
               <label><img src="img/explore/7.png">
