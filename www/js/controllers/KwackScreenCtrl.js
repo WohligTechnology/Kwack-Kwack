@@ -1,89 +1,85 @@
-connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$ionicModal,Chats,$ionicLoading) {
-  $scope.poll = {}
+connector.controller('KwackScreenCtrl', function ($scope, $ionicScrollDelegate, $ionicModal, Chats, $ionicLoading) {
   $scope.pollKwack = {}
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
-      $scope.news = []
- 
 
-    //   Chats.apiCallWithoutData("NewsInfo/getAllNews", function (data) {
-    //     $scope.news = data.data
-    // })
-
-    $scope.doRefresh = function (val) {
-      $scope.news = [],
-        $scope.pagination = {
-          shouldLoadMore: true,
-          currentPage: 0,
-        };
- 
-      if (!val) {
-        $scope.loadMore();
-      }
-    };
-
-    $scope.doRefresh(true);
-
-    $scope.loadMore = function () {
-      $ionicScrollDelegate.resize()
-      $scope.pagination.shouldLoadMore = false;
-      $scope.pagination.currentPage++;
-      $scope.pagination1 = {
-        "page": $scope.pagination.currentPage,
-      }
-     
-        Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
-          $scope.news = _.concat($scope.news, data.data);
-          $scope.pagination.shouldLoadMore = false;
-          if (data.data.length == 10) {
-            $scope.pagination.shouldLoadMore = true;
-          }
-          console.log("hellorecords", $scope.news)
-          $scope.paginationCode();
-        });
-      
-    };
-    $scope.paginationCode = function () {
-      _.forEach($scope.news, function (value) {
-        _.forEach(value.polls, function (polls1) {
-          if (polls1.poll == null) {} else {
-            if ($scope.pollKwack._id == polls1.poll.user) {
-              value.temp = true
-            } else {
-              value.temp = false;
-            }
-          }
-        })
- 
-      })
-      _.forEach($scope.news, function (comments) {
-       _.forEach(comments.comments, function (comments1) {
-         if (comments1.comment == null) {} else {
-           if ($scope.pollKwack._id == comments1.comment.user) {
-             comments.kwack = true
-           } else {
-             comments.kwack = false;
-           }
-         }
-       })
- 
-     })
-    }
-
-      //filter modal
-      $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-      }).then(function (modal) {
-        $scope.modal = modal;
-      });
-      $scope.openModal = function () {
-        $scope.modal.show();
-      }
-    
-      $scope.closeModal = function () {
-        $scope.modal.hide();
+  //start of pagination 
+  $scope.doRefresh = function (val) {
+    $scope.news = [],
+      $scope.pagination = {
+        shouldLoadMore: true,
+        currentPage: 0,
       };
+
+    if (!val) {
+      $scope.loadMore();
+    }
+  };
+  $scope.doRefresh(true);
+  $scope.loadMore = function () {
+    $ionicScrollDelegate.resize()
+    $scope.pagination.shouldLoadMore = false;
+    $scope.pagination.currentPage++;
+    $scope.pagination1 = {
+      "page": $scope.pagination.currentPage,
+    }
+    Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
+
+      $scope.news = _.concat($scope.news, data.data.results);
+      _.each($scope.news, function (value) {
+        value.year = new Date(value.createdAt).getFullYear();
+      })
+      $scope.dynamicYear = _.uniqBy($scope.news, 'year');
+      console.log("explorepagination", $scope.news)
+      if (data.data.results.length == 10) {
+        $scope.pagination.shouldLoadMore = true;
+      }
+      $scope.paginationCode();
+    });
+  };
+
+
+  $scope.paginationCode = function () {
+    _.forEach($scope.news, function (value) {
+      _.forEach(value.polls, function (polls1) {
+        if (polls1.poll == null) {} else {
+          if ($scope.pollKwack._id == polls1.poll.user) {
+            value.temp = true
+          } else {
+            value.temp = false;
+          }
+        }
+      })
+
+    })
+    _.forEach($scope.news, function (comments) {
+      _.forEach(comments.comments, function (comments1) {
+        if (comments1.comment == null) {} else {
+          if ($scope.pollKwack._id == comments1.comment.user) {
+            comments.kwack = true
+          } else {
+            comments.kwack = false;
+          }
+        }
+      })
+
+    })
+  }
+  //end of pagination
+  //filter modal start
+  $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function () {
+    $scope.modal.show();
+  }
+
+  $scope.closeModal = function () {
+    $scope.modal.hide();
+  };
 
 
   $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
@@ -99,7 +95,12 @@ connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$io
   $scope.closeModal = function () {
     $scope.modal.hide();
   };
+  //end of modal
   // $scope.months=["January","Feb","March"]
+
+
+  //start of filter modal 
+
   $scope.months = [{
       "month": "January"
     }, {
@@ -152,26 +153,6 @@ connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$io
     }
   };
 
-  Chats.apiCallWithoutData("NewsInfo/getAllNews", function (data) {
-    $scope.news = data.data
-   
-    _.each($scope.news,function(value){
-      value.year=new Date(value.createdAt).getFullYear();
-    })
-  $scope.dynamicYear =  _.uniqBy($scope.news, 'year');
+
+  //end of filter modal
   })
-
-  $scope.doRefresh = function (val) {
-    $scope.pagination = {
-      shouldLoadMore: true,
-      currentPage: 0,
-      result: []
-    };
-    if (!val) {
-      $scope.loadMore();
-    }
-  };
- 
-
-
-})

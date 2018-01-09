@@ -19,8 +19,8 @@
                         {{news.description}}
                     </p>
                 </div>
-                <div class="display-inline" ui-sref="tab.exploremore">
-                    <div class="w56" ><img src="img/explore/3.png" class="w100"></div>
+                <div class="display-inline" >
+                    <div class="w56" ui-sref="tab.exploremore"><img src="img/explore/3.png" class="w100"></div>
                 </div>
                 <div class="display-inline float-right explore-icon text-center">
                         <label class="discoverCardStrip"  ng-click="nextPage(news._id,'poll')"> <img ng-if="!news.temp"  src="img/explore/5.png"> <img ng-if="news.temp==true" src="img/filter/2.png"><span class="alignM"> {{news.polls.length}}</span></label>

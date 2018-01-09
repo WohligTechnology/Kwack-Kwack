@@ -889,19 +889,20 @@ $dark:                            #444 !default;
             background-color: transparent;
             box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21);
             .item {
-                margin-right: 3px;
-                margin-left: 3px;
+                // margin-right: 3px;
+                // margin-left: 3px;
+                margin: -5px 3px 0px 3px;
             }
         }
         .item {
-            z-index: -3;
+            // z-index: -3;
             margin: -10px;
             padding-bottom: 5px;
         }
     }
 
     .just-now-label {
-        top: 7%;
+        top: 40px;
         right: 15px;
         background: $yellow3;
         font-size: 10px !important;
@@ -2726,7 +2727,7 @@ bottom: 0px!important;
     }
 
     .just-now-labelexplore {
-        top: 7%;
+        top: 40px;
         right: 12px;
         background: $yellow3;
         font-size: 10px;
@@ -2934,7 +2935,7 @@ bottom: 0px!important;
             border-bottom: 1px solid $black;
         }
         .just-now-label {
-            top: 6%;
+            top: 40px;
         }
         .toggleyouKnow {
             width: 165px;
