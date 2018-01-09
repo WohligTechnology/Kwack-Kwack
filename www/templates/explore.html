@@ -19,11 +19,13 @@
         </div>
     </div>
     <ion-content class="bg-color has-header">
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
         <div class="text-center">
             <h4 class="pad0 title-explore">EXPLORE</h4>
         </div>
         <div ng-repeat="news in exploreNews">
-            <explore  ui-sref="tab.exploremore"> </explore>
+            <explore></explore>
         </div>
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>         
     </ion-content>
    </ion-view>
