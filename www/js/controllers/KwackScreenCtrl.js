@@ -1,5 +1,8 @@
-connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$ionicModal,Chats) {
-
+connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$ionicModal,Chats,$ionicLoading) {
+  $scope.poll = {}
+  $scope.pollKwack = {}
+  $scope.jstorage = $.jStorage.get('user');
+  $scope.pollKwack._id = $scope.jstorage._id
       $scope.news = []
  
 
@@ -36,20 +39,36 @@ connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$io
             $scope.pagination.shouldLoadMore = true;
           }
           console.log("hellorecords", $scope.news)
-          // $scope.paginationCode();
+          $scope.paginationCode();
         });
       
     };
-    // $scope.paginationCode = function () {
-    //   _.forEach($scope.news, function (value) {
-      
-    //     value.temp = true
-    //   })
-    //   _.forEach($scope.news, function (comments) {
-    //     value.temp = true
+    $scope.paginationCode = function () {
+      _.forEach($scope.news, function (value) {
+        _.forEach(value.polls, function (polls1) {
+          if (polls1.poll == null) {} else {
+            if ($scope.pollKwack._id == polls1.poll.user) {
+              value.temp = true
+            } else {
+              value.temp = false;
+            }
+          }
+        })
  
-    //  })
-    // }
+      })
+      _.forEach($scope.news, function (comments) {
+       _.forEach(comments.comments, function (comments1) {
+         if (comments1.comment == null) {} else {
+           if ($scope.pollKwack._id == comments1.comment.user) {
+             comments.kwack = true
+           } else {
+             comments.kwack = false;
+           }
+         }
+       })
+ 
+     })
+    }
 
       //filter modal
       $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
@@ -140,7 +159,6 @@ connector.controller('KwackScreenCtrl', function($scope,$ionicScrollDelegate,$io
       value.year=new Date(value.createdAt).getFullYear();
     })
   $scope.dynamicYear =  _.uniqBy($scope.news, 'year');
-     
   })
 
   $scope.doRefresh = function (val) {

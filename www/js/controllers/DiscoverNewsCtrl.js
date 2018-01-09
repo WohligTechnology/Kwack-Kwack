@@ -1,4 +1,4 @@
- connector.controller('DiscoverNewsCtrl', function ($scope, $ionicScrollDelegate, Chats, $stateParams, $state, $ionicPlatform, $ionicLoading) {
+ connector.controller('DiscoverNewsCtrl', function ($scope, $ionicScrollDelegate, Chats, $stateParams, $state, $ionicPlatform) {
    $scope.activeTab = 'All'
    $scope.changeTab = function (num) {
      $scope.activeTab = num;
