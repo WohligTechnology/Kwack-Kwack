@@ -10,7 +10,7 @@
             <div class="item item-body">
                 <h3 class="pad0">{{news.title}}</h3>
                 <div class="date-time">
-                    <span class="carddatecl">{{news.day}},</span><span class="carddatecl"> {{news.date}}</span>
+                    <span class="carddatecl">{{news.createdAt | fromNowDay}} ,</span><span class="carddatecl"> {{news.createdAt | fromNowDMY}}</span>
                     <span class="padd-lr carddatecl">{{news.sourceId}}</span>
                     <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">{{news.createdAt | fromNow}}</span>
                 </div>
