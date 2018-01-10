@@ -1,4 +1,4 @@
-connector.controller('ExploreCtrl', function($scope, $ionicScrollDelegate, Chats) {
+connector.controller('ExploreCtrl', function($scope, $ionicScrollDelegate, Chats, $state) {
     $scope.pollKwack={}
     $scope.jstorage = $.jStorage.get('user');
     $scope.pollKwack._id = $scope.jstorage._id
@@ -63,6 +63,40 @@ connector.controller('ExploreCtrl', function($scope, $ionicScrollDelegate, Chats
          })
    
        })
+      }
+
+      $scope.nextPage = function (data, kwackPoll) {
+        var data1 = {}
+        data1.newsId = data,
+          data1.userId = $.jStorage.get("user")._id
+          if(kwackPoll=='poll'){
+        Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
+          if (data1.value == true) {
+            $state.go("polling-inside", {
+              newsid: data
+            })
+          } else {
+            $state.go("tab.startPolling", {
+              newsid: data
+             
+            })
+           
+          }
+        })
+       }else{
+         Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
+            console.log("hellodata",data1)
+           if (data1.value == true) {
+             $state.go("debate", {
+               newsid: data
+             })
+           } else {
+             $state.go("tab.trailer", {
+               newsid: data
+             })
+           }
+         })
+       }
       }
 // $scope.exploreNews = [{
 //     "img":"img/explore/1.jpg",

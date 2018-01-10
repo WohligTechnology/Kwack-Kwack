@@ -158,9 +158,19 @@
       })
     }
    }
-  //  $scope.nextPageforKwack = function (data) {
-  //    $state.go("tab.trailer", {
-  //      newsid: data
-  //    })
-  //  }
+
+   $scope.viewsNextPage = function(data,view){
+    var data1 = {}
+    data1.newsId = data,
+      data1.userId = $.jStorage.get("user")._id
+      Chats.apiCallWithData("Readlogs/readLogs", data1, function (data1) {
+        console.log("******************",data1)
+        $state.go("tab.exploremore", {
+          newsid: data
+        })
+      
+     })
+
+   }
+
  })
