@@ -68,7 +68,7 @@ $scope.interestarr=[]
     // $scope.closeModal = function () {
     //   $scope.modal.hide();
     // };
-    $scope.searchText = {};
+    // $scope.searchText = {};
      $scope.search = function (value) {
     $scope.companyCategory = [];
     $scope.isText = true;
