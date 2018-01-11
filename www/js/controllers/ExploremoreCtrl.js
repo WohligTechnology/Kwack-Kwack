@@ -1,4 +1,4 @@
-connector.controller('ExploremoreCtrl', function($scope,$stateParams, Chats) {
+connector.controller('ExploremoreCtrl', function ($scope, $stateParams, Chats) {
     $scope.newsId = {}
     $scope.newsId._id = $stateParams.newsid
     console.log("newsid", $scope.newsId)
@@ -18,14 +18,14 @@ ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
 window.open = cordova.InAppBrowser.open;
     }
     // Chats.apiCallWithData("Readlogs/readLogs",  function (data) {
-//         Chats.apiCallWithData("Readlogs/readLogs", data, function (data1) {
-//             $scope.news = data1.data
-//         if(data.value == true){
-//             Chats.apiCallWithData("Readlogs/checkingNewsReadOrNot", data, function (data) {
-//             $scope.news = data.data
-//             })
-//         }
-//        else{
+    //         Chats.apiCallWithData("Readlogs/readLogs", data, function (data1) {
+    //             $scope.news = data1.data
+    //         if(data.value == true){
+    //             Chats.apiCallWithData("Readlogs/checkingNewsReadOrNot", data, function (data) {
+    //             $scope.news = data.data
+    //             })
+    //         }
+    //        else{
 
 //        }
 //  })
