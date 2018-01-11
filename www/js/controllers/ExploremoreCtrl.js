@@ -24,7 +24,8 @@ connector.controller('ExploremoreCtrl', function($scope,$stateParams, Chats) {
 console.log("*******insideif ")
  Chats.apiCallWithData("Readlogs/checkingNewsReadOrNot", $scope.dataToSend, function (data) {
    console.log("readlogs",data)
-    if(data.value == false){
+    if(data.value == true){
+        console.log("insid if")
         Chats.apiCallWithData("NewsInfo/getOne", $scope.newsId, function (data) {
             console.log("*******insideif " ,data)
             $scope.news = data.data;
@@ -33,9 +34,11 @@ console.log("*******insideif ")
 
     }
     else{
-        Chats.apiCallWithData("Readlogs/readLogs", $scope.dataToSend, function (data1) {
+        console.log("insid else")
+        
+        Chats.apiCallWithData("Readlogs/readLogsCount", $scope.dataToSend, function (data1) {
             console.log("inside else",data1)
-            $scope.news = data.data
+            $scope.news = data1.data
           })
     }
     })
