@@ -118,7 +118,8 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
   }
 })
     .state('tab.exploremore', {
-      url: '/exploremore',
+      url: '/exploremore/:newsid',
+      cache:false,
       views: {
         'tab-explore': {
           templateUrl: 'templates/exploremore.html',
