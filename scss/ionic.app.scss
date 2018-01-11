@@ -846,7 +846,7 @@ $dark:                            #444 !default;
 
     .cat-btn-plus {
         top: 0px;
-        right: 0px;
+        right: 40px;
         .button {
             background: transparent;
             font-size: 12px;
@@ -1865,6 +1865,7 @@ bottom: 0px!important;
     }
 
     .placeholderCat {
+        margin-bottom: 20px;
         input {
             padding-left: 15px;
             font-size: 14px;

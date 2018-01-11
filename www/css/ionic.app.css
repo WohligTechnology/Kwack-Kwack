@@ -10479,7 +10479,7 @@ button.btn-yellow.button[disabled] {
 
 .cat-btn-plus {
   top: 0px;
-  right: 0px; }
+  right: 40px; }
   .cat-btn-plus .button {
     background: transparent;
     font-size: 12px; }
@@ -11281,13 +11281,14 @@ button.btn-yellow.button[disabled] {
 .has-footer.has-tabs {
   bottom: 50px; }
 
-.placeholderCat input {
-  padding-left: 15px;
-  font-size: 14px; }
-
-.placeholderCat input::placeholder {
-  color: #000;
-  font-family: "Montserrat-Regular"; }
+.placeholderCat {
+  margin-bottom: 20px; }
+  .placeholderCat input {
+    padding-left: 15px;
+    font-size: 14px; }
+  .placeholderCat input::placeholder {
+    color: #000;
+    font-family: "Montserrat-Regular"; }
 
 .placeholderDiscover input {
   padding-left: 15px;
