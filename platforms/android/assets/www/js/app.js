@@ -75,9 +75,51 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'HomeCtrl'
 
     })
+    .state('friends', {
+      url: '/friends',
+      templateUrl: 'templates/friends.html',
+      controller: 'FriendsCtrl'
 
+    })
+    .state('tab.privacy', {
+      url: '/privacy',
+      views: {
+        'tab-explore': {
+          templateUrl: 'templates/privacy.html',
+      controller: 'PrivacyCtrl'
+        }
+      }
+   })
+   .state('tab.terms', {
+    url: '/terms',
+    views: {
+      'tab-explore': {
+        templateUrl: 'templates/terms.html',
+    controller: 'TermsCtrl'
+      }
+    }
+ })
+ .state('tab.about', {
+  url: '/about',
+  views: {
+    'tab-explore': {
+      templateUrl: 'templates/about.html',
+  controller: 'AboutCtrl'
+    }
+  }
+})
+.state('tab.guidelines', {
+  url: '/guidelines',
+  views: {
+    'tab-explore': {
+      templateUrl: 'templates/guidelines.html',
+  controller: 'GuidelinesCtrl'
+    }
+  }
+})
     .state('tab.exploremore', {
-      url: '/exploremore',
+      url: '/exploremore/:newsid',
+      cache:false,
       views: {
         'tab-explore': {
           templateUrl: 'templates/exploremore.html',
@@ -94,6 +136,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.trailer', {
       url: '/trailer/:newsid',
+      cache:false,
       views: {
         'tab-trailer': {
 
@@ -246,16 +289,19 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     })
     .state('polling-inside', {
       url: '/pollinginside/:newsid',
+      cache:false,
       templateUrl: 'templates/polling-inside.html',
       controller: 'PollingInsideCtrl'
     })
     .state('debate', {
-      url: '/debate/:kwackId/:newsId',
+      url: '/debate/:kwackId/:newsid',
+        cache:false,
       templateUrl: 'templates/debate.html',
       controller: 'DebateCtrl'
     })
     .state('tab.startPolling', {
       url: '/startPolling/:newsid',
+      cache:false,
       views: {
         'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',
@@ -297,6 +343,24 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
         console.log(adminurl + "upload/readFile?file=" + input);
         return adminurl + "upload/readFile?file=" + input;
       }
+  };
+})
+
+.filter('fromNow', function () {
+  return function (date) {
+    return moment(date).fromNow();
+  };
+})
+
+.filter('fromNowDay', function () {
+  return function (date) {
+    return moment(date).format('dddd');
+  };
+})
+
+.filter('fromNowDMY', function () {
+  return function (date) {
+    return moment(date).format("DD MMM YYYY");
   };
 })
 

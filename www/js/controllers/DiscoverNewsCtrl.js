@@ -162,14 +162,10 @@
    $scope.viewsNextPage = function(data,view){
     var data1 = {}
     data1.newsId = data,
-      data1.userId = $.jStorage.get("user")._id
-      Chats.apiCallWithData("Readlogs/readLogs", data1, function (data1) {
-        console.log("******************",data1)
-        $state.go("tab.exploremore", {
+      // data1.userId = $.jStorage.get("user")._id
+       $state.go("tab.exploremore", {
           newsid: data
         })
-      
-     })
 
    }
 
