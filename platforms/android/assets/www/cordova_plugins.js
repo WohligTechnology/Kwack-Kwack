@@ -269,6 +269,15 @@ module.exports = [
     "clobbers": [
       "window.FileTransfer"
     ]
+  },
+  {
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
+    "clobbers": [
+      "cordova.InAppBrowser.open",
+      "window.open"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -285,7 +294,8 @@ module.exports.metadata =
   "cordova.plugins.diagnostic": "3.8.1",
   "ionic-plugin-keyboard": "2.2.1",
   "cordova-plugin-file": "5.0.0",
-  "cordova-plugin-file-transfer": "1.7.0"
+  "cordova-plugin-file-transfer": "1.7.0",
+  "cordova-plugin-inappbrowser": "2.0.1"
 };
 // BOTTOM OF METADATA
 });

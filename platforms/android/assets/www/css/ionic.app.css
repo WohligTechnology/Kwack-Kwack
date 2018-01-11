@@ -9900,10 +9900,6 @@ a.button {
   font-family: 'Montserrat-Bold';
   src: url("../lib/ionic/fonts/Montserrat-Bold.ttf"); }
 
-@font-face {
-  font-family: 'Montserrat-Bold';
-  src: url("../fonts/montserrat/Montserrat-Bold.otf"); }
-
 body {
   font-family: 'Montserrat-Regular'; }
 
@@ -10066,7 +10062,7 @@ body {
   transform: translate(-50%, -50%); }
 
 .yourside-labelsel {
-  font-family: "Montserrat-Bold"; }
+  font-family: "Montserrat-Bold" !important; }
 
 .yourside-label {
   font-family: "Montserrat-Regular"; }
@@ -10517,15 +10513,13 @@ button.btn-yellow.button[disabled] {
     background-color: transparent;
     box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21); }
     .news-content .card .item {
-      margin-right: 3px;
-      margin-left: 3px; }
+      margin: -5px 3px 0px 3px; }
   .news-content .item {
-    z-index: -3;
     margin: -10px;
     padding-bottom: 5px; }
 
 .just-now-label {
-  top: 7%;
+  top: 40px;
   right: 15px;
   background: #ffb600;
   font-size: 10px !important;
@@ -10584,6 +10578,12 @@ button.btn-yellow.button[disabled] {
 
 .padd-lr {
   padding: 0px 16px; }
+
+.friends {
+  top: 50px;
+  padding: 0px 10px;
+  max-height: 500px;
+  overflow-y: scroll; }
 
 .followers {
   width: 100%;
@@ -10655,19 +10655,22 @@ button.btn-yellow.button[disabled] {
   background: #ffb600;
   z-index: 100; }
 
+.listdetail .item {
+  border: none !important; }
+
+.listdetail h2 {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px; }
+
+.listdetail p {
+  font-family: 'Montserrat-Light'; }
+
 .listperson {
   top: 88px;
   overflow-y: scroll;
-  width: 100%;
   max-height: 255px;
+  width: 100%;
   margin-bottom: 60px !important; }
-  .listperson .item {
-    border: none !important; }
-  .listperson h2 {
-    font-family: 'Montserrat-Regular';
-    font-size: 14px; }
-  .listperson p {
-    font-family: 'Montserrat-Light'; }
 
 .borderF .cell-follower:after {
   content: "";
@@ -10858,8 +10861,11 @@ button.btn-yellow.button[disabled] {
   letter-spacing: 3px; }
 
 .discover-ionslide {
-  height: 200px !important;
+  height: 240px !important;
   padding-top: 10px; }
+
+.swiper-slide img {
+  max-height: none; }
 
 .bodyFont {
   font-size: 14px; }
@@ -10867,14 +10873,11 @@ button.btn-yellow.button[disabled] {
 .sliderdesc {
   color: #fff;
   position: absolute;
-  transform: translate(-50%, -50%);
-  bottom: 16%;
-  left: 50%;
-  width: 100%;
+  bottom: 21%;
   /* display: block; */
   font-size: 15px;
   font-family: 'Montserrat-Regular';
-  padding: 10px; }
+  padding: 5px 10px; }
 
 .slidertime {
   position: absolute;
@@ -10892,7 +10895,7 @@ button.btn-yellow.button[disabled] {
 
 .strip {
   position: absolute;
-  bottom: 29%;
+  bottom: 18%;
   right: 2%; }
 
 .stripDiv {
@@ -11510,7 +11513,8 @@ button.btn-yellow.button[disabled] {
 .kwack-card .item h2 {
   white-space: normal;
   font-family: 'Montserrat-Medium';
-  font-size: 12px; }
+  font-size: 12px;
+  padding-left: 10px; }
 
 .kwack-card .item {
   margin: 0px 17px;
@@ -11520,7 +11524,8 @@ button.btn-yellow.button[disabled] {
   border-right: none;
   border-left: none; }
   .kwack-card .item p {
-    font-size: 9px; }
+    font-size: 9px;
+    padding-left: 10px; }
   .kwack-card .item .explore-icon img {
     width: 11%; }
   .kwack-card .item .explore-icon span {
@@ -11621,7 +11626,9 @@ button.btn-yellow.button[disabled] {
 
 .font-10 {
   font-size: 12px;
-  padding: 0px 8px;
+  padding: 0px 8px; }
+
+.font-shadow {
   box-shadow: 3px 3px 6px 1px #b2b0b09c; }
 
 .font-14 {
@@ -11950,7 +11957,7 @@ button.btn-yellow.button[disabled] {
   font-size: 12px !important; }
 
 .just-now-labelexplore {
-  top: 7%;
+  top: 40px;
   right: 12px;
   background: #ffb600;
   font-size: 10px;
@@ -12044,13 +12051,17 @@ button.btn-yellow.button[disabled] {
     .discoverStrip span {
       padding-right: 5px; }
   .sliderdesc {
-    bottom: 21%;
     font-size: 14px; }
   .strip {
     bottom: 37%;
     right: 1%; }
+  .swipperImg {
+    height: 170px;
+    overflow: hidden; }
+  .discover-ionslide {
+    height: 213px !important; }
   .slidertime {
-    bottom: 37%; }
+    bottom: 18%; }
   .title-explore {
     font-size: 15px;
     letter-spacing: 5px; }
@@ -12073,13 +12084,12 @@ button.btn-yellow.button[disabled] {
     .discoverStrip span {
       padding-right: 5px; }
   .sliderdesc {
-    bottom: 21%;
     font-size: 14px; }
   .strip {
-    bottom: 37%;
+    bottom: 18%;
     right: 1%; }
   .slidertime {
-    bottom: 37%; }
+    bottom: 18%; }
   .title-explore {
     font-size: 15px;
     letter-spacing: 5px; }
@@ -12094,7 +12104,7 @@ button.btn-yellow.button[disabled] {
     right: 7%;
     border-bottom: 1px solid #000; }
   .just-now-label {
-    top: 6%; }
+    top: 40px; }
   .toggleyouKnow {
     width: 165px;
     font-size: 10px; }
@@ -12194,7 +12204,9 @@ button.btn-yellow.button[disabled] {
     width: 81px; }
   .title-comments:after {
     top: 175px;
-    width: 81px; } }
+    width: 81px; }
+  .discover-ionslide {
+    height: 207px !important; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
   .accordian label {
@@ -12308,13 +12320,12 @@ button.btn-yellow.button[disabled] {
     .discoverStrip span {
       padding-right: 8px; }
   .strip {
-    bottom: 29%;
+    bottom: 18%;
     right: 2%; }
   .sliderdesc {
-    bottom: 16%;
     font-size: 15px; }
   .slidertime {
-    bottom: 30%; }
+    bottom: 20%; }
   .title-explore {
     font-size: 16px;
     letter-spacing: 5px; }
@@ -12333,13 +12344,12 @@ button.btn-yellow.button[disabled] {
     .discoverStrip span {
       padding-right: 8px; }
   .strip {
-    bottom: 29%;
+    bottom: 18%;
     right: 2%; }
   .sliderdesc {
-    bottom: 16%;
     font-size: 15px; }
   .slidertime {
-    bottom: 30%; }
+    bottom: 20%; }
   .title-explore {
     font-size: 16px;
     letter-spacing: 5px; }
@@ -12464,7 +12474,15 @@ button.btn-yellow.button[disabled] {
     width: 108px; }
   .title-comments:after {
     top: 157px;
-    width: 108px; } }
+    width: 108px; }
+  .swipperImg {
+    height: 195px;
+    overflow: hidden; }
+    .swipperImg img {
+      width: 100%; }
+  .discover-ionslide {
+    height: 240px !important;
+    padding-top: 10px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .accordian .news-label {
@@ -12492,3 +12510,16 @@ button.btn-yellow.button[disabled] {
   .btn-yellow {
     padding: 7px 65px;
     font-size: 14px; } }
+
+.yellow {
+  color: red !important; }
+
+.display-flex {
+  display: flex;
+  align-items: center; }
+
+.flex-end {
+  display: flex;
+  align-items: end; }
+  .flex-end img {
+    width: 18px; }

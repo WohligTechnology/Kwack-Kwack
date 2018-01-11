@@ -8,7 +8,15 @@ connector.controller('ExploremoreCtrl', function($scope,$stateParams, Chats) {
     data.newsId = $scope.newsId
     $scope.dataToSend.newsId = $stateParams.newsid
     $scope.dataToSend.userId = $scope.userId
-  
+    
+    $scope.inApp=function(link){
+console.log(link)
+var options = "location=no,toolbar=yes";
+var target = "_blank";
+$scope.finalURL = link;
+ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
+window.open = cordova.InAppBrowser.open;
+    }
     // Chats.apiCallWithData("Readlogs/readLogs",  function (data) {
 //         Chats.apiCallWithData("Readlogs/readLogs", data, function (data1) {
 //             $scope.news = data1.data

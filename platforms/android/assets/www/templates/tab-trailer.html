@@ -1,4 +1,4 @@
-<ion-view title="Trailer" class="">
+<ion-view title="Trailer">
    <div class="row">
         <div class="col col-10">
                 <i class="closenavbar ion ion-ios-close-outline"></i>
@@ -33,22 +33,37 @@
     </div>
     <div class="row">
       <div class="col col-30 yourSide rel">
-        <div ng-click="saveKwack('FOR')"> 
-          <img src="img/43.PNG" alt="">
+        <div ng-if="!kwack1 || kwack1=='AGAINST' || kwack1=='NEUTRAL'" ng-click="saveKwack('FOR')"> 
+          <img src="img/trailer/for.png" alt="">
           <div class="yoursideright"></div>
         </div>
-        <label  class="yourside-labelsel">FOR</label>
+        <div ng-if="kwack1=='FOR'" ng-click="saveKwack('FOR')"> 
+          <img src="img/trailer/forclick.png" alt="">
+          <div class="yoursideright"></div>
+        </div>
+        <label ng-class="{'yourside-labelsel': kwack1=='FOR'}" class="yourside-label">FOR</label>
       </div>
       <div class="col col-30 yourSide rel">
-        <div ng-click="saveKwack('AGAINST')">
-          <img src="img/34231233.PNG" alt="">
+        <div ng-if="!kwack1 || kwack1=='FOR' || kwack1=='NEUTRAL'" ng-click="saveKwack('AGAINST')">
+          <img src="img/trailer/against.png" alt="">
           <div class="yoursideright"></div>
         </div>
-        <label class="yourside-label" for="">AGAINST</label>
+        <div ng-if="kwack1=='AGAINST'" ng-click="saveKwack('AGAINST')">
+          <img src="img/trailer/againstclick.png" alt="">
+          <div class="yoursideright"></div>
+        </div>
+        <label ng-class="{'yourside-labelsel': kwack1=='AGAINST'}"  class="yourside-label" for="">AGAINST</label>
       </div>
-      <div class="col col-30 yourSide" ng-click="saveKwack('NEUTRAL')">
-      <img src="img/Untitled-4 copy.PNG" alt="">
-      <label class="yourside-label" for="">NEUTRAL</label>
+      <div class="col col-30 yourSide" >
+        <div ng-if="!kwack1 || kwack1=='AGAINST' || kwack1=='FOR'" ng-click="saveKwack('NEUTRAL')">
+      <img src="img/trailer/neutral.png" alt="">
+      <div class="yoursideright"></div>
+      </div>
+      <div ng-if="kwack1=='NEUTRAL'" ng-click="saveKwack('NEUTRAL')">
+          <img src="img/trailer/neutralclick.png" alt="">
+          <div class="yoursideright"></div>
+          </div>
+      <label ng-class="{'yourside-labelsel': kwack1=='NEUTRAL'}" class="yourside-label" for="">NEUTRAL</label>
      </div>
     </div>
     <div class="text-center martop">
