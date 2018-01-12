@@ -1,28 +1,32 @@
 <ion-view>
+    <form name="formName">
     <div class="row text-center">
         <div class="col col-33 cncelNav" ui-sref="settings">CANCEL</div>
         <div class="col col-33 navHead">EDIT</div>
-        <div class="col col-33 cncelNav">DONE</div>
+        <div class="col col-33 cncelNav" ng-click="datasave(userInfo)">DONE</div>
     </div>
     <ion-content class="bg-color">
         <div class="bodyFont">
             <div class="profileImg">
-                <img src="img/edit/profilechange.jpg" alt="">
+                <img src="{{userInfo.photo | uploadpath}} " alt="">
             </div>
             <div class="chngImg">Change Image</div>
            <div class="editCard">
                 <div class="card">
                         <div class="editName">
                             <label for="">NAME</label>
-                            <input type="text" placeholder="VIRAJ KALLE">
+                            <input type="text" name="name" ng-model="userInfo.name"   value="{{userInfo.name}}" >
                         </div>
                         <div class="editBio">
                             <label for="">BIO</label>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy
-                                text of the printing and typesetting industry.</p>
+                            <div>
+                              <textarea name="bio" ng-model="userInfo.bio" >{{userInfo.bio}}</textarea>
+                            <!--<p ng-model="data.bio">{{userInfo.bio}}.</p>{{data.bio}}-->
                         </div>
                    </div>
            </div>
         </div>
     </ion-content>
+   
+    </form>
 </ion-view>
