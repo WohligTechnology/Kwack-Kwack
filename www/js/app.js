@@ -151,22 +151,30 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       url: '/kwackScreen',
       views: {
         'tab-kwackScreen': {
-
           templateUrl: 'templates/kwack-screen.html',
           controller: 'KwackScreenCtrl'
         }
       }
-
-
-    })
+ })
 
   .state('profile', {
     url: '/profile',
     templateUrl: 'templates/profile.html',
     controller: 'ProfileCtrl'
   })
+  .state('mobileVerification', {
+    url: '/mobileverification',
+    templateUrl: 'templates/mobileVerification.html',
+    controller: 'MobileVerificationCtrl'
+  })
 
-  .state('discover', {
+
+  .state('success', {
+    url: '/success',
+    templateUrl: 'templates/success.html',
+    controller: 'SuccessCtrl'
+  })
+   .state('discover', {
     url: '/discover',
     templateUrl: 'templates/discover.html',
     controller: 'DiscoverCtrl'
