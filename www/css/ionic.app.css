@@ -10328,24 +10328,6 @@ button.btn-yellow.button[disabled] {
   margin-bottom: 15px; }
   .filter-btns .btn-sports {
     padding: 0px 23px; }
-  .filter-btns .btn-science {
-    padding: 0px 14px; }
-  .filter-btns .btn-food {
-    padding: 0px 28px; }
-  .filter-btns .btn-science {
-    padding: 0px 14px; }
-  .filter-btns .btn-entertainment {
-    padding: 0px 39px; }
-  .filter-btns .btn-fashion {
-    padding: 0px 17px; }
-  .filter-btns .btn-international {
-    padding: 0px 49px; }
-  .filter-btns .btn-health {
-    padding: 0px 22px; }
-  .filter-btns .btn-books {
-    padding: 0px 22px; }
-  .filter-btns .btn-comedy {
-    padding: 0px 15px; }
 
 .btn-tran {
   background: transparent !important; }
@@ -11583,34 +11565,8 @@ button.btn-yellow.button[disabled] {
 
 .settings-btns .btn-sports {
   padding: 0px 18px; }
-
-.settings-btns .btn-science {
-  padding: 0px 14px; }
-
-.settings-btns .btn-food {
-  padding: 0px 20px; }
-
-.settings-btns .btn-science {
-  padding: 0px 10px; }
-
-.settings-btns .btn-entertainment {
-  padding: 0px 29px; }
-
-.settings-btns .btn-fashion {
-  padding: 0px 13px; }
-
-.settings-btns .btn-international {
-  padding: 0px 38px; }
-
-.settings-btns .btn-health {
-  padding: 0px 17px; }
-
-.settings-btns .btn-comedy {
-  padding: 0px 8px; }
-
-.settings-btns .btn-books {
-  padding: 0px 16px;
-  margin-bottom: 0px; }
+  .settings-btns .btn-sports:hover, .settings-btns .btn-sports:active, .settings-btns .btn-sports:focus {
+    background-color: yellow; }
 
 .settings i {
   font-size: 20px; }
@@ -12170,22 +12126,6 @@ button.btn-yellow.button[disabled] {
     width: 46px; }
   .settings-btns .btn-sports {
     padding: 0px 14px; }
-  .settings-btns .btn-science {
-    padding: 0px 7px; }
-  .settings-btns .btn-food {
-    padding: 0px 15px; }
-  .settings-btns .btn-entertainment {
-    padding: 0px 22px; }
-  .settings-btns .btn-international {
-    padding: 0px 30px; }
-  .settings-btns .btn-fashion {
-    padding: 0px 9px; }
-  .settings-btns .btn-health {
-    padding: 0px 13px; }
-  .settings-btns .btn-comedy {
-    padding: 0px 5px; }
-  .settings-btns .btn-books {
-    padding: 0px 12px; }
   .btn-bg-black {
     font-size: 11px; }
   .btn-bg {
@@ -12436,28 +12376,14 @@ button.btn-yellow.button[disabled] {
     font-size: 12px; }
   .setting .item-input-inset .item-input-wrapper input {
     height: 22px;
-    width: 76px; }
+    width: 50px; }
+  .viewall {
+    height: auto !important; }
+  .viewless {
+    height: 180px;
+    overflow: hidden; }
   .settings-btns .btn-sports {
     padding: 0px 18px; }
-  .settings-btns .btn-science {
-    padding: 0px 14px; }
-  .settings-btns .btn-food {
-    padding: 0px 20px; }
-  .settings-btns .btn-science {
-    padding: 0px 10px; }
-  .settings-btns .btn-entertainment {
-    padding: 0px 29px; }
-  .settings-btns .btn-fashion {
-    padding: 0px 13px; }
-  .settings-btns .btn-international {
-    padding: 0px 38px; }
-  .settings-btns .btn-health {
-    padding: 0px 17px; }
-  .settings-btns .btn-comedy {
-    padding: 0px 8px; }
-  .settings-btns .btn-books {
-    padding: 0px 16px;
-    margin-bottom: 0px; }
   .btn-bg-black {
     font-size: 13px; }
   .btn-bg {

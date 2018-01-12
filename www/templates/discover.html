@@ -1,63 +1,58 @@
-
 <ion-view title="Discover" class="bg-color-yellow">
-    <ion-content class="no-top has-bottom" >
+    <ion-content class="no-top has-bottom">
         <div class="otp">
-                <div class="w15 mar-auto">
-                            <img src="img/black-icon.png" alt="logo" class="w100">
-                        </div>
-                        <div class="text-center">
-                            <h2 class="title-discover">DISCOVER</h2>
-                            <P class="discover-para">Choose from these category what interests you the most </P>
-                        </div>
-                    <div class="row">
-                        
-                    </div>
-                  
-                            <div class="mar-auto relative  placeholderCat">
-                                    <input type="text" placeholder="Enter category" ng-model="searchText"  class="input-category mar-auto">
-                                   <div class="absolute cat-btn-plus">
-                                    <button class="button">
-                                               <i class="ion ion-plus-round"></i> 
-                                    </button>
-                                    </div>
-                                </div>
-                        <div class="text-center" ng-repeat="int in interestdup ">
-                            <button class="button btn-sports btn-bg" ng-repeat="int1 in int | filter:searchText"  ng-click="select(int1.name)" ng-class="{'black' : int1.value==true}"> {{int1.name}}</button>
-                            <!-- <button class="button btn-comedy btn-bg" ng-class="{'black' : selectinterest[1].value==true}" ng-click="select('Comedy')"> Comedy</button>
+            <div class="w15 mar-auto">
+                <img src="img/black-icon.png" alt="logo" class="w100">
+            </div>
+            <div class="text-center">
+                <h2 class="title-discover">DISCOVER</h2>
+                <P class="discover-para">Choose from these category what interests you the most </P>
+            </div>
+            <div class="row">
+            </div>
+            <div class="mar-auto relative  placeholderCat">
+                <input type="text" placeholder="Enter category" ng-model="searchText" class="input-category mar-auto">
+                <div class="absolute cat-btn-plus">
+                    <button class="button">
+                        <i class="ion ion-plus-round"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="text-center" ng-repeat="int in interestdup">
+                <button class="button btn-sports btn-bg" ng-repeat="int1 in int | filter:searchText" ng-click="select(int1.name)" ng-class="{'black' : int1.value==true}">
+                    {{int1.name}}</button>
+                <!-- <button class="button btn-comedy btn-bg" ng-class="{'black' : selectinterest[1].value==true}" ng-click="select('Comedy')"> Comedy</button>
                             <button class="button btn-food btn-bg" ng-class="{'black' : selectinterest[2].value==true}" ng-click="select('Food')"> Food</button> -->
-                        </div>
-                        <!-- <div class="text-center">
+            </div>
+            <!-- <div class="text-center">
                             <button class="button btn-science btn-bg" ng-class="{'black' : selectinterest[3].value==true}" ng-click="select('Science')"> Science</button>
                             <button class="button btn-entertainment btn-bg" ng-class="{'black' : selectinterest[4].value==true}" ng-click="select('Entertainment')"> Entertainment</button>
                         </div> -->
-                        <!-- <div class="text-center">
+            <!-- <div class="text-center">
                             <button class="button  btn-science btn-bg" ng-class="{'black' : selectinterest[5].value==true}" ng-click="select('Fashion')"> Fashion</button>
                             <button class="button btn-international btn-bg-black btn-bg"  ng-class="{'black' : selectinterest[6].value==true}" ng-click="select('International')"> International</button>
                         </div> -->
-                        <!-- <div class="text-center">
+            <!-- <div class="text-center">
                             <button class="button btn-books btn-bg-black " ng-class="{'black' : selectinterest[7].value==true}" ng-click="select('Books')"> Books</button>
                             <button class="button btn-comedy btn-bg" ng-click="select('Comedy')"> Comedy</button>
                             <button class="button btn-health btn-bg" ng-class="{'black' : selectinterest[8].value==true}" ng-click="select('Health')"> Health</button>
                         </div> -->
-                    
         </div>
-       
     </ion-content>
     <div class="footer">
         <div class="bar bar-footer bar-black">
-           <div class="row">
-            <div class="col-50" ui-sref="inviteFriends">
-                <div class="skip align-left">
-                <span>SKIP</span>
+            <div class="row">
+                <div class="col-50" ui-sref="inviteFriends">
+                    <div class="skip align-left">
+                        <span>SKIP</span>
+                    </div>
                 </div>
-           </div>
-            <div class="col-50">
-                <div class="skip align-right" ui-sref="tab.discoverNews">
-                <span>NEXT</span>
+                <div class="col-50">
+                    <div class="skip align-right" ui-sref="tab.discoverNews">
+                        <span>NEXT</span>
+                    </div>
                 </div>
             </div>
-           </div>
         </div>
     </div>
-
 </ion-view>
