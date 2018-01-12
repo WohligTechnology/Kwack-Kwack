@@ -10692,7 +10692,8 @@ button.btn-yellow.button[disabled] {
   font-size: 17px;
   display: none; }
 
-.tabs-top > .tabs, .tabs.tabs-top {
+.tabs-top > .tabs,
+.tabs.tabs-top {
   bottom: 0px !important; }
 
 .nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
@@ -11565,8 +11566,6 @@ button.btn-yellow.button[disabled] {
 
 .settings-btns .btn-sports {
   padding: 0px 18px; }
-  .settings-btns .btn-sports:hover, .settings-btns .btn-sports:active, .settings-btns .btn-sports:focus {
-    background-color: yellow; }
 
 .settings i {
   font-size: 20px; }
@@ -12382,6 +12381,9 @@ button.btn-yellow.button[disabled] {
   .viewless {
     height: 180px;
     overflow: hidden; }
+  .btn-sports.activated {
+    background-color: #ffc943 !important;
+    border: none; }
   .settings-btns .btn-sports {
     padding: 0px 18px; }
   .btn-bg-black {
