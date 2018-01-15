@@ -55,7 +55,7 @@
                     <h6>My Preferences</h6>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="mar-auto placeholderCat">
                     <input type="text" placeholder="Enter category" class="input-category btn-tran" ng-model="searchText.searchText" ng-change="search(searchText)" >
                        <div ng-if="searchText.searchText != '' && isText == true">
@@ -66,10 +66,16 @@
                              </ul>
                             </div>
                 </div>
-            </div>
+            </div> -->
+            <div class="mar-auto placeholderCat">
+                    <input type="text" placeholder="Enter category" class="input-category btn-tran mar-auto" ng-model="searchText" >
+                       <!-- <div ng-if="searchText.searchText != '' && isText == true">
+                            </div> -->
+                </div>
             <div class="filter-btns">
+                   
                 <div class="text-center" ng-repeat="int in interestdup">
-                    <button class="button btn-sports btn-bg" ng-repeat="int1 in int" ng-click="select(int1.name)" ng-class="{'black' : int1.value==true}"> {{int1.name}}</button>
+                    <button class="button btn-sports btn-bg" ng-repeat="int1 in int | filter:searchText" ng-click="select(int1.name)" ng-class="{'black' : int1.value==true}"> {{int1.name}}</button>
                     <!-- <button class="button btn-comedy btn-bg" ng-class="{'black' : selectinterest[1].value==true}" ng-click="select('Comedy')"> Comedy</button>
                             <button class="button btn-food btn-bg" ng-class="{'black' : selectinterest[2].value==true}" ng-click="select('Food')"> Food</button> -->
                 </div>

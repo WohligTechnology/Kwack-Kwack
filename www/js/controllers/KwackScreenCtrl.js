@@ -5,7 +5,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $ionicScrollDelegate, 
   $scope.addInterest={}
   $scope.allInterest={}
   $scope.filterData={}
-  $scope.addInterest.userId = $.jStorage.get('user')
+  $scope.addInterest.userId = $.jStorage.get('user')._id
   //start of pagination 
   $scope.doRefresh = function (val) {
     $scope.news = [],
@@ -47,7 +47,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $ionicScrollDelegate, 
   $scope.Year=moment().format('YYYY')
   $scope.Month=moment().format('MMMM')
   
- 
+ //filter api
   $scope.filter1=function(filterdata){
      console.log('filterdata',filterdata)
     $scope.monthYear={}
@@ -62,7 +62,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $ionicScrollDelegate, 
       $scope.filterData.startDate = firstDay
       $scope.filterData.endDate = lastDay
       $scope.filterData.interest =  $scope.interestarr
-      $scope.filterData.userId = $.jStorage.get('user')
+      $scope.filterData.userId = $.jStorage.get('user')._id
       console.log("helloapi")
       Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
         console.log("helloapi")
@@ -129,7 +129,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $ionicScrollDelegate, 
     $scope.modal.hide();
   };
   //end of modal
-  // $scope.months=["January","Feb","March"]
+
 
   //year array
 $scope.year=[]
@@ -186,7 +186,7 @@ for(i=0;i<20;i++){
   // console.log('months',$scope.months)
   // console.log('years',$scope.year)
 
-   //Interest Select
+   //Interest Select filter
   Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
     $scope.allInterest = data.data
     console.log("data is*****************", $scope.allInterest)
