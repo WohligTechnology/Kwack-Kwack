@@ -2,7 +2,10 @@ connector.controller('KwackScreenCtrl', function ($scope, $ionicScrollDelegate, 
   $scope.pollKwack = {}
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
-
+  $scope.addInterest={}
+  $scope.allInterest={}
+  $scope.filterData={}
+  $scope.addInterest.userId = $.jStorage.get('user')._id
   //start of pagination 
   $scope.doRefresh = function (val) {
     $scope.news = [],
@@ -16,6 +19,9 @@ connector.controller('KwackScreenCtrl', function ($scope, $ionicScrollDelegate, 
     }
   };
   $scope.doRefresh(true);
+
+
+  //paginationload10
   $scope.loadMore = function () {
     $ionicScrollDelegate.resize()
     $scope.pagination.shouldLoadMore = false;
@@ -26,18 +32,45 @@ connector.controller('KwackScreenCtrl', function ($scope, $ionicScrollDelegate, 
     Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
 
       $scope.news = _.concat($scope.news, data.data.results);
+      // console.log("changes",$scope.news)
       _.each($scope.news, function (value) {
         value.year = new Date(value.createdAt).getFullYear();
       })
       $scope.dynamicYear = _.uniqBy($scope.news, 'year');
-      console.log("explorepagination", $scope.news)
+      // console.log("explorepagination", $scope.dynamicYear)
       if (data.data.results.length == 10) {
         $scope.pagination.shouldLoadMore = true;
       }
       $scope.paginationCode();
     });
   };
+  $scope.Year=moment().format('YYYY')
+  $scope.Month=moment().format('MMMM')
+  
+ //filter api
+  $scope.filter1=function(filterdata){
+     console.log('filterdata',filterdata)
+    $scope.monthYear={}
+    $scope.monthYear=filterdata
+      var date = new Date(), 
+      y = $scope.monthYear.Year.year
+      m = $scope.monthYear.Month.order
+      var firstDay = new Date(y, m, 1);
+      var lastDay = new Date(y, m + 1, 0);
+      firstDay = moment(firstDay).format('YYYY-MM-DD')
+      lastDay = moment(lastDay).format('YYYY-MM-DD')
+      $scope.filterData.startDate = firstDay
+      $scope.filterData.endDate = lastDay
+      $scope.filterData.interest =  $scope.interestarr
+      $scope.filterData.userId = $.jStorage.get('user')._id
+      console.log("helloapi")
+      Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
+        console.log("helloapi")
+        console.log("filterfingercross",data)
+      })
+    }
 
+    
 
   $scope.paginationCode = function () {
     _.forEach($scope.news, function (value) {
@@ -96,63 +129,138 @@ connector.controller('KwackScreenCtrl', function ($scope, $ionicScrollDelegate, 
     $scope.modal.hide();
   };
   //end of modal
-  // $scope.months=["January","Feb","March"]
 
+
+  //year array
+$scope.year=[]
+$scope.repeatYear = $scope.Year
+for(i=0;i<20;i++){
+  $scope.year.push({year:$scope.repeatYear})
+  $scope.year=_.orderBy($scope.year, ['year'], ['asc', 'desc'])
+  $scope.repeatYear= $scope.repeatYear - 1
+}
 
   //start of filter modal 
-
+  $scope.months=[]
   $scope.months = [{
-      "month": "January"
+      "months": "January",
+      "order" : 0
     }, {
-      "month": "February"
+      "months": "February",
+      "order" : 1
     }, {
-      "month": "March"
+      "months": "March",
+      "order" : 2
     }, {
-      "month": "April",
+      "months": "April",
+      "order" : 3
     }, {
-      "month": "May",
+      "months": "May",
+      "order" : 4
     }, {
-      "month": "June"
+      "months": "June",
+      "order" : 5
     },
     {
-      "month": "July",
+      "months": "July",
+      "order" : 6,
     }, {
-      "month": "August"
+      "months": "August",
+      "order" : 7
     }, {
-      "month": "September"
+      "months": "September",
+      "order" : 8
     }, {
-      "month": "October"
+      "months": "October",
+      "order" : 9
     }, {
-      "month": "November"
+      "months": "November",
+      "order" : 10,
     }, {
-      "month": "December"
+      "months": "December",
+      "order" : 11
     }
 
   ]
+  $scope.months=_.orderBy($scope.months, ['order'], ['desc', 'asc'])
+  // console.log('months',$scope.months)
+  // console.log('years',$scope.year)
+
+   //Interest Select filter
   Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
     $scope.allInterest = data.data
-
     console.log("data is*****************", $scope.allInterest)
     $scope.interestdup = _.chunk($scope.allInterest, 3);
   })
-  $scope.searchText = {};
-  $scope.search = function (value) {
-    $scope.companyCategory = [];
-    $scope.isText = true;
 
-    if (value.searchText != "") {
-      Chats.apiCallWithData("Interests/globalSearch", value, function (data) {
-        console.log("data is", data)
-        if (data.value) {
-          $scope.Interestsname = data.data.Interests;
-          console.log("inside if")
-        } else {
-          console.log("Event data false");
+  Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
+    $scope.getInterest = data.data.interests
+    $scope.interestarr= data.data.interests
+    _.forEach($scope.allInterest, function(allInterest){
+      // console.log("fullinterest",allInterest)
+      _.forEach($scope.interestarr, function(value){
+        // console.log("interestArrayforeach", value)
+        if(value.name==allInterest.name){
+          allInterest.value=true
+        }else{
+          console.log("interest not available")
         }
-      });
+      })
+    
+    })
+    
+    console.log("data interest", $scope.getInterest)
+  })
+
+ 
+  $scope.select=function(interest){
+    var interestEdit = _.find($scope.interestarr, function (o){
+      // console.log("interestarray",o)
+      if (interest == o.name) {
+        return o;
+        console.log("interestarray",o)
+      }
+      
+    });
+    if (interestEdit === undefined) {
+     $scope.interestarr.push({name:interest})
+  
+      $scope.addInterest.interest = $scope.interestarr
+    // $scope.colorchange = interestEdit
+     console.log("checknowpush", $scope.interestarr)
+    }else{
+     _.pull($scope.interestarr,interestEdit)
+      $scope.addInterest.interest = $scope.interestarr
+    //  $scope.colorchange = interestEdit
+      console.log("checknow", $scope.interestarr)
     }
-  };
+    Chats.apiCallWithData("User/addInterests", $scope.addInterest, function (data) {
+      console.log("data is*****************", data)
+      Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
+        $scope.getInterest = data.data.interests
+      })
+     
+      _.forEach($scope.allInterest, function(value){
+        // console.log("*******", allInterest)
+            console.log("#######", value)
+          if(value.name==interest){
+            value.value=!value.value
+          }
+     
+      
+      })
+   }) 
+  }
 
-
-  //end of filter modal
+ $scope.categoryViews=function(data){
+   var toggle = false
+   console.log('views',data)
+   if(data=='All'){
+     $scope.filterData.all=!$scope.filterData.all
+   }else if(data=='Polls') {
+    $scope.filterData.polls=!$scope.filterData.polls
+   }else{
+    $scope.filterData.kwacks=!$scope.filterData.kwacks
+   }
+ }
   })
