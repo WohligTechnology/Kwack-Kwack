@@ -10253,7 +10253,7 @@ button.btn-yellow.button[disabled] {
       font-size: 13px; }
 
 .arrow-back {
-  margin-top: 9px; }
+  margin-top: 0px; }
   .arrow-back .button {
     background: transparent;
     border: none; }
@@ -10266,7 +10266,7 @@ button.btn-yellow.button[disabled] {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1px;
-  margin-top: 12px;
+  margin-top: 4px;
   font-family: 'Montserrat-Bold'; }
 
 .reset {
@@ -10366,9 +10366,11 @@ button.btn-yellow.button[disabled] {
     font-family: "Montserrat-Regular"; }
 
 .otp-input {
-  width: 50px;
+  width: 37px;
+  min-height: 44px;
   background: transparent;
-  border-bottom: 1px solid rgba(136, 136, 136, 0.97) !important; }
+  border-radius: 4px;
+  border: 2px solid rgba(136, 136, 136, 0.43) !important; }
 
 .otp {
   margin-top: 18%; }
@@ -10389,7 +10391,7 @@ button.btn-yellow.button[disabled] {
   margin-right: 10px; }
 
 .input-padd {
-  padding: 50px 5px 15px 5px; }
+  padding: 7px 5px 15px 5px; }
 
 .bg-color-yellow {
   background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #ffc943 99%) !important; }
@@ -11960,6 +11962,15 @@ button.btn-yellow.button[disabled] {
   .accordiancontent span img {
     vertical-align: middle;
     width: 3%; }
+
+.mobile {
+  font-size: 15px;
+  letter-spacing: 4px;
+  background: transparent;
+  border-bottom: 1px solid rgba(136, 136, 136, 0.97) !important; }
+
+.success {
+  padding: 0px 33px; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .accordian label {
