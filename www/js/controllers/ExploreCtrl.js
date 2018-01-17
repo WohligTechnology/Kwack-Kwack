@@ -23,7 +23,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
     $scope.pagination1 = {
       "page": $scope.pagination.currentPage,
     }
-    Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
+    Chats.apiCallWithData("NewsInfo/getExploreNews", $scope.pagination1, function (data) {
 
       $scope.exploreNews = _.concat($scope.exploreNews, data.data.results);
       console.log("explorepagination", $scope.exploreNews)

@@ -136,10 +136,9 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.trailer', {
       url: '/trailer/:newsid',
-      cache:false,
+      // cache:false,
       views: {
         'tab-trailer': {
-
           templateUrl: 'templates/tab-trailer.html',
           controller: 'TrailerCtrl'
         }
@@ -149,6 +148,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.kwackScreen', {
       url: '/kwackScreen',
+      cache:false,
       views: {
         'tab-kwackScreen': {
           templateUrl: 'templates/kwack-screen.html',
@@ -314,7 +314,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     })
     .state('tab.startPolling', {
       url: '/startPolling/:newsid',
-      cache:false,
+      // cache:false,
       views: {
         'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',

@@ -2,7 +2,7 @@
      <div class="bar bar-header bar-light">
         <div class="row">
           <div class="col col-33">
-            <div ui-sref="tab.discoverNews">
+            <div ui-sref="tab.discoverNews" ng-click="goBackHandler()">
               <i class="ion ion-ios-arrow-left trailernav"></i>
             </div>
           </div>
@@ -36,7 +36,7 @@
             </span>
           </div>
           <div class="row pad0 pollingBorder">
-            <div class="col col-30 pad0">
+            <div class="col col-30 pad0" ng-click="inApp(newsInfo.url)">
               <span class="readarticle">
                 Read Article ...
               </span>

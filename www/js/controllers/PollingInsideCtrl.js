@@ -5,6 +5,17 @@ connector.controller('PollingInsideCtrl', function($scope,$stateParams,Chats) {
     $scope.no=[]
     data.newsId = $scope.newsId
     console.log(" $scope.newsId", $scope.newsId)
+    $scope.inApp=function(link){
+        console.log(link)
+        var options = "location=no,toolbar=yes";
+        var target = "_blank";
+        $scope.finalURL = link;
+        ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
+        window.open = cordova.InAppBrowser.open;
+            }
+            $scope.goBackHandler = function() {
+                window.history.back(); //This works
+            };
     Chats.apiCallWithData("NewsInfo/getOneNews", data, function (data1) {
         console.log("data is", data1)
         if (data1.value == true) {
