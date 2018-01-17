@@ -100,7 +100,10 @@ $dark:                            #444 !default;
     body {
         font-family: 'Montserrat-Regular';
     }
-
+   h4{
+       font-size: 14px;
+   }
+  
     .absolute {
         position: absolute;
     }
@@ -812,33 +815,33 @@ $dark:                            #444 !default;
         padding: 7px 23px;
     }
 
-    .btn-comedy {
-        padding: 7px 17px;
-    }
+    // .btn-comedy {
+    //     padding: 7px 17px;
+    // }
 
-    .btn-food {
-        padding: 7px 29px;
-    }
+    // .btn-food {
+    //     padding: 7px 29px;
+    // }
 
-    .btn-science {
-        padding: 7px 18px;
-    }
+    // .btn-science {
+    //     padding: 7px 18px;
+    // }
 
-    .btn-entertainment {
-        padding: 7px 50px;
-    }
+    // .btn-entertainment {
+    //     padding: 7px 50px;
+    // }
 
-    .btn-international {
-        padding: 7px 56px;
-    }
+    // .btn-international {
+    //     padding: 7px 56px;
+    // }
 
-    .btn-books {
-        padding: 7px 24px;
-    }
+    // .btn-books {
+    //     padding: 7px 24px;
+    // }
 
-    .btn-health {
-        padding: 7px 24px;
-    }
+    // .btn-health {
+    //     padding: 7px 24px;
+    // }
 
     .cat-btn-plus {
         top: 0px;
@@ -2782,6 +2785,31 @@ $dark:                            #444 !default;
     .success{
         padding: 0px 33px;
     }
+
+    //start of terms
+    .terms{
+        margin: 0px 35px;
+        h4{
+            font-family: 'Montserrat-Medium';
+        }
+        p{
+            font-family: 'Montserrat-Regular';
+            line-height: 16px;
+            font-size: 11px;
+            color: $darkGray2;
+            padding: 5px 0px;
+        }
+    }
+   .terms-subheading{
+    font-family: 'Montserrat-Regular' !important;
+    text-decoration: underline;
+    padding-top: 10px;
+   }
+  .text-bold{
+    font-family: 'Montserrat-Medium';
+    color: $black;
+  }
+
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .accordian {
