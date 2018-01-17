@@ -9,14 +9,22 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.kwackSide = {}
     $scope.kwackSide.userId = $.jStorage.get("user")._id
     $scope.kwackSide.newsId = $scope.newsId
-
+    $scope.inApp=function(link){
+        console.log(link)
+        var options = "location=no,toolbar=yes";
+        var target = "_blank";
+        $scope.finalURL = link;
+        ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
+        window.open = cordova.InAppBrowser.open;
+            }
     $scope.getOneNewsApi = function () {
         Chats.apiCallWithData("NewsInfo/getOneNews", $scope.news, function (data1) {
             if (data1.value == true) {
                 $scope.newsInfo = data1.data;
                 $scope.commentInfo = data1.data.comments;
-                console.log("commentinfo", $scope.commentInfo)
+                console.log("commentinfo", $scope.newsInfo)
                 _.forEach($scope.commentInfo, function (like) {
+                    console.log("likeforlike",like)
                     _.forEach(like.comment.likes, function (likes) {
                         if (likes.userId == $scope.kwackSide.userId) {
                             like.value = true;
