@@ -554,7 +554,7 @@ $dark:                            #444 !default;
     }
 
     .arrow-back {
-        margin-top: 9px;
+        margin-top: 0px;
         .button {
             background: transparent;
             border: none;
@@ -570,7 +570,7 @@ $dark:                            #444 !default;
         font-size: 11px;
         font-weight: 900;
         letter-spacing: 1px;
-        margin-top: 12px;
+        margin-top: 4px;
         font-family: 'Montserrat-Bold';
     } //end of .profile-pic
     //start of filter
@@ -722,9 +722,11 @@ $dark:                            #444 !default;
         }
     } //start of otp
     .otp-input {
-        width: 50px;
+        width: 37px;
+        min-height: 44px;
         background: transparent;
-        border-bottom: 1px solid rgba(136, 136, 136, 0.97) !important; // display: inline;
+        border-radius: 4px;
+        border: 2px solid rgba(136, 136, 136, 0.43) !important;
     }
 
     .otp {
@@ -751,7 +753,7 @@ $dark:                            #444 !default;
     }
 
     .input-padd {
-        padding: 50px 5px 15px 5px;
+        padding: 7px 5px 15px 5px;
     } //end of otp
     //start of discover
     .bg-color-yellow {
@@ -2768,7 +2770,19 @@ $dark:                            #444 !default;
                 width: 3%;
             }
         }
-    } // css for iphone 5
+    } 
+    //mobile verification
+
+    .mobile{
+        font-size: 15px;
+        letter-spacing: 4px;
+        background: transparent;
+        border-bottom: 1px solid rgba(136, 136, 136, 0.97) !important; // display: inline;
+    }
+    .success{
+        padding: 0px 33px;
+    }
+    // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .accordian {
             label {

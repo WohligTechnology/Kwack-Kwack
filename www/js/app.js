@@ -162,12 +162,17 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     templateUrl: 'templates/profile.html',
     controller: 'ProfileCtrl'
   })
-  .state('mobileVerification', {
-    url: '/mobileverification',
-    templateUrl: 'templates/mobileVerification.html',
-    controller: 'MobileVerificationCtrl'
-  })
 
+  .state('mobile', {
+    url: '/mobile',
+    templateUrl: 'templates/mobile.html',
+    controller: 'MobileCtrl'
+  })
+  .state('error', {
+    url: '/error',
+    templateUrl: 'templates/error.html',
+    controller: 'ErrorCtrl'
+  })
 
   .state('success', {
     url: '/success',
@@ -340,8 +345,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
    
   // if none of the above states are matched, use this as the fallback
 
-  $urlRouterProvider.otherwise('/login');
-
+  $urlRouterProvider.otherwise('/error');
 
 })
 
