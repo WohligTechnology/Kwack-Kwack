@@ -32,7 +32,7 @@
                             <label ng-class="{'yellow': debate.value==true}" ng-click="addLike(debate.comment._id)">LIKES</label>
                             <!-- <label ng-class="{'yellow': lellow==true}" ng-click="addLike(debate.comment._id)">LIKES</label> -->
                             <span></span>
-                            <label  ng-click='reply()'>REPLIES</label>
+                            <label  ng-click='reply(debate.comment._id)'>REPLIES</label>
                         </div>
                       
                   </div>
