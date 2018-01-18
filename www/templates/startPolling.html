@@ -22,10 +22,10 @@
     <label for="">{{newsInfo.title}}</label>
     <div>
             <span class="articleDate">
-        Monday,
+                {{newsInfo.createdAt | fromNowDay}},
             </span>
             <span class="articleDate">
-         Oct 9, 2017
+                {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}
             </span>
         <span class="readarticle" ng-click="inApp(newsInfo.url)">
             Read Article ...

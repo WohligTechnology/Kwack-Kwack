@@ -1,6 +1,7 @@
-connector.controller('PollingInsideCtrl', function($scope,$stateParams,Chats) {
+connector.controller('PollingInsideCtrl', function($scope,$stateParams, $state,Chats) {
       $scope.newsId = $stateParams.newsid
-    data = {}
+     data = {}
+    $scope.userId= $.jStorage.get('user')._id
     $scope.yes=[]
     $scope.no=[]
     data.newsId = $scope.newsId
@@ -33,13 +34,27 @@ connector.controller('PollingInsideCtrl', function($scope,$stateParams,Chats) {
                 var yes=$scope.yes.length/$scope.TotalPoll * 100
                $scope.yespercent= _.round(yes)
                 console.log("nopercent",$scope.yespercent)
-               }else{
+               }else {
                 $scope.no.push(value)
                 console.log("no",$scope.no)
                 var no=$scope.no.length/$scope.TotalPoll * 100
                 $scope.nopercent=_.round(no)
                 console.log("nopercent",$scope.nopercent)
                }
+            });
+
+        //user commented or not 
+            _.forEach($scope.newsInfo.comments,function(kwacks) {
+                
+                if(kwacks.comment!=null){ if(kwacks.comment.user == $scope.userId){
+                    $scope.newsInfo.kwacked=true
+                    console.log("hello")
+                }else{
+                    $scope.newsInfo.kwacked=false
+                }
+            }else{
+                console.log("comment array is null")
+            }
             });
             console.log("{{ $scope.newsInfo}}", $scope.newsInfo)
             console.log("{{ $scope.newsInfo}}", $scope.TotalPoll)
@@ -48,5 +63,24 @@ connector.controller('PollingInsideCtrl', function($scope,$stateParams,Chats) {
             console.log("inside else not found")
         }
     })
+
+    $scope.nextPage = function (data, kwackPoll) {
+        var data1 = {}
+        data1.newsId = data,
+          data1.userId = $.jStorage.get("user")._id
+          Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
+            console.log("hellodata", data1)
+            if (data1.value == true) {
+              $state.go("debate", {
+                newsid: data
+              })
+            } else {
+              $state.go("tab.trailer", {
+                newsid: data
+              })
+            }
+          })
+     
+      }
      
 })

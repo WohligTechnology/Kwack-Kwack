@@ -9,6 +9,9 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.kwackSide = {}
     $scope.kwackSide.userId = $.jStorage.get("user")._id
     $scope.kwackSide.newsId = $scope.newsId
+    $scope.goBackHandler = function() {
+        window.history.back(); //This works
+    };
     $scope.inApp=function(link){
         console.log(link)
         var options = "location=no,toolbar=yes";
@@ -32,8 +35,19 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
                             like.value = false;
                         }
                     });
+                });
 
-
+                _.forEach($scope.newsInfo.polls, function (polls) {
+                    console.log("likeforlike",polls)
+                    if(polls.poll!=null){ if(polls.poll.user == $scope.kwackSide.userId ){
+                        $scope.newsInfo.polled=true
+                        console.log("hello")
+                    }else{
+                        $scope.newsInfo.polled=false
+                    }
+                }else{
+                    console.log("comment array is null")
+                }
                 });
 
             } else {
@@ -111,6 +125,26 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
 
 
     };
+
+    $scope.nextPage = function (data) {
+        var data1 = {}
+        data1.newsId = data,
+          data1.userId = $.jStorage.get("user")._id
+          Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
+            if (data1.value == true) {
+              $state.go("polling-inside", {
+                newsid: data
+              })
+            } else {
+              $state.go("tab.startPolling", {
+                newsid: data
+    
+              })
+    
+            }
+          })
+        
+      }
 
 
     $scope.debate = [{

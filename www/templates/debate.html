@@ -2,7 +2,7 @@
     <div class="bar bar-header bar-light">
         <div class="row">
             <div class="col col-33">
-                <div ui-sref="tab.trailer">
+                <div ng-click="goBackHandler()">
                     <i class="ion ion-ios-arrow-left trailernav"></i>
                 </div>
             </div>
@@ -26,10 +26,10 @@
             <label for="">{{newsInfo.title}}</label>
             <div>
                 <span class="articleDate">
-                    Monday,
+                    {{newsInfo.createdAt | fromNowDay}},
                 </span>
                 <span class="articleDate">
-                    Oct 9, 2017
+                    {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}
                 </span>
             </div>
             <div class="row pad0">
@@ -44,8 +44,9 @@
                             <img src="img/debate/proicon.png" alt="">
                             <span class="alignbM"></span>
                         </label>
-                        <label class="discoverCardStrip">
-                            <img src="img/debate/poll.png">
+                        <label class="discoverCardStrip" ng-click="nextPage(newsInfo._id)">
+                            <img ng-if="!newsInfo.polled" src="img/debate/poll.png">
+                            <img ng-if="newsInfo.polled" src="img/filter/2.png">
                             <span class="alignbM"> {{newsInfo.polls.length}}</span>
                         </label>
                         <label>

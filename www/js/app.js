@@ -370,9 +370,21 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
   };
 })
 
+.filter('fromNowDM', function () {
+  return function (date) {
+    return moment(date).format(" MMM DD");
+  };
+})
+
 .filter('fromNowDMY', function () {
   return function (date) {
     return moment(date).format("DD MMM YYYY");
+  };
+})
+
+.filter('fromNowY', function () {
+  return function (date) {
+    return moment(date).format("YYYY");
   };
 })
 

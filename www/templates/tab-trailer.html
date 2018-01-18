@@ -18,8 +18,8 @@
     </div>
     <div class="trailerName" >
       <label for="">{{newsInfo.title}}</label>
-      <div><span class="articleDate"> Monday,</span>
-        <span class="articleDate"> Oct 9, 2017</span>
+      <div><span class="articleDate"> {{newsInfo.createdAt | fromNowDay}},</span>
+        <span class="articleDate"> {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}</span>
         <span class="readarticleKwack" ng-click="inApp(newsInfo.url)">Read Article ...</span>
       </div>
       <div class="row pad0">
