@@ -145,7 +145,11 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
           })
         
       }
-
+  
+$scope.reply=function(){
+    $scope.toggle=!$scope.toggle
+    console.log($scope.toggle)
+    }
 
     $scope.debate = [{
             "img": "img/debate/profile1.png",
