@@ -2,6 +2,12 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.lellow = false;
     $scope.newsId = $stateParams.newsid
     $scope.kwackAns = $stateParams.kwackId
+     $scope.anon = $stateParams.ann
+    console.log("helloanswwer", $scope.anon)
+    $scope.setvarann = false
+    if ($stateParams.ann) {
+        $scope.setvarann = true
+    }
     console.log("helloanswwer", $scope.kwackAns)
     $scope.news = {}
     $scope.news.newsId = $scope.newsId
@@ -77,6 +83,9 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         $scope.reply.reply = replyText
         $scope.reply.user = $.jStorage.get("user")._id
         console.log("reply", $scope.reply)
+        if ($stateParams.ann) {
+                $scope.reply.anonymous = "YES";
+        }
         Chats.apiCallWithData("Comment/addReply", $scope.reply, function (data) {
             console.log("hellodata", data)
 
@@ -93,7 +102,10 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         dataToSave.kwack = $scope.kwackAns
         console.log("datatosave", dataToSave)
 
-
+ if ($stateParams.ann) {
+            dataToSave.anonymous = "YES";
+        }
+        
         Chats.apiCallWithData("Comment/addComment", dataToSave, function (data1) {
             if (data1.value == true) {
                 console.log("data is", data1)

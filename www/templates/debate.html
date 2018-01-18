@@ -76,7 +76,8 @@
                             <div class="col col-80">
                                 <div class="test">
                                     <div class="debate-user user-flex">
-                                        <span>{{currentUserInfo.name}} </span>
+                                        <span ng-if="setvarann">ANONYMOUS</span>
+                                        <span ng-if="!setvarann">{{currentUserInfo.name}} </span>
                                         <img ng-src="img/debate/3.png">
                                     </div>
                                 </div>

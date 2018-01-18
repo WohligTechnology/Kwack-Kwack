@@ -310,6 +310,12 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       templateUrl: 'templates/polling-inside.html',
       controller: 'PollingInsideCtrl'
     })
+      .state('debate1', {
+      url: '/debate/:kwackId/:newsid/:ann',
+        cache:false,
+      templateUrl: 'templates/debate.html',
+      controller: 'DebateCtrl'
+    })
     .state('debate', {
       url: '/debate/:kwackId/:newsid',
         cache:false,
