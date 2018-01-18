@@ -82,16 +82,30 @@
                                 <div>
                                     <!-- <p>{{news.desc}}</p> -->
                                     <textarea class="text-area" ng-model="commentText" placeholder="Enter your Text" rows="3" cols="28"></textarea>
-                                    <button ng-click="saveComment(commentText)"> go</button>
                                 </div>
-                                <div class="likes">
-
-                                </div>
+                              <div class="likes">
+                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="absolute top-minus debate-submit"><button class="button btn-yellow" ng-click="saveComment(commentText)">SUBMIT</button></div>
             </div>
         </div>
     </ion-content>
+    <div class="footer" ng-show="toggle">
+            <div class="bar bar-footer bar-black">
+                <div class="row">
+                    <div class="col-80">
+                            <div><textarea ng-model="replyText" rows="1" cols="28"></textarea>
+                                <button ng-click="saveReply(replyText, debate._id); REPLIES=!REPLIES"> go</button>      
+                            </div>
+                    </div>
+                    <div class="col-20">
+
+                    </div>
+                </div>
+          
+        </div>                      
+    </div>
 </ion-view>

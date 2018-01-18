@@ -28,14 +28,16 @@
                             <label ng-class="{'yellow': debate.value==true}" ng-click="addLike(debate.comment._id)">LIKES</label>
                             <!-- <label ng-class="{'yellow': lellow==true}" ng-click="addLike(debate.comment._id)">LIKES</label> -->
                             <span></span>
-                            <label  ng-click='REPLIES=!REPLIES'>REPLIES</label>
+                            <label  ng-click='reply()'>REPLIES</label>
                         </div>
-                        <div ng-show="REPLIES"><textarea ng-model="replyText" rows="1" cols="28"></textarea>
-                            <button ng-click="saveReply(replyText, debate._id); REPLIES=!REPLIES"> go</button>                            
-                        </div>
+                      
                   </div>
             </div>
         </div>
     </div>
 </div>
  
+
+  
+  
+ 
