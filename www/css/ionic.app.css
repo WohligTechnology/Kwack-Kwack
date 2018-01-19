@@ -10272,7 +10272,7 @@ button.btn-yellow.button[disabled] {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1px;
-  margin-top: 4px;
+  margin-top: 8px;
   font-family: 'Montserrat-Bold'; }
 
 .reset {
@@ -11602,6 +11602,16 @@ button.btn-yellow.button[disabled] {
   top: 10px;
   left: 10px; }
 
+.replay textarea {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px; }
+
+.replay textarea::placeholder {
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Montserrat-Light'; }
+
 .debate-submit {
   right: 41px; }
   .debate-submit .btn-yellow {
@@ -11611,10 +11621,66 @@ button.btn-yellow.button[disabled] {
     min-height: 20px !important;
     margin-bottom: 30px; }
 
+.btn-send {
+  font-size: 10px !important;
+  font-family: 'Montserrat-Bold';
+  color: #fff;
+  background-color: #000;
+  letter-spacing: 5px;
+  padding: 3px !important; }
+
+.replay-likes {
+  padding: 8px;
+  margin-top: 5px;
+  background-color: #f2f2f2; }
+  .replay-likes h6 {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    font-size: 10px; }
+  .replay-likes p {
+    font-size: 10px !important;
+    font-family: "Montserrat-Light" !important;
+    border-bottom: none !important;
+    padding: 5px 0px 1px 1px !important;
+    line-height: 10px !important; }
+
+.reply-reply span {
+  font-size: 8px;
+  padding-left: 7px; }
+
+.reply-reply .like-padd {
+  padding-left: 10px; }
+
 .profile-w {
   max-width: 100%;
   height: auto;
   display: block; }
+
+.right-thumb {
+  border: 1px solid #ffc943;
+  display: table;
+  padding: 0px 4px;
+  border-radius: 6px;
+  position: absolute;
+  right: 17px;
+  margin-top: -6px;
+  background-color: #fff; }
+
+.w9 {
+  width: 9px; }
+
+.thumb-img {
+  padding: 0px 3px;
+  display: table-cell;
+  vertical-align: middle; }
+  .thumb-img img {
+    max-width: 100%;
+    height: auto; }
+
+.thumb-count {
+  display: table-cell;
+  font-size: 10px;
+  vertical-align: middle; }
 
 .debateprofile {
   width: 65px;
@@ -11662,7 +11728,7 @@ button.btn-yellow.button[disabled] {
   text-align: left; }
 
 .debate-card .card {
-  margin: 10px 33px 0px; }
+  margin: 10px 25px 0px; }
 
 .debate-card .list:last-child.card {
   margin-bottom: 0px; }
@@ -12010,6 +12076,21 @@ button.btn-yellow.button[disabled] {
 .mob-input {
   width: 90%;
   min-height: 55px; }
+
+.confirmpass label {
+  font-family: 'Montserrat-Regular' !important;
+  padding-left: 25px; }
+
+.confirmpass input {
+  margin-top: 20px;
+  font-size: 20px;
+  box-shadow: 1px 15px 33px 6px rgba(136, 136, 136, 0.34); }
+
+.confirmpass input::placeholder {
+  color: #000; }
+
+.mar-b20 {
+  margin-bottom: 25px; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .accordian label {
