@@ -289,10 +289,20 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'AboutInsieCtrl'
     })
 
+    .state('confirmPass', {
+      url: '/confirmpass',
+      templateUrl: 'templates/confirmPass.html',
+      controller: 'ConfirmPassCtrl'
+    })
     .state('edit', {
       url: '/edit',
       templateUrl: 'templates/edit.html',
       controller: 'EditCtrl'
+    })
+    .state('yourFriends', {
+      url: '/yourfriends',
+      templateUrl: 'templates/yourFriends.html',
+      controller: 'YourFriendsCtrl'
     })
     .state('forgotPass', {
       url: '/forgotpassword',

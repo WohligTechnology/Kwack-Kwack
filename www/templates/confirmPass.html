@@ -1,0 +1,36 @@
+<ion-view title="Confirm Password">
+    <form name="formName">
+        <ion-content class="bg-color no-top">
+            <div class="forgotpass confirmpass">
+                <div class="w25 mar-auto mar-t30">
+                    <img src="img/filter/7.png" alt="logo" class="w100">
+                </div>
+                <div class="mart40 mar-l10">
+                    <div>
+                        <label>New Password</label>
+                        <input type="text" class="mob-input mar-b20" ng-model="formName.digit2" autofocus placeholder="***************">
+                    </div>
+                    <div>
+                        <label>Confirm Password</label>
+                        <input type="text" class="mob-input" ng-model="formName.digit2" autofocus placeholder="***************">
+                        <div class="absolute top-minus mar-l15">
+                            <button class="button  btn-yellow mar-l15" ng-click="saveUser(data,formName)" ng-disabled="formName.$invalid">RESET PASSWORD</button>
+                            <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </ion-content>
+        <div class="footer">
+            <div class="bar bar-footer bar-black">
+                <div class="row">
+                   <div class="col-90">
+                        <div class="skip text-right" ng-click="otp(formName)">
+                            <span>SUBMIT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</ion-view>

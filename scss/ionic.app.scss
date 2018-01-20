@@ -32,15 +32,15 @@ $dark:                            #444 !default;
     $light:#fff !default; // The path for our ionicons font files, relative to the built CSS in www/css
     $ionicons-font-path: "../lib/ionic/fonts" !default; // Include all of Ionic
     @import "www/lib/ionic/scss/ionic";
-    $font-family-sans-serif: "Montserrat",
-    "AvenirNext-Bold",
-    "Montserrat-Bold",
-    "Montserrat-Regular",
-    "Montserrat-SemiBold",
-    "Montserrat-ExtraLight";
-    $font-family-light-sans-serif: "Montserrat",
-    "Montserrat-Bold",
-    "Montserrat-Regular";
+    // $font-family-sans-serif: "Montserrat",
+    // "AvenirNext-Bold",
+    // "Montserrat-Bold",
+    // "Montserrat-Regular",
+    // "Montserrat-SemiBold",
+    // "Montserrat-ExtraLight";
+    // $font-family-light-sans-serif: "Montserrat",
+    // "Montserrat-Bold",
+    // "Montserrat-Regular";
     $font-family: "Montserrat-Light",
     "Montserrat-ExtraLight",
     "Montserrat-Bold",
@@ -48,11 +48,11 @@ $dark:                            #444 !default;
     "Montserrat-Medium",
     "Montserrat-Italic",
     "Montserrat-SemiBold";
-    $font-family-light-sans-serif: "Montserrat-Light",
-    "Montserrat-Bold",
-    "Montserrat-Regular" "Montserrat-Medium",
-    "Montserrat-Italic",
-    "Montserrat-SemiBold"; // @mixin placeholder {
+    // $font-family-light-sans-serif: "Montserrat-Light",
+    // "Montserrat-Bold",
+    // "Montserrat-Regular" "Montserrat-Medium",
+    // "Montserrat-Italic",
+    // "Montserrat-SemiBold"; // @mixin placeholder {
     //     $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
     //     @each $placeholder in $placeholders {
     //       &:#{$placeholder}-placeholder {
@@ -575,7 +575,7 @@ $dark:                            #444 !default;
         font-size: 11px;
         font-weight: 900;
         letter-spacing: 1px;
-        margin-top: 4px;
+        margin-top: 8px;
         font-family: 'Montserrat-Bold';
     } //end of .profile-pic
     //start of filter
@@ -2395,16 +2395,64 @@ div{
             left: 10px;
         }
     } //start of debate
+    .replay{
+        textarea{
+            background-color: $black;
+            color: $light;
+            padding: 10px 20px;
+
+        }
+        textarea::placeholder{
+            color:$light;
+            font-size: 14px;
+            font-family: 'Montserrat-Light';
+           }
+    }
+   
     .debate-submit{
         right:41px;
         .btn-yellow{
             padding: 0px 30px !important;
             z-index: 2;
-          
         }
         .button{
             min-height: 20px !important;
             margin-bottom: 30px;
+        }
+    }
+
+    .btn-send{
+        font-size: 10px !important;
+        font-family: 'Montserrat-Bold';
+        color: $light;
+        background-color: $black;
+        letter-spacing: 5px;
+        padding: 3px !important;
+    }
+    .replay-likes{
+        padding: 8px;
+        margin-top:5px;
+        background-color:$lightGray3;
+        h6{
+          margin-bottom: 0px !important;
+          margin-top: 0px !important;
+          font-size: 10px;
+        }
+        p{
+            font-size: 10px !important;
+            font-family: 'Montserrat-Light'!important;
+            border-bottom: none !important;
+            padding: 5px 0px 1px 1px !important;
+            line-height: 10px !important;
+        }
+    }
+    .reply-reply{
+        span{
+            font-size: 8px;
+            padding-left: 7px;
+        }
+        .like-padd{
+            padding-left: 10px;
         }
     }
     .profile-w {
@@ -2412,7 +2460,37 @@ div{
         height: auto;
         display: block;
     }
-
+  .right-thumb{
+    border: 1px solid $yellow;
+    display: table;
+    padding: 0px 4px;
+    border-radius: 6px;
+    position: absolute;
+    right: 17px;
+    margin-top: -6px;
+    background-color: $light;
+   
+  }
+  
+  .w9{
+    width: 9px;
+  }
+  .thumb-img{
+    padding:0px 3px;
+    display: table-cell;
+    vertical-align: middle;
+ 
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+  }
+  .thumb-count{
+    display: table-cell;
+    font-size: 10px;
+    vertical-align: middle;
+  }
+ 
     .debateprofile {
         width: 65px;
         height: 65px;
@@ -2469,7 +2547,7 @@ div{
 
     .debate-card {
         .card {
-            margin: 10px 33px 0px;
+            margin: 10px 25px 0px;
         }
         .list:last-child.card {
             margin-bottom: 0px;
@@ -2906,6 +2984,39 @@ div{
  
   }
   //end of forgot password
+  //startof confirm password
+  .confirmpass{
+      label{
+        font-family: 'Montserrat-Regular' !important;
+        padding-left: 25px;
+      }
+      input{
+          margin-top: 20px;
+          font-size: 20px;
+          box-shadow: 1px 15px 33px 6px rgba(136, 136, 136, 0.34);
+        
+      }
+      input::placeholder{
+        color:$black;
+      }
+  }
+  .mar-b20{
+      margin-bottom: 25px;
+  }
+  //start of your friend
+  .your-friends{
+    border-bottom: 1px solid  black;
+    border-top: 1px solid  black;
+   
+    padding: 10px;
+      span{
+        font-family: 'Montserrat-Medium';
+        font-size: 12px;
+        padding: 0px 10px;
+        // color: $darkgray2;
+
+      }
+  }
     // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .accordian {

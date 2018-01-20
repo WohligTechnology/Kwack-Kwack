@@ -387,8 +387,11 @@ module.exports.metadata =
   "cordova-plugin-file": "5.0.0",
   "cordova-plugin-file-transfer": "1.7.0",
   "cordova-plugin-inappbrowser": "2.0.1",
+<<<<<<< HEAD
   "es6-promise-plugin": "4.1.0",
   "cordova-plugin-x-socialsharing": "5.2.1",
+=======
+>>>>>>> 28b283d9ba58914a2b45387d877c3529ead3fb11
   "cordova-plugin-contacts": "3.0.1"
 };
 // BOTTOM OF METADATA
