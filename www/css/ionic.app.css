@@ -12092,6 +12092,15 @@ button.btn-yellow.button[disabled] {
 .mar-b20 {
   margin-bottom: 25px; }
 
+.your-friends {
+  border-bottom: 1px solid  black;
+  border-top: 1px solid  black;
+  padding: 10px; }
+  .your-friends span {
+    font-family: 'Montserrat-Medium';
+    font-size: 12px;
+    padding: 0px 10px; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .accordian label {
     font-size: 10px !important; }

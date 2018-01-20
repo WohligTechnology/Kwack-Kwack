@@ -299,6 +299,11 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       templateUrl: 'templates/edit.html',
       controller: 'EditCtrl'
     })
+    .state('yourFriends', {
+      url: '/yourfriends',
+      templateUrl: 'templates/yourFriends.html',
+      controller: 'YourFriendsCtrl'
+    })
     .state('forgotPass', {
       url: '/forgotpassword',
       templateUrl: 'templates/forgotPass.html',
