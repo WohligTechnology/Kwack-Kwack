@@ -9903,6 +9903,9 @@ a.button {
 body {
   font-family: 'Montserrat-Regular'; }
 
+h4 {
+  font-size: 14px; }
+
 .absolute {
   position: absolute; }
 
@@ -10143,6 +10146,9 @@ body {
   font-size: 12px;
   color: #ff0000; }
 
+.w18 {
+  width: 18%; }
+
 .content-mar {
   margin: 60px 45px; }
   .content-mar .item {
@@ -10253,7 +10259,7 @@ button.btn-yellow.button[disabled] {
       font-size: 13px; }
 
 .arrow-back {
-  margin-top: 9px; }
+  margin-top: 0px; }
   .arrow-back .button {
     background: transparent;
     border: none; }
@@ -10266,7 +10272,7 @@ button.btn-yellow.button[disabled] {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1px;
-  margin-top: 12px;
+  margin-top: 4px;
   font-family: 'Montserrat-Bold'; }
 
 .reset {
@@ -10328,24 +10334,6 @@ button.btn-yellow.button[disabled] {
   margin-bottom: 15px; }
   .filter-btns .btn-sports {
     padding: 0px 23px; }
-  .filter-btns .btn-science {
-    padding: 0px 14px; }
-  .filter-btns .btn-food {
-    padding: 0px 28px; }
-  .filter-btns .btn-science {
-    padding: 0px 14px; }
-  .filter-btns .btn-entertainment {
-    padding: 0px 39px; }
-  .filter-btns .btn-fashion {
-    padding: 0px 17px; }
-  .filter-btns .btn-international {
-    padding: 0px 49px; }
-  .filter-btns .btn-health {
-    padding: 0px 22px; }
-  .filter-btns .btn-books {
-    padding: 0px 22px; }
-  .filter-btns .btn-comedy {
-    padding: 0px 15px; }
 
 .btn-tran {
   background: transparent !important; }
@@ -10383,10 +10371,15 @@ button.btn-yellow.button[disabled] {
     padding-left: 9px;
     font-family: "Montserrat-Regular"; }
 
+.mar-t40 {
+  margin-top: 40%; }
+
 .otp-input {
-  width: 50px;
+  width: 37px;
+  min-height: 44px;
   background: transparent;
-  border-bottom: 1px solid rgba(136, 136, 136, 0.97) !important; }
+  border-radius: 4px;
+  border: 2px solid rgba(136, 136, 136, 0.43) !important; }
 
 .otp {
   margin-top: 18%; }
@@ -10394,7 +10387,6 @@ button.btn-yellow.button[disabled] {
     color: #424242; }
   .otp a {
     color: #424242;
-    text-decoration: underline;
     font-size: 12px;
     font-family: "Montserrat-Regular";
     letter-spacing: 1px; }
@@ -10407,7 +10399,7 @@ button.btn-yellow.button[disabled] {
   margin-right: 10px; }
 
 .input-padd {
-  padding: 50px 5px 15px 5px; }
+  padding: 30px 5px 15px 5px; }
 
 .bg-color-yellow {
   background: linear-gradient(to right bottom, #ffb600 30%, #ffb600 56%, #ffc943 99%) !important; }
@@ -10456,30 +10448,9 @@ button.btn-yellow.button[disabled] {
 .btn-sports {
   padding: 7px 23px; }
 
-.btn-comedy {
-  padding: 7px 17px; }
-
-.btn-food {
-  padding: 7px 29px; }
-
-.btn-science {
-  padding: 7px 18px; }
-
-.btn-entertainment {
-  padding: 7px 50px; }
-
-.btn-international {
-  padding: 7px 56px; }
-
-.btn-books {
-  padding: 7px 24px; }
-
-.btn-health {
-  padding: 7px 24px; }
-
 .cat-btn-plus {
   top: 0px;
-  right: 0px; }
+  right: 40px; }
   .cat-btn-plus .button {
     background: transparent;
     font-size: 12px; }
@@ -10710,7 +10681,11 @@ button.btn-yellow.button[disabled] {
   font-size: 17px;
   display: none; }
 
-.tabs-top > .tabs, .tabs.tabs-top {
+.width100 {
+  width: 100%; }
+
+.tabs-top > .tabs,
+.tabs.tabs-top {
   bottom: 0px !important; }
 
 .nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
@@ -11281,13 +11256,14 @@ button.btn-yellow.button[disabled] {
 .has-footer.has-tabs {
   bottom: 50px; }
 
-.placeholderCat input {
-  padding-left: 15px;
-  font-size: 14px; }
-
-.placeholderCat input::placeholder {
-  color: #000;
-  font-family: "Montserrat-Regular"; }
+.placeholderCat {
+  margin-bottom: 20px; }
+  .placeholderCat input {
+    padding-left: 15px;
+    font-size: 14px; }
+  .placeholderCat input::placeholder {
+    color: #000;
+    font-family: "Montserrat-Regular"; }
 
 .placeholderDiscover input {
   padding-left: 15px;
@@ -11394,6 +11370,14 @@ button.btn-yellow.button[disabled] {
   width: auto !important;
   border-color: #d4d4d4 !important; }
 
+.editBtn {
+  position: absolute;
+  right: 12%;
+  top: 7%;
+  width: 4%; }
+  .editBtn img {
+    width: 100%; }
+
 .cncelNav {
   font-size: 10px;
   font-family: 'Montserrat-Medium'; }
@@ -11403,7 +11387,7 @@ button.btn-yellow.button[disabled] {
   letter-spacing: 4px; }
 
 .profileImg {
-  width: 20%;
+  width: 50%;
   margin: 0 auto; }
   .profileImg img {
     width: 100%;
@@ -11416,26 +11400,45 @@ button.btn-yellow.button[disabled] {
   font-family: 'Montserrat-Medium'; }
 
 .editCard .card {
-  margin: 40px 50px !important;
+  margin: 40px 30px !important;
   z-index: 100;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2) !important; }
+
+.KwackFollowersPosts label {
+  font-size: 0.9em;
+  font-family: 'Montserrat-Regular'; }
+
+.KwackFollowersPosts div {
+  font-size: 0.9em;
+  font-family: 'Montserrat-Bold'; }
 
 .editName {
   padding: 20px 15px 0px 15px; }
   .editName label {
     color: #afafaf;
-    font-size: 0.9em;
+    font-size: 1em;
     letter-spacing: 2px;
     font-family: 'Montserrat-Medium'; }
   .editName input {
     width: 100%;
     line-height: 74px;
-    height: 60px;
-    border-bottom: 1px solid #ececec;
-    font-size: 0.9em; }
+    height: 45px;
+    font-size: 1.4em;
+    letter-spacing: 3px;
+    font-family: 'Montserrat-SemiBold'; }
   .editName input::placeholder {
     color: #000;
     font-family: "Montserrat-Regular"; }
+
+.editCity {
+  color: #333333;
+  font-size: 1em;
+  font-family: 'Montserrat-Medium';
+  width: 95%; }
+
+.ecitlocicon {
+  vertical-align: middle;
+  font-size: 15px; }
 
 .editBio {
   padding: 15px; }
@@ -11448,6 +11451,9 @@ button.btn-yellow.button[disabled] {
     padding-top: 10px !important;
     font-size: 0.9em;
     font-family: 'Montserrat-Regular'; }
+  .editBio textarea {
+    font-family: 'Montserrat-Regular';
+    font-size: 0.9em; }
 
 .accInMargin50 {
   margin: 15px 50px; }
@@ -11583,34 +11589,6 @@ button.btn-yellow.button[disabled] {
 .settings-btns .btn-sports {
   padding: 0px 18px; }
 
-.settings-btns .btn-science {
-  padding: 0px 14px; }
-
-.settings-btns .btn-food {
-  padding: 0px 20px; }
-
-.settings-btns .btn-science {
-  padding: 0px 10px; }
-
-.settings-btns .btn-entertainment {
-  padding: 0px 29px; }
-
-.settings-btns .btn-fashion {
-  padding: 0px 13px; }
-
-.settings-btns .btn-international {
-  padding: 0px 38px; }
-
-.settings-btns .btn-health {
-  padding: 0px 17px; }
-
-.settings-btns .btn-comedy {
-  padding: 0px 8px; }
-
-.settings-btns .btn-books {
-  padding: 0px 16px;
-  margin-bottom: 0px; }
-
 .settings i {
   font-size: 20px; }
 
@@ -11656,6 +11634,15 @@ button.btn-yellow.button[disabled] {
   height: 12px;
   top: 10px;
   left: 10px; }
+
+.debate-submit {
+  right: 41px; }
+  .debate-submit .btn-yellow {
+    padding: 0px 30px !important;
+    z-index: 2; }
+  .debate-submit .button {
+    min-height: 20px !important;
+    margin-bottom: 30px; }
 
 .profile-w {
   max-width: 100%;
@@ -12005,6 +11992,58 @@ button.btn-yellow.button[disabled] {
     vertical-align: middle;
     width: 3%; }
 
+.mobile {
+  font-size: 15px;
+  letter-spacing: 4px;
+  background: transparent;
+  border-bottom: 2px solid rgba(136, 136, 136, 0.43) !important; }
+
+.mobile-input {
+  width: 37px;
+  background: transparent;
+  border-bottom: 2px solid rgba(136, 136, 136, 0.43) !important; }
+
+.success {
+  padding: 0px 33px; }
+
+.terms {
+  margin: 0px 35px; }
+  .terms h4 {
+    font-family: 'Montserrat-Medium'; }
+  .terms p {
+    font-family: 'Montserrat-Regular';
+    line-height: 16px;
+    font-size: 11px;
+    color: #414141;
+    padding: 5px 0px; }
+
+.terms-subheading {
+  font-family: 'Montserrat-Regular' !important;
+  text-decoration: underline;
+  padding-top: 10px; }
+
+.text-bold {
+  font-family: 'Montserrat-Medium';
+  color: #000; }
+
+.forgotpass {
+  margin: 40px 30px; }
+  .forgotpass .btn-yellow {
+    padding: 7px 35px !important; }
+  .forgotpass input {
+    padding: 0px 45px;
+    letter-spacing: 2px; }
+
+.mar-t50 {
+  margin-top: 50%; }
+
+.top-minus {
+  margin-top: -8px; }
+
+.mob-input {
+  width: 90%;
+  min-height: 55px; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .accordian label {
     font-size: 10px !important; }
@@ -12169,22 +12208,6 @@ button.btn-yellow.button[disabled] {
     width: 46px; }
   .settings-btns .btn-sports {
     padding: 0px 14px; }
-  .settings-btns .btn-science {
-    padding: 0px 7px; }
-  .settings-btns .btn-food {
-    padding: 0px 15px; }
-  .settings-btns .btn-entertainment {
-    padding: 0px 22px; }
-  .settings-btns .btn-international {
-    padding: 0px 30px; }
-  .settings-btns .btn-fashion {
-    padding: 0px 9px; }
-  .settings-btns .btn-health {
-    padding: 0px 13px; }
-  .settings-btns .btn-comedy {
-    padding: 0px 5px; }
-  .settings-btns .btn-books {
-    padding: 0px 12px; }
   .btn-bg-black {
     font-size: 11px; }
   .btn-bg {
@@ -12206,7 +12229,9 @@ button.btn-yellow.button[disabled] {
     top: 175px;
     width: 81px; }
   .discover-ionslide {
-    height: 207px !important; } }
+    height: 207px !important; }
+  .mar-t40 {
+    margin-top: 24%; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
   .accordian label {
@@ -12435,28 +12460,17 @@ button.btn-yellow.button[disabled] {
     font-size: 12px; }
   .setting .item-input-inset .item-input-wrapper input {
     height: 22px;
-    width: 76px; }
+    width: 50px; }
+  .viewall {
+    height: auto !important; }
+  .viewless {
+    height: 180px;
+    overflow: hidden; }
+  .btn-sports.activated {
+    background-color: #ffc943 !important;
+    border: none; }
   .settings-btns .btn-sports {
     padding: 0px 18px; }
-  .settings-btns .btn-science {
-    padding: 0px 14px; }
-  .settings-btns .btn-food {
-    padding: 0px 20px; }
-  .settings-btns .btn-science {
-    padding: 0px 10px; }
-  .settings-btns .btn-entertainment {
-    padding: 0px 29px; }
-  .settings-btns .btn-fashion {
-    padding: 0px 13px; }
-  .settings-btns .btn-international {
-    padding: 0px 38px; }
-  .settings-btns .btn-health {
-    padding: 0px 17px; }
-  .settings-btns .btn-comedy {
-    padding: 0px 8px; }
-  .settings-btns .btn-books {
-    padding: 0px 16px;
-    margin-bottom: 0px; }
   .btn-bg-black {
     font-size: 13px; }
   .btn-bg {
@@ -12482,7 +12496,9 @@ button.btn-yellow.button[disabled] {
       width: 100%; }
   .discover-ionslide {
     height: 240px !important;
-    padding-top: 10px; } }
+    padding-top: 10px; }
+  .mar-t40 {
+    margin-top: 40%; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .accordian .news-label {

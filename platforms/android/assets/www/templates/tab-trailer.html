@@ -1,6 +1,6 @@
 <ion-view title="Trailer">
    <div class="row">
-        <div class="col col-10">
+        <div class="col col-10" ng-click="goBackHandler()">
                 <i class="closenavbar ion ion-ios-close-outline"></i>
         </div>
         <div class="col col-90">
@@ -18,9 +18,9 @@
     </div>
     <div class="trailerName" >
       <label for="">{{newsInfo.title}}</label>
-      <div><span class="articleDate"> Monday,</span>
-        <span class="articleDate"> Oct 9, 2017</span>
-        <span class="readarticleKwack">Read Article ...</span>
+      <div><span class="articleDate"> {{newsInfo.createdAt | fromNowDay}},</span>
+        <span class="articleDate"> {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}</span>
+        <span class="readarticleKwack" ng-click="inApp(newsInfo.url)">Read Article ...</span>
       </div>
       <div class="row pad0">
         <div class="col col-25 pad0">

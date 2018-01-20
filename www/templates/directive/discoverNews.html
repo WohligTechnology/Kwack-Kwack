@@ -12,7 +12,7 @@
                <label class="discoverCardStrip"  ng-click="nextPage(discover._id,'poll')"> <img ng-if="!discover.temp"  src="img/explore/5.png"> <img ng-if="discover.temp==true" src="img/filter/2.png"><span class="alignM"> {{discover.polls.length}}</span></label>
                   <label class="discoverCardStrip"  ng-click="nextPage(discover._id,'kwack')"><a><img ng-if="!discover.kwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="discover.kwack==true" class="img-responsive" src="img/discover/shieldclick.png"></a>
                 <span class="alignM">{{discover.comments.length}}</span></label>
-               <label><img src="img/explore/7.png">
+               <label ng-click="socilaSharing(discover.description,discover.imageUrl,discover.title,discover.url)"><img src="img/explore/7.png">
                 <span class="colorw alignM">{{discover.share}}</span></label>
             </div>
             <!-- <div class="display-flex">

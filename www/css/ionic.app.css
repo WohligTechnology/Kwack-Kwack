@@ -10681,6 +10681,9 @@ button.btn-yellow.button[disabled] {
   font-size: 17px;
   display: none; }
 
+.width100 {
+  width: 100%; }
+
 .tabs-top > .tabs,
 .tabs.tabs-top {
   bottom: 0px !important; }
@@ -11367,6 +11370,14 @@ button.btn-yellow.button[disabled] {
   width: auto !important;
   border-color: #d4d4d4 !important; }
 
+.editBtn {
+  position: absolute;
+  right: 12%;
+  top: 7%;
+  width: 4%; }
+  .editBtn img {
+    width: 100%; }
+
 .cncelNav {
   font-size: 10px;
   font-family: 'Montserrat-Medium'; }
@@ -11389,26 +11400,45 @@ button.btn-yellow.button[disabled] {
   font-family: 'Montserrat-Medium'; }
 
 .editCard .card {
-  margin: 40px 50px !important;
+  margin: 40px 30px !important;
   z-index: 100;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2) !important; }
+
+.KwackFollowersPosts label {
+  font-size: 0.9em;
+  font-family: 'Montserrat-Regular'; }
+
+.KwackFollowersPosts div {
+  font-size: 0.9em;
+  font-family: 'Montserrat-Bold'; }
 
 .editName {
   padding: 20px 15px 0px 15px; }
   .editName label {
     color: #afafaf;
-    font-size: 0.9em;
+    font-size: 1em;
     letter-spacing: 2px;
     font-family: 'Montserrat-Medium'; }
   .editName input {
     width: 100%;
     line-height: 74px;
-    height: 60px;
-    border-bottom: 1px solid #ececec;
-    font-size: 0.9em; }
+    height: 45px;
+    font-size: 1.4em;
+    letter-spacing: 3px;
+    font-family: 'Montserrat-SemiBold'; }
   .editName input::placeholder {
     color: #000;
     font-family: "Montserrat-Regular"; }
+
+.editCity {
+  color: #333333;
+  font-size: 1em;
+  font-family: 'Montserrat-Medium';
+  width: 95%; }
+
+.ecitlocicon {
+  vertical-align: middle;
+  font-size: 15px; }
 
 .editBio {
   padding: 15px; }
@@ -11421,6 +11451,9 @@ button.btn-yellow.button[disabled] {
     padding-top: 10px !important;
     font-size: 0.9em;
     font-family: 'Montserrat-Regular'; }
+  .editBio textarea {
+    font-family: 'Montserrat-Regular';
+    font-size: 0.9em; }
 
 .accInMargin50 {
   margin: 15px 50px; }

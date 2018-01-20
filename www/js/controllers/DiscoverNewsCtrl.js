@@ -1,4 +1,4 @@
- connector.controller('DiscoverNewsCtrl', function ($scope, $ionicScrollDelegate, Chats, $stateParams, $state, $ionicPlatform) {
+ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing, $ionicScrollDelegate, Chats, $stateParams, $state, $ionicPlatform) {
    $scope.activeTab = 'All'
    $scope.changeTab = function (num) {
      $scope.activeTab = num;
@@ -167,6 +167,26 @@
           newsid: data
         })
 
+   }
+
+   //socialSharing
+   $scope.socilaSharing=function(desciption,imageUrl,title,link){
+     console.log("description",title)
+     console.log("image",link)
+     
+     $cordovaSocialSharing
+     .share(desciption, title, imageUrl,link) // Share via native share sheet
+     .then(function (result) {
+       $ionicLoading.hide();
+       // Success!
+       console.log("Success");
+      
+       console.log(result);
+       console.log(image);
+     }, function (err) {
+       // An error occured. Show a message to the user
+       console.log("error : " + err);
+     });
    }
 
  })
