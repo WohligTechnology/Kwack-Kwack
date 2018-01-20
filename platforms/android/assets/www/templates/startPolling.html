@@ -1,7 +1,7 @@
 
 <ion-view title="Polling" class="">
     <div class="row">
-        <div class="col col-10">
+        <div class="col col-10" ng-click="goBackHandler()">
                 <i class="closenavbar ion ion-ios-close-outline"></i>
         </div>
         <div class="col col-90">
@@ -22,12 +22,12 @@
     <label for="">{{newsInfo.title}}</label>
     <div>
             <span class="articleDate">
-        Monday,
+                {{newsInfo.createdAt | fromNowDay}},
             </span>
             <span class="articleDate">
-         Oct 9, 2017
+                {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}
             </span>
-        <span class="readarticle">
+        <span class="readarticle" ng-click="inApp(newsInfo.url)">
             Read Article ...
         </span>
         </div>

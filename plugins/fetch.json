@@ -111,10 +111,26 @@
         "is_top_level": true,
         "variables": {}
     },
+    "cordova-plugin-x-socialsharing": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-x-socialsharing"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "es6-promise-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "es6-promise-plugin@4.1.0"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
     "cordova-plugin-contacts": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-contacts@3.0.1"
+            "id": "cordova-plugin-contacts@^3.0.1"
         },
         "is_top_level": true,
         "variables": {}

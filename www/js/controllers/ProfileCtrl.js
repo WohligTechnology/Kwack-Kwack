@@ -1,5 +1,6 @@
-connector.controller('ProfileCtrl', function($scope,$cordovaCamera,Chats,$ionicActionSheet,$cordovaImagePicker,$cordovaFileTransfer  ) {
-    $scope.profileImage={}    
+connector.controller('ProfileCtrl', function($scope, $cordovaContacts, $cordovaCamera,Chats,$ionicActionSheet,$cordovaImagePicker,$cordovaFileTransfer  ) {
+    $scope.profileImage={}   
+    // $scope.profileImage._id = $.jStorage.get('user')._id;
     $scope.showActionsheet = function(card) {
         console.log(card);
         $ionicActionSheet.show({
@@ -28,6 +29,8 @@ connector.controller('ProfileCtrl', function($scope,$cordovaCamera,Chats,$ionicA
                 return true;
             }
         });
+
+        
     };
 
     $scope.openCamera = function(card) {
@@ -77,9 +80,53 @@ connector.controller('ProfileCtrl', function($scope,$cordovaCamera,Chats,$ionicA
                 // Success!
                 // $scope.hideLoading();
                 result.response = JSON.parse(result.response);
-                $scope.profileImage.image = result.response.data[0];
-                console.log("changes",$scope.profileImage.image)
-               
+                $scope.profileImage.photo = result.response.data[0];
+                console.log("changes",$scope.profileImage.photo)
+               Chats.apiCallWithData("User/save", $scope.profileImage, function (data) {
+            console.log("value",data)
+        });
             })
     };
+
+    $scope.getAllContacts = function() {
+       
+            $scope.addContact = function() {
+              $cordovaContacts.save($scope.contactForm).then(function(result) {
+                // Contact saved
+              }, function(err) {
+                // Contact error
+              });
+            };
+            
+            $scope.getAllContacts = function() {
+              $cordovaContacts.find({}).then(function(allContacts) { //omitting parameter to .find() causes all contacts to be returned
+                $scope.contacts = allContacts;
+                console.log('contacts',$scope.contacts)
+              })
+            };
+            
+            $scope.findContactsBySearchTerm = function (searchTerm) {
+              var opts = {                                           //search options
+                filter : searchTerm,                                 // 'Bob'
+                multiple: true,                                      // Yes, return any contact that matches criteria
+                fields:  [ 'displayName', 'name' ],                  // These are the fields to search for 'bob'.
+                desiredFields: [id]    //return fields.
+              };
+            
+              if ($ionicPlatform.isAndroid()) {
+                opts.hasPhoneNumber = true;         //hasPhoneNumber only works for android.
+              };
+            
+              $cordovaContacts.find(opts).then(function (contactsFound) {
+                $scope.contacts = contactsFound;
+              });
+            }
+            
+            $scope.pickContactUsingNativeUI = function () {
+              $cordovaContacts.pickContact().then(function (contactPicked) {
+                $scope.contact = contactPicked;
+              })
+            }
+        }
+    
 })

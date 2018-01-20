@@ -136,10 +136,9 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.trailer', {
       url: '/trailer/:newsid',
-      cache:false,
+      // cache:false,
       views: {
         'tab-trailer': {
-
           templateUrl: 'templates/tab-trailer.html',
           controller: 'TrailerCtrl'
         }
@@ -149,16 +148,14 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.kwackScreen', {
       url: '/kwackScreen',
+      cache:false,
       views: {
         'tab-kwackScreen': {
-
           templateUrl: 'templates/kwack-screen.html',
           controller: 'KwackScreenCtrl'
         }
       }
-
-
-    })
+ })
 
   .state('profile', {
     url: '/profile',
@@ -166,7 +163,23 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     controller: 'ProfileCtrl'
   })
 
-  .state('discover', {
+  .state('mobile', {
+    url: '/mobile',
+    templateUrl: 'templates/mobile.html',
+    controller: 'MobileCtrl'
+  })
+  .state('error', {
+    url: '/error',
+    templateUrl: 'templates/error.html',
+    controller: 'ErrorCtrl'
+  })
+
+  .state('success', {
+    url: '/success',
+    templateUrl: 'templates/success.html',
+    controller: 'SuccessCtrl'
+  })
+   .state('discover', {
     url: '/discover',
     templateUrl: 'templates/discover.html',
     controller: 'DiscoverCtrl'
@@ -281,7 +294,11 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       templateUrl: 'templates/edit.html',
       controller: 'EditCtrl'
     })
-   
+    .state('forgotPass', {
+      url: '/forgotpassword',
+      templateUrl: 'templates/forgotPass.html',
+      controller: 'ForgotPassCtrl'
+      })
   .state('settings', {
       url: '/settings',
       templateUrl: 'templates/settings.html',
@@ -293,6 +310,12 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       templateUrl: 'templates/polling-inside.html',
       controller: 'PollingInsideCtrl'
     })
+      .state('debate1', {
+      url: '/debate/:kwackId/:newsid/:ann',
+        cache:false,
+      templateUrl: 'templates/debate.html',
+      controller: 'DebateCtrl'
+    })
     .state('debate', {
       url: '/debate/:kwackId/:newsid',
         cache:false,
@@ -301,7 +324,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     })
     .state('tab.startPolling', {
       url: '/startPolling/:newsid',
-      cache:false,
+      // cache:false,
       views: {
         'tab-startPolling': {
       templateUrl: 'templates/startPolling.html',
@@ -334,7 +357,6 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
   $urlRouterProvider.otherwise('/login');
 
-
 })
 
 .filter('uploadpath', function () {
@@ -358,9 +380,21 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
   };
 })
 
+.filter('fromNowDM', function () {
+  return function (date) {
+    return moment(date).format(" MMM DD");
+  };
+})
+
 .filter('fromNowDMY', function () {
   return function (date) {
     return moment(date).format("DD MMM YYYY");
+  };
+})
+
+.filter('fromNowY', function () {
+  return function (date) {
+    return moment(date).format("YYYY");
   };
 })
 
