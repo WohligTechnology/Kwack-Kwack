@@ -1,6 +1,6 @@
 <ion-view>
     <div class="row ">
-        <div class="col col-33 cncelNav">DONE</div>
+        <div class="col col-33 cncelNav" ng-click="goBackHandler()">DONE</div>
         <div class="col col-33 navHead text-center">SETTINGS</div>
         <div class="col col-33 cncelNav text-right">SIGN OUT</div>
     </div>
@@ -92,15 +92,15 @@
         </div>
         <div class="editCard">
             <div class="card">
-                <div class="row userName">
-                    <div class="col col-50">
+                <div class="row userName" ui-sref="tab.aboutinside">
+                    <div class="col col-50"  >
                         <label>ABOUT</label>
                     </div>
-                    <div class="col col-50 text-right" ui-sref="aboutinside">
+                    <div class="col col-50 text-right" >
                         <i class="ion ion-ios-arrow-right"></i>
                     </div>
                 </div>
-                <div class="row userName">
+                <div class="row userName" ui-sref="tab.accountinside">
                     <div class="col col-50" >
                         <label>ACCOUNT</label>
                     </div>
@@ -108,7 +108,7 @@
                         <i class="ion ion-ios-arrow-right" ></i>
                     </div>
                 </div>
-                <div class="row userName">
+                <div class="row userName" ui-sref="tab.yourfriends">
                     <div class="col col-50 emailText">
                         <label>FRIENDS</label>
                     </div>

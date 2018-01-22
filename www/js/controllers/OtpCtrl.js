@@ -21,11 +21,11 @@ connector.controller('OtpCtrl', function ($scope, $stateParams, $state, Chats, i
                 Chats.apiCallWithData("User/verifyOTPForResetPass",$scope.data, function (data) {
                 console.log("data is after verifyOTPForResetPass called", data);
                 if (data.value == true) {
-                  $state.go("home")
+                  $state.go("success")
 
                 } else {
                     console.log("Incorrect OTP!");
-                    ionicToast.show('Incorrect OTP!', 'top', false, 2500);
+                    $state.go("error")
                 }
             });
         } else {

@@ -1,5 +1,6 @@
 connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chats, $state) {
   $scope.pollKwack = {}
+  console.log("hello")
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
   $scope.doRefresh = function (val) {

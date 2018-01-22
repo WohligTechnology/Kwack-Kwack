@@ -6,7 +6,7 @@ connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams,
         if (data.value == true) {
           $scope.data = data;
           $.jStorage.set("user", $scope.data.data);
-          $state.go("tab.discoverNews")
+          $state.go("tab.explore")
         } else {
           $scope.showerrMsg=true
           // toastr.error("incorrect");

@@ -9,6 +9,10 @@ console.log("heyyjstorage",$scope.addInterest)
 $scope.interestarr=[]
 $scope.viewmore = false;
 
+$scope.goBackHandler = function() {
+  window.history.back(); //This works
+};
+
 $scope.viewall = function(){
     $scope.viewmore = true;
    }
