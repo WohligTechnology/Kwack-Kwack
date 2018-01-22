@@ -1,9 +1,9 @@
 connector.controller('YourFriendsCtrl', function($scope) {
     // $scope.alll = false;
     // $scope.contactt = false;
-     $scope.all = true;
+    $scope.allpeople = 'all';
     $scope.allcontactpeople = function(data){
-         $scope.alll = data;
+         $scope.allpeople = data;
     }
     
 })
