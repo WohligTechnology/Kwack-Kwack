@@ -77,7 +77,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
             newsid: data
           })
         } else {
-          $state.go("tab.startPolling", {
+          $state.go("tab.startPollingex", {
             newsid: data
 
           })
@@ -92,7 +92,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
             newsid: data
           })
         } else {
-          $state.go("tab.trailer", {
+          $state.go("tab.trailerex", {
             newsid: data
           })
         }

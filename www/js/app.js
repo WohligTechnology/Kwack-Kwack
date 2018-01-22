@@ -134,11 +134,35 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'InviteCtrl'
     })
 
-    .state('tab.trailer', {
+    .state('tab.trailerex', {
       url: '/trailer/:newsid',
       // cache:false,
       views: {
-        'tab-trailer': {
+        'tab-explore': {
+          templateUrl: 'templates/tab-trailer.html',
+          controller: 'TrailerCtrl'
+        }
+      }
+
+    })
+
+    .state('tab.trailerdis', {
+      url: '/trailer/:newsid',
+      // cache:false,
+      views: {
+        'tab-explore': {
+          templateUrl: 'templates/tab-trailer.html',
+          controller: 'TrailerCtrl'
+        }
+      }
+
+    })
+
+    .state('tab.trailerkwack', {
+      url: '/trailer/:newsid',
+      // cache:false,
+      views: {
+        'tab-kwackScreen': {
           templateUrl: 'templates/tab-trailer.html',
           controller: 'TrailerCtrl'
         }
@@ -386,16 +410,39 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       templateUrl: 'templates/debate.html',
       controller: 'DebateCtrl'
     })
-    .state('tab.startPolling', {
+    .state('tab.startPollingex', {
       url: '/startPolling/:newsid',
       // cache:false,
       views: {
-        'tab-startPolling': {
+        'tab-explore': {
       templateUrl: 'templates/startPolling.html',
       controller: 'StartPollingCtrl'
         }
       }
     })
+
+    .state('tab.startPollingdis', {
+      url: '/startPolling/:newsid',
+      // cache:false,
+      views: {
+        'tab-discoverNews': {
+      templateUrl: 'templates/startPolling.html',
+      controller: 'StartPollingCtrl'
+        }
+      }
+    })
+
+    .state('tab.startPollingkwack', {
+      url: '/startPolling/:newsid',
+      // cache:false,
+      views: {
+        'tab-kwackScreen': {
+      templateUrl: 'templates/startPolling.html',
+      controller: 'StartPollingCtrl'
+        }
+      }
+    })
+
     .state('tab.social', {
       url: '/social',
       views: {

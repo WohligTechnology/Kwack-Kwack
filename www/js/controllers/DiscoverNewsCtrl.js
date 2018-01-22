@@ -136,7 +136,7 @@
            newsid: data
          })
        } else {
-         $state.go("tab.startPolling", {
+         $state.go("tab.startPollingdis", {
            newsid: data
           
          })
@@ -151,7 +151,7 @@
             newsid: data
           })
         } else {
-          $state.go("tab.trailer", {
+          $state.go("tab.trailerdis", {
             newsid: data
           })
         }
