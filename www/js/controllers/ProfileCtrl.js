@@ -1,5 +1,8 @@
 connector.controller('ProfileCtrl', function($scope, $cordovaContacts, $cordovaCamera,Chats,$ionicActionSheet,$cordovaImagePicker,$cordovaFileTransfer  ) {
-    $scope.profileImage={}   
+    $scope.profileImage={} 
+    $scope.goBackHandler = function() {
+        window.history.back(); //This works
+    };  
     // $scope.profileImage._id = $.jStorage.get('user')._id;
     $scope.showActionsheet = function(card) {
         console.log(card);

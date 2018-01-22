@@ -1,5 +1,6 @@
 connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chats, $state) {
   $scope.pollKwack = {}
+  console.log("hello")
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
   $scope.doRefresh = function (val) {
@@ -76,7 +77,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
             newsid: data
           })
         } else {
-          $state.go("tab.startPolling", {
+          $state.go("tab.startPollingex", {
             newsid: data
 
           })
@@ -91,7 +92,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
             newsid: data
           })
         } else {
-          $state.go("tab.trailer", {
+          $state.go("tab.trailerex", {
             newsid: data
           })
         }

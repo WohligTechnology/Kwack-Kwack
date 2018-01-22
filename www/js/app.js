@@ -84,7 +84,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     .state('tab.privacy', {
       url: '/privacy',
       views: {
-        'tab-explore': {
+        'tab-settings': {
           templateUrl: 'templates/privacy.html',
       controller: 'PrivacyCtrl'
         }
@@ -93,7 +93,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
    .state('tab.terms', {
     url: '/terms',
     views: {
-      'tab-explore': {
+      'tab-settings': {
         templateUrl: 'templates/terms.html',
     controller: 'TermsCtrl'
       }
@@ -102,7 +102,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
  .state('tab.about', {
   url: '/about',
   views: {
-    'tab-explore': {
+    'tab-settings': {
       templateUrl: 'templates/about.html',
   controller: 'AboutCtrl'
     }
@@ -111,7 +111,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 .state('tab.guidelines', {
   url: '/guidelines',
   views: {
-    'tab-explore': {
+    'tab-settings': {
       templateUrl: 'templates/guidelines.html',
   controller: 'GuidelinesCtrl'
     }
@@ -134,11 +134,47 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'InviteCtrl'
     })
 
-    .state('tab.trailer', {
+    .state('tab.trailerex', {
       url: '/trailer/:newsid',
       // cache:false,
       views: {
-        'tab-trailer': {
+        'tab-explore': {
+          templateUrl: 'templates/tab-trailer.html',
+          controller: 'TrailerCtrl'
+        }
+      }
+
+    })
+
+    .state('tab.trailerdis', {
+      url: '/trailer/:newsid',
+      // cache:false,
+      views: {
+        'tab-explore': {
+          templateUrl: 'templates/tab-trailer.html',
+          controller: 'TrailerCtrl'
+        }
+      }
+
+    })
+
+    .state('tab.trailerkwack', {
+      url: '/trailer/:newsid',
+      // cache:false,
+      views: {
+        'tab-kwackScreen': {
+          templateUrl: 'templates/tab-trailer.html',
+          controller: 'TrailerCtrl'
+        }
+      }
+
+    })
+
+    .state('tab.trailersocial', {
+      url: '/trailer/:newsid',
+      // cache:false,
+      views: {
+        'tab-social': {
           templateUrl: 'templates/tab-trailer.html',
           controller: 'TrailerCtrl'
         }
@@ -189,27 +225,58 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     url: '/discoverNews',
      cache:false,
     views: {
+    
       'tab-discoverNews': {
-
         templateUrl: 'templates/tab-discoverNews.html',
         controller: 'DiscoverNewsCtrl',
-       
       }
+   
     }
 
   })
   .state('tab.discoverfull', {
     url: '/discoverfull',
-  
-   views: {
+    views:{
       'tab-discoverNews': {
-
         templateUrl: 'templates/discover-full.html',
         controller: 'DiscoverFullCtrl'
       }
     }
+       
 
  })
+
+ .state('tab.discoversearch', {
+  url: '/discoverfull',
+  views:{
+    'tab-explore': {
+      templateUrl: 'templates/discover-full.html',
+      controller: 'DiscoverFullCtrl'
+    }
+  }
+})
+
+.state('tab.kwacksearch', {
+  url: '/discoverfull',
+  views:{
+    'tab-kwackScreen': {
+      templateUrl: 'templates/discover-full.html',
+      controller: 'DiscoverFullCtrl'
+    }
+  }   
+
+})
+
+.state('tab.socialsearch', {
+  url: '/discoverfull',
+  views:{
+    'tab-social': {
+      templateUrl: 'templates/discover-full.html',
+      controller: 'DiscoverFullCtrl'
+    }
+  }   
+
+})
 
   .state('filter', {
     url: '/filter',
@@ -277,16 +344,24 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       controller: 'InviteFriendsCtrl'
     })
    
-    .state('accountinside', {
+    .state('tab.accountinside', {
       url: '/accountinside',
+      views: {
+        'tab-settings': {
       templateUrl: 'templates/accountinside.html',
       controller: 'AccountInsieCtrl'
+        }
+      }
     })
 
-    .state('aboutinside', {
+    .state('tab.aboutinside', {
       url: '/aboutinside',
+      views: {
+        'tab-settings': {
       templateUrl: 'templates/aboutinside.html',
       controller: 'AboutInsieCtrl'
+        }
+      }
     })
 
     .state('confirmPass', {
@@ -299,20 +374,35 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       templateUrl: 'templates/edit.html',
       controller: 'EditCtrl'
     })
-    .state('yourFriends', {
+    .state('yourfriends', {
       url: '/yourfriends',
       templateUrl: 'templates/yourFriends.html',
       controller: 'YourFriendsCtrl'
     })
-    .state('forgotPass', {
+
+    .state('tab.yourfriends', {
+      url: '/yourfriends',
+      views: {
+        'tab-settings': {
+      templateUrl: 'templates/yourFriends.html',
+      controller: 'YourFriendsCtrl'
+        }
+      }
+    })
+
+    .state('forgotpass', {
       url: '/forgotpassword',
       templateUrl: 'templates/forgotPass.html',
       controller: 'ForgotPassCtrl'
       })
-  .state('settings', {
+  .state('tab.settings', {
       url: '/settings',
+      views: {
+        'tab-settings': {
       templateUrl: 'templates/settings.html',
       controller: 'SettingsCtrl'
+        }
+      }
     })
     .state('polling-inside', {
       url: '/pollinginside/:newsid',
@@ -332,16 +422,51 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       templateUrl: 'templates/debate.html',
       controller: 'DebateCtrl'
     })
-    .state('tab.startPolling', {
+    .state('tab.startPollingex', {
       url: '/startPolling/:newsid',
       // cache:false,
       views: {
-        'tab-startPolling': {
+        'tab-explore': {
       templateUrl: 'templates/startPolling.html',
       controller: 'StartPollingCtrl'
         }
       }
     })
+
+    .state('tab.startPollingdis', {
+      url: '/startPolling/:newsid',
+      // cache:false,
+      views: {
+        'tab-discoverNews': {
+      templateUrl: 'templates/startPolling.html',
+      controller: 'StartPollingCtrl'
+        }
+      }
+    })
+
+    .state('tab.startPollingkwack', {
+      url: '/startPolling/:newsid',
+      // cache:false,
+      views: {
+        'tab-kwackScreen': {
+      templateUrl: 'templates/startPolling.html',
+      controller: 'StartPollingCtrl'
+        }
+      }
+    })
+
+
+    .state('tab.startPollingsocial', {
+      url: '/startPolling/:newsid',
+      // cache:false,
+      views: {
+        'tab-social': {
+      templateUrl: 'templates/startPolling.html',
+      controller: 'StartPollingCtrl'
+        }
+      }
+    })
+
     .state('tab.social', {
       url: '/social',
       views: {

@@ -29,7 +29,10 @@ connector.controller('InviteFriendsCtrl', function(Chats, $scope) {
       console.log("Users",data.data)
       $scope.people=data.data
     })
-
+    
+    $scope.goBackHandler = function() {
+      window.history.back(); //This works
+  };
     $scope.unfollow=function(id){
       $scope.user={}
       $scope.user.userFollowed=$.jStorage.get('user')._id

@@ -13,7 +13,7 @@
                     <input type="text" class="mob-input" ng-model="formName.digit2" autofocus placeholder="+91 00000 00000" maxlength="13"
                         minlength="10">
                     <div class="absolute top-minus mar-l15">
-                        <button class="button  btn-yellow mar-l15" ng-click="saveUser(data,formName)" ng-disabled="formName.$invalid">RESET PASSWORD</button>
+                        <button class="button  btn-yellow mar-l15" ui-sref="confirmPass" ng-disabled="formName.$invalid">RESET PASSWORD</button>
                         <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
                     </div>
                 </div>
@@ -27,13 +27,13 @@
                 <div class="row">
                     <div class="col col-20">
                         <div class="arrow-back text-center">
-                            <a class="button" ui-sref="signUp">
+                            <a class="button" ui-sref="login">
                                 <i class="ion ion-ios-arrow-back"></i>
                             </a>
                         </div>
                     </div>
                     <div class="col col-75">
-                        <div class="skip text-right mar-r" ng-click="otp(formName)">
+                        <div class="skip text-right mar-r" ui-sref="signUp">
                             <span>REGISTER</span>
                         </div>
                     </div>
