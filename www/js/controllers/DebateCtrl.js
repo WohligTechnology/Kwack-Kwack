@@ -69,12 +69,17 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
             }
         })
     }
+     $scope.showDefaultImg=false
     $scope.userData = {}
     $scope.userData._id = $.jStorage.get("user")._id
     Chats.apiCallWithData("User/getOne", $scope.userData, function (data1) {
         if (data1.value == true) {
             $scope.currentUserInfo = data1.data
-            console.log('after api called sucefully', $scope.currentUserInfo)
+             $scope.currentUserInfoPhoto = data1.data.photo
+             if(!$scope.currentUserInfoPhoto){
+                 $scope.showDefaultImg=true
+             }
+            console.log('after api called sucefully',   $scope.showDefaultImg)
 
         } else {
 
