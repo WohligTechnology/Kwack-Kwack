@@ -3,8 +3,9 @@ connector.controller('OtpCtrl', function ($scope, $stateParams, $state, Chats, i
 
     $scope.resendOtp = function () {
         $scope.data = {}
-        $scope.data.email = $.jStorage.get("user").email
+        $scope.data.mobile = $.jStorage.get("user").mobile
         Chats.apiCallWithData("User/sendOtp", $scope.data, function (info) {
+            console.log("otp",info)
             if (info.value == true) {
                 ionicToast.show('Otp Sent Successfully', 'top', false, 2500);
 
