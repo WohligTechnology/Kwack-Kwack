@@ -37,7 +37,8 @@
             <div class="dis-cell follow-btn">
               <div>
                 <h3 class="user-name ">{{userInfo.name}}</h3>
-                <h5 class="designation ">{{userInfo.bio}}</h5>
+                <div class="text-overflow"> <h5 class="designation">{{userInfo.bio}}</h5></div>
+               
                 <button class="button icon-left ion ion-android-add" ng-show="!follow" ng-click='follow=true; unfollow(userInfo._id)' >Follow</button>
                 <button class="button icon-left ion ion-android-add"  ng-show="follow" ng-click='follow=false; follow1(userInfo._id)'>Follow</button>
               </div>
@@ -66,7 +67,7 @@
               </div>
             </div>
           </div>
-          <div class="list listperson listdetail" ng-if='!setFollowCountValueZero'>
+          <div class="list listperson listdetail listminheight" ng-if='!setFollowCountValueZero'>
             <a class="item item-avatar" ng-repeat="users in count">
           <img ng-if="!users.user.photo" ng-click="selectedUser(users.user._id)" ng-src="img/profile/profile.png">
           <img ng-if="users.user.photo" ng-click="selectedUser(users.user._id)" ng-src="{{users.user.photo | uploadpath}}">
@@ -79,7 +80,7 @@
           </div>
         </div>
       </div>
-      <div class="list listperson listdetail" ng-if='followersb==true &&  !countValue'>
+      <div class="list listperson listdetail listmaxheight" ng-if='followersb==true &&  !countValue'>
         <a class="item item-avatar" ng-repeat="users in people">
           <img  ng-click="selectedUser(users._id)" ng-if="!users.photo" ng-src="img/profile/profile.png">
           <img  ng-click="selectedUser(users._id)" ng-if="users.photo" src="{{users.photo | uploadpath}}">
