@@ -65,10 +65,10 @@
         </div>
         <div>
             <div class="debate-card relative">
-                 <div class="debateprofile"  ng-if="setvarann">
+                 <div class="debateprofile"  ng-if="showDefaultImg || setvarann">
                     <img ng-src="img/profile/profile.png" alt="profile-img" class="profile-w">
                 </div>
-                <div class="debateprofile" ng-if="!setvarann">
+                <div class="debateprofile" ng-if="!setvarann && !showDefaultImg ">
                     <img ng-src="{{currentUserInfo.photo | uploadpath}}" alt="profile-img" class="profile-w">
                 </div>
                 <div class="list card">
