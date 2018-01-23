@@ -8,13 +8,13 @@
                 <div class="mart40 mar-l10">
                     <div>
                         <label>New Password</label>
-                        <input type="text" class="mob-input mar-b20" ng-model="formName.digit2" autofocus placeholder="***************">
+                        <input type="password" class="mob-input mar-b20" ng-model="formName.password" autofocus placeholder="***************" required>
                     </div>
                     <div>
                         <label>Confirm Password</label>
-                        <input type="text" class="mob-input" ng-model="formName.digit2" autofocus placeholder="***************">
+                        <input type="password" class="mob-input" ng-model="formName.confirm" autofocus placeholder="***************" required>
                         <div class="absolute top-minus mar-l15">
-                            <button class="button  btn-yellow mar-l15" ng-click="saveUser(data,formName)" ng-disabled="formName.$invalid">RESET PASSWORD</button>
+                            <button class="button  btn-yellow mar-l15" ng-click="resetPassword(formName)" ng-disabled="formName.$invalid">RESET PASSWORD</button>
                             <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
                         </div>
                     </div>
@@ -25,7 +25,7 @@
             <div class="bar bar-footer bar-black">
                 <div class="row">
                    <div class="col-90">
-                        <div class="skip text-right" ng-click="otp(formName)">
+                        <div class="skip text-right" ng-click="resetPassword(formName)">
                             <span>SUBMIT</span>
                         </div>
                     </div>

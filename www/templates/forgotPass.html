@@ -1,6 +1,7 @@
 <ion-view title="forgot Password">
-    <form name="formName">
+  
         <ion-content class="bg-color no-top">
+                <form  name="forgot">
             <div class="forgotpass">
                 <div class="w56">
                     <img src="img/signup/bar.png" alt="logo" class="w100">
@@ -10,17 +11,21 @@
                     <P>We just need your registered mobile number to send you a new passcode. </P>
                 </div>
                 <div class="mart40 mar-l10">
-                    <input type="text" class="mob-input" ng-model="formName.digit2" autofocus placeholder="+91 00000 00000" maxlength="13"
-                        minlength="10">
+                    <input type="tel" class="mob-input"  ng-model="forgot.mobile" name="mob" value="{{forgot.mobile}}"  autofocus placeholder="+91 00000 00000" maxlength="13"
+                        minlength="10" required>
                     <div class="absolute top-minus mar-l15">
-                        <button class="button  btn-yellow mar-l15" ui-sref="confirmPass" ng-disabled="formName.$invalid">RESET PASSWORD</button>
+                        <button class="button  btn-yellow mar-l15"  ng-click="resendOtp(forgot)"  ng-disabled="forgot.$invalid">RESET PASSWORD</button>
                         <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
                     </div>
+                    
                 </div>
+                <!-- <span class="error-msg" ng-show="forgot.mob.$error && forgot.mob.$touched">Please Enter your Mobile No.</span>                         -->
+                
                 <div class="text-center mar-t50">
-                    <p ng-click="resendOtp()">Don’t have an Account?</p>
+                    <p >Don’t have an Account?</p>
                </div>
             </div>
+        </form>
         </ion-content>
         <div class="footer">
             <div class="bar bar-footer bar-black">
@@ -40,5 +45,5 @@
                 </div>
             </div>
         </div>
-    </form>
+   
 </ion-view>

@@ -364,7 +364,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       }
     })
 
-    .state('confirmPass', {
+    .state('confirmpass', {
       url: '/confirmpass',
       templateUrl: 'templates/confirmPass.html',
       controller: 'ConfirmPassCtrl'
