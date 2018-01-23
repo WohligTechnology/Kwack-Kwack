@@ -11831,6 +11831,12 @@ button.btn-yellow.button[disabled] {
   justify-content: flex-end;
   align-items: center; }
 
+.text-overflow {
+  white-space: nowrap;
+  width: 22em;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 .pollingCounts {
   font-size: 8px;
   padding-top: 6px;

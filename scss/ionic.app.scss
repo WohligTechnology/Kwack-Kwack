@@ -2623,6 +2623,13 @@ $dark:                            #444 !default;
         justify-content: flex-end;
         align-items: center;
     } //polling css start
+    
+    .text-overflow{
+        white-space: nowrap; 
+        width: 22em; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
     .pollingCounts {
         font-size: 8px;
         padding-top: 6px;

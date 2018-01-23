@@ -126,6 +126,7 @@
    }
   
    $scope.nextPage = function (data, kwackPoll) {
+     
      var data1 = {}
      data1.newsId = data,
        data1.userId = $.jStorage.get("user")._id
