@@ -1,4 +1,4 @@
-connector.controller('SettingsCtrl', function($scope,Chats) {
+connector.controller('SettingsCtrl', function($scope,Chats,$state) {
 $scope.jstorage={}
 $scope.allInterest=[]
 $scope.jstorage = $.jStorage.get('user');
@@ -15,6 +15,11 @@ $scope.goBackHandler = function() {
 
 $scope.viewall = function(){
     $scope.viewmore = true;
+   }
+  //  logout
+   $scope.logout = function(){
+     $.jStorage.flush();
+      $state.go("login");
    }
 //change font size
   $scope.font = '';
