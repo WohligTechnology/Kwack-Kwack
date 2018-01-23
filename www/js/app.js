@@ -170,6 +170,18 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     })
 
+    .state('tab.trailersocial', {
+      url: '/trailer/:newsid',
+      // cache:false,
+      views: {
+        'tab-social': {
+          templateUrl: 'templates/tab-trailer.html',
+          controller: 'TrailerCtrl'
+        }
+      }
+
+    })
+
     .state('tab.kwackScreen', {
       url: '/kwackScreen',
       cache:false,
@@ -437,6 +449,18 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       // cache:false,
       views: {
         'tab-kwackScreen': {
+      templateUrl: 'templates/startPolling.html',
+      controller: 'StartPollingCtrl'
+        }
+      }
+    })
+
+
+    .state('tab.startPollingsocial', {
+      url: '/startPolling/:newsid',
+      // cache:false,
+      views: {
+        'tab-social': {
       templateUrl: 'templates/startPolling.html',
       controller: 'StartPollingCtrl'
         }
