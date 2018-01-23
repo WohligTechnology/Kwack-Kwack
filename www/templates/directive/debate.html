@@ -1,56 +1,56 @@
 <div class="debate-card relative">
-    <div class="debateprofile"  ng-if="debate.comment.anonymous=='YES'">
-        <img ng-src="img/explore/4.png" alt="profile-img" class="profile-w">
+    <div class="debateprofile" ng-if="debate.comment.anonymous=='YES'">
+        <img ng-src="img/profile/profile.png" alt="profile-img" class="profile-w">
     </div>
     <div class="debateprofile" ng-if="debate.comment.anonymous=='NO'">
         <img ng-src="{{debate.comment.user.photo | uploadpath}}" alt="profile-img" class="profile-w">
     </div>
     <div class="list card">
-       <div class="item item-body">
+        <div class="item item-body">
             <div class="row">
-               <div class="col col-20 relative">
+                <div class="col col-20 relative">
                 </div>
                 <div class="col col-80">
                     <div class="test">
-                                <div class="debate-user user-flex">
-                                    <span ng-if="debate.comment.anonymous=='YES'">Anonymous</span>
-                                    <span ng-if="debate.comment.anonymous=='NO'">{{debate.comment.user.name}}</span>
-                                    <img ng-src="{{news.thumicon}}">
-                                </div> 
-                                 <div class="time-flex text-right" ng-if="news.time !='' && news.time">
-                                     <span class="carddatecl watch-w">
+                        <div class="debate-user user-flex">
+                            <span ng-if="debate.comment.anonymous=='YES'">Anonymous</span>
+                            <span ng-if="debate.comment.anonymous=='NO'">{{debate.comment.user.name}}</span>
+                            <img ng-src="{{news.thumicon}}">
+                        </div>
+                        <div class="time-flex text-right" ng-if="news.time !='' && news.time">
+                            <span class="carddatecl watch-w">
                                         <img src="img/explore/4.png">
                                     </span>
-                                    <span class="carddatecl debate-time">{{news.time}}</span>
-                                </div>
-                                </div>
-                             <div>
-                                  <p>{{debate.comment.comment}}</p>
-                             </div>
-                        <div class="likes">
-                           <span>{{debate.comment.likes.length}}</span>
-                            <label ng-class="{'yellow': debate.value==true}" ng-click="addLike(debate.comment._id)">LIKES</label>
-                            <!-- <label ng-class="{'yellow': lellow==true}" ng-click="addLike(debate.comment._id)">LIKES</label> -->
-                            <span></span>
-                            <label  ng-click='reply(debate.comment._id)'>REPLIES</label>
+                            <span class="carddatecl debate-time">{{news.time}}</span>
                         </div>
-                        <div class="replay-likes">
-                            <h6>Jamila Mamawala</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ex nulla, ornare et rhoncus ut, porta a eros.</p>
+                    </div>
+                    <div>
+                        <p>{{debate.comment.comment}}</p>
+                    </div>
+                    <div class="likes">
+                        <span>{{debate.comment.likes.length}}</span>
+                        <label ng-class="{'yellow': debate.value==true}" ng-click="addLike(debate.comment._id)">LIKES</label>
+                        <!-- <label ng-class="{'yellow': lellow==true}" ng-click="addLike(debate.comment._id)">LIKES</label> -->
+                        <span>{{debate.comment.repliesTo.length}}</span>
+                        <label ng-click='reply(debate.comment._id)'>REPLIES</label>
+                    </div>
+                    <div ng-show="commId==debate.comment._id"  class="replay-likes" ng-if="debate.comment.repliesTo[0]" ng-repeat="reply in debate.comment.repliesTo">
+                        <h6 ng-if="reply.anonymous=='YES'">anonymous</h6>
+                        <h6 ng-if="reply.anonymous=='NO'">{{reply.user.name}}</h6>
+                        <p>{{reply.reply}}</p>
+                         <div class="reply-reply">
+                        <span>1m</span><span class="like-padd" ng-click="addLikeToReply(reply._id,debate.comment._id)">Like</span><span class="like-padd">Reply</span><span class="like-padd"><img src="img/debate/3.png" class="w9"></span>
+                    </div>
+                    </div>
+                    <div class="right-thumb">
+                        <div class="thumb-img">
+                            <div class="w9"><img src="img/debate/thumblack.png" class="w17"></div>
                         </div>
-                        <div class="right-thumb">
-                            <div class="thumb-img"><div class="w9"><img src="img/debate/thumblack.png" class="w17"></div></div><div class="thumb-count">2</div>
-                        </div>
-                      <div class="reply-reply">
-                          <span>1m</span><span class="like-padd">Like</span><span class="like-padd">Reply</span><span class="like-padd"><img src="img/debate/3.png" class="w9"></span>
-                      </div>
-                  </div>
+                        <div class="thumb-count">{{debate.comment.likes.length}}</div>
+                    </div>
+                   
+                </div>
             </div>
         </div>
     </div>
 </div>
- 
-
-  
-  
- 

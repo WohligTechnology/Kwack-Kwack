@@ -27,9 +27,9 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         window.open = cordova.InAppBrowser.open;
     }
     $scope.reply = function (commentId) {
-        console.log("$$$$$$$$$$", commentId)
+        console.log("$$$$$$$$$**************************$", commentId)
         $scope.commId = commentId,
-            $scope.toggle = !$scope.toggle
+            $scope.toggle = true
         console.log($scope.toggle)
     }
     $scope.getOneNewsApi = function () {
@@ -85,9 +85,9 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.getOneNewsApi();
 
     $scope.saveReply = function (replyText, debateid) {
-        console.log("^^^^^^^^^^^^6", debateid)
+
         $scope.reply = {}
-        $scope.reply.commentId =   $scope.commId
+        $scope.reply.commentId = $scope.commId
         $scope.reply.reply = replyText
         $scope.reply.user = $.jStorage.get("user")._id
         console.log("reply", $scope.reply)
@@ -96,6 +96,9 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         }
         Chats.apiCallWithData("Comment/addReply", $scope.reply, function (data) {
             console.log("hellodata", data)
+            if (data.value == true) {
+                $state.reload()
+            }
 
         })
     }
@@ -164,6 +167,22 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
             }
         })
 
+    }
+     $scope.addLikeToReply = function (replyId,commentId) {
+       
+        console.log("$$$$$$$$$******commentIdcommentIdcommentIdcommentId********************$", replyId,commentId)
+       $scope.dataToSendForReply={}
+       $scope.dataToSendForReply.comm=commentId
+       $scope.dataToSendForReply.replyId=replyId
+        $scope.dataToSendForReply.userId= $.jStorage.get("user")._id
+           Chats.apiCallWithData("Comment/addLikeToReply",  $scope.dataToSendForReply, function (data1) {
+            if (data1.value == true) {
+              
+            } else {
+               
+
+            }
+        })
     }
 
 
