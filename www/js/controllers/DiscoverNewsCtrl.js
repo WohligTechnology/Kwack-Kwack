@@ -173,9 +173,11 @@
    $scope.socilaSharing=function(desciption,imageUrl,title,link){
      console.log("description",title)
      console.log("image",link)
-     
+     var message=desciption
+     var subject = title
+     var image = imageUrl
      $cordovaSocialSharing
-     .share(desciption, title, imageUrl,link) // Share via native share sheet
+     .share(message, subject, image,link) // Share via native share sheet
      .then(function (result) {
        $ionicLoading.hide();
        // Success!
