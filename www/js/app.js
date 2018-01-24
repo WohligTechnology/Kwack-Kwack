@@ -340,6 +340,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
     })
   .state('inviteFriends', {
       url: '/inviteFriends',
+        cache:false,
       templateUrl: 'templates/inviteFriends.html',
       controller: 'InviteFriendsCtrl'
     })
