@@ -39,14 +39,34 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
                 $scope.commentInfo = data1.data.comments;
                 console.log("commentinfo", $scope.commentInfo)
                 _.forEach($scope.commentInfo, function (like) {
+                    if (like.comment.user == $scope.kwackSide.userId) {
+                        $scope.kwackopt = like.comment.kwack
+                        console.log("kwackopt", $scope.kwackopt)
+                    }
                     console.log("likeforlike", like)
                     _.forEach(like.comment.likes, function (likes) {
                         if (likes.userId == $scope.kwackSide.userId) {
                             like.value = true;
+
                         } else {
                             like.value = false;
                         }
                     });
+                });
+
+                _.forEach($scope.commentInfo, function (replylike) {
+                    console.log("likeforlike", replylike)
+                    _.forEach(replylike.comment.repliesTo, function (replylikes) {
+                        console.log("replylike", replylikes)
+                        _.forEach(replylikes.likes, function (rl) {
+                            console.log("replylike1", rl)
+                            if (rl == $scope.kwackSide.userId) {
+                                replylike.replieslike = true
+                            }
+
+                        });
+                    });
+
                 });
 
                 _.forEach($scope.newsInfo.polls, function (polls) {
@@ -69,17 +89,17 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
             }
         })
     }
-     $scope.showDefaultImg=false
+    $scope.showDefaultImg = false
     $scope.userData = {}
     $scope.userData._id = $.jStorage.get("user")._id
     Chats.apiCallWithData("User/getOne", $scope.userData, function (data1) {
         if (data1.value == true) {
             $scope.currentUserInfo = data1.data
-             $scope.currentUserInfoPhoto = data1.data.photo
-             if(!$scope.currentUserInfoPhoto){
-                 $scope.showDefaultImg=true
-             }
-            console.log('after api called sucefully',   $scope.showDefaultImg)
+            $scope.currentUserInfoPhoto = data1.data.photo
+            if (!$scope.currentUserInfoPhoto) {
+                $scope.showDefaultImg = true
+            }
+            console.log('after api called sucefully', $scope.showDefaultImg)
 
         } else {
 
@@ -95,6 +115,7 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         $scope.reply.commentId = $scope.commId
         $scope.reply.reply = replyText
         $scope.reply.user = $.jStorage.get("user")._id
+        $scope.reply.kwack = $scope.kwackAns
         console.log("reply", $scope.reply)
         if ($stateParams.ann) {
             $scope.reply.anonymous = "YES";
@@ -173,18 +194,18 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         })
 
     }
-     $scope.addLikeToReply = function (replyId,commentId) {
-       
-        console.log("$$$$$$$$$******commentIdcommentIdcommentIdcommentId********************$", replyId,commentId)
-       $scope.dataToSendForReply={}
-       $scope.dataToSendForReply.comm=commentId
-       $scope.dataToSendForReply.replyId=replyId
-        $scope.dataToSendForReply.userId= $.jStorage.get("user")._id
-           Chats.apiCallWithData("Comment/addLikeToReply",  $scope.dataToSendForReply, function (data1) {
+    $scope.addLikeToReply = function (replyId, commentId) {
+
+        console.log("$$$$$$$$$******commentIdcommentIdcommentIdcommentId********************$", replyId, commentId)
+        $scope.dataToSendForReply = {}
+        $scope.dataToSendForReply.comm = commentId
+        $scope.dataToSendForReply.replyId = replyId
+        $scope.dataToSendForReply.userId = $.jStorage.get("user")._id
+        Chats.apiCallWithData("Comment/addLikeToReply", $scope.dataToSendForReply, function (data1) {
             if (data1.value == true) {
-              
+
             } else {
-               
+
 
             }
         })

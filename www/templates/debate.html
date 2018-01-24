@@ -81,7 +81,9 @@
                                     <div class="debate-user user-flex">
                                         <span ng-if="setvarann">ANONYMOUS</span>
                                         <span ng-if="!setvarann">{{currentUserInfo.name}} </span>
-                                        <img ng-src="img/debate/3.png">
+                                        <img ng-if="kwackopt=='FOR'" ng-src="img/debate/1.png">
+                                        <img ng-if="kwackopt=='AGAINST'" ng-src="img/debate/thum.png">
+                                        <img ng-if="kwackopt=='NUETRAl'" ng-src="img/debate/3.png">
                                     </div>
                                 </div>
                                 <div>
