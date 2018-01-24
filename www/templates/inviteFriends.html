@@ -35,8 +35,8 @@
                     <h3 class="user-name ">{{userInfo.name}}</h3>
                     <h5 class="designation">{{userInfo.bio}}</h5>
                   </div>
-                  <button class="button icon-left ion ion-android-add" ng-show="!follow" ng-click='follow=true; unfollow(userInfo._id)'>Follow</button>
-                  <button class="button icon-left ion ion-android-add" ng-show="follow" ng-click='follow=false; follow1(userInfo._id)'>Follow</button>
+                <button class="button icon-left ion ion-android-add" ng-show="!follow2 && !userInfo.showButton" ng-click='follow2=true; unfollow(userInfo._id)' >Follow</button>
+                <button class="button icon-left ion "  ng-show="follow2 && !userInfo.showButton" ng-click='follow2=false; follow1(userInfo._id)'>Unfollow</button>
                 </div>
               </div>
             </div>
@@ -89,23 +89,21 @@
                   <img ng-if="users.user.photo" ng-click="selectedUser(users.user._id)" ng-src="{{users.user.photo | uploadpath}}">
                   <h2 ng-click="selectedUser(users.user._id)">{{users.user.userName}}</h2>
                   <p ng-click="selectedUser(users.user._id)">{{users.user.email}}</p>
-                  <img class="followersUn" ng-show="!follow" ng-click='follow=true; unfollow(users.user._id)' src="img/inviteFriends/Unfollow.png"
-                    alt="">
-                  <img class="followersUn" ng-show="follow" ng-click='follow=false; follow1(users.user._id)' src="img/inviteFriends/follow.png"
-                    alt="">
+                    <img class="followersUn" ng-show="!users.showUnfollowbutton && !users.user.showButton" ng-click='follow(users.user._id)' src="img/inviteFriends/Unfollow.png" alt="">
+          <img class="followersUn" ng-show="users.showUnfollowbutton && !users.user.showButton" ng-click='unfollow(users.user._id)' src="img/inviteFriends/follow.png" alt="">
                 </a>
     
               </div>
             </div>
           </div>
       <div class="list listperson listdetail listmaxheight" ng-if='followersb==true &&  !countValue'>
-        <a class="item item-avatar" ng-repeat="users in people">
+        <a class="item item-avatar" ng-repeat="users in people1">
           <img ng-click="selectedUser(users._id)" ng-if="!users.photo" ng-src="img/profile/profile.png">
           <img ng-click="selectedUser(users._id)" ng-if="users.photo" src="{{users.photo | uploadpath}}">
           <h2 ng-click="selectedUser(users._id)">{{users.name}}</h2>
           <p ng-click="selectedUser(users._id)">{{users.email}}</p>
-          <img class="followersUn"  ng-click='follow(users._id)' src="img/inviteFriends/Unfollow.png" alt="">
-         <img class="followersUn" ng-click='unfollow(users._id)' src="img/inviteFriends/follow.png" alt="">
+         <img class="followersUn" ng-show="!users.showUnfollowbutton " ng-click='follow(users._id)' src="img/inviteFriends/Unfollow.png" alt="">
+          <img class="followersUn" ng-show="users.showUnfollowbutton" ng-click='unfollow(users._id)' src="img/inviteFriends/follow.png" alt="">
 
         </a>
 

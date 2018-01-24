@@ -1,4 +1,4 @@
-connector.controller('InviteFriendsCtrl', function (Chats, $scope) {
+connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state) {
   $scope.user = {}
   $scope.user.userId = $.jStorage.get('user')._id
   $scope.toggle = true
@@ -26,65 +26,112 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope) {
   }
 
   Chats.apiCallWithData("User/getAllUser", $scope.user, function (data) {
-    // console.log("Users", data.data)
-    $scope.people = data.data
+    if (data.value == true) {
+      $scope.people1 = data.data
+      $scope.LoginUserId = {}
+      $scope.LoginUserId.userId = $.jStorage.get("user")._id
+      Chats.apiCallWithData("UserFollow/getAllFollowingName", $scope.LoginUserId, function (data) {
+        if (data.value == true) {
+          $scope.followingData = data.data
+          _.forEach($scope.people1, function (peopleData) {
+            _.forEach($scope.followingData, function (followingUserData) {
+              if (peopleData._id == followingUserData.userBeenFollowed._id) {
+                peopleData.showUnfollowbutton = true
+              }
+
+
+            });
+
+          });
+          console.log("*******************************", $scope.people1)
+        } else {
+
+        }
+
+      })
+    } else {
+
+    }
+
   })
 
   $scope.goBackHandler = function () {
     window.history.back(); //This works
   };
-  $scope.unfollow = function (id) {
+  $scope.follow = function (id) {
+    $scope.follow = true
     $scope.user = {}
     $scope.user.userFollowed = $.jStorage.get('user')._id
     $scope.user.userFollwing = id
     Chats.apiCallWithData("UserFollow/addFollowerCount", $scope.user, function (data) {
       console.log("Users", data)
+      // $state.reload()
     })
   }
 
-  $scope.follow1 = function (id) {
+  $scope.unfollow = function (id) {
+    $scope.follow = false;
     console.log("hello", id)
     $scope.user = {}
     $scope.user.userFollowed = $.jStorage.get('user')._id
     $scope.user.userFollwing = id
     Chats.apiCallWithData("UserFollow/removeFollowerCount", $scope.user, function (data) {
       console.log("Users", data)
+      // $state.reload()
     })
   }
   $scope.countValue = false
-   $scope.setFollowCountValueZero=false
+  $scope.setFollowCountValueZero = false
+
+
   $scope.selectedUser = function (data) {
-    console.log("**************", data)
     $scope.countValue = true
     $scope.userData = {}
     $scope.userData.userId = data
     $scope.user = {}
     $scope.user._id = data
-    Chats.apiCallWithData("UserFollow/getAllFollowingName", $scope.userData, function (data) {
-      console.log("111111111111111111111111111111111111", data)
+    Chats.apiCallWithData("UserFollow/getAllFollowerName", $scope.userData, function (data) {
       if (data.value == true) {
+        $scope.count = {}
         $scope.count = data.data
-        console.log(" $scope.userData $scope.userData $scope.userData", $scope.count)
+        $scope.LoginUserId = {}
+        $scope.LoginUserId.userId = $.jStorage.get("user")._id
+        Chats.apiCallWithData("UserFollow/getAllFollowingName", $scope.LoginUserId, function (data) {
+          if (data.value == true) {
+            $scope.followingData = data.data
+            _.forEach($scope.count, function (peopleData) {
+              _.forEach($scope.followingData, function (followingUserData) {
+                if (peopleData.user._id == followingUserData.userBeenFollowed._id) {
+                  peopleData.showUnfollowbutton = true
+                }if(peopleData.user._id== $.jStorage.get("user")._id){
+                  peopleData.user.showButton=true
+                }
+              });
+
+            });
+            console.log(" $scope.count  $scope.count  $scope.count  $scope.count  $scope.count  $scope.count ", $scope.count)
+          } else {
+
+          }
+
+        })
       } else {
-       $scope.setFollowCountValueZero=true
+        $scope.setFollowCountValueZero = true
       }
 
     })
+
     Chats.apiCallWithData("Comment/getKwackForOneUser", $scope.userData, function (data) {
-      console.log("222222222222222222222222222222222222222", data)
       if (data.value == true) {
         $scope.totalKwacks = data.data
-        console.log(" $scope.userData $scope.userData $scope.userData", $scope.totalKwacks)
       } else {
         $scope.totalKwacks = {}
         $scope.totalKwacks.length = 0
       }
     })
     Chats.apiCallWithData("PollAnswer/getPollForOneUser", $scope.userData, function (data) {
-      console.log("333333333333333333333333333333333", data)
       if (data.value == true) {
         $scope.totalPolls = data.data
-        console.log(" $scope.userData $scope.userData $scope.userData", $scope.totalPolls)
       } else {
         $scope.totalPolls = {}
         $scope.totalPolls.length = 0
@@ -95,14 +142,18 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope) {
       if (data.value == true) {
 
         $scope.userInfo = data.data
-        console.log("*********v$scope.userInfo", $scope.userInfo)
+        if ($scope.userInfo._id == $.jStorage.get("user")._id) {
+          $scope.userInfo.showButton = true
+        }
       } else {
 
       }
     })
   }
-   $scope.backTOlist = function () {
-      $scope.countValue = false
-  console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+
+
+
+  $scope.backTOlist = function () {
+    $scope.countValue = false
   };
 })
