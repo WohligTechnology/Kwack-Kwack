@@ -35,8 +35,8 @@
                     <h3 class="user-name ">{{userInfo.name}}</h3>
                     <h5 class="designation">{{userInfo.bio}}</h5>
                   </div>
-                <button class="button icon-left ion ion-android-add" ng-show="!follow2 && !userInfo.showButton" ng-click='follow2=true; unfollow(userInfo._id)' >Follow</button>
-                <button class="button icon-left ion "  ng-show="follow2 && !userInfo.showButton" ng-click='follow2=false; follow1(userInfo._id)'>Unfollow</button>
+                <button class="button icon-left ion ion-android-add" ng-show="!follow2 && !userInfo.showButton" ng-click='follow(userInfo._id)' >Follow</button>
+                <button class="button icon-left ion "  ng-show="follow2 && !userInfo.showButton" ng-click=' unfollow(userInfo._id)'>Unfollow</button>
                 </div>
               </div>
             </div>
