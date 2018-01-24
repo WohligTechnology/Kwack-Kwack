@@ -1094,7 +1094,7 @@ $dark:                            #444 !default;
         max-height: 255px
     }
     .listmaxheight{
-        max-height: 400px
+        max-height: 430px
     }
 
     .borderF {
@@ -1585,7 +1585,13 @@ $dark:                            #444 !default;
     //     }
     // }
     .back-img {
-        position: relative;
+        // position: relative;
+        background-image: url("../img/inviteFriends/bg.jpg");
+        // width:376px;
+        // height: 130px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .profile-img {
@@ -1612,15 +1618,32 @@ $dark:                            #444 !default;
     .designation {
         color: $light;
         letter-spacing: 0.5px;
-        line-height: 4px;
+        // line-height: 4px;
         font-size: 12px;
         font-family: 'Montserrat-Regular';
     }
-
+  .over-flow{
+      overflow: hidden;
+  }
+  .mar-t25{
+      margin-top: 25px;
+      
+  }
     .follow-btn {
-        vertical-align: middle;
+        // margin-left: 8px;
+        // vertical-align: middle;
+        h3{
+            margin-bottom: 0px !important;
+        }
+        h5{
+            margin-top: 3px;
+            white-space: nowrap;
+            width: 95%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
         .button {
-            margin-top: 7px;
+            margin-bottom: 26px;
             min-height: 27px;
             line-height: 10px;
             font-size: 11px;
@@ -3261,11 +3284,11 @@ $dark:                            #444 !default;
             font-size: 15px;
         }
         .designation {
-            line-height: 2px;
+            // line-height: 2px;
             font-size: 11px;
         }
         .follow-btn .button {
-            margin-top: 5px;
+            margin-bottom: 26px;
             min-height: 21px;
             line-height: 10px;
             font-size: 9px;
@@ -3436,7 +3459,7 @@ $dark:                            #444 !default;
             font-size: 12px;
         }
         .follow-btn .button {
-            margin-top: 7px;
+            margin-bottom: 26px;
             min-height: 27px;
             line-height: 10px;
             font-size: 11px;
@@ -3495,7 +3518,7 @@ $dark:                            #444 !default;
             font-size: 12px;
         }
         .follow-btn .button {
-            margin-top: 7px;
+            margin-bottom: 26px;
             min-height: 27px;
             line-height: 10px;
             font-size: 12px;
@@ -3674,7 +3697,7 @@ $dark:                            #444 !default;
             font-size: 17px;
         }
         .designation {
-            line-height: 4px;
+            // line-height: 4px;
             font-size: 12px;
         }
         .listperson {
@@ -3688,7 +3711,7 @@ $dark:                            #444 !default;
         }
         .follow-btn {
             .button {
-                margin-top: 7px;
+                margin-bottom: 26px;
                 min-height: 27px;
                 line-height: 10px;
                 font-size: 11px;
