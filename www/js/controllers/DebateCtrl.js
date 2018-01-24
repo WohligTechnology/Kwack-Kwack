@@ -32,12 +32,14 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
             $scope.toggle = true
         console.log($scope.toggle)
     }
+
+    //getOneNewsapi
     $scope.getOneNewsApi = function () {
         Chats.apiCallWithData("NewsInfo/getOneNews", $scope.news, function (data1) {
             if (data1.value == true) {
                 $scope.newsInfo = data1.data;
                 $scope.commentInfo = data1.data.comments;
-                console.log("commentinfo", $scope.commentInfo)
+                console.log("commentinfo", $scope.newsInfo)
                 _.forEach($scope.commentInfo, function (like) {
                     if (like.comment.user == $scope.kwackSide.userId) {
                         $scope.kwackopt = like.comment.kwack
@@ -59,11 +61,14 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
                     _.forEach(replylike.comment.repliesTo, function (replylikes) {
                         console.log("replylike", replylikes)
                         _.forEach(replylikes.likes, function (rl) {
+                            _.forEach(replylikes.likes, function (rl) {
                             console.log("replylike1", rl)
                             if (rl == $scope.kwackSide.userId) {
-                                replylike.replieslike = true
+                                replylikes.replieslike = true
+                            }else{
+                                replylikes.replieslike = false
                             }
-
+                        });
                         });
                     });
 
@@ -156,6 +161,8 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
             }
         })
     }
+
+    //addLikeFuction
     $scope.addLike = function (data) {
 
         // $state.reload();
@@ -195,20 +202,36 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
 
     }
     $scope.addLikeToReply = function (replyId, commentId) {
-
+$scope.replyLiketog=!$scope.replyLiketog
         console.log("$$$$$$$$$******commentIdcommentIdcommentIdcommentId********************$", replyId, commentId)
         $scope.dataToSendForReply = {}
         $scope.dataToSendForReply.comm = commentId
         $scope.dataToSendForReply.replyId = replyId
         $scope.dataToSendForReply.userId = $.jStorage.get("user")._id
-        Chats.apiCallWithData("Comment/addLikeToReply", $scope.dataToSendForReply, function (data1) {
-            if (data1.value == true) {
-
-            } else {
-
-
-            }
-        })
+        if($scope.replyLiketog==true){
+            Chats.apiCallWithData("Comment/addLikeToReply", $scope.dataToSendForReply, function (data1) {
+                if (data1.value == true) {
+    console.log("helloliked")
+    $scope.getOneNewsApi();
+                } else {
+    
+    
+                }
+            })
+        }else{
+            Chats.apiCallWithData("Comment/removeLikeToReply", $scope.dataToSendForReply, function (data1) {
+                console.log("hellodidntliked")
+                $scope.getOneNewsApi();
+                if (data1.value == true) {
+    
+                } else {
+    
+    
+                }
+            })
+        }
+        
+       
     }
 
 
@@ -234,4 +257,23 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
 
     ]
 
+//socislSharing
+    $scope.socilaSharing=function(desciption,imageUrl,title,link){
+        console.log("description",title)
+        console.log("image",link)
+        
+        $cordovaSocialSharing
+        .share(desciption, title, imageUrl,link) // Share via native share sheet
+        .then(function (result) {
+          $ionicLoading.hide();
+          // Success!
+          console.log("Success");
+         
+          console.log(result);
+          console.log(image);
+        }, function (err) {
+          // An error occured. Show a message to the user
+          console.log("error : " + err);
+        });
+      }
 })

@@ -41,19 +41,21 @@
                             <h6 ng-if="reply.anonymous=='YES'">anonymous</h6>
                             <h6 ng-if="reply.anonymous=='NO'">{{reply.user.name}}</h6>
                             <p>{{reply.reply}}</p>
-                            
+                            <div class="right-thumb">
+                                <div class="thumb-img">
+                                    <div class="w9"><img src="img/debate/thumblack.png" class="w17"></div>
+                                </div>
+                                <div class="thumb-count">{{reply.likes.length}}</div>
+                            </div>
                         </div>
                         <div class="reply-reply"  ng-show="commId==debate.comment._id">
-                            <span>1m</span><span class="like-padd" ng-class="{'yellow': debate.value==true}" ng-click="addLikeToReply(reply._id,debate.comment._id)">Like</span><span class="like-padd">Reply</span><span class="like-padd"><img src="img/debate/3.png" class="w9"></span>
+                            <span>1m</span><span class="like-padd" ng-class="{'yellow': reply.replieslike==true}" ng-click="addLikeToReply(reply._id,debate.comment._id)">Like</span><span class="like-padd">Reply</span><span class="like-padd"><img src="img/debate/3.png" class="w9"></span>
                         </div>
+
+                       
                     </div>
                    
-                    <div class="right-thumb">
-                        <div class="thumb-img">
-                            <div class="w9"><img src="img/debate/thumblack.png" class="w17"></div>
-                        </div>
-                        <div class="thumb-count">{{debate.comment.likes.length}}</div>
-                    </div>
+                    
                    
                 </div>
             </div>
