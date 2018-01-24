@@ -10641,11 +10641,16 @@ button.btn-yellow.button[disabled] {
   font-family: 'Montserrat-Light'; }
 
 .listperson {
-  top: 88px;
+  top: 0px;
   overflow-y: scroll;
-  max-height: 255px;
   width: 100%;
   margin-bottom: 60px !important; }
+
+.listminheight {
+  max-height: 255px; }
+
+.listmaxheight {
+  max-height: 400px; }
 
 .borderF .cell-follower:after {
   content: "";
@@ -11831,6 +11836,11 @@ button.btn-yellow.button[disabled] {
   justify-content: flex-end;
   align-items: center; }
 
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 .pollingCounts {
   font-size: 8px;
   padding-top: 6px;
@@ -12324,7 +12334,7 @@ button.btn-yellow.button[disabled] {
   .r-border:after {
     height: 55px; }
   .listperson {
-    top: 70px; }
+    top: 0px; }
   .profile-img {
     width: 75px;
     height: 75px; }
@@ -12565,7 +12575,7 @@ button.btn-yellow.button[disabled] {
     line-height: 4px;
     font-size: 12px; }
   .listperson {
-    top: 88px; }
+    top: 0px; }
   .r-border:after {
     height: 63px; }
   .designation {
