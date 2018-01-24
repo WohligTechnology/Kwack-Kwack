@@ -88,12 +88,11 @@
                         <div class="w56"><img src="img/social/facebook.png" class="w100"></div>
                     </div>
                     <div class="display-inline float-right explore-icon text-center ">
-                        <label class="discoverCardStrip"> <img class="" src="img/explore/5.png"><span class=" alignM"> 20</span></label>
-                            <label class="discoverCardStrip"><img class="img-responsive" src="img/explore/6.png">
-                              <span class=" alignM">  42</span></label>
-                            <label> <img src="img/explore/7.png">
-                            <span class="colorw alignM">20</span>
-                    </label>
+                        <label class="discoverCardStrip"  ng-click="nextPage(social._id,'poll')"> <img ng-if="!social.temp"  src="img/explore/5.png"> <img ng-if="social.temp==true" src="img/filter/2.png"><span class="alignM"> {{social.polls.length}}</span></label>
+                        <label class="discoverCardStrip"  ng-click="nextPage(social._id,'kwack')"><a><img ng-if="!social.kwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="social.kwack==true" class="img-responsive" src="img/discover/shieldclick.png"></a>
+                            <span class="alignM">{{social.comments.length}}</span></label>
+                            <label ng-click="socilaSharing(social.description,social.imageUrl,social.title,social.url)"><img src="img/explore/7.png">
+                                <span class="colorw alignM">{{social.share}}</span></label>
                     </div>
                 </div>
             </div>

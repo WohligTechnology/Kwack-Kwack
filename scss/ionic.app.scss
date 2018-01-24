@@ -1084,11 +1084,17 @@ $dark:                            #444 !default;
     }
 
     .listperson {
-        top: 88px;
+        top: 0px;
         overflow-y: scroll;
-        max-height: 255px;
+        // max-height: 255px;
         width: 100%;
         margin-bottom: 60px!important;
+    }
+    .listminheight{
+        max-height: 255px
+    }
+    .listmaxheight{
+        max-height: 400px
     }
 
     .borderF {
@@ -2623,6 +2629,13 @@ $dark:                            #444 !default;
         justify-content: flex-end;
         align-items: center;
     } //polling css start
+    
+    .text-overflow{
+        white-space: nowrap; 
+        // width: 22em; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
     .pollingCounts {
         font-size: 8px;
         padding-top: 6px;
@@ -3269,7 +3282,7 @@ $dark:                            #444 !default;
             height: 55px;
         }
         .listperson {
-            top: 70px;
+            top: 0px;
         }
         .profile-img {
             width: 75px;
@@ -3665,7 +3678,7 @@ $dark:                            #444 !default;
             font-size: 12px;
         }
         .listperson {
-            top: 88px;
+            top: 0px;
         }
         .r-border:after {
             height: 63px;
