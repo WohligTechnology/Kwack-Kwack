@@ -6,48 +6,9 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   $scope.allInterest={}
   $scope.filterData={}
   $scope.addInterest.userId = $.jStorage.get('user')._id
-  $scope.flush=false
+  $scope.flush=true
   //start of pagination 
-  if($scope.flush==false){
-    console.log("helloflush")
-    $scope.doRefresh = function (val) {
-      $scope.news = [],
-        $scope.pagination = {
-          shouldLoadMore: true,
-          currentPage: 0,
-        };
-  
-      if (!val) {
-        $scope.loadMore();
-      }
-    };
-    $scope.doRefresh(true);
-  
-  
-    //paginationload10
-    $scope.loadMore = function () {
-      $ionicScrollDelegate.resize()
-      $scope.pagination.shouldLoadMore = false;
-      $scope.pagination.currentPage++;
-      $scope.pagination1 = {
-        "page": $scope.pagination.currentPage,
-      }
-      Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
-  
-        $scope.news = _.concat($scope.news, data.data.results);
-        // console.log("changes",$scope.news)
-        _.each($scope.news, function (value) {
-          value.year = new Date(value.createdAt).getFullYear();
-        })
-        $scope.dynamicYear = _.uniqBy($scope.news, 'year');
-        // console.log("explorepagination", $scope.dynamicYear)
-        if (data.data.results.length == 10) {
-          $scope.pagination.shouldLoadMore = true;
-        }
-        $scope.paginationCode();
-      });
-    };
-  }
+
   
   $scope.Year=moment().format('YYYY')
   $scope.Month=moment().format('MMMM')
@@ -64,8 +25,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
       var date = new Date() 
       if(filterdata.Year && filterdata.Month){
         $scope.news=[]
-        $scope.pagination.shouldLoadMore = false;
-        $scope.flush=true
+        // $scope.pagination.shouldLoadMore = false;
         y = $scope.monthYear.Year.year
         m = $scope.monthYear.Month.order
         var firstDay = new Date(y, m, 1);
@@ -77,11 +37,48 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
         $scope.filterData.interest =  $scope.interestarr
         $scope.filterData.userId = $.jStorage.get('user')._id
         console.log("helloapi")
-        Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
-          console.log("helloapi")
-          console.log("filterfingercross",data)
-          $scope.news=data.data
-        }) 
+
+       
+          console.log("helloflush")
+          $scope.doRefresh = function (val) {
+            $scope.news = [],
+              $scope.pagination = {
+                shouldLoadMore: true,
+                currentPage: 0,
+              };
+        
+            if (!val) {
+              $scope.loadMore();
+            }
+          };
+          $scope.doRefresh(true);
+        
+        
+          //paginationload10
+          $scope.loadMore = function () {
+            $ionicScrollDelegate.resize()
+            $scope.pagination.shouldLoadMore = false;
+            $scope.pagination.currentPage++;
+            $scope.pagination1 = {
+              "page": $scope.pagination.currentPage,
+            }
+            $scope.filterData.page = $scope.pagination.currentPage
+            Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
+        
+              $scope.news = _.concat($scope.news, data.data.results);
+              // console.log("changes",$scope.news)
+              _.each($scope.news, function (value) {
+                value.year = new Date(value.createdAt).getFullYear();
+              })
+              $scope.dynamicYear = _.uniqBy($scope.news, 'year');
+              // console.log("explorepagination", $scope.dynamicYear)
+              if (data.data.results.length == 10) {
+                $scope.pagination.shouldLoadMore = true;
+              }
+              $scope.paginationCode();
+            });
+          };
+        
       }
   
     }
@@ -123,7 +120,9 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     $scope.modal = modal;
   });
   $scope.openModal = function () {
+    $scope.flush=false
     $scope.modal.show();
+    
   }
 
   $scope.closeModal = function () {
@@ -318,7 +317,7 @@ Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
   
   console.log("data interest", $scope.getInterest)
 })
-  $scope.flush=false;
+  $scope.flush=true;
  console.log('heyya',$scope.flush)
  data.Month=""
  data.Year=""
