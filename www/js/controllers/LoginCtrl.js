@@ -18,24 +18,24 @@ connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams,
     $scope.hideToast = function(){
       ionicToast.hide();
     };
-    // $scope.navigation = Chats.getNavigation();
-    // $scope.currentHost = window.location.origin;
-    // console.log($state.current.name);
-    // console.log('Inside controller', $stateParams.id);
-    // if ($stateParams.id) {
-    //   if ($stateParams.id === "AccessNotAvailable") {
-    //     toastr.error("You do not have access for the Backend.");
-    //   } else {
-    //     console.log($stateParams.id);
-    //     Chats.parseAccessToken($stateParams.id, function () {
-    //       Chats.profile(function () {
-    //         $state.go("home");
-    //       }, function () {
-    //         $state.go("login");
-    //       });
-    //     });
-    //   }
-    // } else {
-    //   Chats.removeAccessToken();
-    // }
+    $scope.navigation = Chats.getNavigation();
+    $scope.currentHost = window.location.origin;
+    console.log($state.current.name);
+    console.log('Inside controller', $stateParams.id);
+    if ($stateParams.id) {
+      if ($stateParams.id === "AccessNotAvailable") {
+        toastr.error("You do not have access for the Backend.");
+      } else {
+        console.log($stateParams.id);
+        Chats.parseAccessToken($stateParams.id, function () {
+          Chats.profile(function () {
+            $state.go("home");
+          }, function () {
+            $state.go("login");
+          });
+        });
+      }
+    } else {
+      Chats.removeAccessToken();
+    }
 })
