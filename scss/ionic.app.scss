@@ -2390,6 +2390,7 @@ $dark:                            #444 !default;
     .font-14 {
         font-size: 16px;
         padding: 0px 8px;
+        
     }
 
     .font-17 {
@@ -2398,10 +2399,10 @@ $dark:                            #444 !default;
     }
 
     .userNamee {
-        // margin: auto 15px !important;
-        @include margin(auto 15px auto 15px);
-        // padding: 25px 0px !important;
-        @include padding(25px 0px 25px 0px);
+        margin: auto 15px !important;
+        // @include margin(auto 15px auto 15px);
+        padding: 25px 0px !important;
+        // @include padding(25px 0px 25px 0px);
         height: 70px;
         width: auto;
         label {
