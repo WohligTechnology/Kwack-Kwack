@@ -2400,7 +2400,8 @@ $dark:                            #444 !default;
     .userNamee {
         // margin: auto 15px !important;
         @include margin(auto 15px auto 15px);
-        padding: 25px 0px !important;
+        // padding: 25px 0px !important;
+        @include padding(25px 0px 25px 0px);
         height: 70px;
         width: auto;
         label {
