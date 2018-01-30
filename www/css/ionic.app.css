@@ -11375,7 +11375,7 @@ button.btn-yellow.button[disabled] {
   .listHead h2 {
     white-space: normal;
     font-size: 0.9em !important;
-    font-family: "Montserrat-Medium" !important;
+    font-family: 'Montserrat-Medium' !important;
     margin: 0px !important; }
   .listHead p {
     font-family: 'Montserrat-Regular';
@@ -11698,7 +11698,7 @@ button.btn-yellow.button[disabled] {
     font-size: 10px; }
   .replay-likes p {
     font-size: 10px !important;
-    font-family: "Montserrat-Light" !important;
+    font-family: 'Montserrat-Light' !important;
     border-bottom: none !important;
     padding: 5px 0px 1px 1px !important;
     line-height: 10px !important; }
@@ -11988,20 +11988,26 @@ button.btn-yellow.button[disabled] {
   border-radius: 2px;
   box-shadow: 1px 1px 36px 1px #777474; }
 
+.explore-more .card {
+  box-shadow: none !important; }
+
 .explore-more .news-content {
   margin-bottom: 0px; }
 
 .explore-more .list:last-child.card {
   margin-bottom: 0px; }
 
-.explore-more .card {
-  box-shadow: none !important; }
-
 .explore-more .news-content .card {
   box-shadow: none !important; }
 
+.related-card .card {
+  box-shadow: none !important; }
+
+.related-card .item {
+  background-color: transparent; }
+
 .related-stories {
-  font-size: 15px;
+  font-size: 15px !important;
   font-family: 'Montserrat-Medium';
   color: #ffc943; }
 

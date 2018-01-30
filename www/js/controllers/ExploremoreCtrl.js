@@ -14,7 +14,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     $scope.dataToSend.newsId = $stateParams.newsid
     $scope.dataToSend.userId = $.jStorage.get('user')._id
    
-
+  
     $scope.inApp = function (link) {
         console.log(link)
         var options = "location=no,toolbar=yes";
