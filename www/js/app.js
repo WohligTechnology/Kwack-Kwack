@@ -295,6 +295,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('login', {
         url: '/login',
+        cache: false,
         templateUrl: 'templates/login.html',
         controller: 'LoginCtrl'
 
