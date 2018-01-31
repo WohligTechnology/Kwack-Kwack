@@ -73,6 +73,16 @@ $scope.viewall = function(){
           
          })
      }
+ 
+
+
+
+
+
+
+
+
+
 
 
 

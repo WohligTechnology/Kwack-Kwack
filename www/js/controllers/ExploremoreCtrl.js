@@ -154,7 +154,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
                 newsid: data
               })
             } else {
-              $state.go("tab.startPolling", {
+              $state.go("tab.startPollingex", {
                 newsid: data
     
               })
@@ -169,7 +169,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
                 newsid: data
               })
             } else {
-              $state.go("tab.trailer", {
+              $state.go("tab.trailerex", {
                 newsid: data
               })
             }

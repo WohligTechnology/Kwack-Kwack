@@ -1,15 +1,32 @@
-connector.controller('AccountInsieCtrl', function ($scope,Chats, $state) {
+connector.controller('AccountInsieCtrl', function ($scope, Chats, $state, $ionicPopup, $timeout) {
     $scope.deleteThisUser = function () {
         $scope.datatoDelete = {}
         $scope.datatoDelete.userId = $.jStorage.get('user');
-        
-        console.log("*********************I", $scope.datatoDelete)
-        Chats.apiCallWithData("User/setDeactiveUser",$scope.datatoDelete, function (data) {
-            if(data.value==true){
-                $state.go("signUp")
-            }
-            console.log("$$$$$$$$$$$$$$$$$$$$$$$",data)
-        })
+        Chats.apiCallWithData("User/setDeactiveUser", $scope.datatoDelete, function (data) {
+            if (data.value == true) {
+                var confirmPopup = $ionicPopup.confirm({
+                    // title: 'Consume Ice Cream',
+                    template: 'Are you sure you want to delete this account?'
+                });
+                confirmPopup.then(function (res) {
+                    if (res) {
+                        $state.go("signUp")
+                    } else {
 
+                    }
+                });
+            }
+
+        })
     };
+
+
+
+
+
+
+
+
+
+
 })

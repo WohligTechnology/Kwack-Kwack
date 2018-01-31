@@ -32,7 +32,7 @@ $dark:                            #444 !default;
     $light:#fff !default; // The path for our ionicons font files, relative to the built CSS in www/css
     $ionicons-font-path: "../lib/ionic/fonts" !default; // Include all of Ionic
     @import "www/lib/ionic/scss/ionic"; // $font-family-sans-serif: "Montserrat",
-    // "AvenirNext-Bold",
+    @import "www/lib/bourbon/core/_bourbon.scss"; // "AvenirNext-Bold",
     // "Montserrat-Bold",
     // "Montserrat-Regular",
     // "Montserrat-SemiBold",
@@ -162,10 +162,10 @@ $dark:                            #444 !default;
     }
 
     .skipButton {
-        position: absolute;
-        top: 94%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include position(absolute,
+        94% null null 50%);
+        @include translate(-50%,
+        -50%);
         border-top: 2px solid $darkGray !important;
         border-bottom: none;
         border-right: none;
@@ -307,10 +307,10 @@ $dark:                            #444 !default;
     .yoursideright {
         border-right: 1px solid $lightGray1;
         height: 35px;
-        position: absolute;
-        right: 0px;
-        top: 33%;
-        transform: translate(-50%, -50%);
+        @include position(absolute,
+        33% 0px null null);
+        @include translate(-50%,
+        -50%);
     }
 
     .yourside-labelsel {
@@ -867,19 +867,17 @@ $dark:                            #444 !default;
     // }
     .title-explore:before {
         content: "";
-        position: absolute;
         width: 97px;
-        top: 50%;
-        left: 5%;
+        @include position(absolute,
+        50% null null 5%);
         border-bottom: 1px solid $black;
     }
 
     .title-explore:after {
         content: "";
         width: 97px;
-        position: absolute;
-        top: 50%;
-        right: 5%;
+        @include position(absolute,
+        50% 5% null null);
         border-bottom: 1px solid $black;
     }
 
@@ -988,8 +986,8 @@ $dark:                            #444 !default;
     //start of invite friends
     .followers {
         width: 100%;
-        position: absolute;
-        top: 90%;
+        @include position(absolute,
+        90% null null null);
         box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.47);
         .dis-table {
             background-color: $light;
@@ -1025,9 +1023,8 @@ $dark:                            #444 !default;
     .r-border:after {
         content: "";
         height: 68px;
-        position: absolute;
-        top: 17%;
-        right: 0%;
+        @include position(absolute,
+        17% 0% null null);
         border-right: 2px solid $lightGray;
     }
 
@@ -1048,8 +1045,8 @@ $dark:                            #444 !default;
         font-family: 'Montserrat-Regular';
         background: $lightGray2;
         border-radius: 25px;
-        position: absolute;
-        left: 5%;
+        @include position(absolute,
+        null null null 5%);
     }
 
     .toggleContacts {
@@ -1061,8 +1058,8 @@ $dark:                            #444 !default;
         font-family: 'Montserrat-Regular';
         background: $lightGray2;
         border-radius: 25px;
-        position: absolute;
-        right: 4%;
+        @include position(absolute,
+        null 4% null null);
     }
 
     .select {
@@ -1101,41 +1098,37 @@ $dark:                            #444 !default;
     .borderF {
         .cell-follower:after {
             content: "";
-            position: absolute;
             width: 75px;
             border-bottom: 2px solid #f8b503;
-            bottom: -1%;
-            left: 17%;
+            @include position(absolute,
+            null null -1% 17%);
         }
     }
 
     .borderK {
         .cell-kwacks:after {
             content: "";
-            position: absolute;
             width: 75px;
             border-bottom: 2px solid #f8b503;
-            bottom: -1%;
-            left: 17%;
+            @include position(absolute,
+            null null -1% 17%);
         }
     }
 
     .borderp {
         .cell-polls:after {
             content: "";
-            position: absolute;
             width: 75px;
             border-bottom: 2px solid #f8b503;
-            bottom: -1%;
-            left: 17%;
+            @include position(absolute,
+            null null -1% 17%);
         }
     }
 
     .followersUn {
-        position: absolute;
         width: 12%;
-        top: 35%;
-        right: 5%;
+        @include position(absolute,
+        35% 5% null null);
     } //common classes and ionic classes start
     .bar-stable .button.button-clear {
         border-color: transparent;
@@ -1367,8 +1360,9 @@ $dark:                            #444 !default;
 
     .sliderdesc {
         color: $light;
-        position: absolute; // transform: translate(-50%, -50%);
-        bottom: 21%; // left: 50%;
+        @include position(absolute,
+        null null 21% null); // transform: translate(-50%, -50%);
+        // left: 50%;
         // width: 100%;
         /* display: block; */
         font-size: 15px;
@@ -1377,9 +1371,8 @@ $dark:                            #444 !default;
     }
 
     .slidertime {
-        position: absolute;
-        bottom: 30%;
-        left: 0%;
+        @include position(absolute,
+        null null 30% 0%);
         padding-left: 10px;
         width: 100%;
         label {
@@ -1397,6 +1390,8 @@ $dark:                            #444 !default;
         position: absolute;
         bottom: 18%;
         right: 2%;
+        @include position(absolute,
+        null 2% 18% null);
     }
 
     .stripDiv {
@@ -1597,8 +1592,7 @@ $dark:                            #444 !default;
     }
 
     .profile-img {
-        width: 85px;
-        height: 85px;
+        @include size(85px);
         border-radius: 50%;
         overflow: hidden;
     }
@@ -1712,10 +1706,9 @@ $dark:                            #444 !default;
     }
 
     .plusposition {
-        position: absolute;
-        top: 24%;
         /* transform: translate(-20%,-50%); */
-        right: 13px;
+        @include position(absolute,
+        24% 13px null null);
     }
 
     .locationtHead {
@@ -1756,8 +1749,8 @@ $dark:                            #444 !default;
         letter-spacing: 0.5px;
         background: $lightGray2;
         border-radius: 25px;
-        position: absolute;
-        right: 4%;
+        @include position(absolute,
+        null 4% null null);
     }
 
     .select {
@@ -1873,10 +1866,10 @@ $dark:                            #444 !default;
     .tab-header {
         position: relative;
         span {
-            position: absolute;
-            top: 88%;
-            transform: translate(-50%, -50%);
-            left: 50%;
+            @include translate(-50%,
+            -50%);
+            @include position(absolute,
+            88% null null 50%);
             font-size: 11px;
         }
         a {
@@ -2000,8 +1993,7 @@ $dark:                            #444 !default;
     }
 
     .profile-invtimg {
-        width: 85px;
-        height: 85px;
+        @include size(85px);
         overflow: hidden;
     }
 
@@ -2045,10 +2037,9 @@ $dark:                            #444 !default;
     } //invitecssend
     //editcssstart
     .editBtn {
-        position: absolute;
-        right: 12%;
-        top: 7%;
         width: 4%;
+        @include position(absolute,
+        7% 12% null null);
         img {
             width: 100%;
         }
@@ -2172,7 +2163,8 @@ $dark:                            #444 !default;
     }
 
     .userName {
-        margin: auto 15px !important;
+        // margin: auto 15px !important;
+        @include margin(auto 15px auto 15px);
         padding: 25px 0px !important;
         border-bottom: 1px solid $lightGray;
         height: 80px;
@@ -2317,7 +2309,6 @@ $dark:                            #444 !default;
     .notification {
         .toggle input:checked+.track {
             border-color: $black;
-            
             background-color: $black;
         }
     }
@@ -2398,9 +2389,8 @@ $dark:                            #444 !default;
     }
 
     .userNamee {
-        // margin: auto 15px !important;
-        @include margin(auto 15px auto 15px);
-        padding: 25px 0px !important;
+        margin: auto 15px !important; // @include margin(auto 15px auto 15px);
+        padding: 25px 0px !important; // @include padding(25px 0px 25px 0px);
         height: 70px;
         width: auto;
         label {
@@ -2414,8 +2404,7 @@ $dark:                            #444 !default;
             height: 23px;
         }
         .toggle .handle {
-            width: 12px;
-            height: 12px;
+            @include size(12px);
             top: 10px;
             left: 10px;
         }
@@ -2493,10 +2482,10 @@ $dark:                            #444 !default;
         display: table;
         padding: 0px 4px;
         border-radius: 6px;
-        position: absolute;
-        right: 17px;
         margin-top: -6px;
         background-color: $light;
+        @include position(absolute,
+        null 17px null null);
     }
 
     .w9 {
@@ -2520,12 +2509,10 @@ $dark:                            #444 !default;
     }
 
     .debateprofile {
-        width: 65px;
-        height: 65px;
-        position: absolute;
-        left: 23px;
+        @include size(65px);
+        @include position(absolute,
+        -7px null null 23px);
         z-index: 3;
-        top: -7px;
         overflow: hidden;
         border-radius: 50%;
         box-shadow: 1px 10px 35px 0px $lightGray1;
@@ -2552,20 +2539,18 @@ $dark:                            #444 !default;
 
     .title-comments:before {
         content: "";
-        position: absolute;
-        border-bottom: 2px solid $lightGray2;
-        top: 157px;
         width: 104px;
-        left: 17px;
+        border-bottom: 2px solid $lightGray2;
+        @include position(absolute,
+        157px null null 17px);
     }
 
     .title-comments:after {
         content: "";
-        position: absolute;
-        border-bottom: 2px solid $lightGray2;
-        top: 157px;
         width: 104px;
-        right: 17px;
+        border-bottom: 2px solid $lightGray2;
+        @include position(absolute,
+        157px null null 17px);
     }
 
     .debatetrailerName {
@@ -2658,9 +2643,7 @@ $dark:                            #444 !default;
         align-items: center;
     } //polling css start
     .text-overflow {
-        white-space: nowrap; // width: 22em; 
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @include ellipsis;
     }
 
     .pollingCounts {
@@ -2676,21 +2659,20 @@ $dark:                            #444 !default;
 
     .pollRight {
         width: 30%;
-        position: absolute;
-        top: 18%;
-        left: 30%;
+        @include position(absolute,
+        18% null null 30%);
+        @include translate(-50%,
+        -50%);
         z-index: 1;
-        transform: translate(-50%, -50%);
         img {
             width: 100%;
         }
     }
 
     .pollUpDown {
-        position: absolute;
         width: 8%;
-        right: 6%;
-        top: 4%;
+        @include position(absolute,
+        4% 6% null null);
         img {
             width: 100%;
         }
@@ -2698,9 +2680,8 @@ $dark:                            #444 !default;
 
     .pollWrong {
         width: 30%;
-        position: absolute;
-        top: 18%;
-        left: 78%;
+        @include position(absolute,
+        18% null null 78%);
         z-index: 1;
         transform: translate(-50%, -50%);
         img {
@@ -3081,9 +3062,8 @@ $dark:                            #444 !default;
             font-family: 'Montserrat-Regular' !important;
         }
         i {
-            position: absolute;
-            top: 8px;
-            left: 50px;
+            @include position(absolute,
+            8px null null 50px);
             font-size: 20px;
             color: $lightGray;
         }
@@ -3106,9 +3086,8 @@ $dark:                            #444 !default;
             }
         }
         i {
-            position: absolute;
-            left: 0;
-            top: 25px;
+            @include position(absolute,
+            25px null null 0px);
             font-size: 20px;
             color: $yellow;
         }
@@ -3287,7 +3266,8 @@ $dark:                            #444 !default;
         }
         .followers .dis-cell {
             padding: 14px;
-            position: relative;
+            @include position(relative,
+            null null null null);
         }
         .followers .dis-cell h3 {
             font-size: 18px;
@@ -3323,8 +3303,7 @@ $dark:                            #444 !default;
             top: 0px;
         }
         .profile-img {
-            width: 75px;
-            height: 75px;
+            @include size(75px);
         }
         .btn-yellow {
             padding: 6px 56px;
@@ -3458,9 +3437,8 @@ $dark:                            #444 !default;
             padding-left: 0px;
         }
         .back-img-title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            @include position(absolute,
+            null null 0px 0px);
         }
         .profile-padd {
             padding: 17px 20px;
@@ -3510,9 +3488,8 @@ $dark:                            #444 !default;
             padding-left: 8px;
         }
         .back-img-title {
-            position: absolute;
-            top: 0;
-            left: 0;
+            @include position(absolute,
+            0px null null 0px);
         }
         .listHead {
             padding-top: 0px !important;
@@ -3577,6 +3554,8 @@ $dark:                            #444 !default;
             position: absolute;
             top: 0;
             left: 0;
+            @include position(absolute,
+            0px null null 0px);
         }
         .listHead {
             padding-top: 0px !important;
@@ -3705,8 +3684,7 @@ $dark:                            #444 !default;
             font-size: 12px;
         }
         .profile-img {
-            width: 85px;
-            height: 85px;
+            @include size(85px);
         }
         .user-name {
             font-size: 17px;
@@ -3898,9 +3876,8 @@ $dark:                            #444 !default;
             padding-left: 8px;
         }
         .back-img-title {
-            position: absolute;
-            top: 0;
-            left: 0;
+            @include position(absolute,
+            0px null null 0px);
         }
         .social-icon li {
             width: 20% !important;
