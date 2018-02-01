@@ -49,8 +49,6 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
       })
       $scope.getAlpha = getAlphaFunc();
      }else if($scope.allpeople=='contact'){
-       console.log("he;llo0contacts")
-       $scope.getAllContacts();
       $scope.addContact = function() {
         $cordovaContacts.save($scope.contactForm).then(function(result) {
           // Contact saved

@@ -21,6 +21,7 @@
                         <span></span>
                          <input type="text" class="border-bot" ng-model="data.email" name="email" placeholder="Email id" required>
                          <span class="error-msg" ng-show="formName.email.$touched && formName.email.$invalid">Email is required</span>
+                         <span class="error-msg" ng-if="setEmailMsg">email already exist.</span>
                      </label>
                         <label class="item item-input item-floating-label">
                         <span></span>
