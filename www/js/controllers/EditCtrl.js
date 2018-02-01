@@ -108,7 +108,7 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
             })
     };
 
-       //all fllowers
+       //all fllowers kwack polls
 
 
       Chats.apiCallWithData("UserFollow/getAllFollowerName", $scope.userDataFollow, function (data) {
@@ -122,14 +122,27 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
 
 
   Chats.apiCallWithData("Comment/getKwackForOneUser", $scope.userDataFollow, function (data) {
-    console.log("%%%%%%%%" ,data)
+  
     if (data.value == true) {
      $scope.setKwackCountValueZero=data.data.length
-     console.log("insideifkwack", $scope.setKwackCountValueZero)
+    
    } else {
     $scope.setKwackCountValueZero = "0"
-    console.log("insideelsekwack", $scope.setKwackCountValueZero)
+   
  }
 })
+
+
+Chats.apiCallWithData("PollAnswer/getPollForOneUser", $scope.userDataFollow, function (data) {
+  
+    if (data.value == true) {
+     $scope.setPollCountValueZero=data.data.length
+    
+   } else {
+    $scope.setPollCountValueZero = "0"
+   
+ }
+})
+
     
 })

@@ -622,6 +622,7 @@ $dark:                            #444 !default;
     }
 
     .select-month {
+        width: 132px;
         padding: 8px 32px; // margin: 5px 0px 5px 35px;
         background-color: $black;
         color: $light;
@@ -2511,7 +2512,7 @@ $dark:                            #444 !default;
     .debateprofile {
         @include size(65px);
         @include position(absolute,
-        -7px null null 23px);
+        -5px null null 12px);
         z-index: 3;
         overflow: hidden;
         border-radius: 50%;
@@ -2727,6 +2728,10 @@ $dark:                            #444 !default;
                 color: $lightGray !important;
             }
         }
+        .item-input-wrapper {
+            @include border-bottom-radius(4px);
+            @include border-right-radius(0px); // border-radius: 0px;
+        }
     }
 
     .discoverHead {
@@ -2806,6 +2811,13 @@ $dark:                            #444 !default;
         margin-top: -17px;
         border-radius: 2px;
         box-shadow: 1px 1px 36px 1px #777474;
+    }
+
+    .cross-search {
+        background: #eee;
+        margin-top: -1px;
+        padding: 5px 10px 3px 2px;
+        @include border-right-radius(4px);
     } //css for discoverFull end
     //start of explore more
     .explore-more {
@@ -3031,39 +3043,42 @@ $dark:                            #444 !default;
         }
     }
 
-    .contactHeader{
+    .contactHeader {
         top: 220px;
     }
-    
-    .alpha_sidebar{
+
+    .alpha_sidebar {
         position: absolute;
         top: 213px;
-        right: 	10px;
+        right: 10px;
         z-index: 100000
     }
-    .alpha_sidebar li{
+
+    .alpha_sidebar li {
         color: black;
         margin-bottom: -4.6px;
         cursor: pointer;
     }
-    .alpha_list{
+
+    .alpha_list {
         padding-right: 22px;
     }
-   .all-friends-btn{
-       min-height: 25px !important;
-    padding: 0px 17px;
-    font-size: 12px;
-    color: $darkgray3;
-    background-color:none!important;
-    border:none;
-    background-color: transparent!important;
-    font-family: 'Montserrat-Medium';
-   
-   }
-   .bor-bot{
-       border-bottom: 2px solid $yellow !important;
-   }
-   
+
+    .all-friends-btn {
+        min-height: 25px !important;
+        padding: 0px 17px;
+        font-size: 12px;
+        color: $darkgray3;
+        background-color: none !important;
+        border: none;
+        background-color: transparent !important;
+        font-family: 'Montserrat-Medium';
+    }
+
+    .bor-bot {
+        border-bottom: 2px solid $yellow !important;
+    }
+
     .searchby-name {
         margin-top: 18px;
         input {
@@ -3086,10 +3101,11 @@ $dark:                            #444 !default;
             font-size: 20px;
             color: $lightGray;
         }
-    } 
-    .content-scroll{
+    }
+
+    .content-scroll {
         // height: 415px;
-    overflow: scroll;
+        overflow: scroll;
     }
 
     .list-mar {
