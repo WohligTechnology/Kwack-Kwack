@@ -1,22 +1,21 @@
 connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast) {
     console.log("inside sign up")
     $scope.showMassage = false
+     $scope.setEmailMsg = false
     $scope.saveUser = function (info) {
         console.log("inside save user function", info)
         if (info.password == info.forgotPassword) {
-            console.log("inside if")
-            Chats.apiCallWithData("User/save", info, function (data) {
+            console.log("inside if", info)
+            Chats.apiCallWithData("User/saveUser", info, function (data) {
                 console.log("data is", data)
                 if (data.value == true) {
-                    Chats.apiCallWithData("User/sendOtp", info, function (data) {
-
-                    })
                     $scope.data = data;
                     $.jStorage.set("user", $scope.data.data);
-                    $state.go("otp")
+                    $state.go("mobile")
                 } else {
-                    console.log("invalid email")
-                    ionicToast.show('Enter valid Details', 'top', false, 2500);
+                    if (data.error == "emailExist") {
+                        $scope.setEmailMsg = true
+                    } 
                 }
             })
         } else {

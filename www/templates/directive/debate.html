@@ -1,8 +1,8 @@
 <div class="debate-card relative">
-    <div class="debateprofile" ng-if="debate.comment.anonymous=='YES' && !debate.comment.user.photo">
+     <div class="debateprofile" ng-if=" !debate.comment.user.photo || debate.comment.anonymous=='YES'">
         <img ng-src="img/profile/profile.png" alt="profile-img" class="profile-w">
     </div>
-    <div class="debateprofile" ng-if="debate.comment.anonymous=='NO' && !showDefaultImg">
+    <div class="debateprofile" ng-if=" debate.comment.user.photo && debate.comment.anonymous=='NO' ">
         <img ng-src="{{debate.comment.user.photo | uploadpath}}" alt="profile-img" class="profile-w">
     </div>
     <div class="list card">

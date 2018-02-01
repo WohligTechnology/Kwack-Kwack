@@ -1,4 +1,5 @@
 <ion-view title="otp">
+      <form name="formName">
     <ion-content class="bg-color no-top">
         <div class="otp locationMargin">
             <div class="w25 mar-auto">
@@ -13,7 +14,7 @@
                     <input type="text" class="mobile-input text-center" ng-model="formName.digit1" placeholder="+ 91">
                 </div>
                 <div class="display-inline  input-padd">
-                    <input type="text" class="mobile text-center" ng-model="formName.digit2" autofocus placeholder="00000 00000"  maxlength="10"
+                    <input type="text" class="mobile text-center" ng-model="formName.mobile" autofocus placeholder="00000 00000"  maxlength="10"
                         minlength="10">
                 </div>
             </div>
@@ -30,12 +31,12 @@
                     </div>
                 </div>
                 <div class="col col-75">
-                    <div class="skip text-right mar-r">
+                    <div class="skip text-right mar-r" ng-click="verifyMobile(formName)">
                         <span>NEXT</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+  </form>
 </ion-view>

@@ -5,7 +5,7 @@
         </div>
         <div class="col col-90">
             <div class="pollingtitle text-overflow">
-                    <span class="" for="">{{newsInfo.title}}</span>
+                    <span class="" for="">{{newsInfo.name}}</span>
             </div>
         </div>
    </div>         
@@ -67,7 +67,9 @@
      </div>
     </div>
     <div class="text-center martop">
-      <img class="aligntop" src="img/tick.PNG" alt="" ng-click="goANONYMOUS()">
+      <img class="aligntop" ng-if="setvriableValue == true" src="img/tick.PNG" ng-click="goANONYMOUS()" >
+      <img class="aligntop" ng-if="setvriableValue == false" src="img/trailer/tick.png" ng-click="goANONYMOUS()">
+
       <label class="pad-left5 fs-10">CHECK TO GO ANONYMOUS</label>
     </div>
     <!-- <button class=" trailernext" ng-click="openModal()"> -->
