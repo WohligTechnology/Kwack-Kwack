@@ -240,9 +240,7 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state) {
        
        
         Chats.apiCallWithData("UserFollow/getAllFollowingName", $scope.LoginUserId, function (data) {
-          
-          
-            // console.log("$scope.coun", $scope.count)
+           // console.log("$scope.coun", $scope.count)
             $scope.followingData = data.data
             _.forEach($scope.count, function (peopleData) {
               // console.log("$scope.coun", peopleData)
@@ -263,8 +261,6 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state) {
 
             });
             console.log(" $scope.count  $scope.count  $scope.count  $scope.count  $scope.count  $scope.count ", $scope.count)
-         
-
         })
       } else {
         $scope.setFollowCountValueZero = true

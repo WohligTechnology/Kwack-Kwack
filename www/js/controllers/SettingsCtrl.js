@@ -94,16 +94,4 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state) {
     })
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
 })

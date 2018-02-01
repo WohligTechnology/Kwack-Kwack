@@ -1,6 +1,8 @@
 connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionicActionSheet, $cordovaImagePicker, $cordovaFileTransfer) {
 
     $scope.userData = {}
+    $scope.userDataFollow = {}
+    $scope.userDataFollow.userId = $.jStorage.get("user")._id
     $scope.userData._id = $.jStorage.get("user")._id
     Chats.apiCallWithData("User/getOne", $scope.userData, function (data) {
         if (data.value == true) {
@@ -10,17 +12,18 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
 
         }
     })
+
     $scope.datasave = function (data) {
         console.log("**********", data)
 
         Chats.apiCallWithData("User/save", data, function (data) {
-         if(data.value==true){
-             $state.go("settings")
-         }
+            if (data.value == true) {
+                $state.go("settings")
+            }
         })
     }
 
-    $scope.showActionsheet = function(card) {
+    $scope.showActionsheet = function (card) {
         console.log(card);
         $ionicActionSheet.show({
             //  titleText: 'choose option',
@@ -31,10 +34,10 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
             }, ],
             //  destructiveText: 'Delete',
             cancelText: 'Cancel',
-            cancel: function() {
+            cancel: function () {
                 console.log('CANCELLED');
             },
-            buttonClicked: function(index) {
+            buttonClicked: function (index) {
                 console.log('BUTTON CLICKED', index);
                 if (index === 0) {
                     $scope.getImageSaveContact(card);
@@ -43,16 +46,14 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
                 }
                 return true;
             },
-            destructiveButtonClicked: function() {
+            destructiveButtonClicked: function () {
                 console.log('DESTRUCT');
                 return true;
             }
         });
+ };
 
-        
-    };
-
-    $scope.openCamera = function(card) {
+    $scope.openCamera = function (card) {
         var cameraOptions = {
             quantityuality: 90,
             destinationType: Camera.DestinationType.DATA_URL,
@@ -64,17 +65,17 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
             saveToPhotoAlbum: true,
             correctOrientation: true
         };
-        $cordovaCamera.getPicture(cameraOptions).then(function(imageData) {
+        $cordovaCamera.getPicture(cameraOptions).then(function (imageData) {
             $scope.imageSrc = "data:image/jpeg;base64," + imageData;
             console.log($scope.imageSrc);
             $scope.uploadImage($scope.imageSrc, card);
-        }, function(err) {
+        }, function (err) {
 
             console.log(err);
         });
     };
 
-    $scope.getImageSaveContact = function(card) {
+    $scope.getImageSaveContact = function (card) {
         // Image picker will load images according to these settings
         var options = {
             maximumImagesCount: 1, // Max number of selected images
@@ -82,29 +83,53 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
             height: 800,
             quantityuality: 80 // Higher is better
         };
-        $cordovaImagePicker.getPictures(options).then(function(results) {
+        $cordovaImagePicker.getPictures(options).then(function (results) {
             console.log(results[0]);
             $scope.uploadImage(results[0], card);
-        }, function(error) {
+        }, function (error) {
             console.log('Error: ' + JSON.stringify(error)); // In case of error
         });
     };
 
-    $scope.uploadImage = function(imageURI, card) {
+    $scope.uploadImage = function (imageURI, card) {
         console.log('imageURI', imageURI);
         // $scope.showLoading('Uploading Image...', 10000);
         $cordovaFileTransfer.upload(adminurl + 'upload', imageURI)
-            .then(function(result) {
-                console.log("donewithprofile",result)
+            .then(function (result) {
+                console.log("donewithprofile", result)
                 // Success!
                 // $scope.hideLoading();
                 result.response = JSON.parse(result.response);
                 $scope.userData.photo = result.response.data[0];
-                console.log("changes",$scope.userData.photo)
-               Chats.apiCallWithData("User/save", $scope.userData, function (data) {
-            console.log("value",data)
-        });
+                console.log("changes", $scope.userData.photo)
+                Chats.apiCallWithData("User/save", $scope.userData, function (data) {
+                    console.log("value", data)
+                });
             })
     };
 
+       //all fllowers
+
+
+      Chats.apiCallWithData("UserFollow/getAllFollowerName", $scope.userDataFollow, function (data) {
+       
+           if (data.value == true) {
+            $scope.setFollowCountValueZero=data.data.length
+          } else {
+            $scope.setFollowCountValueZero = "0"
+        }
+  })
+
+
+  Chats.apiCallWithData("Comment/getKwackForOneUser", $scope.userDataFollow, function (data) {
+    console.log("%%%%%%%%" ,data)
+    if (data.value == true) {
+     $scope.setKwackCountValueZero=data.data.length
+     console.log("insideifkwack", $scope.setKwackCountValueZero)
+   } else {
+    $scope.setKwackCountValueZero = "0"
+    console.log("insideelsekwack", $scope.setKwackCountValueZero)
+ }
+})
+    
 })
