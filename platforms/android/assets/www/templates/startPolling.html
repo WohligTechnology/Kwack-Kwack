@@ -1,69 +1,71 @@
-
-<ion-view title="Polling" class="">
-    <div class="row">
-        <div class="col col-10" ng-click="goBackHandler()">
+<ion-view title="Polling">
+    <div class="bar bar-header bar-light">
+        <div class="row">
+            <div class="col col-10" ng-click="goBackHandler()">
                 <i class="closenavbar ion ion-ios-close-outline"></i>
-        </div>
-        <div class="col col-90">
-            <div class="pollingtitle">
-                    <span class="" for="">{{newsInfo.title}}</label>
+            </div>
+            <div class="col col-90">
+                <div class="pollingtitle text-overflow">
+                    <span>{{newsInfo.title}}</span>
+                </div>
             </div>
         </div>
-            
-    </div>         
-   <ion-content class="has-header bg-color has-footer">
-       <div class="yellowStrip">
-           <img src="img/yellowstrip.png" alt="">
-       </div>
-<div class="trailerImage">
-    <img class="img-responsive" src="{{newsInfo.imageUrl}}" alt="">
-</div>
-<div class="trailerName">
-    <label for="">{{newsInfo.title}}</label>
-    <div>
-            <span class="articleDate">
-                {{newsInfo.createdAt | fromNowDay}},
-            </span>
-            <span class="articleDate">
-                {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}
-            </span>
-        <span class="readarticle" ng-click="inApp(newsInfo.url)">
-            Read Article ...
-        </span>
+    </div>
+    <ion-content class="has-header bg-color has-footer">
+        <div class="yellowStrip">
+            <img src="img/yellowstrip.png">
         </div>
-</div>
-<div class="bg-yellow">
-<!-- <img src="img/bar.png" alt=""> -->
-<h3>CHOOSE YOUR SIDE</h3>
-<label for="">AND START POLLING</label>
-</div>
-<div class="row">
-    <div class="col col-50 yourSide rel">
-        <div ng-if=" data=='NO' || data==null" ng-click="savePoll('YES')"><img src="img/polling/right.png" alt="">
-            <div class="yoursideright"></div>
+        <div class="trailerImage">
+            <img class="img-responsive" src="{{newsInfo.imageUrl}}">
         </div>
-        <div ng-if="data=='YES'" ng-click="savePoll('YES')"><img src="img/polling/rightclick.png" alt="">
-            <div class="yoursideright"></div>
+        <div class="trailerName">
+            <label>{{newsInfo.title}}</label>
+            <div>
+                <span class="articleDate">
+                    {{newsInfo.createdAt | fromNowDay}},
+                </span>
+                <span class="articleDate">
+                    {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}
+                </span>
+                <span class="readarticle" ng-click="inApp(newsInfo.url)">
+                    Read Article ...
+                </span>
+            </div>
         </div>
+        <div class="bg-yellow">
+            <!-- <img src="img/bar.png" alt=""> -->
+            <h3>CHOOSE YOUR SIDE</h3>
+            <label for="">AND START POLLING</label>
+        </div>
+        <div class="row">
+            <div class="col col-50 yourSide rel">
+                <div ng-if=" data=='NO' || data==null" ng-click="savePoll('YES')">
+                    <img src="img/polling/right.png" alt="">
+                    <div class="yoursideright"></div>
+                </div>
+                <div ng-if="data=='YES'" ng-click="savePoll('YES')">
+                    <img src="img/polling/rightclick.png" alt="">
+                    <div class="yoursideright"></div>
+                </div>
 
-    <label for="" ng-class="{'yourside-labelsel': data=='YES'}" class="yourside-label" >YES</label>
-    </div>
-    <div class="col col-50 yourSide">
-        <div ng-if=" data=='YES' || data==null" ng-click="savePoll('NO')">
-                <img src="img/polling/wrong.png" alt="">
-                <div class="yoursideright"></div>
+                <label for="" ng-class="{'yourside-labelsel': data=='YES'}" class="yourside-label">YES</label>
+            </div>
+            <div class="col col-50 yourSide">
+                <div ng-if=" data=='YES' || data==null" ng-click="savePoll('NO')">
+                    <img src="img/polling/wrong.png" alt="">
+                    <div class="yoursideright"></div>
+                </div>
+                <div ng-if="data=='NO'" ng-click="savePoll('NO')">
+                    <img src="img/polling/wrongclick.png" alt="">
+                    <div class="yoursideright"></div>
+                </div>
+                <label ng-class="{'yourside-labelsel': data=='NO'}" class="yourside-label" for="">NO</label>
+            </div>
+
         </div>
-        <div ng-if="data=='NO'" ng-click="savePoll('NO')">
-            <img src="img/polling/wrongclick.png" alt="">
-            <div class="yoursideright"></div>
-    </div>
-        <label ng-class="{'yourside-labelsel': data=='NO'}" class="yourside-label" for="">NO</label>
-    </div>
-                          
-</div>
-<button class=" trailernext" ng-click="nextPage()">
-        NEXT
-      </button>
+        <button class=" trailernext" ng-click="nextPage()">
+            NEXT
+        </button>
     </ion-content>
     <!-- <div class="bar bar-footer customFooter footer-height">
            <div class="row pad0">

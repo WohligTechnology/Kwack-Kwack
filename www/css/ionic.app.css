@@ -12179,17 +12179,35 @@ button.btn-yellow.button[disabled] {
     border: none;
     background: transparent; }
 
+.contactHeader {
+  top: 220px; }
+
+.alpha_sidebar {
+  position: absolute;
+  top: 213px;
+  right: 10px;
+  z-index: 100000; }
+
+.alpha_sidebar li {
+  color: black;
+  margin-bottom: -4.6px;
+  cursor: pointer; }
+
+.alpha_list {
+  padding-right: 22px; }
+
 .all-friends-btn {
   min-height: 25px !important;
   padding: 0px 17px;
   font-size: 12px;
   color: #b2b0b09c;
+  background-color: none !important;
   border: none;
-  background-color: transparent;
+  background-color: transparent !important;
   font-family: 'Montserrat-Medium'; }
 
 .bor-bot {
-  border-bottom: 2px solid #ffc943; }
+  border-bottom: 2px solid #ffc943 !important; }
 
 .searchby-name {
   margin-top: 18px; }
@@ -12212,7 +12230,6 @@ button.btn-yellow.button[disabled] {
     color: #afafaf; }
 
 .content-scroll {
-  height: 415px;
   overflow: scroll; }
 
 .list-mar {

@@ -3031,20 +3031,39 @@ $dark:                            #444 !default;
         }
     }
 
-    .all-friends-btn {
-        min-height: 25px !important;
-        padding: 0px 17px;
-        font-size: 12px;
-        color: $darkgray3;
-        border: none;
-        background-color: transparent;
-        font-family: 'Montserrat-Medium';
+    .contactHeader{
+        top: 220px;
     }
-
-    .bor-bot {
-        border-bottom: 2px solid $yellow;
+    
+    .alpha_sidebar{
+        position: absolute;
+        top: 213px;
+        right: 	10px;
+        z-index: 100000
     }
-
+    .alpha_sidebar li{
+        color: black;
+        margin-bottom: -4.6px;
+        cursor: pointer;
+    }
+    .alpha_list{
+        padding-right: 22px;
+    }
+   .all-friends-btn{
+       min-height: 25px !important;
+    padding: 0px 17px;
+    font-size: 12px;
+    color: $darkgray3;
+    background-color:none!important;
+    border:none;
+    background-color: transparent!important;
+    font-family: 'Montserrat-Medium';
+   
+   }
+   .bor-bot{
+       border-bottom: 2px solid $yellow !important;
+   }
+   
     .searchby-name {
         margin-top: 18px;
         input {
@@ -3067,11 +3086,10 @@ $dark:                            #444 !default;
             font-size: 20px;
             color: $lightGray;
         }
-    }
-
-    .content-scroll {
-        height: 415px;
-        overflow: scroll;
+    } 
+    .content-scroll{
+        // height: 415px;
+    overflow: scroll;
     }
 
     .list-mar {

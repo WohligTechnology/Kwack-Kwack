@@ -10092,6 +10092,10 @@ h4 {
 .martop {
   margin-top: 10px; }
 
+.error-msg {
+  margin: 10px;
+  color: red !important; }
+
 .footerImg {
   text-align: center;
   padding: 8px 0px 0px 0px;
@@ -10272,7 +10276,7 @@ button.btn-yellow.button[disabled] {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1px;
-  margin-top: 4px;
+  margin-top: 8px;
   font-family: 'Montserrat-Bold'; }
 
 .reset {
@@ -10637,11 +10641,16 @@ button.btn-yellow.button[disabled] {
   font-family: 'Montserrat-Light'; }
 
 .listperson {
-  top: 88px;
+  top: 0px;
   overflow-y: scroll;
-  max-height: 255px;
   width: 100%;
   margin-bottom: 60px !important; }
+
+.listminheight {
+  max-height: 255px; }
+
+.listmaxheight {
+  max-height: 430px; }
 
 .borderF .cell-follower:after {
   content: "";
@@ -11019,7 +11028,10 @@ button.btn-yellow.button[disabled] {
   color: #fff; }
 
 .back-img {
-  position: relative; }
+  background-image: url("../img/inviteFriends/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .profile-img {
   width: 85px;
@@ -11042,31 +11054,45 @@ button.btn-yellow.button[disabled] {
 .designation {
   color: #fff;
   letter-spacing: 0.5px;
-  line-height: 4px;
   font-size: 12px;
   font-family: 'Montserrat-Regular'; }
 
-.follow-btn {
-  vertical-align: middle; }
-  .follow-btn .button {
-    margin-top: 7px;
-    min-height: 27px;
-    line-height: 10px;
-    font-size: 11px;
-    padding: 0px 20px;
-    border-radius: 50px;
-    background: transparent;
-    color: #fff;
-    border-color: #fff;
-    letter-spacing: 0.5px;
-    font-family: 'Montserrat-Regular'; }
-  .follow-btn .icon-left:before {
-    font-size: 10px;
-    min-height: 0px;
-    line-height: 11px;
-    padding-right: 10px;
-    color: #ffb600;
-    font-weight: 600; }
+.over-flow {
+  overflow: hidden; }
+
+.mar-t25 {
+  margin-top: 25px; }
+
+.follow-btn h3 {
+  margin-bottom: 0px !important; }
+
+.follow-btn h5 {
+  margin-top: 3px;
+  white-space: nowrap;
+  width: 95%;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.follow-btn .button {
+  margin-bottom: 26px;
+  min-height: 27px;
+  line-height: 10px;
+  font-size: 11px;
+  padding: 0px 20px;
+  border-radius: 50px;
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat-Regular'; }
+
+.follow-btn .icon-left:before {
+  font-size: 10px;
+  min-height: 0px;
+  line-height: 11px;
+  padding-right: 10px;
+  color: #ffb600;
+  font-weight: 600; }
 
 .theCombo {
   -webkit-appearance: none;
@@ -11635,6 +11661,16 @@ button.btn-yellow.button[disabled] {
   top: 10px;
   left: 10px; }
 
+.replay textarea {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px; }
+
+.replay textarea::placeholder {
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Montserrat-Light'; }
+
 .debate-submit {
   right: 41px; }
   .debate-submit .btn-yellow {
@@ -11644,10 +11680,66 @@ button.btn-yellow.button[disabled] {
     min-height: 20px !important;
     margin-bottom: 30px; }
 
+.btn-send {
+  font-size: 10px !important;
+  font-family: 'Montserrat-Bold';
+  color: #fff;
+  background-color: #000;
+  letter-spacing: 5px;
+  padding: 3px !important; }
+
+.replay-likes {
+  padding: 8px;
+  margin-top: 5px;
+  background-color: #f2f2f2; }
+  .replay-likes h6 {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    font-size: 10px; }
+  .replay-likes p {
+    font-size: 10px !important;
+    font-family: "Montserrat-Light" !important;
+    border-bottom: none !important;
+    padding: 5px 0px 1px 1px !important;
+    line-height: 10px !important; }
+
+.reply-reply span {
+  font-size: 8px;
+  padding-left: 7px; }
+
+.reply-reply .like-padd {
+  padding-left: 10px; }
+
 .profile-w {
   max-width: 100%;
   height: auto;
   display: block; }
+
+.right-thumb {
+  border: 1px solid #ffc943;
+  display: table;
+  padding: 0px 4px;
+  border-radius: 6px;
+  position: absolute;
+  right: 17px;
+  margin-top: -6px;
+  background-color: #fff; }
+
+.w9 {
+  width: 9px; }
+
+.thumb-img {
+  padding: 0px 3px;
+  display: table-cell;
+  vertical-align: middle; }
+  .thumb-img img {
+    max-width: 100%;
+    height: auto; }
+
+.thumb-count {
+  display: table-cell;
+  font-size: 10px;
+  vertical-align: middle; }
 
 .debateprofile {
   width: 65px;
@@ -11695,7 +11787,7 @@ button.btn-yellow.button[disabled] {
   text-align: left; }
 
 .debate-card .card {
-  margin: 10px 33px 0px; }
+  margin: 10px 25px 0px; }
 
 .debate-card .list:last-child.card {
   margin-bottom: 0px; }
@@ -11760,6 +11852,11 @@ button.btn-yellow.button[disabled] {
   display: flex;
   justify-content: flex-end;
   align-items: center; }
+
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .pollingCounts {
   font-size: 8px;
@@ -12044,6 +12141,106 @@ button.btn-yellow.button[disabled] {
   width: 90%;
   min-height: 55px; }
 
+.confirmpass label {
+  font-family: 'Montserrat-Regular' !important;
+  padding-left: 25px; }
+
+.confirmpass input {
+  margin-top: 20px;
+  font-size: 20px;
+  box-shadow: 1px 15px 33px 6px rgba(136, 136, 136, 0.34); }
+
+.confirmpass input::placeholder {
+  color: #000; }
+
+.mar-b20 {
+  margin-bottom: 25px; }
+
+.your-friends {
+  border-bottom: 1px solid #ececec;
+  border-top: 1px solid #ececec; }
+  .your-friends .button.activated {
+    border: none;
+    background: transparent; }
+
+.contactHeader {
+  top: 220px; }
+
+.alpha_sidebar {
+  position: absolute;
+  top: 213px;
+  right: 10px;
+  z-index: 100000; }
+
+.alpha_sidebar li {
+  color: black;
+  margin-bottom: -4.6px;
+  cursor: pointer; }
+
+.alpha_list {
+  padding-right: 22px; }
+
+.all-friends-btn {
+  min-height: 25px !important;
+  padding: 0px 17px;
+  font-size: 12px;
+  color: #b2b0b09c;
+  background-color: none !important;
+  border: none;
+  background-color: transparent !important;
+  font-family: 'Montserrat-Medium'; }
+
+.bor-bot {
+  border-bottom: 2px solid #ffc943 !important; }
+
+.searchby-name {
+  margin-top: 18px; }
+  .searchby-name input {
+    width: 315px;
+    padding-left: 50px;
+    padding-top: 0px !important;
+    margin: 0 auto;
+    background-color: #fff !important;
+    border: 2px solid #ececec !important;
+    border-radius: 17px; }
+  .searchby-name input::placeholder {
+    font-size: 12px;
+    font-family: 'Montserrat-Regular' !important; }
+  .searchby-name i {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    font-size: 20px;
+    color: #afafaf; }
+
+.content-scroll {
+  overflow: scroll; }
+
+.list-mar {
+  margin: 7px 20px; }
+
+.list-profile .item-avatar {
+  padding-left: 90px; }
+  .list-profile .item-avatar img:first-child {
+    left: 30px; }
+
+.list-profile i {
+  position: absolute;
+  left: 0;
+  top: 25px;
+  font-size: 20px;
+  color: #ffc943; }
+
+.list-profile .followersUn {
+  right: 9%; }
+
+.list-profile .item {
+  background-color: transparent; }
+
+.contact {
+  font-family: 'Montserrat-Medium';
+  font-size: 17px; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .accordian label {
     font-size: 10px !important; }
@@ -12160,10 +12357,9 @@ button.btn-yellow.button[disabled] {
   .user-name {
     font-size: 15px; }
   .designation {
-    line-height: 2px;
     font-size: 11px; }
   .follow-btn .button {
-    margin-top: 5px;
+    margin-bottom: 26px;
     min-height: 21px;
     line-height: 10px;
     font-size: 9px;
@@ -12171,7 +12367,7 @@ button.btn-yellow.button[disabled] {
   .r-border:after {
     height: 55px; }
   .listperson {
-    top: 70px; }
+    top: 0px; }
   .profile-img {
     width: 75px;
     height: 75px; }
@@ -12255,7 +12451,7 @@ button.btn-yellow.button[disabled] {
     width: 175px;
     font-size: 12px; }
   .follow-btn .button {
-    margin-top: 7px;
+    margin-bottom: 26px;
     min-height: 27px;
     line-height: 10px;
     font-size: 11px;
@@ -12293,7 +12489,7 @@ button.btn-yellow.button[disabled] {
     width: 175px;
     font-size: 12px; }
   .follow-btn .button {
-    margin-top: 7px;
+    margin-bottom: 26px;
     min-height: 27px;
     line-height: 10px;
     font-size: 12px;
@@ -12409,16 +12605,15 @@ button.btn-yellow.button[disabled] {
   .user-name {
     font-size: 17px; }
   .designation {
-    line-height: 4px;
     font-size: 12px; }
   .listperson {
-    top: 88px; }
+    top: 0px; }
   .r-border:after {
     height: 63px; }
   .designation {
     font-size: 12px; }
   .follow-btn .button {
-    margin-top: 7px;
+    margin-bottom: 26px;
     min-height: 27px;
     line-height: 10px;
     font-size: 11px;

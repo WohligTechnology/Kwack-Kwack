@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-statusbar",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Cordova StatusBar Plugin",
   "types": "./types/index.d.ts",
   "cordova": {
@@ -52,44 +52,48 @@
     "jshint": "^2.6.0"
   },
   "homepage": "https://github.com/apache/cordova-plugin-statusbar#readme",
-  "_id": "cordova-plugin-statusbar@2.4.0",
-  "_shasum": "24eb2973795d10f6f1ae3202f74f88c7d990cf20",
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.0.tgz",
+  "_id": "cordova-plugin-statusbar@2.4.1",
+  "_shasum": "222628a78aa54d34d4c927990020d0a3bace5545",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.1.tgz",
   "_from": "cordova-plugin-statusbar@>=2.4.0 <3.0.0",
   "_npmVersion": "4.6.1",
-  "_nodeVersion": "8.9.3",
+  "_nodeVersion": "8.2.1",
   "_npmUser": {
-    "name": "stevegill",
-    "email": "stevengill97@gmail.com"
+    "name": "macdonst",
+    "email": "simon.macdonald@gmail.com"
   },
   "dist": {
-    "shasum": "24eb2973795d10f6f1ae3202f74f88c7d990cf20",
-    "tarball": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.0.tgz"
+    "shasum": "222628a78aa54d34d4c927990020d0a3bace5545",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.1.tgz"
   },
   "maintainers": [
     {
+      "name": "macdonst",
+      "email": "simon.macdonald@gmail.com"
+    },
+    {
       "name": "bowserj",
       "email": "bowserj@apache.org"
-    },
-    {
-      "name": "csantanapr",
-      "email": "csantana23@gmail.com"
-    },
-    {
-      "name": "filmaj",
-      "email": "maj.fil@gmail.com"
-    },
-    {
-      "name": "kotikov.vladimir",
-      "email": "kotikov.vladimir@gmail.com"
     },
     {
       "name": "purplecabbage",
       "email": "purplecabbage@gmail.com"
     },
     {
+      "name": "filmaj",
+      "email": "maj.fil@gmail.com"
+    },
+    {
       "name": "shazron",
       "email": "shazron@gmail.com"
+    },
+    {
+      "name": "csantanapr",
+      "email": "csantana23@gmail.com"
+    },
+    {
+      "name": "kotikov.vladimir",
+      "email": "kotikov.vladimir@gmail.com"
     },
     {
       "name": "stevegill",
@@ -98,7 +102,7 @@
   ],
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/cordova-plugin-statusbar-2.4.0.tgz_1513795171654_0.3180631436407566"
+    "tmp": "tmp/cordova-plugin-statusbar-2.4.1.tgz_1514690818610_0.9176097090821713"
   },
   "directories": {},
   "readme": "ERROR: No README data found!"
