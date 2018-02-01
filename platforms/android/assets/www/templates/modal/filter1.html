@@ -83,7 +83,7 @@
             <div class="category-preferences">
                 <div class="row">
                     <div class="col-33" ng-click="categoryViews('All')">
-                        <div class="all"><img ng-if='filterData.all' src="img/filter/1.png" class="img-responsive w20" ><img ng-if='!filterData.all' class="img-responsive w20" src="img/filter/unselecttick.png">
+                        <div class="all"><img ng-if='filterData.polls && filterData.kwacks' src="img/filter/1.png" class="img-responsive w20" ><img ng-if='!filterData.polls || !filterData.kwacks' class="img-responsive w20" src="img/filter/unselecttick.png">
                             <span>All</span>
                         </div>
                     </div>

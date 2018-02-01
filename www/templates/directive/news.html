@@ -3,15 +3,15 @@
         <h2>{{test.title}} </h2>
         <p>{{test.description}}</p>
         <p class=" float-right explore-icon text-center ">
-            <label class="discoverCardStrip">
-                <img class="" src="img/explore/5.png">
-                <span class=" alignM"> 21</span>
+            <label class="discoverCardStrip" ng-click="nextPage(test._id,'poll')">
+                <img ng-if="!test.temp"  src="img/explore/5.png"> <img ng-if="test.temp==true" src="img/filter/2.png">
+                <span class=" alignM">{{test.polls.length}}</span>
             </label>
-            <label class="discoverCardStrip">
-                <img class="img-responsive" src="img/explore/6.png">
-                <span class=" alignM"> 42</span>
+            <label class="discoverCardStrip" ng-click="nextPage(test._id,'kwack')">
+                <img ng-if="!test.kwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="test.kwack==true" class="img-responsive" src="img/discover/shieldclick.png">
+                <span class=" alignM">{{test.comments.length}}</span>
             </label>
-            <label>
+            <label ng-click="socilaSharing(test.description,test.imageUrl,test.title,test.url)">
                 <img src="img/explore/7.png">
                 <span class="colorw alignM">12</span>
             </label>

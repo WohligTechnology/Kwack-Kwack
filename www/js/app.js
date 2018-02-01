@@ -136,7 +136,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.trailerex', {
       url: '/trailer/:newsid',
-      // cache:false,
+       cache:false,
       views: {
         'tab-explore': {
           templateUrl: 'templates/tab-trailer.html',
@@ -148,7 +148,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.trailerdis', {
       url: '/trailer/:newsid',
-      // cache:false,
+       cache:false,
       views: {
         'tab-explore': {
           templateUrl: 'templates/tab-trailer.html',
@@ -160,10 +160,11 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.trailerkwack', {
       url: '/trailer/:newsid',
-      // cache:false,
+       
       views: {
         'tab-kwackScreen': {
           templateUrl: 'templates/tab-trailer.html',
+          // cache:false,
           controller: 'TrailerCtrl'
         }
       }
@@ -172,7 +173,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.trailersocial', {
       url: '/trailer/:newsid',
-      // cache:false,
+       cache:false,
       views: {
         'tab-social': {
           templateUrl: 'templates/tab-trailer.html',
@@ -184,10 +185,11 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.kwackScreen', {
       url: '/kwackScreen',
-      cache:false,
+     
       views: {
         'tab-kwackScreen': {
           templateUrl: 'templates/kwack-screen.html',
+          cache:false,
           controller: 'KwackScreenCtrl'
         }
       }
@@ -261,6 +263,7 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
   views:{
     'tab-kwackScreen': {
       templateUrl: 'templates/discover-full.html',
+      // cache:false,
       controller: 'DiscoverFullCtrl'
     }
   }   
@@ -447,10 +450,11 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
 
     .state('tab.startPollingkwack', {
       url: '/startPolling/:newsid',
-      // cache:false,
+     
       views: {
         'tab-kwackScreen': {
       templateUrl: 'templates/startPolling.html',
+      // cache:false,
       controller: 'StartPollingCtrl'
         }
       }
@@ -558,3 +562,4 @@ var connector=angular.module('starter', ['ionic', 'starter.controllers', 'starte
       }
   };
 })
+
