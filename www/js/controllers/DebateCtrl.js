@@ -47,7 +47,7 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
                     }
                     console.log("likeforlike", like)
                     _.forEach(like.comment.likes, function (likes) {
-                        if (likes.userId == $scope.kwackSide.userId) {
+                        if (likes.userId._id == $scope.kwackSide.userId) {
                             like.value = true;
 
                         } else {

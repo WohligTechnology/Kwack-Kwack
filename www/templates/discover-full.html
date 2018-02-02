@@ -2,7 +2,7 @@
     <div class="bar bar-header bar-light">
         <div class="row">
             <div class="col-20">
-                <div class="mar-l10" >
+                <div class="mar-l10">
                     <img src="img/filter/6.png" class="w25" ui-sref="settings">
                 </div>
             </div>
@@ -19,27 +19,22 @@
         <div class="text-center">
             <h4 class="pad0 title-explore">DISCOVER</h4>
         </div>
-      <div>
-      </div>
-      <div class="discover-item ">
-      <div class="bar bar-header item-input-inset placeholderDiscover">
-         
-            <label class="item-input-wrapper" >
-              <i class="icon ion-search placeholder-icon"></i>              
-              <input type="text" placeholder="Business" ng-model="searchText.searchText" ng-change="search(searchText)" name="keyword">
-              
-            </label>
-            <!-- <i class="ion ion-ios-close" ng-click="searchCancel()" ng-if="search.search!=''"></i> -->
-            
-            <button class="button button-clear searchCancel" ng-click="goBackHandler()">
-              Cancel
-            </button>
-        </div>
-          </div>
-          <div ng-repeat="discover in discoverFull" >
-              <discoverfull></discoverfull>
-          </div>
-      
+        <div class="discover-item">
+            <div class="bar bar-header item-input-inset placeholderDiscover">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Business" ng-model="searchText.searchText" ng-change="search(searchText)" name="keyword">
+                </label>
+                <span class="cross-search" ng-click="searchCancel()">
+                    <i class="ion ion-ios-close" ng-if="search.search!=''"></i>
+                </span>
+                <button class="button button-clear searchCancel" ng-click="goBackHandler()">
+                    Cancel
+                </button>
             </div>
+        </div>
+        <div ng-repeat="discover in discoverFull">
+            <discoverfull></discoverfull>
+        </div>
     </ion-content>
 </ion-view>

@@ -16,7 +16,8 @@
     </div>
   </div>
   <ion-content class="has-header invtfrndshdr">
-    <div>
+    <div ng-if="toggle">
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>        
         <div class="back-img" ng-if="countValue">
             <div class="display-flex">
               <div>
@@ -66,7 +67,7 @@
                 <div class="dis-cell r-border text-center" ng-class="{'borderF' : followersb}" ng-click="followers()">
                   <div class="cell-follower">
                     <h3 ng-if="setFollowCountValueZero">0</h3>
-                    <h3 ng-if="!setFollowCountValueZero">{{count.length}}</h3>
+                    <h3 ng-if="!setFollowCountValueZero">{{followingData.length}}</h3>
                     <span>Followers</span>
                   </div>
                 </div>
@@ -83,28 +84,36 @@
                   </div>
                 </div>
               </div>
+
+              <!-- innerfollow -->
               <div class="list listperson listdetail listminheight" ng-if='!setFollowCountValueZero'>
-                <a class="item item-avatar" ng-repeat="users in count">
-                  <img ng-if="!users.user.photo" ng-click="selectedUser(users.user._id)" ng-src="img/profile/profile.png">
-                  <img ng-if="users.user.photo" ng-click="selectedUser(users.user._id)" ng-src="{{users.user.photo | uploadpath}}">
-                  <h2 ng-click="selectedUser(users.user._id)">{{users.user.userName}}</h2>
-                  <p ng-click="selectedUser(users.user._id)">{{users.user.email}}</p>
-                    <img class="followersUn" ng-if="!users.showUnfollowbutton && !users.user.showButton" ng-click='follow(users.user._id)' src="img/inviteFriends/Unfollow.png" alt="">
-          <img class="followersUn" ng-if="users.showUnfollowbutton && !users.user.showButton" ng-click='unfollow(users.user._id)' src="img/inviteFriends/follow.png" alt="">
+                <a class="item item-avatar" ng-repeat="users in followingData track by $index">
+                  <img ng-if="!users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="img/profile/profile.png">
+                  <img ng-if="users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="{{users.user.photo | uploadpath}}">
+                  <h2 ng-click="selectedUser(users.user._id); $scope.doRefresh(true)">{{users.user.userName}}</h2>
+                  <p ng-click="selectedUser(users.user._id); $scope.doRefresh(true)">{{users.user.email}}</p>
+                  <div ng-click="followUnfollow(users._id, 'innerFollow', $index)">
+                      <img class="followersUn" ng-if="users.flag=='false'"  src="img/inviteFriends/Unfollow.png">
+                      <img class="followersUn" ng-if="users.flag=='true'"  src="img/inviteFriends/follow.png">
+                  </div>
                 </a>
     
               </div>
             </div>
           </div>
-      <div class="list listperson listdetail listmaxheight" ng-if='followersb==true &&  !countValue'>
-        <a class="item item-avatar" ng-repeat="users in people1">
-          <img ng-click="selectedUser(users._id)" ng-if="!users.photo" ng-src="img/profile/profile.png">
-          <img ng-click="selectedUser(users._id)" ng-if="users.photo" src="{{users.photo | uploadpath}}">
-          <h2 ng-click="selectedUser(users._id)">{{users.name}}</h2>
-          <p ng-click="selectedUser(users._id)">{{users.email}}</p>
-         <img class="followersUn" ng-if="!users.showUnfollowbutton " ng-click='follow(users._id)' src="img/inviteFriends/Unfollow.png">
-          <img class="followersUn" ng-if="users.showUnfollowbutton" ng-click='unfollow(users._id)' src="img/inviteFriends/follow.png">
 
+          <!-- outerFollow -->
+      <div class="list listperson listdetail listmaxheight" ng-if='followersb==true &&  !countValue'>
+        <a class="item item-avatar" ng-repeat="users in followingData track by $index">
+          <img ng-click="selectedUser(users._id); $scope.doRefresh(true)" ng-if="!users.photo" ng-src="img/profile/profile.png">
+          <img ng-click="selectedUser(users._id); $scope.doRefresh(true)" ng-if="users.photo" src="{{users.photo | uploadpath}}">
+          <h2 ng-click="selectedUser(users._id); $scope.doRefresh(true)">{{users.name}}</h2>
+          <p ng-click="selectedUser(users._id); $scope.doRefresh(true)">{{users.email}}</p>
+          <div ng-click="followUnfollow(users._id, 'outerFollow',$index)" >
+              <img class="followersUn" ng-if="users.flag=='false'"   src="img/inviteFriends/Unfollow.png">
+              <img class="followersUn" ng-if="users.flag=='true'"   src="img/inviteFriends/follow.png">
+          </div>
+        
         </a>
 
       </div>
@@ -153,6 +162,7 @@
                                   <p>Thursday, 19 Aug 2017</p>
                                 </a>
                               </div>-->
+                              <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="5px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>                               
     </div>
     <!-- <div>
     </div> -->
@@ -161,7 +171,7 @@
     <div class="bar bar-footer bar-black">
       <div class="row">
         <div class="col col-20" >
-          <div class="arrow-back text-center" ng-click="backTOlist()">
+          <div class="arrow-back text-center" ng-click="backTOlist(); doRefresh()">
             <a class="button">
               <i class="ion ion-ios-arrow-back"></i>
             </a>
