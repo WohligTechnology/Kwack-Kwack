@@ -9953,6 +9953,7 @@ h4 {
   position: absolute;
   top: 94%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-top: 2px solid #424242 !important;
   border-bottom: none;
@@ -10060,8 +10061,9 @@ h4 {
   border-right: 1px solid #d4d4d4;
   height: 35px;
   position: absolute;
-  right: 0px;
   top: 33%;
+  right: 0px;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
 .yourside-labelsel {
@@ -10276,7 +10278,7 @@ button.btn-yellow.button[disabled] {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1px;
-  margin-top: 8px;
+  margin-top: 4px;
   font-family: 'Montserrat-Bold'; }
 
 .reset {
@@ -10467,8 +10469,8 @@ button.btn-yellow.button[disabled] {
 
 .title-explore:before {
   content: "";
-  position: absolute;
   width: 97px;
+  position: absolute;
   top: 50%;
   left: 5%;
   border-bottom: 1px solid #000; }
@@ -10654,31 +10656,31 @@ button.btn-yellow.button[disabled] {
 
 .borderF .cell-follower:after {
   content: "";
-  position: absolute;
   width: 75px;
   border-bottom: 2px solid #f8b503;
+  position: absolute;
   bottom: -1%;
   left: 17%; }
 
 .borderK .cell-kwacks:after {
   content: "";
-  position: absolute;
   width: 75px;
   border-bottom: 2px solid #f8b503;
+  position: absolute;
   bottom: -1%;
   left: 17%; }
 
 .borderp .cell-polls:after {
   content: "";
-  position: absolute;
   width: 75px;
   border-bottom: 2px solid #f8b503;
+  position: absolute;
   bottom: -1%;
   left: 17%; }
 
 .followersUn {
-  position: absolute;
   width: 12%;
+  position: absolute;
   top: 35%;
   right: 5%; }
 
@@ -10698,7 +10700,8 @@ button.btn-yellow.button[disabled] {
   bottom: 0px !important; }
 
 .nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
-  bottom: 0px !important; }
+  bottom: 0px !important;
+  top: unset; }
 
 .has-footer .bg-footer .tabs {
   background: #fff !important;
@@ -10880,7 +10883,10 @@ button.btn-yellow.button[disabled] {
 .strip {
   position: absolute;
   bottom: 18%;
-  right: 2%; }
+  right: 2%;
+  position: absolute;
+  right: 2%;
+  bottom: 18%; }
 
 .stripDiv {
   width: 10%; }
@@ -11034,8 +11040,8 @@ button.btn-yellow.button[disabled] {
   background-size: cover; }
 
 .profile-img {
-  width: 85px;
   height: 85px;
+  width: 85px;
   border-radius: 50%;
   overflow: hidden; }
 
@@ -11138,9 +11144,9 @@ button.btn-yellow.button[disabled] {
   background-position: right center; }
 
 .plusposition {
+  /* transform: translate(-20%,-50%); */
   position: absolute;
   top: 24%;
-  /* transform: translate(-20%,-50%); */
   right: 13px; }
 
 .locationtHead {
@@ -11268,9 +11274,10 @@ button.btn-yellow.button[disabled] {
 .tab-header {
   position: relative; }
   .tab-header span {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     position: absolute;
     top: 88%;
-    transform: translate(-50%, -50%);
     left: 50%;
     font-size: 11px; }
   .tab-header a {
@@ -11362,8 +11369,8 @@ button.btn-yellow.button[disabled] {
   letter-spacing: 8px; }
 
 .profile-invtimg {
-  width: 85px;
   height: 85px;
+  width: 85px;
   overflow: hidden; }
 
 .listHead {
@@ -11375,7 +11382,7 @@ button.btn-yellow.button[disabled] {
   .listHead h2 {
     white-space: normal;
     font-size: 0.9em !important;
-    font-family: "Montserrat-Medium" !important;
+    font-family: 'Montserrat-Medium' !important;
     margin: 0px !important; }
   .listHead p {
     font-family: 'Montserrat-Regular';
@@ -11397,10 +11404,10 @@ button.btn-yellow.button[disabled] {
   border-color: #d4d4d4 !important; }
 
 .editBtn {
+  width: 4%;
   position: absolute;
-  right: 12%;
   top: 7%;
-  width: 4%; }
+  right: 12%; }
   .editBtn img {
     width: 100%; }
 
@@ -11497,7 +11504,7 @@ button.btn-yellow.button[disabled] {
     font-size: 20px; }
 
 .userName {
-  margin: auto 15px !important;
+  margin: auto 15px;
   padding: 25px 0px !important;
   border-bottom: 1px solid #afafaf;
   height: 80px;
@@ -11656,8 +11663,8 @@ button.btn-yellow.button[disabled] {
   height: 23px; }
 
 .notification .toggle .handle {
-  width: 12px;
   height: 12px;
+  width: 12px;
   top: 10px;
   left: 10px; }
 
@@ -11698,7 +11705,7 @@ button.btn-yellow.button[disabled] {
     font-size: 10px; }
   .replay-likes p {
     font-size: 10px !important;
-    font-family: "Montserrat-Light" !important;
+    font-family: 'Montserrat-Light' !important;
     border-bottom: none !important;
     padding: 5px 0px 1px 1px !important;
     line-height: 10px !important; }
@@ -11720,10 +11727,10 @@ button.btn-yellow.button[disabled] {
   display: table;
   padding: 0px 4px;
   border-radius: 6px;
-  position: absolute;
-  right: 17px;
   margin-top: -6px;
-  background-color: #fff; }
+  background-color: #fff;
+  position: absolute;
+  right: 17px; }
 
 .w9 {
   width: 9px; }
@@ -11742,12 +11749,12 @@ button.btn-yellow.button[disabled] {
   vertical-align: middle; }
 
 .debateprofile {
-  width: 65px;
   height: 65px;
+  width: 65px;
   position: absolute;
+  top: -7px;
   left: 23px;
   z-index: 3;
-  top: -7px;
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 1px 10px 35px 0px #d4d4d4; }
@@ -11768,19 +11775,19 @@ button.btn-yellow.button[disabled] {
 
 .title-comments:before {
   content: "";
-  position: absolute;
-  border-bottom: 2px solid #ececec;
-  top: 157px;
   width: 104px;
+  border-bottom: 2px solid #ececec;
+  position: absolute;
+  top: 157px;
   left: 17px; }
 
 .title-comments:after {
   content: "";
-  position: absolute;
-  border-bottom: 2px solid #ececec;
-  top: 157px;
   width: 104px;
-  right: 17px; }
+  border-bottom: 2px solid #ececec;
+  position: absolute;
+  top: 157px;
+  left: 17px; }
 
 .debatetrailerName {
   padding: 20px 7px 5px 16px;
@@ -11854,9 +11861,12 @@ button.btn-yellow.button[disabled] {
   align-items: center; }
 
 .text-overflow {
-  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%;
   overflow: hidden;
-  text-overflow: ellipsis; }
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal; }
 
 .pollingCounts {
   font-size: 8px;
@@ -11872,16 +11882,17 @@ button.btn-yellow.button[disabled] {
   position: absolute;
   top: 18%;
   left: 30%;
-  z-index: 1;
-  transform: translate(-50%, -50%); }
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1; }
   .pollRight img {
     width: 100%; }
 
 .pollUpDown {
-  position: absolute;
   width: 8%;
-  right: 6%;
-  top: 4%; }
+  position: absolute;
+  top: 4%;
+  right: 6%; }
   .pollUpDown img {
     width: 100%; }
 
@@ -11988,20 +11999,26 @@ button.btn-yellow.button[disabled] {
   border-radius: 2px;
   box-shadow: 1px 1px 36px 1px #777474; }
 
+.explore-more .card {
+  box-shadow: none !important; }
+
 .explore-more .news-content {
   margin-bottom: 0px; }
 
 .explore-more .list:last-child.card {
   margin-bottom: 0px; }
 
-.explore-more .card {
-  box-shadow: none !important; }
-
 .explore-more .news-content .card {
   box-shadow: none !important; }
 
+.related-card .card {
+  box-shadow: none !important; }
+
+.related-card .item {
+  background-color: transparent; }
+
 .related-stories {
-  font-size: 15px;
+  font-size: 15px !important;
   font-family: 'Montserrat-Medium';
   color: #ffc943; }
 
@@ -12226,8 +12243,8 @@ button.btn-yellow.button[disabled] {
 
 .list-profile i {
   position: absolute;
-  left: 0;
   top: 25px;
+  left: 0px;
   font-size: 20px;
   color: #ffc943; }
 
@@ -12369,8 +12386,8 @@ button.btn-yellow.button[disabled] {
   .listperson {
     top: 0px; }
   .profile-img {
-    width: 75px;
-    height: 75px; }
+    height: 75px;
+    width: 75px; }
   .btn-yellow {
     padding: 6px 56px;
     font-size: 11px; }
@@ -12440,8 +12457,8 @@ button.btn-yellow.button[disabled] {
     padding-left: 0px; }
   .back-img-title {
     position: absolute;
-    bottom: 0;
-    left: 0; }
+    bottom: 0px;
+    left: 0px; }
   .profile-padd {
     padding: 17px 20px; }
   .toggleyouKnow {
@@ -12475,8 +12492,8 @@ button.btn-yellow.button[disabled] {
     padding-left: 8px; }
   .back-img-title {
     position: absolute;
-    top: 0;
-    left: 0; }
+    top: 0px;
+    left: 0px; }
   .listHead {
     padding-top: 0px !important;
     top: 69px !important; }
@@ -12518,7 +12535,10 @@ button.btn-yellow.button[disabled] {
   .back-img-title {
     position: absolute;
     top: 0;
-    left: 0; }
+    left: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px; }
   .listHead {
     padding-top: 0px !important;
     top: 86px !important; }
@@ -12600,8 +12620,8 @@ button.btn-yellow.button[disabled] {
     width: 197px;
     font-size: 12px; }
   .profile-img {
-    width: 85px;
-    height: 85px; }
+    height: 85px;
+    width: 85px; }
   .user-name {
     font-size: 17px; }
   .designation {
@@ -12708,8 +12728,8 @@ button.btn-yellow.button[disabled] {
     padding-left: 8px; }
   .back-img-title {
     position: absolute;
-    top: 0;
-    left: 0; }
+    top: 0px;
+    left: 0px; }
   .social-icon li {
     width: 20% !important; }
   .social-icon {

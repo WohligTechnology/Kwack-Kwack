@@ -1,5 +1,7 @@
 connector.controller('PollingInsideCtrl', function($scope,$stateParams, $state,Chats) {
       $scope.newsId = $stateParams.newsid
+      $scope.previousState = $stateParams.previousState
+      console.log("previousState", $scope.previousState)
      data = {}
     $scope.userId= $.jStorage.get('user')._id
     $scope.yes=[]
@@ -14,8 +16,17 @@ connector.controller('PollingInsideCtrl', function($scope,$stateParams, $state,C
         ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
         window.open = cordova.InAppBrowser.open;
             }
-            $scope.goBackHandler = function() {
-                window.history.back(); //This works
+            $scope.back = function() {
+                if($scope.previousState == 'tab.discoverNews'){
+                    $state.go('tab.discoverNews')
+                }else if ($scope.previousState == 'tab.explore'){
+                    $state.go('tab.explore')
+                }else if ($scope.previousState == 'tab.kwackScreen'){
+                    $state.go('tab.kwackScreen')
+                }else{
+                    $state.go('tab.social')
+                }
+                 //This works
             };
     Chats.apiCallWithData("NewsInfo/getOneNews", data, function (data1) {
         console.log("data is", data1)

@@ -1,4 +1,5 @@
 connector.controller('DiscoverFullCtrl', function ($scope, Chats, $state) {
+    $scope.searchText = {}
     $scope.goBackHandler = function () {
         window.history.back(); //This works
         console.log("goBack")
@@ -7,8 +8,7 @@ connector.controller('DiscoverFullCtrl', function ($scope, Chats, $state) {
         $scope.discoverFull = [];
         $scope.isText = true;
 
-
-        if (value.searchText != "") {
+    if (value.searchText != "") {
             Chats.apiCallWithData("NewsInfo/globalSearchForNews", value, function (data) {
                 console.log("newsSearch", data.data)
                 if (data.data) {
@@ -20,6 +20,12 @@ connector.controller('DiscoverFullCtrl', function ($scope, Chats, $state) {
             });
         }
     };
+   
+    $scope.searchCancel = function(data){
+        console.log("+++++++++++")
+        $scope.searchText.searchText=""
+    }
+
 
     $scope.viewsNextPage = function (data) {
          $state.go("tab.exploremore", {

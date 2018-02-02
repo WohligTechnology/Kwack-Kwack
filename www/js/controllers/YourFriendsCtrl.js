@@ -49,8 +49,15 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
       })
       $scope.getAlpha = getAlphaFunc();
      }else if($scope.allpeople=='contact'){
-       console.log("he;llo0contacts")
-       $scope.getAllContacts();
+     
+
+     }
+    
+    
+    }
+
+    $scope.contacts=function(){
+      console.log("contacts search")
       $scope.addContact = function() {
         $cordovaContacts.save($scope.contactForm).then(function(result) {
           // Contact saved
@@ -59,13 +66,81 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
         });
       };
       
-      $scope.getAllContacts = function() {
+      
        console.log('contacts',$scope.contacts)
         $cordovaContacts.find({}).then(function(allContacts) { //omitting parameter to .find() causes all contacts to be returned
           $scope.contacts = allContacts;
           console.log('contacts',$scope.contacts)
+          $scope.contacts=_.orderBy($scope.contacts, ['displayName'], ['asc'])
+          var users =  $scope.contacts
+          var log = [];
+          
+        console.log("var users", users)
+        
+          $scope.alphabet = iterateAlphabet();
+        
+          //Sort user list by first letter of name
+          var tmp={};
+          for(i=0;i<users.length;i++){
+            if(users[i].displayName!=null){
+              console.log("users[i].displayName", users[i].displayName)
+              
+              var letter=users[i].displayName.toUpperCase().charAt(0);
+              
+              
+              if( tmp[ letter] ==undefined){
+                tmp[ letter]=[]
+              }
+                tmp[ letter].push( users[i] );
+            }
+            
+          }
+          $scope.sorted_users = tmp;
+         
+          //Click letter event
+          $scope.gotoList = function(id){
+            $location.hash(id);
+            $ionicScrollDelegate.anchorScroll();
+          }
+        
+          //Create alphabet object
+          function iterateAlphabet()
+          {
+             var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+             var numbers = new Array();
+             for(var i=0; i<str.length; i++)
+             {
+                var nextChar = str.charAt(i);
+                numbers.push(nextChar);
+             }
+             return numbers;
+          }$scope.groups = [];
+          for (var i=0; i<10; i++) {
+            $scope.groups[i] = {
+              name: i,
+              items: []
+            };
+            for (var j=0; j<3; j++) {
+              $scope.groups[i].items.push(i + '-' + j);
+            }
+          }
+          
+          /*
+           * if given group is the selected group, deselect it
+           * else, select the given group
+           */
+          $scope.toggleGroup = function(group) {
+            if ($scope.isGroupShown(group)) {
+              $scope.shownGroup = null;
+            } else {
+              $scope.shownGroup = group;
+            }
+          };
+          $scope.isGroupShown = function(group) {
+            return $scope.shownGroup === group;
+          };
         })
-      };
+      
       
       $scope.findContactsBySearchTerm = function (searchTerm) {
         var opts = {                                           //search options
@@ -89,74 +164,6 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
           $scope.contact = contactPicked;
         })
       }
-var users =  $scope.contacts
-      var log = [];
-      
-    console.log("var users", users)
-    
-      $scope.alphabet = iterateAlphabet();
-    
-      //Sort user list by first letter of name
-      var tmp={};
-      for(i=0;i<users.length;i++){
-        if(users[i].name){
-          var letter=users[i].displayName.toUpperCase().charAt(0);
-          
-          
-          if( tmp[ letter] ==undefined){
-            tmp[ letter]=[]
-          }
-            tmp[ letter].push( users[i] );
-        }
-        
-      }
-      $scope.sorted_users = tmp;
-     
-      //Click letter event
-      $scope.gotoList = function(id){
-        $location.hash(id);
-        $ionicScrollDelegate.anchorScroll();
-      }
-    
-      //Create alphabet object
-      function iterateAlphabet()
-      {
-         var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-         var numbers = new Array();
-         for(var i=0; i<str.length; i++)
-         {
-            var nextChar = str.charAt(i);
-            numbers.push(nextChar);
-         }
-         return numbers;
-      }$scope.groups = [];
-      for (var i=0; i<10; i++) {
-        $scope.groups[i] = {
-          name: i,
-          items: []
-        };
-        for (var j=0; j<3; j++) {
-          $scope.groups[i].items.push(i + '-' + j);
-        }
-      }
-      
-      /*
-       * if given group is the selected group, deselect it
-       * else, select the given group
-       */
-      $scope.toggleGroup = function(group) {
-        if ($scope.isGroupShown(group)) {
-          $scope.shownGroup = null;
-        } else {
-          $scope.shownGroup = group;
-        }
-      };
-      $scope.isGroupShown = function(group) {
-        return $scope.shownGroup === group;
-      };
-     }
-    
-    
     }
    
 
@@ -176,10 +183,10 @@ var users =  $scope.contacts
    
 
     
-    $scope.getAllContacts = function() {
+    // $scope.getAllContacts = function() {
       
           
-       }
+    //    }
 
    
 

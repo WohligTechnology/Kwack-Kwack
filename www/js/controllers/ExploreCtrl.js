@@ -25,7 +25,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
       "page": $scope.pagination.currentPage,
     }
     Chats.apiCallWithData("NewsInfo/getExploreNews", $scope.pagination1, function (data) {
-
+console.log("helloexplore", data)
       $scope.exploreNews = _.concat($scope.exploreNews, data.data.results);
       console.log("explorepagination", $scope.exploreNews)
       if (data.data.results.length == 10) {
@@ -74,11 +74,13 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
       Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
         if (data1.value == true) {
           $state.go("polling-inside", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
           })
         } else {
           $state.go("tab.startPollingex", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
 
           })
 
@@ -89,11 +91,13 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
         console.log("hellodata", data1)
         if (data1.value == true) {
           $state.go("debate", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
           })
         } else {
           $state.go("tab.trailerex", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
           })
         }
       })

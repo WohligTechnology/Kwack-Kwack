@@ -1,8 +1,9 @@
 connector.controller('TrailerCtrl', function($scope, $ionicModal,Chats,$stateParams,$state,ionicToast) {
     $scope.newsId = $stateParams.newsid
+    $scope.previousState = $stateParams.previousState
     data = {}
     data.newsId = $scope.newsId
-    console.log(" $scope.newsId", $scope.newsId)
+    console.log(" $scope.newsId", $scope.previousState)
     $scope.inApp=function(link){
         console.log(link)
         var options = "location=no,toolbar=yes";
@@ -49,14 +50,16 @@ connector.controller('TrailerCtrl', function($scope, $ionicModal,Chats,$statePar
                 $state.go("debate1", {
                     kwackId: $scope.kwack1,
                     newsid: $stateParams.newsid,
-                    ann:"ANONYMOUS"
+                    ann:"ANONYMOUS",
+                    previousState: $scope.previousState
                 })
                 console.log("hellokwackans", $scope.kwack1)
             } if($scope.setvriableValue == false) {
                   console.log("************inside else app")
                 $state.go("debate", {
                     kwackId: $scope.kwack1,
-                    newsid: $stateParams.newsid
+                    newsid: $stateParams.newsid,
+                    previousState: $scope.previousState
                 })
                 console.log("hellokwackans", $scope.kwack1)
             }

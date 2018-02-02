@@ -300,11 +300,13 @@ for(i=0;i<20;i++){
     Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
       if (data1.value == true) {
         $state.go("polling-inside", {
-          newsid: data
+          newsid: data,
+          previousState: $state.current.name
         })
       } else {
         $state.go("tab.startPollingdis", {
-          newsid: data
+          newsid: data,
+          previousState: $state.current.name
          
         })
        
@@ -315,11 +317,13 @@ for(i=0;i<20;i++){
         console.log("hellodata",data1)
        if (data1.value == true) {
          $state.go("debate", {
-           newsid: data
+           newsid: data,
+           previousState: $state.current.name
          })
        } else {
          $state.go("tab.trailerdis", {
-           newsid: data
+           newsid: data,
+           previousState: $state.current.name
          })
        }
      })

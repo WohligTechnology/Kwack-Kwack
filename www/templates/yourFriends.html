@@ -10,7 +10,7 @@
     <div class="text-center your-friends mart40">
       <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='all'}" ng-click="allcontactpeople('all')">All Friends</button>
       <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='people'}" ng-click="allcontactpeople('people'); doRefresh()">People</button>
-      <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='contact'}" ng-click="allcontactpeople('contact'); doRefresh()">contact</button>
+      <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='contact'}" ng-click="allcontactpeople('contact'); contacts()">contact</button>
     </div>
     <div class="searchby-name relative">
       <input type="text" placeholder="search by names numbers" ng-model="followingData.userBeenFollowed">
@@ -97,7 +97,7 @@
             </ion-item>
             <!-- <ion-item > -->
                 <a class="item item-avatar" ng-repeat="author in authors">
-                    <img src="{{author.photo | uploadpath}}">
+                    <img src="{{author.photo[0].value | uploadpath}}">
                     <h2>{{author.name}}</h2>
                     <p>{{authoruserName}}</p>
                     <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png">

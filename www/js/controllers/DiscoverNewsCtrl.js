@@ -26,7 +26,7 @@
      _.forEach($scope.trending, function (value) {
       _.forEach(value.polls, function (polls1) {
         if (polls1.poll == null) {} else {
-          if ($scope.pollKwack._id == polls1.poll.user._id) {
+          if ($scope.pollKwack._id == polls1.poll.user) {
             value.temp = true
           } else {
             $scope.color = false;
@@ -40,7 +40,7 @@
     _.forEach($scope.trending, function (comments) {
       _.forEach(comments.comments, function (comments1) {
         if (comments1.comment == null) {} else {
-          if ($scope.pollKwack._id == comments1.comment.user._id) {
+          if ($scope.pollKwack._id == comments1.comment.user) {
             comments.kwack = true
           } else {
             comments.kwack = false;
@@ -54,6 +54,8 @@
    Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
      $scope.interest = data.data.interests
    })
+
+   console.log("state", $state.current.name)
 
 
    $scope.doRefresh(true);
@@ -114,7 +116,7 @@
      _.forEach($scope.discoverNews, function (comments) {
       _.forEach(comments.comments, function (comments1) {
         if (comments1.comment == null) {} else {
-          if ($scope.pollKwack._id == comments1.comment.user._id) {
+          if ($scope.pollKwack._id == comments1.comment.user) {
             comments.kwack = true
           } else {
             comments.kwack = false;
@@ -126,7 +128,7 @@
    }
   
    $scope.nextPage = function (data, kwackPoll) {
-     
+    console.log("helloStateParams",$state.current.name )
      var data1 = {}
      data1.newsId = data,
        data1.userId = $.jStorage.get("user")._id
@@ -134,12 +136,14 @@
      Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
        if (data1.value == true) {
          $state.go("polling-inside", {
-           newsid: data
+           newsid: data,
+           previousState: $state.current.name
          })
        } else {
          $state.go("tab.startPollingdis", {
-           newsid: data
-          
+           newsid: data,
+           previousState: $state.current.name
+           
          })
         
        }
@@ -149,11 +153,13 @@
          console.log("hellodata",data1)
         if (data1.value == true) {
           $state.go("debate", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
           })
         } else {
           $state.go("tab.trailerdis", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
           })
         }
       })

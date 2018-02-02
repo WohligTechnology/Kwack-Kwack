@@ -1,22 +1,25 @@
 <ion-view title="Discover">
-  <ion-nav-bar class="bar-stable schedule-bar  nav-height">
-    <div class="row">
-      <div class="col col33 ">
-        <!-- <div class="discover-navmenu">
-          <img src="img/discover/menu.png" ui-sref="settings">
-        </div> -->
+  
+  <div class="bar bar-header bar-light">
+      <div class="row">
+          <div class="col col-33">
+              <!-- <div>
+                  <img src="img/filter/6.png" class="w15">
+              </div> -->
+          </div>
+          <div class="col col-33 text-center">
+              <div>
+                  <img src="img/filter/7.png" class="w40" ui-sref="home">
+              </div>
+          </div>
+          <div class="col col-33">
+              <div class="col col33 discover-navsearch" ui-sref="tab.discoverfull">
+                  <i class="ion ion-search"></i>
+                </div>
+          </div>
       </div>
-      <div class="col col33">
-        <div class="kwackheaderImg">
-          <img src="img/discover/kwack.png" ui-sref="home">
-        </div>
-      </div>
-      <div class="col col33 discover-navsearch" ui-sref="tab.discoverfull">
-        <i class="ion ion-search"></i>
-      </div>
-    </div>
-  </ion-nav-bar>
-  <ion-content class="bg-color no-header">
+  </div>
+  <ion-content class="bg-color">
      <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <div class="bodyFont">
       <div class="text-center">
