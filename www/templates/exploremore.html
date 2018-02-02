@@ -19,26 +19,34 @@
         </div>
     </div>
     <ion-content class="has-header">
+            <ion-refresher on-refresh="doRefresh()"></ion-refresher>
         <div class="text-center">
             <h4 class="pad0 title-explore">EXPLORE</h4>
         </div>
-        <div>
+        <div class="">
             <exploremore> </exploremore>
         </div>
-        <div class="explore-more">
+        <div class="related-card">
         <div class="news-content box-inside">
           <div class="list card ">
               <div class="item item-body">
                         <h4 class="related-stories">Related Stories</h4>
-                    <h3 class="pad0">Game of Thrones: HBO hacker threaten leak of season finale</h3>
-                    <div class="date-time">
-                        <span class="carddatecl">Thursday</span><span class="carddatecl"> 19 Aug 2017</span>
-                        <span class="padd-lr carddatecl">broadly.voice.com</span>
-                        <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">8 hours ago</span>
-                    </div>
-                </div>
+                        <div class="mar-b20" ng-repeat="related in discoverNews" ui-sref="tab.exploremore({newsid:related._id})">
+                    
+                                    <h3 class="pad0">{{related.name}}</h3>
+                                    <div class="date-time">
+                                        <span class="carddatecl">{{related.createdAt | fromNowDay}} {{related.createdAt | fromNowDMY}}</span>
+                                        <!-- <span class="carddatecl"> 19 Aug 2017</span> -->
+                                        <span class="padd-lr carddatecl">{{related.source}}</span>
+                                        <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">{{related.createdAt | fromNow}}</span>
+                                    </div>
+                        
+                                
+                        </div>
+                 </div>
             </div>
             </div>
         </div>
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>
     </ion-content>
    </ion-view>

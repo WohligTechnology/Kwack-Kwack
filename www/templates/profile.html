@@ -27,19 +27,19 @@
      <div class="footer">
         <div class="bar bar-footer bar-black">
             <div class="col-20" >
-           <div class="arrow-back text-center">
-               <a class="button" ui-sref="location">
+           <div class="arrow-back text-center" ng-click="goBackHandler()">
+               <a class="button" >
                    <i class="ion ion-ios-arrow-back"></i>
                </a>
            </div>
             </div>
-            <div class="col-50 text-center">
+            <div class="col-50 text-center" ui-sref="inviteFriends">
                 <div class="skip" >
                 <span>SKIP</span>
                 </div>
             </div>
-            <div class="col-25 text-center">
-                <div class="skip text-center" ui-sref="discover">
+            <div class="col-25 text-center" >
+                <div class="skip text-center" ui-sref="inviteFriends">
                 <span>NEXT</span>
                 </div>
             </div>

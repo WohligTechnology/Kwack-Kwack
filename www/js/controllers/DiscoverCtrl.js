@@ -7,6 +7,10 @@ $scope.addInterest.userId= $scope.jstorage._id
 $scope.addInterest.interest=[]
 console.log("heyyjstorage",$scope.addInterest)
 $scope.interestarr=[]
+
+$scope.goBackHandler = function() {
+  window.history.back(); //This works
+};
     $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
       scope: $scope,
       animation: 'slide-in-up'

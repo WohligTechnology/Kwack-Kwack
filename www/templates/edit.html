@@ -1,32 +1,73 @@
 <ion-view>
     <form name="formName">
-    <div class="row text-center">
-        <div class="col col-33 cncelNav" ui-sref="settings">CANCEL</div>
-        <div class="col col-33 navHead">EDIT</div>
-        <div class="col col-33 cncelNav" ng-click="datasave(userInfo)">DONE</div>
-    </div>
-    <ion-content class="bg-color">
-        <div class="bodyFont">
-            <div class="profileImg">
-                <img src="{{userInfo.photo | uploadpath}} " alt="">
-            </div>
-            <div class="chngImg">Change Image</div>
-           <div class="editCard">
-                <div class="card">
+        <div class="row text-center">
+            <div class="col col-33 cncelNav" ui-sref="settings">CANCEL</div>
+            <div class="col col-33 navHead">EDIT</div>
+            <div class="col col-33 cncelNav" ng-click="datasave(userInfo)">DONE</div>
+        </div>
+        <ion-content class="bg-color">
+            <div class="bodyFont">
+                <div class="profileImg">
+                    <img src="{{userInfo.photo | uploadpath}} " alt="">
+                </div>
+                <div class="chngImg" ng-click="showActionsheet('image')">Change Image</div>
+                <div class="editCard relative">
+                        <div class="editBtn">
+                                <img class="img-responsive" src="img/edit/edit.png" alt="">
+                            </div>
+                    <div class="card ">
+                            
                         <div class="editName">
-                            <label for="">NAME</label>
-                            <input type="text" name="name" ng-model="userInfo.name"   value="{{userInfo.name}}" >
+                            <!-- <label for="">NAME</label> -->
+                            <input type="text" name="name" ng-model="userInfo.name" value="{{userInfo.name}}">
+
+                            <div class="pad-left5">
+                                <span>
+                                    <i class="ion ion-location"></i>
+                                </span>
+
+                                <select class="form-control editCity" ng-options="st.stateName for st in stateData track by st._id" ng-model="formName.selectedState"
+                                    placeholder="Select">
+                                    <option class="editCity" value="">Mumbai</option>
+                                </select>
+                               
+                            </div>
+
+
+
+
                         </div>
                         <div class="editBio">
-                            <label for="">BIO</label>
+                            <!-- <label for="">BIO</label> -->
                             <div>
-                              <textarea name="bio" ng-model="userInfo.bio" >{{userInfo.bio}}</textarea>
-                            <!--<p ng-model="data.bio">{{userInfo.bio}}.</p>{{data.bio}}-->
+                                <textarea class="width100" name="bio" rows="4" ng-model="userInfo.bio">Art Director, likes food, photography and exploring places.</textarea>
+                                <!--<p ng-model="data.bio">{{userInfo.bio}}.</p>{{data.bio}}-->
+                            </div>
                         </div>
-                   </div>
-           </div>
-        </div>
-    </ion-content>
-   
-    </form>
+                    </div>
+                </div>
+
+                <div class="editCard">
+                    <div class="card">
+                            <div class="pad-15">
+                        <div class="row text-center">
+                             <div class="col-33 KwackFollowersPosts">
+                                    <label>KWACKS</label>
+                                    <div >{{setKwackCountValueZero}}</div>
+                                </div>
+                                <div class="col-33 KwackFollowersPosts">
+                                    <label>FOLLOWERS</label>
+                                    <div>{{setFollowCountValueZero}}</div>
+                                </div>
+                                <div class="col-33 KwackFollowersPosts">
+                                    <label>POLLS</label>
+                                    <div>{{setPollCountValueZero}}</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </ion-content>
+ </form>
 </ion-view>

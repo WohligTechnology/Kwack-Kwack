@@ -1,8 +1,11 @@
 connector.controller('StartPollingCtrl', function ($scope, $stateParams, Chats,$state,ionicToast) {
     $scope.newsId = $stateParams.newsid
+    $scope.previousState = $stateParams.previousState
+    console.log("helloStateParams",$scope.previousState )
     data = {}
     data.newsId = $scope.newsId
     console.log(" $scope.newsId", $scope.newsId)
+    console.log("$state",$scope.previousState)
     $scope.inApp=function(link){
         console.log(link)
         var options = "location=no,toolbar=yes";
@@ -60,7 +63,8 @@ connector.controller('StartPollingCtrl', function ($scope, $stateParams, Chats,$
             console.log("data is", data1)
             if (data1.value == true) {
                   $state.go("polling-inside",{
-             newsid:$stateParams.newsid
+             newsid:$stateParams.newsid,
+             previousState: $scope.previousState
           })
                 console.log("inside if found")
             } else {

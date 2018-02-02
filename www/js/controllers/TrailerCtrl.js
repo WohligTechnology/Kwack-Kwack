@@ -1,8 +1,9 @@
 connector.controller('TrailerCtrl', function($scope, $ionicModal,Chats,$stateParams,$state,ionicToast) {
     $scope.newsId = $stateParams.newsid
+    $scope.previousState = $stateParams.previousState
     data = {}
     data.newsId = $scope.newsId
-    console.log(" $scope.newsId", $scope.newsId)
+    console.log(" $scope.newsId", $scope.previousState)
     $scope.inApp=function(link){
         console.log(link)
         var options = "location=no,toolbar=yes";
@@ -27,18 +28,45 @@ connector.controller('TrailerCtrl', function($scope, $ionicModal,Chats,$statePar
        $scope.kwack1=kwack
    
    }
-     $scope.nextPage = function () {
-    if( $scope.kwack1 == undefined){
-          ionicToast.show('Choose Your side', 'top', false, 2500);
-    }else{
-                $state.go("debate",{
-             kwackId: $scope.kwack1,
-             newsid:$stateParams.newsid
-          })
-          console.log("hellokwackans",$scope.kwack1)
-      
+      $scope.setvriableValue = false
+    console.log("insid  page", $scope.setvriableValue)
+    $scope.goANONYMOUS = function () {
+        if ($scope.setvriableValue == false) {
+            $scope.setvriableValue = true
+            console.log("insid if page", $scope.setvriableValue)
+        } else {
+            $scope.setvriableValue = false
+            console.log("insid else page", $scope.setvriableValue)
+        }
+
     }
-   
+   $scope.nextPage = function () {
+        if ($scope.kwack1 == undefined) {
+            ionicToast.show('Choose Your side', 'top', false, 2500);
+        } else {
+            console.log("$scope.setvriableValue$scope.setvriableValue$scope.setvriableValue",$scope.setvriableValue)
+            if ($scope.setvriableValue == true) {
+                console.log("************inside if app")
+                $state.go("debate1", {
+                    kwackId: $scope.kwack1,
+                    newsid: $stateParams.newsid,
+                    ann:"ANONYMOUS",
+                    previousState: $scope.previousState
+                })
+                console.log("hellokwackans", $scope.kwack1)
+            } if($scope.setvriableValue == false) {
+                  console.log("************inside else app")
+                $state.go("debate", {
+                    kwackId: $scope.kwack1,
+                    newsid: $stateParams.newsid,
+                    previousState: $scope.previousState
+                })
+                console.log("hellokwackans", $scope.kwack1)
+            }
+
+
+        }
+
     }
   
   })

@@ -1,4 +1,4 @@
- connector.controller('DiscoverNewsCtrl', function ($scope, $ionicScrollDelegate, Chats, $stateParams, $state, $ionicPlatform) {
+ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing, $ionicScrollDelegate, Chats, $stateParams, $state, $ionicPlatform) {
    $scope.activeTab = 'All'
    $scope.changeTab = function (num) {
      $scope.activeTab = num;
@@ -55,6 +55,8 @@
      $scope.interest = data.data.interests
    })
 
+   console.log("state", $state.current.name)
+
 
    $scope.doRefresh(true);
 
@@ -102,7 +104,7 @@
      _.forEach($scope.discoverNews, function (value) {
        _.forEach(value.polls, function (polls1) {
          if (polls1.poll == null) {} else {
-           if ($scope.pollKwack._id == polls1.poll.user) {
+           if ($scope.pollKwack._id == polls1.poll.user._id) {
              value.temp = true
            } else {
              value.temp = false;
@@ -126,6 +128,7 @@
    }
   
    $scope.nextPage = function (data, kwackPoll) {
+    console.log("helloStateParams",$state.current.name )
      var data1 = {}
      data1.newsId = data,
        data1.userId = $.jStorage.get("user")._id
@@ -133,12 +136,14 @@
      Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
        if (data1.value == true) {
          $state.go("polling-inside", {
-           newsid: data
+           newsid: data,
+           previousState: $state.current.name
          })
        } else {
-         $state.go("tab.startPolling", {
-           newsid: data
-          
+         $state.go("tab.startPollingdis", {
+           newsid: data,
+           previousState: $state.current.name
+           
          })
         
        }
@@ -148,11 +153,13 @@
          console.log("hellodata",data1)
         if (data1.value == true) {
           $state.go("debate", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
           })
         } else {
-          $state.go("tab.trailer", {
-            newsid: data
+          $state.go("tab.trailerdis", {
+            newsid: data,
+            previousState: $state.current.name
           })
         }
       })
@@ -167,6 +174,28 @@
           newsid: data
         })
 
+   }
+
+   //socialSharing
+   $scope.socilaSharing=function(desciption,imageUrl,title,link){
+     console.log("description",title)
+     console.log("image",link)
+     var message=desciption
+     var subject = title
+     var image = imageUrl
+     $cordovaSocialSharing
+     .share(message, subject, image,link) // Share via native share sheet
+     .then(function (result) {
+       $ionicLoading.hide();
+       // Success!
+       console.log("Success");
+      
+       console.log(result);
+       console.log(image);
+     }, function (err) {
+       // An error occured. Show a message to the user
+       console.log("error : " + err);
+     });
    }
 
  })

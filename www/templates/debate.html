@@ -2,7 +2,7 @@
     <div class="bar bar-header bar-light">
         <div class="row">
             <div class="col col-33">
-                <div ui-sref="tab.trailer">
+                <div ng-click="back()">
                     <i class="ion ion-ios-arrow-left trailernav"></i>
                 </div>
             </div>
@@ -23,13 +23,13 @@
             <h4 class="pad0 title-explore">KWACK</h4>
         </div>
         <div class="debatetrailerName">
-            <label for="">{{newsInfo.title}}</label>
+            <label for="">{{newsInfo.name}}</label>
             <div>
                 <span class="articleDate">
-                    Monday,
+                    {{newsInfo.createdAt | fromNowDay}},
                 </span>
                 <span class="articleDate">
-                    Oct 9, 2017
+                    {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}
                 </span>
             </div>
             <div class="row pad0">
@@ -44,11 +44,12 @@
                             <img src="img/debate/proicon.png" alt="">
                             <span class="alignbM"></span>
                         </label>
-                        <label class="discoverCardStrip">
-                            <img src="img/debate/poll.png">
+                        <label class="discoverCardStrip" ng-click="nextPage(newsInfo._id)">
+                            <img ng-if="!newsInfo.polled" src="img/debate/poll.png">
+                            <img ng-if="newsInfo.polled" src="img/filter/2.png">
                             <span class="alignbM"> {{newsInfo.polls.length}}</span>
                         </label>
-                        <label>
+                        <label ng-click="socilaSharing(newsInfo.description,newsInfo.imageUrl,newsInfo.title,newsInfo.url)">
                             <img src="img/debate/share.png">
                             <span class=" alignbM">20</span>
                         </label>
@@ -57,14 +58,17 @@
             </div>
         </div>
         <div class="text-center">
-            <h4 class="pad0 title-comments">2 COMMENTS</h4>
+            <h4 class="pad0 title-comments">{{commentInfo.length}} COMMENTS</h4>
         </div>
         <div ng-repeat="debate in commentInfo">
             <debate></debate>
         </div>
         <div>
             <div class="debate-card relative">
-                <div class="debateprofile">
+                  <div class="debateprofile"  ng-if="!currentUserInfo.photo || setvarann">
+                    <img ng-src="img/profile/profile.png" alt="profile-img" class="profile-w">
+                </div>
+                <div class="debateprofile" ng-if="!setvarann && currentUserInfo.photo">
                     <img ng-src="{{currentUserInfo.photo | uploadpath}}" alt="profile-img" class="profile-w">
                 </div>
                 <div class="list card">
@@ -75,23 +79,47 @@
                             <div class="col col-80">
                                 <div class="test">
                                     <div class="debate-user user-flex">
-                                        <span>{{currentUserInfo.name}} </span>
-                                        <img ng-src="img/debate/3.png">
+                                        <span ng-if="setvarann">ANONYMOUS</span>
+                                        <span ng-if="!setvarann">{{currentUserInfo.name}} </span>
+                                        <img ng-if="kwackopt=='FOR'" ng-src="img/debate/1.png">
+                                        <img ng-if="kwackopt=='AGAINST'" ng-src="img/debate/thum.png">
+                                        <img ng-if="kwackopt=='NUETRAl'" ng-src="img/debate/3.png">
                                     </div>
                                 </div>
                                 <div>
                                     <!-- <p>{{news.desc}}</p> -->
                                     <textarea class="text-area" ng-model="commentText" placeholder="Enter your Text" rows="3" cols="28"></textarea>
-                                    <button ng-click="saveComment(commentText)"> go</button>
                                 </div>
                                 <div class="likes">
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="absolute top-minus debate-submit">
+                    <button class="button btn-yellow" ng-click="saveComment(commentText)">SUBMIT</button>
+                </div>
             </div>
         </div>
     </ion-content>
+    
+    <div class="footer" ng-show="toggle">
+        <form name="formFooter">
+        <div class="bar bar-footer bar-black">
+            <div class="row">
+               <div class="col-80">
+                    <div class="replay">
+                        <textarea class="mar-l10" ng-model="replyText" rows="1" name="replyButt" cols="32" placeholder="Write Something..." required></textarea>
+                        <!-- <button ng-click="saveReply(replyText, debate); REPLIES=!REPLIES">go</button> -->
+                    </div>
+                </div>
+                <div class="col-20">
+                    <div><button class="button btn-send" ng-disabled="formFooter.replyButt.$invalid" ng-click="saveReply(replyText, debate);">SEND</button></div>
+                </div>
+            </div>
+
+        </div>
+          </form>
+    </div>
+  
 </ion-view>

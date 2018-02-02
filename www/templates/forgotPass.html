@@ -1,0 +1,49 @@
+<ion-view title="forgot Password">
+  
+        <ion-content class="bg-color no-top">
+                <form  name="forgot">
+            <div class="forgotpass">
+                <div class="w56">
+                    <img src="img/signup/bar.png" alt="logo" class="w100">
+                </div>
+                <div class="text-center mart40">
+                    <h2 class="title-discover">FORGOT PASSWORD?</h2>
+                    <P>We just need your registered mobile number to send you a new passcode. </P>
+                </div>
+                <div class="mart40 mar-l10">
+                    <input type="tel" class="mob-input"  ng-model="forgot.mobile" name="mob" value="{{forgot.mobile}}"  autofocus placeholder="+91 00000 00000" maxlength="13"
+                        minlength="10" required>
+                    <div class="absolute top-minus mar-l15">
+                        <button class="button  btn-yellow mar-l15"  ng-click="resendOtp(forgot)"  ng-disabled="forgot.$invalid">RESET PASSWORD</button>
+                        <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
+                    </div>
+                    
+                </div>
+                <!-- <span class="error-msg" ng-show="forgot.mob.$error && forgot.mob.$touched">Please Enter your Mobile No.</span>                         -->
+                
+                <div class="text-center mar-t50">
+                    <p >Don’t have an Account?</p>
+               </div>
+            </div>
+        </form>
+        </ion-content>
+        <div class="footer">
+            <div class="bar bar-footer bar-black">
+                <div class="row">
+                    <div class="col col-20">
+                        <div class="arrow-back text-center">
+                            <a class="button" ui-sref="login">
+                                <i class="ion ion-ios-arrow-back"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col col-75">
+                        <div class="skip text-right mar-r" ui-sref="signUp">
+                            <span>REGISTER</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+</ion-view>

@@ -1,11 +1,11 @@
-<ion-view title="Trailer">
+<ion-view title="Trailer" >
    <div class="row">
         <div class="col col-10" ng-click="goBackHandler()">
                 <i class="closenavbar ion ion-ios-close-outline"></i>
         </div>
         <div class="col col-90">
-            <div class="">
-                    <span class="" for="">{{newsInfo.title}}</span>
+            <div class="pollingtitle text-overflow">
+                    <span class="" for="">{{newsInfo.name}}</span>
             </div>
         </div>
    </div>         
@@ -18,8 +18,8 @@
     </div>
     <div class="trailerName" >
       <label for="">{{newsInfo.title}}</label>
-      <div><span class="articleDate"> Monday,</span>
-        <span class="articleDate"> Oct 9, 2017</span>
+      <div><span class="articleDate"> {{newsInfo.createdAt | fromNowDay}},</span>
+        <span class="articleDate"> {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}</span>
         <span class="readarticleKwack" ng-click="inApp(newsInfo.url)">Read Article ...</span>
       </div>
       <div class="row pad0">
@@ -67,7 +67,9 @@
      </div>
     </div>
     <div class="text-center martop">
-      <img class="aligntop" src="img/tick.PNG" alt="">
+      <img class="aligntop" ng-if="setvriableValue == true" src="img/tick.PNG" ng-click="goANONYMOUS()" >
+      <img class="aligntop" ng-if="setvriableValue == false" src="img/trailer/tick.png" ng-click="goANONYMOUS()">
+
       <label class="pad-left5 fs-10">CHECK TO GO ANONYMOUS</label>
     </div>
     <!-- <button class=" trailernext" ng-click="openModal()"> -->

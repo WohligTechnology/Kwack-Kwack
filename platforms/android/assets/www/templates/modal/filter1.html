@@ -22,26 +22,29 @@
         </div>
     </div>
     <ion-content class="filter popupHeader content-bg">
+        <form name="filter">
         <div class="divColor">
-            <div class="bg-gray">
+            <div class="bg-gray" ng-click="reset(filter)">
                 <h4 class="text-center">FILTERS <span class="float-right reset">Reset</span></h4>
             </div>
 
-            <div class="row">
+            <div class="row"> 
                 <div class="col col-50 ">
                     <div class="list text-right">
-                        <select class="select-month" >
-                              <option value="">Select</option>
-                                           <option  ng-repeat="month in months"  value="{{month.month}}">{{month.month}}</option>
+                        <select class="select-month"  ng-options="month1.months for month1 in months" ng-model="filter.Month">
+                                <option value="">Month</option>
+                              <!-- <option value="{{Month}}" ></option> -->
+                                           <!-- <option ng-model="filter.Month" ng-if='Month!=month.month'>{{month.month}}</option> -->
                                          
                                      </select>
                     </div>
                 </div>
                 <div class="col col-50">
                     <div class="list text-left">
-                        <select class="select-year">
-                                      <option>Select</option>
-                                       <option ng-repeat="year in dynamicYear | orderBy:'year' track by $index" >{{year.year}}</option>
+                        <select class="select-year"  ng-options="year1.year for year1 in year" ng-model="filter.Year">
+                                <option value="" >Year</option>         
+                            <!-- <option></option> -->
+                                       <!-- <option ng-if='Year!=year1.year'>{{year1.year}}</option> -->
                                     </select>
                     </div>
                 </div>
@@ -52,7 +55,7 @@
                     <h6>My Preferences</h6>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="mar-auto placeholderCat">
                     <input type="text" placeholder="Enter category" class="input-category btn-tran" ng-model="searchText.searchText" ng-change="search(searchText)" >
                        <div ng-if="searchText.searchText != '' && isText == true">
@@ -63,36 +66,43 @@
                              </ul>
                             </div>
                 </div>
-            </div>
+            </div> -->
+            <div class="mar-auto placeholderCat">
+                    <input type="text" placeholder="Enter category" class="input-category btn-tran mar-auto" ng-model="searchText" >
+                       <!-- <div ng-if="searchText.searchText != '' && isText == true">
+                            </div> -->
+                </div>
             <div class="filter-btns">
+                   
                 <div class="text-center" ng-repeat="int in interestdup">
-                    <button class="button btn-sports btn-bg" ng-repeat="int1 in int" ng-click="select(int1.name)" ng-class="{'black' : int1.value==true}"> {{int1.name}}</button>
+                    <button class="button btn-sports btn-bg" ng-repeat="int1 in int | filter:searchText" ng-click="select(int1.name)" ng-class="{'black' : int1.value==true}"> {{int1.name}}</button>{{int1.value}}
                     <!-- <button class="button btn-comedy btn-bg" ng-class="{'black' : selectinterest[1].value==true}" ng-click="select('Comedy')"> Comedy</button>
                             <button class="button btn-food btn-bg" ng-class="{'black' : selectinterest[2].value==true}" ng-click="select('Food')"> Food</button> -->
                 </div>
             </div>
             <div class="category-preferences">
                 <div class="row">
-                    <div class="col-33">
-                        <div class="all"><img src="img/filter/1.png" class="img-responsive w20">
+                    <div class="col-33" ng-click="categoryViews('All')">
+                        <div class="all"><img ng-if='filterData.polls && filterData.kwacks' src="img/filter/1.png" class="img-responsive w20" ><img ng-if='!filterData.polls || !filterData.kwacks' class="img-responsive w20" src="img/filter/unselecttick.png">
                             <span>All</span>
                         </div>
                     </div>
-                    <div class="col-33">
-                        <div class="polls"><img src="img/filter/2.png" class="img-resopnsive w25">
+                    <div class="col-33" ng-click="categoryViews('Polls')">
+                        <div class="polls"><img ng-if='filterData.polls' src="img/filter/2.png" class="img-resopnsive w25" ><img ng-if='!filterData.polls' class="img-resopnsive w25" src="img/explore/5.png">
                             <span>Polls</span>
                         </div>
                     </div>
-                    <div class="col-33">
-                        <div class="kwack"><img src="img/filter/3.png" class="img-resopnsive w20">
+                    <div class="col-33" ng-click="categoryViews('Kwacks')">
+                        <div class="kwack"><img ng-if='filterData.kwacks' src="img/filter/3.png" class="img-resopnsive w20" ><img ng-if='!filterData.kwacks' class="img-resopnsive w20" src="img/explore/6.png">
                             <span>Kwack</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="closePopup" ng-click="closeModal()">
+        <div class="closePopup" ng-click="filter1(filter);closeModal()">
             <i class="ion ion-ios-close-outline"></i>
         </div>
+    </form>
     </ion-content>
 </ion-modal-view>

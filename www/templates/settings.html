@@ -1,15 +1,18 @@
 <ion-view>
     <div class="row ">
-        <div class="col col-33 cncelNav">DONE</div>
+        <div class="col col-33 cncelNav" ng-click="goBackHandler()">DONE</div>
         <div class="col col-33 navHead text-center">SETTINGS</div>
-        <div class="col col-33 cncelNav text-right">SIGN OUT</div>
+        <div class="col col-33 cncelNav text-right" ng-click="logout()">SIGN OUT</div>
     </div>
    <ion-content class="bg-color setting">
         <div class="bodyFont ">
             <div class="row">
                 <div class="col-50">
                     <div class="profileImg" ui-sref="edit">
-                        <img src="img/edit/profilechange.jpg">
+                        <!-- <img src="img/edit/profilechange.jpg"> -->
+                        <!-- <img ng-src="{{userInfo.photo | uploadpath}}"> -->
+                        <img ng-if="userInfo.photo && userInfo.photo!=''" ng-src="{{userInfo.photo | uploadpath}}"  alt="logo" class="w100">
+                        <img src="img/profile/profile.png" ng-if="!userInfo.photo || userInfo.photo==''" alt="logo" class="w100">
                     </div>
                 </div>
                 <div class="col-50">
@@ -61,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="settings-btns viewless" ng-class="{'viewall': viewmore == true }">
+                <div class="settings-btns viewless" ng-class="{'viewall': viewmore == true , 'viewless': viewmore == false }">
                     <div class="text-center" ng-repeat="int in interestdup">
                         <button class="button btn-sports btn-bg" ng-repeat="int1 in int | filter:searchText" ng-click="select(int1.name)" ng-class="{'black' : int1.value==true}">{{int1.name}}</button>
                         <!-- <button class="button btn-science btn-bg"> Science</button>
@@ -82,9 +85,10 @@
                         <button class="button btn-books btn-bg"> Books</button>
                     </div> -->
                 </div>
-                <div class="text-center view-all" ng-click="viewall()">
+                <div class="text-center view-all" ng-click="viewall()"  ng-if="view3">
                     <label>VIEW ALL</label>
                 </div>
+                <div class="text-center view-all" ng-click="viewLess3()" ng-if="!view3"><label> View Less</label> </div>
             </div>
         </div>
         <div class="account">
@@ -92,15 +96,15 @@
         </div>
         <div class="editCard">
             <div class="card">
-                <div class="row userName">
-                    <div class="col col-50">
+                <div class="row userName" ui-sref="tab.aboutinside">
+                    <div class="col col-50"  >
                         <label>ABOUT</label>
                     </div>
-                    <div class="col col-50 text-right" ui-sref="aboutinside">
+                    <div class="col col-50 text-right" >
                         <i class="ion ion-ios-arrow-right"></i>
                     </div>
                 </div>
-                <div class="row userName">
+                <div class="row userName" ui-sref="tab.accountinside">
                     <div class="col col-50" >
                         <label>ACCOUNT</label>
                     </div>
@@ -108,7 +112,7 @@
                         <i class="ion ion-ios-arrow-right" ></i>
                     </div>
                 </div>
-                <div class="row userName">
+                <div class="row userName" ui-sref="tab.yourfriends">
                     <div class="col col-50 emailText">
                         <label>FRIENDS</label>
                     </div>

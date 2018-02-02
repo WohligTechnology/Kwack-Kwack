@@ -1,5 +1,5 @@
 <ion-view title="otp">
-    <form name="formName">
+      <form name="formName">
     <ion-content class="bg-color no-top">
         <div class="otp locationMargin">
             <div class="w25 mar-auto">
@@ -10,26 +10,33 @@
                 <P class="discover-para">Please enter your mobile number </P>
             </div>
             <div class="input-mar">
-                <div class="display-inline input-padd"><input type="text" class="otp-input text-center" ng-model="formName.digit1" placeholder="+ 91"></div>
-                <div class="display-inline  input-padd"><input type="text" class="mobile text-center" ng-model="formName.digit2" placeholder="00000 00000" autofocus  maxlength="10" minlength="10"></div>
+                <div class="display-inline input-padd">
+                    <input type="text" class="mobile-input text-center" ng-model="formName.digit1" placeholder="+ 91">
+                </div>
+                <div class="display-inline  input-padd">
+                    <input type="text" class="mobile text-center" ng-model="formName.mobile" autofocus placeholder="00000 00000"  maxlength="10"
+                        minlength="10">
+                </div>
             </div>
-       </div>
+        </div>
     </ion-content>
     <div class="footer">
         <div class="bar bar-footer bar-black">
-            <div class="col col-20">
-                <div class="arrow-back text-center">
-                    <a class="button" ui-sref="signUp">
-                        <i class="ion ion-ios-arrow-back"></i>
-                    </a>
+            <div class="row">
+                <div class="col col-20">
+                    <div class="arrow-back text-center">
+                        <a class="button" ui-sref="signUp">
+                            <i class="ion ion-ios-arrow-back"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col col-75">
-                <div class="skip text-right mar-r" ng-click="otp(formName)">
-                    <span>NEXT</span>
+                <div class="col col-75">
+                    <div class="skip text-right mar-r" ng-click="verifyMobile(formName)">
+                        <span>NEXT</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </form>
+  </form>
 </ion-view>

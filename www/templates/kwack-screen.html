@@ -2,9 +2,9 @@
     <div class="bar bar-header bar-light">
         <div class="row">
             <div class="col-20">
-                <div class="mar-l10">
+                <!-- <div class="mar-l10">
                     <img src="img/filter/6.png" class="w25" ui-sref="settings">
-                </div>
+                </div> -->
             </div>
             <div class="col-60 text-center">
                 <div>
@@ -12,11 +12,11 @@
                 </div>
             </div>
             <div class="col-20">
-                     <span>
+                     <span ui-sref="tab.kwacksearch">
                         <img src="img/filter/5.png" class="w25">
                     </span>
                     <span class="mar-l15" ng-click="openModal()">
-                        <img src="img/filter/4.png" class="w25">
+                        <img src="img/kwack.png" class="w25">
                     </span>
             </div>
         </div>
@@ -26,6 +26,7 @@
         <div class="text-center">
             <h4 class="pad0 title-explore">KWACK</h4>
         </div>
+        <div ng-if="news.length==0" class="text-center pad-10">No news available right now please apply some filters</div>
         <div class="kwackcard-padd ">
             <div class="list imagePos kwack-card">
                 <div ng-repeat="test in news">

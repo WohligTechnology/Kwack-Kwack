@@ -1,10 +1,10 @@
-<ion-view>
+<ion-view title="Social">
     <div class="bar bar-header bar-light">
         <div class="row">
             <div class="col col-33">
-                <div>
+                <!-- <div>
                     <img src="img/filter/6.png" class="w15">
-                </div>
+                </div> -->
             </div>
             <div class="col col-33 text-center">
                 <div>
@@ -12,13 +12,14 @@
                 </div>
             </div>
             <div class="col col-33">
-                <div class="text-right ">
+                <div class="text-right " ui-sref="tab.socialsearch">
                     <img src="img/filter/5.png" class="w15">
                 </div>
             </div>
         </div>
     </div>
     <ion-content class="bg-color has-header">
+            <ion-refresher on-refresh="doRefresh()"></ion-refresher>            
         <div class="text-center">
             <h4 class="pad0 title-explore">SOCIAL</h4>
         </div>
@@ -62,6 +63,9 @@
             </div>
         </div>
         <div class="news-content">
+            <div ng-repeat="social in discoverNews">
+
+            
             <div class="row">
                 <div class="col col-20">
                     <div class="toi">
@@ -70,30 +74,30 @@
                 </div>
                 <div class="col col-80">
                     <div class="news-video">
-                        <p class="pad0"><span>Economic Times</span> <span><img src="img/social/icon.png" alt="icon" class="w3"></span> @Economics
-                            Ti.. <span><img src="img/explore/4.png" alt="logo" class="w3"></span> 46m</p>
-                        <p class="pad0">In Pics:<span class="color-yellow"> @susanthesquark</span> did everyone in <span class="color-yellow">#tech</span>                            a favor by unmasking the donkeys "worshipped as kings"<span class="color-yellow"> https://goo.gl/Ahuoip</span </p>
+                        <p class="pad0"><span>{{social.source}}</span> <span ><img src="img/social/icon.png" alt="icon" class="w3"></span> {{social.sourceId}}<span class="pad-left5"><img src="img/explore/4.png" alt="logo" class="w3"></span> {{social.createdAt | fromNow}}</p>
+                        <p class="pad0">In Pics:<span class="color-yellow"> @susanthesquark</span> did everyone in <span class="color-yellow">#tech </span>{{social.title}} "worshipped as kings"<span class="color-yellow"> {{social.url}}</span> </p>
                     </div>
                 </div>
            </div>
             <div class="mar-lr">
                 <div class="relative">
-                    <img class="full-image" src="img/social/girl.jpg">
+                    <img class="full-image" src="{{social.imageUrl}}">
                 </div>
                 <div class="social-icons">
                     <div class="display-inline">
                         <div class="w56"><img src="img/social/facebook.png" class="w100"></div>
                     </div>
                     <div class="display-inline float-right explore-icon text-center ">
-                        <label class="discoverCardStrip"> <img class="" src="img/explore/5.png"><span class=" alignM"> 20</span></label>
-                            <label class="discoverCardStrip"><img class="img-responsive" src="img/explore/6.png">
-                              <span class=" alignM">  42</span></label>
-                            <label> <img src="img/explore/7.png">
-                            <span class="colorw alignM">20</span>
-                    </label>
+                        <label class="discoverCardStrip"  ng-click="nextPage(social._id,'poll')"> <img ng-if="!social.temp"  src="img/explore/5.png"> <img ng-if="social.temp==true" src="img/filter/2.png"><span class="alignM"> {{social.polls.length}}</span></label>
+                        <label class="discoverCardStrip"  ng-click="nextPage(social._id,'kwack')"><a><img ng-if="!social.kwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="social.kwack==true" class="img-responsive" src="img/discover/shieldclick.png"></a>
+                            <span class="alignM">{{social.comments.length}}</span></label>
+                            <label ng-click="socilaSharing(social.description,social.imageUrl,social.title,social.url)"><img src="img/explore/7.png">
+                                <span class="colorw alignM">{{social.share}}</span></label>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="2px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>         
     </ion-content>
 </ion-view>

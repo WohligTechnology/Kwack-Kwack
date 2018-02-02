@@ -1,6 +1,6 @@
 <ion-view title="Account Inside">
   <div class="row invtNav">
-    <div class="col col-33 mar-auto0 settings" ui-sref="settings">
+    <div class="col col-33 mar-auto0 settings" ui-sref="tab.settings">
       <i class="ion ion-ios-arrow-back"></i>
       <label for="">SETTINGS</label>
     </div>
@@ -56,7 +56,7 @@
           </div>
         </div>
       </div>
-      <button class="delAcc">Delete This Account</button>
+      <button class="delAcc" ng-click="deleteThisUser()">Delete This Account</button>
     </div>
 
   </ion-content>

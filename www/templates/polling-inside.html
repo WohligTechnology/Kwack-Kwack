@@ -2,13 +2,13 @@
      <div class="bar bar-header bar-light">
         <div class="row">
           <div class="col col-33">
-            <div ui-sref="tab.discoverNews" ng-click="goBackHandler()">
+            <div  ng-click="back()">
               <i class="ion ion-ios-arrow-left trailernav"></i>
             </div>
           </div>
           <div class="col col-33 text-center">
             <div>
-              <img src="img/filter/7.png" class="w40">
+              <img  src="img/filter/7.png" class="w40">
             </div>
           </div>
           <div class="col col-33">
@@ -26,13 +26,13 @@
           <img class="img-responsive" src="{{newsInfo.imageUrl}}" alt="">
         </div>
         <div class="trailerName">
-          <label for="">{{newsInfo.title}}</label>
+          <label for="">{{newsInfo.name}}</label>
           <div>
             <span class="articleDate">
-              Monday,
+              {{newsInfo.createdAt | fromNowDay}},
             </span>
             <span class="articleDate">
-              Oct 9, 2017
+              {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}
             </span>
           </div>
           <div class="row pad0 pollingBorder">
@@ -47,8 +47,9 @@
                 <img src="img/debate/proicon.png">
                 <span class="pollingCounts"></span>
                 </label>
-                <label class="discoverCardStrip">
-                <img src="img/debate/poll.png">
+                <label class="discoverCardStrip" ng-click="nextPage(newsInfo._id,'kwack')">
+                  <img ng-if="!newsInfo.kwacked" class="img-responsive" src="img/explore/6.png">
+                  <img ng-if="newsInfo.kwacked" class="img-responsive" src="img/discover/shieldclick.png">
                 <span class="pollingCounts"> {{TotalPoll}}</span>
                 </label>
                 <label>
