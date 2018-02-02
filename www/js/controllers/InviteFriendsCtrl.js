@@ -1,4 +1,6 @@
-connector.controller('InviteFriendsCtrl', function($scope) {
+connector.controller('InviteFriendsCtrl', function(Chats, $scope) {
+  $scope.user={}
+  $scope.user.userId=$.jStorage.get('user')._id
     $scope.toggle=true
     $scope.people=function(){
       $scope.toggle = true
@@ -21,5 +23,29 @@ connector.controller('InviteFriendsCtrl', function($scope) {
       $scope.followersb = false;
       $scope.pollsb = true;
       $scope.kwacksb = false;
+    }
+
+    Chats.apiCallWithData("User/getAllUser", $scope.user, function (data) {
+      console.log("Users",data.data)
+      $scope.people=data.data
+    })
+
+    $scope.unfollow=function(id){
+      $scope.user={}
+      $scope.user.userFollowed=$.jStorage.get('user')._id
+      $scope.user.userFollwing=id
+      Chats.apiCallWithData("UserFollow/addFollowerCount", $scope.user, function (data) {
+      console.log("Users",data)
+})
+    }
+
+    $scope.follow1 = function(id){
+      console.log("hello",id)
+      $scope.user={}
+      $scope.user.userFollowed=$.jStorage.get('user')._id
+      $scope.user.userFollwing=id
+      Chats.apiCallWithData("UserFollow/removeFollowerCount", $scope.user, function (data) {
+      console.log("Users",data)
+})
     }
   })

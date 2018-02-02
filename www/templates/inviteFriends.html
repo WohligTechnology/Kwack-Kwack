@@ -63,15 +63,15 @@
           </div>
            </div>
       </div>
-      <div class="list listperson listdetail">
-        <a class="item item-avatar">
-          <img src="img/inviteFriends/Dp.png">
-          <h2>Jamila Mamawala</h2>
-          <p>jamie20</p>
-          <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png" alt="">
-          <img class="followersUn" ng-show="follow" ng-click='follow=false' src="img/inviteFriends/follow.png" alt="">
+      <div class="list listperson listdetail" ng-if='followersb==true'>
+        <a class="item item-avatar"  ng-repeat="users in people">
+          <img src="{{users.photo | uploadpath}}">
+          <h2>{{users.userName}}</h2>
+          <p>{{users.email}}</p>
+          <img class="followersUn" ng-show="!follow" ng-click='follow=true; unfollow(users._id)' src="img/inviteFriends/Unfollow.png" alt="">
+          <img class="followersUn" ng-show="follow" ng-click='follow=false; follow1(users._id)' src="img/inviteFriends/follow.png" alt="">
         </a>
-        <a class="item item-avatar">
+        <!-- <a class="item item-avatar">
           <img src="img/inviteFriends/Dp.png">
           <h2>Apoorv Akhouri</h2>
           <p>apoorv-08</p>
@@ -91,7 +91,7 @@
           <p>Rk1798</p>
           <img class="followersUn" ng-show="!follow3" ng-click='follow3=true' src="img/inviteFriends/Unfollow.png" alt="">
           <img class="followersUn" ng-show="follow3" ng-click='follow3=false' src="img/inviteFriends/follow.png" alt="">
-        </a>
+        </a> -->
         <!-- <a class="item item-avatar">
           <img src="img/inviteFriends/Dp.png">
           <h2>Apoorv Akhouri</h2>
@@ -100,28 +100,75 @@
           <img class="followersUn" ng-show="follow4" ng-click='follow4=false' src="img/inviteFriends/follow.png" alt="">
         </a> -->
       </div>
+      <div class="list imagePos listHead"  ng-if='kwacksb==true'>
+                    <a class="item item-thumbnail-left ">
+                      <img class="img-responsive" src="img/invite/padthumb.jpg">
+                      <h2>'Padmavati' trailer: Deepika Padukone-Shahid Kapoor and </h2>
+                      <p>Thursday, 19 Aug 2017</p>
+                    </a>
+                    <a class="item item-thumbnail-left ">
+                      <img class="img-responsive" src="img/invite/justthumb.jpg">
+                      <h2>The Flash season 4: New episodes, release date, cast, villain and </h2>
+                      <p>Thursday, 19 Aug 2017</p>
+                    </a>
+                    <a class="item item-thumbnail-left ">
+                      <img class="img-responsive" src="img/invite/modithumb.jpg">
+                      <h2>PM Modi wraps up Myanmar trip with visit to 2500-year-old Shwedagon Pagoda</h2>
+                      <p>Thursday, 19 Aug 2017</p>
+                    </a>
+                    <a class="item item-thumbnail-left ">
+                      <img class="img-responsive" src="img/invite/1+5Tthumb.jpg">
+                      <h2>Vivo V7+ with FullView display launching in India, pre-orders to begin today</h2>
+                      <p>Thursday, 19 Aug 2017</p>
+                    </a>
+                  </div>
+
+                  <div class="list imagePos listHead"  ng-if='pollsb==true'>
+                                <a class="item item-thumbnail-left ">
+                                  <img class="img-responsive" src="img/invite/padthumb.jpg">
+                                  <h2>'Padmavati' trailer: Deepika Padukone-Shahid Kapoor and </h2>
+                                  <p>Thursday, 19 Aug 2017</p>
+                                </a>
+                                <a class="item item-thumbnail-left ">
+                                  <img class="img-responsive" src="img/invite/justthumb.jpg">
+                                  <h2>The Flash season 4: New episodes, release date, cast, villain and </h2>
+                                  <p>Thursday, 19 Aug 2017</p>
+                                </a>
+                                <a class="item item-thumbnail-left ">
+                                  <img class="img-responsive" src="img/invite/modithumb.jpg">
+                                  <h2>PM Modi wraps up Myanmar trip with visit to 2500-year-old Shwedagon Pagoda</h2>
+                                  <p>Thursday, 19 Aug 2017</p>
+                                </a>
+                                <a class="item item-thumbnail-left ">
+                                  <img class="img-responsive" src="img/invite/1+5Tthumb.jpg">
+                                  <h2>Vivo V7+ with FullView display launching in India, pre-orders to begin today</h2>
+                                  <p>Thursday, 19 Aug 2017</p>
+                                </a>
+                              </div>
     </div>
     <!-- <div>
     </div> -->
   </ion-content>
   <div class="footer">
     <div class="bar bar-footer bar-black" >
-      <div class="col col-20" ui-sref="discover">
-        <div class="arrow-back text-center">
-          <a class="button">
-            <i class="ion ion-ios-arrow-back"></i>
-          </a>
+      <div class="row"> 
+         <div class="col col-20" ui-sref="discover">
+          <div class="arrow-back text-center">
+            <a class="button">
+              <i class="ion ion-ios-arrow-back"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="col col-50 text-center">
-        <div class="skip">
-          <span>SKIP</span>
+        <div class="col col-50 text-center">
+          <div class="skip">
+            <span>SKIP</span>
+          </div>
         </div>
-      </div>
-      <div class="col col-30 text-center" ui-sref="tab.trailer"> 
-        <div class="skip text-center">
-          <span>NEXT</span>
-        </div>
+        <div class="col col-30 text-center" ui-sref="tab.trailer"> 
+            <div class="skip text-center">
+              <span>NEXT</span>
+            </div>
+          </div>
       </div>
     </div>
   </div>

@@ -93,17 +93,17 @@ $dark:                            #444 !default;
     @font-face {
         font-family: 'Montserrat-Bold';
         src: url("../lib/ionic/fonts/Montserrat-Bold.ttf");
-    }
-
-    // @font-face {
+    } // @font-face {
     //     font-family: 'Montserrat-Bold';
     //     src: url("../fonts/montserrat/Montserrat-Bold.otf");
     // }
-
     body {
         font-family: 'Montserrat-Regular';
     }
-
+   h4{
+       font-size: 14px;
+   }
+  
     .absolute {
         position: absolute;
     }
@@ -184,7 +184,6 @@ $dark:                            #444 !default;
             bottom: 70px;
         }
     }
-
 
     .swipperbutton {
         .swiper-pagination-bullet {
@@ -535,8 +534,7 @@ $dark:                            #444 !default;
         width: 280px;
         height: 280px;
         margin-top: 30px;
-        overflow: hidden;
-        // padding: 40px 55px;
+        overflow: hidden; // padding: 40px 55px;
         background-color: $light;
         box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
         border-radius: 100%;
@@ -559,7 +557,7 @@ $dark:                            #444 !default;
     }
 
     .arrow-back {
-        margin-top: 9px;
+        margin-top: 0px;
         .button {
             background: transparent;
             border: none;
@@ -575,7 +573,7 @@ $dark:                            #444 !default;
         font-size: 11px;
         font-weight: 900;
         letter-spacing: 1px;
-        margin-top: 12px;
+        margin-top: 4px;
         font-family: 'Montserrat-Bold';
     } //end of .profile-pic
     //start of filter
@@ -650,34 +648,33 @@ $dark:                            #444 !default;
         margin-bottom: 15px;
         .btn-sports {
             padding: 0px 23px;
-        }
-        .btn-science {
-            padding: 0px 14px;
-        }
-        .btn-food {
-            padding: 0px 28px;
-        }
-        .btn-science {
-            padding: 0px 14px;
-        }
-        .btn-entertainment {
-            padding: 0px 39px;
-        }
-        .btn-fashion {
-            padding: 0px 17px;
-        }
-        .btn-international {
-            padding: 0px 49px;
-        }
-        .btn-health {
-            padding: 0px 22px;
-        }
-        .btn-books {
-            padding: 0px 22px;
-        }
-        .btn-comedy {
-            padding: 0px 15px;
-        }
+        } // .btn-science {
+        //     padding: 0px 14px;
+        // }
+        // .btn-food {
+        //     padding: 0px 28px;
+        // }
+        // .btn-science {
+        //     padding: 0px 14px;
+        // }
+        // .btn-entertainment {
+        //     padding: 0px 39px;
+        // }
+        // .btn-fashion {
+        //     padding: 0px 17px;
+        // }
+        // .btn-international {
+        //     padding: 0px 49px;
+        // }
+        // .btn-health {
+        //     padding: 0px 22px;
+        // }
+        // .btn-books {
+        //     padding: 0px 22px;
+        // }
+        // .btn-comedy {
+        //     padding: 0px 15px;
+        // }
     }
 
     .btn-tran {
@@ -728,9 +725,11 @@ $dark:                            #444 !default;
         }
     } //start of otp
     .otp-input {
-        width: 50px;
+        width: 37px;
+        min-height: 44px;
         background: transparent;
-        border-bottom: 1px solid rgba(136, 136, 136, 0.97) !important; // display: inline;
+        border-radius: 4px;
+        border: 2px solid rgba(136, 136, 136, 0.43) !important;
     }
 
     .otp {
@@ -757,7 +756,7 @@ $dark:                            #444 !default;
     }
 
     .input-padd {
-        padding: 50px 5px 15px 5px;
+        padding: 7px 5px 15px 5px;
     } //end of otp
     //start of discover
     .bg-color-yellow {
@@ -816,37 +815,37 @@ $dark:                            #444 !default;
         padding: 7px 23px;
     }
 
-    .btn-comedy {
-        padding: 7px 17px;
-    }
+    // .btn-comedy {
+    //     padding: 7px 17px;
+    // }
 
-    .btn-food {
-        padding: 7px 29px;
-    }
+    // .btn-food {
+    //     padding: 7px 29px;
+    // }
 
-    .btn-science {
-        padding: 7px 18px;
-    }
+    // .btn-science {
+    //     padding: 7px 18px;
+    // }
 
-    .btn-entertainment {
-        padding: 7px 50px;
-    }
+    // .btn-entertainment {
+    //     padding: 7px 50px;
+    // }
 
-    .btn-international {
-        padding: 7px 56px;
-    }
+    // .btn-international {
+    //     padding: 7px 56px;
+    // }
 
-    .btn-books {
-        padding: 7px 24px;
-    }
+    // .btn-books {
+    //     padding: 7px 24px;
+    // }
 
-    .btn-health {
-        padding: 7px 24px;
-    }
+    // .btn-health {
+    //     padding: 7px 24px;
+    // }
 
     .cat-btn-plus {
         top: 0px;
-        right: 0px;
+        right: 40px;
         .button {
             background: transparent;
             font-size: 12px;
@@ -978,17 +977,12 @@ $dark:                            #444 !default;
         padding: 0px 16px;
     } //end of explore
     //start of friends
-    .friends{
+    .friends {
         top: 50px;
-        padding: 0px 10px;
-        // bottom: 60px;
+        padding: 0px 10px; // bottom: 60px;
         max-height: 500px;
-      
         overflow-y: scroll;
-       
-    }
-    
-    //end of friends
+    } //end of friends
     //start of invite friends
     .followers {
         width: 100%;
@@ -1073,7 +1067,8 @@ $dark:                            #444 !default;
         background: $yellow3;
         z-index: 100;
     }
-      .listdetail{
+
+    .listdetail {
         .item {
             border: none!important;
         }
@@ -1084,15 +1079,14 @@ $dark:                            #444 !default;
         p {
             font-family: 'Montserrat-Light';
         }
-      
-      }
+    }
+
     .listperson {
         top: 88px;
         overflow-y: scroll;
         max-height: 255px;
-        width: 100%;  
+        width: 100%;
         margin-bottom: 60px!important;
-       
     }
 
     .borderF {
@@ -1143,17 +1137,16 @@ $dark:                            #444 !default;
         display: none;
     }
 
-    .tabs-top > .tabs, .tabs.tabs-top{
+    .tabs-top>.tabs,
+    .tabs.tabs-top {
         bottom: 0px!important;
     }
 
-    .nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs{
-bottom: 0px!important;
+    .nav-bar-tabs-top.hide~.view-container .tabs-top .tabs {
+        bottom: 0px!important;
     }
 
-    .has-footer
-
-    .bg-footer .tabs {
+    .has-footer .bg-footer .tabs {
         background: $light !important;
         top: initial!important;
     }
@@ -1271,7 +1264,8 @@ bottom: 0px!important;
     .has-footer {
         bottom: 40px;
     }
-     .has-bottom {
+
+    .has-bottom {
         bottom: 58px;
     }
 
@@ -1344,15 +1338,12 @@ bottom: 0px!important;
     .discover-ionslide {
         height: 240px!important;
         padding-top: 10px;
-       
-    }
-    // .swiper-container{
+    } // .swiper-container{
     //     height: 185px!important;
     // }
-
-    .swiper-slide{
+    .swiper-slide {
         // height: 210px;
-        img{
+        img {
             max-height: none;
         }
     }
@@ -1363,10 +1354,8 @@ bottom: 0px!important;
 
     .sliderdesc {
         color: $light;
-        position: absolute;
-        // transform: translate(-50%, -50%);
-        bottom: 21%;
-        // left: 50%;
+        position: absolute; // transform: translate(-50%, -50%);
+        bottom: 21%; // left: 50%;
         // width: 100%;
         /* display: block; */
         font-size: 15px;
@@ -1865,6 +1854,7 @@ bottom: 0px!important;
     }
 
     .placeholderCat {
+        margin-bottom: 20px;
         input {
             padding-left: 15px;
             font-size: 14px;
@@ -2260,39 +2250,40 @@ bottom: 0px!important;
         margin-left: 70px;
         margin-top: 20px;
     }
-
+     
     .settings-btns {
+      
         .btn-sports {
             padding: 0px 18px;
-        }
-        .btn-science {
-            padding: 0px 14px;
-        }
-        .btn-food {
-            padding: 0px 20px;
-        }
-        .btn-science {
-            padding: 0px 10px;
-        }
-        .btn-entertainment {
-            padding: 0px 29px;
-        }
-        .btn-fashion {
-            padding: 0px 13px;
-        }
-        .btn-international {
-            padding: 0px 38px;
-        }
-        .btn-health {
-            padding: 0px 17px;
-        }
-        .btn-comedy {
-            padding: 0px 8px;
-        }
-        .btn-books {
-            padding: 0px 16px;
-            margin-bottom: 0px;
-        }
+           
+        } // .btn-science {
+        //     padding: 0px 14px;
+        // }
+        // .btn-food {
+        //     padding: 0px 20px;
+        // }
+        // .btn-science {
+        //     padding: 0px 10px;
+        // }
+        // .btn-entertainment {
+        //     padding: 0px 29px;
+        // }
+        // .btn-fashion {
+        //     padding: 0px 13px;
+        // }
+        // .btn-international {
+        //     padding: 0px 38px;
+        // }
+        // .btn-health {
+        //     padding: 0px 17px;
+        // }
+        // .btn-comedy {
+        //     padding: 0px 8px;
+        // }
+        // .btn-books {
+        //     padding: 0px 16px;
+        //     margin-bottom: 0px;
+        // }
     }
 
     .settings i {
@@ -2315,11 +2306,12 @@ bottom: 0px!important;
     .font-10 {
         font-size: 12px;
         padding: 0px 8px;
-       
     }
-     .font-shadow{
+
+    .font-shadow {
         box-shadow: 3px 3px 6px 1px $darkgray3;
-     }
+    }
+
     .font-14 {
         font-size: 16px;
         padding: 0px 8px;
@@ -2650,17 +2642,15 @@ bottom: 0px!important;
         .watch-w img {
             width: 10px;
         }
-    } 
-    
-    .list-padd{
-        padding:0px 20px;
-        background-color: $yellow2;
-            margin-top: -17px;
-    border-radius: 2px;
-    box-shadow: 1px 1px 36px 1px #777474;
     }
-    
-    //css for discoverFull end
+
+    .list-padd {
+        padding: 0px 20px;
+        background-color: $yellow2;
+        margin-top: -17px;
+        border-radius: 2px;
+        box-shadow: 1px 1px 36px 1px #777474;
+    } //css for discoverFull end
     //start of explore more
     .explore-more {
         .news-content {
@@ -2783,7 +2773,44 @@ bottom: 0px!important;
                 width: 3%;
             }
         }
-    } // css for iphone 5
+    } 
+    //mobile verification
+
+    .mobile{
+        font-size: 15px;
+        letter-spacing: 4px;
+        background: transparent;
+        border-bottom: 1px solid rgba(136, 136, 136, 0.97) !important; // display: inline;
+    }
+    .success{
+        padding: 0px 33px;
+    }
+
+    //start of terms
+    .terms{
+        margin: 0px 35px;
+        h4{
+            font-family: 'Montserrat-Medium';
+        }
+        p{
+            font-family: 'Montserrat-Regular';
+            line-height: 16px;
+            font-size: 11px;
+            color: $darkGray2;
+            padding: 5px 0px;
+        }
+    }
+   .terms-subheading{
+    font-family: 'Montserrat-Regular' !important;
+    text-decoration: underline;
+    padding-top: 10px;
+   }
+  .text-bold{
+    font-family: 'Montserrat-Medium';
+    color: $black;
+  }
+
+    // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .accordian {
             label {
@@ -2867,13 +2894,13 @@ bottom: 0px!important;
             bottom: 37%;
             right: 1%
         }
-         .swipperImg{
-             height: 170px;
-             overflow: hidden;
-         }
-         .discover-ionslide {
+        .swipperImg {
+            height: 170px;
+            overflow: hidden;
+        }
+        .discover-ionslide {
             height: 213px !important;
-         }
+        }
         .slidertime {
             bottom: 18%;
         }
@@ -3039,31 +3066,30 @@ bottom: 0px!important;
         }
         .settings-btns .btn-sports {
             padding: 0px 14px;
-        }
-        .settings-btns .btn-science {
-            padding: 0px 7px;
-        }
-        .settings-btns .btn-food {
-            padding: 0px 15px;
-        }
-        .settings-btns .btn-entertainment {
-            padding: 0px 22px;
-        }
-        .settings-btns .btn-international {
-            padding: 0px 30px;
-        }
-        .settings-btns .btn-fashion {
-            padding: 0px 9px;
-        }
-        .settings-btns .btn-health {
-            padding: 0px 13px;
-        }
-        .settings-btns .btn-comedy {
-            padding: 0px 5px;
-        }
-        .settings-btns .btn-books {
-            padding: 0px 12px;
-        }
+        } // .settings-btns .btn-science {
+        //     padding: 0px 7px;
+        // }
+        // .settings-btns .btn-food {
+        //     padding: 0px 15px;
+        // }
+        // .settings-btns .btn-entertainment {
+        //     padding: 0px 22px;
+        // }
+        // .settings-btns .btn-international {
+        //     padding: 0px 30px;
+        // }
+        // .settings-btns .btn-fashion {
+        //     padding: 0px 9px;
+        // }
+        // .settings-btns .btn-health {
+        //     padding: 0px 13px;
+        // }
+        // .settings-btns .btn-comedy {
+        //     padding: 0px 5px;
+        // }
+        // .settings-btns .btn-books {
+        //     padding: 0px 12px;
+        // }
         .btn-bg-black {
             font-size: 11px;
         }
@@ -3448,40 +3474,52 @@ bottom: 0px!important;
         }
         .setting .item-input-inset .item-input-wrapper input {
             height: 22px;
-            width: 76px;
+            width: 50px;
+        }
+        .viewall {
+            height: auto !important;
+        }
+        .viewless {
+            height: 180px;
+            overflow: hidden;
+        }
+        .btn-sports.activated{
+            background-color: $yellow !important;
+            border: none;
         }
         .settings-btns {
+          
             .btn-sports {
                 padding: 0px 18px;
-            }
-            .btn-science {
-                padding: 0px 14px;
-            }
-            .btn-food {
-                padding: 0px 20px;
-            }
-            .btn-science {
-                padding: 0px 10px;
-            }
-            .btn-entertainment {
-                padding: 0px 29px;
-            }
-            .btn-fashion {
-                padding: 0px 13px;
-            }
-            .btn-international {
-                padding: 0px 38px;
-            }
-            .btn-health {
-                padding: 0px 17px;
-            }
-            .btn-comedy {
-                padding: 0px 8px;
-            }
-            .btn-books {
-                padding: 0px 16px;
-                margin-bottom: 0px;
-            }
+              
+            } // .btn-science {
+            //     padding: 0px 14px;
+            // }
+            // .btn-food {
+            //     padding: 0px 20px;
+            // }
+            // .btn-science {
+            //     padding: 0px 10px;
+            // }
+            // .btn-entertainment {
+            //     padding: 0px 29px;
+            // }
+            // .btn-fashion {
+            //     padding: 0px 13px;
+            // }
+            // .btn-international {
+            //     padding: 0px 38px;
+            // }
+            // .btn-health {
+            //     padding: 0px 17px;
+            // }
+            // .btn-comedy {
+            //     padding: 0px 8px;
+            // }
+            // .btn-books {
+            //     padding: 0px 16px;
+            //     margin-bottom: 0px;
+            // }
         }
         .btn-bg-black {
             font-size: 13px;
@@ -3509,19 +3547,17 @@ bottom: 0px!important;
             top: 157px;
             width: 108px;
         }
-
-    .swipperImg{
-        height: 195px;
-        overflow: hidden;
-        img{
-            width: 100%;
+        .swipperImg {
+            height: 195px;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
         }
-    }
-    .discover-ionslide {
-        height: 240px!important;
-        padding-top: 10px;
-       
-    }
+        .discover-ionslide {
+            height: 240px!important;
+            padding-top: 10px;
+        }
     }
 
     @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
@@ -3567,24 +3603,18 @@ bottom: 0px!important;
         }
     }
 
-.yellow{
-   color: red !important;
-      }
-
-    //trial 
-
-    .display-flex{
+    .yellow {
+        color: red !important;
+    } //trial 
+    .display-flex {
         display: flex;
-        align-items: center;
-      
-            // align-self:center;
-        
+        align-items: center; // align-self:center;
+    }
 
-    }
-    .flex-end{
+    .flex-end {
         display: flex;
-    align-items: end;
-    img{
-        width: 18px;
-    }
+        align-items: end;
+        img {
+            width: 18px;
+        }
     }
