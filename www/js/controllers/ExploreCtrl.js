@@ -74,11 +74,13 @@ console.log("helloexplore", data)
       Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
         if (data1.value == true) {
           $state.go("polling-inside", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
           })
         } else {
           $state.go("tab.startPollingex", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
 
           })
 
@@ -89,11 +91,13 @@ console.log("helloexplore", data)
         console.log("hellodata", data1)
         if (data1.value == true) {
           $state.go("debate", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
           })
         } else {
           $state.go("tab.trailerex", {
-            newsid: data
+            newsid: data,
+            previousState: $state.current.name
           })
         }
       })

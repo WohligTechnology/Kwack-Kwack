@@ -2,8 +2,9 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.lellow = false;
     $scope.newsId = $stateParams.newsid
     $scope.kwackAns = $stateParams.kwackId
+    $scope.previousState = $stateParams.previousState
     $scope.anon = $stateParams.ann
-    console.log("helloanswwer", $scope.anon)
+    console.log("helloanswwer", $scope.previousState)
     $scope.setvarann = false
     if ($stateParams.ann) {
         $scope.setvarann = true
@@ -15,8 +16,17 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.kwackSide = {}
     $scope.kwackSide.userId = $.jStorage.get("user")._id
     $scope.kwackSide.newsId = $scope.newsId
-    $scope.goBackHandler = function () {
-        window.history.back(); //This works
+    $scope.back = function() {
+        if($scope.previousState == 'tab.discoverNews'){
+            $state.go('tab.discoverNews')
+        }else if ($scope.previousState == 'tab.explore'){
+            $state.go('tab.explore')
+        }else if ($scope.previousState == 'tab.kwackScreen'){
+            $state.go('tab.kwackScreen')
+        }else{
+            $state.go('tab.social')
+        }
+         //This works
     };
     $scope.inApp = function (link) {
         console.log(link)

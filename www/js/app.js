@@ -98,7 +98,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
     })
 
     .state('tab.trailerex', {
-      url: '/trailer/:newsid',
+      url: '/trailer/:newsid/:previousState',
        cache:false,
       views: {
         'tab-explore': {
@@ -152,7 +152,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       // })
 
     .state('tab.trailerdis', {
-      url: '/trailer/:newsid',
+      url: '/trailer/:newsid/:previousState',
        cache:false,
       views: {
         'tab-explore': {
@@ -199,7 +199,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       // })
 
     .state('tab.trailersocial', {
-      url: '/trailer/:newsid',
+      url: '/trailer/:newsid/:previousState',
        cache:false,
       views: {
         'tab-social': {
@@ -210,7 +210,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
     })
 
       .state('tab.trailerkwack', {
-        url: '/trailer/:newsid',
+        url: '/trailer/:newsid/:previousState',
         // cache:false,
         views: {
           'tab-kwackScreen': {
@@ -529,25 +529,25 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         }
       })
       .state('polling-inside', {
-        url: '/pollinginside/:newsid',
+        url: '/pollinginside/:newsid/:previousState',
         cache: false,
         templateUrl: 'templates/polling-inside.html',
         controller: 'PollingInsideCtrl'
       })
       .state('debate1', {
-        url: '/debate/:kwackId/:newsid/:ann',
+        url: '/debate/:kwackId/:newsid/:ann/:previousState',
         cache: false,
         templateUrl: 'templates/debate.html',
         controller: 'DebateCtrl'
       })
       .state('debate', {
-        url: '/debate/:kwackId/:newsid',
+        url: '/debate/:kwackId/:newsid/:previousState',
         cache: false,
         templateUrl: 'templates/debate.html',
         controller: 'DebateCtrl'
       })
       .state('tab.startPollingex', {
-        url: '/startPolling/:newsid',
+        url: '/startPolling/:newsid/:previousState',
         // cache:false,
         views: {
           'tab-explore': {
@@ -558,7 +558,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
 
       .state('tab.startPollingdis', {
-        url: '/startPolling/:newsid',
+        url: '/startPolling/:newsid/:previousState',
         // cache:false,
         views: {
           'tab-discoverNews': {
@@ -581,7 +581,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
     //   })
 
       .state('tab.startPollingkwack', {
-        url: '/startPolling/:newsid',
+        url: '/startPolling/:newsid/:previousState',
         // cache:false,
         views: {
           'tab-kwackScreen': {
