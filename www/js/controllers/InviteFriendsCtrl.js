@@ -198,7 +198,14 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
         // $scope.follow =! $scope.follow
         Chats.apiCallWithData("UserFollow/removeFollowerCount", $scope.userFollowUnfollow, function (data) {
           console.log("$scope.userFollowUnfollow", data)
-          $scope.followingData[index].flag = 'false';
+          if(followType=='mainFollow'){
+$scope.doRefresh(true);
+console.log("panda", $scope.userInfo)
+$scope.userInfo.flag = 'false'
+          }else{
+            $scope.followingData[index].flag = 'false';
+          }
+          
          
         })
         // $scope.doRefresh(true);
@@ -206,7 +213,13 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
         // $scope.follow =! $scope.follow
         Chats.apiCallWithData("UserFollow/addFollowerCount", $scope.userFollowUnfollow, function (data) {
           console.log("$scope.userFollowUnfollow", data)
-          $scope.followingData[index].flag = 'true';
+           if(followType=='mainFollow'){
+            $scope.doRefresh(true);
+            console.log("panda", $scope.userInfo)
+            $scope.userInfo.flag = 'true'
+          }else{
+            $scope.followingData[index].flag = 'false';
+          }
           
         })
        

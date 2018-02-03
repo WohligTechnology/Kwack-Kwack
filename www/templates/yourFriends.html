@@ -19,16 +19,20 @@
   </ion-nav-bar>
   
   <ion-content class="contactHeader">
-    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+    
     <div class="list listdetail list-mar">
       <div ng-if="allpeople=='all'" class="content-scroll list-profile">
-        <a class="item item-avatar" ng-repeat="friends in followingData | filter:followingData.userBeenFollowed">
+          <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        <a class="item item-avatar" ng-repeat="friends in followingData   | filter:followingData.userBeenFollowed track by $index">
           <img src="{{friends.userBeenFollowed.photo | uploadpath}}">
           <i class="ion ion-star"></i>
           <h2>{{friends.userBeenFollowed.name}}</h2>
           <p>{{friends.userBeenFollowed.userName}}</p>
-          <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png">
-          <img class="followersUn" ng-show="follow" ng-click='follow=false' src="img/inviteFriends/follow.png">
+          
+              <img class="followersUn" ng-if="friends.userBeenFollowed.flag=='true'" ng-click="followUnfollow(friends.userBeenFollowed._id, $index)" src="img/inviteFriends/Unfollow.png">
+              <img class="followersUn" ng-if="friends.userBeenFollowed.flag=='false'" ng-click="followUnfollow(friends.userBeenFollowed._id, $index)" src="img/inviteFriends/follow.png">
+      
+          
         </a>
         <!-- <a class="item item-avatar">
           <img src="img/inviteFriends/Dp.png">
@@ -87,6 +91,8 @@
           <img class="followersUn" ng-show="!follow2" ng-click='follow2=true' src="img/inviteFriends/Unfollow.png">
           <img class="followersUn" ng-show="follow2" ng-click='follow2=false' src="img/inviteFriends/follow.png">
         </a> -->
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="2px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>        
+
       </div>
       <div ng-if="allpeople == 'people'" class="content-scroll list-profile">
         <!-- <span class="contact">A</span> -->
@@ -169,7 +175,6 @@
         </div>
       </div>
       </div>
-      <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="2px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>        
       
     </ion-content>
     <ul class="alpha_sidebar" ng-if="allpeople == 'contact' || allpeople == 'people'">
