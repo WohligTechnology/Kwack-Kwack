@@ -1,7 +1,7 @@
 
 var connector=angular.module('starter.controllers',  [ 'starter.controllers', 'angular-svg-round-progressbar', 'ngCordova'])
 
-.controller('AppCtrl', function ($scope, $stateParams, $state, $ionicPopup, $window, $ionicPopover, $ionicSideMenuDelegate, MyServices) {
+.controller('AppCtrl', function ($scope, $stateParams, $state, $ionicPopup, $window, $ionicPopover, $ionicSideMenuDelegate, Chats) {
   
       $scope.goBackHandler = function () {
         window.history.back(); //This works
