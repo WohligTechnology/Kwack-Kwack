@@ -3050,7 +3050,7 @@ $dark:                            #444 !default;
     }
 
     .contactHeader {
-        top: 220px;
+        top: 181px;
     }
 
     .alpha_sidebar {
@@ -3457,6 +3457,16 @@ $dark:                            #444 !default;
         .mar-t40 {
             margin-top: 24%;
         }
+        //your friends
+     
+        .alpha_sidebar {
+            position: absolute;
+            top: 193px;
+            right: 10px;
+            z-index: 100000;
+            font-size: 10px;
+            line-height: 17px;
+        }
     }
 
     @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
@@ -3562,6 +3572,14 @@ $dark:                            #444 !default;
         }
         .placeholder-icon:last-child {
             padding-left: 36px;
+        }
+        .alpha_sidebar {
+            position: absolute;
+            top: 190px;
+            right: 14px;
+            z-index: 100000;
+            font-size: 10px;
+            line-height: 20px;
         }
     } // css for iphone 6 nd 6plus
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
@@ -3892,6 +3910,14 @@ $dark:                            #444 !default;
         }
         .mar-t40 {
             margin-top: 40%;
+        }
+        .alpha_sidebar {
+            position: absolute;
+            top: 190px;
+            right: 10px;
+            z-index: 100000;
+            font-size: 13px;
+            line-height: 21px;
         }
     }
 
