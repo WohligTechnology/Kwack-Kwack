@@ -1,5 +1,6 @@
 connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordovaCamera, Chats, $ionicActionSheet, $cordovaImagePicker, $cordovaFileTransfer) {
-    $scope.profileImage = {}
+    $scope.profileImage = {};
+    $scope.setImage = {};
     $scope.goBackHandler = function () {
         window.history.back(); //This works
     };
@@ -86,7 +87,7 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
                 $scope.profileImage.photo = result.response.data[0];
                 console.log("changes", $scope.profileImage.photo)
                 Chats.apiCallWithData("User/save", $scope.profileImage, function (data) {
-                    $scope.setProfile = data;
+                    $scope.setImage = data.data;
                     console.log("value", $scope.setProfile);
                 });
             })
