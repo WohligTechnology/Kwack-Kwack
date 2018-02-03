@@ -634,7 +634,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
   .filter('uploadpath', function () {
     return function (input) {
       if (input) {
-        console.log(adminurl + "upload/readFile?file=" + input);
+        // console.log(adminurl + "upload/readFile?file=" + input);
         return adminurl + "upload/readFile?file=" + input;
       }
     };

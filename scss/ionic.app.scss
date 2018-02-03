@@ -2283,7 +2283,8 @@ $dark:                            #444 !default;
     //start of settings
     .setting {
         .profileImg {
-            width: 40%;
+            width: 125px;
+            height: 125px;
             float: right;
         }
         .chngImg {
@@ -3456,9 +3457,7 @@ $dark:                            #444 !default;
         }
         .mar-t40 {
             margin-top: 24%;
-        }
-        //your friends
-     
+        } //your friends
         .alpha_sidebar {
             position: absolute;
             top: 193px;
