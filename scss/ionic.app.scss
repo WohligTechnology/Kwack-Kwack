@@ -1825,27 +1825,31 @@ $dark:                            #444 !default;
     }
 
     .tabimage {
-        background-image: url("../img/footer/homeOn.png") !important;
+        background-image: url("../img/footer/home.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
+        background-size: 33px auto;
     }
 
     .discoverImage {
-        background-image: url("../img/footer/discoverOn.png") !important;
+        background-image: url("../img/footer/discover.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
+        background-size: 34px auto;
     }
 
     .socialImage {
-        background-image: url("../img/footer/socialOn.png") !important;
+        background-image: url("../img/footer/kwack.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
+        background-size: 33px auto;
     }
 
     .inviteFImage {
-        background-image: url("../img/footer/inviteOn.png") !important;
+        background-image: url("../img/footer/social.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
+        background-size: 33px auto;
     }
 
     .tabs-top.tabs-striped .tab-item.tab-item-active {
@@ -1861,9 +1865,10 @@ $dark:                            #444 !default;
     }
 
     .profileFImage {
-        background-image: url("../img/footer/profileOn.png") !important;
+        background-image: url("../img/footer/setting.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
+        background-size: 32px auto;
     }
 
     .tab-header {
