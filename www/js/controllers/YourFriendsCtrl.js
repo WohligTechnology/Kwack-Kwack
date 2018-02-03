@@ -35,12 +35,79 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
        }
   
        if($scope.allpeople=='people'){
-        console.log("hello")
-        Chats.apiCallWithData("User/getAllUser", $scope.pagination, function (data) {
-          
+       
+        Chats.apiCallWithData("UserFollow/getAllUser", $scope.pagination1, function (data) {
+         
           if (data.value == true) {
-            $scope.people = _.concat($scope.discoverNews, data.data.results);
+            $scope.followingData = _.concat($scope.followingData, data.data.results);
+            // console.log("$scope.followingData", $scope.followingData)
+            var users =  $scope.followingData
+            var log = [];
             
+          // console.log("var users", users)
+          
+            $scope.alphabet = iterateAlphabet();
+          
+            //Sort user list by first letter of name
+            var tmp={};
+            for(i=0;i<users.length;i++){
+             
+                // console.log("users[i].name", users[i].name)
+                
+                var letter=users[i].name.toUpperCase().charAt(0);
+                
+                
+                if( tmp[ letter] ==undefined){
+                  tmp[ letter]=[]
+                }
+                  tmp[ letter].push( users[i] );
+              
+              
+            }
+            $scope.sorted_users = tmp;
+           
+            //Click letter event
+            $scope.gotoList = function(id){
+              $location.hash(id);
+              $ionicScrollDelegate.anchorScroll();
+            }
+          
+            //Create alphabet object
+            function iterateAlphabet()
+            {
+               var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+               var numbers = new Array();
+               for(var i=0; i<str.length; i++)
+               {
+                  var nextChar = str.charAt(i);
+                  numbers.push(nextChar);
+               }
+               return numbers;
+            }$scope.groups = [];
+            for (var i=0; i<10; i++) {
+              $scope.groups[i] = {
+                name: i,
+                items: []
+              };
+              for (var j=0; j<3; j++) {
+                $scope.groups[i].items.push(i + '-' + j);
+              }
+            }
+            
+            /*
+             * if given group is the selected group, deselect it
+             * else, select the given group
+             */
+            $scope.toggleGroup = function(group) {
+              if ($scope.isGroupShown(group)) {
+                $scope.shownGroup = null;
+              } else {
+                $scope.shownGroup = group;
+              }
+            };
+            $scope.isGroupShown = function(group) {
+              return $scope.shownGroup === group;
+            };
              if (data.data.results.length == 10) {
                $scope.pagination.shouldLoadMore = true;
              }
@@ -70,9 +137,11 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
       }
     }
     
+    $scope.allcontactpeople('all')
    
 
     $scope.contacts=function(){
+      var users={}
       console.log("contacts search")
       $scope.addContact = function() {
         $cordovaContacts.save($scope.contactForm).then(function(result) {
@@ -111,7 +180,7 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
             }
             
           }
-          $scope.sorted_users = tmp;
+          $scope.contactuser = tmp;
          
           //Click letter event
           $scope.gotoList = function(id){
@@ -182,27 +251,39 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
       }
     }
    
-    $scope.followUnfollow=function(userId, index){
-      console.log("index", index)
+
+    //followUnfollow
+    $scope.followUnfollow=function(userId, index, type, parentObject){
       $scope.userFollowUnfollow={}
       $scope.userFollowUnfollow.userBeenFollowed = userId
       $scope.userFollowUnfollow.user = $.jStorage.get('user')._id
       $scope.userFollowUnfollow.userFollwing = userId
       $scope.userFollowUnfollow.userFollowed = $.jStorage.get('user')._id
       Chats.apiCallWithData("UserFollow/areBothFollowing", $scope.userFollowUnfollow, function (data) {
-        console.log("*******************************", data)
         if (data.value == true) { 
           // $scope.follow =! $scope.follow
           Chats.apiCallWithData("UserFollow/removeFollowerCount", $scope.userFollowUnfollow, function (data) {
-            console.log("$scope.userFollowUnfollow", data)
-           $scope.followingData[index].userBeenFollowed.flag='true'
+            if(type == 'all'){
+              $scope.followingData[index].userBeenFollowed.flag='true'
+            }else{
+              $scope.sorted_users[parentObject][index].flag='false'
+              console.log("parentindex", $scope.sorted_users[parentObject][index].flag)
+              
+            }
+           
           })
           // $scope.doRefresh(true);
         } else {
           // $scope.follow =! $scope.follow
           Chats.apiCallWithData("UserFollow/addFollowerCount", $scope.userFollowUnfollow, function (data) {
             console.log("$scope.userFollowUnfollow", data)  
-            $scope.followingData[index].userBeenFollowed.flag='false'
+            if(type == 'all'){
+              $scope.followingData[index].userBeenFollowed.flag='false'
+            }else{
+              $scope.sorted_users[parentObject][index].flag='true'
+              console.log("parentindex", $scope.sorted_users[parentObject][index].flag)
+              
+            }
           })
          
           // $scope.doRefresh(true);
