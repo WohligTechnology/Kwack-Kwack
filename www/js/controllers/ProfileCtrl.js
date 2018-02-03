@@ -2,6 +2,7 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
     $scope.profileImage = {};
     $scope.userData = {};
     $scope.userData._id = $.jStorage.get("user")._id;
+    $scope.profileImage._id = $.jStorage.get("user")._id
     $scope.setImage = {};
     $scope.goBackHandler = function () {
         window.history.back(); //This works
@@ -87,7 +88,7 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
                 // $scope.hideLoading();
                 result.response = JSON.parse(result.response);
                 $scope.profileImage.photo = result.response.data[0];
-                console.log("changes", $scope.profileImage.photo)
+                console.log("changes", $scope.profileImage.photo);
                 Chats.apiCallWithData("User/save", $scope.profileImage, function (data) {
                     $scope.profileImage = data.data;
                     Chats.apiCallWithData("User/getOne", $scope.userData, function (data) {
