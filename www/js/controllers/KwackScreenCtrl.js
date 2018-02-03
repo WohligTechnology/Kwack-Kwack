@@ -268,7 +268,7 @@ for(i=0;i<20;i++){
     _.forEach($scope.news, function (value) {
       _.forEach(value.polls, function (polls1) {
         if (polls1.poll == null) {} else {
-          if ($scope.pollKwack._id == polls1.poll.user) {
+          if ($scope.pollKwack._id == polls1.poll.user._id) {
             value.temp = true
           } else {
             value.temp = false;
@@ -280,7 +280,7 @@ for(i=0;i<20;i++){
     _.forEach($scope.news, function (comments) {
       _.forEach(comments.comments, function (comments1) {
         if (comments1.comment == null) {} else {
-          if ($scope.pollKwack._id == comments1.comment.user) {
+          if ($scope.pollKwack._id == comments1.comment.user._id) {
             comments.kwack = true
           } else {
             comments.kwack = false;

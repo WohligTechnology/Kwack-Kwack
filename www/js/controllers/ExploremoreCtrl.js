@@ -67,9 +67,10 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
                   //  }
                    $scope.interestData = {
                     "page": $scope.pagination.currentPage,
-                    "userInterest": $scope.news.interest
+                    "userInterest": $scope.news.interest,
+                     "newsId":$stateParams.newsid
                   }
-              Chats.apiCallWithData("NewsInfo/getNewsByInterest", $scope.interestData, function (data) {
+              Chats.apiCallWithData("NewsInfo/getNewsByInterestWithoutOneNews", $scope.interestData, function (data) {
                 console.log("interestwisedata", data.data.results)
                 $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
                 if (data.data.results.length == 10) {
@@ -120,7 +121,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     _.forEach($scope.discoverNews, function (value) {
       _.forEach(value.polls, function (polls1) {
         if (polls1.poll == null) {} else {
-          if ($scope.pollKwack._id == polls1.poll.user) {
+          if ($scope.pollKwack._id == polls1.poll.user._id) {
             value.temp = true
           } else {
             value.temp = false;
@@ -132,7 +133,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     _.forEach($scope.discoverNews, function (comments) {
      _.forEach(comments.comments, function (comments1) {
        if (comments1.comment == null) {} else {
-         if ($scope.pollKwack._id == comments1.comment.user) {
+         if ($scope.pollKwack._id == comments1.comment.user._id) {
            comments.kwack = true
          } else {
            comments.kwack = false;
