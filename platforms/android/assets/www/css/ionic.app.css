@@ -10311,6 +10311,7 @@ button.btn-yellow.button[disabled] {
   margin-left: 10px; }
 
 .select-month {
+  width: 132px;
   padding: 8px 32px;
   background-color: #000;
   color: #fff;
@@ -10697,15 +10698,15 @@ button.btn-yellow.button[disabled] {
 
 .tabs-top > .tabs,
 .tabs.tabs-top {
-  bottom: 0px !important; }
+  bottom: 0px !important;
+  top: unset !important; }
 
 .nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
   bottom: 0px !important;
   top: unset; }
 
 .has-footer .bg-footer .tabs {
-  background: #fff !important;
-  top: initial !important; }
+  background: #fff !important; }
 
 .tabs.tabs-top {
   bottom: 0px !important; }
@@ -11464,10 +11465,12 @@ button.btn-yellow.button[disabled] {
     font-family: "Montserrat-Regular"; }
 
 .editCity {
+  width: 95%;
   color: #333333;
   font-size: 1em;
   font-family: 'Montserrat-Medium';
-  width: 95%; }
+  border: none;
+  background: transparent; }
 
 .ecitlocicon {
   vertical-align: middle;
@@ -11752,8 +11755,8 @@ button.btn-yellow.button[disabled] {
   height: 65px;
   width: 65px;
   position: absolute;
-  top: -7px;
-  left: 23px;
+  top: -5px;
+  left: 12px;
   z-index: 3;
   overflow: hidden;
   border-radius: 50%;
@@ -11935,6 +11938,12 @@ button.btn-yellow.button[disabled] {
 .discover-item .placeholderDiscover input::placeholder {
   color: #afafaf !important; }
 
+.discover-item .item-input-wrapper {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px; }
+
 .discoverHead .item-thumbnail-left {
   padding-top: 15px !important;
   padding-left: 106px !important;
@@ -11998,6 +12007,13 @@ button.btn-yellow.button[disabled] {
   margin-top: -17px;
   border-radius: 2px;
   box-shadow: 1px 1px 36px 1px #777474; }
+
+.cross-search {
+  background: #eee;
+  margin-top: -1px;
+  padding: 5px 10px 3px 2px;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px; }
 
 .explore-more .card {
   box-shadow: none !important; }

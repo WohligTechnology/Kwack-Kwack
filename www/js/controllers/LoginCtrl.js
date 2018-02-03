@@ -1,4 +1,8 @@
 connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams, ionicToast) {
+  if($.jStorage.get("user")){
+     $state.go("tab.explore")
+console.log("*******inside if condition")
+  }
   $scope.showerrMsg = false
   $scope.verifyUser = function (info) {
     Chats.apiCallWithData("User/VerifyUser", info, function (data) {
@@ -23,7 +27,9 @@ connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams,
   $scope.hideToast = function () {
     ionicToast.hide();
   };
-  $scope.navigation = Chats.getNavigation();
+
+  $scope.facebook=function(link){
+    $scope.navigation = Chats.getNavigation();
   $scope.currentHost = window.location.origin;
   console.log($state.current.name);
   console.log('Inside controller', $stateParams.id);
@@ -43,4 +49,12 @@ connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams,
   } else {
     Chats.removeAccessToken();
   }
+        console.log(link)
+        var options = "location=no,toolbar=yes";
+        var target = "_blank";
+        $scope.finalURL = link;
+        ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
+        window.open = cordova.InAppBrowser.open;
+            }
+  
 })
