@@ -67,9 +67,10 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
                   //  }
                    $scope.interestData = {
                     "page": $scope.pagination.currentPage,
-                    "userInterest": $scope.news.interest
+                    "userInterest": $scope.news.interest,
+                     "newsId":$stateParams.newsid
                   }
-              Chats.apiCallWithData("NewsInfo/getNewsByInterest", $scope.interestData, function (data) {
+              Chats.apiCallWithData("NewsInfo/getNewsByInterestWithoutOneNews", $scope.interestData, function (data) {
                 console.log("interestwisedata", data.data.results)
                 $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
                 if (data.data.results.length == 10) {
