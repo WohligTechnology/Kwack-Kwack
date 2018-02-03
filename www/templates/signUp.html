@@ -4,68 +4,77 @@
             <div class="w56">
                 <img src="img/signup/bar.png" alt="logo" class="w100">
             </div>
-             <form name="formName">
+            <form name="formName">
                 <div class="back-white">
                     <div class="list signupPlaceholder">
-                       <label class="item item-input item-floating-label">
-                        <span class="mar-t"></span>
-                       <input type="text" class="border-bot" ng-model="data.name" name="name" placeholder="Full Name" required>
-                       <span class="error-msg" ng-show="formName.name.$touched && formName.name.$invalid">Full Name is required.</span>
-                     </label>
                         <label class="item item-input item-floating-label">
-                        <span clas></span>
-                   <input type="text" class="border-bot" ng-model="data.userName" name="userName" placeholder="Username" required>
-                   <span class="error-msg" ng-show="formName.userName.$touched && formName.userName.$invalid">User Name is required</span>
-                    </label>
+                            <span class="mar-t"></span>
+                            <input type="text" class="border-bot" ng-model="data.name" name="name" placeholder="Full Name" required>
+                            <span class="error-msg" ng-show="formName.name.$touched && formName.name.$invalid">Full Name is required.</span>
+                        </label>
                         <label class="item item-input item-floating-label">
-                        <span></span>
-                         <input type="text" class="border-bot" ng-model="data.email" name="email" placeholder="Email id" required>
-                         <span class="error-msg" ng-show="formName.email.$touched && formName.email.$invalid">Email is required</span>
-                         <span class="error-msg" ng-if="setEmailMsg">email already exist.</span>
-                     </label>
+                            <span clas></span>
+                            <input type="text" class="border-bot" ng-model="data.userName" name="userName" placeholder="Username" required>
+                            <span class="error-msg" ng-show="formName.userName.$touched && formName.userName.$invalid">User Name is required</span>
+                        </label>
                         <label class="item item-input item-floating-label">
-                        <span></span>
-                        <input type="tel" class="border-bot" ng-model="data.mobile" name="mobile" placeholder="Mobile Number" minlength="10" maxlength="10" required>
-                        <span class="error-msg" ng-show="formName.mobile.$touched && formName.mobile.$invalid">Mobile Number is required</span>
-                    </label>
+                            <span></span>
+                            <input type="email" class="border-bot" ng-model="data.email" name="email" placeholder="Email id" required>
+                            <span class="error-msg" ng-show="formName.email.$touched && formName.email.$invalid">Email is required</span>
+                            <span class="error-msg" ng-if="setEmailMsg">email already exist.</span>
+                        </label>
                         <label class="item item-input item-floating-label">
-                        <span></span>
-                      <input type="password" class="border-bot" ng-model="data.password" name="password" placeholder="Password" required>
-                      <span class="error-msg" ng-show="formName.password.$touched && formName.password.$invalid">Password is required</span>
-                      </label>
+                            <span></span>
+                            <input type="tel" class="border-bot" ng-model="data.mobile" name="mobile" placeholder="Mobile Number" minlength="10" maxlength="10"
+                                required>
+                            <span class="error-msg" ng-show="formName.mobile.$touched && formName.mobile.$invalid">Mobile Number is required</span>
+                        </label>
                         <label class="item item-input item-floating-label">
-                        <span></span>
-                         <input type="password" class="border-bot" ng-model="data.forgotPassword" placeholder="Confirm Password" required>
-                         <span ng-show="formName.forgotPassword.$touched && formName.forgotPassword.$invalid">Confirm Password is required</span>
-                         <span class="error-msg" ng-if="showMassage">Passwords did not match.</span>
-                      </label>
-                      <div class="absolute sign-up">
-                             <button class="button  btn-yellow"  ng-click="saveUser(data,formName )" ng-disabled="formName.$invalid">SIGN UP</button> 
+                            <span></span>
+                            <input type="password" class="border-bot" ng-model="data.password" name="password" placeholder="Password" required>
+                            <span class="error-msg" ng-show="formName.password.$touched && formName.password.$invalid">Password is required</span>
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span></span>
+                            <input type="password" class="border-bot" ng-model="data.forgotPassword" placeholder="Confirm Password" required>
+                            <span ng-show="formName.forgotPassword.$touched && formName.forgotPassword.$invalid">Confirm Password is required</span>
+                            <span class="error-msg" ng-if="showMassage">Passwords did not match.</span>
+                        </label>
+                        <div class="absolute sign-up">
+                            <button class="button  btn-yellow" ng-click="saveUser(data,formName )" ng-disabled="formName.$invalid">SIGN UP</button>
                             <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
                         </div>
                     </div>
                 </div>
             </form>
-                <div class="social-icon">
-                    <p>OR SIGN UP VIA</p>
-                    <ul>
-                        <li>
-                            <a><img src="img/signup/2.png" alt="facebook" class="w100"></a>
-                        </li>
-                        <li>
-                            <a><img src="img/signup/1.png" alt="twitter" class="w100"></a>
-                        </li>
-                        <li>
-                            <a><img src="img/signup/3.png" alt="twitter" class="w100"></a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="social-icon">
+                <p>OR SIGN UP VIA</p>
+                <ul>
+                    <li>
+                        <a>
+                            <img src="img/signup/2.png" alt="facebook" class="w100">
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="img/signup/1.png" alt="twitter" class="w100">
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="img/signup/3.png" alt="twitter" class="w100">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </ion-content>
     <div class="footer" ui-sref="login">
         <div class="bar bar-footer bar-black">
             <div class="title">
-                <h5>EXISITING USER? <span ui-sref="login"> LOGIN</span></h5>
+                <h5>EXISITING USER?
+                    <span ui-sref="login"> LOGIN</span>
+                </h5>
             </div>
         </div>
     </div>

@@ -11426,11 +11426,14 @@ button.btn-yellow.button[disabled] {
   letter-spacing: 4px; }
 
 .profileImg {
-  width: 50%;
+  width: 150px;
+  height: 150px;
   margin: 0 auto; }
   .profileImg img {
     width: 100%;
+    height: 100%;
     border-radius: 50%;
+    text-align: center;
     box-shadow: 1px 10px 35px 0px #afafaf; }
 
 .chngImg {
@@ -11594,7 +11597,8 @@ button.btn-yellow.button[disabled] {
   border-bottom: 1px solid #000 !important; }
 
 .setting .profileImg {
-  width: 40%;
+  width: 125px;
+  height: 125px;
   float: right; }
 
 .setting .chngImg {

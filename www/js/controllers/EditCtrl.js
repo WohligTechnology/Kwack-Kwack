@@ -2,16 +2,20 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
 
     $scope.userData = {}
     $scope.userDataFollow = {}
-    $scope.userDataFollow.userId = $.jStorage.get("user")._id
-    $scope.userData._id = $.jStorage.get("user")._id
-    Chats.apiCallWithData("User/getOne", $scope.userData, function (data) {
-        if (data.value == true) {
-            $scope.userInfo = data.data
+    $scope.userDataFollow.userId = $.jStorage.get("user")._id;
+    $scope.userData._id = $.jStorage.get("user")._id;
+    $scope.get1 = function () {
+        Chats.apiCallWithData("User/getOne", $scope.userData, function (data) {
+            if (data.value == true) {
+                $scope.userInfo = data.data;
 
-        } else {
+            } else {
 
-        }
-    })
+            }
+        });
+    }
+
+    $scope.get1();
 
     $scope.datasave = function (data) {
         console.log("**********", data)
@@ -51,7 +55,7 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
                 return true;
             }
         });
- };
+    };
 
     $scope.openCamera = function (card) {
         var cameraOptions = {
@@ -104,45 +108,46 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
                 console.log("changes", $scope.userData.photo)
                 Chats.apiCallWithData("User/save", $scope.userData, function (data) {
                     console.log("value", data)
+                    $scope.get1();
                 });
             })
     };
 
-       //all fllowers kwack polls
+    //all fllowers kwack polls
 
 
-      Chats.apiCallWithData("UserFollow/getAllFollowerName", $scope.userDataFollow, function (data) {
-       
-           if (data.value == true) {
-            $scope.setFollowCountValueZero=data.data.length
-          } else {
+    Chats.apiCallWithData("UserFollow/getAllFollowerName", $scope.userDataFollow, function (data) {
+
+        if (data.value == true) {
+            $scope.setFollowCountValueZero = data.data.length
+        } else {
             $scope.setFollowCountValueZero = "0"
         }
-  })
+    })
 
 
-  Chats.apiCallWithData("Comment/getKwackForOneUser", $scope.userDataFollow, function (data) {
-  
-    if (data.value == true) {
-     $scope.setKwackCountValueZero=data.data.length
-    
-   } else {
-    $scope.setKwackCountValueZero = "0"
-   
- }
-})
+    Chats.apiCallWithData("Comment/getKwackForOneUser", $scope.userDataFollow, function (data) {
+
+        if (data.value == true) {
+            $scope.setKwackCountValueZero = data.data.length
+
+        } else {
+            $scope.setKwackCountValueZero = "0"
+
+        }
+    })
 
 
-Chats.apiCallWithData("PollAnswer/getPollForOneUser", $scope.userDataFollow, function (data) {
-  
-    if (data.value == true) {
-     $scope.setPollCountValueZero=data.data.length
-    
-   } else {
-    $scope.setPollCountValueZero = "0"
-   
- }
-})
+    Chats.apiCallWithData("PollAnswer/getPollForOneUser", $scope.userDataFollow, function (data) {
 
-    
+        if (data.value == true) {
+            $scope.setPollCountValueZero = data.data.length
+
+        } else {
+            $scope.setPollCountValueZero = "0"
+
+        }
+    })
+
+
 })
