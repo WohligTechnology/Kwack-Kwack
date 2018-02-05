@@ -32,7 +32,7 @@ console.log("helloexplore", data)
       if (data.data.results.length == 10) {
         $scope.pagination.shouldLoadMore = true;
       }
-      $scope.paginationCode();
+      // $scope.paginationCode();
     });
 
   };
@@ -40,32 +40,32 @@ console.log("helloexplore", data)
   $scope.click = function (data) {
     console.log('helloclick', data)
   }
-  $scope.paginationCode = function () {
-    _.forEach($scope.exploreNews, function (value) {
-      _.forEach(value.polls, function (polls1) {
-        if (polls1.poll == null) {} else {
-          if ($scope.pollKwack._id == polls1.poll.user._id) {
-            value.temp = true
-          } else {
-            value.temp = false;
-          }
-        }
-      })
+  // $scope.paginationCode = function () {
+  //   _.forEach($scope.exploreNews, function (value) {
+  //     _.forEach(value.polls, function (polls1) {
+  //       if (polls1.poll == null) {} else {
+  //         if ($scope.pollKwack._id == polls1.poll.user._id) {
+  //           value.temp = true
+  //         } else {
+  //           value.temp = false;
+  //         }
+  //       }
+  //     })
 
-    })
-    _.forEach($scope.exploreNews, function (comments) {
-      _.forEach(comments.comments, function (comments1) {
-        if (comments1.comment == null) {} else {
-          if ($scope.pollKwack._id == comments1.comment.user._id) {
-            comments.kwack = true
-          } else {
-            comments.kwack = false;
-          }
-        }
-      })
+  //   })
+  //   _.forEach($scope.exploreNews, function (comments) {
+  //     _.forEach(comments.comments, function (comments1) {
+  //       if (comments1.comment == null) {} else {
+  //         if ($scope.pollKwack._id == comments1.comment.user._id) {
+  //           comments.kwack = true
+  //         } else {
+  //           comments.kwack = false;
+  //         }
+  //       }
+  //     })
 
-    })
-  }
+  //   })
+  // }
 
   $scope.nextPage = function (data, kwackPoll) {
     var data1 = {}

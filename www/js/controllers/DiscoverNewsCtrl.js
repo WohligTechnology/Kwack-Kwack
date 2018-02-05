@@ -20,35 +20,36 @@
        $scope.loadMore();
      }
    };
-
-   Chats.apiCallWithoutData("NewsInfo/getTrendingNews", function (data) {
+$scope.dataToSend={}
+$scope.dataToSend.userId=$scope.jstorage._id
+   Chats.apiCallWithData("NewsInfo/getTrendingNews",$scope.dataToSend, function (data) {
      $scope.trending=data.data
-     _.forEach($scope.trending, function (value) {
-      _.forEach(value.polls, function (polls1) {
-        if (polls1.poll == null) {} else {
-          if ($scope.pollKwack._id == polls1.poll.user._id) {
-            value.temp = true
-          } else {
-            $scope.color = false;
-            value.value = value.value;
-          }
-        }
-      })
+    //  _.forEach($scope.trending, function (value) {
+    //   _.forEach(value.polls, function (polls1) {
+    //     if (polls1.poll == null) {} else {
+    //       if ($scope.pollKwack._id == polls1.poll.user._id) {
+    //         value.temp = true
+    //       } else {
+    //         $scope.color = false;
+    //         value.value = value.value;
+    //       }
+    //     }
+    //   })
 
-    })
+    // })
 
-    _.forEach($scope.trending, function (comments) {
-      _.forEach(comments.comments, function (comments1) {
-        if (comments1.comment == null) {} else {
-          if ($scope.pollKwack._id == comments1.comment.user._id) {
-            comments.kwack = true
-          } else {
-            comments.kwack = false;
-          }
-        }
-      })
+    // _.forEach($scope.trending, function (comments) {
+    //   _.forEach(comments.comments, function (comments1) {
+    //     if (comments1.comment == null) {} else {
+    //       if ($scope.pollKwack._id == comments1.comment.user._id) {
+    //         comments.kwack = true
+    //       } else {
+    //         comments.kwack = false;
+    //       }
+    //     }
+    //   })
 
-    })
+    // })
   })
 
    Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
@@ -76,7 +77,7 @@
            $scope.pagination.shouldLoadMore = true;
          }
          console.log("hellorecords", $scope.discoverNews)
-         $scope.paginationCode();
+        //  $scope.paginationCode();
        });
      } else if ($scope.activeTab == 'Just now') {
        Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
@@ -84,7 +85,7 @@
          if (data.data.results.length == 10) {
            $scope.pagination.shouldLoadMore = true;
          }
-         $scope.paginationCode();
+        //  $scope.paginationCode();
        });
      } else {
        $scope.interestData = {
@@ -97,37 +98,37 @@
          if (data.data.results.length == 10) {
            $scope.pagination.shouldLoadMore = true;
          }
-         $scope.paginationCode();
+        //  $scope.paginationCode();
        });
      }
    };
 
-   $scope.paginationCode = function () {
-     _.forEach($scope.discoverNews, function (value) {
-       _.forEach(value.polls, function (polls1) {
-         if (polls1.poll == null) {} else {
-           if ($scope.pollKwack._id == polls1.poll.user._id) {
-             value.temp = true
-           } else {
-             value.temp = false;
-           }
-         }
-       })
+  //  $scope.paginationCode = function () {
+  //    _.forEach($scope.discoverNews, function (value) {
+  //      _.forEach(value.polls, function (polls1) {
+  //        if (polls1.poll == null) {} else {
+  //          if ($scope.pollKwack._id == polls1.poll.user._id) {
+  //            value.temp = true
+  //          } else {
+  //            value.temp = false;
+  //          }
+  //        }
+  //      })
 
-     })
-     _.forEach($scope.discoverNews, function (comments) {
-      _.forEach(comments.comments, function (comments1) {
-        if (comments1.comment == null) {} else {
-          if ($scope.pollKwack._id == comments1.comment.user._id) {
-            comments.kwack = true
-          } else {
-            comments.kwack = false;
-          }
-        }
-      })
+  //    })
+  //    _.forEach($scope.discoverNews, function (comments) {
+  //     _.forEach(comments.comments, function (comments1) {
+  //       if (comments1.comment == null) {} else {
+  //         if ($scope.pollKwack._id == comments1.comment.user._id) {
+  //           comments.kwack = true
+  //         } else {
+  //           comments.kwack = false;
+  //         }
+  //       }
+  //     })
 
-    })
-   }
+  //   })
+  //  }
   
    $scope.nextPage = function (data, kwackPoll) {
     console.log("helloStateParams",$state.current.name )
