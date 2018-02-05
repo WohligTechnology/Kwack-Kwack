@@ -1,6 +1,7 @@
 connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, Chats, $ionicScrollDelegate) {
     $scope.newsId = {}
     $scope.newsId.newsId = $stateParams.newsid
+     $scope.newsId.userId =$.jStorage.get('user')._id;
     console.log("newsid", $scope.newsId)
     // $scope.jstorage = $.jStorage.get('user');
     data = {}
