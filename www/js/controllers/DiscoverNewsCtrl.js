@@ -21,6 +21,8 @@
      }
    };
 
+   $scope.doRefresh(true);
+
    Chats.apiCallWithoutData("NewsInfo/getTrendingNews", function (data) {
      $scope.trending=data.data
      _.forEach($scope.trending, function (value) {
@@ -58,7 +60,7 @@
    console.log("state", $state.current.name)
 
 
-   $scope.doRefresh(true);
+   
 
    $scope.loadMore = function () {
      $ionicScrollDelegate.resize()

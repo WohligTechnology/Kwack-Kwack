@@ -1,37 +1,7 @@
 
 var connector=angular.module('starter.controllers',  [ 'starter.controllers', 'angular-svg-round-progressbar', 'ngCordova'])
 
-.controller('AppCtrl', function ($scope, $stateParams, $state, $ionicPopup, $window, $ionicPopover, $ionicSideMenuDelegate, Chats) {
-  
-      $scope.goBackHandler = function () {
-        window.history.back(); //This works
-      };
-  
-      // $scope.logout = function () {
-      //   $.jStorage.deleteKey('profile');
-      //   $.jStorage.flush();
-      //   $state.go('landing');
-      // };
-  
-      $scope.$watch(function () {
-          return $ionicSideMenuDelegate.isOpenLeft();
-        },
-        function (isOpen) {
-          // if (isOpen) {
-          //   // MyServices.getNavDetails(function (data) {
-          //   $scope.userInfo = $.jStorage.get('profile');
-          //   // });
-          // }
-        });
-  
-      $scope.$on('$ionicView.enter', function () {
-        $ionicSideMenuDelegate.canDragContent(false);
-      });
-      $scope.$on('$ionicView.leave', function () {
-        $ionicSideMenuDelegate.canDragContent(false);
-      });
-  
-    })
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -51,6 +21,13 @@ var connector=angular.module('starter.controllers',  [ 'starter.controllers', 'a
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
+})
+
+.controller('TabCtrl', function($scope, $stateParams, Chats) {
+  $scope.font = '';
+  $scope.changesize = function (data) {
+    $scope.font = data;
+  }
 })
 
 .controller('HomeCtrl', function($scope, $stateParams, Chats) {

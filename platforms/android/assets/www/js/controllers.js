@@ -1,6 +1,7 @@
 
 var connector=angular.module('starter.controllers',  [ 'starter.controllers', 'angular-svg-round-progressbar', 'ngCordova'])
 
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -20,6 +21,13 @@ var connector=angular.module('starter.controllers',  [ 'starter.controllers', 'a
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
+})
+
+.controller('TabCtrl', function($scope, $stateParams, Chats) {
+  $scope.font = '';
+  $scope.changesize = function (data) {
+    $scope.font = data;
+  }
 })
 
 .controller('HomeCtrl', function($scope, $stateParams, Chats) {

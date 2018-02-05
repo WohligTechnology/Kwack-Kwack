@@ -161,6 +161,25 @@ $dark:                            #444 !default;
         }
     }
 
+    .small{
+        div{
+            font-size: 15px !important;
+        }
+        label{
+            font-size: 15px !important;
+        }
+        p{
+            font-size: 15px !important;
+        }
+        span{
+            font-size: 15px !important;
+        }
+    }
+
+
+    .large{
+        font-size: 50px !important;
+    }
     .skipButton {
         @include position(absolute,
         94% null null 50%);
