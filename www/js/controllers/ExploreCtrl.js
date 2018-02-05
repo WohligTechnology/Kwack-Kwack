@@ -19,15 +19,18 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
 
   $scope.loadMore = function () {
     $ionicScrollDelegate.resize()
+    $scope.$broadcast('scroll.refreshComplete');
     $scope.pagination.shouldLoadMore = false;
     $scope.pagination.currentPage++;
     $scope.pagination1 = {
       "page": $scope.pagination.currentPage,
+      "userId":$scope.jstorage._id
     }
     Chats.apiCallWithData("NewsInfo/getExploreNews", $scope.pagination1, function (data) {
 console.log("helloexplore", data)
       $scope.exploreNews = _.concat($scope.exploreNews, data.data.results);
       console.log("explorepagination", $scope.exploreNews)
+      $scope.$broadcast('scroll.infiniteScrollComplete');
       if (data.data.results.length == 10) {
         $scope.pagination.shouldLoadMore = true;
       }

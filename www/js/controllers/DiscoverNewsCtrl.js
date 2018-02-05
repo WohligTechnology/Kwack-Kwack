@@ -21,6 +21,8 @@
      }
    };
 
+   $scope.doRefresh(true);
+
    Chats.apiCallWithoutData("NewsInfo/getTrendingNews", function (data) {
      $scope.trending=data.data
      _.forEach($scope.trending, function (value) {
@@ -58,7 +60,7 @@
    console.log("state", $state.current.name)
 
 
-   $scope.doRefresh(true);
+   
 
    $scope.loadMore = function () {
      $ionicScrollDelegate.resize()
@@ -66,6 +68,7 @@
      $scope.pagination.currentPage++;
      $scope.pagination1 = {
        "page": $scope.pagination.currentPage,
+        "userId":$scope.jstorage._id
      }
      if ($scope.activeTab == 'All') {
        Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
@@ -88,7 +91,8 @@
      } else {
        $scope.interestData = {
          "page": $scope.pagination.currentPage,
-         "userInterest": $scope.activeTab
+         "userInterest": $scope.activeTab,
+         "userId":$scope.jstorage._id
        }
        Chats.apiCallWithData("NewsInfo/getNewsByInterest", $scope.interestData, function (data) {
          $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);

@@ -9949,6 +9949,21 @@ h4 {
     font-size: 18px;
     font-family: 'Montserrat-ExtraLight'; }
 
+.small div {
+  font-size: 15px !important; }
+
+.small label {
+  font-size: 15px !important; }
+
+.small p {
+  font-size: 15px !important; }
+
+.small span {
+  font-size: 15px !important; }
+
+.large {
+  font-size: 50px !important; }
+
 .skipButton {
   position: absolute;
   top: 94%;

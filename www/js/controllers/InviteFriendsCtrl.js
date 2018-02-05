@@ -152,6 +152,7 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
 
 
   $scope.loadMore = function () {
+    $ionicScrollDelegate.resize()
     $scope.$broadcast('scroll.refreshComplete');
     // $ionicScrollDelegate.resize()
     $scope.pagination.shouldLoadMore = false;
