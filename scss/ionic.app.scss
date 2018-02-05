@@ -98,6 +98,12 @@ $dark:                            #444 !default;
     body {
         font-family: 'Montserrat-Regular';
     }
+    .small{
+        label{
+            font-size: 30px;
+        }
+    }
+
 
     h4 {
         font-size: 14px;
@@ -541,7 +547,7 @@ $dark:                            #444 !default;
     .profile-pic {
         width: 280px;
         height: 280px;
-        margin-top: 30px;
+        margin-top: 30px !important;
         overflow: hidden; // padding: 40px 55px;
         background-color: $light;
         box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
@@ -2063,8 +2069,8 @@ $dark:                            #444 !default;
     }
 
     .profileImg {
-        width: 150px;
-        height: 150px;
+        
+        @include size(150px);
         margin: 0 auto;
         img {
             width: 100%;
@@ -2288,8 +2294,7 @@ $dark:                            #444 !default;
     //start of settings
     .setting {
         .profileImg {
-            width: 125px;
-            height: 125px;
+           @include size(90px);
             float: right;
         }
         .chngImg {
