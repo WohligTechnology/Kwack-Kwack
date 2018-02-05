@@ -3,20 +3,6 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
   console.log("hello")
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
-  $scope.doRefresh = function (val) {
-    $scope.exploreNews = [],
-      $scope.pagination = {
-        shouldLoadMore: true,
-        currentPage: 0,
-      };
-
-    if (!val) {
-      $scope.loadMore();
-    }
-  };
-
-  $scope.doRefresh(true);
-
   $scope.loadMore = function () {
     $ionicScrollDelegate.resize()
     $scope.$broadcast('scroll.refreshComplete');
@@ -38,6 +24,22 @@ console.log("helloexplore", data)
     });
 
   };
+  
+  $scope.doRefresh = function (val) {
+    $scope.exploreNews = [],
+      $scope.pagination = {
+        shouldLoadMore: true,
+        currentPage: 0,
+      };
+
+    if (val) {
+      $scope.loadMore();
+    }
+  };
+
+  $scope.doRefresh(true);
+
+
 
   $scope.click = function (data) {
     console.log('helloclick', data)
