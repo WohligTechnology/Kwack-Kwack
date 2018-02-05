@@ -20,7 +20,7 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
       if (data.data.results.length == 10) {
         $scope.pagination.shouldLoadMore = true;
       }
-      $scope.paginationCode();
+      // $scope.paginationCode();
     })
   }
 
@@ -52,20 +52,20 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
         }
       })
 
-    })
-    _.forEach($scope.discoverNews, function (comments) {
-     _.forEach(comments.comments, function (comments1) {
-       if (comments1.comment == null) {} else {
-         if ($scope.pollKwack._id == comments1.comment.user._id) {
-           comments.kwack = true
-         } else {
-           comments.kwack = false;
-         }
-       }
-     })
+  //   })
+  //   _.forEach($scope.discoverNews, function (comments) {
+  //    _.forEach(comments.comments, function (comments1) {
+  //      if (comments1.comment == null) {} else {
+  //        if ($scope.pollKwack._id == comments1.comment.user._id) {
+  //          comments.kwack = true
+  //        } else {
+  //          comments.kwack = false;
+  //        }
+  //      }
+  //    })
 
-   })
-  }
+  //  })
+  // }
   //kwack polls
 
   $scope.nextPage = function (data, kwackPoll) {
