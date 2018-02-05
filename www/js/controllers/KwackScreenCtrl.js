@@ -219,21 +219,7 @@ for(i=0;i<20;i++){
 
      
         console.log("helloflush")
-        $scope.doRefresh = function (val) {
-          $scope.news = [],
-            $scope.pagination = {
-              shouldLoadMore: true,
-              currentPage: 0,
-            };
-      
-          if (!val) {
-            $scope.loadMore();
-          }
-        };
-        $scope.doRefresh(true);
-      
-      
-        //paginationload10
+
         $scope.loadMore = function () {
           $ionicScrollDelegate.resize()
           $scope.pagination.shouldLoadMore = false;
@@ -258,6 +244,23 @@ for(i=0;i<20;i++){
             
           });
         };
+
+        $scope.doRefresh = function (val) {
+          $scope.news = [],
+            $scope.pagination = {
+              shouldLoadMore: true,
+              currentPage: 0,
+            };
+      
+          if (val) {
+            $scope.loadMore();
+          }
+        };
+        $scope.doRefresh(true);
+      
+      
+        //paginationload10
+      
       
     }
 

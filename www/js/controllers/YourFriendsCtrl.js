@@ -8,22 +8,7 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
     $scope.allpeople = 'all';
     $scope.allcontactpeople = function(data){
       $scope.allpeople = data;
-      $scope.doRefresh = function (val) {
-        $scope.followingData = [],
-          $scope.pagination = {
-            shouldLoadMore: true,
-            currentPage: 0,
-            userId: $.jStorage.get("user")._id
-          };
-   
-        if (!val) {
-          $scope.loadMore();
-        }
-      };
-      $scope.doRefresh(true);
-  
-  
-  
+
       $scope.loadMore = function () {
         $scope.$broadcast('scroll.refreshComplete');
        $ionicScrollDelegate.resize()
@@ -135,6 +120,24 @@ connector.controller('YourFriendsCtrl', function($scope, Chats, $location, $ioni
       
       
       }
+
+      $scope.doRefresh = function (val) {
+        $scope.followingData = [],
+          $scope.pagination = {
+            shouldLoadMore: true,
+            currentPage: 0,
+            userId: $.jStorage.get("user")._id
+          };
+   
+        if (val) {
+          $scope.loadMore();
+        }
+      };
+      $scope.doRefresh(true);
+  
+  
+  
+   
     }
     
     $scope.allcontactpeople('all')

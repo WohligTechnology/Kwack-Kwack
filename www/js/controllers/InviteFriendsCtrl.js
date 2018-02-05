@@ -136,21 +136,6 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
     $scope.kwacksb = false;
   }
 
-  $scope.doRefresh = function (val) {
-    $scope.followingData = [],
-      $scope.pagination = {
-        shouldLoadMore: true,
-        currentPage: 0,
-      };
-
-    if (!val) {
-      $scope.loadMore();
-    }
-  };
-
-  $scope.doRefresh(true);
-
-
   $scope.loadMore = function () {
     $ionicScrollDelegate.resize()
     $scope.$broadcast('scroll.refreshComplete');
@@ -187,6 +172,23 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
     }
   
   };
+
+  $scope.doRefresh = function (val) {
+    $scope.followingData = [],
+      $scope.pagination = {
+        shouldLoadMore: true,
+        currentPage: 0,
+      };
+
+    if (!val) {
+      $scope.loadMore();
+    }
+  };
+
+  $scope.doRefresh(true);
+
+
+ 
 
   $scope.followUnfollow=function(userId, followType, index){
     console.log("index", index)
