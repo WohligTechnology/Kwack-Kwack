@@ -4,11 +4,11 @@
         <p>{{test.description}}</p>
         <p class=" float-right explore-icon text-center ">
             <label class="discoverCardStrip" ng-click="nextPage(test._id,'poll')">
-                <img ng-if="!test.temp"  src="img/explore/5.png"> <img ng-if="test.temp==true" src="img/filter/2.png">
+                <img ng-if="!test.flagForPoll"  src="img/explore/5.png"> <img ng-if="test.flagForPoll" src="img/filter/2.png">
                 <span class=" alignM">{{test.polls.length}}</span>
             </label>
             <label class="discoverCardStrip" ng-click="nextPage(test._id,'kwack')">
-                <img ng-if="!test.kwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="test.kwack==true" class="img-responsive" src="img/discover/shieldclick.png">
+                <img ng-if="!test.flagForKwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="test.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
                 <span class=" alignM">{{test.comments.length}}</span>
             </label>
             <label ng-click="socilaSharing(test.description,test.imageUrl,test.title,test.url)">

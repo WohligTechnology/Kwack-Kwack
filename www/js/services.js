@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 // var adminurl = "http://192.168.1.125:80/api/";
 var adminurl = "http://192.168.1.125:80/api/";
+=======
+
+  // var adminurl = "http://192.168.2.19:80/api/";
+ var adminurl = "http://localhost:80/api/";
+>>>>>>> 4170798ed5222aec9cb88833e99396e6745e7a68
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile?file=";
 angular.module('starter.services', [])

@@ -5,19 +5,6 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
   $scope.discoverNews = []
-  $scope.doRefresh = function (val) {
-    $scope.discoverNews = [],
-      $scope.pagination = {
-        shouldLoadMore: true,
-        currentPage: 0,
-      };
-
-    if (!val) {
-      $scope.loadMore();
-    }
-  };
-
-  $scope.doRefresh(true);
 
   $scope.loadMore = function () {
     $ionicScrollDelegate.resize()
@@ -36,6 +23,22 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
       // $scope.paginationCode();
     })
   }
+
+  $scope.doRefresh = function (val) {
+    $scope.discoverNews = [],
+      $scope.pagination = {
+        shouldLoadMore: true,
+        currentPage: 0,
+      };
+
+    if (val) {
+      $scope.loadMore();
+    }
+  };
+
+  $scope.doRefresh(true);
+
+ 
 
   // $scope.paginationCode = function () {
   //   _.forEach($scope.discoverNews, function (value) {

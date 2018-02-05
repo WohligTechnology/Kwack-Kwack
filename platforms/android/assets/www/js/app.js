@@ -446,6 +446,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.explore', {
         url: '/explore',
+        cache:false,
         views: {
           'tab-explore': {
             templateUrl: 'templates/explore.html',

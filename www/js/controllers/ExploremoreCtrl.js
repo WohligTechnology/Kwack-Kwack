@@ -1,6 +1,7 @@
 connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, Chats, $ionicScrollDelegate) {
     $scope.newsId = {}
     $scope.newsId.newsId = $stateParams.newsid
+     $scope.newsId.userId =$.jStorage.get('user')._id;
     console.log("newsid", $scope.newsId)
     // $scope.jstorage = $.jStorage.get('user');
     data = {}
@@ -76,7 +77,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
                 if (data.data.results.length == 10) {
                   $scope.pagination.shouldLoadMore = true;
                 }
-                $scope.paginationCode();
+                // $scope.paginationCode();
               });
             }
                 _.forEach($scope.news.polls, function (data1) {
@@ -117,32 +118,32 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     
   
 
-  $scope.paginationCode = function () {
-    _.forEach($scope.discoverNews, function (value) {
-      _.forEach(value.polls, function (polls1) {
-        if (polls1.poll == null) {} else {
-          if ($scope.pollKwack._id == polls1.poll.user._id) {
-            value.temp = true
-          } else {
-            value.temp = false;
-          }
-        }
-      })
+  // $scope.paginationCode = function () {
+  //   _.forEach($scope.discoverNews, function (value) {
+  //     _.forEach(value.polls, function (polls1) {
+  //       if (polls1.poll == null) {} else {
+  //         if ($scope.pollKwack._id == polls1.poll.user._id) {
+  //           value.temp = true
+  //         } else {
+  //           value.temp = false;
+  //         }
+  //       }
+  //     })
 
-    })
-    _.forEach($scope.discoverNews, function (comments) {
-     _.forEach(comments.comments, function (comments1) {
-       if (comments1.comment == null) {} else {
-         if ($scope.pollKwack._id == comments1.comment.user._id) {
-           comments.kwack = true
-         } else {
-           comments.kwack = false;
-         }
-       }
-     })
+  //   })
+  //   _.forEach($scope.discoverNews, function (comments) {
+  //    _.forEach(comments.comments, function (comments1) {
+  //      if (comments1.comment == null) {} else {
+  //        if ($scope.pollKwack._id == comments1.comment.user._id) {
+  //          comments.kwack = true
+  //        } else {
+  //          comments.kwack = false;
+  //        }
+  //      }
+  //    })
 
-   })
-  }
+  //  })
+  // }
 
     $scope.nextPage = function (data, kwackPoll) {
         var data1 = {}

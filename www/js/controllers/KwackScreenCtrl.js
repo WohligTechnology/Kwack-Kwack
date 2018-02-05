@@ -219,21 +219,7 @@ for(i=0;i<20;i++){
 
      
         console.log("helloflush")
-        $scope.doRefresh = function (val) {
-          $scope.news = [],
-            $scope.pagination = {
-              shouldLoadMore: true,
-              currentPage: 0,
-            };
-      
-          if (!val) {
-            $scope.loadMore();
-          }
-        };
-        $scope.doRefresh(true);
-      
-      
-        //paginationload10
+
         $scope.loadMore = function () {
           $ionicScrollDelegate.resize()
           $scope.pagination.shouldLoadMore = false;
@@ -245,7 +231,7 @@ for(i=0;i<20;i++){
           Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
       console.log("$scope.news, data.data.results",data)
             $scope.news = _.concat($scope.news, data.data.results);
-            $scope.paginationCode();
+            // $scope.paginationCode();
             // console.log("changes",$scope.news)
             // _.each($scope.news, function (value) {
             //   value.year = new Date(value.createdAt).getFullYear();
@@ -258,38 +244,55 @@ for(i=0;i<20;i++){
             
           });
         };
+
+        $scope.doRefresh = function (val) {
+          $scope.news = [],
+            $scope.pagination = {
+              shouldLoadMore: true,
+              currentPage: 0,
+            };
+      
+          if (val) {
+            $scope.loadMore();
+          }
+        };
+        $scope.doRefresh(true);
+      
+      
+        //paginationload10
+      
       
     }
 
   }
   
 
-  $scope.paginationCode = function () {
-    _.forEach($scope.news, function (value) {
-      _.forEach(value.polls, function (polls1) {
-        if (polls1.poll == null) {} else {
-          if ($scope.pollKwack._id == polls1.poll.user._id) {
-            value.temp = true
-          } else {
-            value.temp = false;
-          }
-        }
-      })
+  // $scope.paginationCode = function () {
+  //   _.forEach($scope.news, function (value) {
+  //     _.forEach(value.polls, function (polls1) {
+  //       if (polls1.poll == null) {} else {
+  //         if ($scope.pollKwack._id == polls1.poll.user._id) {
+  //           value.temp = true
+  //         } else {
+  //           value.temp = false;
+  //         }
+  //       }
+  //     })
 
-    })
-    _.forEach($scope.news, function (comments) {
-      _.forEach(comments.comments, function (comments1) {
-        if (comments1.comment == null) {} else {
-          if ($scope.pollKwack._id == comments1.comment.user._id) {
-            comments.kwack = true
-          } else {
-            comments.kwack = false;
-          }
-        }
-      })
+  //   })
+  //   _.forEach($scope.news, function (comments) {
+  //     _.forEach(comments.comments, function (comments1) {
+  //       if (comments1.comment == null) {} else {
+  //         if ($scope.pollKwack._id == comments1.comment.user._id) {
+  //           comments.kwack = true
+  //         } else {
+  //           comments.kwack = false;
+  //         }
+  //       }
+  //     })
 
-    })
-  }
+  //   })
+  // }
 
   $scope.nextPage = function (data, kwackPoll) {
     
