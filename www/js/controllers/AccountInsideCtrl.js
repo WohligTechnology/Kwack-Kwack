@@ -10,6 +10,7 @@ connector.controller('AccountInsieCtrl', function ($scope, Chats, $state, $ionic
                 });
                 confirmPopup.then(function (res) {
                     if (res) {
+                        $.jStorage.flush()
                         $state.go("signUp")
                     } else {
 
