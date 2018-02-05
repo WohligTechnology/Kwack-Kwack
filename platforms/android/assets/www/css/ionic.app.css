@@ -9903,6 +9903,9 @@ a.button {
 body {
   font-family: 'Montserrat-Regular'; }
 
+.small label {
+  font-size: 30px; }
+
 h4 {
   font-size: 14px; }
 
@@ -10260,7 +10263,7 @@ button.btn-yellow.button[disabled] {
 .profile-pic {
   width: 280px;
   height: 280px;
-  margin-top: 30px;
+  margin-top: 30px !important;
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0px 11px 60px rgba(128, 128, 128, 0.45);
@@ -11441,8 +11444,8 @@ button.btn-yellow.button[disabled] {
   letter-spacing: 4px; }
 
 .profileImg {
-  width: 150px;
   height: 150px;
+  width: 150px;
   margin: 0 auto; }
   .profileImg img {
     width: 100%;
@@ -11612,8 +11615,8 @@ button.btn-yellow.button[disabled] {
   border-bottom: 1px solid #000 !important; }
 
 .setting .profileImg {
-  width: 125px;
-  height: 125px;
+  height: 90px;
+  width: 90px;
   float: right; }
 
 .setting .chngImg {

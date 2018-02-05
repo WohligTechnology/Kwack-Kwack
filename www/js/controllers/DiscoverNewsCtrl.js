@@ -26,7 +26,7 @@
           $scope.pagination.shouldLoadMore = true;
         }
         console.log("hellorecords", $scope.discoverNews)
-        $scope.paginationCode();
+        // $scope.paginationCode();
       });
     } else if ($scope.activeTab == 'Just now') {
       Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
@@ -34,7 +34,7 @@
         if (data.data.results.length == 10) {
           $scope.pagination.shouldLoadMore = true;
         }
-        $scope.paginationCode();
+        // $scope.paginationCode();
       });
     } else {
       $scope.interestData = {
@@ -47,7 +47,7 @@
         if (data.data.results.length == 10) {
           $scope.pagination.shouldLoadMore = true;
         }
-        $scope.paginationCode();
+        // $scope.paginationCode();
       });
     }
   };

@@ -40,17 +40,17 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
 
  
 
-  $scope.paginationCode = function () {
-    _.forEach($scope.discoverNews, function (value) {
-      _.forEach(value.polls, function (polls1) {
-        if (polls1.poll == null) {} else {
-          if ($scope.pollKwack._id == polls1.poll.user._id) {
-            value.temp = true
-          } else {
-            value.temp = false;
-          }
-        }
-      })
+  // $scope.paginationCode = function () {
+  //   _.forEach($scope.discoverNews, function (value) {
+  //     _.forEach(value.polls, function (polls1) {
+  //       if (polls1.poll == null) {} else {
+  //         if ($scope.pollKwack._id == polls1.poll.user._id) {
+  //           value.temp = true
+  //         } else {
+  //           value.temp = false;
+  //         }
+  //       }
+  //     })
 
   //   })
   //   _.forEach($scope.discoverNews, function (comments) {
