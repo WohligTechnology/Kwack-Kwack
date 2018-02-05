@@ -106,51 +106,6 @@
 
 
 
-<<<<<<< HEAD
-
-=======
-   $scope.loadMore = function () {
-     $ionicScrollDelegate.resize()
-     $scope.pagination.shouldLoadMore = false;
-     $scope.pagination.currentPage++;
-     $scope.pagination1 = {
-       "page": $scope.pagination.currentPage,
-       "userId": $scope.jstorage._id
-     }
-     if ($scope.activeTab == 'All') {
-       Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
-         $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-
-         if (data.data.results.length == 10) {
-           $scope.pagination.shouldLoadMore = true;
-         }
-         console.log("hellorecords", $scope.discoverNews)
-         //  $scope.paginationCode();
-       });
-     } else if ($scope.activeTab == 'Just now') {
-       Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
-         $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-         if (data.data.results.length == 10) {
-           $scope.pagination.shouldLoadMore = true;
-         }
-         //  $scope.paginationCode();
-       });
-     } else {
-       $scope.interestData = {
-         "page": $scope.pagination.currentPage,
-         "userInterest": $scope.activeTab,
-         "userId": $scope.jstorage._id
-       }
-       Chats.apiCallWithData("NewsInfo/getNewsByInterest", $scope.interestData, function (data) {
-         $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-         if (data.data.results.length == 10) {
-           $scope.pagination.shouldLoadMore = true;
-         }
-         //  $scope.paginationCode();
-       });
-     }
-   };
->>>>>>> b2c37d46b3f8d1a968e329628fd565f4873ea471
 
    //  $scope.paginationCode = function () {
    //    _.forEach($scope.discoverNews, function (value) {
