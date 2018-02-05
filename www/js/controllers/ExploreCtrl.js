@@ -24,6 +24,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
     $scope.pagination.currentPage++;
     $scope.pagination1 = {
       "page": $scope.pagination.currentPage,
+      "userId":$scope.jstorage._id
     }
     Chats.apiCallWithData("NewsInfo/getExploreNews", $scope.pagination1, function (data) {
 console.log("helloexplore", data)

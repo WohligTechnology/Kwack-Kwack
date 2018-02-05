@@ -25,6 +25,7 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
     $scope.pagination.currentPage++;
     $scope.pagination1 = {
       "page": $scope.pagination.currentPage,
+       "userId":$scope.jstorage._id
     }
     Chats.apiCallWithData("NewsInfo/getSocialNews", $scope.pagination1, function (data) {
       console.log("socialpage", data.data.results)
@@ -40,7 +41,7 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
     _.forEach($scope.discoverNews, function (value) {
       _.forEach(value.polls, function (polls1) {
         if (polls1.poll == null) {} else {
-          if ($scope.pollKwack._id == polls1.poll.user) {
+          if ($scope.pollKwack._id == polls1.poll.user._id) {
             value.temp = true
           } else {
             value.temp = false;
@@ -52,7 +53,7 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
     _.forEach($scope.discoverNews, function (comments) {
      _.forEach(comments.comments, function (comments1) {
        if (comments1.comment == null) {} else {
-         if ($scope.pollKwack._id == comments1.comment.user) {
+         if ($scope.pollKwack._id == comments1.comment.user._id) {
            comments.kwack = true
          } else {
            comments.kwack = false;
