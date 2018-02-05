@@ -31,14 +31,16 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state) {
   $scope.user = {}
   $scope.user._id = $scope.jstorage._id
   Chats.apiCallWithData("User/getOne", $scope.user, function (data) {
-     if (data.value == true) {
+
+    if (data.value == true) {
       $scope.userInfo = data.data
+      console.log("$$$$$$$$$$$", $scope.userInfo);
     } else {
 
     }
   })
 
-  $scope.test='small'
+  $scope.test = 'small'
   //change font size
   $scope.font = '';
   $scope.changesize = function (data) {
