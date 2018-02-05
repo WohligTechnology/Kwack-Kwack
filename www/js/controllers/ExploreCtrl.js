@@ -19,6 +19,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
 
   $scope.loadMore = function () {
     $ionicScrollDelegate.resize()
+    $scope.$broadcast('scroll.refreshComplete');
     $scope.pagination.shouldLoadMore = false;
     $scope.pagination.currentPage++;
     $scope.pagination1 = {
@@ -29,6 +30,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
 console.log("helloexplore", data)
       $scope.exploreNews = _.concat($scope.exploreNews, data.data.results);
       console.log("explorepagination", $scope.exploreNews)
+      $scope.$broadcast('scroll.infiniteScrollComplete');
       if (data.data.results.length == 10) {
         $scope.pagination.shouldLoadMore = true;
       }

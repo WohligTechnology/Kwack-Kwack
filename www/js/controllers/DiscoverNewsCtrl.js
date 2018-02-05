@@ -20,9 +20,16 @@
        $scope.loadMore();
      }
    };
+<<<<<<< HEAD
 $scope.dataToSend={}
 $scope.dataToSend.userId=$scope.jstorage._id
    Chats.apiCallWithData("NewsInfo/getTrendingNews",$scope.dataToSend, function (data) {
+=======
+
+   $scope.doRefresh(true);
+
+   Chats.apiCallWithoutData("NewsInfo/getTrendingNews", function (data) {
+>>>>>>> b86d77ef3e33fbe2dd6e7ccee75d285b0b2d391b
      $scope.trending=data.data
     //  _.forEach($scope.trending, function (value) {
     //   _.forEach(value.polls, function (polls1) {
@@ -59,7 +66,7 @@ $scope.dataToSend.userId=$scope.jstorage._id
    console.log("state", $state.current.name)
 
 
-   $scope.doRefresh(true);
+   
 
    $scope.loadMore = function () {
      $ionicScrollDelegate.resize()

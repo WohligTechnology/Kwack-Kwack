@@ -38,7 +38,7 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state) {
     }
   })
 
-  
+  $scope.test='small'
   //change font size
   $scope.font = '';
   $scope.changesize = function (data) {
