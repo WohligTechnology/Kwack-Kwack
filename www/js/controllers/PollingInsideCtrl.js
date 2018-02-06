@@ -7,6 +7,7 @@ connector.controller('PollingInsideCtrl', function($scope,$stateParams, $state,C
     $scope.yes=[]
     $scope.no=[]
     data.newsId = $scope.newsId
+    data.userId =$.jStorage.get('user')._id;
     console.log(" $scope.newsId", $scope.newsId)
     $scope.inApp=function(link){
         console.log(link)
@@ -33,6 +34,7 @@ connector.controller('PollingInsideCtrl', function($scope,$stateParams, $state,C
         if (data1.value == true) {
             console.log("inside if found")
             $scope.newsInfo = data1.data
+             $scope.TotalKwacks=data1.data.comments.length
             $scope.TotalPoll=data1.data.polls.length
             $scope.yesno = data1.data.polls
             _.forEach($scope.yesno,function(value) {
@@ -55,20 +57,20 @@ connector.controller('PollingInsideCtrl', function($scope,$stateParams, $state,C
             });
 
         //user commented or not 
-            _.forEach($scope.newsInfo.comments,function(kwacks) {
+            // _.forEach($scope.newsInfo.comments,function(kwacks) {
                 
-                if(kwacks.comment!=null){ if(kwacks.comment.user == $scope.userId){
-                    $scope.newsInfo.kwacked=true
-                    console.log("hello")
-                }else{
-                    $scope.newsInfo.kwacked=false
-                }
-            }else{
-                console.log("comment array is null")
-            }
-            });
-            console.log("{{ $scope.newsInfo}}", $scope.newsInfo)
-            console.log("{{ $scope.newsInfo}}", $scope.TotalPoll)
+            //     if(kwacks.comment!=null){ if(kwacks.comment.user == $scope.userId){
+            //         $scope.newsInfo.kwacked=true
+            //         console.log("hello")
+            //     }else{
+            //         $scope.newsInfo.kwacked=false
+            //     }
+            // }else{
+            //     console.log("comment array is null")
+            // }
+            // });
+            // console.log("{{ $scope.newsInfo}}", $scope.newsInfo)
+            // console.log("{{ $scope.newsInfo}}", $scope.TotalPoll)
         } else {
 
             console.log("inside else not found")

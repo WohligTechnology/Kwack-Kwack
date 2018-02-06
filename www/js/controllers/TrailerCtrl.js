@@ -3,6 +3,7 @@ connector.controller('TrailerCtrl', function($scope, $ionicModal,Chats,$statePar
     $scope.previousState = $stateParams.previousState
     data = {}
     data.newsId = $scope.newsId
+     data.userId =$.jStorage.get('user')._id;
     console.log(" $scope.newsId", $scope.previousState)
     $scope.inApp=function(link){
         console.log(link)

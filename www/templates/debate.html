@@ -45,8 +45,8 @@
                             <span class="alignbM"></span>
                         </label>
                         <label class="discoverCardStrip" ng-click="nextPage(newsInfo._id)">
-                            <img ng-if="!newsInfo.polled" src="img/debate/poll.png">
-                            <img ng-if="newsInfo.polled" src="img/filter/2.png">
+                            <img ng-if="!newsInfo.flagForPoll" src="img/debate/poll.png">
+                            <img ng-if="newsInfo.flagForPoll" src="img/filter/2.png">
                             <span class="alignbM"> {{newsInfo.polls.length}}</span>
                         </label>
                         <label ng-click="socilaSharing(newsInfo.description,newsInfo.imageUrl,newsInfo.title,newsInfo.url)">
