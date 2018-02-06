@@ -4,6 +4,7 @@ connector.controller('StartPollingCtrl', function ($scope, $stateParams, Chats,$
     console.log("helloStateParams",$scope.previousState )
     data = {}
     data.newsId = $scope.newsId
+     data.userId =$.jStorage.get('user')._id;
     console.log(" $scope.newsId", $scope.newsId)
     console.log("$state",$scope.previousState)
     $scope.inApp=function(link){

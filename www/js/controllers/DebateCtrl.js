@@ -12,21 +12,22 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     console.log("helloanswwer", $scope.kwackAns)
     $scope.news = {}
     $scope.news.newsId = $scope.newsId
+    $scope.news.userId = $.jStorage.get('user')._id;
     // console.log(" $scope.newsId", $scope.kwackid)
     $scope.kwackSide = {}
     $scope.kwackSide.userId = $.jStorage.get("user")._id
     $scope.kwackSide.newsId = $scope.newsId
-    $scope.back = function() {
-        if($scope.previousState == 'tab.discoverNews'){
+    $scope.back = function () {
+        if ($scope.previousState == 'tab.discoverNews') {
             $state.go('tab.discoverNews')
-        }else if ($scope.previousState == 'tab.explore'){
+        } else if ($scope.previousState == 'tab.explore') {
             $state.go('tab.explore')
-        }else if ($scope.previousState == 'tab.kwackScreen'){
+        } else if ($scope.previousState == 'tab.kwackScreen') {
             $state.go('tab.kwackScreen')
-        }else{
+        } else {
             $state.go('tab.social')
         }
-         //This works
+        //This works
     };
     $scope.inApp = function (link) {
         console.log(link)
@@ -50,53 +51,53 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
                 $scope.newsInfo = data1.data;
                 $scope.commentInfo = data1.data.comments;
                 console.log("commentinfo", $scope.newsInfo)
-                _.forEach($scope.commentInfo, function (like) {
-                    if (like.comment.user == $scope.kwackSide.userId) {
-                        $scope.kwackopt = like.comment.kwack
-                        console.log("kwackopt", $scope.kwackopt)
-                    }
-                    console.log("likeforlike", like)
-                    _.forEach(like.comment.likes, function (likes) {
-                        if (likes.userId._id == $scope.kwackSide.userId) {
-                            like.value = true;
+                // _.forEach($scope.commentInfo, function (like) {
+                //     if (like.comment.user == $scope.kwackSide.userId) {
+                //         $scope.kwackopt = like.comment.kwack
+                //         console.log("kwackopt", $scope.kwackopt)
+                //     }
+                //     console.log("likeforlike", like)
+                //     _.forEach(like.comment.likes, function (likes) {
+                //         if (likes.userId._id == $scope.kwackSide.userId) {
+                //             like.value = true;
 
-                        } else {
-                            like.value = false;
-                        }
-                    });
-                });
+                //         } else {
+                //             like.value = false;
+                //         }
+                //     });
+                // });
 
-                _.forEach($scope.commentInfo, function (replylike) {
-                    console.log("likeforlike", replylike)
-                    _.forEach(replylike.comment.repliesTo, function (replylikes) {
-                        console.log("replylike", replylikes)
-                        _.forEach(replylikes.likes, function (rl) {
-                            _.forEach(replylikes.likes, function (rl) {
-                            console.log("replylike1", rl)
-                            if (rl == $scope.kwackSide.userId) {
-                                replylikes.replieslike = true
-                            }else{
-                                replylikes.replieslike = false
-                            }
-                        });
-                        });
-                    });
+                // _.forEach($scope.commentInfo, function (replylike) {
+                //     console.log("likeforlike", replylike)
+                //     _.forEach(replylike.comment.repliesTo, function (replylikes) {
+                //         console.log("replylike", replylikes)
+                //         _.forEach(replylikes.likes, function (rl) {
+                //             _.forEach(replylikes.likes, function (rl) {
+                //                 console.log("replylike1", rl)
+                //                 if (rl == $scope.kwackSide.userId) {
+                //                     replylikes.replieslike = true
+                //                 } else {
+                //                     replylikes.replieslike = false
+                //                 }
+                //             });
+                //         });
+                //     });
 
-                });
+                // });
 
-                _.forEach($scope.newsInfo.polls, function (polls) {
-                    console.log("likeforlike", polls)
-                    if (polls.poll != null) {
-                        if (polls.poll.user == $scope.kwackSide.userId) {
-                            $scope.newsInfo.polled = true
-                            console.log("hello")
-                        } else {
-                            $scope.newsInfo.polled = false
-                        }
-                    } else {
-                        console.log("comment array is null")
-                    }
-                });
+                // _.forEach($scope.newsInfo.polls, function (polls) {
+                //     console.log("likeforlike", polls)
+                //     if (polls.poll != null) {
+                //         if (polls.poll.user == $scope.kwackSide.userId) {
+                //             $scope.newsInfo.polled = true
+                //             console.log("hello")
+                //         } else {
+                //             $scope.newsInfo.polled = false
+                //         }
+                //     } else {
+                //         console.log("comment array is null")
+                //     }
+                // });
 
             } else {
 
@@ -212,36 +213,23 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
 
     }
     $scope.addLikeToReply = function (replyId, commentId) {
-$scope.replyLiketog=!$scope.replyLiketog
-        console.log("$$$$$$$$$******commentIdcommentIdcommentIdcommentId********************$", replyId, commentId)
         $scope.dataToSendForReply = {}
         $scope.dataToSendForReply.comm = commentId
         $scope.dataToSendForReply.replyId = replyId
         $scope.dataToSendForReply.userId = $.jStorage.get("user")._id
-        if($scope.replyLiketog==true){
-            Chats.apiCallWithData("Comment/addLikeToReply", $scope.dataToSendForReply, function (data1) {
-                if (data1.value == true) {
-    console.log("helloliked")
-    $scope.getOneNewsApi();
-                } else {
-    
-    
-                }
-            })
-        }else{
-            Chats.apiCallWithData("Comment/removeLikeToReply", $scope.dataToSendForReply, function (data1) {
-                console.log("hellodidntliked")
-                $scope.getOneNewsApi();
-                if (data1.value == true) {
-    
-                } else {
-    
-    
-                }
-            })
-        }
-        
+        Chats.apiCallWithData("Comment/addOrRemoveLikeTOReply", $scope.dataToSendForReply, function (data1) {
+            console.log("hellodidntliked")
+            $scope.getOneNewsApi();
+            if (data1.value == true) {
+
+            } else {
+
+
+            }
+        })
        
+
+
     }
 
 
@@ -267,23 +255,23 @@ $scope.replyLiketog=!$scope.replyLiketog
 
     ]
 
-//socislSharing
-    $scope.socilaSharing=function(desciption,imageUrl,title,link){
-        console.log("description",title)
-        console.log("image",link)
-        
+    //socislSharing
+    $scope.socilaSharing = function (desciption, imageUrl, title, link) {
+        console.log("description", title)
+        console.log("image", link)
+
         $cordovaSocialSharing
-        .share(desciption, title, imageUrl,link) // Share via native share sheet
-        .then(function (result) {
-          $ionicLoading.hide();
-          // Success!
-          console.log("Success");
-         
-          console.log(result);
-          console.log(image);
-        }, function (err) {
-          // An error occured. Show a message to the user
-          console.log("error : " + err);
-        });
-      }
+            .share(desciption, title, imageUrl, link) // Share via native share sheet
+            .then(function (result) {
+                $ionicLoading.hide();
+                // Success!
+                console.log("Success");
+
+                console.log(result);
+                console.log(image);
+            }, function (err) {
+                // An error occured. Show a message to the user
+                console.log("error : " + err);
+            });
+    }
 })
