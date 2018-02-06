@@ -600,7 +600,7 @@ $dark:                            #444 !default;
         font-size: 11px;
         font-weight: 900;
         letter-spacing: 1px;
-        margin-top: 4px;
+        margin-top: 6px;
         font-family: 'Montserrat-Bold';
     } //end of .profile-pic
     //start of filter
@@ -1007,7 +1007,7 @@ $dark:                            #444 !default;
     .followers {
         width: 100%;
         @include position(absolute,
-        90% null null null);
+        21% null null null);
         box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.47);
         .dis-table {
             background-color: $light;
@@ -1245,7 +1245,7 @@ $dark:                            #444 !default;
     }
 
     .has-header {
-        top: 52px;
+        top: 57px;
     }
 
     .w40 {
@@ -3491,6 +3491,11 @@ $dark:                            #444 !default;
             font-size: 10px;
             line-height: 17px;
         }
+        .followers {
+            width: 100%;
+            @include position(absolute,
+            90% null null null);
+        }
     }
 
     @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
@@ -3943,6 +3948,11 @@ $dark:                            #444 !default;
             font-size: 13px;
             line-height: 21px;
         }
+        .followers {
+            width: 100%;
+            @include position(absolute,
+            90% null null null);
+        }
     }
 
     @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
@@ -4000,5 +4010,10 @@ $dark:                            #444 !default;
         align-items: end;
         img {
             width: 18px;
+        }
+        .followers {
+            width: 100%;
+            @include position(absolute,
+            20% null null null);
         }
     }
