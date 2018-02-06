@@ -180,7 +180,7 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
         currentPage: 0,
       };
 
-    if (!val) {
+    if (val) {
       $scope.loadMore();
     }
   };

@@ -1,5 +1,6 @@
 connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDelegate, $ionicModal, Chats, $ionicLoading) {
   $scope.pollKwack = {}
+  $scope.interestarr= []
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
   $scope.addInterest={}
@@ -24,16 +25,16 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   
   //end of pagination
   //filter modal start
-  $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function (modal) {
-    $scope.modal = modal;
-  });
-  $scope.openModal = function () {
-    $scope.modal.show();
+  // $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
+  //   scope: $scope,
+  //   animation: 'slide-in-up'
+  // }).then(function (modal) {
+  //   $scope.modal = modal;
+  // });
+  // $scope.openModal = function () {
+  //   $scope.modal.show();
     
-  }
+  // }
 
   $scope.closeModal = function () {
     $scope.modal.hide();
@@ -49,6 +50,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   });
   $scope.openModal = function () {
     $scope.modal.show();
+    
   }
 
   $scope.closeModal = function () {
@@ -113,30 +115,36 @@ for(i=0;i<20;i++){
   // console.log('years',$scope.year)
 
    //Interest Select filter
-  Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
-    $scope.allInterest = data.data
-    console.log("data is*****************", $scope.allInterest)
-    $scope.interestdup = _.chunk($scope.allInterest, 3);
-  })
 
-  Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
-    $scope.getInterest = data.data.interests
-    $scope.interestarr= data.data.interests
-    _.forEach($scope.allInterest, function(allInterest){
-      // console.log("fullinterest",allInterest)
-      _.forEach($scope.interestarr, function(value){
-        // console.log("interestArrayforeach", value)
-        if(value.name==allInterest.name){
-          allInterest.value=true
-        }else{
-          console.log("interest not available")
-        }
-      })
-    
+
+  $scope.interestLoad=function(){
+    Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
+      $scope.allInterest = data.data
+      console.log("data is*****************", $scope.allInterest)
+      $scope.interestdup = _.chunk($scope.allInterest, 3);
     })
     
-    console.log("data interest", $scope.getInterest)
-  })
+    Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
+      $scope.getInterest = data.data.interests
+      $scope.interestarr= data.data.interests
+      _.forEach($scope.allInterest, function(allInterest){
+         console.log("fullinterest",$scope.getInterest)
+        _.forEach($scope.getInterest, function(value){
+          // console.log("interestArrayforeach", value)
+          if(value.name==allInterest.name){
+            allInterest.value=true
+          }else{
+            console.log("interest not available")
+          }
+        })
+      
+      })
+      
+      console.log("data interest", $scope.getInterest)
+    })
+  }
+  
+  $scope.interestLoad()
 
  
   $scope.select=function(interest){
@@ -144,11 +152,13 @@ for(i=0;i<20;i++){
       // console.log("interestarray",o)
       if (interest == o.name) {
         return o;
-        console.log("interestarray",o)
       }
       
     });
     if (interestEdit === undefined) {
+if(_.isEmpty($scope.interestarr)){
+  $scope.interestarr =[]
+}
      $scope.interestarr.push({name:interest})
   
       $scope.addInterest.interest = $scope.interestarr
