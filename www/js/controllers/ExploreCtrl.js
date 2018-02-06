@@ -10,10 +10,10 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
     $scope.pagination.currentPage++;
     $scope.pagination1 = {
       "page": $scope.pagination.currentPage,
-      "userId":$scope.jstorage._id
+      "userId": $scope.jstorage._id
     }
     Chats.apiCallWithData("NewsInfo/getExploreNews", $scope.pagination1, function (data) {
-console.log("helloexplore", data)
+      console.log("helloexplore", data)
       $scope.exploreNews = _.concat($scope.exploreNews, data.data.results);
       console.log("explorepagination", $scope.exploreNews)
       $scope.$broadcast('scroll.infiniteScrollComplete');
@@ -24,7 +24,7 @@ console.log("helloexplore", data)
     });
 
   };
-  
+
   $scope.doRefresh = function (val) {
     $scope.exploreNews = [],
       $scope.pagination = {
@@ -108,13 +108,41 @@ console.log("helloexplore", data)
       })
     }
   }
-//next page exploremore
+  //next page exploremore
   $scope.viewsNextPage = function (data) {
     var data1 = {}
     data1.newsId = data,
-       $state.go("tab.exploremore", {
+      $state.go("tab.exploremore", {
         newsid: data
       })
+  }
+  //socialSharing
+  $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
+    //  $scope.dataToSendApi = {}
+    //  $scope.dataToSendApi.newsId = newsId
+    //  $scope.dataToSendApi.userId = $.jStorage.get('user')._id
+    // Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
+    //        console.log("$$$$$$$$$$$$$$$$$$$$", data1)
+    //      })
+
+    console.log("description", title)
+    console.log("image", link)
+    var message = desciption
+    var subject = title
+    var image = imageUrl
+    $cordovaSocialSharing
+      .share(message, subject, image, link) // Share via native share sheet
+      .then(function (result) {
+        $ionicLoading.hide();
+        // Success!
+        console.log("Success");
+
+        console.log(result);
+        console.log(image);
+      }, function (err) {
+        // An error occured. Show a message to the user
+        console.log("error : " + err);
+      });
   }
 
 })

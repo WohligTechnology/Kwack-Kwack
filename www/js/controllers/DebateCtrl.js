@@ -268,7 +268,13 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     ]
 
     //socislSharing
-    $scope.socilaSharing = function (desciption, imageUrl, title, link) {
+    $scope.socilaSharing = function (desciption, imageUrl, title, link,newsId) {
+           //  $scope.dataToSendApi = {}
+     //  $scope.dataToSendApi.newsId = newsId
+     //  $scope.dataToSendApi.userId = $.jStorage.get('user')._id
+     // Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
+     //        console.log("$$$$$$$$$$$$$$$$$$$$", data1)
+     //      })
         console.log("description", title)
         console.log("image", link)
 
