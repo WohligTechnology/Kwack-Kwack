@@ -1,6 +1,12 @@
 connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams, ionicToast) {
   if ($.jStorage.get("user")) {
-    $state.go("inviteFriends")
+    if($.jStorage.get("user").verified){
+ $state.go("tab.explore")
+    }else{
+      $state.go("mobile")
+      
+    }
+   
     console.log("*******inside if condition")
   }
   $scope.showerrMsg = false

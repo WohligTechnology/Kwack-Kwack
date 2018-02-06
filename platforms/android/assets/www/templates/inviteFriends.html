@@ -7,7 +7,7 @@
       <h2 class="title-discover text-center">INVITE FRIENDS</h2>
     </div>
  <div class="rel">
-      <div class="display-inline toggleyouKnow" ng-click="people(); doRefresh()" ng-class="{'select' : toggle == true}">
+      <div class="display-inline toggleyouKnow" ng-click="people(); doRefresh(true)" ng-class="{'select' : toggle == true}">
         People you may know
       </div>
       <div class="display-inline toggleContacts" ng-click="contact()" ng-class="{'select' : !toggle}">
@@ -16,7 +16,7 @@
     </div>
   </div>
   <ion-content class="has-header invtfrndshdr">
-      <ion-refresher on-refresh="doRefresh()"></ion-refresher> 
+      <ion-refresher on-refresh="doRefresh(true)"></ion-refresher> 
     <div ng-if="toggle">
                
         <div class="back-img" ng-if="countValue">
@@ -71,35 +71,32 @@
               <div class="dis-table ">
                 <div class="dis-cell r-border text-center" ng-class="{'borderF' : followersb}" ng-click="followers()">
                   <div class="cell-follower">
-                    <h3 ng-if="setFollowCountValueZero">0</h3>
-                    <h3 ng-if="!setFollowCountValueZero">{{followingData.length}}</h3>
+                    <h3>{{followingData.length ? followingData.length : 0}}</h3>
                     <span>Followers</span>
                   </div>
                 </div>
                 <div class="dis-cell r-border  text-center" ng-class="{'borderK' : kwacksb}" ng-click="kwacks()">
                   <div class="cell-kwacks">
                       <!-- <h3 ng-if="setFollowCountValueZero">0</h3> -->
-                      <h3 ng-if="setFollowCountValueZero">0</h3>
-                    <h3>{{totalKwacks.length}}</h3>
+                    <h3>{{totalKwacks.length ? totalKwacks.length : 0}}</h3>
                     <span>Kwacks</span>
                   </div>
                 </div>
                 <div class="dis-cell text-center" ng-class="{'borderp' : pollsb}" ng-click="polls()">
                   <div class="cell-polls">
-                      <h3 ng-if="setFollowCountValueZero">0</h3>
-                    <h3>{{totalPolls.length}}</h3>
+                    <h3>{{totalPolls.length ? totalPolls.length : 0}}</h3>
                     <span>Polls</span>
                   </div>
                 </div>
               </div>
 
               <!-- innerfollow -->
-              <div class="list listperson listdetail listminheight" ng-if='!setFollowCountValueZero'>
+              <div class="list listperson listdetail listminheight" ng-if='followingData.length!=0'>
                 <a class="item item-avatar" ng-repeat="users in followingData track by $index">
-                  <img ng-if="!users.user.photo" ng-click="selectedUser(users.user._id); doRefresh()" ng-src="img/profile/profile.png">
-                  <img ng-if="users.user.photo" ng-click="selectedUser(users.user._id); doRefresh()" ng-src="{{users.user.photo | uploadpath}}">
-                  <h2 ng-click="selectedUser(users.user._id); doRefresh()">{{users.user.userName}}</h2>
-                  <p ng-click="selectedUser(users.user._id); doRefresh()">{{users.user.email}}</p>
+                  <img ng-if="!users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="img/profile/profile.png">
+                  <img ng-if="users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="{{users.user.photo | uploadpath}}">
+                  <h2 ng-click="selectedUser(users.user._id); doRefresh(true)">{{users.user.userName}}</h2>
+                  <p ng-click="selectedUser(users.user._id); doRefresh(true)">{{users.user.email}}</p>
                   <div ng-click="followUnfollow(users.user._id, 'innerFollow', $index)">
                       <img class="followersUn" ng-if="users.flag=='false'"  src="img/inviteFriends/Unfollow.png">
                       <img class="followersUn" ng-if="users.flag=='true'"  src="img/inviteFriends/follow.png">
@@ -113,10 +110,10 @@
           <!-- outerFollow -->
       <div class="list listperson listdetail listmaxheight" ng-if='followersb==true &&  !countValue'>
         <a class="item item-avatar" ng-repeat="users in followingData track by $index">
-          <img ng-click="selectedUser(users._id); doRefresh()" ng-if="!users.photo" ng-src="img/profile/profile.png">
-          <img ng-click="selectedUser(users._id); doRefresh()" ng-if="users.photo" src="{{users.photo | uploadpath}}">
-          <h2 ng-click="selectedUser(users._id); doRefresh()">{{users.name}}</h2>
-          <p ng-click="selectedUser(users._id); doRefresh()">{{users.email}}</p>
+          <img ng-click="selectedUser(users._id); doRefresh(true)" ng-if="!users.photo" ng-src="img/profile/profile.png">
+          <img ng-click="selectedUser(users._id); doRefresh(true)" ng-if="users.photo" src="{{users.photo | uploadpath}}">
+          <h2 ng-click="selectedUser(users._id); doRefresh(true)">{{users.name}}</h2>
+          <p ng-click="selectedUser(users._id); doRefresh(true)">{{users.email}}</p>
           <div ng-click="followUnfollow(users._id, 'outerFollow',$index)" >
               <img class="followersUn" ng-if="users.flag=='false'"   src="img/inviteFriends/Unfollow.png">
               <img class="followersUn" ng-if="users.flag=='true'"   src="img/inviteFriends/follow.png">
@@ -198,7 +195,7 @@
     <div class="bar bar-footer bar-black">
       <div class="row">
         <div class="col col-20" >
-          <div class="arrow-back text-center" ng-click="backTOlist(); doRefresh()">
+          <div class="arrow-back text-center" ng-click="backTOlist(); doRefresh(true)">
             <a class="button">
               <i class="ion ion-ios-arrow-back"></i>
             </a>

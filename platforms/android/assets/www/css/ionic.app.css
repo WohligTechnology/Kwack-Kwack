@@ -10281,7 +10281,7 @@ button.btn-yellow.button[disabled] {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1px;
-  margin-top: 4px;
+  margin-top: 6px;
   font-family: 'Montserrat-Bold'; }
 
 .reset {
@@ -10568,7 +10568,7 @@ button.btn-yellow.button[disabled] {
 .followers {
   width: 100%;
   position: absolute;
-  top: 90%;
+  top: 21%;
   box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.47); }
   .followers .dis-table {
     background-color: #fff;
@@ -10583,6 +10583,10 @@ button.btn-yellow.button[disabled] {
     .followers .dis-cell span {
       font-family: 'Montserrat-Regular';
       font-size: 13px; }
+
+.platform-android .followers {
+  position: absolute;
+  top: 22%; }
 
 .dis-table {
   display: table; }
@@ -10761,7 +10765,7 @@ button.btn-yellow.button[disabled] {
   letter-spacing: 2px; }
 
 .has-header {
-  top: 52px; }
+  top: 57px; }
 
 .w40 {
   width: 40%; }
@@ -12479,7 +12483,11 @@ button.btn-yellow.button[disabled] {
     right: 10px;
     z-index: 100000;
     font-size: 10px;
-    line-height: 17px; } }
+    line-height: 17px; }
+  .followers {
+    width: 100%;
+    position: absolute;
+    top: 90%; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
   .accordian label {
@@ -12762,7 +12770,11 @@ button.btn-yellow.button[disabled] {
     right: 10px;
     z-index: 100000;
     font-size: 13px;
-    line-height: 21px; } }
+    line-height: 21px; }
+  .followers {
+    width: 100%;
+    position: absolute;
+    top: 90%; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .accordian .news-label {
@@ -12803,3 +12815,7 @@ button.btn-yellow.button[disabled] {
   align-items: end; }
   .flex-end img {
     width: 18px; }
+  .flex-end .followers {
+    width: 100%;
+    position: absolute;
+    top: 20%; }

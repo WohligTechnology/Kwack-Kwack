@@ -9,8 +9,9 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast) 
             Chats.apiCallWithData("User/saveUser", info, function (data) {
                 console.log("data is", data)
                 if (data.value == true) {
-                    $scope.data = data;
-                    $.jStorage.set("user", $scope.data.data);
+                    $scope.userData = data.data;
+                    $scope.userData.verified=false;
+                    $.jStorage.set("user",  $scope.userData);
                     $state.go("mobile")
                 } else {
                     if (data.error == "emailExist") {

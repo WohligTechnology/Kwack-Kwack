@@ -20,15 +20,15 @@
       </div>
   </div>
   <ion-content class="bg-color">
-     <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+     <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
     <div class="bodyFont">
       <div class="text-center">
         <h4 class="pad0 title-explore">DISCOVER</h4>
       </div>
-      <div class="discover-trend">
+      <div class="discover-trend" ng-if="trending=='undefined'" >
         TRENDING THIS WEEK
       </div>
-      <ion-slides class="discover-ionslide discover-sliderbutton swipperdiscover"  options="sliderData.sliderOptions" slider="sliderData.sliderDelegate">
+      <ion-slides ng-if="trending=='undefined'" class="discover-ionslide discover-sliderbutton swipperdiscover"  options="sliderData.sliderOptions" slider="sliderData.sliderDelegate">
         <ion-slide-page ng-repeat="trendingweek in trending">
           <div class="swipperImg">
             <img class="img-responsive" ng-src="{{trendingweek.imageUrl}}">
@@ -74,9 +74,9 @@
       </ion-slides>
       <div>
           <ion-scroll direction="x" class="wide-as-needed ">
-              <a class="scrollFirst inline-button" ng-class="{'active-tab':activeTab=='All'}" ng-click="changeTab('All'); doRefresh()">All</a>
-              <a class="scrollCategories" ng-class="{'active-tab':activeTab=='Just now'}" ng-click="changeTab('Just now'); doRefresh()">Just now</a>
-              <a ng-repeat="interests in interest" class="scrollCategories" ng-class="{'active-tab':activeTab==interests.name}" ng-click="changeTab(interests.name); doRefresh()">{{interests.name}}</a>
+              <a class="scrollFirst inline-button" ng-class="{'active-tab':activeTab=='All'}" ng-click="changeTab('All'); doRefresh(true)">All</a>
+              <a class="scrollCategories" ng-class="{'active-tab':activeTab=='Just now'}" ng-click="changeTab('Just now'); doRefresh(true)">Just now</a>
+              <a ng-repeat="interests in interest" class="scrollCategories" ng-class="{'active-tab':activeTab==interests.name}" ng-click="changeTab(interests.name); doRefresh(true)">{{interests.name}}</a>
              
             </ion-scroll>
       </div>
