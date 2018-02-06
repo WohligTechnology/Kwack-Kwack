@@ -1,6 +1,6 @@
 <ion-view title="About Inside">
     <div class="row invtNav">
-        <div class="col col-33 mar-auto0 settings" ng-click="goBackHandler()">
+        <div class="col col-33 mar-auto0 settings" ui-sref="tab.settings">
             <i class="ion ion-ios-arrow-back"></i>
             <label>SETTINGS</label>
         </div>
@@ -9,28 +9,44 @@
         </div>
     </div>
     <ion-content class="bg-color">
-            <div class="bodyFont accInMargin50">
-                    <div class="card">
-                            <div class="row userName">
-                                <div class="col col-50 " ui-sref="tab.terms"><label class="overview">TERMS OF USE</label></div>  
-                                <div class="col col-50 text-right"><i class="ion ion-ios-arrow-right"></i></div>  
-                            </div>
-                            <div class="row userName">
-                                    <div class="col col-50" ui-sref="tab.privacy"><label for="">PRIVACY POLICY</label></div> 
-                                    <div class="col col-50 text-right"><i class="ion ion-ios-arrow-right"></i></div>  
-                                </div>
-                            <div class="row userName">
-                                    <div class="col col-80 emailText" ui-sref="tab.about"><label>ABOUT KWACK KWACK</label></div>   
-                                    <div class="col col-20 text-right"><i class="ion ion-ios-arrow-right"></i></div>  
-                                 </div>
-                                <div class="row email">
-                                        <div class="col col-80" ui-sref="tab.guidelines"><label>COMMUNITY GUIDELINES</label></div>    
-                                        <div class="col col-20 text-right"><i class="ion ion-ios-arrow-right"></i></div>
-                                    </div>
-                        </div>
-                        <label class="aboutLblIos" for="">KWACK KWACK FOR  IOS VERSION: 11.2.0 (24133362835)</label>
+        <div class="bodyFont accInMargin50">
+            <div class="card">
+                <div class="row userName">
+                    <div class="col col-50 " ui-sref="tab.terms">
+                        <label class="overview">TERMS OF USE</label>
+                    </div>
+                    <div class="col col-50 text-right">
+                        <i class="ion ion-ios-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="row userName">
+                    <div class="col col-50" ui-sref="tab.privacy">
+                        <label for="">PRIVACY POLICY</label>
+                    </div>
+                    <div class="col col-50 text-right">
+                        <i class="ion ion-ios-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="row userName">
+                    <div class="col col-80 emailText" ui-sref="tab.about">
+                        <label>ABOUT KWACK KWACK</label>
+                    </div>
+                    <div class="col col-20 text-right">
+                        <i class="ion ion-ios-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="row email">
+                    <div class="col col-80" ui-sref="tab.guidelines">
+                        <label>COMMUNITY GUIDELINES</label>
+                    </div>
+                    <div class="col col-20 text-right">
+                        <i class="ion ion-ios-arrow-right"></i>
+                    </div>
+                </div>
             </div>
-            <!-- <label class="aboutLblIos" for="">Kwack kwack for ios version: 11.2.0 (24133362835)</label> -->
+            <label class="aboutLblIos" for="">KWACK KWACK FOR IOS VERSION: 11.2.0 (24133362835)</label>
+        </div>
+        <!-- <label class="aboutLblIos" for="">Kwack kwack for ios version: 11.2.0 (24133362835)</label> -->
         </div>
     </ion-content>
 </ion-view>

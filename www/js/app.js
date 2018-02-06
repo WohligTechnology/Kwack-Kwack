@@ -90,23 +90,23 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
             controller: 'PrivacyCtrl'
           }
         }
-    })
+      })
 
-    .state('invite', {
-      url: '/invite',
-      templateUrl: 'templates/invite.html',
-      controller: 'InviteCtrl'
-    })
+      .state('invite', {
+        url: '/invite',
+        templateUrl: 'templates/invite.html',
+        controller: 'InviteCtrl'
+      })
 
-    .state('tab.trailerex', {
-      url: '/trailer/:newsid/:previousState',
-       cache:false,
-      views: {
-        'tab-explore': {
-          templateUrl: 'templates/tab-trailer.html',
-          controller: 'TrailerCtrl'
+      .state('tab.trailerex', {
+        url: '/trailer/:newsid/:previousState',
+        cache: false,
+        views: {
+          'tab-explore': {
+            templateUrl: 'templates/tab-trailer.html',
+            controller: 'TrailerCtrl'
+          }
         }
-      }
       })
       .state('tab.terms', {
         url: '/terms',
@@ -152,17 +152,17 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       //   controller: 'InviteCtrl'
       // })
 
-    .state('tab.trailerdis', {
-      url: '/trailer/:newsid/:previousState',
-       cache:false,
-      views: {
-        'tab-explore': {
-          templateUrl: 'templates/tab-trailer.html',
-          controller: 'TrailerCtrl'
+      .state('tab.trailerdis', {
+        url: '/trailer/:newsid/:previousState',
+        cache: false,
+        views: {
+          'tab-explore': {
+            templateUrl: 'templates/tab-trailer.html',
+            controller: 'TrailerCtrl'
 
+          }
         }
-      }
-    })
+      })
       // .state('tab.trailerex', {
       //   url: '/trailer/:newsid',
       //   // cache:false,
@@ -175,17 +175,17 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       // })
 
-    // .state('tab.trailerkwack', {
-    //   url: '/trailer/:newsid',
-       
-    //   views: {
-    //     'tab-kwackScreen': {
-    //       templateUrl: 'templates/tab-trailer.html',
-    //       // cache:false,
-    //       controller: 'TrailerCtrl'
-    //     }
-    //   }
-    // })
+      // .state('tab.trailerkwack', {
+      //   url: '/trailer/:newsid',
+
+      //   views: {
+      //     'tab-kwackScreen': {
+      //       templateUrl: 'templates/tab-trailer.html',
+      //       // cache:false,
+      //       controller: 'TrailerCtrl'
+      //     }
+      //   }
+      // })
 
       // .state('tab.trailerdis', {
       //   url: '/trailer/:newsid',
@@ -199,16 +199,16 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       // })
 
-    .state('tab.trailersocial', {
-      url: '/trailer/:newsid/:previousState',
-       cache:false,
-      views: {
-        'tab-social': {
-          templateUrl: 'templates/tab-trailer.html',
-          controller: 'TrailerCtrl'
+      .state('tab.trailersocial', {
+        url: '/trailer/:newsid/:previousState',
+        cache: false,
+        views: {
+          'tab-social': {
+            templateUrl: 'templates/tab-trailer.html',
+            controller: 'TrailerCtrl'
+          }
         }
-      }
-    })
+      })
 
       .state('tab.trailerkwack', {
         url: '/trailer/:newsid/:previousState',
@@ -222,16 +222,16 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       })
 
-    .state('tab.kwackScreen', {
-      url: '/kwackScreen',
-      cache:false,
-      views: {
-        'tab-kwackScreen': {
-          templateUrl: 'templates/kwack-screen.html',
-          controller: 'KwackScreenCtrl'
+      .state('tab.kwackScreen', {
+        url: '/kwackScreen',
+        cache: false,
+        views: {
+          'tab-kwackScreen': {
+            templateUrl: 'templates/kwack-screen.html',
+            controller: 'KwackScreenCtrl'
+          }
         }
-      }
-    })
+      })
 
       // .state('tab.trailersocial', {
       //   url: '/trailer/:newsid',
@@ -274,57 +274,57 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
 
 
-//   .state('tab.discoverfull', {
-//     url: '/discoverfull',
-//     views:{
-//       'tab-discoverNews': {
-//         templateUrl: 'templates/discover-full.html',
-//         controller: 'DiscoverFullCtrl'
-//       }
-//     }
-       
+      //   .state('tab.discoverfull', {
+      //     url: '/discoverfull',
+      //     views:{
+      //       'tab-discoverNews': {
+      //         templateUrl: 'templates/discover-full.html',
+      //         controller: 'DiscoverFullCtrl'
+      //       }
+      //     }
 
-//  })
 
-//  .state('tab.discoversearch', {
-//   url: '/discoverfull',
-//   views:{
-//     'tab-explore': {
-//       templateUrl: 'templates/discover-full.html',
-//       controller: 'DiscoverFullCtrl'
-//     }
-//   }
-// })
+      //  })
 
-.state('tab.kwacksearch', {
-  url: '/discoverfull',
-  views:{
-    'tab-kwackScreen': {
-      templateUrl: 'templates/discover-full.html',
-      // cache:false,
-      controller: 'DiscoverFullCtrl'
-    }
-  }   
+      //  .state('tab.discoversearch', {
+      //   url: '/discoverfull',
+      //   views:{
+      //     'tab-explore': {
+      //       templateUrl: 'templates/discover-full.html',
+      //       controller: 'DiscoverFullCtrl'
+      //     }
+      //   }
+      // })
 
-})
+      .state('tab.kwacksearch', {
+        url: '/discoverfull',
+        views: {
+          'tab-kwackScreen': {
+            templateUrl: 'templates/discover-full.html',
+            // cache:false,
+            controller: 'DiscoverFullCtrl'
+          }
+        }
 
-// .state('tab.socialsearch', {
-//   url: '/discoverfull',
-//   views:{
-//     'tab-social': {
-//       templateUrl: 'templates/discover-full.html',
-//       controller: 'DiscoverFullCtrl'
-//     }
-//   }   
+      })
 
-// })
+      // .state('tab.socialsearch', {
+      //   url: '/discoverfull',
+      //   views:{
+      //     'tab-social': {
+      //       templateUrl: 'templates/discover-full.html',
+      //       controller: 'DiscoverFullCtrl'
+      //     }
+      //   }   
 
-  .state('filter', {
-    url: '/filter',
+      // })
 
-    templateUrl: 'templates/filter.html',
-    controller: 'FilterCtrl'
-  })
+      .state('filter', {
+        url: '/filter',
+
+        templateUrl: 'templates/filter.html',
+        controller: 'FilterCtrl'
+      })
       .state('success', {
         url: '/success',
         templateUrl: 'templates/success.html',
@@ -429,7 +429,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         controller: 'InviteFriendsPeopleCtrl'
 
       })
-      
+
       .state('parampage', {
         url: '/parampage',
         templateUrl: 'templates/parampage.html',
@@ -446,7 +446,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.explore', {
         url: '/explore',
-        cache:false,
+        cache: false,
         views: {
           'tab-explore': {
             templateUrl: 'templates/explore.html',
@@ -508,7 +508,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.yourfriends', {
         url: '/yourfriends',
-        
+
         views: {
           'tab-settings': {
             templateUrl: 'templates/yourFriends.html',
@@ -524,7 +524,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.settings', {
         url: '/settings',
-        cache:false,
+        cache: false,
         views: {
           'tab-settings': {
             templateUrl: 'templates/settings.html',
@@ -570,19 +570,19 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
             controller: 'StartPollingCtrl'
           }
         }
-    })
+      })
 
-    // .state('tab.startPollingkwack', {
-    //   url: '/startPolling/:newsid',
-     
-    //   views: {
-    //     'tab-kwackScreen': {
-    //   templateUrl: 'templates/startPolling.html',
-    //   // cache:false,
-    //   controller: 'StartPollingCtrl'
-    //     }
-    //   }
-    //   })
+      // .state('tab.startPollingkwack', {
+      //   url: '/startPolling/:newsid',
+
+      //   views: {
+      //     'tab-kwackScreen': {
+      //   templateUrl: 'templates/startPolling.html',
+      //   // cache:false,
+      //   controller: 'StartPollingCtrl'
+      //     }
+      //   }
+      //   })
 
       .state('tab.startPollingkwack', {
         url: '/startPolling/:newsid/:previousState',
@@ -696,6 +696,5 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       } else {
         return;
       }
-  };
-})
-
+    };
+  })
