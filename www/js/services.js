@@ -1,11 +1,11 @@
 //  var adminurl = "http://192.168.2.19:80/api/";
-var adminurl = "http://localhost:80/api/";
+var adminurl = "http://kwack-backend.wohlig.co.in/backend/api/";
 
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile?file=";
 angular.module('starter.services', [])
 
-  .factory('Chats', function ($http, $ionicActionSheet, $ionicActionSheet, $cordovaCamera, $cordovaFileTransfer, $cordovaImagePicker) {
+  .factory('Chats', function ($http, $ionicLoading, $timeout, $ionicActionSheet, $cordovaCamera, $cordovaFileTransfer, $cordovaImagePicker) {
     // Might use a resource here that returns a JSON array
 
     // Some fake testing data
@@ -58,18 +58,57 @@ angular.module('starter.services', [])
         return null;
       },
       apiCallWithData: function (url, formData, callback) {
+        if (!formData.noLoader) {
+          $ionicLoading.show({
+            content: 'Loading',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+          });
+        }
+        delete formData.noLoader;
         $http.post(adminurl + url, formData).then(function (data) {
-          data = data.data;
-          callback(data);
+          if (data) {
+            if (!formData.noLoader) {
+              $ionicLoading.hide();
+            }
+            data = data.data;
+            callback(data);
+          }
 
+        }, function errorCallback(response) {
+          $ionicLoading.hide();
+          $ionicLoading.show({
+            template: 'Something went wrong',
+            noBackdrop: true,
+            duration: 2000
+          });
         });
       },
 
       apiCallWithoutData: function (url, callback) {
+        $ionicLoading.show({
+          content: 'Loading',
+          animation: 'fade-in',
+          showBackdrop: true,
+          maxWidth: 200,
+          showDelay: 0
+        });
         $http.post(adminurl + url).then(function (data) {
-          data = data.data;
-          callback(data);
+          if (data) {
+            $ionicLoading.hide();
+            data = data.data;
+            callback(data);
+          }
 
+        }, function errorCallback(response) {
+          $ionicLoading.hide();
+          $ionicLoading.show({
+            template: 'Something went wrong',
+            noBackdrop: true,
+            duration: 2000
+          });
         });
       },
       showActionsheet: function (maxImage, callback) {

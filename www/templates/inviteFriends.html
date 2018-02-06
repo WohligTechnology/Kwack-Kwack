@@ -191,6 +191,11 @@
     <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="5px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>                               
 
   </ion-content>
+  <ul class="alpha_sidebar">
+      <li ng-click="gotoList('index_{{letter}}')" ng-repeat="letter in alphabet">
+        {{letter}}
+      </li>
+    </ul>
   <div class="footer">
     <div class="bar bar-footer bar-black">
       <div class="row">

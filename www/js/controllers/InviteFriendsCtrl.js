@@ -33,12 +33,12 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
         $scope.alphabet = iterateAlphabet();
       
         //Sort user list by first letter of name
-        var tmp={};
+        $scope.tmp={};
         for(i=0;i<users.length;i++){
           if(users[i].displayName!=null){
             console.log("users[i].displayName", users[i].displayName)
             
-            var letter=users[i].displayName.toUpperCase().charAt(0);
+            $scope.letter=users[i].displayName.toUpperCase().charAt(0);
             
             
             if( tmp[ letter] ==undefined){

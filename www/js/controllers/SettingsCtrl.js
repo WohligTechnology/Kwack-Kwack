@@ -1,4 +1,4 @@
-connector.controller('SettingsCtrl', function ($scope, Chats, $state) {
+connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope) {
   $scope.jstorage = {}
   $scope.pollKwack = {}
 
@@ -47,9 +47,13 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state) {
   $scope.test = 'small'
   //change font size
   $scope.font = '';
-  $scope.changesize = function (data) {
-    $scope.font = data;
-  }
+  $scope.changesize = function(data) {
+    $scope.$emit("SendUp",{ message: data } );
+    console.log("hello",$scope.$emit)
+}
+  // $scope.changesize = function (data) {
+  //   $rootScope.font = data;
+  // }
 
   $scope.interestLoad=function(){
      // interest
