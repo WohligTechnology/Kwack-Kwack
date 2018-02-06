@@ -48,9 +48,9 @@
                 <span class="pollingCounts"></span>
                 </label>
                 <label class="discoverCardStrip" ng-click="nextPage(newsInfo._id,'kwack')">
-                  <img ng-if="!newsInfo.kwacked" class="img-responsive" src="img/explore/6.png">
-                  <img ng-if="newsInfo.kwacked" class="img-responsive" src="img/discover/shieldclick.png">
-                <span class="pollingCounts"> {{TotalPoll}}</span>
+                  <img ng-if="!newsInfo.flagForKwack" class="img-responsive" src="img/explore/6.png">
+                  <img ng-if="newsInfo.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
+                <span class="pollingCounts"> {{TotalKwacks}}</span>
                 </label>
                 <label>
                 <img src="img/debate/share.png">

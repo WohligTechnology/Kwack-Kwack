@@ -31,7 +31,7 @@
                     </div>
                     <div class="likes">
                         <span>{{debate.comment.likes.length}}</span>
-                        <label ng-class="{'yellow': debate.value==true}" ng-click="addLike(debate.comment._id)">LIKES</label>
+                        <label ng-class="{'yellow': debate.comment.flagForLike==true}" ng-click="addLike(debate.comment._id)">LIKES</label>
                         <!-- <label ng-class="{'yellow': lellow==true}" ng-click="addLike(debate.comment._id)">LIKES</label> -->
                         <span>{{debate.comment.repliesTo.length}}</span>
                         <label ng-click='reply(debate.comment._id)'>REPLIES</label>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="reply-reply"  ng-show="commId==debate.comment._id">
-                            <span>1m</span><span class="like-padd" ng-class="{'yellow': reply.replieslike==true}" ng-click="addLikeToReply(reply._id,debate.comment._id)">Like</span><span class="like-padd">Reply</span><span class="like-padd"><img src="img/debate/3.png" class="w9"></span>
+                            <span>1m</span><span class="like-padd" ng-class="{'yellow': reply.flagForLikeReply==true}" ng-click="addLikeToReply(reply._id,debate.comment._id)">Like</span><span class="like-padd">Reply</span><span class="like-padd"><img src="img/debate/3.png" class="w9"></span>
                         </div>
 
                        

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
  var adminurl = "http://192.168.2.19:80/api/";
  //var adminurl = "http://localhost:80/api/";
+=======
+var adminurl = "http://192.168.2.19:80/api/";
+//  var adminurl = "http://localhost:80/api/";
+>>>>>>> bb3a00af2408c21107daf5e9d5fb8de903174dbd
 
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile?file=";

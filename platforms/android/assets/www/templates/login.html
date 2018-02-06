@@ -4,48 +4,55 @@
             <div class="content-mar w40">
                 <img src="img/signup/bar.png" alt="logo" class="w100">
             </div>
-              <div class="content-margin back-white">
-                    <div class="list signupPlaceholder">
-                        <label class="item item-input item-floating-label">
+            <div class="content-margin back-white">
+                <div class="list signupPlaceholder">
+                    <label class="item item-input item-floating-label">
                         <span></span>
-                         <input type="text" class="border-bot" ng-model="data.email" placeholder="Email id">
-                     </label>
-                        <label class="item item-input item-floating-label">
+                        <input type="text" class="border-bot" ng-model="data.email" placeholder="Email id">
+                    </label>
+                    <label class="item item-input item-floating-label">
                         <span></span>
-                      <input type="password" class="border-bot" ng-model="data.password" placeholder="Password">
-                      </label>
-                        <div class="absolute sign-up">
-                              <button class="button  btn-yellow" ng-click="verifyUser(data)">LOG IN</button>  
-                            <!--<button class="button  btn-yellow" ui-sref="tab.discoverNews">LOG IN</button>-->
-
-                        </div>
+                        <input type="password" class="border-bot" ng-model="data.password" placeholder="Password">
+                    </label>
+                    <div class="absolute sign-up">
+                        <button class="button  btn-yellow" ng-click="verifyUser(data)">LOG IN</button>
+                        <!--<button class="button  btn-yellow" ui-sref="tab.discoverNews">LOG IN</button>-->
                     </div>
                 </div>
-                <div class="forgotPassword mart40" ui-sref="forgotpass">
-                    Forgot Password?
+            </div>
+            <div class="forgotPassword mart40" ui-sref="forgotpass">
+                Forgot Password?
+            </div>
+            <div class="content-margin">
+                <div class="social-iconll">
+                    <p>OR LOG IN VIA</p>
+                    <ul>
+                        <li>
+                            <a ng-click="facebook('http://wohlig.io/api/User/loginFacebook?returnUrl={{currentHost}}/%23!/login')" target="_blank">
+                                <img src="img/signup/2.png" class="w100">
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-href="http://wohlig.io/api/User/loginTwitter?returnUrl={{currentHost}}/%23!/login" target="_blank">
+                                <img src="img/signup/1.png" alt="twitter" class="w100">
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-href="http://wohlig.io/api/User/loginGoogle?returnUrl={{currentHost}}/%23!/login" target="_blank">
+                                <img src="img/signup/3.png" alt="google" class="w100">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="content-margin">
-                    <div class="social-iconll">
-                        <p>OR LOG IN VIA</p>
-                        <ul>
-                            <li>
-                                <a  ng-click="facebook('http://wohlig.io/api/User/loginFacebook?returnUrl={{currentHost}}/%23!/login')" target="_blank"><img src="img/signup/2.png"  class="w100" ></a>
-                            </li>
-                            <li>
-                                <a ng-href="http://wohlig.io/api/User/loginTwitter?returnUrl={{currentHost}}/%23!/login" target="_blank"><img src="img/signup/1.png" alt="twitter" class="w100"></a>
-                            </li>
-                            <li>
-                                <a  ng-href="http://wohlig.io/api/User/loginGoogle?returnUrl={{currentHost}}/%23!/login" target="_blank"><img src="img/signup/3.png" alt="google" class="w100"></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-         </div>
+            </div>
+        </div>
     </ion-content>
     <div class="footer" ui-sref="signUp">
         <div class="bar bar-footer bar-black">
             <div class="title">
-                <h5>NEW USER? <span> SIGN UP</span></h5>
+                <h5>NEW USER?
+                    <span> SIGN UP</span>
+                </h5>
             </div>
         </div>
     </div>

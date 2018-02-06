@@ -6,7 +6,6 @@
     <div>
       <h2 class="title-discover text-center">YOUR FRIENDS</h2>
     </div>
-
     <div class="text-center your-friends">
       <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='all'}" ng-click="allcontactpeople('all'); doRefresh()">All Friends</button>
       <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='people'}" ng-click="allcontactpeople('people'); doRefresh()">People</button>
@@ -17,24 +16,26 @@
       <i class="ion ion-search"></i>
     </div>
   </ion-nav-bar>
-  
+
   <ion-content class="contactHeader">
-    
+
     <div class="list listdetail list-mar">
       <div ng-if="allpeople=='all'" class="content-scroll list-profile">
-          <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
         <a class="item item-avatar" ng-repeat="friends in followingData   | filter:followingData.userBeenFollowed track by $index">
           <img ng-if="friends.userBeenFollowed.photo" src="{{friends.userBeenFollowed.photo | uploadpath}}">
-          <img ng-if="!friends.userBeenFollowed.photo"  ng-src="img/profile/profile.png">
-          
+          <img ng-if="!friends.userBeenFollowed.photo" ng-src="img/profile/profile.png">
+
           <i class="ion ion-star"></i>
           <h2>{{friends.userBeenFollowed.name}}</h2>
           <p>{{friends.userBeenFollowed.userName}}</p>
-          
-              <img class="followersUn" ng-if="friends.userBeenFollowed.flag=='true'" ng-click="followUnfollow(friends.userBeenFollowed._id, $index, 'all')" src="img/inviteFriends/Unfollow.png">
-              <img class="followersUn" ng-if="friends.userBeenFollowed.flag=='false'" ng-click="followUnfollow(friends.userBeenFollowed._id, $index, 'all')" src="img/inviteFriends/follow.png">
-      
-          
+
+          <img class="followersUn" ng-if="friends.userBeenFollowed.flag=='true'" ng-click="followUnfollow(friends.userBeenFollowed._id, $index, 'all')"
+            src="img/inviteFriends/Unfollow.png">
+          <img class="followersUn" ng-if="friends.userBeenFollowed.flag=='false'" ng-click="followUnfollow(friends.userBeenFollowed._id, $index, 'all')"
+            src="img/inviteFriends/follow.png">
+
+
         </a>
         <!-- <a class="item item-avatar">
           <img src="img/inviteFriends/Dp.png">
@@ -93,30 +94,32 @@
           <img class="followersUn" ng-show="!follow2" ng-click='follow2=true' src="img/inviteFriends/Unfollow.png">
           <img class="followersUn" ng-show="follow2" ng-click='follow2=false' src="img/inviteFriends/follow.png">
         </a> -->
-        <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="2px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>        
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore" on-infinite="loadMore()" distance="2px">
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
 
       </div>
       <div ng-if="allpeople == 'people'" class="content-scroll list-profile">
         <!-- <span class="contact">A</span> -->
         <div ng-repeat="(letter, authors) in sorted_users track by $index" ng-init="parentIndex=$index" class="alpha_list">
 
-            <ion-item class="item item-divider" id="index_{{letter}}">
-              
-              <span class="contact">{{letter}}</span>
-            </ion-item>
-            <!-- <ion-item > -->
-                <a class="item item-avatar" ng-repeat="author in authors | filter:followingData.userBeenFollowed track by $index">
-                    <img ng-if="author.photo"  src="{{author.photo | uploadpath}}">
-                    <img ng-if="!author.photo"  ng-src="img/profile/profile.png">
-                    <h2>{{author.name}}</h2>
-                    <p>{{author.userName}}</p>
-                    <img ng-click="followUnfollow(author._id, $index, 'people', letter)" class="followersUn" ng-if="author.flag=='false'"  src="img/inviteFriends/Unfollow.png">
-                    <img ng-click="followUnfollow(author._id, $index, 'people', letter)" class="followersUn"  ng-if="author.flag=='true'"  src="img/inviteFriends/follow.png">
-                  </a>
-            <!-- </ion-item> -->
-          </div>
-          
-       
+          <ion-item class="item item-divider" id="index_{{letter}}">
+
+            <span class="contact">{{letter}}</span>
+          </ion-item>
+          <!-- <ion-item > -->
+          <a class="item item-avatar" ng-repeat="author in authors | filter:followingData.userBeenFollowed track by $index">
+            <img ng-if="author.photo" src="{{author.photo | uploadpath}}">
+            <img ng-if="!author.photo" ng-src="img/profile/profile.png">
+            <h2>{{author.name}}</h2>
+            <p>{{author.userName}}</p>
+            <img ng-click="followUnfollow(author._id, $index, 'people', letter)" class="followersUn" ng-if="author.flag=='false'" src="img/inviteFriends/Unfollow.png">
+            <img ng-click="followUnfollow(author._id, $index, 'people', letter)" class="followersUn" ng-if="author.flag=='true'" src="img/inviteFriends/follow.png">
+          </a>
+          <!-- </ion-item> -->
+        </div>
+
+
         <!-- <a class="item item-avatar">
           <img src="img/inviteFriends/Dp.png">
           <h2>Apoorv Akhouri</h2>
@@ -161,33 +164,33 @@
           <img class="followersUn" ng-show="follow1" ng-click='follow1=false' src="img/inviteFriends/follow.png">
         </a> -->
       </div>
-      <div ng-if="allpeople == 'contact'"   class="content-scroll list-profile">
+      <div ng-if="allpeople == 'contact'" class="content-scroll list-profile">
         <div data-ng-repeat="(letter, authors) in contactuser" class="alpha_list">
           <ion-item class="item item-divider" id="index_{{letter}}">
-            
+
             <span class="contact">{{letter}}</span>
           </ion-item>
           <!-- <ion-item > -->
-              <a class="item item-avatar" ng-repeat="author in authors | filter:followingData.userBeenFollowed">
-                  <img   ng-src="img/profile/profile.png">
-                  <h2>{{author.displayName}}</h2>
-                  <p>{{author.displayName}}</p>
-                  <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png">
-                  <img class="followersUn" ng-show="follow" ng-click='follow=false' src="img/inviteFriends/follow.png">
-                </a>
+          <a class="item item-avatar" ng-repeat="author in authors | filter:followingData.userBeenFollowed">
+            <img ng-src="img/profile/profile.png">
+            <h2>{{author.displayName}}</h2>
+            <p>{{author.displayName}}</p>
+            <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png">
+            <img class="followersUn" ng-show="follow" ng-click='follow=false' src="img/inviteFriends/follow.png">
+          </a>
           <!-- </ion-item> -->
         </div>
       </div>
-      </div>
-      
-    </ion-content>
-    <ul class="alpha_sidebar" ng-if="allpeople == 'contact' || allpeople == 'people'">
-      <li ng-click="gotoList('index_{{letter}}')"ng-repeat="letter in alphabet"> 
-          {{letter}}
-      </li>
-    </ul>
-   
-    <!-- <div class="footer">
+    </div>
+
+  </ion-content>
+  <ul class="alpha_sidebar" ng-if="allpeople == 'contact' || allpeople == 'people'">
+    <li ng-click="gotoList('index_{{letter}}')" ng-repeat="letter in alphabet">
+      {{letter}}
+    </li>
+  </ul>
+
+  <!-- <div class="footer">
       <div class="bar bar-footer bar-black">
         <div class="row">   
           <div class="col-90" ui-sref="discover">
@@ -198,4 +201,4 @@
         </div>
         </div>
         </div> -->
-   </ion-view>
+</ion-view>
