@@ -12733,6 +12733,7 @@ button.btn-yellow.button[disabled] {
     overflow: hidden; }
   .btn-sports.activated {
     background-color: #ffc943 !important;
+    color: #fff;
     border: none; }
   .settings-btns .btn-sports {
     padding: 0px 18px; }
