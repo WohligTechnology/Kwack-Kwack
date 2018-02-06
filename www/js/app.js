@@ -439,6 +439,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('otp', {
         url: '/otp',
+        cache: false,
         templateUrl: 'templates/otp.html',
         controller: 'OtpCtrl'
 
