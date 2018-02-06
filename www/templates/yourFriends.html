@@ -7,8 +7,8 @@
       <h2 class="title-discover text-center">YOUR FRIENDS</h2>
     </div>
     <div class="text-center your-friends">
-      <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='all'}" ng-click="allcontactpeople('all'); doRefresh()">All Friends</button>
-      <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='people'}" ng-click="allcontactpeople('people'); doRefresh()">People</button>
+      <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='all'}" ng-click="allcontactpeople('all'); doRefresh(true)">All Friends</button>
+      <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='people'}" ng-click="allcontactpeople('people'); doRefresh(true)">People</button>
       <button class="button all-friends-btn" ng-class="{'bor-bot': allpeople=='contact'}" ng-click="allcontactpeople('contact'); contacts()">contact</button>
     </div>
     <div class="searchby-name relative">
@@ -21,7 +21,7 @@
 
     <div class="list listdetail list-mar">
       <div ng-if="allpeople=='all'" class="content-scroll list-profile">
-        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
         <a class="item item-avatar" ng-repeat="friends in followingData   | filter:followingData.userBeenFollowed track by $index">
           <img ng-if="friends.userBeenFollowed.photo" src="{{friends.userBeenFollowed.photo | uploadpath}}">
           <img ng-if="!friends.userBeenFollowed.photo" ng-src="img/profile/profile.png">

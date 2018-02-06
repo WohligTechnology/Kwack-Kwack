@@ -1,4 +1,4 @@
- connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing, $ionicScrollDelegate, Chats, $stateParams, $state, $ionicPlatform) {
+connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing, $ionicScrollDelegate, Chats, $stateParams, $state, $ionicPlatform) {
    $scope.activeTab = 'All'
    $scope.changeTab = function (num) {
      $scope.activeTab = num;
@@ -11,47 +11,52 @@
    $scope.discoverNews = []
 
    $scope.loadMore = function () {
-     $ionicScrollDelegate.resize()
-     $scope.pagination.shouldLoadMore = false;
-     $scope.pagination.currentPage++;
-     $scope.pagination1 = {
-       "page": $scope.pagination.currentPage,
-       "userId": $scope.jstorage._id
-     }
-     if ($scope.activeTab == 'All') {
-       Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
-         $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-
-         if (data.data.results.length == 10) {
-           $scope.pagination.shouldLoadMore = true;
-         }
-         console.log("hellorecords", $scope.discoverNews)
-         // $scope.paginationCode();
-       });
-     } else if ($scope.activeTab == 'Just now') {
-       Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
-         $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-         if (data.data.results.length == 10) {
-           $scope.pagination.shouldLoadMore = true;
-         }
-         // $scope.paginationCode();
-       });
-     } else {
-       $scope.interestData = {
-         "page": $scope.pagination.currentPage,
-         "userInterest": $scope.activeTab,
-         "userId": $scope.jstorage._id
-       }
-       Chats.apiCallWithData("NewsInfo/getNewsByInterest", $scope.interestData, function (data) {
-         $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-         if (data.data.results.length == 10) {
-           $scope.pagination.shouldLoadMore = true;
-         }
-         // $scope.paginationCode();
-       });
-     }
-   };
-
+    $scope.$broadcast('scroll.refreshComplete');
+    $ionicScrollDelegate.resize()
+    
+    $scope.pagination.shouldLoadMore = false;
+    $scope.pagination.currentPage++;
+    $scope.pagination1 = {
+      "page": $scope.pagination.currentPage,
+       "userId":$scope.jstorage._id
+    }
+    if ($scope.activeTab == 'All') {
+      Chats.apiCallWithData("NewsInfo/getAllNews1", $scope.pagination1, function (data) {
+        $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
+       
+        if (data.data.results.length == 10) {
+          $scope.pagination.shouldLoadMore = true;
+        }
+        console.log("hellorecords", $scope.discoverNews)
+        // $scope.paginationCode();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+      });
+    } else if ($scope.activeTab == 'Just now') {
+      Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
+        $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
+        if (data.data.results.length == 10) {
+          $scope.pagination.shouldLoadMore = true;
+        }
+        // $scope.paginationCode();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+      });
+    } else {
+      $scope.interestData = {
+        "page": $scope.pagination.currentPage,
+        "userInterest": $scope.activeTab,
+        "userId":$scope.jstorage._id
+      }
+      Chats.apiCallWithData("NewsInfo/getNewsByInterest", $scope.interestData, function (data) {
+        $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
+        if (data.data.results.length == 10) {
+          $scope.pagination.shouldLoadMore = true;
+        }
+        // $scope.paginationCode();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+      });
+    }
+  };
+  
    $scope.doRefresh = function (val) {
      $scope.discoverNews = [],
        $scope.pagination = {
@@ -69,6 +74,7 @@
    $scope.dataToSend.userId = $scope.jstorage._id
    Chats.apiCallWithData("NewsInfo/getTrendingNews", $scope.dataToSend, function (data) {
      $scope.trending = data.data
+     console.log("trendingthisnews",$scope.trending)
      //  _.forEach($scope.trending, function (value) {
      //   _.forEach(value.polls, function (polls1) {
      //     if (polls1.poll == null) {} else {
@@ -184,14 +190,7 @@
    }
 
    //socialSharing
-   $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
-     //  $scope.dataToSendApi = {}
-     //  $scope.dataToSendApi.newsId = newsId
-     //  $scope.dataToSendApi.userId = $.jStorage.get('user')._id
-     // Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
-     //        console.log("$$$$$$$$$$$$$$$$$$$$", data1)
-     //      })
-
+   $scope.socilaSharing = function (desciption, imageUrl, title, link) {
      console.log("description", title)
      console.log("image", link)
      var message = desciption

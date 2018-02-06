@@ -195,18 +195,30 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
 
     $scope.nextPage = function (data) {
         var data1 = {}
-        data1.newsId = data,
-            data1.userId = $.jStorage.get("user")._id
+        data1.newsId = data;
+            data1.userId = $.jStorage.get("user")._id;
         Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
             if (data1.value == true) {
                 $state.go("polling-inside", {
-                    newsid: data
+                    newsid: data,
+                    previousState: $scope.previousState
+                    
                 })
             } else {
-                $state.go("tab.startPolling", {
-                    newsid: data
-
-                })
+                var pollParams={ 
+                newsid: data,
+                previousState: $scope.previousState
+                }
+                if ($scope.previousState == 'tab.discoverNews') {
+                    $state.go('tab.startPollingdis',pollParams)
+                    
+                } else if ($scope.previousState == 'tab.explore') {
+                    $state.go('tab.startPollingex', pollParams)
+                } else if ($scope.previousState == 'tab.kwackScreen') {
+                    $state.go('tab.startPollingkwack', pollParams)
+                } else {
+                    $state.go('tab.startPollingsocial', pollParams)  
+                }
 
             }
         })
