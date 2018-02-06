@@ -596,7 +596,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
 
       .state('tab.startPollingsocial', {
-        url: '/startPolling/:newsid',
+        url: '/startPolling/:newsid/:previousState',
         // cache:false,
         views: {
           'tab-social': {
