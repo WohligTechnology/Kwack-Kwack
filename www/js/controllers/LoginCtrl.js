@@ -1,6 +1,6 @@
 connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams, ionicToast) {
   if($.jStorage.get("user")){
-     $state.go("tab.explore")
+     $state.go("inviteFriends")
 console.log("*******inside if condition")
   }
   $scope.showerrMsg = false
@@ -10,7 +10,7 @@ console.log("*******inside if condition")
       if (data.value == true) {
         $scope.data = data;
         $.jStorage.set("user", $scope.data.data);
-        $state.go("tab.explore")
+        $state.go("inviteFriends")
       } else {
         if (data.error == "DeactiveAcc") {
           ionicToast.show('Account is Deleted', 'top', false, 2500);

@@ -10585,6 +10585,10 @@ button.btn-yellow.button[disabled] {
       font-family: 'Montserrat-Regular';
       font-size: 13px; }
 
+.platform-android .followers {
+  position: absolute;
+  top: 22%; }
+
 .dis-table {
   display: table; }
 

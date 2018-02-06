@@ -259,7 +259,7 @@ $scope.userInfo.flag = 'false'
 
   $scope.selectedUser = function (data) {
     $scope.countValue = true
-    
+    $scope.doRefresh(true);
     $scope.userData.userId = data
    
     $scope.user = {}
@@ -299,7 +299,7 @@ $scope.userInfo.flag = 'false'
 
     $scope.userFollowUnfollow.userFollower = data
     $scope.userFollowUnfollow.userId = $.jStorage.get('user')._id
-    $scope.doRefresh(true);
+   
     
   
   }

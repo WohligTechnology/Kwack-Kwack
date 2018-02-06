@@ -104,9 +104,9 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
                 // Success!
                 // $scope.hideLoading();
                 result.response = JSON.parse(result.response);
-                $scope.userData.photo = result.response.data[0];
+                $scope.userInfo.photo = result.response.data[0];
                 console.log("changes", $scope.userData.photo)
-                Chats.apiCallWithData("User/save", $scope.userData, function (data) {
+                Chats.apiCallWithData("User/save", $scope.userInfo, function (data) {
                     console.log("value", data)
                     $scope.get1();
                 });

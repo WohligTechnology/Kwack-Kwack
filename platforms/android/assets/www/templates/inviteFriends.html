@@ -7,7 +7,7 @@
       <h2 class="title-discover text-center">INVITE FRIENDS</h2>
     </div>
  <div class="rel">
-      <div class="display-inline toggleyouKnow" ng-click="people()" ng-class="{'select' : toggle == true}">
+      <div class="display-inline toggleyouKnow" ng-click="people(); doRefresh()" ng-class="{'select' : toggle == true}">
         People you may know
       </div>
       <div class="display-inline toggleContacts" ng-click="contact()" ng-class="{'select' : !toggle}">
@@ -16,8 +16,9 @@
     </div>
   </div>
   <ion-content class="has-header invtfrndshdr">
+      <ion-refresher on-refresh="doRefresh()"></ion-refresher> 
     <div ng-if="toggle">
-        <ion-refresher on-refresh="doRefresh()"></ion-refresher>        
+               
         <div class="back-img" ng-if="countValue">
             <div class="display-flex">
               <div>
@@ -169,10 +170,9 @@
                                   <p>Thursday, 19 Aug 2017</p>
                                 </a>
                               </div>-->
-                              <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="5px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>                               
     </div>
 
-    <div ng-if='toggle'  class="content-scroll list-profile">
+    <div ng-if='!toggle'  class="content-scroll list-profile">
         <div data-ng-repeat="(letter, authors) in sorted_users" class="alpha_list">
           <ion-item class="item item-divider" id="index_{{letter}}">
             
@@ -191,6 +191,8 @@
       </div>
     <!-- <div>
     </div> -->
+    <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="5px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>                               
+
   </ion-content>
   <div class="footer">
     <div class="bar bar-footer bar-black">

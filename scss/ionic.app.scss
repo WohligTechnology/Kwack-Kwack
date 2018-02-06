@@ -1028,6 +1028,11 @@ $dark:                            #444 !default;
         }
     }
 
+    .platform-android .followers {
+        @include position(absolute,
+        22% null null null);
+    }
+
     .dis-table {
         display: table;
     }
