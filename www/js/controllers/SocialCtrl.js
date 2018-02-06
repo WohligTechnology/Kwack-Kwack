@@ -1,4 +1,4 @@
-connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate, $cordovaSocialSharing,  $stateParams, $state,$ionicPlatform) {
+connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate, $cordovaSocialSharing, $stateParams, $state, $ionicPlatform) {
 
   $scope.poll = {}
   $scope.pollKwack = {}
@@ -12,7 +12,7 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
     $scope.pagination.currentPage++;
     $scope.pagination1 = {
       "page": $scope.pagination.currentPage,
-       "userId":$scope.jstorage._id
+      "userId": $scope.jstorage._id
     }
     Chats.apiCallWithData("NewsInfo/getSocialNews", $scope.pagination1, function (data) {
       console.log("socialpage", data.data.results)
@@ -38,7 +38,7 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
 
   $scope.doRefresh(true);
 
- 
+
 
   // $scope.paginationCode = function () {
   //   _.forEach($scope.discoverNews, function (value) {
@@ -112,24 +112,32 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
       })
 
   }
-     //socialSharing
-     $scope.socilaSharing=function(desciption,imageUrl,title,link){
-      console.log("description",title)
-      console.log("image",link)
-      
-      $cordovaSocialSharing
-      .share(desciption, title, imageUrl,link) // Share via native share sheet
+  //socialSharing
+  $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
+
+
+    //  $scope.dataToSendApi = {}
+    //  $scope.dataToSendApi.newsId = newsId
+    //  $scope.dataToSendApi.userId = $.jStorage.get('user')._id
+    // Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
+    //        console.log("$$$$$$$$$$$$$$$$$$$$", data1)
+    //      })
+    console.log("description", title)
+    console.log("image", link)
+
+    $cordovaSocialSharing
+      .share(desciption, title, imageUrl, link) // Share via native share sheet
       .then(function (result) {
         $ionicLoading.hide();
         // Success!
         console.log("Success");
-       
+
         console.log(result);
         console.log(image);
       }, function (err) {
         // An error occured. Show a message to the user
         console.log("error : " + err);
       });
-    }
+  }
 
 })
