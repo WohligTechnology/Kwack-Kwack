@@ -97,14 +97,11 @@ $dark:                            #444 !default;
     // }
     body {
         font-family: 'Montserrat-Regular';
-    }
-    .small{
-        label{
-            font-size: 30px;
-        }
-    }
-
-
+    } // .small {
+    //     label {
+    //         font-size: 30px;
+    //     }
+    // }
     h4 {
         font-size: 14px;
     }
@@ -165,27 +162,24 @@ $dark:                            #444 !default;
             font-size: 18px;
             font-family: 'Montserrat-ExtraLight';
         }
-    }
-
-    .small{
-        div{
-            font-size: 15px !important;
-        }
-        label{
-            font-size: 15px !important;
-        }
-        p{
-            font-size: 15px !important;
-        }
-        span{
-            font-size: 15px !important;
-        }
-    }
-
-
-    .large{
+    } // .small {
+    //     div {
+    //         font-size: 15px !important;
+    //     }
+    //     label {
+    //         font-size: 15px !important;
+    //     }
+    //     p {
+    //         font-size: 15px !important;
+    //     }
+    //     span {
+    //         font-size: 15px !important;
+    //     }
+    // }
+    .large {
         font-size: 50px !important;
     }
+
     .skipButton {
         @include position(absolute,
         94% null null 50%);
@@ -1852,28 +1846,28 @@ $dark:                            #444 !default;
         background-image: url("../img/footer/home.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
-        background-size: 33px auto;
+        background-size: 33px auto !important;
     }
 
     .discoverImage {
         background-image: url("../img/footer/discover.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
-        background-size: 34px auto;
+        background-size: 34px auto !important;
     }
 
     .socialImage {
         background-image: url("../img/footer/kwack.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
-        background-size: 33px auto;
+        background-size: 33px auto !important;
     }
 
     .inviteFImage {
         background-image: url("../img/footer/social.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
-        background-size: 33px auto;
+        background-size: 33px auto !important;
     }
 
     .tabs-top.tabs-striped .tab-item.tab-item-active {
@@ -1892,7 +1886,7 @@ $dark:                            #444 !default;
         background-image: url("../img/footer/setting.png") !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
-        background-size: 32px auto;
+        background-size: 32px auto !important;
     }
 
     .tab-header {
@@ -2088,7 +2082,6 @@ $dark:                            #444 !default;
     }
 
     .profileImg {
-        
         @include size(150px);
         margin: 0 auto;
         img {
@@ -2313,8 +2306,7 @@ $dark:                            #444 !default;
     //start of settings
     .setting {
         .profileImg {
-           @include size(90px);
-            float: right;
+            @include size(90px); // float: right;
         }
         .chngImg {
             text-align: left;
@@ -2350,10 +2342,14 @@ $dark:                            #444 !default;
         }
     }
 
-    .account {
-        color: $lightGray;
-        margin-left: 70px;
+    .set-username {
+        // margin-left: 70px;
         margin-top: 20px;
+        h5 {
+            font-family: 'Montserrat-Medium';
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
     }
 
     .settings-btns {
