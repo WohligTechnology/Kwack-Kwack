@@ -1,7 +1,7 @@
 <ion-view>
     <form name="formName">
         <div class="row text-center">
-            <div class="col col-33 cncelNav" ui-sref="settings">CANCEL</div>
+            <div class="col col-33 cncelNav" ui-sref="tab.settings">CANCEL</div>
             <div class="col col-33 navHead">EDIT</div>
             <div class="col col-33 cncelNav" ng-click="datasave(userInfo)">DONE</div>
         </div>
@@ -12,11 +12,11 @@
                 </div>
                 <div class="chngImg" ng-click="showActionsheet('image')">Change Image</div>
                 <div class="editCard relative">
-                        <div class="editBtn">
-                                <img class="img-responsive" src="img/edit/edit.png" alt="">
-                            </div>
+                    <div class="editBtn">
+                        <img class="img-responsive" src="img/edit/edit.png" alt="">
+                    </div>
                     <div class="card ">
-                            
+
                         <div class="editName">
                             <!-- <label for="">NAME</label> -->
                             <input type="text" name="name" ng-model="userInfo.name" value="{{userInfo.name}}">
@@ -30,12 +30,7 @@
                                     placeholder="Select">
                                     <option class="editCity" value="">Mumbai</option>
                                 </select>
-                               
                             </div>
-
-
-
-
                         </div>
                         <div class="editBio">
                             <!-- <label for="">BIO</label> -->
@@ -49,11 +44,11 @@
 
                 <div class="editCard">
                     <div class="card">
-                            <div class="pad-15">
-                        <div class="row text-center">
-                             <div class="col-33 KwackFollowersPosts">
+                        <div class="pad-15">
+                            <div class="row text-center">
+                                <div class="col-33 KwackFollowersPosts">
                                     <label>KWACKS</label>
-                                    <div >{{setKwackCountValueZero}}</div>
+                                    <div>{{setKwackCountValueZero}}</div>
                                 </div>
                                 <div class="col-33 KwackFollowersPosts">
                                     <label>FOLLOWERS</label>
@@ -69,5 +64,5 @@
                     </div>
                 </div>
         </ion-content>
- </form>
+    </form>
 </ion-view>

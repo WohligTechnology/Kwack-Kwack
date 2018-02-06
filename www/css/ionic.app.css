@@ -10314,8 +10314,7 @@ button.btn-yellow.button[disabled] {
   margin-left: 10px; }
 
 .select-month {
-  width: 132px;
-  padding: 8px 32px;
+  padding: 8px 19px;
   background-color: #000;
   color: #fff;
   border: none;

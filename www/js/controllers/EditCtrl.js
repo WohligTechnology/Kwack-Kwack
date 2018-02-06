@@ -1,4 +1,4 @@
-connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionicActionSheet, $cordovaImagePicker, $cordovaFileTransfer) {
+connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionicActionSheet, $cordovaImagePicker, $cordovaFileTransfer, $state) {
 
     $scope.userData = {}
     $scope.userDataFollow = {}
@@ -22,7 +22,7 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
 
         Chats.apiCallWithData("User/save", data, function (data) {
             if (data.value == true) {
-                $state.go("settings")
+                $state.go("tab.settings")
             }
         })
     }
