@@ -11,7 +11,9 @@
    $scope.discoverNews = []
 
    $scope.loadMore = function () {
+    $scope.$broadcast('scroll.refreshComplete');
     $ionicScrollDelegate.resize()
+    
     $scope.pagination.shouldLoadMore = false;
     $scope.pagination.currentPage++;
     $scope.pagination1 = {
@@ -27,6 +29,7 @@
         }
         console.log("hellorecords", $scope.discoverNews)
         // $scope.paginationCode();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
       });
     } else if ($scope.activeTab == 'Just now') {
       Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
@@ -35,6 +38,7 @@
           $scope.pagination.shouldLoadMore = true;
         }
         // $scope.paginationCode();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
       });
     } else {
       $scope.interestData = {
@@ -48,6 +52,7 @@
           $scope.pagination.shouldLoadMore = true;
         }
         // $scope.paginationCode();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
       });
     }
   };
@@ -69,6 +74,7 @@
    $scope.dataToSend.userId = $scope.jstorage._id
    Chats.apiCallWithData("NewsInfo/getTrendingNews", $scope.dataToSend, function (data) {
      $scope.trending = data.data
+     console.log("trendingthisnews",$scope.trending)
      //  _.forEach($scope.trending, function (value) {
      //   _.forEach(value.polls, function (polls1) {
      //     if (polls1.poll == null) {} else {

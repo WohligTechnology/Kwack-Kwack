@@ -85,12 +85,24 @@ connector.controller('PollingInsideCtrl', function($scope,$stateParams, $state,C
             console.log("hellodata", data1)
             if (data1.value == true) {
               $state.go("debate", {
-                newsid: data
+                newsid: data,
+                previousState: $scope.previousState
               })
             } else {
-              $state.go("tab.trailer", {
-                newsid: data
-              })
+                var KwackParams={ 
+                    newsid: data,
+                    previousState: $scope.previousState
+                    }
+                    if ($scope.previousState == 'tab.discoverNews') {
+                        $state.go('tab.trailerdis',KwackParams)
+                        
+                    } else if ($scope.previousState == 'tab.explore') {
+                        $state.go('tab.trailerex', KwackParams)
+                    } else if ($scope.previousState == 'tab.kwackScreen') {
+                        $state.go('tab.trailerkwack', KwackParams)
+                    } else {
+                        $state.go('tab.trailersocial', KwackParams)  
+                    }
             }
           })
      
