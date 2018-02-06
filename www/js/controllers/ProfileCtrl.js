@@ -1,13 +1,18 @@
 connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordovaCamera, Chats, $ionicActionSheet, $cordovaImagePicker, $cordovaFileTransfer) {
-    $scope.profileImage = {};
-    $scope.userData = {};
-    $scope.userData._id = $.jStorage.get("user")._id;
-    $scope.profileImage._id = $.jStorage.get("user")._id
-    $scope.setImage = {};
+    $scope.reqData={};
+    $scope.reqData._id = $.jStorage.get("user")._id
+
+    $scope.getUserDetails = function () {
+        Chats.apiCallWithData("User/getOne", $scope.reqData, function (data) {
+            if (data.value == true) {
+                $scope.userData = data.data;
+            }
+        });
+    }
+    $scope.getUserDetails();
     $scope.goBackHandler = function () {
         window.history.back(); //This works
     };
-    // $scope.profileImage._id = $.jStorage.get('user')._id;
     $scope.showActionsheet = function (card) {
         console.log(card);
         $ionicActionSheet.show({
@@ -63,7 +68,6 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
     };
 
     $scope.getImageSaveContact = function (card) {
-        // Image picker will load images according to these settings
         var options = {
             maximumImagesCount: 1, // Max number of selected images
             width: 800,
@@ -80,68 +84,18 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
 
     $scope.uploadImage = function (imageURI, card) {
         console.log('imageURI', imageURI);
-        // $scope.showLoading('Uploading Image...', 10000);
         $cordovaFileTransfer.upload(adminurl + 'upload', imageURI)
             .then(function (result) {
                 console.log("donewithprofile", result)
-                // Success!
-                // $scope.hideLoading();
                 result.response = JSON.parse(result.response);
-                $scope.profileImage.photo = result.response.data[0];
-                console.log("changes", $scope.profileImage.photo);
-                Chats.apiCallWithData("User/save", $scope.profileImage, function (data) {
-                    $scope.profileImage = data.data;
-                    Chats.apiCallWithData("User/getOne", $scope.userData, function (data) {
-                        if (data.value == true) {
-                            $scope.userInfo = data.data;
-
-                        } else {
-
-                        }
-                    });
+                $scope.userData.photo = result.response.data[0];
+                Chats.apiCallWithData("User/save", $scope.userData, function (data) {
+                    if (data.value) {
+                        $scope.getUserDetails();
+                    }
                 });
             })
     };
 
-    // $scope.getAllContacts = function() {
-
-    //         $scope.addContact = function() {
-    //           $cordovaContacts.save($scope.contactForm).then(function(result) {
-    //             // Contact saved
-    //           }, function(err) {
-    //             // Contact error
-    //           });
-    //         };
-
-    //         $scope.getAllContacts = function() {
-    //           $cordovaContacts.find({}).then(function(allContacts) { //omitting parameter to .find() causes all contacts to be returned
-    //             $scope.contacts = allContacts;
-    //             console.log('contacts',$scope.contacts)
-    //           })
-    //         };
-
-    //         $scope.findContactsBySearchTerm = function (searchTerm) {
-    //           var opts = {                                           //search options
-    //             filter : searchTerm,                                 // 'Bob'
-    //             multiple: true,                                      // Yes, return any contact that matches criteria
-    //             fields:  [ 'displayName', 'name' ],                  // These are the fields to search for 'bob'.
-    //             desiredFields: [id]    //return fields.
-    //           };
-
-    //           if ($ionicPlatform.isAndroid()) {
-    //             opts.hasPhoneNumber = true;         //hasPhoneNumber only works for android.
-    //           };
-
-    //           $cordovaContacts.find(opts).then(function (contactsFound) {
-    //             $scope.contacts = contactsFound;
-    //           });
-    //         }
-
-    //         $scope.pickContactUsingNativeUI = function () {
-    //           $cordovaContacts.pickContact().then(function (contactPicked) {
-    //             $scope.contact = contactPicked;
-    //           })
-    //         }
-    //     }
 
 })

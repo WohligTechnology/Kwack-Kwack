@@ -224,11 +224,10 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
     .state('tab.kwackScreen', {
       url: '/kwackScreen',
-     
+      cache:false,
       views: {
         'tab-kwackScreen': {
           templateUrl: 'templates/kwack-screen.html',
-          cache:false,
           controller: 'KwackScreenCtrl'
         }
       }
@@ -508,6 +507,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.yourfriends', {
         url: '/yourfriends',
+        
         views: {
           'tab-settings': {
             templateUrl: 'templates/yourFriends.html',
@@ -523,6 +523,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.settings', {
         url: '/settings',
+        cache:false,
         views: {
           'tab-settings': {
             templateUrl: 'templates/settings.html',

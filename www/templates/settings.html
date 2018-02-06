@@ -4,29 +4,31 @@
         <div class="col col-33 navHead text-center">SETTINGS</div>
         <div class="col col-33 cncelNav text-right" ng-click="logout()">SIGN OUT</div>
     </div>
-   <ion-content class="bg-color setting">
+    <ion-content class="bg-color setting">
         <div class="bodyFont ">
             <div class="row">
-                <div class="col-50">
-                    <div class="profileImg" ui-sref="edit">
+                <div class="col">
+                    <div class="profileImg text-center" ui-sref="edit">
                         <!-- <img src="img/edit/profilechange.jpg"> -->
                         <!-- <img ng-src="{{userInfo.photo | uploadpath}}"> -->
-                        <img ng-if="userInfo.photo && userInfo.photo!=''" ng-src="{{userInfo.photo | uploadpath}}"  alt="logo" class="w100">
+                        <img ng-if="userInfo.photo && userInfo.photo!=''" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
                         <img src="img/profile/profile.png" ng-if="!userInfo.photo || userInfo.photo==''" alt="logo" class="w100">
+
+                    </div>
+                    <div class="set-username text-center">
+                        <h5>{{userInfo.name}}</h5>
                     </div>
                 </div>
-                <div class="col-50">
+                <!-- <div class="col-50">
                     <div class="chngImg">UPDATE PHOTO</div>
-                </div>
+                </div> -->
             </div>
         </div>
-        <div class="account">
-            <label>ACCOUNT</label>
-        </div>
-       <div class="editCard">
+
+        <div class="editCard">
             <div class="card">
                 <div class="row userName">
-                    <div class="col col-33" >
+                    <div class="col col-33">
                         <label>FONT SIZE</label>
                     </div>
                     <div class="col col-66 text-right">
@@ -70,7 +72,7 @@
                         <!-- <button class="button btn-science btn-bg"> Science</button>
                         <button class="button btn-food btn-bg"> Food</button> -->
                     </div>
-           
+
                     <!-- <div class="text-center">
                         <button class="button btn-science btn-bg"> Business</button>
                         <button class="button btn-entertainment btn-bg"> Entertaintment</button>
@@ -85,31 +87,33 @@
                         <button class="button btn-books btn-bg"> Books</button>
                     </div> -->
                 </div>
-                <div class="text-center view-all" ng-click="viewall()"  ng-if="view3">
+                <div class="text-center view-all" ng-click="viewall()" ng-if="view3">
                     <label>VIEW ALL</label>
                 </div>
-                <div class="text-center view-all" ng-click="viewLess3()" ng-if="!view3"><label> View Less</label> </div>
+                <div class="text-center view-all" ng-click="viewLess3()" ng-if="!view3">
+                    <label> View Less</label>
+                </div>
             </div>
         </div>
         <div class="account">
-            <label>ABOUT</label>
+            <!-- <label>ABOUT</label> -->
         </div>
         <div class="editCard">
             <div class="card">
                 <div class="row userName" ui-sref="tab.aboutinside">
-                    <div class="col col-50"  >
+                    <div class="col col-50">
                         <label>ABOUT</label>
                     </div>
-                    <div class="col col-50 text-right" >
+                    <div class="col col-50 text-right">
                         <i class="ion ion-ios-arrow-right"></i>
                     </div>
                 </div>
                 <div class="row userName" ui-sref="tab.accountinside">
-                    <div class="col col-50" >
-                        <label >ACCOUNT</label>
+                    <div class="col col-50">
+                        <label>ACCOUNT</label>
                     </div>
                     <div class="col col-50 text-right" ui-sref="accountinside">
-                        <i class="ion ion-ios-arrow-right" ></i>
+                        <i class="ion ion-ios-arrow-right"></i>
                     </div>
                 </div>
                 <div class="row userName" ui-sref="tab.yourfriends">
@@ -128,16 +132,8 @@
                         <i class="ion ion-ios-arrow-right"></i>
                     </div>
                 </div>
-              </div>
+            </div>
         </div>
         </div>
     </ion-content>
 </ion-view>
-
-
-
-
-
-
-
-
