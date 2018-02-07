@@ -5,7 +5,6 @@ $scope.jstorage = $.jStorage.get('user');
 $scope.addInterest={}
 $scope.addInterest.userId= $scope.jstorage._id
 $scope.addInterest.interest=[]
-console.log("heyyjstorage",$scope.addInterest)
 $scope.interestarr=[]
 
 $scope.goBackHandler = function() {
@@ -21,24 +20,17 @@ $scope.goBackHandler = function() {
       $scope.modal.show();
     }
   $scope.select = function(interest){
-    console.log("$scope.allInterest",interest);
-    
-  
     _.forEach($scope.allInterest, function(value){
       
       //  $scope.selectinterest.push({value:true})
-      console.log("helloworld",$scope.allInterest)
      if(value.name==interest){
          value.value=!value.value
-      //   console.log("seethis",value.value)
-      }
+        }
     });
     
     var interestEdit = _.find($scope.interestarr, function (o){
-      // console.log("interestarray",o)
       if (interest == o.name) {
         return o;
-        console.log("interestarray",o)
       }
       
     });
@@ -47,25 +39,20 @@ $scope.goBackHandler = function() {
   
      $scope.addInterest.interest = $scope.interestarr
     $scope.colorchange = interestEdit
-     console.log("checknow", $scope.interestarr)
     }else{
      _.pull($scope.interestarr,interestEdit)
       $scope.addInterest.interest = $scope.interestarr
      $scope.colorchange = interestEdit
-      console.log("checknow", $scope.interestarr)
     }
-    Chats.apiCallWithData("User/addInterests", $scope.addInterest, function (data) {
-       console.log("data is*****************", data)
+    Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
      
     })
   }
 
 
   Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
-    $scope.allInterest = data.data
-
-   console.log("data is*****************", $scope.allInterest)
- $scope.interestdup = _.chunk($scope.allInterest, 3); 
+    $scope.allInterest = data.data;
+    $scope.interestdup = _.chunk($scope.allInterest, 3); 
 })
 
 
@@ -79,12 +66,9 @@ $scope.goBackHandler = function() {
 
     if (value.searchText != "") {
       Chats.apiCallWithData("Interests/globalSearch", value, function (data) {
-        console.log("data is", data)
         if (data.value) {
           $scope.Interestsname = data.data.Interests;
-          console.log("inside if")
         } else {
-          console.log("Event data false");
         }
       });
     }

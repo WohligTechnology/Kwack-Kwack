@@ -1,5 +1,5 @@
- var adminurl = "http://192.168.1.125:80/api/";
- // var adminurl = "http://kwack-backend.wohlig.co.in/api/";
+ //var adminurl = "http://192.168.1.125:80/api/";
+ var adminurl = "http://kwack-backend.wohlig.co.in/api/";
 
  var imgurl = adminurl + "upload/";
  var imgpath = imgurl + "readFile?file=";
@@ -111,6 +111,17 @@
            });
          });
        },
+
+       noLoaderApi: function (url, formData, callback) {
+         $http.post(adminurl + url, formData).then(function (data) {
+           if (data) {
+             data = data.data;
+           }
+           callback(data);
+         });
+       },
+
+
        showActionsheet: function (maxImage, callback) {
          var actionsheet = [];
          $ionicActionSheet.show({

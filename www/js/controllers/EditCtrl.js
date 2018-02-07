@@ -66,7 +66,6 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
             encodingType: 0,
             targetWidth: 1200,
             popoverOptions: CameraPopoverOptions,
-            saveToPhotoAlbum: true,
             correctOrientation: true
         };
         $cordovaCamera.getPicture(cameraOptions).then(function (imageData) {
