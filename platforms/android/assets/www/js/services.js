@@ -1,5 +1,5 @@
- //var adminurl = "http://192.168.1.125:80/api/";
- var adminurl = "http://kwack-backend.wohlig.co.in/api/";
+ var adminurl = "http://192.168.1.125:80/api/";
+//  var adminurl = "http://kwack-backend.wohlig.co.in/api/";
 
  var imgurl = adminurl + "upload/";
  var imgpath = imgurl + "readFile?file=";
@@ -111,7 +111,6 @@
            });
          });
        },
-<<<<<<< HEAD
 
        noLoaderApi: function (url, formData, callback) {
          $http.post(adminurl + url, formData).then(function (data) {
@@ -123,140 +122,138 @@
        },
 
 
-=======
->>>>>>> 139582670eccc3d996ec224dab46168056b185ff
-       showActionsheet: function (maxImage, callback) {
-         var actionsheet = [];
-         $ionicActionSheet.show({
-           buttons: [{
-               text: '<i class="icon ion-ios-camera-outline"></i> Choose from gallery'
-             }, {
-               text: '<i class="icon ion-images"></i> Take from camera'
-             },
+      //  showActionsheet: function (maxImage, callback) {
+      //    var actionsheet = [];
+      //    $ionicActionSheet.show({
+      //      buttons: [{
+      //          text: '<i class="icon ion-ios-camera-outline"></i> Choose from gallery'
+      //        }, {
+      //          text: '<i class="icon ion-images"></i> Take from camera'
+      //        },
 
-           ],
-           cancelText: 'Cancel',
-           cancel: function () {
-             console.log('CANCELLED');
-           },
-           buttonClicked: function (index) {
-             console.log('BUTTON CLICKED', index);
-             if (index === 0) {
-               var options = {
-                 maximumImagesCount: maxImage, // Max number of selected images
-                 width: 800,
-                 height: 800,
-                 quality: 80 // Higher is better
-               };
-               cordova.plugins.diagnostic.isCameraAuthorized({
-                 successCallback: function (authorized) {
-                   if (authorized == false) {
-                     cordova.plugins.diagnostic.requestCameraAuthorization({
-                       successCallback: function (status) {
-                         $cordovaImagePicker.getPictures(options).then(function (results) {
-                           var i = 0;
+      //      ],
+      //      cancelText: 'Cancel',
+      //      cancel: function () {
+      //        console.log('CANCELLED');
+      //      },
+      //      buttonClicked: function (index) {
+      //        console.log('BUTTON CLICKED', index);
+      //        if (index === 0) {
+      //          var options = {
+      //            maximumImagesCount: maxImage, // Max number of selected images
+      //            width: 800,
+      //            height: 800,
+      //            quality: 80 // Higher is better
+      //          };
+      //          cordova.plugins.diagnostic.isCameraAuthorized({
+      //            successCallback: function (authorized) {
+      //              if (authorized == false) {
+      //                cordova.plugins.diagnostic.requestCameraAuthorization({
+      //                  successCallback: function (status) {
+      //                    $cordovaImagePicker.getPictures(options).then(function (results) {
+      //                      var i = 0;
 
-                           _.forEach(results, function (value) {
-                             console.log("value", value);
-                             console.log("adminurl + 'upload'", adminurl + 'upload');
-                             $cordovaFileTransfer.upload(adminurl + 'upload', value)
-                               .then(function (result) {
-                                 console.log("result", result);
-                                 result.response = JSON.parse(result.response);
-                                 console.log(result.response);
-                                 actionsheet.push(result.response);
-                                 i++;
-                                 if (results.length == i) {
-                                   callback(actionsheet);
-                                 }
-                               }, function (err) {
-                                 // Error
-                               }, function (progress) {
-                                 // constant progress updates
-                               });
-                           });
+      //                      _.forEach(results, function (value) {
+      //                        console.log("value", value);
+      //                        console.log("adminurl + 'upload'", adminurl + 'upload');
+      //                        $cordovaFileTransfer.upload(adminurl + 'upload', value)
+      //                          .then(function (result) {
+      //                            console.log("result", result);
+      //                            result.response = JSON.parse(result.response);
+      //                            console.log(result.response);
+      //                            actionsheet.push(result.response);
+      //                            i++;
+      //                            if (results.length == i) {
+      //                              callback(actionsheet);
+      //                            }
+      //                          }, function (err) {
+      //                            // Error
+      //                          }, function (progress) {
+      //                            // constant progress updates
+      //                          });
+      //                      });
 
-                         }, function (error) {
-                           console.log('Error: ' + JSON.stringify(error)); // In case of error
-                         });
-                       },
-                       errorCallback: function (error) {
-                         console.error(error);
-                       }
-                     });
+      //                    }, function (error) {
+      //                      console.log('Error: ' + JSON.stringify(error)); // In case of error
+      //                    });
+      //                  },
+      //                  errorCallback: function (error) {
+      //                    console.error(error);
+      //                  }
+      //                });
 
-                   } else {
-                     $cordovaImagePicker.getPictures(options).then(function (results) {
-                       var i = 0;
+      //              } else {
+      //                $cordovaImagePicker.getPictures(options).then(function (results) {
+      //                  var i = 0;
 
-                       _.forEach(results, function (value) {
-                         console.log("value", value);
-                         console.log("adminurl + 'upload'", adminurl + 'upload');
-                         $cordovaFileTransfer.upload(adminurl + 'upload', value)
-                           .then(function (result) {
-                             console.log("result", result);
-                             result.response = JSON.parse(result.response);
-                             actionsheet.push(result.response);
-                             i++;
-                             if (results.length == i) {
-                               callback(actionsheet);
-                             }
-                           }, function (err) {
-                             // Error
-                           }, function (progress) {
-                             // constant progress updates
-                           });
-                       });
+      //                  _.forEach(results, function (value) {
+      //                    console.log("value", value);
+      //                    console.log("adminurl + 'upload'", adminurl + 'upload');
+      //                    $cordovaFileTransfer.upload(adminurl + 'upload', value)
+      //                      .then(function (result) {
+      //                        console.log("result", result);
+      //                        result.response = JSON.parse(result.response);
+      //                        actionsheet.push(result.response);
+      //                        i++;
+      //                        if (results.length == i) {
+      //                          callback(actionsheet);
+      //                        }
+      //                      }, function (err) {
+      //                        // Error
+      //                      }, function (progress) {
+      //                        // constant progress updates
+      //                      });
+      //                  });
 
-                     }, function (error) {
-                       console.log('Error: ' + JSON.stringify(error)); // In case of error
-                     });
-                   }
-                 },
-                 errorCallback: function (error) {
-                   console.error("The following error occurred: " + error);
-                 }
-               });
-             } else if (index === 1) {
-               var cameraOptions = {
-                 quality: 90,
-                 destinationType: Camera.DestinationType.DATA_URL,
-                 sourceType: Camera.PictureSourceType.CAMERA,
-                 allowEdit: false,
-                 encodingType: 0,
-                 targetWidth: 1200,
-                 popoverOptions: CameraPopoverOptions,
-                 saveToPhotoAlbum: true,
-                 correctOrientation: true
-               };
-               $cordovaCamera.getPicture(cameraOptions).then(function (imageData) {
-                 var imageSrc = "data:image/jpeg;base64," + imageData;
+      //                }, function (error) {
+      //                  console.log('Error: ' + JSON.stringify(error)); // In case of error
+      //                });
+      //              }
+      //            },
+      //            errorCallback: function (error) {
+      //              console.error("The following error occurred: " + error);
+      //            }
+      //          });
+      //        } else if (index === 1) {
+      //          var cameraOptions = {
+      //            quality: 90,
+      //            destinationType: Camera.DestinationType.DATA_URL,
+      //            sourceType: Camera.PictureSourceType.CAMERA,
+      //            allowEdit: false,
+      //            encodingType: 0,
+      //            targetWidth: 1200,
+      //            popoverOptions: CameraPopoverOptions,
+      //            saveToPhotoAlbum: true,
+      //            correctOrientation: true
+      //          };
+      //          $cordovaCamera.getPicture(cameraOptions).then(function (imageData) {
+      //            var imageSrc = "data:image/jpeg;base64," + imageData;
 
-                 $cordovaFileTransfer.upload(adminurl + 'uploadfile/uploadmob', imageSrc)
-                   .then(function (result) {
+      //            $cordovaFileTransfer.upload(adminurl + 'uploadfile/uploadmob', imageSrc)
+      //              .then(function (result) {
 
-                     result.response = JSON.parse(result.response);
-                     console.log(result.response);
-                     actionsheet.push(result.response);
-                     callback(actionsheet);
+      //                result.response = JSON.parse(result.response);
+      //                console.log(result.response);
+      //                actionsheet.push(result.response);
+      //                callback(actionsheet);
 
-                   }, function (err) {
-                     // Error
-                   }, function (progress) {
-                     // constant progress updates
-                   });
-               }, function (err) {
-                 console.log(err);
-               });
-             }
-             return true;
-           },
-           destructiveButtonClicked: function () {
-             console.log('DESTRUCT');
-             return true;
-           }
-         });
-         console.log("done");
-       },
+      //              }, function (err) {
+      //                // Error
+      //              }, function (progress) {
+      //                // constant progress updates
+      //              });
+      //          }, function (err) {
+      //            console.log(err);
+      //          });
+      //        }
+      //        return true;
+      //      },
+      //      destructiveButtonClicked: function () {
+      //        console.log('DESTRUCT');
+      //        return true;
+      //      }
+      //    });
+      //    console.log("done");
+      //  },
      };
    });

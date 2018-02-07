@@ -123,7 +123,7 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
       $scope.colorchange = interestEdit
       console.log("checknow", $scope.interestarr)
     }
-    Chats.apiCallWithData("User/addInterests", $scope.addInterest, function (data) {
+    Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
       console.log("data is*****************", data)
 
     })
