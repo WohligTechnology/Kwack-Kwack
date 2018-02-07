@@ -12486,7 +12486,10 @@ button.btn-yellow.button[disabled] {
   .followers {
     width: 100%;
     position: absolute;
-    top: 90%; } }
+    top: 90%; }
+  .viewless {
+    height: 180px;
+    overflow: hidden; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
   .accordian label {
@@ -12522,7 +12525,13 @@ button.btn-yellow.button[disabled] {
 @media only screen and (min-device-width: 384px) and (max-device-width: 640px) and (orientation: portrait) {
   .followers {
     position: absolute;
-    top: 26% !important; } }
+    top: 31% !important; }
+  .plusposition {
+    right: 38px; }
+  .skipButton {
+    top: 96%; }
+  .sliderbutton .swiper-pagination {
+    bottom: 90px; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {

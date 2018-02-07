@@ -1,52 +1,65 @@
 <ion-view title="Discover">
-  
+
   <div class="bar bar-header bar-light">
-      <div class="row">
-          <div class="col col-33">
-              <!-- <div>
+    <div class="row">
+      <div class="col col-33">
+        <!-- <div>
                   <img src="img/filter/6.png" class="w15">
               </div> -->
-          </div>
-          <div class="col col-33 text-center">
-              <div>
-                  <img src="img/filter/7.png" class="w40" ui-sref="home">
-              </div>
-          </div>
-          <div class="col col-33">
-              <div class="col col33 discover-navsearch" ui-sref="tab.discoverfull">
-                  <i class="ion ion-search"></i>
-                </div>
-          </div>
       </div>
+      <div class="col col-33 text-center">
+        <div>
+          <img src="img/filter/7.png" class="w40" ui-sref="home">
+        </div>
+      </div>
+      <div class="col col-33">
+        <div class=" discover-navsearch" ui-sref="tab.discoverfull">
+          <i class="ion ion-search"></i>
+        </div>
+      </div>
+    </div>
   </div>
-  <ion-content class="bg-color">
-     <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
+  <ion-content class="bg-color has-bottom">
+    <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
     <div class="bodyFont">
       <div class="text-center">
         <h4 class="pad0 title-explore">DISCOVER</h4>
       </div>
-      <div class="discover-trend" ng-if="trending=='undefined'" >
+      <div class="discover-trend" ng-if="trending=='undefined'">
         TRENDING THIS WEEK
       </div>
-      <ion-slides ng-if="trending=='undefined'" class="discover-ionslide discover-sliderbutton swipperdiscover"  options="sliderData.sliderOptions" slider="sliderData.sliderDelegate">
+      <ion-slides ng-if="trending=='undefined'" class="discover-ionslide discover-sliderbutton swipperdiscover" options="sliderData.sliderOptions"
+        slider="sliderData.sliderDelegate">
         <ion-slide-page ng-repeat="trendingweek in trending">
           <div class="swipperImg">
             <img class="img-responsive" ng-src="{{trendingweek.imageUrl}}">
           </div>
-          <div class="sliderdesc"><p class="">{{trendingweek.title}}</p></div>
-        <div class="slidertime">
-              <i class="ion ion-ios-clock"></i>
-              <label>{{trendingweek.createdAt | fromNow}}</label>
-              <label class="pad-left5"> broadly.vice.com</label>
-            </div>
-         <div class="display-inline float-right discover-icon text-center strip">
-            <label ng-click="nextPage(trendingweek._id,'poll')" class="discoverStrip"><img ng-if="!trendingweek.flagForPoll"  src="img/explore/5.png"> <img ng-if="trendingweek.flagForPoll" src="img/filter/2.png"><span class="alignM">{{trendingweek.polls.length}}</span></label>
+          <div class="sliderdesc">
+            <p class="">{{trendingweek.title}}</p>
+          </div>
+          <div class="slidertime">
+            <i class="ion ion-ios-clock"></i>
+            <label>{{trendingweek.createdAt | fromNow}}</label>
+            <label class="pad-left5"> broadly.vice.com</label>
+          </div>
+          <div class="display-inline float-right discover-icon text-center strip">
+            <label ng-click="nextPage(trendingweek._id,'poll')" class="discoverStrip">
+              <img ng-if="!trendingweek.flagForPoll" src="img/explore/5.png">
+              <img ng-if="trendingweek.flagForPoll" src="img/filter/2.png">
+              <span class="alignM">{{trendingweek.polls.length}}</span>
+            </label>
             <!-- <label ng-click="nextPageforKwack(trendingweek._id)" class="discoverStrip"><img ng-if="!trendingweek.kwack" class="img-responsive" src="img/discover/shield.png"> <img ng-if="trendingweek.kwack==true" class="img-responsive" src="img/discover/shieldclick.png">
               <span class="alignM" >{{trendingweek.comments.length}}</span></label> -->
-              <label class="discoverCardStrip"  ng-click="nextPage(trendingweek._id,'kwack')"><a><img ng-if="!trendingweek.flagForKwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="trendingweek.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png"></a>
-                <span class="alignM">{{trendingweek.comments.length}}</span></label>
-            <label><img src="img/discover/share.png">
-                <span class="colorw alignM">20</span>
+            <label class="discoverCardStrip" ng-click="nextPage(trendingweek._id,'kwack')">
+              <a>
+                <img ng-if="!trendingweek.flagForKwack" class="img-responsive" src="img/explore/6.png">
+                <img ng-if="trendingweek.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
+              </a>
+              <span class="alignM">{{trendingweek.comments.length}}</span>
+            </label>
+            <label>
+              <img src="img/discover/share.png">
+              <span class="colorw alignM">20</span>
             </label>
           </div>
         </ion-slide-page>
@@ -73,18 +86,20 @@
         </ion-slide-page> -->
       </ion-slides>
       <div>
-          <ion-scroll direction="x" class="wide-as-needed ">
-              <a class="scrollFirst inline-button" ng-class="{'active-tab':activeTab=='All'}" ng-click="changeTab('All'); doRefresh(true)">All</a>
-              <a class="scrollCategories" ng-class="{'active-tab':activeTab=='Just now'}" ng-click="changeTab('Just now'); doRefresh(true)">Just now</a>
-              <a ng-repeat="interests in interest" class="scrollCategories" ng-class="{'active-tab':activeTab==interests.name}" ng-click="changeTab(interests.name); doRefresh(true)">{{interests.name}}</a>
-             
-            </ion-scroll>
+        <ion-scroll direction="x" class="wide-as-needed ">
+          <a class="scrollFirst inline-button" ng-class="{'active-tab':activeTab=='All'}" ng-click="changeTab('All'); doRefresh(true)">All</a>
+          <a class="scrollCategories" ng-class="{'active-tab':activeTab=='Just now'}" ng-click="changeTab('Just now'); doRefresh(true)">Just now</a>
+          <a ng-repeat="interests in interest" class="scrollCategories" ng-class="{'active-tab':activeTab==interests.name}" ng-click="changeTab(interests.name); doRefresh(true)">{{interests.name}}</a>
+
+        </ion-scroll>
       </div>
       <div ng-repeat="discover in discoverNews">
         <discover></discover>
       </div>
       </div>
-      <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="2px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>        
-      
+      <ion-infinite-scroll ng-if="pagination.shouldLoadMore" on-infinite="loadMore()" distance="2px">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+
   </ion-content>
-  </ion-view>
+</ion-view>

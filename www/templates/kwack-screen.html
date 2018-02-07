@@ -12,17 +12,20 @@
                 </div>
             </div>
             <div class="col-20">
-                     <span ui-sref="tab.kwacksearch">
+                <div class="martop">
+                    <span ui-sref="tab.kwacksearch">
                         <img src="img/filter/5.png" class="w25">
                     </span>
                     <span class="mar-l15" ng-click="openModal();interestLoad()">
                         <img src="img/kwack.png" class="w25">
                     </span>
+                </div>
+
             </div>
         </div>
     </div>
-    <ion-content class="bg-color">
-            <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
+    <ion-content class="bg-color has-bottom">
+        <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
         <div class="text-center">
             <h4 class="pad0 title-explore">KWACK</h4>
         </div>

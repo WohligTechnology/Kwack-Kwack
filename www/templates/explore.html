@@ -1,31 +1,31 @@
 <ion-view>
-   <div class="bar bar-header bar-light">
-            <div class="row">
-                <div class="col col-33">
-                    <!-- <div>
+    <div class="bar bar-header bar-light">
+        <div class="row">
+            <div class="col col-33">
+                <!-- <div>
                         <img src="img/filter/6.png" class="w15">
                     </div> -->
+            </div>
+            <div class="col col-33 text-center">
+                <div>
+                    <img src="img/filter/7.png" class="w40" ui-sref="home">
                 </div>
-                <div class="col col-33 text-center">
-                    <div>
-                        <img src="img/filter/7.png" class="w40" ui-sref="home">
-                    </div>
-                </div>
-                <div class="col col-33">
-                  <div class="col col33 discover-navsearch" ui-sref="tab.discoversearch">
-                            <i class="ion ion-search"></i>
-                </div>
+            </div>
+            <div class="col col-33">
+                <div class="col col33 discover-navsearch" ui-sref="tab.discoversearch">
+                    <i class="ion ion-search"></i>
                 </div>
             </div>
         </div>
-    <ion-content class="bg-color has-header">
-    <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
+    </div>
+    <ion-content class="bg-color has-header has-bottom">
+        <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
         <div class="text-center">
             <h4 class="pad0 title-explore">EXPLORE</h4>
         </div>
         <div ng-repeat="news in exploreNews">
             <explore></explore>
         </div>
-        <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>         
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore" on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>
     </ion-content>
-   </ion-view>
+</ion-view>
