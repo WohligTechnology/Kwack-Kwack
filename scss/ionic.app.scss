@@ -1030,7 +1030,7 @@ $dark:                            #444 !default;
 
     .platform-android .followers {
         @include position(absolute,
-        22% null null null);
+        21% null null null);
     }
 
     .dis-table {
@@ -2005,6 +2005,7 @@ $dark:                            #444 !default;
     }
 
     .settings {
+        margin-bottom: 70px;
         i {
             font-size: 30px;
             vertical-align: middle;
@@ -3545,6 +3546,13 @@ $dark:                            #444 !default;
                 font-size: 11px !important;
                 padding-top: 1px !important;
             }
+        }
+    }
+
+    @media only screen and (min-device-width: 384px) and (max-device-width: 640px) and (orientation: portrait) {
+        .followers {
+            position: absolute;
+            top: 26% !important;
         }
     }
 
