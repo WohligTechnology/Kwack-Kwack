@@ -111,6 +111,7 @@
            });
          });
        },
+<<<<<<< HEAD
 
        noLoaderApi: function (url, formData, callback) {
          $http.post(adminurl + url, formData).then(function (data) {
@@ -122,6 +123,8 @@
        },
 
 
+=======
+>>>>>>> 139582670eccc3d996ec224dab46168056b185ff
        showActionsheet: function (maxImage, callback) {
          var actionsheet = [];
          $ionicActionSheet.show({

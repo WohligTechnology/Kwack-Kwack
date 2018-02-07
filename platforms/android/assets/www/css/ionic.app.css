@@ -11365,15 +11365,16 @@ button.btn-yellow.button[disabled] {
 .mar-auto0 {
   margin: auto 0; }
 
-.settings i {
-  font-size: 30px;
-  vertical-align: middle; }
-
-.settings label {
-  font-size: 10px;
-  vertical-align: middle;
-  font-family: 'Montserrat-Medium';
-  letter-spacing: 1px; }
+.settings {
+  margin-bottom: 70px; }
+  .settings i {
+    font-size: 30px;
+    vertical-align: middle; }
+  .settings label {
+    font-size: 10px;
+    vertical-align: middle;
+    font-family: 'Montserrat-Medium';
+    letter-spacing: 1px; }
 
 .frnds {
   font-size: 14px;
@@ -12519,6 +12520,11 @@ button.btn-yellow.button[disabled] {
     .follow-btn .button .icon-left:before {
       font-size: 11px !important;
       padding-top: 1px !important; } }
+
+@media only screen and (min-device-width: 384px) and (max-device-width: 640px) and (orientation: portrait) {
+  .followers {
+    position: absolute;
+    top: 26% !important; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {

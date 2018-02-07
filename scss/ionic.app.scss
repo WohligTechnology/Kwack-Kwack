@@ -1030,7 +1030,7 @@ $dark:                            #444 !default;
 
     .platform-android .followers {
         @include position(absolute,
-        22% null null null);
+        21% null null null);
     }
 
     .dis-table {
@@ -1883,8 +1883,7 @@ $dark:                            #444 !default;
     .tabs-top.tabs-striped .tab-item.tab-item-active,
     .tabs-top.tabs-striped .tab-item.active,
     .tabs-top.tabs-striped .tab-item.activated {
-        border-bottom: none;
-        border-right: 1px solid $lightGray3 !important;
+        border-bottom: none; // border-right: 1px solid $lightGray3 !important;
     }
 
     .profileFImage {
@@ -3545,6 +3544,13 @@ $dark:                            #444 !default;
                 font-size: 11px !important;
                 padding-top: 1px !important;
             }
+        }
+    }
+
+    @media only screen and (min-device-width: 384px) and (max-device-width: 640px) and (orientation: portrait) {
+        .followers {
+            position: absolute;
+            top: 26% !important;
         }
     }
 
