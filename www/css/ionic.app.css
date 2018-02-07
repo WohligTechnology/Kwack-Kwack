@@ -11274,8 +11274,7 @@ button.btn-yellow.button[disabled] {
 .tabs-top.tabs-striped .tab-item.tab-item-active,
 .tabs-top.tabs-striped .tab-item.active,
 .tabs-top.tabs-striped .tab-item.activated {
-  border-bottom: none;
-  border-right: 1px solid #f2f2f2 !important; }
+  border-bottom: none; }
 
 .profileFImage {
   background-image: url("../img/footer/setting.png") !important;
@@ -11365,16 +11364,15 @@ button.btn-yellow.button[disabled] {
 .mar-auto0 {
   margin: auto 0; }
 
-.settings {
-  margin-bottom: 70px; }
-  .settings i {
-    font-size: 30px;
-    vertical-align: middle; }
-  .settings label {
-    font-size: 10px;
-    vertical-align: middle;
-    font-family: 'Montserrat-Medium';
-    letter-spacing: 1px; }
+.settings i {
+  font-size: 30px;
+  vertical-align: middle; }
+
+.settings label {
+  font-size: 10px;
+  vertical-align: middle;
+  font-family: 'Montserrat-Medium';
+  letter-spacing: 1px; }
 
 .frnds {
   font-size: 14px;

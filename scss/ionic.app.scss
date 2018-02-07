@@ -1883,8 +1883,7 @@ $dark:                            #444 !default;
     .tabs-top.tabs-striped .tab-item.tab-item-active,
     .tabs-top.tabs-striped .tab-item.active,
     .tabs-top.tabs-striped .tab-item.activated {
-        border-bottom: none;
-        border-right: 1px solid $lightGray3 !important;
+        border-bottom: none; // border-right: 1px solid $lightGray3 !important;
     }
 
     .profileFImage {
@@ -2005,7 +2004,6 @@ $dark:                            #444 !default;
     }
 
     .settings {
-        margin-bottom: 70px;
         i {
             font-size: 30px;
             vertical-align: middle;
