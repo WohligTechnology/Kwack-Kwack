@@ -16,7 +16,7 @@ $scope.formName={}
     }
     $scope.otp = function (info) {
         console.log("%%%%%%%%%%%%%%%%%%%%%%%%5%%",info)
-        if (info.digit1 && info.digit2 && info.digit3 && info.digit4) {
+        if (info.digit1>=0 && info.digit2>=0 && info.digit3>=0 && info.digit4>=0) {
             console.log("inside if")
             $scope.data = {}
             $scope.data.otp = info.digit1.toString() + info.digit2.toString() + info.digit3.toString() + info.digit4.toString();
