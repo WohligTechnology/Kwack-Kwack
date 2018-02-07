@@ -36,12 +36,12 @@
                         </label>
                         <label class="item item-input item-floating-label">
                             <span></span>
-                            <input type="password" class="border-bot" ng-model="data.forgotPassword" placeholder="Confirm Password" required>
-                            <span ng-show="formName.forgotPassword.$touched && formName.forgotPassword.$invalid">Confirm Password is required</span>
-                            <span class="error-msg" ng-if="showMassage">Passwords did not match.</span>
+                            <input type="password" class="border-bot" ng-model="data.forgotPassword" name="forgotPassword" placeholder="Confirm Password" required>
+                            <div class="error-msg" ng-show="formName.forgotPassword.$touched && formName.forgotPassword.$invalid">Confirm Password is required</div>
+                            <div class="error-msg" ng-if="showMassage">Passwords did not match.</div>
                         </label>
                         <div class="absolute sign-up">
-                            <button class="button  btn-yellow" ng-click="saveUser(data,formName )" ng-disabled="formName.$invalid">SIGN UP</button>
+                            <button class="button  btn-yellow" ng-click="saveUser(data)" ng-disabled="formName.$invalid">SIGN UP</button>
                             <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
                         </div>
                     </div>

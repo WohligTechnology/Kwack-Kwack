@@ -54,7 +54,6 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
             encodingType: 0,
             targetWidth: 1200,
             popoverOptions: CameraPopoverOptions,
-            saveToPhotoAlbum: true,
             correctOrientation: true
         };
         $cordovaCamera.getPicture(cameraOptions).then(function (imageData) {

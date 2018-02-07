@@ -27,9 +27,6 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
         $scope.contacts=_.orderBy($scope.contacts, ['displayName'], ['asc'])
         $scope.users =  $scope.contacts
         $scope.log = [];
-        
-      console.log("var users", users)
-      
         $scope.alphabet = iterateAlphabet();
       
         //Sort user list by first letter of name
@@ -195,11 +192,11 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
     $scope.userFollowUnfollow.userBeenFollowed = userId
     $scope.userFollowUnfollow.userFollowed = $.jStorage.get('user')._id
     $scope.userFollowUnfollow.userFollwing = userId
-    Chats.apiCallWithData("UserFollow/areBothFollowing", $scope.userFollowUnfollow, function (data) {
+    Chats.noLoaderApi("UserFollow/areBothFollowing", $scope.userFollowUnfollow, function (data) {
       console.log("*******************************", data)
       if (data.value == true) { 
         // $scope.follow =! $scope.follow
-        Chats.apiCallWithData("UserFollow/removeFollowerCount", $scope.userFollowUnfollow, function (data) {
+        Chats.noLoaderApi("UserFollow/removeFollowerCount", $scope.userFollowUnfollow, function (data) {
           console.log("$scope.userFollowUnfollow", data)
           if(followType=='mainFollow'){
 $scope.doRefresh(true);
@@ -214,7 +211,7 @@ $scope.userInfo.flag = 'false'
         // $scope.doRefresh(true);
       } else {
         // $scope.follow =! $scope.follow
-        Chats.apiCallWithData("UserFollow/addFollowerCount", $scope.userFollowUnfollow, function (data) {
+        Chats.noLoaderApi("UserFollow/addFollowerCount", $scope.userFollowUnfollow, function (data) {
           console.log("$scope.userFollowUnfollow", data)
            if(followType=='mainFollow'){
             $scope.doRefresh(true);
