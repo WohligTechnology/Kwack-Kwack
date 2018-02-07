@@ -170,9 +170,9 @@ if(_.isEmpty($scope.interestarr)){
     //  $scope.colorchange = interestEdit
       console.log("checknow", $scope.interestarr)
     }
-    Chats.apiCallWithData("User/addInterests", $scope.addInterest, function (data) {
+    Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
       console.log("data is*****************", data)
-      Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
+      Chats.noLoaderApi("User/getOne", $scope.pollKwack, function (data) {
         $scope.getInterest = data.data.interests
       })
      
@@ -364,7 +364,7 @@ $scope.reset=function(data){
 
 Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
   $scope.getInterest = data.data.interests
-  $scope.interestarr= data.data.interests
+  // $scope.interestarr= data.data.interests
   // _.forEach($scope.allInterest, function(allInterest){
   //   // console.log("fullinterest",allInterest)
   //   _.forEach($scope.interestarr, function(value){
