@@ -221,7 +221,7 @@ $scope.userInfo.flag = 'false'
             console.log("panda", $scope.userInfo)
             $scope.userInfo.flag = 'true'
           }else{
-            $scope.followingData[index].flag = 'false';
+            $scope.followingData[index].flag = 'true';
           }
           
         })
@@ -259,7 +259,7 @@ $scope.userInfo.flag = 'false'
 
   $scope.selectedUser = function (data) {
     $scope.countValue = true
-    $scope.doRefresh(true);
+    // $scope.doRefresh(true);
     $scope.userData.userId = data
    
     $scope.user = {}
