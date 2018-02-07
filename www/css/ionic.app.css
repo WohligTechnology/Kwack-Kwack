@@ -12531,7 +12531,11 @@ button.btn-yellow.button[disabled] {
   .skipButton {
     top: 96%; }
   .sliderbutton .swiper-pagination {
-    bottom: 90px; } }
+    bottom: 90px; }
+  .btn-sports.activated {
+    background-color: #ffc943 !important;
+    color: #fff !important;
+    border: none; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
@@ -12746,7 +12750,7 @@ button.btn-yellow.button[disabled] {
     overflow: hidden; }
   .btn-sports.activated {
     background-color: #ffc943 !important;
-    color: #fff;
+    color: #fff !important;
     border: none; }
   .settings-btns .btn-sports {
     padding: 0px 18px; }

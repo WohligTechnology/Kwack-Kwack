@@ -25,20 +25,12 @@
       <div class="text-center">
         <h4 class="pad0 title-explore">DISCOVER</h4>
       </div>
-<<<<<<< HEAD
-      <div class="discover-trend" ng-if="trending=='undefined'">
+      <div class="discover-trend" ng-if="trending.value!=false">
         TRENDING THIS WEEK
       </div>
-      <ion-slides ng-if="trending=='undefined'" class="discover-ionslide discover-sliderbutton swipperdiscover" options="sliderData.sliderOptions"
+      <ion-slides ng-if="trending.value!=false" class="discover-ionslide discover-sliderbutton swipperdiscover" options="sliderData.sliderOptions"
         slider="sliderData.sliderDelegate">
         <ion-slide-page ng-repeat="trendingweek in trending">
-=======
-      <div class="discover-trend" ng-if="trending.value!=false" >
-        TRENDING THIS WEEK
-      </div>
-      <ion-slides ng-if="trending.value!=false" class="discover-ionslide discover-sliderbutton swipperdiscover"  options="sliderData.sliderOptions" slider="sliderData.sliderDelegate">
-        <ion-slide-page ng-repeat="trendingweek in trending" >
->>>>>>> 611abac699e286db4023796b781ba86cccbe764e
           <div class="swipperImg">
             <img class="img-responsive" ng-src="{{trendingweek.imageUrl}}">
           </div>
