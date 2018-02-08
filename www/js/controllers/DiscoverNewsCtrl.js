@@ -164,7 +164,7 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
     data1.newsId = data,
       // data1.userId = $.jStorage.get("user")._id
       Chats.setkwackPollStateChange($state.current.name)
-      $state.go("tab.exploremore", {
+      $state.go("tab.exploremoredis", {
         newsid: data,
         previousState: $state.current.name
       })

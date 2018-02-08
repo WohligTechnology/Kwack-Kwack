@@ -139,10 +139,43 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         }
       })
       .state('tab.exploremore', {
-        url: '/exploremore/:newsid/:previousState/:newState',
+        url: '/exploremore/:newsid',
         cache: false,
         views: {
           'tab-explore': {
+            templateUrl: 'templates/exploremore.html',
+            controller: 'ExploremoreCtrl'
+          }
+        }
+      })
+
+      .state('tab.exploremoredis', {
+        url: '/exploremore/:newsid',
+        cache: false,
+        views: {
+          'tab-discoverNews': {
+            templateUrl: 'templates/exploremore.html',
+            controller: 'ExploremoreCtrl'
+          }
+        }
+      })
+
+      .state('tab.exploremoresocial', {
+        url: '/exploremore/:newsid',
+        cache: false,
+        views: {
+          'tab-social': {
+            templateUrl: 'templates/exploremore.html',
+            controller: 'ExploremoreCtrl'
+          }
+        }
+      })
+
+      .state('tab.exploremorekwack', {
+        url: '/exploremore/:newsid',
+        cache: false,
+        views: {
+          'tab-kwackScreen': {
             templateUrl: 'templates/exploremore.html',
             controller: 'ExploremoreCtrl'
           }

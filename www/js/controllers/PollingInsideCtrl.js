@@ -100,8 +100,6 @@ connector.controller('PollingInsideCtrl', function ($scope, $stateParams, $state
                     $state.go('tab.trailerex', KwackParams)
                 } else if ($scope.previousState == 'tab.kwackScreen') {
                     $state.go('tab.trailerkwack', KwackParams)
-                } else if ($scope.previousState == 'tab.kwacksearch') {
-                    $state.go('tab.kwacksearch', KwackParams)
                 } else {
                     $state.go('tab.trailersocial', KwackParams)
                 }

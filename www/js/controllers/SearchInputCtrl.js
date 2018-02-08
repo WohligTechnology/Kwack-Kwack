@@ -1,6 +1,8 @@
 connector.controller('SearchInputCtrl', function ($scope, Chats, $state,$rootScope) {
     $scope.searchText = {}
     $scope.headerState = $state.current.name
+    $scope.previousState = $.jStorage.get('mainTab').fromState
+    console.log("$scope.previousState", $scope.previousState)
     console.log("currentState",$scope.headerState)
     Chats.setkwackPollStateChange($state.current.name)
     $scope.goBackHandler = function () {
@@ -35,10 +37,20 @@ connector.controller('SearchInputCtrl', function ($scope, Chats, $state,$rootSco
 
 
     $scope.viewsNextPage = function (data) {
-         $state.go("tab.exploremore", {
+         var search =  {
                 newsid: data,
-                previousState: $state.current.name
-            })
+            }
+
+            if ($scope.previousState == 'tab.discoverNews') {
+                $state.go('tab.exploremoredis', search)
+
+            } else if ($scope.previousState == 'tab.explore') {
+                $state.go('tab.exploremore', search)
+            } else if ($scope.previousState == 'tab.kwackScreen') {
+                $state.go('tab.trailerkwack', search)
+            } else {
+                $state.go('tab.trailersocial', search)
+            }
     }
 
 })

@@ -20,7 +20,39 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   
  //filter api
  
+ $scope.loadMore = function () {
+  $ionicScrollDelegate.resize()
+  $scope.pagination.shouldLoadMore = false;
+  $scope.pagination.currentPage++;
+  $scope.pagination1 = {
+    "page": $scope.pagination.currentPage,
+    "polls": true,
+    "kwacks": true,
+    "userId": $scope.jstorage._id
+  }
+  $scope.filterData.page = $scope.pagination.currentPage
+  Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.pagination1, function (data) {
+console.log("$scope.news, data.data.results",data)
+    $scope.news = _.concat($scope.news, data.data.results);
+    if (data.data.results.length == 10) {
+      $scope.pagination.shouldLoadMore = true;
+    }
+    
+  });
+};
 
+$scope.doRefresh = function (val) {
+  $scope.news = [],
+    $scope.pagination = {
+      shouldLoadMore: true,
+      currentPage: 0,
+    };
+
+  if (val) {
+    $scope.loadMore();
+  }
+};
+$scope.doRefresh(true);
     
 
   
@@ -243,13 +275,6 @@ if(_.isEmpty($scope.interestarr)){
           Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
       console.log("$scope.news, data.data.results",data)
             $scope.news = _.concat($scope.news, data.data.results);
-            // $scope.paginationCode();
-            // console.log("changes",$scope.news)
-            // _.each($scope.news, function (value) {
-            //   value.year = new Date(value.createdAt).getFullYear();
-            // })
-            // $scope.dynamicYear = _.uniqBy($scope.news, 'year');
-            // console.log("explorepagination", $scope.dynamicYear)
             if (data.data.results.length == 10) {
               $scope.pagination.shouldLoadMore = true;
             }

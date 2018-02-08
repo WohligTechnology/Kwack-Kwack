@@ -3587,6 +3587,10 @@ $dark:                            #444 !default;
             color: $light !important;
             border: none;
         }
+
+        .alpha_sidebar {
+            line-height: 20px;
+        }
     }
 
     @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
@@ -3998,7 +4002,7 @@ $dark:                            #444 !default;
             right: 10px;
             z-index: 100000;
             font-size: 13px;
-            line-height: 21px;
+            line-height: 20px;
         }
         .followers {
             width: 100%;

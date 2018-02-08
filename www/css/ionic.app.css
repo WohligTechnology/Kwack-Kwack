@@ -12544,7 +12544,9 @@ button.btn-yellow.button[disabled] {
   .btn-sports.activated {
     background-color: #ffc943 !important;
     color: #fff !important;
-    border: none; } }
+    border: none; }
+  .alpha_sidebar {
+    line-height: 20px; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
@@ -12801,7 +12803,7 @@ button.btn-yellow.button[disabled] {
     right: 10px;
     z-index: 100000;
     font-size: 13px;
-    line-height: 21px; }
+    line-height: 20px; }
   .followers {
     width: 100%;
     position: absolute;
