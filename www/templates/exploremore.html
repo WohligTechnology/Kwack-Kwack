@@ -2,7 +2,7 @@
     <div class="bar bar-header bar-light">
         <div class="row">
             <div class="col col-33">
-                    <div  ui-sref="tab.explore">
+                    <div  ng-click="goBackHandler()">
                         <i class="ion ion-ios-arrow-left trailernav"></i>
                         </div>
             </div>
@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="col col-33">
-                <div class="text-right ">
+                <div class="text-right " ui-sref="tab.discoversearch">
                     <img src="img/filter/5.png" class="w15">
                 </div>
             </div>
@@ -26,7 +26,7 @@
         <div class="">
             <exploremore> </exploremore>
         </div>
-        <div class="related-card">
+        <div class="related-card" ng-if="discoverNews.length!=0">
         <div class="news-content box-inside">
           <div class="list card ">
               <div class="item item-body">

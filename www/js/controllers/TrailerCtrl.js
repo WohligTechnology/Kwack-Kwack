@@ -1,6 +1,7 @@
 connector.controller('TrailerCtrl', function($scope, $ionicModal,Chats,$stateParams,$state,ionicToast) {
     $scope.newsId = $stateParams.newsid
     $scope.previousState = $stateParams.previousState
+    $scope.newState = $stateParams.newState
     data = {}
     data.newsId = $scope.newsId
      data.userId =$.jStorage.get('user')._id;
@@ -52,7 +53,8 @@ connector.controller('TrailerCtrl', function($scope, $ionicModal,Chats,$statePar
                     kwackId: $scope.kwack1,
                     newsid: $stateParams.newsid,
                     ann:"ANONYMOUS",
-                    previousState: $scope.previousState
+                    previousState: $scope.previousState,
+                    newState: $scope.newState
                 })
                 console.log("hellokwackans", $scope.kwack1)
             } if($scope.setvriableValue == false) {
@@ -60,7 +62,8 @@ connector.controller('TrailerCtrl', function($scope, $ionicModal,Chats,$statePar
                 $state.go("debate", {
                     kwackId: $scope.kwack1,
                     newsid: $stateParams.newsid,
-                    previousState: $scope.previousState
+                    previousState: $scope.previousState,
+                    newState: $scope.newState
                 })
                 console.log("hellokwackans", $scope.kwack1)
             }

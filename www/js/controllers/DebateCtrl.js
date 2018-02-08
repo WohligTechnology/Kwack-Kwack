@@ -2,7 +2,8 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.lellow = false;
     $scope.newsId = $stateParams.newsid
     $scope.kwackAns = $stateParams.kwackId
-    $scope.previousState = $stateParams.previousState
+    $scope.previousState = $.jStorage.get("mainTab").fromState
+    $scope.newState = $stateParams.newState
     $scope.anon = $stateParams.ann
     console.log("helloanswwer", $scope.previousState)
     $scope.setvarann = false
@@ -17,16 +18,19 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.kwackSide = {}
     $scope.kwackSide.userId = $.jStorage.get("user")._id
     $scope.kwackSide.newsId = $scope.newsId
-    $scope.back = function () {
-        if ($scope.previousState == 'tab.discoverNews') {
-            $state.go('tab.discoverNews')
-        } else if ($scope.previousState == 'tab.explore') {
-            $state.go('tab.explore')
-        } else if ($scope.previousState == 'tab.kwackScreen') {
-            $state.go('tab.kwackScreen')
-        } else {
-            $state.go('tab.social')
-        }
+    $scope.goToFromState = function () {
+        // if ($scope.previousState == 'tab.discoverNews') {
+        //     $state.go('tab.discoverNews')
+        // } else if ($scope.previousState == 'tab.explore') {
+        //     $state.go('tab.explore')
+        // } else if ($scope.previousState == 'tab.kwackScreen') {
+        //     $state.go('tab.kwackScreen')
+        // } else {
+        //     $state.go('tab.social')
+        // }
+        $scope.mainTab = Chats.getkwackPollStateChange();
+        $state.go($scope.mainTab.fromState);
+        Chats.flushMainTab();
         //This works
     };
     $scope.inApp = function (link) {
@@ -201,17 +205,18 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
             if (data1.value == true) {
                 $state.go("polling-inside", {
                     newsid: data,
-                    previousState: $scope.previousState
+                    previousState: $scope.previousState,
+                    newState: $scope.newState
                     
                 })
             } else {
                 var pollParams={ 
                 newsid: data,
-                previousState: $scope.previousState
+                previousState: $scope.previousState,
+                newState: $scope.newState
                 }
                 if ($scope.previousState == 'tab.discoverNews') {
-                    $state.go('tab.startPollingdis',pollParams)
-                    
+                    $state.go('tab.startPollingdis',pollParams) 
                 } else if ($scope.previousState == 'tab.explore') {
                     $state.go('tab.startPollingex', pollParams)
                 } else if ($scope.previousState == 'tab.kwackScreen') {

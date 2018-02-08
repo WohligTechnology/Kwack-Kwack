@@ -102,7 +102,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
 
       .state('tab.trailerex', {
-        url: '/trailer/:newsid/:previousState',
+        url: '/trailer/:newsid/:previousState/:newState',
         cache: false,
         views: {
           'tab-explore': {
@@ -139,7 +139,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         }
       })
       .state('tab.exploremore', {
-        url: '/exploremore/:newsid',
+        url: '/exploremore/:newsid/:previousState/:newState',
         cache: false,
         views: {
           'tab-explore': {
@@ -156,7 +156,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       // })
 
       .state('tab.trailerdis', {
-        url: '/trailer/:newsid/:previousState',
+        url: '/trailer/:newsid/:previousState/:newState',
         cache: false,
         views: {
           'tab-explore': {
@@ -203,7 +203,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       // })
 
       .state('tab.trailersocial', {
-        url: '/trailer/:newsid/:previousState',
+        url: '/trailer/:newsid/:previousState/:newState',
         cache: false,
         views: {
           'tab-social': {
@@ -214,7 +214,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
 
       .state('tab.trailerkwack', {
-        url: '/trailer/:newsid/:previousState',
+        url: '/trailer/:newsid/:previousState/:newState',
         // cache:false,
         views: {
           'tab-kwackScreen': {
@@ -305,22 +305,13 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
           'tab-kwackScreen': {
             templateUrl: 'templates/discover-full.html',
             // cache:false,
-            controller: 'DiscoverFullCtrl'
+            controller: 'searchInputCtrl'
           }
         }
 
       })
 
-      // .state('tab.socialsearch', {
-      //   url: '/discoverfull',
-      //   views:{
-      //     'tab-social': {
-      //       templateUrl: 'templates/discover-full.html',
-      //       controller: 'DiscoverFullCtrl'
-      //     }
-      //   }   
-
-      // })
+     
 
       .state('filter', {
         url: '/filter',
@@ -536,25 +527,25 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         }
       })
       .state('polling-inside', {
-        url: '/pollinginside/:newsid/:previousState',
+        url: '/pollinginside/:newsid',
         cache: false,
         templateUrl: 'templates/polling-inside.html',
         controller: 'PollingInsideCtrl'
       })
       .state('debate1', {
-        url: '/debate/:kwackId/:newsid/:ann/:previousState',
+        url: '/debate/:kwackId/:newsid/:ann/:previousState/:newState',
         cache: false,
         templateUrl: 'templates/debate.html',
         controller: 'DebateCtrl'
       })
       .state('debate', {
-        url: '/debate/:kwackId/:newsid/:previousState',
+        url: '/debate/:kwackId/:newsid/:previousState/:newState',
         cache: false,
         templateUrl: 'templates/debate.html',
         controller: 'DebateCtrl'
       })
       .state('tab.startPollingex', {
-        url: '/startPolling/:newsid/:previousState',
+        url: '/startPolling/:newsid',
         // cache:false,
         views: {
           'tab-explore': {
@@ -565,7 +556,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
 
       .state('tab.startPollingdis', {
-        url: '/startPolling/:newsid/:previousState',
+        url: '/startPolling/:newsid',
         // cache:false,
         views: {
           'tab-discoverNews': {
@@ -588,7 +579,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       //   })
 
       .state('tab.startPollingkwack', {
-        url: '/startPolling/:newsid/:previousState',
+        url: '/startPolling/:newsid',
         // cache:false,
         views: {
           'tab-kwackScreen': {
@@ -600,7 +591,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
 
       .state('tab.startPollingsocial', {
-        url: '/startPolling/:newsid/:previousState',
+        url: '/startPolling/:newsid',
         // cache:false,
         views: {
           'tab-social': {

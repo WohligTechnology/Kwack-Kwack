@@ -1,8 +1,9 @@
 connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, Chats, $ionicScrollDelegate) {
     $scope.newsId = {}
     $scope.newsId.newsId = $stateParams.newsid
+    $scope.previousState = $stateParams.previousState
      $scope.newsId.userId =$.jStorage.get('user')._id;
-    console.log("newsid", $scope.newsId)
+    console.log("newsid", $state.current.name)
     // $scope.jstorage = $.jStorage.get('user');
     data = {}
     $scope.dataToSend = {}
@@ -15,6 +16,9 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     $scope.dataToSend.newsId = $stateParams.newsid
     $scope.dataToSend.userId = $.jStorage.get('user')._id
    
+    $scope.goBackHandler = function() {
+      window.history.back(); //This works
+    };
   
     $scope.inApp = function (link) {
         console.log(link)
@@ -45,6 +49,30 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
                 console.log("*******insideif ", data.data.polls)
                 $scope.news = data.data;
                 console.log($scope.news)
+
+                $scope.loadMore = function () {
+                 
+                  $ionicScrollDelegate.resize()
+                  $scope.pagination.shouldLoadMore = false;
+                  $scope.pagination.currentPage++;
+                 //  $scope.pagination1 = {
+                 //    "page": $scope.pagination.currentPage,
+                 //  }
+                  $scope.interestData = {
+                   "page": $scope.pagination.currentPage,
+                   "userInterest": $scope.news.interest,
+                    "newsId":$stateParams.newsid
+                 }
+             Chats.apiCallWithData("NewsInfo/getNewsByInterestWithoutOneNews", $scope.interestData, function (data) {
+               console.log("interestwisedata", data.data.results)
+               $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
+               if (data.data.results.length == 10) {
+                 $scope.pagination.shouldLoadMore = true;
+               }
+               // $scope.paginationCode();
+             });
+           }
+
                 $scope.doRefresh = function (val) {
                   $scope.discoverNews = [],
                     $scope.pagination = {
@@ -52,34 +80,13 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
                       currentPage: 0,
                     };
              
-                  if (!val) {
+                  if (val) {
                     $scope.loadMore();
                   }
                 };
                 $scope.doRefresh(true);
 
-                $scope.loadMore = function () {
-                 
-                   $ionicScrollDelegate.resize()
-                   $scope.pagination.shouldLoadMore = false;
-                   $scope.pagination.currentPage++;
-                  //  $scope.pagination1 = {
-                  //    "page": $scope.pagination.currentPage,
-                  //  }
-                   $scope.interestData = {
-                    "page": $scope.pagination.currentPage,
-                    "userInterest": $scope.news.interest,
-                     "newsId":$stateParams.newsid
-                  }
-              Chats.apiCallWithData("NewsInfo/getNewsByInterestWithoutOneNews", $scope.interestData, function (data) {
-                console.log("interestwisedata", data.data.results)
-                $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-                if (data.data.results.length == 10) {
-                  $scope.pagination.shouldLoadMore = true;
-                }
-                // $scope.paginationCode();
-              });
-            }
+              
                 _.forEach($scope.news.polls, function (data1) {
 
                     if (data1.poll == null) {} else {
@@ -153,11 +160,16 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
           Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
             if (data1.value == true) {
               $state.go("polling-inside", {
-                newsid: data
+                newsid: data,
+                previousState: $scope.previousState,
+                newState: $state.current.name
               })
             } else {
               $state.go("tab.startPollingex", {
-                newsid: data
+                newsid: data,
+                previousState: $scope.previousState,
+                newState: $state.current.name
+                
     
               })
     
@@ -168,11 +180,15 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
             console.log("hellodata", data1)
             if (data1.value == true) {
               $state.go("debate", {
-                newsid: data
+                newsid: data,
+                previousState: $scope.previousState,
+                newState: $state.current.name
               })
             } else {
               $state.go("tab.trailerex", {
-                newsid: data
+                newsid: data,
+                previousState: $scope.previousState,
+                newState: $state.current.name
               })
             }
           })

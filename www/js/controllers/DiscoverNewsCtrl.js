@@ -9,7 +9,8 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
   $scope.discoverNews = []
-
+  $scope.searchInclude='templates/discover-full.html';
+  $scope.tabHeader='templates/tab-header.html';
   $scope.loadMore = function () {
     $scope.$broadcast('scroll.refreshComplete');
     $ionicScrollDelegate.resize()
@@ -123,6 +124,7 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
     data1.newsId = data,
       data1.userId = $.jStorage.get("user")._id
     if (kwackPoll == 'poll') {
+      Chats.setkwackPollStateChange($state.current.name)
       Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
         if (data1.value == true) {
           $state.go("polling-inside", {
@@ -140,6 +142,7 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
       })
     } else {
       Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
+        Chats.setkwackPollStateChange($state.current.name)
         console.log("hellodata", data1)
         if (data1.value == true) {
           $state.go("debate", {
@@ -160,8 +163,10 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
     var data1 = {}
     data1.newsId = data,
       // data1.userId = $.jStorage.get("user")._id
+      Chats.setkwackPollStateChange($state.current.name)
       $state.go("tab.exploremore", {
-        newsid: data
+        newsid: data,
+        previousState: $state.current.name
       })
 
   }

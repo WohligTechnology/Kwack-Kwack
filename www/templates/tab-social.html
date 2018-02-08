@@ -1,103 +1,90 @@
 <ion-view title="Social">
-    <div class="bar bar-header bar-light">
-        <div class="row">
-            <div class="col col-33">
-                <!-- <div>
-                    <img src="img/filter/6.png" class="w15">
-                </div> -->
-            </div>
-            <div class="col col-33 text-center">
-                <div>
-                    <img src="img/filter/7.png" class="w40">
-                </div>
-            </div>
-            <div class="col col-33">
-                <div class="text-right " ui-sref="tab.socialsearch">
-                    <img src="img/filter/5.png" class="w15">
-                </div>
-            </div>
-        </div>
-    </div>
+        <div ng-include="tabHeader"></div>
     <ion-content class="bg-color has-header">
-            <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>            
-        <div class="text-center">
-            <h4 class="pad0 title-explore">SOCIAL</h4>
-        </div>
-        <div class="border-top">
-        </div>
-        <div class="news-content">
-            <div class="row">
-                <div class="col col-20">
-                    <div class="toi">
-                        <img src="img/social/toi.png" alt="toi-logo" class="w100">
-                    </div>
-                </div>
-                <div class="col col-50">
-                    <div class="news-video">
-                        <p> <span>The Times of India</span> <span class="added"> added a new </span> <span>video</span></p>
-                    </div>
-                </div>
-                <div class="col col-30">
-                    <div class="text-right padd-r show-time">
-                        <span><img src="img/explore/4.png" alt="logo"></span> <span>8 hours ago</span>
-                    </div>
-                </div>
-            </div>
-            <div class="mar-lr">
-                <div class="relative">
-                    <img class="full-image" src="img/social/video.jpg">
-                </div>
-                <div class="social-icons">
-                    <div class="display-inline">
-                        <div class="w56"><img src="img/social/facebook.png" class="w100"></div>
-                    </div>
-                    <div class="display-inline float-right explore-icon text-center ">
-                        <label class="discoverCardStrip"> <img class="" src="img/explore/5.png"><span class=" alignM"> 20</span></label>
-                        <label class="discoverCardStrip"><img class="img-responsive" src="img/explore/6.png">
-                              <span class="alignM">  42</span></label>
-                        <label> <img src="img/explore/7.png">
-                            <span class="colorw alignM">20</span>
-                    </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="news-content">
-            <div ng-repeat="social in discoverNews">
-
-            
-            <div class="row">
-                <div class="col col-20">
-                    <div class="toi">
-                        <img src="img/social/et.png" alt="toi-logo" class="w100">
-                    </div>
-                </div>
-                <div class="col col-80">
-                    <div class="news-video">
-                        <p class="pad0"><span>{{social.source}}</span> <span ><img src="img/social/icon.png" alt="icon" class="w3"></span> {{social.sourceId}}<span class="pad-left5"><img src="img/explore/4.png" alt="logo" class="w3"></span> {{social.createdAt | fromNow}}</p>
-                        <p class="pad0">In Pics:<span class="color-yellow"> @susanthesquark</span> did everyone in <span class="color-yellow">#tech </span>{{social.title}} "worshipped as kings"<span class="color-yellow"> {{social.url}}</span> </p>
-                    </div>
-                </div>
-           </div>
-            <div class="mar-lr">
-                <div class="relative">
-                    <img class="full-image" src="{{social.imageUrl}}">
-                </div>
-                <div class="social-icons">
-                    <div class="display-inline">
-                        <div class="w56"><img src="img/social/facebook.png" class="w100"></div>
-                    </div>
-                    <div class="display-inline float-right explore-icon text-center ">
-                        <label class="discoverCardStrip"  ng-click="nextPage(social._id,'poll')"> <img ng-if="!social.flagForPoll"  src="img/explore/5.png"> <img ng-if="social.flagForPoll" src="img/filter/2.png"><span class="alignM"> {{social.polls.length}}</span></label>
-                        <label class="discoverCardStrip"  ng-click="nextPage(social._id,'kwack')"><a><img ng-if="!social.flagForKwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="social.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png"></a>
-                            <span class="alignM">{{social.comments.length}}</span></label>
-                            <label ng-click="socilaSharing(social.description,social.imageUrl,social.title,social.url,social._id)"><img src="img/explore/7.png">
-                                <span class="colorw alignM">{{social.share}}</span></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="2px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>         
+            <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true)"></ion-refresher>         
+            <div ng-if="!searchInput">
+                    <div class="text-center">
+                            <h4 class="pad0 title-explore">SOCIAL</h4>
+                        </div>
+                        <div class="border-top" >
+                        </div>
+                        <div class="news-content" >
+                            <div class="row">
+                                <div class="col col-20">
+                                    <div class="toi">
+                                        <img src="img/social/toi.png" alt="toi-logo" class="w100">
+                                    </div>
+                                </div>
+                                <div class="col col-50">
+                                    <div class="news-video">
+                                        <p> <span>The Times of India</span> <span class="added"> added a new </span> <span>video</span></p>
+                                    </div>
+                                </div>
+                                <div class="col col-30">
+                                    <div class="text-right padd-r show-time">
+                                        <span><img src="img/explore/4.png" alt="logo"></span> <span>8 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mar-lr">
+                                <div class="relative">
+                                    <img class="full-image" src="img/social/video.jpg">
+                                </div>
+                                <div class="social-icons">
+                                    <div class="display-inline">
+                                        <div class="w56"><img src="img/social/facebook.png" class="w100"></div>
+                                    </div>
+                                    <div class="display-inline float-right explore-icon text-center ">
+                                        <label class="discoverCardStrip"> <img class="" src="img/explore/5.png"><span class=" alignM"> 20</span></label>
+                                        <label class="discoverCardStrip"><img class="img-responsive" src="img/explore/6.png">
+                                              <span class="alignM">  42</span></label>
+                                        <label> <img src="img/explore/7.png">
+                                            <span class="colorw alignM">20</span>
+                                    </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-if="!searchInput" class="news-content">
+                            <div ng-repeat="social in discoverNews">
+                
+                            
+                            <div class="row">
+                                <div class="col col-20">
+                                    <div class="toi">
+                                        <img src="img/social/et.png" alt="toi-logo" class="w100">
+                                    </div>
+                                </div>
+                                <div class="col col-80">
+                                    <div class="news-video">
+                                        <p class="pad0"><span>{{social.source}}</span> <span ><img src="img/social/icon.png" alt="icon" class="w3"></span> {{social.sourceId}}<span class="pad-left5"><img src="img/explore/4.png" alt="logo" class="w3"></span> {{social.createdAt | fromNow}}</p>
+                                        <p class="pad0">In Pics:<span class="color-yellow"> @susanthesquark</span> did everyone in <span class="color-yellow">#tech </span>{{social.title}} "worshipped as kings"<span class="color-yellow"> {{social.url}}</span> </p>
+                                    </div>
+                                </div>
+                           </div>
+                            <div class="mar-lr">
+                                <div class="relative">
+                                    <img class="full-image" src="{{social.imageUrl}}">
+                                </div>
+                                <div class="social-icons">
+                                    <div class="display-inline">
+                                        <div class="w56"><img src="img/social/facebook.png" class="w100"></div>
+                                    </div>
+                                    <div class="display-inline float-right explore-icon text-center ">
+                                        <label class="discoverCardStrip"  ng-click="nextPage(social._id,'poll')"> <img ng-if="!social.flagForPoll"  src="img/explore/5.png"> <img ng-if="social.flagForPoll" src="img/filter/2.png"><span class="alignM"> {{social.polls.length}}</span></label>
+                                        <label class="discoverCardStrip"  ng-click="nextPage(social._id,'kwack')"><a><img ng-if="!social.flagForKwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="social.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png"></a>
+                                            <span class="alignM">{{social.comments.length}}</span></label>
+                                            <label ng-click="socilaSharing(social.description,social.imageUrl,social.title,social.url,social._id)"><img src="img/explore/7.png">
+                                                <span class="colorw alignM">{{social.share}}</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+            </div>   
+       
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInput"   on-infinite="loadMore()" distance="2px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>         
+        <div ng-if="searchInput" ng-include="searchInclude" >
+    </div>
     </ion-content>
 </ion-view>

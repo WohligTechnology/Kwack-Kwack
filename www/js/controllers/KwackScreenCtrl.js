@@ -8,6 +8,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   $scope.filterData={}
   $scope.filterData.polls=true
   $scope.filterData.kwacks=true
+  
   // $scope.news = []
   $scope.addInterest.userId = $.jStorage.get('user')._id
   // $scope.flush=true
@@ -35,7 +36,8 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   //   $scope.modal.show();
     
   // }
-
+  $scope.searchInclude='templates/discover-full.html';
+  $scope.tabHeader='templates/tab-header.html';
   $scope.closeModal = function () {
     $scope.modal.hide();
      $state.reload();
@@ -311,32 +313,30 @@ if(_.isEmpty($scope.interestarr)){
       data1.userId = $.jStorage.get("user")._id
       if(kwackPoll=='poll'){
     Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
+      Chats.setkwackPollStateChange($state.current.name)
       if (data1.value == true) {
         $state.go("polling-inside", {
           newsid: data,
-          previousState: $state.current.name
         })
       } else {
         $state.go("tab.startPollingdis", {
-          newsid: data,
-          previousState: $state.current.name
-         
+          newsid: data,         
         })
        
       }
     })
    }else{
      Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
+      Chats.setkwackPollStateChange($state.current.name)
         console.log("hellodata",data1)
        if (data1.value == true) {
          $state.go("debate", {
-           newsid: data,
-           previousState: $state.current.name
+           newsid: data
+           
          })
        } else {
          $state.go("tab.trailerdis", {
-           newsid: data,
-           previousState: $state.current.name
+           newsid: data
          })
        }
      })
