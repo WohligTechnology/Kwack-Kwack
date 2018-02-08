@@ -677,6 +677,10 @@ $dark:                            #444 !default;
         margin-bottom: 15px;
         .btn-sports {
             padding: 0px 23px;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         } // .btn-science {
         //     padding: 0px 14px;
         // }
@@ -845,6 +849,10 @@ $dark:                            #444 !default;
 
     .btn-sports {
         padding: 7px 23px;
+        &:hover,
+        &:focus {
+            color: $light !important;
+        }
     } // .btn-comedy {
     //     padding: 7px 17px;
     // }
@@ -2360,6 +2368,10 @@ $dark:                            #444 !default;
     .settings-btns {
         .btn-sports {
             padding: 0px 18px;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         } // .btn-science {
         //     padding: 0px 14px;
         // }
@@ -3429,6 +3441,10 @@ $dark:                            #444 !default;
         }
         .settings-btns .btn-sports {
             padding: 0px 14px;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         } // .settings-btns .btn-science {
         //     padding: 0px 7px;
         // }
@@ -3570,10 +3586,6 @@ $dark:                            #444 !default;
             background-color: $yellow !important;
             color: $light !important;
             border: none;
-            &:hover,
-            &:focus {
-                color: $light !important;
-            }
         }
     }
 
@@ -3648,10 +3660,6 @@ $dark:                            #444 !default;
             background-color: $yellow !important;
             color: $light !important;
             border: none;
-            &:hover,
-            &:focus {
-                color: $light !important;
-            }
         }
     } // css for iphone 6 nd 6plus
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
@@ -3911,10 +3919,6 @@ $dark:                            #444 !default;
             background-color: $yellow !important;
             color: $light !important;
             border: none;
-            &:hover,
-            &:focus {
-                color: $light !important;
-            }
         }
         .settings-btns {
             .btn-sports {
@@ -4068,9 +4072,5 @@ $dark:                            #444 !default;
             background-color: $yellow !important;
             color: $light !important;
             border: none;
-            &:hover,
-            &:focus {
-                color: $light !important;
-            }
         }
     }

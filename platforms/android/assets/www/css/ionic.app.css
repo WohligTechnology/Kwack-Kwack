@@ -10344,6 +10344,8 @@ button.btn-yellow.button[disabled] {
   margin-bottom: 15px; }
   .filter-btns .btn-sports {
     padding: 0px 23px; }
+    .filter-btns .btn-sports:hover, .filter-btns .btn-sports:focus {
+      color: #fff !important; }
 
 .btn-tran {
   background: transparent !important; }
@@ -10457,6 +10459,8 @@ button.btn-yellow.button[disabled] {
 
 .btn-sports {
   padding: 7px 23px; }
+  .btn-sports:hover, .btn-sports:focus {
+    color: #fff !important; }
 
 .cat-btn-plus {
   top: 0px;
@@ -11640,6 +11644,8 @@ button.btn-yellow.button[disabled] {
 
 .settings-btns .btn-sports {
   padding: 0px 18px; }
+  .settings-btns .btn-sports:hover, .settings-btns .btn-sports:focus {
+    color: #fff !important; }
 
 .settings i {
   font-size: 20px; }
@@ -12453,6 +12459,8 @@ button.btn-yellow.button[disabled] {
     width: 46px; }
   .settings-btns .btn-sports {
     padding: 0px 14px; }
+    .settings-btns .btn-sports:hover, .settings-btns .btn-sports:focus {
+      color: #fff !important; }
   .btn-bg-black {
     font-size: 11px; }
   .btn-bg {
@@ -12536,9 +12544,7 @@ button.btn-yellow.button[disabled] {
   .btn-sports.activated {
     background-color: #ffc943 !important;
     color: #fff !important;
-    border: none; }
-    .btn-sports.activated:hover, .btn-sports.activated:focus {
-      color: #fff !important; } }
+    border: none; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
@@ -12589,9 +12595,7 @@ button.btn-yellow.button[disabled] {
   .btn-sports.activated {
     background-color: #ffc943 !important;
     color: #fff !important;
-    border: none; }
-    .btn-sports.activated:hover, .btn-sports.activated:focus {
-      color: #fff !important; } }
+    border: none; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .accordian label {
@@ -12761,8 +12765,6 @@ button.btn-yellow.button[disabled] {
     background-color: #ffc943 !important;
     color: #fff !important;
     border: none; }
-    .btn-sports.activated:hover, .btn-sports.activated:focus {
-      color: #fff !important; }
   .settings-btns .btn-sports {
     padding: 0px 18px; }
   .btn-bg-black {
@@ -12852,5 +12854,3 @@ button.btn-yellow.button[disabled] {
     background-color: #ffc943 !important;
     color: #fff !important;
     border: none; }
-    .flex-end .btn-sports.activated:hover, .flex-end .btn-sports.activated:focus {
-      color: #fff !important; }
