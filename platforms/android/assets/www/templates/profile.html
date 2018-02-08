@@ -12,7 +12,7 @@
             <div class="relative">
                 <div class="profile-pic mar-auto " ng-click="showActionsheet('image')">
                     <img ng-if="userData.photo" ng-src="{{userData.photo | uploadpath}}" alt="logo" class="w100">
-                    <img src="img/profile/profile.png" ng-if="!userData.image" alt="logo" class="w100">
+                    <img src="img/profile/profile.png" ng-if="!userData.photo" alt="logo" class="w100">
                     <!-- <img ng-src="{{profileImage.image}}">                     -->
                     <div class="absolute plus-btn">
                         <button class="button">
@@ -27,23 +27,23 @@
     <div class="footer">
         <div class="bar bar-footer bar-black">
             <div class="row">
-                    <div class="col-20">
-                            <div class="arrow-back text-center" ng-click="goBackHandler()">
-                                <a class="button">
-                                    <i class="ion ion-ios-arrow-back"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-50 text-center" ui-sref="inviteFriends">
-                            <div class="skip">
-                                <span>SKIP</span>
-                            </div>
-                        </div>
-                        <div class="col-25 text-center">
-                            <div class="skip text-center" ui-sref="inviteFriends">
-                                <span>NEXT</span>
-                            </div>
-                        </div>
+                <div class="col-25">
+                    <div class="arrow-back text-center" ng-click="goBackHandler()">
+                        <a class="button">
+                            <i class="ion ion-ios-arrow-back"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-50 text-center" ui-sref="inviteFriends">
+                    <div class="skip">
+                        <span>SKIP</span>
+                    </div>
+                </div>
+                <div class="col-25 text-center">
+                    <div class="skip text-center" ui-sref="inviteFriends">
+                        <span>NEXT</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

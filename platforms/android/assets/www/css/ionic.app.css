@@ -10167,7 +10167,8 @@ h4 {
   width: 56%; }
 
 .w100 {
-  width: 100%; }
+  width: 100%;
+  height: auto; }
 
 .social-icon {
   text-align: right;
@@ -10268,7 +10269,7 @@ button.btn-yellow.button[disabled] {
       font-size: 13px; }
 
 .arrow-back {
-  margin-top: 0px; }
+  margin-top: 5px; }
   .arrow-back .button {
     background: transparent;
     border: none; }
@@ -10489,7 +10490,7 @@ button.btn-yellow.button[disabled] {
 .news-content {
   margin-bottom: 20px; }
   .news-content .card {
-    margin: 7px 20px;
+    margin: 7px 20px !important;
     background-color: transparent;
     box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21); }
     .news-content .card .item {
@@ -10586,7 +10587,7 @@ button.btn-yellow.button[disabled] {
 
 .platform-android .followers {
   position: absolute;
-  top: 21%; }
+  top: 25%; }
 
 .dis-table {
   display: table; }
@@ -10914,7 +10915,7 @@ button.btn-yellow.button[disabled] {
     border-right: 1px solid #ececec; }
 
 .news-discover .card {
-  margin: 7px 15px;
+  margin: 7px 15px !important;
   background-color: transparent;
   box-shadow: none;
   box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.88); }
@@ -12531,7 +12532,11 @@ button.btn-yellow.button[disabled] {
   .skipButton {
     top: 96%; }
   .sliderbutton .swiper-pagination {
-    bottom: 90px; } }
+    bottom: 90px; }
+  .btn-sports.activated {
+    background-color: #ffc943 !important;
+    color: #fff !important;
+    border: none; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
@@ -12746,7 +12751,7 @@ button.btn-yellow.button[disabled] {
     overflow: hidden; }
   .btn-sports.activated {
     background-color: #ffc943 !important;
-    color: #fff;
+    color: #fff !important;
     border: none; }
   .settings-btns .btn-sports {
     padding: 0px 18px; }
