@@ -3634,11 +3634,16 @@ $dark:                            #444 !default;
         }
         .alpha_sidebar {
             position: absolute;
-            top: 190px;
+            top: 185px;
             right: 14px;
             z-index: 100000;
             font-size: 10px;
-            line-height: 20px;
+            line-height: 19px;
+        }
+        .btn-sports.activated {
+            background-color: $yellow !important;
+            color: $light !important;
+            border: none;
         }
     } // css for iphone 6 nd 6plus
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
@@ -4046,5 +4051,10 @@ $dark:                            #444 !default;
             width: 100%;
             @include position(absolute,
             20% null null null);
+        }
+        .btn-sports.activated {
+            background-color: $yellow !important;
+            color: $light !important;
+            border: none;
         }
     }
