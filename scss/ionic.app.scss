@@ -3570,6 +3570,10 @@ $dark:                            #444 !default;
             background-color: $yellow !important;
             color: $light !important;
             border: none;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         }
     }
 
@@ -3644,6 +3648,10 @@ $dark:                            #444 !default;
             background-color: $yellow !important;
             color: $light !important;
             border: none;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         }
     } // css for iphone 6 nd 6plus
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
@@ -3903,6 +3911,10 @@ $dark:                            #444 !default;
             background-color: $yellow !important;
             color: $light !important;
             border: none;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         }
         .settings-btns {
             .btn-sports {
@@ -4056,5 +4068,9 @@ $dark:                            #444 !default;
             background-color: $yellow !important;
             color: $light !important;
             border: none;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         }
     }

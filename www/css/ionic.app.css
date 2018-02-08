@@ -12536,7 +12536,9 @@ button.btn-yellow.button[disabled] {
   .btn-sports.activated {
     background-color: #ffc943 !important;
     color: #fff !important;
-    border: none; } }
+    border: none; }
+    .btn-sports.activated:hover, .btn-sports.activated:focus {
+      color: #fff !important; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
@@ -12587,7 +12589,9 @@ button.btn-yellow.button[disabled] {
   .btn-sports.activated {
     background-color: #ffc943 !important;
     color: #fff !important;
-    border: none; } }
+    border: none; }
+    .btn-sports.activated:hover, .btn-sports.activated:focus {
+      color: #fff !important; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .accordian label {
@@ -12757,6 +12761,8 @@ button.btn-yellow.button[disabled] {
     background-color: #ffc943 !important;
     color: #fff !important;
     border: none; }
+    .btn-sports.activated:hover, .btn-sports.activated:focus {
+      color: #fff !important; }
   .settings-btns .btn-sports {
     padding: 0px 18px; }
   .btn-bg-black {
@@ -12846,3 +12852,5 @@ button.btn-yellow.button[disabled] {
     background-color: #ffc943 !important;
     color: #fff !important;
     border: none; }
+    .flex-end .btn-sports.activated:hover, .flex-end .btn-sports.activated:focus {
+      color: #fff !important; }
