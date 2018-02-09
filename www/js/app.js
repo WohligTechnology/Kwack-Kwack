@@ -13,7 +13,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       // for form inputs)
       //hardware back operation
       $ionicPlatform.registerBackButtonAction(function (event) {
-        //we have to implement
+        //we have to implement it
       }, 402);
       
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
