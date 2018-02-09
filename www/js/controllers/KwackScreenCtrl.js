@@ -11,7 +11,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   $scope.filterData.polls = true
   $scope.filterData.kwacks = true
 
-  // $scope.news = []
+  $scope.news = []
   $scope.addInterest.userId = $.jStorage.get('user')._id
   // $scope.flush=true
   //start of pagination 
@@ -23,6 +23,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   //filter api
 
   $scope.loadMore = function () {
+    $scope.$broadcast('scroll.refreshComplete');
     $ionicScrollDelegate.resize()
     $scope.pagination.shouldLoadMore = false;
     $scope.pagination.currentPage++;
@@ -39,7 +40,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
       if (data.data.results.length == 10) {
         $scope.pagination.shouldLoadMore = true;
       }
-
+      $scope.$broadcast('scroll.infiniteScrollComplete');
     });
   };
 
@@ -154,34 +155,31 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   //Interest Select filter
 
 
-  $scope.interestLoad = function () {
-    Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
-      $scope.allInterest = data.data
-      console.log("data is*****************", $scope.allInterest)
-      $scope.interestdup = _.chunk($scope.allInterest, 3);
-    })
+  Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
+    $scope.allInterest = data.data
+    console.log("data is*****************", $scope.allInterest)
+    $scope.interestdup = _.chunk($scope.allInterest, 3);
+  })
 
-    Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
-      $scope.getInterest = data.data.interests
-      $scope.interestarr = data.data.interests
-      _.forEach($scope.allInterest, function (allInterest) {
-        console.log("fullinterest", $scope.getInterest)
-        _.forEach($scope.getInterest, function (value) {
-          // console.log("interestArrayforeach", value)
-          if (value.name == allInterest.name) {
-            allInterest.value = true
-          } else {
-            console.log("interest not available")
-          }
-        })
-
+  Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
+    $scope.getInterest = data.data.interests
+    $scope.interestarr = data.data.interests
+    _.forEach($scope.allInterest, function (allInterest) {
+      console.log("fullinterest", $scope.getInterest)
+      _.forEach($scope.getInterest, function (value) {
+        // console.log("interestArrayforeach", value)
+        if (value.name == allInterest.name) {
+          allInterest.value = true
+        } else {
+          console.log("interest not available")
+        }
       })
 
-      console.log("data interest", $scope.getInterest)
     })
-  }
 
-  $scope.interestLoad();
+    console.log("data interest", $scope.getInterest)
+  })
+
 
 
   $scope.select = function (interest) {
@@ -244,15 +242,11 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
 
   $scope.filter1 = function (filterdata) {
 
-
-    console.log("flushValue", $scope.flush)
-
-    console.log('filterdata', filterdata)
+    $scope.news = []
     $scope.monthYear = {}
     $scope.monthYear = filterdata
     var date = new Date()
     if (filterdata.Year && filterdata.Month) {
-      // $scope.news=[]
       // $scope.pagination.shouldLoadMore = false;
       y = $scope.monthYear.Year.year
       m = $scope.monthYear.Month.order
@@ -265,77 +259,15 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     }
     $scope.filterData.interest = $scope.getInterest
     $scope.filterData.userId = $.jStorage.get('user')._id
-    console.log("helloapi", $scope.filterData.interest)
 
 
-    console.log("helloflush")
-
-    $scope.loadMore = function () {
-      $ionicScrollDelegate.resize()
-      $scope.pagination.shouldLoadMore = false;
-      $scope.pagination.currentPage++;
-      $scope.pagination1 = {
-        "page": $scope.pagination.currentPage,
-      }
-      $scope.filterData.page = $scope.pagination.currentPage
-      Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
-        console.log("$scope.news, data.data.results", data)
-        $scope.news = _.concat($scope.news, data.data.results);
-        if (data.data.results.length == 10) {
-          $scope.pagination.shouldLoadMore = true;
-        }
-
-      });
-    };
-
-    $scope.doRefresh = function (val) {
-      $scope.news = [],
-        $scope.pagination = {
-          shouldLoadMore: true,
-          currentPage: 0,
-        };
-
-      if (val) {
-        $scope.loadMore();
-      }
-    };
+    // $scope.loadMore()
     $scope.doRefresh(true);
-
-
-    //paginationload10
-
-
-
 
   }
 
 
-  // $scope.paginationCode = function () {
-  //   _.forEach($scope.news, function (value) {
-  //     _.forEach(value.polls, function (polls1) {
-  //       if (polls1.poll == null) {} else {
-  //         if ($scope.pollKwack._id == polls1.poll.user._id) {
-  //           value.temp = true
-  //         } else {
-  //           value.temp = false;
-  //         }
-  //       }
-  //     })
 
-  //   })
-  //   _.forEach($scope.news, function (comments) {
-  //     _.forEach(comments.comments, function (comments1) {
-  //       if (comments1.comment == null) {} else {
-  //         if ($scope.pollKwack._id == comments1.comment.user._id) {
-  //           comments.kwack = true
-  //         } else {
-  //           comments.kwack = false;
-  //         }
-  //       }
-  //     })
-
-  //   })
-  // }
 
   $scope.nextPage = function (data, kwackPoll) {
 
@@ -380,7 +312,6 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     $scope.addInterest._id = $.jStorage.get('user')._id
     $scope.addInterest.interests = []
     Chats.apiCallWithData("User/save", $scope.addInterest, function (data) {
-      console.log("data is*****************", data)
       Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
         $scope.getInterest = data.data.interests
       })
@@ -389,34 +320,17 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
 
     Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
       $scope.allInterest = data.data
-      console.log("data is*****************", $scope.allInterest)
       $scope.interestdup = _.chunk($scope.allInterest, 3);
     })
 
     Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
       $scope.getInterest = data.data.interests
-      // $scope.interestarr= data.data.interests
-      // _.forEach($scope.allInterest, function(allInterest){
-      //   // console.log("fullinterest",allInterest)
-      //   _.forEach($scope.interestarr, function(value){
-      //     // console.log("interestArrayforeach", value)
-      //     if(value.name==allInterest.name){
-      //       allInterest.value=true
-      //     }else{
-      //       console.log("interest not available")
-      //     }
-      //   })
 
-      // })
-
-      console.log("data interest", $scope.getInterest)
     })
     // $scope.flush=true;
-    console.log('heyya', $scope.flush)
     data.Month = ""
     data.Year = ""
     $scope.filterData = {}
-    console.log("kwackpollall", $scope.filterData)
 
   }
 

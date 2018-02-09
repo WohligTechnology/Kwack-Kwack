@@ -133,9 +133,6 @@ angular.module('starter.services', [])
       },
       flushMainTab: function () {
         return $.jStorage.deleteKey('mainTab');
-      }
-
-
-
-    };
+      },
+    }
   });
