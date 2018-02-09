@@ -3,10 +3,20 @@
         <div ng-include="tabHeader"></div>
     </div>
     <ion-content class="bg-color has-bottom">
-        <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true)"></ion-refresher>
-        <div ng-if="!searchInput">
-            <div class="text-center">
-                <h4 class="pad0 title-explore">KWACK</h4>
+            <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true)"></ion-refresher>
+            <div ng-if="!searchInput">
+                    <div class="text-center">
+                            <h4 class="pad0 title-explore">KWACK</h4>
+                        </div>
+                        <div ng-if="news.length==0" class="text-center pad-10">No news available right now please apply some filters</div>
+                        <div class="kwackcard-padd ">
+                            <div class="list imagePos kwack-card">
+                                <div ng-repeat="test in news">
+                                    <card></card>
+                                </div>
+                            </div>
+                        </div>
+                        
             </div>
             <!-- <div ng-if="news.length==0" class="text-center pad-10">No news available right now please apply some filters</div> -->
             <div class="kwackcard-padd ">

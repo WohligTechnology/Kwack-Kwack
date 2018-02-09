@@ -55,11 +55,13 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
       $scope.loadMore();
     }
   };
+ 
   Chats.apiCallWithData("Readlogs/checkingNewsReadOrNot", $scope.dataToSend, function (data) {
     if (data.value == true) {
       Chats.apiCallWithData("NewsInfo/getOneNews", $scope.newsId, function (data) {
         $scope.news = data.data;
         $scope.loadMore();
+        $scope.doRefresh(true);
       })
     } else {
       Chats.apiCallWithData("Readlogs/readLogsCount", $scope.dataToSend, function (data1) {
