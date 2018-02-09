@@ -1571,6 +1571,10 @@ $dark:                            #444 !default;
         border-width: 1px;
     }
 
+    .bar {
+        background-size: 0px;
+    }
+
     .scrollCategories {
         color: $lightGray;
         margin: 5px;
