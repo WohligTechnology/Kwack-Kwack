@@ -10513,8 +10513,8 @@ button.btn-yellow.button[disabled] {
   z-index: 1; }
 
 .movie-label {
-  bottom: 4%;
-  left: 5px;
+  bottom: 2%;
+  left: 1px;
   background: #000;
   color: #fff;
   font-size: 10px;
