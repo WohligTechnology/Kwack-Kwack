@@ -1,7 +1,12 @@
 connector.controller('SearchInputCtrl', function ($scope, Chats, $state,$rootScope) {
     $scope.searchText = {}
     $scope.headerState = $state.current.name
-    $scope.previousState = $.jStorage.get('mainTab').fromState
+    if(_.isEmpty($.jStorage.get('mainTab'))){
+
+    }else{
+        $scope.previousState = $.jStorage.get('mainTab').fromState
+    }
+   
     console.log("$scope.previousState", $scope.previousState)
     console.log("currentState",$scope.headerState)
     Chats.setkwackPollStateChange($state.current.name)
