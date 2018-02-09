@@ -2139,7 +2139,7 @@ $dark:                            #444 !default;
             letter-spacing: 2px;
             font-family: 'Montserrat-Medium'
         }
-        input {
+        .editusername {
             width: 100%;
             line-height: 74px;
             height: 45px;
@@ -2159,7 +2159,9 @@ $dark:                            #444 !default;
         font-size: 1em;
         font-family: 'Montserrat-Medium';
         border: none;
-        background: transparent;
+        background: transparent !important;
+        display: inline !important;
+        letter-spacing: 1px !important;
     }
 
     .ecitlocicon {
@@ -3587,7 +3589,6 @@ $dark:                            #444 !default;
             color: $light !important;
             border: none;
         }
-
         .alpha_sidebar {
             line-height: 20px;
         }

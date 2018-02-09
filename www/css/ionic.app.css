@@ -11471,7 +11471,7 @@ button.btn-yellow.button[disabled] {
     font-size: 1em;
     letter-spacing: 2px;
     font-family: 'Montserrat-Medium'; }
-  .editName input {
+  .editName .editusername {
     width: 100%;
     line-height: 74px;
     height: 45px;
@@ -11488,7 +11488,9 @@ button.btn-yellow.button[disabled] {
   font-size: 1em;
   font-family: 'Montserrat-Medium';
   border: none;
-  background: transparent; }
+  background: transparent !important;
+  display: inline !important;
+  letter-spacing: 1px !important; }
 
 .ecitlocicon {
   vertical-align: middle;

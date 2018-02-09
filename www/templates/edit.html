@@ -19,17 +19,20 @@
 
                         <div class="editName">
                             <!-- <label for="">NAME</label> -->
-                            <input type="text" name="name" ng-model="userInfo.name" value="{{userInfo.name}}">
+                            <input type="text" class="editusername" name="name" ng-model="userInfo.name" value="{{userInfo.name}}">
 
                             <div class="pad-left5">
                                 <span>
                                     <i class="ion ion-location"></i>
                                 </span>
 
-                                <select class="form-control editCity" ng-options="st.stateName for st in stateData track by st._id" ng-model="formName.selectedState"
+                                <input type="text" class="editCity" placeholder="Enter City">
+
+
+                                <!-- <select class="form-control editCity" ng-options="st.stateName for st in stateData track by st._id" ng-model="formName.selectedState"
                                     placeholder="Select">
                                     <option class="editCity" value="">Mumbai</option>
-                                </select>
+                                </select> -->
                             </div>
                         </div>
                         <div class="editBio">
