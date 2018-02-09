@@ -12,6 +12,8 @@ connector.controller('ForgotPassCtrl', function($scope, Chats, ionicToast, $stat
             if (otp.value == true) {
                 ionicToast.show('Otp Sent Successfully', 'top', false, 2500);
                 $state.go("otp")
+            }else{
+                ionicToast.show('Please enter correct Mobile Number', 'top', false, 2500); 
             }
         })
 
