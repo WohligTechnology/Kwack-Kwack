@@ -192,7 +192,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         url: '/trailer/:newsid/:previousState/:newState',
         cache: false,
         views: {
-          'tab-explore': {
+          'tab-discoverNews': {
             templateUrl: 'templates/tab-trailer.html',
             controller: 'TrailerCtrl'
 

@@ -1,5 +1,5 @@
 connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordovaCamera, Chats, $ionicActionSheet, $cordovaImagePicker, $cordovaFileTransfer) {
-    $scope.reqData={};
+    $scope.reqData = {};
     $scope.reqData._id = $.jStorage.get("user")._id
 
     $scope.getUserDetails = function () {
@@ -56,14 +56,33 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
             popoverOptions: CameraPopoverOptions,
             correctOrientation: true
         };
-        $cordovaCamera.getPicture(cameraOptions).then(function (imageData) {
-            $scope.imageSrc = "data:image/jpeg;base64," + imageData;
-            console.log($scope.imageSrc);
-            $scope.uploadImage($scope.imageSrc, card);
-        }, function (err) {
-
-            console.log(err);
+        cordova.plugins.diagnostic.isCameraAuthorized({
+            successCallback: function (authorized) {
+                if (authorized == false) {
+                    cordova.plugins.diagnostic.requestCameraAuthorization({
+                        successCallback: function (status) {
+                            $cordovaCamera.getPicture(cameraOptions).then(function (imageData) {
+                                $scope.imageSrc = "data:image/jpeg;base64," + imageData;
+                                $scope.uploadImage($scope.imageSrc, card);
+                            }, function (err) {
+                                console.log(err);
+                            });
+                        }
+                    })
+                } else {
+                    $cordovaCamera.getPicture(cameraOptions).then(function (imageData) {
+                        $scope.imageSrc = "data:image/jpeg;base64," + imageData;
+                        $scope.uploadImage($scope.imageSrc, card);
+                    }, function (error) {
+                        console.log('Error: ' + JSON.stringify(error)); // In case of error
+                    });
+                }
+            },
+            errorCallback: function (error) {
+                console.error("The following error occurred: " + error);
+            }
         });
+
     };
 
     $scope.getImageSaveContact = function (card) {
@@ -73,12 +92,34 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
             height: 800,
             quantityuality: 80 // Higher is better
         };
-        $cordovaImagePicker.getPictures(options).then(function (results) {
-            console.log(results[0]);
-            $scope.uploadImage(results[0], card);
-        }, function (error) {
-            console.log('Error: ' + JSON.stringify(error)); // In case of error
+        cordova.plugins.diagnostic.isCameraAuthorized({
+            successCallback: function (authorized) {
+                if (authorized == false) {
+                    cordova.plugins.diagnostic.requestCameraAuthorization({
+                        successCallback: function (status) {
+                            $cordovaImagePicker.getPictures(options).then(function (results) {
+                                console.log(results[0]);
+                                $scope.uploadImage(results[0], card);
+                            }, function (error) {
+                                console.log('Error: ' + JSON.stringify(error)); // In case of error
+                            });
+                        }
+                    })
+                } else {
+                    $cordovaImagePicker.getPictures(options).then(function (results) {
+                        console.log(results[0]);
+                        $scope.uploadImage(results[0], card);
+                    }, function (error) {
+                        console.log('Error: ' + JSON.stringify(error)); // In case of error
+                    });
+                }
+            },
+            errorCallback: function (error) {
+                console.error("The following error occurred: " + error);
+            }
         });
+
+  
     };
 
     $scope.uploadImage = function (imageURI, card) {
