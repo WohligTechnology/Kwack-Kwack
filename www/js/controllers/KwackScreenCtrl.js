@@ -181,7 +181,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     })
   }
 
-  $scope.interestLoad()
+  $scope.interestLoad();
 
 
   $scope.select = function (interest) {
