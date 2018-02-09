@@ -11011,6 +11011,9 @@ button.btn-yellow.button[disabled] {
   height: 24px;
   border-width: 1px; }
 
+.bar {
+  background-size: 0px; }
+
 .scrollCategories {
   color: #afafaf;
   margin: 5px;
