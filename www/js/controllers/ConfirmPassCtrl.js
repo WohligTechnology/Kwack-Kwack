@@ -1,4 +1,5 @@
 connector.controller('ConfirmPassCtrl', function($scope, ionicToast, $state, Chats) {
+  $scope.verifiedUser = $.jStorage.get("user");
    $scope.resetPassword = function (formName) {
      console.log("confirmpassword", formName)
      $scope.savePassword={
@@ -11,6 +12,8 @@ connector.controller('ConfirmPassCtrl', function($scope, ionicToast, $state, Cha
         console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",info)
         if (info.value == true) {
             ionicToast.show('Password changed successfully', 'top', false, 2500);
+            $scope.verifiedUser.verified = true
+            $.jStorage.set("user",$scope.verifiedUser);
           $state.go("login")
         }
     })

@@ -1,8 +1,8 @@
 connector.controller('SuccessCtrl', function($scope, $state) {
-    $scope.success = $.jStorage.get("user")
+    $scope.success = $.jStorage.get("mobile")
     //   console.log("hellostorage", $scope.success._id)
       $scope.nextstate=function(){
-        if($scope.success == null){
+        if($scope.success != null){
             $state.go("confirmpass")
         }else{
             $state.go("location")
