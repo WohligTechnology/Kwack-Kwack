@@ -246,7 +246,7 @@ if(_.isEmpty($scope.interestarr)){
   $scope.monthYear={}
   $scope.monthYear=filterdata
     var date = new Date() 
-    if(filterdata.Year && filterdata.Month){
+     if(filterdata.Year && filterdata.Month){
       // $scope.news=[]
       // $scope.pagination.shouldLoadMore = false;
       y = $scope.monthYear.Year.year
@@ -257,6 +257,7 @@ if(_.isEmpty($scope.interestarr)){
       lastDay = moment(lastDay).format('YYYY-MM-DD')
       $scope.filterData.startDate = firstDay
       $scope.filterData.endDate = lastDay
+     }
       $scope.filterData.interest =  $scope.getInterest
       $scope.filterData.userId = $.jStorage.get('user')._id
       console.log("helloapi", $scope.filterData.interest)
@@ -299,7 +300,7 @@ if(_.isEmpty($scope.interestarr)){
         //paginationload10
       
       
-    }
+    
 
   }
   

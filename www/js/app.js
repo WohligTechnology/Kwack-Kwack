@@ -248,7 +248,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.trailerkwack', {
         url: '/trailer/:newsid/:previousState/:newState',
-        // cache:false,
+         cache:false,
         views: {
           'tab-kwackScreen': {
             templateUrl: 'templates/tab-trailer.html',
@@ -334,6 +334,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.kwacksearch', {
         url: '/discoverfull',
+        cache: false,
         views: {
           'tab-kwackScreen': {
             templateUrl: 'templates/discover-full.html',
@@ -390,6 +391,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.discoversearch', {
         url: '/discoverfull',
+        cache: false,
         views: {
           'tab-explore': {
             templateUrl: 'templates/discover-full.html',
@@ -580,7 +582,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.startPollingex', {
         url: '/startPolling/:newsid',
-        // cache:false,
+         cache:false,
         views: {
           'tab-explore': {
             templateUrl: 'templates/startPolling.html',
@@ -591,7 +593,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.startPollingdis', {
         url: '/startPolling/:newsid',
-        // cache:false,
+         cache:false,
         views: {
           'tab-discoverNews': {
             templateUrl: 'templates/startPolling.html',
@@ -614,7 +616,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.startPollingkwack', {
         url: '/startPolling/:newsid',
-        // cache:false,
+         cache:false,
         views: {
           'tab-kwackScreen': {
             templateUrl: 'templates/startPolling.html',
