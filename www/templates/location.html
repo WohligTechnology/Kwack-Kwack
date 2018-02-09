@@ -42,7 +42,7 @@
                         </select> -->
                             <select class="form-control locationtHead locationWidth" ng-options="c.countryName for c in countryData track by c._id" ng-model="formName.selectedCountry"
                                 placeholder="Select">
-                                <option >Select Country</option>
+                                <option value="">Select Country</option>
                             </select>
                         </div>
                         <div class="rel pad-10" ng-if="formName.selectedCountry.countryName === 'India'">

@@ -11,6 +11,9 @@ connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams,
   }
   $scope.showerrMsg = false
   $scope.verifyUser = function (info) {
+    $scope.str=info.email
+   info.email =  $scope.str.toLowerCase();
+  
     Chats.apiCallWithData("User/VerifyUser", info, function (data) {
       console.log("data is", data)
       if (data.value == true) {
