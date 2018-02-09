@@ -1,7 +1,7 @@
 <ion-view>
     <div ng-include="tabHeader"></div>
     <ion-content class="bg-color has-header">
-    <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true)"></ion-refresher>
+    <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true); RelatedStories()"></ion-refresher>
         <div class="text-center">
             <h4 class="pad0 title-explore">EXPLORE</h4>
         </div>

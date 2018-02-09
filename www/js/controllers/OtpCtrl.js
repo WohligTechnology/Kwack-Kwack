@@ -28,10 +28,9 @@ connector.controller('OtpCtrl', function ($scope, $stateParams, $state, Chats, i
             Chats.apiCallWithData("User/verifyOTPForResetPass", $scope.data, function (data) {
                 console.log("data is after verifyOTPForResetPass called", data);
                 if (data.value == true) {
-                    if($.jStorage.get("user"))
-                   { $scope.userData = $.jStorage.get("user")
-                    $scope.userData.verified = true;}
-                    $.jStorage.set("user",data.data);
+                     $scope.userData = data.data
+                    $scope.userData.verified = true;
+                    $.jStorage.set("user",$scope.userData);
                     $state.go("success")
 
                 } else {
