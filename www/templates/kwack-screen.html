@@ -19,13 +19,13 @@
                         
             </div>
             <!-- <div ng-if="news.length==0" class="text-center pad-10">No news available right now please apply some filters</div> -->
-            <div class="kwackcard-padd ">
+            <!-- <div class="kwackcard-padd ">
                 <div class="list imagePos kwack-card">
                     <div ng-repeat="test in news">
                         <card></card>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInput" on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>
         <div ng-if="searchInput" ng-include="searchInclude">

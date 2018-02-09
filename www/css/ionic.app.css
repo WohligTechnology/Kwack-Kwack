@@ -10148,8 +10148,6 @@ h4 {
   width: 100%;
   line-height: 10px;
   display: inline-block; }
-  .yellowStrip img {
-    width: 100%; }
 
 .error-msg {
   font-size: 12px;
@@ -10513,8 +10511,8 @@ button.btn-yellow.button[disabled] {
   z-index: 1; }
 
 .movie-label {
-  bottom: 4%;
-  left: 5px;
+  bottom: 2%;
+  left: 1px;
   background: #000;
   color: #fff;
   font-size: 10px;
@@ -10840,7 +10838,7 @@ button.btn-yellow.button[disabled] {
 
 .discover-navsearch {
   text-align: right;
-  font-size: 30px;
+  font-size: 23px;
   padding-right: 15px; }
 
 .discover-navmenu {
@@ -12812,7 +12810,9 @@ button.btn-yellow.button[disabled] {
   .followers {
     width: 100%;
     position: absolute;
-    top: 90%; } }
+    top: 90%; }
+  .plusposition {
+    right: 28px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .accordian .news-label {

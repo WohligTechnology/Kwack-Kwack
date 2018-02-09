@@ -429,9 +429,6 @@ $dark:                            #444 !default;
         width: 100%;
         line-height: 10px;
         display: inline-block;
-        img {
-            width: 100%;
-        }
     } //trailercssendshere
     //**********css given by kishori**********
     //signup start
@@ -940,8 +937,8 @@ $dark:                            #444 !default;
     }
 
     .movie-label {
-        bottom: 4%;
-        left: 5px;
+        bottom: 2%;
+        left: 1px;
         background: $black;
         color: $light;
         font-size: 10px;
@@ -1352,7 +1349,7 @@ $dark:                            #444 !default;
 
     .discover-navsearch {
         text-align: right;
-        font-size: 30px;
+        font-size: 23px;
         padding-right: 15px;
     }
 
@@ -4013,6 +4010,9 @@ $dark:                            #444 !default;
             width: 100%;
             @include position(absolute,
             90% null null null);
+        }
+        .plusposition {
+            right: 28px;
         }
     }
 

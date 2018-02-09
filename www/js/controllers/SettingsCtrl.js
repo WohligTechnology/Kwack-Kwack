@@ -55,7 +55,7 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
   //   $rootScope.font = data;
   // }
 
-  $scope.interestLoad=function(){
+  
      // interest
     Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
       $scope.allInterest = data.data
@@ -84,9 +84,7 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
       
       })
     })
-  }
- 
-  $scope.interestLoad();
+
 
 
   $scope.select = function (interest) {

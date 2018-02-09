@@ -8,11 +8,15 @@
             <label ng-if="news.interest" class="absolute movie-label">{{news.interest}}</label>
         </div>
         <div class="item item-body">
-            <h3 class="pad0">{{news.name}}</h3>
+            <h3 class="pad0" ng-click="viewsNextPage(news._id)">{{news.name}}</h3>
             <div class="date-time">
-                <span class="carddatecl">{{news.createdAt | fromNowDay}} ,</span><span class="carddatecl"> {{news.createdAt | fromNowDMY}}</span>
+                <span class="carddatecl">{{news.createdAt | fromNowDay}} ,</span>
+                <span class="carddatecl"> {{news.createdAt | fromNowDMY}}</span>
                 <span class="padd-lr carddatecl">{{news.sourceId}}</span>
-                <span class="carddatecl"><img src="img/explore/4.png"></span> <span class="carddatecl">{{news.createdAt | fromNow}}</span>
+                <span class="carddatecl">
+                    <img src="img/explore/4.png">
+                </span>
+                <span class="carddatecl">{{news.createdAt | fromNow}}</span>
             </div>
             <div class="detail-para">
                 <p class="pad0">
@@ -20,14 +24,27 @@
                 </p>
             </div>
             <div class="display-inline">
-                <div class="w56" ng-click="viewsNextPage(news._id)"><img src="img/explore/3.png" class="w100"></div>
+                <div class="w56" ng-click="viewsNextPage(news._id)">
+                    <img src="img/explore/3.png" class="w100">
+                </div>
             </div>
             <div class="display-inline float-right explore-icon text-center">
-                <label class="discoverCardStrip" ng-click="nextPage(news._id,'poll')"> <img ng-if="!news.flagForPoll"  src="img/explore/5.png"> <img ng-if="news.flagForPoll" src="img/filter/2.png"><span class="alignM"> {{news.polls.length}}</span></label>
-                <label class="discoverCardStrip" ng-click="nextPage(news._id,'kwack')"><a><img ng-if="!news.flagForKwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="news.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png"></a>
-                         <span class="alignM">{{news.comments.length}}</span></label>
-                <label ng-click="socilaSharing(discover.description,discover.imageUrl,discover.name,discover.url,discover._id)"><img src="img/explore/7.png">
-                <span class="colorw alignM">{{discover.share}}</span></label>
+                <label class="discoverCardStrip" ng-click="nextPage(news._id,'poll')">
+                    <img ng-if="!news.flagForPoll" src="img/explore/5.png">
+                    <img ng-if="news.flagForPoll" src="img/filter/2.png">
+                    <span class="alignM"> {{news.polls.length}}</span>
+                </label>
+                <label class="discoverCardStrip" ng-click="nextPage(news._id,'kwack')">
+                    <a>
+                        <img ng-if="!news.flagForKwack" class="img-responsive" src="img/explore/6.png">
+                        <img ng-if="news.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
+                    </a>
+                    <span class="alignM">{{news.comments.length}}</span>
+                </label>
+                <label ng-click="socilaSharing(discover.description,discover.imageUrl,discover.name,discover.url,discover._id)">
+                    <img src="img/explore/7.png">
+                    <span class="colorw alignM">{{discover.share}}</span>
+                </label>
             </div>
         </div>
     </div>

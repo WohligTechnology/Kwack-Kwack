@@ -129,12 +129,12 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
         if (data1.value == true) {
           $state.go("polling-inside", {
             newsid: data,
-            previousState: $state.current.name
+            // previousState: $state.current.name
           })
         } else {
           $state.go("tab.startPollingdis", {
             newsid: data,
-            previousState: $state.current.name
+            // previousState: $state.current.name
 
           })
 
@@ -147,12 +147,12 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
         if (data1.value == true) {
           $state.go("debate", {
             newsid: data,
-            previousState: $state.current.name
+            // previousState: $state.current.name
           })
         } else {
           $state.go("tab.trailerdis", {
             newsid: data,
-            previousState: $state.current.name
+            // previousState: $state.current.name
           })
         }
       })

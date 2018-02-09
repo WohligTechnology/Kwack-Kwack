@@ -10513,8 +10513,8 @@ button.btn-yellow.button[disabled] {
   z-index: 1; }
 
 .movie-label {
-  bottom: 4%;
-  left: 5px;
+  bottom: 2%;
+  left: 1px;
   background: #000;
   color: #fff;
   font-size: 10px;
@@ -10840,7 +10840,7 @@ button.btn-yellow.button[disabled] {
 
 .discover-navsearch {
   text-align: right;
-  font-size: 30px;
+  font-size: 23px;
   padding-right: 15px; }
 
 .discover-navmenu {
@@ -11010,6 +11010,9 @@ button.btn-yellow.button[disabled] {
 .bar-loading.ng-leave {
   height: 24px;
   border-width: 1px; }
+
+.bar {
+  background-size: 0px; }
 
 .scrollCategories {
   color: #afafaf;
@@ -11471,7 +11474,7 @@ button.btn-yellow.button[disabled] {
     font-size: 1em;
     letter-spacing: 2px;
     font-family: 'Montserrat-Medium'; }
-  .editName input {
+  .editName .editusername {
     width: 100%;
     line-height: 74px;
     height: 45px;
@@ -11488,7 +11491,9 @@ button.btn-yellow.button[disabled] {
   font-size: 1em;
   font-family: 'Montserrat-Medium';
   border: none;
-  background: transparent; }
+  background: transparent !important;
+  display: inline !important;
+  letter-spacing: 1px !important; }
 
 .ecitlocicon {
   vertical-align: middle;
@@ -12544,7 +12549,9 @@ button.btn-yellow.button[disabled] {
   .btn-sports.activated {
     background-color: #ffc943 !important;
     color: #fff !important;
-    border: none; } }
+    border: none; }
+  .alpha_sidebar {
+    line-height: 20px; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
@@ -12801,11 +12808,13 @@ button.btn-yellow.button[disabled] {
     right: 10px;
     z-index: 100000;
     font-size: 13px;
-    line-height: 21px; }
+    line-height: 20px; }
   .followers {
     width: 100%;
     position: absolute;
-    top: 90%; } }
+    top: 90%; }
+  .plusposition {
+    right: 28px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .accordian .news-label {
