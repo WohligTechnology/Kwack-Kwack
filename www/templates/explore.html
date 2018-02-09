@@ -1,15 +1,15 @@
 <ion-view>
     <div ng-include="tabHeader"></div>
-    <ion-content class="bg-color has-header">
-    <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true); RelatedStories()"></ion-refresher>
+    <ion-content class="bg-color has-header  has-bottom">
+        <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true); RelatedStories()"></ion-refresher>
         <div class="text-center">
             <h4 class="pad0 title-explore">EXPLORE</h4>
         </div>
         <div ng-if="!searchInput" ng-repeat="news in exploreNews">
             <explore></explore>
         </div>
-        <div ng-if="searchInput" ng-include="searchInclude" >
+        <div ng-if="searchInput" ng-include="searchInclude">
         </div>
-        <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInput"   on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>         
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInput" on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>
     </ion-content>
 </ion-view>
