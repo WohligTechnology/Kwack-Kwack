@@ -10167,7 +10167,8 @@ h4 {
   width: 56%; }
 
 .w100 {
-  width: 100%; }
+  width: 100%;
+  height: auto; }
 
 .social-icon {
   text-align: right;
@@ -10268,7 +10269,7 @@ button.btn-yellow.button[disabled] {
       font-size: 13px; }
 
 .arrow-back {
-  margin-top: 0px; }
+  margin-top: 5px; }
   .arrow-back .button {
     background: transparent;
     border: none; }
@@ -10343,6 +10344,8 @@ button.btn-yellow.button[disabled] {
   margin-bottom: 15px; }
   .filter-btns .btn-sports {
     padding: 0px 23px; }
+    .filter-btns .btn-sports:hover, .filter-btns .btn-sports:focus {
+      color: #fff !important; }
 
 .btn-tran {
   background: transparent !important; }
@@ -10456,6 +10459,8 @@ button.btn-yellow.button[disabled] {
 
 .btn-sports {
   padding: 7px 23px; }
+  .btn-sports:hover, .btn-sports:focus {
+    color: #fff !important; }
 
 .cat-btn-plus {
   top: 0px;
@@ -10489,7 +10494,7 @@ button.btn-yellow.button[disabled] {
 .news-content {
   margin-bottom: 20px; }
   .news-content .card {
-    margin: 7px 20px;
+    margin: 7px 20px !important;
     background-color: transparent;
     box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21); }
     .news-content .card .item {
@@ -10586,7 +10591,7 @@ button.btn-yellow.button[disabled] {
 
 .platform-android .followers {
   position: absolute;
-  top: 22%; }
+  top: 25%; }
 
 .dis-table {
   display: table; }
@@ -10914,7 +10919,7 @@ button.btn-yellow.button[disabled] {
     border-right: 1px solid #ececec; }
 
 .news-discover .card {
-  margin: 7px 15px;
+  margin: 7px 15px !important;
   background-color: transparent;
   box-shadow: none;
   box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.88); }
@@ -11274,8 +11279,7 @@ button.btn-yellow.button[disabled] {
 .tabs-top.tabs-striped .tab-item.tab-item-active,
 .tabs-top.tabs-striped .tab-item.active,
 .tabs-top.tabs-striped .tab-item.activated {
-  border-bottom: none;
-  border-right: 1px solid #f2f2f2 !important; }
+  border-bottom: none; }
 
 .profileFImage {
   background-image: url("../img/footer/setting.png") !important;
@@ -11640,6 +11644,8 @@ button.btn-yellow.button[disabled] {
 
 .settings-btns .btn-sports {
   padding: 0px 18px; }
+  .settings-btns .btn-sports:hover, .settings-btns .btn-sports:focus {
+    color: #fff !important; }
 
 .settings i {
   font-size: 20px; }
@@ -12453,6 +12459,8 @@ button.btn-yellow.button[disabled] {
     width: 46px; }
   .settings-btns .btn-sports {
     padding: 0px 14px; }
+    .settings-btns .btn-sports:hover, .settings-btns .btn-sports:focus {
+      color: #fff !important; }
   .btn-bg-black {
     font-size: 11px; }
   .btn-bg {
@@ -12487,7 +12495,10 @@ button.btn-yellow.button[disabled] {
   .followers {
     width: 100%;
     position: absolute;
-    top: 90%; } }
+    top: 90%; }
+  .viewless {
+    height: 180px;
+    overflow: hidden; } }
 
 @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
   .accordian label {
@@ -12519,6 +12530,21 @@ button.btn-yellow.button[disabled] {
     .follow-btn .button .icon-left:before {
       font-size: 11px !important;
       padding-top: 1px !important; } }
+
+@media only screen and (min-device-width: 384px) and (max-device-width: 640px) and (orientation: portrait) {
+  .followers {
+    position: absolute;
+    top: 31% !important; }
+  .plusposition {
+    right: 38px; }
+  .skipButton {
+    top: 96%; }
+  .sliderbutton .swiper-pagination {
+    bottom: 90px; }
+  .btn-sports.activated {
+    background-color: #ffc943 !important;
+    color: #fff !important;
+    border: none; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
@@ -12561,11 +12587,15 @@ button.btn-yellow.button[disabled] {
     padding-left: 36px; }
   .alpha_sidebar {
     position: absolute;
-    top: 190px;
+    top: 185px;
     right: 14px;
     z-index: 100000;
     font-size: 10px;
-    line-height: 20px; } }
+    line-height: 19px; }
+  .btn-sports.activated {
+    background-color: #ffc943 !important;
+    color: #fff !important;
+    border: none; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .accordian label {
@@ -12733,7 +12763,7 @@ button.btn-yellow.button[disabled] {
     overflow: hidden; }
   .btn-sports.activated {
     background-color: #ffc943 !important;
-    color: #fff;
+    color: #fff !important;
     border: none; }
   .settings-btns .btn-sports {
     padding: 0px 18px; }
@@ -12820,3 +12850,7 @@ button.btn-yellow.button[disabled] {
     width: 100%;
     position: absolute;
     top: 20%; }
+  .flex-end .btn-sports.activated {
+    background-color: #ffc943 !important;
+    color: #fff !important;
+    border: none; }

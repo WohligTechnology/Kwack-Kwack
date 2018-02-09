@@ -457,6 +457,7 @@ $dark:                            #444 !default;
 
     .w100 {
         width: 100%;
+        height: auto;
     }
 
     .social-icon {
@@ -584,7 +585,7 @@ $dark:                            #444 !default;
     }
 
     .arrow-back {
-        margin-top: 0px;
+        margin-top: 5px;
         .button {
             background: transparent;
             border: none;
@@ -676,6 +677,10 @@ $dark:                            #444 !default;
         margin-bottom: 15px;
         .btn-sports {
             padding: 0px 23px;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         } // .btn-science {
         //     padding: 0px 14px;
         // }
@@ -844,6 +849,10 @@ $dark:                            #444 !default;
 
     .btn-sports {
         padding: 7px 23px;
+        &:hover,
+        &:focus {
+            color: $light !important;
+        }
     } // .btn-comedy {
     //     padding: 7px 17px;
     // }
@@ -904,7 +913,7 @@ $dark:                            #444 !default;
     .news-content {
         margin-bottom: 20px;
         .card {
-            margin: 7px 20px;
+            margin: 7px 20px !important;
             background-color: transparent;
             box-shadow: 0px 2px 25px rgba(67, 64, 64, 0.21);
             .item {
@@ -1030,7 +1039,7 @@ $dark:                            #444 !default;
 
     .platform-android .followers {
         @include position(absolute,
-        22% null null null);
+        25% null null null);
     }
 
     .dis-table {
@@ -1447,7 +1456,7 @@ $dark:                            #444 !default;
     .news-discover {
         .card {
             // margin: 7px 10px;
-            margin: 7px 15px;
+            margin: 7px 15px !important;
             background-color: transparent;
             box-shadow: none;
             box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.88);
@@ -1883,8 +1892,7 @@ $dark:                            #444 !default;
     .tabs-top.tabs-striped .tab-item.tab-item-active,
     .tabs-top.tabs-striped .tab-item.active,
     .tabs-top.tabs-striped .tab-item.activated {
-        border-bottom: none;
-        border-right: 1px solid $lightGray3 !important;
+        border-bottom: none; // border-right: 1px solid $lightGray3 !important;
     }
 
     .profileFImage {
@@ -2360,6 +2368,10 @@ $dark:                            #444 !default;
     .settings-btns {
         .btn-sports {
             padding: 0px 18px;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         } // .btn-science {
         //     padding: 0px 14px;
         // }
@@ -3429,6 +3441,10 @@ $dark:                            #444 !default;
         }
         .settings-btns .btn-sports {
             padding: 0px 14px;
+            &:hover,
+            &:focus {
+                color: $light !important;
+            }
         } // .settings-btns .btn-science {
         //     padding: 0px 7px;
         // }
@@ -3501,6 +3517,10 @@ $dark:                            #444 !default;
             @include position(absolute,
             90% null null null);
         }
+        .viewless {
+            height: 180px;
+            overflow: hidden;
+        }
     }
 
     @media only screen and (min-device-width: 264px) and (max-device-width: 520px) and (orientation: portrait) {
@@ -3545,6 +3565,31 @@ $dark:                            #444 !default;
                 font-size: 11px !important;
                 padding-top: 1px !important;
             }
+        }
+    }
+
+    @media only screen and (min-device-width: 384px) and (max-device-width: 640px) and (orientation: portrait) {
+        .followers {
+            position: absolute;
+            top: 31% !important;
+        }
+        .plusposition {
+            right: 38px;
+        }
+        .skipButton {
+            top: 96%;
+        }
+        .sliderbutton .swiper-pagination {
+            bottom: 90px;
+        }
+        .btn-sports.activated {
+            background-color: $yellow !important;
+            color: $light !important;
+            border: none;
+        }
+
+        .alpha_sidebar {
+            line-height: 20px;
         }
     }
 
@@ -3609,11 +3654,16 @@ $dark:                            #444 !default;
         }
         .alpha_sidebar {
             position: absolute;
-            top: 190px;
+            top: 185px;
             right: 14px;
             z-index: 100000;
             font-size: 10px;
-            line-height: 20px;
+            line-height: 19px;
+        }
+        .btn-sports.activated {
+            background-color: $yellow !important;
+            color: $light !important;
+            border: none;
         }
     } // css for iphone 6 nd 6plus
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
@@ -3871,7 +3921,7 @@ $dark:                            #444 !default;
         }
         .btn-sports.activated {
             background-color: $yellow !important;
-            color: $light;
+            color: $light !important;
             border: none;
         }
         .settings-btns {
@@ -3952,7 +4002,7 @@ $dark:                            #444 !default;
             right: 10px;
             z-index: 100000;
             font-size: 13px;
-            line-height: 21px;
+            line-height: 20px;
         }
         .followers {
             width: 100%;
@@ -4021,5 +4071,10 @@ $dark:                            #444 !default;
             width: 100%;
             @include position(absolute,
             20% null null null);
+        }
+        .btn-sports.activated {
+            background-color: $yellow !important;
+            color: $light !important;
+            border: none;
         }
     }

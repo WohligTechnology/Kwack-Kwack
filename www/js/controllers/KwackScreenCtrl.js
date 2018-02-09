@@ -8,6 +8,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   $scope.filterData={}
   $scope.filterData.polls=true
   $scope.filterData.kwacks=true
+  
   // $scope.news = []
   $scope.addInterest.userId = $.jStorage.get('user')._id
   // $scope.flush=true
@@ -19,7 +20,39 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   
  //filter api
  
+ $scope.loadMore = function () {
+  $ionicScrollDelegate.resize()
+  $scope.pagination.shouldLoadMore = false;
+  $scope.pagination.currentPage++;
+  $scope.pagination1 = {
+    "page": $scope.pagination.currentPage,
+    "polls": true,
+    "kwacks": true,
+    "userId": $scope.jstorage._id
+  }
+  $scope.filterData.page = $scope.pagination.currentPage
+  Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.pagination1, function (data) {
+console.log("$scope.news, data.data.results",data)
+    $scope.news = _.concat($scope.news, data.data.results);
+    if (data.data.results.length == 10) {
+      $scope.pagination.shouldLoadMore = true;
+    }
+    
+  });
+};
 
+$scope.doRefresh = function (val) {
+  $scope.news = [],
+    $scope.pagination = {
+      shouldLoadMore: true,
+      currentPage: 0,
+    };
+
+  if (val) {
+    $scope.loadMore();
+  }
+};
+$scope.doRefresh(true);
     
 
   
@@ -35,7 +68,8 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   //   $scope.modal.show();
     
   // }
-
+  $scope.searchInclude='templates/discover-full.html';
+  $scope.tabHeader='templates/tab-header.html';
   $scope.closeModal = function () {
     $scope.modal.hide();
      $state.reload();
@@ -170,9 +204,9 @@ if(_.isEmpty($scope.interestarr)){
     //  $scope.colorchange = interestEdit
       console.log("checknow", $scope.interestarr)
     }
-    Chats.apiCallWithData("User/addInterests", $scope.addInterest, function (data) {
+    Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
       console.log("data is*****************", data)
-      Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
+      Chats.noLoaderApi("User/getOne", $scope.pollKwack, function (data) {
         $scope.getInterest = data.data.interests
       })
      
@@ -241,13 +275,6 @@ if(_.isEmpty($scope.interestarr)){
           Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
       console.log("$scope.news, data.data.results",data)
             $scope.news = _.concat($scope.news, data.data.results);
-            // $scope.paginationCode();
-            // console.log("changes",$scope.news)
-            // _.each($scope.news, function (value) {
-            //   value.year = new Date(value.createdAt).getFullYear();
-            // })
-            // $scope.dynamicYear = _.uniqBy($scope.news, 'year');
-            // console.log("explorepagination", $scope.dynamicYear)
             if (data.data.results.length == 10) {
               $scope.pagination.shouldLoadMore = true;
             }
@@ -311,32 +338,30 @@ if(_.isEmpty($scope.interestarr)){
       data1.userId = $.jStorage.get("user")._id
       if(kwackPoll=='poll'){
     Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
+      Chats.setkwackPollStateChange($state.current.name)
       if (data1.value == true) {
         $state.go("polling-inside", {
           newsid: data,
-          previousState: $state.current.name
         })
       } else {
         $state.go("tab.startPollingdis", {
-          newsid: data,
-          previousState: $state.current.name
-         
+          newsid: data,         
         })
        
       }
     })
    }else{
      Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
+      Chats.setkwackPollStateChange($state.current.name)
         console.log("hellodata",data1)
        if (data1.value == true) {
          $state.go("debate", {
-           newsid: data,
-           previousState: $state.current.name
+           newsid: data
+           
          })
        } else {
          $state.go("tab.trailerdis", {
-           newsid: data,
-           previousState: $state.current.name
+           newsid: data
          })
        }
      })
@@ -364,7 +389,7 @@ $scope.reset=function(data){
 
 Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
   $scope.getInterest = data.data.interests
-  $scope.interestarr= data.data.interests
+  // $scope.interestarr= data.data.interests
   // _.forEach($scope.allInterest, function(allInterest){
   //   // console.log("fullinterest",allInterest)
   //   _.forEach($scope.interestarr, function(value){

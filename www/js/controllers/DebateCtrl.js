@@ -2,7 +2,8 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.lellow = false;
     $scope.newsId = $stateParams.newsid
     $scope.kwackAns = $stateParams.kwackId
-    $scope.previousState = $stateParams.previousState
+    $scope.previousState = $.jStorage.get("mainTab").fromState
+    $scope.newState = $stateParams.newState
     $scope.anon = $stateParams.ann
     console.log("helloanswwer", $scope.previousState)
     $scope.setvarann = false
@@ -17,16 +18,19 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.kwackSide = {}
     $scope.kwackSide.userId = $.jStorage.get("user")._id
     $scope.kwackSide.newsId = $scope.newsId
-    $scope.back = function () {
-        if ($scope.previousState == 'tab.discoverNews') {
-            $state.go('tab.discoverNews')
-        } else if ($scope.previousState == 'tab.explore') {
-            $state.go('tab.explore')
-        } else if ($scope.previousState == 'tab.kwackScreen') {
-            $state.go('tab.kwackScreen')
-        } else {
-            $state.go('tab.social')
-        }
+    $scope.goToFromState = function () {
+        // if ($scope.previousState == 'tab.discoverNews') {
+        //     $state.go('tab.discoverNews')
+        // } else if ($scope.previousState == 'tab.explore') {
+        //     $state.go('tab.explore')
+        // } else if ($scope.previousState == 'tab.kwackScreen') {
+        //     $state.go('tab.kwackScreen')
+        // } else {
+        //     $state.go('tab.social')
+        // }
+        $scope.mainTab = Chats.getkwackPollStateChange();
+        $state.go($scope.mainTab.fromState);
+        Chats.flushMainTab();
         //This works
     };
     $scope.inApp = function (link) {
@@ -217,32 +221,32 @@ console.log("**********************",replyText,debateid)
 
 
     };
-
-    $scope.nextPage = function (data) {
+$scope.nextPage = function (data) {
         var data1 = {}
         data1.newsId = data;
-        data1.userId = $.jStorage.get("user")._id;
+            data1.userId = $.jStorage.get("user")._id;
         Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
             if (data1.value == true) {
                 $state.go("polling-inside", {
                     newsid: data,
-                    previousState: $scope.previousState
-
+                    previousState: $scope.previousState,
+                    newState: $scope.newState
+                    
                 })
             } else {
-                var pollParams = {
-                    newsid: data,
-                    previousState: $scope.previousState
+                var pollParams={ 
+                newsid: data,
+                previousState: $scope.previousState,
+                newState: $scope.newState
                 }
                 if ($scope.previousState == 'tab.discoverNews') {
-                    $state.go('tab.startPollingdis', pollParams)
-
+                    $state.go('tab.startPollingdis',pollParams) 
                 } else if ($scope.previousState == 'tab.explore') {
                     $state.go('tab.startPollingex', pollParams)
                 } else if ($scope.previousState == 'tab.kwackScreen') {
                     $state.go('tab.startPollingkwack', pollParams)
                 } else {
-                    $state.go('tab.startPollingsocial', pollParams)
+                    $state.go('tab.startPollingsocial', pollParams)  
                 }
 
             }
@@ -264,7 +268,7 @@ console.log("**********************",replyText,debateid)
 
             }
         })
-
+       
 
 
     }
@@ -293,13 +297,13 @@ console.log("**********************",replyText,debateid)
     ]
 
     //socislSharing
-    $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
-        //  $scope.dataToSendApi = {}
-        //  $scope.dataToSendApi.newsId = newsId
-        //  $scope.dataToSendApi.userId = $.jStorage.get('user')._id
-        // Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
-        //        console.log("$$$$$$$$$$$$$$$$$$$$", data1)
-        //      })
+    $scope.socilaSharing = function (desciption, imageUrl, title, link,newsId) {
+           //  $scope.dataToSendApi = {}
+     //  $scope.dataToSendApi.newsId = newsId
+     //  $scope.dataToSendApi.userId = $.jStorage.get('user')._id
+     // Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
+     //        console.log("$$$$$$$$$$$$$$$$$$$$", data1)
+     //      })
         console.log("description", title)
         console.log("image", link)
 

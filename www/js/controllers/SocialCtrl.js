@@ -5,7 +5,8 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
   $scope.discoverNews = []
-
+  $scope.searchInclude='templates/discover-full.html';
+  $scope.tabHeader='templates/tab-header.html';
   $scope.loadMore = function () {
     $ionicScrollDelegate.resize()
     $scope.pagination.shouldLoadMore = false;
@@ -74,7 +75,9 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
     data1.newsId = data,
       data1.userId = $.jStorage.get("user")._id
     if (kwackPoll == 'poll') {
+      
       Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
+        Chats.setkwackPollStateChange($state.current.name)
         if (data1.value == true) {
           $state.go("polling-inside", {
             newsid: data
@@ -89,6 +92,7 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
       })
     } else {
       Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
+        Chats.setkwackPollStateChange($state.current.name)
         console.log("hellodata", data1)
         if (data1.value == true) {
           $state.go("debate", {
@@ -106,9 +110,11 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
   $scope.viewsNextPage = function (data, view) {
     var data1 = {}
     data1.newsId = data,
+    Chats.setkwackPollStateChange($state.current.name)
       // data1.userId = $.jStorage.get("user")._id
       $state.go("tab.exploremore", {
-        newsid: data
+        newsid: data,
+        previousState: $state.current.name
       })
 
   }

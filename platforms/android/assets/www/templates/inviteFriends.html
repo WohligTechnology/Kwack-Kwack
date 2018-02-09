@@ -6,7 +6,7 @@
     <div>
       <h2 class="title-discover text-center">INVITE FRIENDS</h2>
     </div>
- <div class="rel">
+    <div class="rel">
       <div class="display-inline toggleyouKnow" ng-click="people(); doRefresh(true)" ng-class="{'select' : toggle == true}">
         People you may know
       </div>
@@ -15,40 +15,40 @@
       </div>
     </div>
   </div>
-  <ion-content class="has-header invtfrndshdr">
-      <ion-refresher on-refresh="doRefresh(true)"></ion-refresher> 
+  <ion-content class="has-header invtfrndshdr has-bottom">
+    <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
     <div ng-if="toggle">
-               
-        <div class="back-img" ng-if="countValue">
-            <div class="display-flex">
-              <div>
-                <div class="profile-padd" ui-sref="profile">
-                  <div class="profile-img" ng-if="!userInfo.photo">
-                    <img ng-src="img/profile/profile.png" alt="logo" class="w100">
-                  </div>
-                  <div class="profile-img" ng-if="userInfo.photo">
-                    <img ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
-                  </div>
-                </div>
+
+      <div class="back-img" ng-if="countValue">
+        <div class="display-flex">
+          <div>
+            <div class="profile-padd" ui-sref="profile">
+              <div class="profile-img" ng-if="!userInfo.photo">
+                <img ng-src="img/profile/profile.png" alt="logo" class="w100">
               </div>
-              <div class="over-flow">
-                <div class="follow-btn">
-                  <div class="mar-t25">
-                    
-                    <h3 class="user-name ">{{userInfo.name}}</h3>
-                    <h5 class="designation">{{userInfo.bio}}</h5>
-                  </div>
-                  <div ng-click="followUnfollow(userInfo._id, 'mainFollow', 0)">
-                    <button class="button icon-left ion ion-android-add" ng-show="userInfo.flag=='false'">Follow</button>
-                    <button class="button icon-left ion "  ng-show="userInfo.flag=='true'" >Unfollow</button>
-                  </div>
-               
-                </div>
+              <div class="profile-img" ng-if="userInfo.photo">
+                <img ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
               </div>
             </div>
-            <div class="back-img-title">
-              <div class="dis-table">
-                <!-- <div class="dis-cell profile-padd" ui-sref="profile">
+          </div>
+          <div class="over-flow">
+            <div class="follow-btn">
+              <div class="mar-t25">
+
+                <h3 class="user-name ">{{userInfo.name}}</h3>
+                <h5 class="designation">{{userInfo.bio}}</h5>
+              </div>
+              <div ng-click="followUnfollow(userInfo._id, 'mainFollow', 0)">
+                <button class="button icon-left ion ion-android-add" ng-show="userInfo.flag=='false'">Follow</button>
+                <button class="button icon-left ion " ng-show="userInfo.flag=='true'">Unfollow</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="back-img-title">
+          <div class="dis-table">
+            <!-- <div class="dis-cell profile-padd" ui-sref="profile">
                   <div class="profile-img" ng-if="!userInfo.photo">
                     <img ng-src="img/profile/profile.png" alt="logo" class="w100">
                   </div>
@@ -56,7 +56,7 @@
                     <img ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
                   </div>
                 </div> -->
-                <!-- <div class="dis-cell follow-btn">
+            <!-- <div class="dis-cell follow-btn">
                   <div>
                     <h3 class="user-name ">{{userInfo.name}}</h3>
                     <div class="text-overflow"> <h5 class="designation">{{userInfo.bio}}</h5></div>
@@ -65,60 +65,60 @@
                     <button class="button icon-left ion ion-android-add"  ng-show="follow" ng-click='follow=false; follow1(userInfo._id)'>Follow</button>
                   </div>
                 </div> -->
+          </div>
+        </div>
+        <div class="followers">
+          <div class="dis-table ">
+            <div class="dis-cell r-border text-center" ng-class="{'borderF' : followersb}" ng-click="followers()">
+              <div class="cell-follower">
+                <h3>{{followingData.length ? followingData.length : 0}}</h3>
+                <span>Followers</span>
               </div>
             </div>
-            <div class="followers">
-              <div class="dis-table ">
-                <div class="dis-cell r-border text-center" ng-class="{'borderF' : followersb}" ng-click="followers()">
-                  <div class="cell-follower">
-                    <h3>{{followingData.length ? followingData.length : 0}}</h3>
-                    <span>Followers</span>
-                  </div>
-                </div>
-                <div class="dis-cell r-border  text-center" ng-class="{'borderK' : kwacksb}" ng-click="kwacks()">
-                  <div class="cell-kwacks">
-                      <!-- <h3 ng-if="setFollowCountValueZero">0</h3> -->
-                    <h3>{{totalKwacks.length ? totalKwacks.length : 0}}</h3>
-                    <span>Kwacks</span>
-                  </div>
-                </div>
-                <div class="dis-cell text-center" ng-class="{'borderp' : pollsb}" ng-click="polls()">
-                  <div class="cell-polls">
-                    <h3>{{totalPolls.length ? totalPolls.length : 0}}</h3>
-                    <span>Polls</span>
-                  </div>
-                </div>
+            <div class="dis-cell r-border  text-center" ng-class="{'borderK' : kwacksb}" ng-click="kwacks()">
+              <div class="cell-kwacks">
+                <!-- <h3 ng-if="setFollowCountValueZero">0</h3> -->
+                <h3>{{totalKwacks.length ? totalKwacks.length : 0}}</h3>
+                <span>Kwacks</span>
               </div>
-
-              <!-- innerfollow -->
-              <div class="list listperson listdetail listminheight" ng-if='followingData.length!=0'>
-                <a class="item item-avatar" ng-repeat="users in followingData track by $index">
-                  <img ng-if="!users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="img/profile/profile.png">
-                  <img ng-if="users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="{{users.user.photo | uploadpath}}">
-                  <h2 ng-click="selectedUser(users.user._id); doRefresh(true)">{{users.user.userName}}</h2>
-                  <p ng-click="selectedUser(users.user._id); doRefresh(true)">{{users.user.email}}</p>
-                  <div ng-click="followUnfollow(users.user._id, 'innerFollow', $index)">
-                      <img class="followersUn" ng-if="users.flag=='false'"  src="img/inviteFriends/Unfollow.png">
-                      <img class="followersUn" ng-if="users.flag=='true'"  src="img/inviteFriends/follow.png">
-                  </div>
-                </a>
-    
+            </div>
+            <div class="dis-cell text-center" ng-class="{'borderp' : pollsb}" ng-click="polls()">
+              <div class="cell-polls">
+                <h3>{{totalPolls.length ? totalPolls.length : 0}}</h3>
+                <span>Polls</span>
               </div>
             </div>
           </div>
 
-          <!-- outerFollow -->
+          <!-- innerfollow -->
+          <div class="list listperson listdetail listminheight" ng-if='followingData.length!=0'>
+            <a class="item item-avatar" ng-repeat="users in followingData track by $index">
+              <img ng-if="!users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="img/profile/profile.png">
+              <img ng-if="users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="{{users.user.photo | uploadpath}}">
+              <h2 ng-click="selectedUser(users.user._id); doRefresh(true)">{{users.user.userName}}</h2>
+              <p ng-click="selectedUser(users.user._id); doRefresh(true)">{{users.user.email}}</p>
+              <div ng-click="followUnfollow(users.user._id, 'innerFollow', $index)">
+                <img class="followersUn" ng-if="users.flag=='false'" src="img/inviteFriends/Unfollow.png">
+                <img class="followersUn" ng-if="users.flag=='true'" src="img/inviteFriends/follow.png">
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- outerFollow -->
       <div class="list listperson listdetail listmaxheight" ng-if='followersb==true &&  !countValue'>
         <a class="item item-avatar" ng-repeat="users in followingData track by $index">
           <img ng-click="selectedUser(users._id); doRefresh(true)" ng-if="!users.photo" ng-src="img/profile/profile.png">
           <img ng-click="selectedUser(users._id); doRefresh(true)" ng-if="users.photo" src="{{users.photo | uploadpath}}">
           <h2 ng-click="selectedUser(users._id); doRefresh(true)">{{users.name}}</h2>
           <p ng-click="selectedUser(users._id); doRefresh(true)">{{users.email}}</p>
-          <div ng-click="followUnfollow(users._id, 'outerFollow',$index)" >
-              <img class="followersUn" ng-if="users.flag=='false'"   src="img/inviteFriends/Unfollow.png">
-              <img class="followersUn" ng-if="users.flag=='true'"   src="img/inviteFriends/follow.png">
+          <div ng-click="followUnfollow(users._id, 'outerFollow',$index)">
+            <img class="followersUn" ng-if="users.flag=='false'" src="img/inviteFriends/Unfollow.png">
+            <img class="followersUn" ng-if="users.flag=='true'" src="img/inviteFriends/follow.png">
           </div>
-        
+
         </a>
 
       </div>
@@ -169,38 +169,40 @@
                               </div>-->
     </div>
 
-    <div ng-if='!toggle'  class="content-scroll list-profile">
-        <div data-ng-repeat="(letter, authors) in sorted_users" class="alpha_list">
-          <ion-item class="item item-divider" id="index_{{letter}}">
-            
-            <span class="contact">{{letter}}</span>
-          </ion-item>
-          <!-- <ion-item > -->
-              <a class="item item-avatar" ng-repeat="author in authors">
-                  <img ng-src="img/profile/profile.png" alt="logo" class="w100">
-                  <h2>{{author.displayName}}</h2>
-                  <p>{{author.displayName}}</p>
-                  <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png">
-                  <img class="followersUn" ng-show="follow" ng-click='follow=false' src="img/inviteFriends/follow.png">
-                </a>
-          <!-- </ion-item> -->
-        </div>
-        <ul class="alpha_sidebar">
-            <li ng-click="gotoList('index_{{letter}}')" ng-repeat="letter in alphabet">
-              {{letter}}
-            </li>
+    <div ng-if='!toggle' class="content-scroll list-profile">
+      <div data-ng-repeat="(letter, authors) in sorted_users" class="alpha_list">
+        <ion-item class="item item-divider" id="index_{{letter}}">
+
+          <span class="contact">{{letter}}</span>
+        </ion-item>
+        <!-- <ion-item > -->
+        <a class="item item-avatar" ng-repeat="author in authors">
+          <img ng-src="img/profile/profile.png" alt="logo" class="w100">
+          <h2>{{author.displayName}}</h2>
+          <p>{{author.displayName}}</p>
+          <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png">
+          <img class="followersUn" ng-show="follow" ng-click='follow=false' src="img/inviteFriends/follow.png">
+        </a>
+        <!-- </ion-item> -->
       </div>
+
+    </div>
     <!-- <div>
     </div> -->
-    <ion-infinite-scroll ng-if="pagination.shouldLoadMore"   on-infinite="loadMore()" distance="5px">  <ion-infinite-scroll-content></ion-infinite-scroll-content></ion-infinite-scroll>                               
+    <ion-infinite-scroll ng-if="pagination.shouldLoadMore" on-infinite="loadMore()" distance="5px">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
   </ion-content>
-  
-    </ul>
+  <ul class="alpha_sidebar">
+    <li ng-click="gotoList('index_{{letter}}')" ng-repeat="letter in alphabet">
+      {{letter}}
+    </li>
+  </ul>
   <div class="footer">
     <div class="bar bar-footer bar-black">
       <div class="row">
-        <div class="col col-20" >
+        <div class="col col-20">
           <div class="arrow-back text-center" ng-click="backTOlist(); doRefresh(true)">
             <a class="button">
               <i class="ion ion-ios-arrow-back"></i>
