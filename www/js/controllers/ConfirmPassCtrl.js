@@ -8,7 +8,7 @@ connector.controller('ConfirmPassCtrl', function($scope, ionicToast, $state, Cha
      if(formName.confirm==formName.password){
       console.log("otp",$scope.savePassword)
       Chats.apiCallWithData("User/saveNewPassword", $scope.savePassword, function (info) {
-        
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",info)
         if (info.value == true) {
             ionicToast.show('Password changed successfully', 'top', false, 2500);
           $state.go("login")

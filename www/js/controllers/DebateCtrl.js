@@ -126,7 +126,7 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.getOneNewsApi();
 
     $scope.saveReply = function (replyText, debateid) {
-
+console.log("**********************",replyText,debateid)
         $scope.reply = {}
         $scope.reply.commentId = $scope.commId
         $scope.reply.reply = replyText
@@ -135,7 +135,10 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         console.log("reply", $scope.reply)
         if ($stateParams.ann) {
             $scope.reply.anonymous = "YES";
+        }else{
+            $scope.reply.anonymous = "NO";
         }
+        console.log("%%%%%%%%%%%%%%%%%%%", $scope.reply )
         Chats.apiCallWithData("Comment/addReply", $scope.reply, function (data) {
             console.log("hellodata", data)
             if (data.value == true) {
@@ -148,18 +151,40 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.saveComment = function (kwack) {
 
         console.log("comment is", kwack)
-        dataToSave = {}
-        dataToSave.userId = $.jStorage.get("user")._id
-        dataToSave.newsId = $stateParams.newsid
-        dataToSave.comment = kwack
-        dataToSave.kwack = $scope.kwackAns
-        console.log("datatosave", dataToSave)
+        $scope.dataToSave = {}
+        $scope.dataToSave.userId = $.jStorage.get("user")._id
+        $scope.dataToSave.newsId = $stateParams.newsid
+        $scope.dataToSave.comment = kwack
+        // dataToSave.kwack = $scope.kwackAns
+        console.log("datatosave", $scope.dataToSave)
 
         if ($stateParams.ann) {
-            dataToSave.anonymous = "YES";
+            $scope.dataToSave.anonymous = "YES";
+        }
+        if ($stateParams.kwackId) {
+            $scope.dataToSave.kwack = $scope.kwackAns
+            $scope.addCommentAPi()
+        } else {
+            $scope.datatoSendAPi = {}
+            $scope.datatoSendAPi.newsId = $stateParams.newsid
+            $scope.datatoSendAPi.userId = $.jStorage.get("user")._id
+
+            Chats.apiCallWithData("Comment/getKwack", $scope.datatoSendAPi, function (data1) {
+                if (data1.value == true) {
+                    $scope.dataToSave.kwack = data1.data.kwack
+                    console.log(" $scope.newsInfo", $scope.dataToSave.kwack)
+                    $scope.addCommentAPi()
+                } else {
+
+                    console.log("inside else not found")
+                }
+            })
         }
 
-        Chats.apiCallWithData("Comment/addComment", dataToSave, function (data1) {
+    }
+    $scope.addCommentAPi = function () {
+        console.log("$$$$$$$$$$$$$$$$$$$$$", $scope.dataToSave)
+                Chats.apiCallWithData("Comment/addComment",   $scope.dataToSave, function (data1) {
             if (data1.value == true) {
                 console.log("data is", data1)
                 $scope.newsInfo = data1.data
@@ -196,28 +221,28 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.nextPage = function (data) {
         var data1 = {}
         data1.newsId = data;
-            data1.userId = $.jStorage.get("user")._id;
+        data1.userId = $.jStorage.get("user")._id;
         Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
             if (data1.value == true) {
                 $state.go("polling-inside", {
                     newsid: data,
                     previousState: $scope.previousState
-                    
+
                 })
             } else {
-                var pollParams={ 
-                newsid: data,
-                previousState: $scope.previousState
+                var pollParams = {
+                    newsid: data,
+                    previousState: $scope.previousState
                 }
                 if ($scope.previousState == 'tab.discoverNews') {
-                    $state.go('tab.startPollingdis',pollParams)
-                    
+                    $state.go('tab.startPollingdis', pollParams)
+
                 } else if ($scope.previousState == 'tab.explore') {
                     $state.go('tab.startPollingex', pollParams)
                 } else if ($scope.previousState == 'tab.kwackScreen') {
                     $state.go('tab.startPollingkwack', pollParams)
                 } else {
-                    $state.go('tab.startPollingsocial', pollParams)  
+                    $state.go('tab.startPollingsocial', pollParams)
                 }
 
             }
@@ -239,7 +264,7 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
 
             }
         })
-       
+
 
 
     }
@@ -268,13 +293,13 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     ]
 
     //socislSharing
-    $scope.socilaSharing = function (desciption, imageUrl, title, link,newsId) {
-           //  $scope.dataToSendApi = {}
-     //  $scope.dataToSendApi.newsId = newsId
-     //  $scope.dataToSendApi.userId = $.jStorage.get('user')._id
-     // Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
-     //        console.log("$$$$$$$$$$$$$$$$$$$$", data1)
-     //      })
+    $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
+        //  $scope.dataToSendApi = {}
+        //  $scope.dataToSendApi.newsId = newsId
+        //  $scope.dataToSendApi.userId = $.jStorage.get('user')._id
+        // Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
+        //        console.log("$$$$$$$$$$$$$$$$$$$$", data1)
+        //      })
         console.log("description", title)
         console.log("image", link)
 

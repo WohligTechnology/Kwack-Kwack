@@ -6,7 +6,7 @@ connector.controller('ForgotPassCtrl', function($scope, Chats, ionicToast, $stat
             mobile: forgot.mobile
         }
 
-        $.jStorage.set("user", $scope.mobile);
+        $.jStorage.set("mobile", $scope.mobile);
         Chats.apiCallWithData("User/sendOtp", forgot, function (otp) {
             console.log("otp", otp)
             if (otp.value == true) {
