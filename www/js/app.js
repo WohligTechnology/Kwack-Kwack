@@ -639,6 +639,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.social', {
         url: '/social',
+        cache:false,
         views: {
           'tab-social': {
             templateUrl: 'templates/tab-social.html',
