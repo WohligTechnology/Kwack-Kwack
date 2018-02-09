@@ -12812,7 +12812,9 @@ button.btn-yellow.button[disabled] {
   .followers {
     width: 100%;
     position: absolute;
-    top: 90%; } }
+    top: 90%; }
+  .plusposition {
+    right: 28px; } }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .accordian .news-label {
