@@ -130,7 +130,7 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.getOneNewsApi();
 
     $scope.saveReply = function (replyText, debateid) {
-
+console.log("**********************",replyText,debateid)
         $scope.reply = {}
         $scope.reply.commentId = $scope.commId
         $scope.reply.reply = replyText
@@ -139,7 +139,10 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         console.log("reply", $scope.reply)
         if ($stateParams.ann) {
             $scope.reply.anonymous = "YES";
+        }else{
+            $scope.reply.anonymous = "NO";
         }
+        console.log("%%%%%%%%%%%%%%%%%%%", $scope.reply )
         Chats.apiCallWithData("Comment/addReply", $scope.reply, function (data) {
             console.log("hellodata", data)
             if (data.value == true) {
@@ -152,18 +155,40 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.saveComment = function (kwack) {
 
         console.log("comment is", kwack)
-        dataToSave = {}
-        dataToSave.userId = $.jStorage.get("user")._id
-        dataToSave.newsId = $stateParams.newsid
-        dataToSave.comment = kwack
-        dataToSave.kwack = $scope.kwackAns
-        console.log("datatosave", dataToSave)
+        $scope.dataToSave = {}
+        $scope.dataToSave.userId = $.jStorage.get("user")._id
+        $scope.dataToSave.newsId = $stateParams.newsid
+        $scope.dataToSave.comment = kwack
+        // dataToSave.kwack = $scope.kwackAns
+        console.log("datatosave", $scope.dataToSave)
 
         if ($stateParams.ann) {
-            dataToSave.anonymous = "YES";
+            $scope.dataToSave.anonymous = "YES";
+        }
+        if ($stateParams.kwackId) {
+            $scope.dataToSave.kwack = $scope.kwackAns
+            $scope.addCommentAPi()
+        } else {
+            $scope.datatoSendAPi = {}
+            $scope.datatoSendAPi.newsId = $stateParams.newsid
+            $scope.datatoSendAPi.userId = $.jStorage.get("user")._id
+
+            Chats.apiCallWithData("Comment/getKwack", $scope.datatoSendAPi, function (data1) {
+                if (data1.value == true) {
+                    $scope.dataToSave.kwack = data1.data.kwack
+                    console.log(" $scope.newsInfo", $scope.dataToSave.kwack)
+                    $scope.addCommentAPi()
+                } else {
+
+                    console.log("inside else not found")
+                }
+            })
         }
 
-        Chats.apiCallWithData("Comment/addComment", dataToSave, function (data1) {
+    }
+    $scope.addCommentAPi = function () {
+        console.log("$$$$$$$$$$$$$$$$$$$$$", $scope.dataToSave)
+                Chats.apiCallWithData("Comment/addComment",   $scope.dataToSave, function (data1) {
             if (data1.value == true) {
                 console.log("data is", data1)
                 $scope.newsInfo = data1.data
@@ -196,8 +221,7 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
 
 
     };
-
-    $scope.nextPage = function (data) {
+$scope.nextPage = function (data) {
         var data1 = {}
         data1.newsId = data;
             data1.userId = $.jStorage.get("user")._id;

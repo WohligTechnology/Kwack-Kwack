@@ -3,6 +3,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     $scope.newsId.newsId = $stateParams.newsid
     $scope.previousState = $stateParams.previousState
      $scope.newsId.userId =$.jStorage.get('user')._id;
+     
     console.log("newsid", $state.current.name)
     // $scope.jstorage = $.jStorage.get('user');
     data = {}
@@ -61,7 +62,8 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
                   $scope.interestData = {
                    "page": $scope.pagination.currentPage,
                    "userInterest": $scope.news.interest,
-                    "newsId":$stateParams.newsid
+                    "newsId":$stateParams.newsid,
+                    "userId": $.jStorage.get('user')._id
                  }
              Chats.apiCallWithData("NewsInfo/getNewsByInterestWithoutOneNews", $scope.interestData, function (data) {
                console.log("interestwisedata", data.data.results)
