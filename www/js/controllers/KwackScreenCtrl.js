@@ -11,7 +11,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   $scope.filterData.polls = true
   $scope.filterData.kwacks = true
 
-   $scope.news = []
+  $scope.news = []
   $scope.addInterest.userId = $.jStorage.get('user')._id
   // $scope.flush=true
   //start of pagination 
@@ -155,31 +155,31 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   //Interest Select filter
 
 
-    Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
-      $scope.allInterest = data.data
-      console.log("data is*****************", $scope.allInterest)
-      $scope.interestdup = _.chunk($scope.allInterest, 3);
-    })
+  Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
+    $scope.allInterest = data.data
+    console.log("data is*****************", $scope.allInterest)
+    $scope.interestdup = _.chunk($scope.allInterest, 3);
+  })
 
-    Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
-      $scope.getInterest = data.data.interests
-      $scope.interestarr = data.data.interests
-      _.forEach($scope.allInterest, function (allInterest) {
-        console.log("fullinterest", $scope.getInterest)
-        _.forEach($scope.getInterest, function (value) {
-          // console.log("interestArrayforeach", value)
-          if (value.name == allInterest.name) {
-            allInterest.value = true
-          } else {
-            console.log("interest not available")
-          }
-        })
-
+  Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
+    $scope.getInterest = data.data.interests
+    $scope.interestarr = data.data.interests
+    _.forEach($scope.allInterest, function (allInterest) {
+      console.log("fullinterest", $scope.getInterest)
+      _.forEach($scope.getInterest, function (value) {
+        // console.log("interestArrayforeach", value)
+        if (value.name == allInterest.name) {
+          allInterest.value = true
+        } else {
+          console.log("interest not available")
+        }
       })
 
-      console.log("data interest", $scope.getInterest)
     })
-  
+
+    console.log("data interest", $scope.getInterest)
+  })
+
 
 
   $scope.select = function (interest) {
@@ -242,7 +242,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
 
   $scope.filter1 = function (filterdata) {
 
-    $scope.news=[]
+    $scope.news = []
     $scope.monthYear = {}
     $scope.monthYear = filterdata
     var date = new Date()

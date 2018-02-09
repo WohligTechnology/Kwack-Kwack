@@ -2,6 +2,7 @@ connector.controller('AccountInsieCtrl', function ($scope, Chats, $state, $ionic
     $scope.deleteThisUser = function () {
         $scope.datatoDelete = {}
         $scope.datatoDelete.userId = $.jStorage.get('user');
+
         Chats.apiCallWithData("User/setDeactiveUser", $scope.datatoDelete, function (data) {
             if (data.value == true) {
                 var confirmPopup = $ionicPopup.confirm({
@@ -20,13 +21,13 @@ connector.controller('AccountInsieCtrl', function ($scope, Chats, $state, $ionic
 
         })
     };
-
-
-
-
-
-
-
+    $scope.reqData = {}
+    $scope.reqData._id = $.jStorage.get('user')._id
+    Chats.apiCallWithData("User/getOne", $scope.reqData, function (data) {
+        if (data.value == true) {
+            $scope.userData = data.data;
+        }
+    });
 
 
 
