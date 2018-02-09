@@ -25,7 +25,7 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
         $scope.contacts = allContacts;
         console.log('contacts',$scope.contacts)
         $scope.contacts=_.orderBy($scope.contacts, ['displayName'], ['asc'])
-        $scope.users =  $scope.contacts
+        var users =  $scope.contacts
         $scope.log = [];
         $scope.alphabet = iterateAlphabet();
       

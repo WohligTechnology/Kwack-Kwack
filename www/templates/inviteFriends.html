@@ -194,7 +194,7 @@
     </ion-infinite-scroll>
 
   </ion-content>
-  <ul class="alpha_sidebar" ng-if='toggle'>
+  <ul class="alpha_sidebar" ng-if='!toggle'>
     <li ng-click="gotoList('index_{{letter}}')" ng-repeat="letter in alphabet">
       {{letter}}
     </li>

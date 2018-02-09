@@ -11,6 +11,11 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
+      //hardware back operation
+      $ionicPlatform.registerBackButtonAction(function (event) {
+        //we have to implement it
+      }, 402);
+      
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         cordova.plugins.Keyboard.disableScroll(true);
@@ -192,7 +197,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         url: '/trailer/:newsid/:previousState/:newState',
         cache: false,
         views: {
-          'tab-explore': {
+          'tab-discoverNews': {
             templateUrl: 'templates/tab-trailer.html',
             controller: 'TrailerCtrl'
 

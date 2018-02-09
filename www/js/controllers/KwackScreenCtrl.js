@@ -260,8 +260,35 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     $scope.filterData.interest = $scope.getInterest
     $scope.filterData.userId = $.jStorage.get('user')._id
 
+    $scope.loadMore = function () {
+      $ionicScrollDelegate.resize()
+      $scope.pagination.shouldLoadMore = false;
+      $scope.pagination.currentPage++;
+      $scope.pagination1 = {
+        "page": $scope.pagination.currentPage,
+      }
+      $scope.filterData.page = $scope.pagination.currentPage
+      Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
+  console.log("$scope.news, data.data.results",data)
+        $scope.news = _.concat($scope.news, data.data.results);
+        if (data.data.results.length == 10) {
+          $scope.pagination.shouldLoadMore = true;
+        }
+        
+      });
+    };
 
-    // $scope.loadMore()
+    $scope.doRefresh = function (val) {
+      $scope.news = [],
+        $scope.pagination = {
+          shouldLoadMore: true,
+          currentPage: 0,
+        };
+  
+      if (val) {
+        $scope.loadMore();
+      }
+    };
     $scope.doRefresh(true);
 
   }
