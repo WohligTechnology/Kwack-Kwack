@@ -31,7 +31,12 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast) 
             // console.log("inside else")
         }
     }
-    // $scope.hideToast = function(){
-    //     ionicToast.hide();
-    //   };
+    $scope.demo = function(){
+        console.log('Inside demo condition')
+        $scope.setEmailMsg = false
+      };
+       $scope.demo1 = function(){
+        console.log('Inside demo condition')
+        $scope.setMobileMsg = false
+      };
 })
