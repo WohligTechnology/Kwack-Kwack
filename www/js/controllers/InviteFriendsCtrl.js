@@ -35,7 +35,7 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
           if(users[i].displayName!=null){
             console.log("users[i].displayName", users[i].displayName)
             
-            $scope.letter=users[i].displayName.toUpperCase().charAt(0);
+            var letter=users[i].displayName.toUpperCase().charAt(0);
             
             
             if( tmp[ letter] ==undefined){
