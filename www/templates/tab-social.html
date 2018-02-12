@@ -8,7 +8,7 @@
             </div>
             <div class="border-top">
             </div>
-            <div class="news-content">
+            <!--<div class="news-content">
                 <div class="row">
                     <div class="col col-20">
                         <div class="toi">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div ng-if="!searchInput" class="news-content">
                 <div ng-repeat="social in discoverNews">
 
@@ -90,7 +90,7 @@
                     </div>
                     <div class="mar-lr">
                         <div class="relative">
-                            <img class="full-image" src="{{social.imageUrl}}">
+                            <img class="full-image" src="{{social.imageUrl}}" ng-click="viewsNextPage(news._id)">
                         </div>
                         <div class="social-icons">
                             <div class="display-inline">

@@ -107,17 +107,7 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
     }
   }
 
-  $scope.viewsNextPage = function (data, view) {
-    var data1 = {}
-    data1.newsId = data,
-    Chats.setkwackPollStateChange($state.current.name)
-      // data1.userId = $.jStorage.get("user")._id
-      $state.go("tab.exploremore", {
-        newsid: data,
-        previousState: $state.current.name
-      })
 
-  }
   //socialSharing
   $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
 
