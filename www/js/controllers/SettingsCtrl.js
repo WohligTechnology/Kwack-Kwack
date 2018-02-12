@@ -69,7 +69,8 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
      
   
     Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
-      $scope.interestdup = data.data.interests
+      $scope.getInterest = data.data.interests
+      $scope.interestdup = _.chunk($scope.getInterest, 2);
       $scope.interestarr= data.data.interests
       // _.forEach($scope.allInterest, function(allInterest){
       //   // console.log("fullinterest",allInterest)

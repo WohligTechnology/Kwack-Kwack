@@ -735,4 +735,8 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
     };
   })
 
+<<<<<<< HEAD
  
+=======
+  
+>>>>>>> f223eb14c43e46de6da0c91a4304751d8c3c72c8
