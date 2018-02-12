@@ -19,15 +19,15 @@
                         </label>
                         <label class="item item-input item-floating-label">
                             <span></span>
-                            <input type="email" class="border-bot" ng-model="data.email" name="email" placeholder="Email id" required>
+                            <input type="email" class="border-bot" ng-model="data.email" name="email" placeholder="Email id"  ng-change="demo()" required>
                             <span class="error-msg" ng-show="formName.email.$touched && formName.email.$invalid">Email is required</span>
                             <span class="error-msg" ng-if="setEmailMsg">email already exist.</span>
                         </label>
                         <label class="item item-input item-floating-label">
                             <span></span>
-                            <input type="tel" class="border-bot" ng-model="data.mobile" name="mobile" placeholder="Mobile Number" minlength="10" maxlength="10"
+                            <input type="tel" class="border-bot" ng-model="data.mobile" name="mobile" placeholder="Mobile Number"  ng-change="demo1()" minlength="10" maxlength="10"
                                 required>
-                            <span class="error-msg" ng-show="formName.mobile.$touched && formName.mobile.$invalid">Mobile Number is required</span>
+                            <span class="error-msg" ng-show="formName.mobile.$touched && formName.mobile.$invalid" >Mobile Number is required</span>
                              <span class="error-msg" ng-if="setMobileMsg">mobile already exist.</span>
                         </label>
                         <label class="item item-input item-floating-label">

@@ -67,6 +67,18 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
 
   //  })
   // }
+  
+
+  $scope.inApp = function (link) {
+    var options = "location=no,toolbar=yes";
+    var target = "_blank";
+    $scope.finalURL = link;
+    ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
+    window.open = cordova.InAppBrowser.open;
+  }
+
+
+
   //kwack polls
 
   $scope.nextPage = function (data, kwackPoll) {
