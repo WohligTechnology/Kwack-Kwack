@@ -3591,8 +3591,11 @@ $dark:                            #444 !default;
             border: none;
         }
         .alpha_sidebar {
-            line-height: 20px;
+            font-size: 10px;
+            line-height: 18px;
+            top: 149px;
         }
+     
     }
 
     @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
