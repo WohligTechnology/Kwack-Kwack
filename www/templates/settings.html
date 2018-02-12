@@ -68,9 +68,12 @@
                 </div>
                 <div class="settings-btns viewless" ng-class="{'viewall': viewmore == true , 'viewless': viewmore == false }">
                     <div class="text-center" ng-repeat="int in interestdup">
-                        <button class="button btn-sports btn-bg" ng-repeat="int1 in int | filter:searchText" ng-click="select(int1.name)" ng-class="{'black' : int1.value==true}">{{int1.name}}</button>
+                        <button class="button btn-sports btn-bg" ng-repeat="int1 in int | filter:searchText">{{int1.name}}</button>
                         <!-- <button class="button btn-science btn-bg"> Science</button>
                         <button class="button btn-food btn-bg"> Food</button> -->
+                    </div>
+                    <div class="text-center" ng-if="interestdup.length==0">
+                        There are no currently interest in your Preferences
                     </div>
 
                     <!-- <div class="text-center">
@@ -90,7 +93,7 @@
                 <div class="text-center view-all" ng-click="viewall()" ng-if="view3">
                     <label>VIEW ALL</label>
                 </div>
-                <div class="text-center view-all" ng-click="viewLess3()" ng-if="!view3">
+                <div class="text-center view-all" ng-click="viewLess3()" ng-if="!view3 ">
                     <label> View Less</label>
                 </div>
             </div>
