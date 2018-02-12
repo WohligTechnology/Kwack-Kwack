@@ -12551,9 +12551,9 @@ button.btn-yellow.button[disabled] {
     color: #fff !important;
     border: none; }
   .alpha_sidebar {
-    top: 145px;
-    font-size: 10px;
-    line-height: 18px; } }
+    top: 145px !important;
+    font-size: 10px !important;
+    line-height: 18px !important; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {
   .accordian label {
