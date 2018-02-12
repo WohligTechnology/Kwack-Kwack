@@ -357,7 +357,8 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     // $scope.flush=true;
     data.Month = ""
     data.Year = ""
-    $scope.filterData = {}
+    $scope.filterData.startDate = undefined
+    $scope.filterData.endDate = undefined
 
   }
 

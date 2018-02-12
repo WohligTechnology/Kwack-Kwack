@@ -57,74 +57,74 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
 
   
      // interest
-    Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
-      $scope.allInterest = data.data
+    // Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
+    //   $scope.allInterest = data.data
   
-      console.log("data is*****************", $scope.allInterest)
-      $scope.interestdup = _.chunk($scope.allInterest, 2);
-    })
+    //   console.log("data is*****************", $scope.allInterest)
+    //   $scope.interestdup = _.chunk($scope.allInterest, 2);
+    // })
   
     //search interest
   
      
   
     Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
-      $scope.getInterest = data.data.interests
+      $scope.interestdup = data.data.interests
       $scope.interestarr= data.data.interests
-      _.forEach($scope.allInterest, function(allInterest){
-        // console.log("fullinterest",allInterest)
-        _.forEach($scope.interestarr, function(value){
-          // console.log("interestArrayforeach", value)
-          if(value.name==allInterest.name){
-            allInterest.value=true
-          }else{
-            console.log("interest not available")
-          }
-        })
+      // _.forEach($scope.allInterest, function(allInterest){
+      //   // console.log("fullinterest",allInterest)
+      //   _.forEach($scope.interestarr, function(value){
+      //     // console.log("interestArrayforeach", value)
+      //     if(value.name==allInterest.name){
+      //       allInterest.value=true
+      //     }else{
+      //       console.log("interest not available")
+      //     }
+      //   })
       
-      })
+      // })
     })
 
 
 
-  $scope.select = function (interest) {
-    console.log("$scope.allInterest", interest);
+  // $scope.select = function (interest) {
+  //   console.log("$scope.allInterest", interest);
 
 
-    _.forEach($scope.allInterest, function (value) {
+  //   _.forEach($scope.allInterest, function (value) {
 
-      console.log("helloworld", $scope.allInterest)
-      if (value.name == interest) {
-        value.value = !value.value
-      }
-    });
-    var interestEdit = _.find($scope.interestarr, function (o) {
-      // console.log("interestarray",o)
-      if (interest == o.name) {
-        return o;
+  //     console.log("helloworld", $scope.allInterest)
+  //     if (value.name == interest) {
+  //       value.value = !value.value
+  //     }
+  //   });
+  //   var interestEdit = _.find($scope.interestarr, function (o) {
+  //     // console.log("interestarray",o)
+  //     if (interest == o.name) {
+  //       return o;
        
-      }
+  //     }
 
-    });
-      if (interestEdit === undefined) {
-        if(_.isEmpty($scope.interestarr)){
-          $scope.interestarr =[];
-        }
-     $scope.interestarr.push({name:interest})
+  //   });
+  //     if (interestEdit === undefined) {
+  //       if(_.isEmpty($scope.interestarr)){
+  //         $scope.interestarr =[];
+  //       }
+  //    $scope.interestarr.push({name:interest})
   
-      $scope.addInterest.interest = $scope.interestarr
-    // $scope.colorchange = interestEdit
-     console.log("checknowpush", $scope.interestarr)
-    }else {
-      _.pull($scope.interestarr, interestEdit)
-      $scope.addInterest.interest = $scope.interestarr
-      $scope.colorchange = interestEdit
-      console.log("checknow", $scope.interestarr)
-    }
-    Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
-      console.log("data is*****************", data)
+  //     $scope.addInterest.interest = $scope.interestarr
+  //   // $scope.colorchange = interestEdit
+  //    console.log("checknowpush", $scope.interestarr)
+  //   }else {
+  //     _.pull($scope.interestarr, interestEdit)
+  //     $scope.addInterest.interest = $scope.interestarr
+  //     $scope.colorchange = interestEdit
+  //     console.log("checknow", $scope.interestarr)
+  //   }
+  //   Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
+  //     console.log("data is*****************", data)
 
-    })
-  }
+  //   })
+  // }
 
 })
