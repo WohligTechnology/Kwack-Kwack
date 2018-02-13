@@ -10,17 +10,11 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   $scope.filterData = {}
   $scope.filterData.polls = true
   $scope.filterData.kwacks = true
-
   $scope.news = []
   $scope.addInterest.userId = $.jStorage.get('user')._id
-  // $scope.flush=true
-  //start of pagination 
-
-
   $scope.Year = moment().format('YYYY')
   $scope.Month = moment().format('MMMM')
 
-  //filter api
 
   $scope.loadMore = function () {
     $scope.$broadcast('scroll.refreshComplete');
@@ -35,7 +29,6 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     }
     $scope.filterData.page = $scope.pagination.currentPage
     Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.pagination1, function (data) {
-      console.log("$scope.news, data.data.results", data)
       $scope.news = _.concat($scope.news, data.data.results);
       if (data.data.results.length == 10) {
         $scope.pagination.shouldLoadMore = true;
@@ -50,33 +43,16 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
         shouldLoadMore: true,
         currentPage: 0,
       };
-
     if (val) {
       $scope.loadMore();
     }
   };
   $scope.doRefresh(true);
 
-
-
-  //end of pagination
-  //filter modal start
-  // $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
-  //   scope: $scope,
-  //   animation: 'slide-in-up'
-  // }).then(function (modal) {
-  //   $scope.modal = modal;
-  // });
-  // $scope.openModal = function () {
-  //   $scope.modal.show();
-
-  // }
-
   $scope.closeModal = function () {
     $scope.modal.hide();
     $state.reload();
   };
-
 
   $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
     scope: $scope,
@@ -86,14 +62,12 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   });
   $scope.openModal = function () {
     $scope.modal.show();
-
   }
 
   $scope.closeModal = function () {
     $scope.modal.hide();
   };
   //end of modal
-
 
   //year array
   $scope.year = []
@@ -149,15 +123,8 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
 
   ]
   $scope.months = _.orderBy($scope.months, ['order'], ['desc', 'asc'])
-  // console.log('months',$scope.months)
-  // console.log('years',$scope.year)
-
-  //Interest Select filter
-
-
   Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
     $scope.allInterest = data.data
-    console.log("data is*****************", $scope.allInterest)
     $scope.interestdup = _.chunk($scope.allInterest, 3);
   })
 
@@ -165,30 +132,21 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     $scope.getInterest = data.data.interests
     $scope.interestarr = data.data.interests
     _.forEach($scope.allInterest, function (allInterest) {
-      console.log("fullinterest", $scope.getInterest)
       _.forEach($scope.getInterest, function (value) {
-        // console.log("interestArrayforeach", value)
         if (value.name == allInterest.name) {
           allInterest.value = true
-        } else {
-          console.log("interest not available")
-        }
+        } else {}
       })
-
     })
-
-    console.log("data interest", $scope.getInterest)
   })
 
 
 
   $scope.select = function (interest) {
     var interestEdit = _.find($scope.interestarr, function (o) {
-      // console.log("interestarray",o)
       if (interest == o.name) {
         return o;
       }
-
     });
     if (interestEdit === undefined) {
       if (_.isEmpty($scope.interestarr)) {
@@ -199,28 +157,19 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
       })
 
       $scope.addInterest.interest = $scope.interestarr
-      // $scope.colorchange = interestEdit
-      console.log("checknowpush", $scope.interestarr)
     } else {
       _.pull($scope.interestarr, interestEdit)
       $scope.addInterest.interest = $scope.interestarr
-      //  $scope.colorchange = interestEdit
-      console.log("checknow", $scope.interestarr)
     }
     Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
-      console.log("data is*****************", data)
       Chats.noLoaderApi("User/getOne", $scope.pollKwack, function (data) {
         $scope.getInterest = data.data.interests
       })
 
       _.forEach($scope.allInterest, function (value) {
-        // console.log("*******", allInterest)
-        console.log("#######", value)
         if (value.name == interest) {
           value.value = !value.value
         }
-
-
       })
     })
   }
@@ -228,7 +177,6 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   //filter select kwackpollAll
   $scope.categoryViews = function (data) {
     var toggle = false
-    console.log('views', data)
     if (data == 'All') {
       $scope.filterData.polls = !$scope.filterData.polls
       $scope.filterData.kwacks = !$scope.filterData.kwacks
@@ -241,13 +189,11 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
 
 
   $scope.filter1 = function (filterdata) {
-
     $scope.news = []
     $scope.monthYear = {}
     $scope.monthYear = filterdata
     var date = new Date()
     if (filterdata.Year && filterdata.Month) {
-      // $scope.pagination.shouldLoadMore = false;
       y = $scope.monthYear.Year.year
       m = $scope.monthYear.Month.order
       var firstDay = new Date(y, m, 1);
@@ -259,7 +205,6 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     }
     $scope.filterData.interest = $scope.getInterest
     $scope.filterData.userId = $.jStorage.get('user')._id
-
     $scope.loadMore = function () {
       $ionicScrollDelegate.resize()
       $scope.pagination.shouldLoadMore = false;
@@ -269,12 +214,10 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
       }
       $scope.filterData.page = $scope.pagination.currentPage
       Chats.apiCallWithData("NewsInfo/IsPollKwackIf", $scope.filterData, function (data) {
-  console.log("$scope.news, data.data.results",data)
         $scope.news = _.concat($scope.news, data.data.results);
         if (data.data.results.length == 10) {
           $scope.pagination.shouldLoadMore = true;
         }
-        
       });
     };
 
@@ -284,20 +227,14 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
           shouldLoadMore: true,
           currentPage: 0,
         };
-  
       if (val) {
         $scope.loadMore();
       }
     };
     $scope.doRefresh(true);
-
   }
 
-
-
-
   $scope.nextPage = function (data, kwackPoll) {
-
     var data1 = {}
     data1.newsId = data,
       data1.userId = $.jStorage.get("user")._id
@@ -312,17 +249,14 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
           $state.go("tab.startPollingdis", {
             newsid: data,
           })
-
         }
       })
     } else {
       Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
         Chats.setkwackPollStateChange($state.current.name)
-        console.log("hellodata", data1)
         if (data1.value == true) {
           $state.go("debate", {
             newsid: data
-
           })
         } else {
           $state.go("tab.trailerdis", {
@@ -335,14 +269,12 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
 
   //filter reset data
   $scope.reset = function (data) {
-    // $scope.addInterest={}
     $scope.addInterest._id = $.jStorage.get('user')._id
     $scope.addInterest.interests = []
     Chats.apiCallWithData("User/save", $scope.addInterest, function (data) {
       Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
         $scope.getInterest = data.data.interests
       })
-
     })
 
     Chats.apiCallWithoutData("Interests/getAllInterests", function (data) {
@@ -352,20 +284,15 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
 
     Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
       $scope.getInterest = data.data.interests
-
     })
-    // $scope.flush=true;
     data.Month = ""
     data.Year = ""
     $scope.filterData.startDate = undefined
     $scope.filterData.endDate = undefined
-
   }
 
   //socialSharing
   $scope.socilaSharing = function (desciption, imageUrl, title, link) {
-    console.log("description", title)
-    console.log("image", link)
     var message = desciption
     var subject = title
     var image = imageUrl
@@ -375,11 +302,9 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
         $ionicLoading.hide();
         // Success!
         console.log("Success");
-
         console.log(result);
         console.log(image);
       }, function (err) {
-        // An error occured. Show a message to the user
         console.log("error : " + err);
       });
   }
