@@ -11,17 +11,11 @@
                 </div>
                 <div class="input-mar">
                     <P class="discover-para">Enter your passcode</P>
-                    <div class="display-inline input-padd">
-                        <input type="text" class="otp-input text-center"  ng-model="formName.digit1"  maxlength="1" >
-                    </div>
-                    <div class="display-inline  input-padd">
-                        <input type="text" class="otp-input text-center"   ng-model="formName.digit2" maxlength="1" >
-                    </div>
-                    <div class="display-inline  input-padd">
-                        <input type="text" class="otp-input  text-center"  ng-model="formName.digit3" maxlength="1" >
-                    </div>
-                    <div class="display-inline  input-padd">
-                        <input type="text" class="otp-input text-center"  ng-model="formName.digit4" maxlength="1">
+                    <div class="input-padd">
+                        <input type="text" class="otp-input text-center" id="part1" ng-change="checkChange(1)" autofocus ng-model="formName.digit1"  maxlength="1" move-next-on-maxlength>
+                        <input type="text" class="otp-input text-center" id="part2" ng-change="checkChange(2)"  ng-model="formName.digit2" maxlength="1" move-next-on-maxlength>
+                        <input type="text" class="otp-input  text-center" id="part3" ng-change="checkChange(3)" ng-model="formName.digit3" maxlength="1" move-next-on-maxlength>
+                        <input type="text" class="otp-input text-center" id="part4" ng-change="checkChange(4)"  ng-model="formName.digit4" maxlength="1" >
                     </div>
                 </div>
                 <div class="text-center mar-t40">

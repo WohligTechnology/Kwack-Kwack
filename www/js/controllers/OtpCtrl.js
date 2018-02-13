@@ -45,45 +45,47 @@ connector.controller('OtpCtrl', function ($scope, $stateParams, $state, Chats, i
 
     }
 
-    // $scope.checkChange = function (value) {
-    //     switch (value) {
-    //         case 4:
-    //             if ($scope.formName.digit4 == "") {
-    //                 var element = $window.document.getElementById('part1');
-    //                 if (element)
-    //                     element.focus();
-    //             }
-    //             break;
+    $scope.checkChange = function (value) {
+        console.log("value",value);
+        switch (value) {
+            case 4:
+                if ($scope.formName.digit4 == "") {
+                    var element = $window.document.getElementById('part3');
+                    if (element)
+                        element.focus();
+                }
+                break;
 
-    //         case 3:
-    //             if ($scope.formName.digit3 == "") {
-    //                 var element = $window.document.getElementById('part3');
-    //                 if (element)
-    //                     element.focus();
-    //             }
-    //             break;
+            case 3:
+                if ($scope.formName.digit3 == "") {
+                    var element = $window.document.getElementById('part2');
+                    if (element)
+                        element.focus();
+                }
+                break;
 
-    //         case 2:
-    //             if ($scope.formName.digit2 == "") {
-    //                 var element = $window.document.getElementById('part2');
-    //                 if (element)
-    //                     element.focus();
-    //             }
-    //             break;
+            case 2:
+                if ($scope.formName.digit2 == "") {
+                    var element = $window.document.getElementById('part1');
+                    if (element)
+                        element.focus();
+                }
+                break;
 
-    //         case 1:
-    //             if ($scope.formName.digit1 == "") {
-    //                 var element = $window.document.getElementById('part1');
-    //                 if (element)
-    //                     element.focus();
-    //             }
-    //             break;
+            case 1:
+                if ($scope.formName.digit1 == "") {
+                    var element = $window.document.getElementById('part1');
+                    console.log("element",element)
+                    if (element)
+                        element.focus();
+                }
+                break;
 
-    //         default:
-    //             console.log("invalid choice");
-    //     }
+            default:
+                console.log("invalid choice");
+        }
 
-    // }
+    }
 
 
 })

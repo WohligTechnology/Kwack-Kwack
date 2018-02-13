@@ -6,7 +6,6 @@ connector.controller('AccountInsieCtrl', function ($scope, Chats, $state, $ionic
         Chats.apiCallWithData("User/setDeactiveUser", $scope.datatoDelete, function (data) {
             if (data.value == true) {
                 var confirmPopup = $ionicPopup.confirm({
-                    // title: 'Consume Ice Cream',
                     template: 'Are you sure you want to delete this account?'
                 });
                 confirmPopup.then(function (res) {

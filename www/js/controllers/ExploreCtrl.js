@@ -1,7 +1,7 @@
 connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chats, $state, $rootScope, $ionicHistory) {
   $scope.pollKwack = {};
-  $scope.searchInclude='templates/discover-full.html';
-  $scope.tabHeader='templates/tab-header.html';
+  $scope.searchInclude = 'templates/discover-full.html';
+  $scope.tabHeader = 'templates/tab-header.html';
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id;
   $scope.loadMore = function () {
@@ -19,9 +19,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
       if (data.data.results.length == 10) {
         $scope.pagination.shouldLoadMore = true;
       }
-      // $scope.paginationCode();
     });
-
   };
 
   $scope.doRefresh = function (val) {
@@ -30,7 +28,6 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
         shouldLoadMore: true,
         currentPage: 0,
       };
-
     if (val) {
       $scope.loadMore();
     }
@@ -38,12 +35,8 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
 
   $scope.doRefresh(true);
 
+  $scope.click = function (data) {}
 
-
-  $scope.click = function (data) {
-    console.log('helloclick', data)
-  }
- 
   $scope.nextPage = function (data, kwackPoll) {
     var data1 = {}
     data1.newsId = data,
@@ -52,7 +45,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
       Chats.apiCallWithData("PollAnswer/getPoll", data1, function (data1) {
         Chats.setkwackPollStateChange($state.current.name)
         if (data1.value == true) {
-         
+
           $state.go("polling-inside", {
             newsid: data,
             previousState: $state.current.name
@@ -72,7 +65,6 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
         if (data1.value == true) {
           $state.go("debate", {
             newsid: data,
-            
           })
         } else {
           $state.go("tab.trailerex", {
@@ -86,11 +78,11 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
   $scope.viewsNextPage = function (data) {
     var data1 = {}
     data1.newsId = data,
-    Chats.setkwackPollStateChange($state.current.name)
-      $state.go("tab.exploremore", {
-        newsid: data,
-        previousState: $state.current.name
-      })
+      Chats.setkwackPollStateChange($state.current.name)
+    $state.go("tab.exploremore", {
+      newsid: data,
+      previousState: $state.current.name
+    })
   }
   //socialSharing
   $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
@@ -108,7 +100,6 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
       .then(function (result) {
         $ionicLoading.hide();
         // Success!
-      
       }, function (err) {
         // An error occured. Show a message to the user
         console.log("error : " + err);
