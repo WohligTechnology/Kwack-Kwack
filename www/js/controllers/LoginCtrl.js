@@ -1,4 +1,4 @@
-connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams, ionicToast) {
+connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats, $state, $stateParams, $cordovaOauth, ionicToast, $http) {
   if ($.jStorage.get("user")) {
     if ($.jStorage.get("user").verified) {
       $state.go("tab.explore")
@@ -55,4 +55,52 @@ connector.controller('LoginCtrl', function ($scope, Chats, $state, $stateParams,
     ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
     window.open = cordova.InAppBrowser.open;
   }
+
+  $scope.facebookLogin = function() {
+      $cordovaOauth.facebook("1814304471935090", ["email", "user_location", "user_relationships"]).then(function(result) {
+        console.log("Response Object -> " + JSON.stringify(result));
+        console.log("facebookLogin",result)
+        $.jStorage.set("socialLogin", result);
+        $scope.socialLogin =  $.jStorage.get("socialLogin")
+        console.log($scope.socialLogin)
+        if($scope.socialLogin.access_token != '') {
+            $http.get("https://graph.facebook.com/v2.5/me", { params: { access_token: $scope.socialLogin.access_token, fields: "id,name,email,gender,location,website,picture,relationship_status", format: "json" }}).then(function(result) {
+                $scope.profileData = result.data;
+                var Socialstate = result.data.location.name.split(",")
+                $scope.socialLoginData = {
+                  name: $scope.profileData.name,
+                  email: $scope.profileData.email,
+                  photo: $scope.profileData.picture.data.url,
+                  state: Socialstate[1],
+                  city: Socialstate[0],
+                  country: "India",
+                  type: true
+                }
+
+                Chats.apiCallWithData("User/saveUser", $scope.socialLoginData, function (data) {
+                  if (data.value == true) {
+                      $scope.userData = data.data;
+                      $scope.userData.verified = false;
+                      $.jStorage.set("user", $scope.userData);
+                      $state.go("discover")
+                  } else {
+                      console.log("display error")
+                  }
+              })
+            }, function(error) {
+                alert("There was a problem getting your profile.  Check the logs for details.");
+                console.log(error);
+            });
+
+        } else {
+            alert("Not signed in");
+            $state.go("login");
+        } 
+        //  $state.go("signUp")
+          // results
+      }, function(error) {
+          console.log("facebook login crashed")
+      })
+      
+}
 })

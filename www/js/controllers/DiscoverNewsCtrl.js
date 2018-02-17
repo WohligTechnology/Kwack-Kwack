@@ -31,13 +31,16 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
         $scope.$broadcast('scroll.infiniteScrollComplete');
       });
     } else if ($scope.activeTab == 'Just now') {
-      Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
-        $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
-        if (data.data.results.length == 10) {
-          $scope.pagination.shouldLoadMore = true;
-        }
-        $scope.$broadcast('scroll.infiniteScrollComplete');
-      });
+      if($scope.pagination1.page<=5){
+        Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
+          $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
+          if (data.data.results.length == 10) {
+            $scope.pagination.shouldLoadMore = true;
+          }
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        });
+      }
+    
     } else {
       $scope.interestData = {
         "page": $scope.pagination.currentPage,

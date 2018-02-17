@@ -25,6 +25,12 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     window.open = cordova.InAppBrowser.open;
   }
 
+  Chats.apiCallWithData("NewsInfo/getOneNews", $scope.newsId, function (data) {
+    $scope.news = data.data;
+     $scope.doRefresh(true);
+  })
+
+
   $scope.loadMore = function () {
     $scope.$broadcast('scroll.refreshComplete');
     $scope.pagination = $scope.pagination ? $scope.pagination : {};
@@ -57,10 +63,6 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
 
   Chats.apiCallWithData("Readlogs/checkingNewsReadOrNot", $scope.dataToSend, function (data) {
     if (data.value == true) {
-      Chats.apiCallWithData("NewsInfo/getOneNews", $scope.newsId, function (data) {
-        $scope.news = data.data;
-        $scope.doRefresh(true);
-      })
     } else {
       Chats.apiCallWithData("Readlogs/readLogsCount", $scope.dataToSend, function (data1) {
         $scope.news = data1.data

@@ -1,4 +1,4 @@
-connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate, $cordovaSocialSharing, $stateParams, $state, $ionicPlatform) {
+connector.controller('SocialCtrl', function ($scope, $rootScope, Chats, $ionicScrollDelegate, $cordovaSocialSharing, $stateParams, $state, $ionicPlatform) {
   $scope.poll = {}
   $scope.pollKwack = {}
   $scope.jstorage = $.jStorage.get('user');
@@ -6,6 +6,7 @@ connector.controller('SocialCtrl', function ($scope, Chats, $ionicScrollDelegate
   $scope.discoverNews = []
   $scope.searchInclude = 'templates/discover-full.html';
   $scope.tabHeader = 'templates/tab-header.html';
+  // $scope.fontChange=$rootScope.font
   $scope.loadMore = function () {
     $ionicScrollDelegate.resize()
     $scope.pagination.shouldLoadMore = false;

@@ -1,4 +1,5 @@
-connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast) {
+connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast, $http) {
+   
     $scope.showMassage = false
     $scope.setEmailMsg = false
     $scope.saveUser = function (info) {
