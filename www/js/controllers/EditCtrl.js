@@ -1,5 +1,4 @@
 connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionicActionSheet, $cordovaImagePicker, $cordovaFileTransfer, $state) {
-
     $scope.userData = {}
     $scope.userDataFollow = {}
     $scope.userDataFollow.userId = $.jStorage.get("user")._id;
@@ -8,18 +7,12 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
         Chats.apiCallWithData("User/getOne", $scope.userData, function (data) {
             if (data.value == true) {
                 $scope.userInfo = data.data;
-
-            } else {
-
-            }
+            } else {}
         });
     }
 
     $scope.get1();
-
     $scope.datasave = function (data) {
-        console.log("**********", data)
-
         Chats.apiCallWithData("User/save", data, function (data) {
             if (data.value == true) {
                 $state.go("tab.settings")
@@ -28,9 +21,7 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
     }
 
     $scope.showActionsheet = function (card) {
-        console.log(card);
         $ionicActionSheet.show({
-            //  titleText: 'choose option',
             buttons: [{
                 text: '<i class="icon ion-images"></i> Choose from gallery'
             }, {
@@ -75,10 +66,8 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
                         successCallback: function (status) {
                             $cordovaCamera.getPicture(cameraOptions).then(function (imageData) {
                                 $scope.imageSrc = "data:image/jpeg;base64," + imageData;
-                                console.log($scope.imageSrc);
                                 $scope.uploadImage($scope.imageSrc, card);
                             }, function (err) {
-                    
                                 console.log(err);
                             });
                         }
@@ -89,7 +78,7 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
                         console.log($scope.imageSrc);
                         $scope.uploadImage($scope.imageSrc, card);
                     }, function (err) {
-            
+
                         console.log(err);
                     });
                 }
@@ -98,8 +87,6 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
                 console.error("The following error occurred: " + error);
             }
         });
-
-       
     };
 
     $scope.getImageSaveContact = function (card) {
@@ -109,7 +96,8 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
             width: 800,
             height: 800,
             quantityuality: 80 // Higher is better
-        };cordova.plugins.diagnostic.isCameraAuthorized({
+        };
+        cordova.plugins.diagnostic.isCameraAuthorized({
             successCallback: function (authorized) {
                 if (authorized == false) {
                     cordova.plugins.diagnostic.requestCameraAuthorization({
@@ -124,43 +112,27 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
                     })
                 } else {
                     $cordovaImagePicker.getPictures(options).then(function (results) {
-                        console.log(results[0]);
                         $scope.uploadImage(results[0], card);
-                    }, function (error) {
-                        console.log('Error: ' + JSON.stringify(error)); // In case of error
-                    });
+                    }, function (error) {});
                 }
             },
-            errorCallback: function (error) {
-                console.error("The following error occurred: " + error);
-            }
+            errorCallback: function (error) {}
         });
-       
     };
 
     $scope.uploadImage = function (imageURI, card) {
-        console.log('imageURI', imageURI);
-        // $scope.showLoading('Uploading Image...', 10000);
         $cordovaFileTransfer.upload(adminurl + 'upload', imageURI)
             .then(function (result) {
-                console.log("donewithprofile", result)
-                // Success!
-                // $scope.hideLoading();
                 result.response = JSON.parse(result.response);
                 $scope.userInfo.photo = result.response.data[0];
-                console.log("changes", $scope.userData.photo)
                 Chats.apiCallWithData("User/save", $scope.userInfo, function (data) {
-                    console.log("value", data)
                     $scope.get1();
                 });
             })
     };
 
     //all fllowers kwack polls
-
-
     Chats.apiCallWithData("UserFollow/getAllFollowerName", $scope.userDataFollow, function (data) {
-
         if (data.value == true) {
             $scope.setFollowCountValueZero = data.data.length
         } else {
@@ -170,27 +142,18 @@ connector.controller('EditCtrl', function ($scope, $cordovaCamera, Chats, $ionic
 
 
     Chats.apiCallWithData("Comment/getKwackForOneUser", $scope.userDataFollow, function (data) {
-
         if (data.value == true) {
             $scope.setKwackCountValueZero = data.data.length
-
         } else {
             $scope.setKwackCountValueZero = "0"
-
         }
     })
-
 
     Chats.apiCallWithData("PollAnswer/getPollForOneUser", $scope.userDataFollow, function (data) {
-
         if (data.value == true) {
             $scope.setPollCountValueZero = data.data.length
-
         } else {
             $scope.setPollCountValueZero = "0"
-
         }
     })
-
-
 })

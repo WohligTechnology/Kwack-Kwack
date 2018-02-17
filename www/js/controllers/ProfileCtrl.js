@@ -1,7 +1,6 @@
 connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordovaCamera, Chats, $ionicActionSheet, $cordovaImagePicker, $cordovaFileTransfer) {
     $scope.reqData = {};
     $scope.reqData._id = $.jStorage.get("user")._id
-
     $scope.getUserDetails = function () {
         Chats.apiCallWithData("User/getOne", $scope.reqData, function (data) {
             if (data.value == true) {
@@ -41,8 +40,6 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
                 return true;
             }
         });
-
-
     };
 
     $scope.openCamera = function (card) {
@@ -82,7 +79,6 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
                 console.error("The following error occurred: " + error);
             }
         });
-
     };
 
     $scope.getImageSaveContact = function (card) {
@@ -118,15 +114,11 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
                 console.error("The following error occurred: " + error);
             }
         });
-
-  
     };
 
     $scope.uploadImage = function (imageURI, card) {
-        console.log('imageURI', imageURI);
         $cordovaFileTransfer.upload(adminurl + 'upload', imageURI)
             .then(function (result) {
-                console.log("donewithprofile", result)
                 result.response = JSON.parse(result.response);
                 $scope.userData.photo = result.response.data[0];
                 Chats.apiCallWithData("User/save", $scope.userData, function (data) {
@@ -136,6 +128,4 @@ connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordova
                 });
             })
     };
-
-
 })

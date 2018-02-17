@@ -7,7 +7,6 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
   $scope.dataToSend = {}
   $scope.poll = {}
   $scope.pollKwack = {}
-  // $scope.discoverNews = []
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
   data.newsId = $scope.newsId
@@ -55,12 +54,11 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
       $scope.loadMore();
     }
   };
- 
+
   Chats.apiCallWithData("Readlogs/checkingNewsReadOrNot", $scope.dataToSend, function (data) {
     if (data.value == true) {
       Chats.apiCallWithData("NewsInfo/getOneNews", $scope.newsId, function (data) {
         $scope.news = data.data;
-        // $scope.loadMore();
         $scope.doRefresh(true);
       })
     } else {

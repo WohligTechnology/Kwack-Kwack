@@ -9,8 +9,8 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
   $scope.jstorage = $.jStorage.get('user');
   $scope.pollKwack._id = $scope.jstorage._id
   $scope.discoverNews = []
-  $scope.searchInclude='templates/discover-full.html';
-  $scope.tabHeader='templates/tab-header.html';
+  $scope.searchInclude = 'templates/discover-full.html';
+  $scope.tabHeader = 'templates/tab-header.html';
   $scope.loadMore = function () {
     $scope.$broadcast('scroll.refreshComplete');
     $ionicScrollDelegate.resize()
@@ -28,8 +28,6 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
         if (data.data.results.length == 10) {
           $scope.pagination.shouldLoadMore = true;
         }
-        console.log("hellorecords", $scope.discoverNews)
-        // $scope.paginationCode();
         $scope.$broadcast('scroll.infiniteScrollComplete');
       });
     } else if ($scope.activeTab == 'Just now') {
@@ -38,7 +36,6 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
         if (data.data.results.length == 10) {
           $scope.pagination.shouldLoadMore = true;
         }
-        // $scope.paginationCode();
         $scope.$broadcast('scroll.infiniteScrollComplete');
       });
     } else {
@@ -52,7 +49,6 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
         if (data.data.results.length == 10) {
           $scope.pagination.shouldLoadMore = true;
         }
-        // $scope.paginationCode();
         $scope.$broadcast('scroll.infiniteScrollComplete');
       });
     }
@@ -85,41 +81,7 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
     $scope.interest = data.data.interests
   })
 
-  console.log("state", $state.current.name)
-
-
-
-
-
-  //  $scope.paginationCode = function () {
-  //    _.forEach($scope.discoverNews, function (value) {
-  //      _.forEach(value.polls, function (polls1) {
-  //        if (polls1.poll == null) {} else {
-  //          if ($scope.pollKwack._id == polls1.poll.user._id) {
-  //            value.temp = true
-  //          } else {
-  //            value.temp = false;
-  //          }
-  //        }
-  //      })
-
-  //    })
-  //    _.forEach($scope.discoverNews, function (comments) {
-  //     _.forEach(comments.comments, function (comments1) {
-  //       if (comments1.comment == null) {} else {
-  //         if ($scope.pollKwack._id == comments1.comment.user._id) {
-  //           comments.kwack = true
-  //         } else {
-  //           comments.kwack = false;
-  //         }
-  //       }
-  //     })
-
-  //   })
-  //  }
-
   $scope.nextPage = function (data, kwackPoll) {
-    console.log("helloStateParams", $state.current.name)
     var data1 = {}
     data1.newsId = data,
       data1.userId = $.jStorage.get("user")._id
@@ -129,30 +91,23 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
         if (data1.value == true) {
           $state.go("polling-inside", {
             newsid: data,
-            // previousState: $state.current.name
           })
         } else {
           $state.go("tab.startPollingdis", {
             newsid: data,
-            // previousState: $state.current.name
-
           })
-
         }
       })
     } else {
       Chats.apiCallWithData("Comment/getKwack", data1, function (data1) {
         Chats.setkwackPollStateChange($state.current.name)
-        console.log("hellodata", data1)
         if (data1.value == true) {
           $state.go("debate", {
             newsid: data,
-            // previousState: $state.current.name
           })
         } else {
           $state.go("tab.trailerdis", {
             newsid: data,
-            // previousState: $state.current.name
           })
         }
       })
@@ -162,19 +117,16 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
   $scope.viewsNextPage = function (data, view) {
     var data1 = {}
     data1.newsId = data,
-      // data1.userId = $.jStorage.get("user")._id
       Chats.setkwackPollStateChange($state.current.name)
-      $state.go("tab.exploremoredis", {
-        newsid: data,
-        previousState: $state.current.name
-      })
+    $state.go("tab.exploremoredis", {
+      newsid: data,
+      previousState: $state.current.name
+    })
 
   }
 
   //socialSharing
   $scope.socilaSharing = function (desciption, imageUrl, title, link) {
-    console.log("description", title)
-    console.log("image", link)
     var message = desciption
     var subject = title
     var image = imageUrl
@@ -182,13 +134,10 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
       .share(message, subject, image, link) // Share via native share sheet
       .then(function (result) {
         $ionicLoading.hide();
-        // Success!
         console.log("Success");
-
         console.log(result);
         console.log(image);
       }, function (err) {
-        // An error occured. Show a message to the user
         console.log("error : " + err);
       });
   }
