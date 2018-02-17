@@ -306,7 +306,11 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         templateUrl: 'templates/profile.html',
         controller: 'ProfileCtrl'
       })
-
+      .state('userprofile', {
+        url: '/userprofile',
+        templateUrl: 'templates/userProfile.html',
+        controller: 'UserProfileCtrl'
+      })
       .state('mobile', {
         url: '/mobile',
         templateUrl: 'templates/mobile.html',
