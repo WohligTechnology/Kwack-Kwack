@@ -1,4 +1,4 @@
-<ion-view class="{{test}}">
+<ion-view title="settings" class="{{fontChange}}">
     <div class="row ">
         <div class="col col-33 cncelNav" ng-click="goBackHandler()">DONE</div>
         <div class="col col-33 navHead text-center">SETTINGS</div>
@@ -8,14 +8,14 @@
         <div class="bodyFont ">
             <div class="row">
                 <div class="col">
-                    <div class="profileImg text-center" ui-sref="edit">
+                    <div class="profileImg text-center" ui-sref="edit">{{font1}}
                         <!-- <img src="img/edit/profilechange.jpg"> -->
                         <!-- <img ng-src="{{userInfo.photo | uploadpath}}"> -->
                         <img ng-if="userInfo.photo && userInfo.photo!=''" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
                         <img src="img/profile/profile.png" ng-if="!userInfo.photo || userInfo.photo==''" alt="logo" class="w100">
 
                     </div>
-                    <div class="set-username text-center">
+                    <div class="set-username text-center"><pre>{{font}}</pre>
                         <h5>{{userInfo.name}}</h5>
                     </div>
                 </div>
@@ -32,10 +32,10 @@
                         <label>FONT SIZE</label>
                     </div>
                     <div class="col col-66 text-right">
-                        <span class="font-7" ng-class="{'font-shadow' : font=='verysmall'}" ng-click="changesize('verysmall')">A</span>
-                        <span class="font-10" ng-class="{'font-shadow' : font=='small'}" ng-click="changesize('small')">A</span>
-                        <span class="font-14" ng-class="{'font-shadow' : font=='medium'}" ng-click="changesize('medium')">A</span>
-                        <span class="font-17 " ng-class="{'font-shadow' : font=='bold'}" ng-click="changesize('bold')">A</span>
+                        <span class="font-7" ng-class="{'font-shadow' : fontChange=='verysmall'}" ng-click="changesize('verysmall')">A</span>
+                        <span class="font-10" ng-class="{'font-shadow' : fontChange=='small'}" ng-click="changesize('small')">A</span>
+                        <span class="font-14" ng-class="{'font-shadow' : fontChange=='medium'}" ng-click="changesize('medium')">A</span>
+                        <span class="font-17 " ng-class="{'font-shadow' : fontChange=='bold'}" ng-click="changesize('bold')">A</span>
                     </div>
                 </div>
                 <div class="row userName">
@@ -137,6 +137,6 @@
                 </div>
             </div>
         </div>
-        </div>
+        
     </ion-content>
 </ion-view>

@@ -1,4 +1,4 @@
-<ion-view title="Polling">
+<ion-view title="startPolling" class="{{fontChange}}">
     <div class="bar bar-header bar-light">
         <div class="row">
             <div class="col col-10" ng-click="goBackHandler()">
@@ -48,7 +48,7 @@
                     <div class="yoursideright"></div>
                 </div>
 
-                <label for="" ng-class="{'yourside-labelsel': data=='YES'}" class="yourside-label">YES</label>
+                <label for="" ng-class="{'yourside-labelsel': data=='YES'}" class="yourside-label">LIKE</label>
             </div>
             <div class="col col-50 yourSide">
                 <div ng-if=" data=='YES' || data==null" ng-click="savePoll('NO')">
@@ -59,7 +59,7 @@
                     <img src="img/polling/wrongclick.png" alt="">
                     <div class="yoursideright"></div>
                 </div>
-                <label ng-class="{'yourside-labelsel': data=='NO'}" class="yourside-label" for="">NO</label>
+                <label ng-class="{'yourside-labelsel': data=='NO'}" class="yourside-label" for="">DISLIKE</label>
             </div>
 
         </div>

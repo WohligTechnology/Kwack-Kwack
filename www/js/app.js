@@ -5,9 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var connector = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ionic-toast'])
+var connector = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ionic-toast', 'ngCordovaOauth'])
 
-  .run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, $rootScope) {
+    $rootScope.$on('SendUp', function (event, args) {
+      $rootScope.font = args.message;
+         console.log($rootScope.font);
+    })
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)

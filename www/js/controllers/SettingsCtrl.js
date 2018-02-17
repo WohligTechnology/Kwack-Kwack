@@ -10,7 +10,7 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
   $scope.interestarr = []
   $scope.viewmore = false;
   $scope.view3 = true;
-
+$scope.fontapply=$rootScope.font
   $scope.goBackHandler = function () {
     window.history.back(); //This works
   };
@@ -32,6 +32,7 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
   $scope.user = {}
   $scope.user._id = $scope.jstorage._id
   Chats.apiCallWithData("User/getOne", $scope.user, function (data) {
+    console.log("dta",data)
     if (data.value == true) {
       $scope.userInfo = data.data
     } else {
@@ -39,13 +40,16 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
     }
   })
 
-  $scope.test = 'small'
+  console.log($rootScope.font);
   //change font size
-  $scope.font = '';
+  //  $rootScope.fontChange = 'verysmall';
   $scope.changesize = function (data) {
-    $scope.$emit("SendUp", {
-      message: data
-    });
+    $rootScope.fontChange = data
+    // $state.reload();
+    // $scope.$emit("SendUp", {
+    //   message: data
+    // });
+    // $scope.fontChange = $rootScope.font
   }
   // $scope.changesize = function (data) {
   //   $rootScope.font = data;

@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "ionic-toast": "^0.4.1",
-    "angular-momentjs": "^0.2.2"
+    "angular-momentjs": "^0.2.2",
+    "ng-cordova-oauth": "^0.3.0"
   }
 }

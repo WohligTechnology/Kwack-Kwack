@@ -1,4 +1,6 @@
 connector.controller('ProfileCtrl', function ($scope, $cordovaContacts, $cordovaCamera, Chats, $ionicActionSheet, $cordovaImagePicker, $cordovaFileTransfer) {
+  
+   
     $scope.reqData = {};
     $scope.reqData._id = $.jStorage.get("user")._id
     $scope.getUserDetails = function () {

@@ -9949,8 +9949,92 @@ h4 {
     font-size: 18px;
     font-family: 'Montserrat-ExtraLight'; }
 
-.large {
-  font-size: 50px !important; }
+.verysmall div {
+  font-size: 10px !important; }
+
+.verysmall label {
+  font-size: 10px !important; }
+
+.verysmall p {
+  font-size: 10px !important; }
+
+.verysmall span {
+  font-size: 10px !important; }
+
+.verysmall button {
+  font-size: 10px !important; }
+
+.verysmall h5 {
+  font-size: 10px !important; }
+
+.verysmall h4 {
+  font-size: 10px !important; }
+
+.verysmall h2 {
+  font-size: 10px !important; }
+
+.small div {
+  font-size: 11px !important; }
+
+.small label {
+  font-size: 11px !important; }
+
+.small p {
+  font-size: 11px !important; }
+
+.small span {
+  font-size: 11px !important; }
+
+.small h5 {
+  font-size: 11px !important; }
+
+.small h4 {
+  font-size: 11px !important; }
+
+.small h2 {
+  font-size: 11px !important; }
+
+.medium div {
+  font-size: 13px !important; }
+
+.medium label {
+  font-size: 13px !important; }
+
+.medium p {
+  font-size: 13px !important; }
+
+.medium span {
+  font-size: 13px !important; }
+
+.medium h5 {
+  font-size: 13px !important; }
+
+.medium h4 {
+  font-size: 13px !important; }
+
+.medium h2 {
+  font-size: 13px !important; }
+
+.bold div {
+  font-size: 15px !important; }
+
+.bold label {
+  font-size: 15px !important; }
+
+.bold p {
+  font-size: 15px !important; }
+
+.bold span {
+  font-size: 15px !important; }
+
+.bold h5 {
+  font-size: 15px !important; }
+
+.bold h4 {
+  font-size: 15px !important; }
+
+.bold h2 {
+  font-size: 15px !important; }
 
 .skipButton {
   position: absolute;
@@ -10840,8 +10924,9 @@ button.btn-yellow.button[disabled] {
 
 .discover-navsearch {
   text-align: right;
-  font-size: 23px;
   padding-right: 15px; }
+  .discover-navsearch i {
+    font-size: 23px; }
 
 .discover-navmenu {
   width: 25%;
@@ -11250,6 +11335,9 @@ button.btn-yellow.button[disabled] {
 
 .borderclass.tab-item {
   border-right: 1px solid #fff !important; }
+
+.tab-item {
+  opacity: 0.5; }
 
 .tabimage {
   background-image: url("../img/footer/home.png") !important;
