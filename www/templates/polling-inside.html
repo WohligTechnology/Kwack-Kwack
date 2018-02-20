@@ -95,7 +95,8 @@
                       <label ng-if="!yespercent" for="">0</label>
                       <span>%</span>
                    </div>
-                   <label class="pollAnswer" for="">Yes</label>
+                   <label ng-if="newsInfo.IsPoll=='NO'" class="pollAnswer" for="">Like</label>
+                   <label ng-if="newsInfo.IsPoll=='YES'" class="pollAnswer" for="">{{option1}}</label>
                </div>
               </div>
               <div class="col col-50">
@@ -122,7 +123,8 @@
                         <label ng-if="!nopercent" for="">0</label>
                         <span>%</span>
                      </div>
-                     <label class="pollAnswer" for="">No</label>
+                     <label ng-if="newsInfo.IsPoll=='NO'" class="pollAnswer" for="">Dislike</label>
+                     <label ng-if="newsInfo.IsPoll=='YES'" class="pollAnswer" for="">{{option2}}</label>
                 </div>
               </div>
                

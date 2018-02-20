@@ -38,7 +38,7 @@
             <h3>CHOOSE YOUR SIDE</h3>
             <label for="">AND START POLLING</label>
         </div>
-        <div class="row"  ng-if="!newsInfo.pollQuestionOption.length!=0" >
+        <div class="row"  ng-if="newsInfo.pollQuestionOption.length==0" >
             <div class="col col-50 yourSide rel">
                 <div ng-if=" data=='NO' || data==null" ng-click="savePoll('YES')">
                     <img src="img/polling/right.png" alt="">

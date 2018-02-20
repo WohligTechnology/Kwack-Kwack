@@ -7,8 +7,8 @@
             <div class="relative">
                 <img class="full-image" ng-src="{{news.imageUrl}}">
                 <div class="interest-spon absolute">
-                    <label class="movie-label">{{news.interest}}</label>
-                    <label  class=" spon-label" ng-class="{'spon-pos': !news.interest}">Sponsored</label>
+                    <label ng-if="news.interest" class="movie-label">{{news.interest}}</label>
+                    <label ng-if="news.IsPoll=='YES'" class=" spon-label" ng-class="{'spon-pos': !news.interest}">Sponsored</label>
                 </div>
                 
             </div>
