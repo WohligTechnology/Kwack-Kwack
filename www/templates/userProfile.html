@@ -1,47 +1,23 @@
-<ion-view title="Edit" class="{{fontChange}}">
+<ion-view title="User Profile" class="{{fontChange}}">
     <form name="formName">
-        <div class="row text-center">
-            <div class="col col-33 cncelNav" ui-sref="tab.settings">CANCEL</div>
-            <div class="col col-33 navHead">EDIT</div>
-            <div class="col col-33 cncelNav" ng-click="datasave(userInfo)">DONE</div>
+       <div class="row">
+            <div class="col mar-l10 cncelNav" ui-sref="debate"><i class="ion ion-ios-arrow-left trailernav pad-left5"></i></div>
         </div>
         <ion-content class="bg-color">
-            <div class="bodyFont">
+            <div class="bodyFont  user-profile martop">
                 <div class="profileImg">
-                    <img src="img/profile/profile.png">
+                   <img ng-if="userInfo.photo && userInfo.photo!=''" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
+                        <img src="img/profile/profile.png" ng-if="!userInfo.photo || userInfo.photo==''" alt="logo" class="w100">
+                    </div>
+                <div class="text-center set-username"><h5>{{userInfo.name}}</h5></div>
+                <div class="city text-center">  
+                        <span><i class="ion ion-location"></i></span>{{userInfo.state}}
                 </div>
-                <div class="text-center">
-                    <label>RAKESH SHARMA</label>
-                    <div>  
-                        <span><i class="ion ion-location"></i></span>
-                  <input type="text" class="editCity" name="name" ng-model="userInfo.city" placeholder="Enter City"></div>
-                </div>
+                <div class="follow-btn martop text-center">
+                    <button class="button icon-left ion ion-android-add">Follow</button>
+               </div>
                 <!-- <div class="chngImg" ng-click="showActionsheet('image')">Change Image</div> -->
-                <div class="editCard relative">
-                    <div class="editBtn">
-                        <img class="img-responsive" src="img/edit/edit.png">
-                    </div>
-                    <div class="card">
-                     <div class="editName">
-                            <!-- <label for="">NAME</label> -->
-                            <input type="text" class="editusername" name="name" ng-model="userInfo.name" value="{{userInfo.name}}">
-                              <div class="pad-left5">
-                                <span>
-                                    <i class="ion ion-location"></i>
-                                </span>
-                              <input type="text" class="editCity" name="name" ng-model="userInfo.city" placeholder="Enter City">
-                           </div>
-                        </div>
-                        <div class="editBio">
-                            <!-- <label for="">BIO</label> -->
-                            <div>
-                                <textarea class="width100" name="bio" rows="4" ng-model="userInfo.bio">Art Director, likes food, photography and exploring places.</textarea>
-                                <!--<p ng-model="data.bio">{{userInfo.bio}}.</p>{{data.bio}}-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                  <div class="editCard">
+               <div class="editCard">
                     <div class="card">
                         <div class="pad-15">
                             <div class="row text-center">
@@ -61,6 +37,11 @@
                          </div>
                     </div>
                 </div>
+             <div class="terms">
+                 <h5>About</h5>
+              
+                 <p> {{userInfo.bio}}</p>
+             </div>
                 </div>
         </ion-content>
     </form>
