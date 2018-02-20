@@ -5,7 +5,12 @@
     <div class="list card">
         <div class="relative">
             <img class="full-image" ng-src="{{news.imageUrl}}" ng-click="viewsNextPage(news._id)">
-            <label ng-if="news.interest" class="absolute movie-label">{{news.interest}}</label>
+            <!-- <label  class="absolute movie-label">{{news.interest}}</label>
+            <label  class="absolute spon-label" ng-class="{'spon-pos': !news.interest}">Sponsored</label> -->
+            <div class="interest-spon absolute">
+                <label ng-if="news.interest" class="movie-label">{{news.interest}}</label>
+                <label ng-if="news.IsPoll=='YES'" class=" spon-label" ng-class="{'spon-pos': !news.interest}">Sponsored</label>
+            </div>
         </div>
         <div class="item item-body">
             <h3 class="pad0" ng-click="viewsNextPage(news._id)">{{news.name}}</h3>

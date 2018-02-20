@@ -8,7 +8,8 @@
         <ion-content class="bg-color">
             <div class="bodyFont">
                 <div class="profileImg">
-                    <img src="{{userInfo.photo | uploadpath}} " alt="">
+                    <img ng-if="!userInfo.type" src="{{userInfo.photo | uploadpath}} " alt="">
+                    <img ng-if="userInfo.type" src="{{userInfo.photo}} " alt="">
                 </div>
                 <div class="chngImg" ng-click="showActionsheet('image')">Change Image</div>
                 <div class="editCard relative">

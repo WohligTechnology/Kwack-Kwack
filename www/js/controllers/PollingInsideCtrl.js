@@ -27,17 +27,24 @@ connector.controller('PollingInsideCtrl', function ($scope, $stateParams, $state
             $scope.TotalKwacks = data1.data.comments.length
             $scope.TotalPoll = data1.data.polls.length
             $scope.yesno = data1.data.polls
-            _.forEach($scope.yesno, function (value) {
-                if (value.poll == null) {} else if (value.poll.pollOptions == 'YES') {
-                    $scope.yes.push(value)
-                    var yes = $scope.yes.length / $scope.TotalPoll * 100
-                    $scope.yespercent = _.round(yes)
-                } else {
-                    $scope.no.push(value)
-                    var no = $scope.no.length / $scope.TotalPoll * 100
-                    $scope.nopercent = _.round(no)
-                }
-            });
+            console.log("$scope.yesno", $scope.newsInfo)
+            if ($scope.newsInfo.IsPoll=="NO") {
+                console.log("Innside poll f condi yes no")
+                _.forEach($scope.yesno, function (value) {
+                    if (value.poll == null) {} else if (value.poll.pollOptions == 'YES') {
+                        $scope.yes.push(value)
+                        var yes = $scope.yes.length / $scope.TotalPoll * 100
+                        $scope.yespercent = _.round(yes)
+                    } else {
+                        $scope.no.push(value)
+                        var no = $scope.no.length / $scope.TotalPoll * 100
+                        $scope.nopercent = _.round(no)
+                    }
+                });
+            }else{
+                // $scope.opt1=$scope.newsInfo
+                console.log("Inide else part demo1 demo2")
+            }
         } else {}
     })
 

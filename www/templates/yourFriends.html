@@ -24,7 +24,8 @@
         <div ng-if="allpeople=='all'" class="content-scroll list-profile">
         
           <a class="item item-avatar" ng-repeat="friends in followingData   | filter:followingData.userBeenFollowed track by $index">
-            <img ng-if="friends.userBeenFollowed.photo" src="{{friends.userBeenFollowed.photo | uploadpath}}">
+            <img ng-if="friends.userBeenFollowed.photo && !friends.userBeenFollowed.type" src="{{friends.userBeenFollowed.photo | uploadpath}}">
+            <img ng-if="friends.userBeenFollowed.photo && friends.userBeenFollowed.type" src="{{friends.userBeenFollowed.photo}}">
             <img ng-if="!friends.userBeenFollowed.photo" ng-src="img/profile/profile.png">
   
             <i class="ion ion-star"></i>

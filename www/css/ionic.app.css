@@ -10597,14 +10597,28 @@ button.btn-yellow.button[disabled] {
   z-index: 1; }
 
 .movie-label {
-  bottom: 2%;
-  left: 1px;
   background: #000;
   color: #fff;
   font-size: 10px;
   font-family: 'Montserrat-Regular';
+  letter-spacing: 1px;
   padding: 3px 13px;
-  letter-spacing: 1px; }
+  margin: -4px; }
+
+.interest-spon {
+  bottom: 2%;
+  left: 7px; }
+
+.spon-pos {
+  left: 1px !important; }
+
+.spon-label {
+  background: #ffb600;
+  color: #fff;
+  font-size: 10px;
+  font-family: 'Montserrat-Regular';
+  letter-spacing: 1px;
+  padding: 3px 13px; }
 
 .news-content h3 {
   font-family: 'Montserrat-Medium';

@@ -26,7 +26,9 @@
                 <img ng-src="img/profile/profile.png" alt="logo" class="w100">
               </div>
               <div class="profile-img" ng-if="userInfo.photo">
-                <img ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
+                <img ng-if="!userInfo.type" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
+                <img ng-if="userInfo.type" ng-src="{{userInfo.photo}}" alt="logo" class="w100">
+
               </div>
             </div>
           </div>
@@ -93,7 +95,8 @@
           <div class="list listperson listdetail listminheight" ng-if='followingData.length!=0'>
             <a class="item item-avatar" ng-repeat="users in followingData track by $index">
               <img ng-if="!users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="img/profile/profile.png">
-              <img ng-if="users.user.photo" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="{{users.user.photo | uploadpath}}">
+              <img ng-if="users.user.photo && users.user.type" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="{{users.user.photo | uploadpath}}">
+              <img ng-if="users.user.photo && !users.user.type" ng-click="selectedUser(users.user._id); doRefresh(true)" ng-src="{{users.user.photo}}">
               <h2 ng-click="selectedUser(users.user._id); doRefresh(true)">{{users.user.userName}}</h2>
               <p ng-click="selectedUser(users.user._id); doRefresh(true)">{{users.user.email}}</p>
               <div ng-click="followUnfollow(users.user._id, 'innerFollow', $index)">
@@ -110,7 +113,8 @@
       <div class="list listperson listdetail listmaxheight" ng-if='followersb==true &&  !countValue'>
         <a class="item item-avatar" ng-repeat="users in followingData track by $index">
           <img ng-click="selectedUser(users._id); doRefresh(true)" ng-if="!users.photo" ng-src="img/profile/profile.png">
-          <img ng-click="selectedUser(users._id); doRefresh(true)" ng-if="users.photo" src="{{users.photo | uploadpath}}">
+          <img ng-click="selectedUser(users._id); doRefresh(true)" ng-if="users.photo && !users.type" src="{{users.photo | uploadpath}}">
+          <img ng-click="selectedUser(users._id); doRefresh(true)" ng-if="users.photo && users.type" src="{{users.photo}}">
           <h2 ng-click="selectedUser(users._id); doRefresh(true)">{{users.name}}</h2>
           <p ng-click="selectedUser(users._id); doRefresh(true)">{{users.email}}</p>
           <div ng-click="followUnfollow(users._id, 'outerFollow',$index)">
