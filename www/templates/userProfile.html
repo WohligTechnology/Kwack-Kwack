@@ -8,33 +8,29 @@
         <ion-content class="bg-color">
             <div class="bodyFont">
                 <div class="profileImg">
-                    <img ng-if="!userInfo.type" src="{{userInfo.photo | uploadpath}} " alt="">
-                    <img ng-if="userInfo.type" src="{{userInfo.photo}} " alt="">
+                    <img src="img/profile/profile.png">
                 </div>
-                <div class="chngImg" ng-click="showActionsheet('image')">Change Image</div>
+                <div class="text-center">
+                    <label>RAKESH SHARMA</label>
+                    <div>  
+                        <span><i class="ion ion-location"></i></span>
+                  <input type="text" class="editCity" name="name" ng-model="userInfo.city" placeholder="Enter City"></div>
+                </div>
+                <!-- <div class="chngImg" ng-click="showActionsheet('image')">Change Image</div> -->
                 <div class="editCard relative">
                     <div class="editBtn">
-                        <img class="img-responsive" src="img/edit/edit.png" alt="">
+                        <img class="img-responsive" src="img/edit/edit.png">
                     </div>
-                    <div class="card ">
-
-                        <div class="editName">
+                    <div class="card">
+                     <div class="editName">
                             <!-- <label for="">NAME</label> -->
                             <input type="text" class="editusername" name="name" ng-model="userInfo.name" value="{{userInfo.name}}">
-
-                            <div class="pad-left5">
+                              <div class="pad-left5">
                                 <span>
                                     <i class="ion ion-location"></i>
                                 </span>
-
-                                <input type="text" class="editCity" name="name" ng-model="userInfo.city" placeholder="Enter City">
-
-
-                                <!-- <select class="form-control editCity" ng-options="st.stateName for st in stateData track by st._id" ng-model="formName.selectedState"
-                                    placeholder="Select">
-                                    <option class="editCity" value="">Mumbai</option>
-                                </select> -->
-                            </div>
+                              <input type="text" class="editCity" name="name" ng-model="userInfo.city" placeholder="Enter City">
+                           </div>
                         </div>
                         <div class="editBio">
                             <!-- <label for="">BIO</label> -->
@@ -45,8 +41,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="editCard">
+                  <div class="editCard">
                     <div class="card">
                         <div class="pad-15">
                             <div class="row text-center">
@@ -63,8 +58,9 @@
                                     <div>{{setPollCountValueZero}}</div>
                                 </div>
                             </div>
-                        </div>
+                         </div>
                     </div>
+                </div>
                 </div>
         </ion-content>
     </form>

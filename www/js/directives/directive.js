@@ -172,14 +172,10 @@ connector.directive("moveNextOnMaxlength", function () {
         restrict: "A",
         link: function ($scope, element) {
             element.on("input", function (e) {
-                console.log("fghkgloikjhklj")
-                if (element.val().length == element.attr("maxlength")) {
-                    console.log("fghkgloikjhklj2222",element.val().length,"===",element.attr("maxlength"), "==",element.next(),"=====",element)
-                    var $nextElement = element.next();
-                    console.log("fghkgloikjhklj3333",$nextElement)
-                    if ($nextElement.length) {
-                        console.log("fghkgloikjhklj3333")
-                        $nextElement[0].focus();
+               if (element.val().length == element.attr("maxlength")) {
+                   var $nextElement = element.next();
+                   if ($nextElement.length) {
+                       $nextElement[0].focus();
                     }
                 }
             });
