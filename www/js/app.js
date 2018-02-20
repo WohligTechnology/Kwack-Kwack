@@ -8,6 +8,14 @@
 var connector = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ionic-toast', 'ngCordovaOauth'])
 
   .run(function ($ionicPlatform, $rootScope) {
+    $ionicPlatform.registerBackButtonAction(function (e) {
+      if ($state.current.name == 'tab.explore' || $state.current.name == 'tab.discoverNews' || $state.current.name == 'tab.social' || $state.current.name == 'tab.settings' || $state.current.name == 'tab.kwackScreen') {
+      ionic.Platform.exitApp();
+      } else {
+      navigator.app.backHistory();
+      }
+      }, 100);
+    
     $rootScope.$on('SendUp', function (event, args) {
       $rootScope.font = args.message;
          console.log($rootScope.font);
@@ -741,6 +749,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         return;
       }
     };
+    
   })
 
  
