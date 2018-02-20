@@ -19,7 +19,7 @@
         </div>
     </div>
     <form name="formFooter">
-    <ion-content class="has-header bg-color ">
+    <ion-content class="has-header bg-color">
 
         <div class="text-center">
             <h4 class="pad0 title-explore">KWACK</h4>
@@ -67,10 +67,10 @@
         </div>
         <div>
             <div class="debate-card relative">
-                  <div class="debateprofile"  ng-if="!currentUserInfo.photo || setvarann">
+                 <div class="debateprofile"  ng-if="!currentUserInfo.photo || setvarann" ui-sref="userprofile">
                     <img ng-src="img/profile/profile.png" alt="profile-img" class="profile-w">
                 </div>
-                <div class="debateprofile" ng-if="!setvarann && currentUserInfo.photo">
+                <div class="debateprofile" ng-if="!setvarann && currentUserInfo.photo" ui-sref="userprofile">
                     <img ng-src="{{currentUserInfo.photo | uploadpath}}" alt="profile-img" class="profile-w">
                 </div>
                 <div class="list card">
@@ -104,9 +104,7 @@
             </div>
         </div>
     </ion-content>
-    
     <div class="footer" ng-show="toggle">
-        
         <div class="bar bar-footer bar-black">
             <div class="row">
                <div class="col-80">
@@ -119,8 +117,7 @@
                     <div><button class="button btn-send" ng-disabled="formFooter.replyButt.$invalid" ng-click="saveReply(replyText, debate);">SEND</button></div>
                 </div>
             </div>
-
-        </div>
+            </div>
           </form>
     </div>
   

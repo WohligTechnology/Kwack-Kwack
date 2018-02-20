@@ -3277,7 +3277,34 @@ $dark:                            #444 !default;
     .contact {
         font-family: 'Montserrat-Medium';
         font-size: 17px;
-    } // css for iphone 5
+    }
+    //user profile
+    .user-profile{
+        h5{
+            letter-spacing: 2px;
+        }
+        .follow-btn{
+            .button{
+                color:$black ;
+                border-color: $black;
+            }
+            .icon-left:before {
+                color:$black ;
+            }
+        }
+        .editCard{
+            .card{
+                margin: 5px 30px 40px !important;
+            }
+        }
+    }
+    .city{
+        font-family: 'Montserrat-Medium';
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .accordian {
             label {

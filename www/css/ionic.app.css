@@ -12389,6 +12389,25 @@ button.btn-yellow.button[disabled] {
   font-family: 'Montserrat-Medium';
   font-size: 17px; }
 
+.user-profile h5 {
+  letter-spacing: 2px; }
+
+.user-profile .follow-btn .button {
+  color: #000;
+  border-color: #000; }
+
+.user-profile .follow-btn .icon-left:before {
+  color: #000; }
+
+.user-profile .editCard .card {
+  margin: 5px 30px 40px !important; }
+
+.city {
+  font-family: 'Montserrat-Medium';
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .accordian label {
     font-size: 10px !important; }
