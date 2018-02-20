@@ -64,7 +64,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
         $scope.socialLogin =  $.jStorage.get("socialLogin")
         console.log($scope.socialLogin)
         if($scope.socialLogin.access_token != '') {
-            $http.get("https://graph.facebook.com/v2.5/me", { params: { access_token: $scope.socialLogin.access_token, fields: "id,name,email,gender,location,website,picture,relationship_status", format: "json" }}).then(function(result) {
+            $http.get("https://graph.facebook.com/v2.5/me", { params: { access_token: $scope.socialLogin.access_token, fields: "id,name,mobile,email,gender,location,website,picture,relationship_status", format: "json" }}).then(function(result) {
                 $scope.profileData = result.data;
                 var Socialstate = result.data.location.name.split(",")
                 $scope.socialLoginData = {
@@ -72,9 +72,8 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
                   email: $scope.profileData.email,
                   photo: $scope.profileData.picture.data.url,
                   state: Socialstate[1],
-                  city: Socialstate[0],
-                  country: "India",
-                  type: true
+                  // city: Socialstate[0],
+                  country: "India"
                 }
 
                 Chats.apiCallWithData("User/saveUser", $scope.socialLoginData, function (data) {
@@ -82,7 +81,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
                       $scope.userData = data.data;
                       $scope.userData.verified = false;
                       $.jStorage.set("user", $scope.userData);
-                      $state.go("discover")
+                      $state.go("invite")
                   } else {
                       console.log("display error")
                   }

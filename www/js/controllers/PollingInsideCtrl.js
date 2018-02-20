@@ -27,6 +27,7 @@ connector.controller('PollingInsideCtrl', function ($scope, $stateParams, $state
             $scope.TotalKwacks = data1.data.comments.length
             $scope.TotalPoll = data1.data.polls.length
             $scope.yesno = data1.data.polls
+            console.log("$scope.yesno", $scope.newsInfo)
             _.forEach($scope.yesno, function (value) {
                 if (value.poll == null) {} else if (value.poll.pollOptions == 'YES') {
                     $scope.yes.push(value)

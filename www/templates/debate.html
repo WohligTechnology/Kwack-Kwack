@@ -70,8 +70,9 @@
                   <div class="debateprofile"  ng-if="!currentUserInfo.photo || setvarann">
                     <img ng-src="img/profile/profile.png" alt="profile-img" class="profile-w">
                 </div>
-                <div class="debateprofile" ng-if="!setvarann && currentUserInfo.photo">
-                    <img ng-src="{{currentUserInfo.photo | uploadpath}}" alt="profile-img" class="profile-w">
+                <div class="debateprofile" >
+                    <img ng-if="!setvarann && currentUserInfo.photo && !currentUserInfo.type" ng-src="{{currentUserInfo.photo | uploadpath}}" alt="profile-img" class="profile-w">
+                    <img ng-if="!setvarann && currentUserInfo.photo && currentUserInfo.type" ng-src="{{currentUserInfo.photo}}" alt="profile-img" class="profile-w">
                 </div>
                 <div class="list card">
                     <div class="item item-body">

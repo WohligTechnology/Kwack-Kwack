@@ -6,7 +6,11 @@
         <div class="list card explore-item">
             <div class="relative">
                 <img class="full-image" ng-src="{{news.imageUrl}}">
-                <label class="absolute movie-label">{{news.interest}}</label>
+                <div class="interest-spon absolute">
+                    <label class="movie-label">{{news.interest}}</label>
+                    <label  class=" spon-label" ng-class="{'spon-pos': !news.interest}">Sponsored</label>
+                </div>
+                
             </div>
             <div class="item item-body ">
                 <h3 class="pad0">{{news.name}}</h3>

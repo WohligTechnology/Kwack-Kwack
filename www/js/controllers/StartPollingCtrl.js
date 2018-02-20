@@ -18,6 +18,8 @@ connector.controller('StartPollingCtrl', function ($scope, $stateParams, Chats, 
     Chats.apiCallWithData("NewsInfo/getOneNews", data, function (data1) {
         if (data1.value == true) {
             $scope.newsInfo = data1.data
+            $scope.option1 = $scope.newsInfo.pollQuestionOption[0]
+            $scope.option2 = $scope.newsInfo.pollQuestionOption[1]
         } else {}
     })
     $scope.savePoll = function (num) {

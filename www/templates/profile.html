@@ -11,7 +11,8 @@
             </div>
             <div class="relative">
                 <div class="profile-pic mar-auto " ng-click="showActionsheet('image')">
-                    <img ng-if="userData.photo" ng-src="{{userData.photo | uploadpath}}" alt="logo" class="w100">
+                    <img ng-if="userData.photo && !userData.type" ng-src="{{userData.photo | uploadpath}}" alt="logo" class="w100">
+                    <img ng-if="userData.photo && userData.type" ng-src="{{userData.photo}}" alt="logo" class="w100">
                     <img src="img/profile/profile.png" ng-if="!userData.photo" alt="logo" class="w100">
                     <!-- <img ng-src="{{profileImage.image}}">                     -->
                     <div class="absolute plus-btn">
