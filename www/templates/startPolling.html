@@ -38,7 +38,7 @@
             <h3>CHOOSE YOUR SIDE</h3>
             <label for="">AND START POLLING</label>
         </div>
-        <div class="row" >
+        <div class="row"  ng-if="!newsInfo.pollQuestionOption.length!=0" >
             <div class="col col-50 yourSide rel">
                 <div ng-if=" data=='NO' || data==null" ng-click="savePoll('YES')">
                     <img src="img/polling/right.png" alt="">
@@ -64,7 +64,7 @@
             </div>
 
         </div>
-        <!-- <div class="row" ng-if="newsInfo.pollQuestionOption.length!=0">
+         <div class="row" ng-if="newsInfo.pollQuestionOption.length!=0">
             <div class="col col-50 yourSide rel">
                 <div ng-if=" data==option2 || data==null" ng-click="savePoll(option1)">
                     <img src="img/polling/right.png" alt="">
@@ -89,7 +89,7 @@
                 <label ng-class="{'yourside-labelsel': data==option2}" class="yourside-label" for="">{{option2}}</label>
             </div>
 
-        </div> -->
+        </div> 
         <button class=" trailernext" ng-click="nextPage()">
             NEXT
         </button>
