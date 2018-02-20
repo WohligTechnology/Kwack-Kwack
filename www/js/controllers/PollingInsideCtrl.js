@@ -24,6 +24,11 @@ connector.controller('PollingInsideCtrl', function ($scope, $stateParams, $state
     Chats.apiCallWithData("NewsInfo/getOneNews", data, function (data1) {
         if (data1.value == true) {
             $scope.newsInfo = data1.data
+            if( $scope.newsInfo.IsPoll=="YES"){
+                $scope.option1 = data1.data.pollQuestionOption[0]
+                $scope.option2 = data1.data.pollQuestionOption[1]
+            }
+           
             $scope.TotalKwacks = data1.data.comments.length
             $scope.TotalPoll = data1.data.polls.length
             $scope.yesno = data1.data.polls
@@ -42,6 +47,17 @@ connector.controller('PollingInsideCtrl', function ($scope, $stateParams, $state
                     }
                 });
             }else{
+                _.forEach($scope.yesno, function (value) {
+                    if (value.poll == null) {} else if (value.poll.pollOptions == $scope.option1) {
+                        $scope.yes.push(value)
+                        var yes = $scope.yes.length / $scope.TotalPoll * 100
+                        $scope.yespercent = _.round(yes)
+                    } else {
+                        $scope.no.push(value)
+                        var no = $scope.no.length / $scope.TotalPoll * 100
+                        $scope.nopercent = _.round(no)
+                    }
+                });
                 // $scope.opt1=$scope.newsInfo
                 console.log("Inide else part demo1 demo2")
             }

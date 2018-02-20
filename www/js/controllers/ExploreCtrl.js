@@ -13,7 +13,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
       "page": $scope.pagination.currentPage,
       "userId": $scope.jstorage._id
     }
-    Chats.apiCallWithData("NewsInfo/getExploreNews", $scope.pagination1, function (data) {
+    Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
       $scope.exploreNews = _.concat($scope.exploreNews, data.data.results);
       $scope.$broadcast('scroll.infiniteScrollComplete');
       if (data.data.results.length == 10) {
