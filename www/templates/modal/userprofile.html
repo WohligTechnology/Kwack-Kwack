@@ -1,0 +1,55 @@
+<ion-modal-view class="{{fontChange}}">
+    <form name="formName">
+        <div class="row bg-white" ng-click="closeModal()">
+            <div class="col mar-l10 cncelNav">
+                <i class="ion ion-ios-arrow-left trailernav pad-left5"></i>
+            </div>
+        </div>
+        <ion-content class="bg-color has-header">
+            <div class="bodyFont  user-profile martop">
+                <div class="profileImg">
+                    <img ng-if="userInfo.photo && userInfo.photo!=''" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
+                    <img src="img/profile/profile.png" ng-if="!userInfo.photo || userInfo.photo==''" alt="logo" class="w100">
+                </div>
+                <div class="text-center set-username">
+                    <h5>{{userInfo.name}}</h5>
+                </div>
+                <div class="city text-center">
+                    <span>
+                        <i class="ion ion-location"></i>
+                    </span>{{userInfo.state}}
+                </div>
+                <div class="follow-btn martop text-center" ng-if="userInfo.flag!='Nuetral'" ng-click="followUnfollow(userInfo._id)">
+                    <button class="button icon-left ion ion-android-add" ng-if="userInfo.flag=='false'">Follow</button>
+                    <button class="button icon-left ion ion-android-add" ng-if="userInfo.flag=='true'">Unfollow</button>
+                </div>
+                <!-- <div class="chngImg" ng-click="showActionsheet('image')">Change Image</div> -->
+                <div class="editCard">
+                    <div class="card">
+                        <div class="pad-15">
+                            <div class="row text-center">
+                                <div class="col-33 KwackFollowersPosts">
+                                    <label>KWACKS</label>
+                                    <div>{{totalKwacks.length ? totalKwacks.length : 0}}</div>
+                                </div>
+                                <div class="col-33 KwackFollowersPosts">
+                                    <label>FOLLOWERS</label>
+                                    <div>{{userInfo.followCount}}</div>
+                                </div>
+                                <div class="col-33 KwackFollowersPosts">
+                                    <label>POLLS</label>
+                                    <div>{{totalPolls.length ? totalPolls.length : 0}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="terms">
+                    <h5>About</h5>
+
+                    <p> {{userInfo.bio}}</p>
+                </div>
+            </div>
+        </ion-content>
+    </form>
+</ion-modal-view>

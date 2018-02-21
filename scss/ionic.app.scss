@@ -147,6 +147,10 @@ $dark:                            #444 !default;
         background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 1) 30%, rgba(224, 224, 224, 1) 99%) !important;
     }
 
+    .bg-white {
+        background: $light;
+    }
+
     .ionslide {
         height: 600px !important;
     }
@@ -162,7 +166,8 @@ $dark:                            #444 !default;
             font-size: 18px;
             font-family: 'Montserrat-ExtraLight';
         }
-    } 
+    }
+
     .verysmall {
         div {
             font-size: 10px !important;
@@ -176,87 +181,88 @@ $dark:                            #444 !default;
         span {
             font-size: 10px !important;
         }
-        button{
+        button {
             font-size: 10px !important;
         }
-        h5{
+        h5 {
             font-size: 10px !important;
         }
-        h4{
+        h4 {
             font-size: 10px !important;
         }
-        h2{
+        h2 {
             font-size: 10px !important;
         }
     }
 
     .small {
         div {
-            font-size: 11px!important;
-        }
-        label {
-            font-size: 11px!important;
-        }
-        p {
-            font-size: 11px!important;
-        }
-        span {
-            font-size: 11px!important;
-        }
-        h5 {
-            font-size: 11px!important;
-        }
-        h4{
             font-size: 11px !important;
         }
-        h2{
+        label {
+            font-size: 11px !important;
+        }
+        p {
+            font-size: 11px !important;
+        }
+        span {
+            font-size: 11px !important;
+        }
+        h5 {
+            font-size: 11px !important;
+        }
+        h4 {
+            font-size: 11px !important;
+        }
+        h2 {
             font-size: 11px !important;
         }
     }
+
     .medium {
         div {
-            font-size: 13px!important;
-        }
-        label {
-            font-size: 13px!important;
-        }
-        p {
-            font-size: 13px!important;
-        }
-        span {
-            font-size: 13px!important;
-        }
-        h5 {
-            font-size: 13px!important;
-        }
-        h4{
             font-size: 13px !important;
         }
-        h2{
+        label {
+            font-size: 13px !important;
+        }
+        p {
+            font-size: 13px !important;
+        }
+        span {
+            font-size: 13px !important;
+        }
+        h5 {
+            font-size: 13px !important;
+        }
+        h4 {
+            font-size: 13px !important;
+        }
+        h2 {
             font-size: 13px !important;
         }
     }
 
     .bold {
         div {
-            font-size: 15px!important;
-        }
-        label {
-            font-size: 15px!important;
-        }
-        p {
-            font-size: 15px!important;
-        }
-        span {
-            font-size: 15px!important;
-        }
-        h5 {
-            font-size: 15px!important;
-        }
-        h4{
             font-size: 15px !important;
         }
-        h2{
+        label {
+            font-size: 15px !important;
+        }
+        p {
+            font-size: 15px !important;
+        }
+        span {
+            font-size: 15px !important;
+        }
+        h5 {
+            font-size: 15px !important;
+        }
+        h4 {
+            font-size: 15px !important;
+        }
+        h2 {
             font-size: 15px !important;
         }
     }
@@ -1029,13 +1035,13 @@ $dark:                            #444 !default;
         margin: -4px;
     }
 
-    .interest-spon{
+    .interest-spon {
         bottom: 2%;
-        left: 7px;  
-        }
+        left: 7px;
+    }
 
-    .spon-pos{
-        left: 1px!important; 
+    .spon-pos {
+        left: 1px !important;
     }
 
     .spon-label {
@@ -1450,7 +1456,7 @@ $dark:                            #444 !default;
     .discover-navsearch {
         text-align: right;
         padding-right: 15px;
-        i{
+        i {
             font-size: 23px;
         }
     }
@@ -1959,8 +1965,8 @@ $dark:                            #444 !default;
         border-right: 1px solid $light !important;
     }
 
-    .tab-item{
-       opacity: 0.5;
+    .tab-item {
+        opacity: 0.5;
     }
 
     .tabimage {
@@ -2216,7 +2222,8 @@ $dark:                            #444 !default;
     .chngImg {
         text-align: center;
         font-size: 0.7em;
-        font-family: 'Montserrat-Medium'
+        font-family: 'Montserrat-Medium';
+        margin-top: 20px;
     }
 
     .editCard {
@@ -3294,34 +3301,33 @@ $dark:                            #444 !default;
     .contact {
         font-family: 'Montserrat-Medium';
         font-size: 17px;
-    }
-    //user profile
-    .user-profile{
-        h5{
+    } //user profile
+    .user-profile {
+        h5 {
             letter-spacing: 2px;
         }
-        .follow-btn{
-            .button{
-                color:$black ;
+        .follow-btn {
+            .button {
+                color: $black;
                 border-color: $black;
             }
             .icon-left:before {
-                color:$black ;
+                color: $black;
             }
         }
-        .editCard{
-            .card{
+        .editCard {
+            .card {
                 margin: 5px 30px 40px !important;
             }
         }
     }
-    .city{
+
+    .city {
         font-family: 'Montserrat-Medium';
         font-size: 12px;
         letter-spacing: 2px;
         text-transform: uppercase;
-    }
-    // css for iphone 5
+    } // css for iphone 5
     @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         .accordian {
             label {
@@ -3728,7 +3734,6 @@ $dark:                            #444 !default;
             font-size: 10px !important;
             line-height: 18px !important;
         }
-     
     }
 
     @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: portrait) {

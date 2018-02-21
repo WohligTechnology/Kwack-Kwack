@@ -1,4 +1,4 @@
-connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state) {
+connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state, $ionicModal) {
     $scope.lellow = false;
     $scope.newsId = $stateParams.newsid
     $scope.kwackAns = $stateParams.kwackId
@@ -10,6 +10,7 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         $scope.setvarann = true
     }
     $scope.news = {}
+    $scope.user = {}
     $scope.news.newsId = $scope.newsId
     $scope.news.userId = $.jStorage.get('user')._id;
     $scope.kwackSide = {}
@@ -104,6 +105,81 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
                 $scope.newsInfo = data1.data
                 $state.reload()
             } else {}
+        })
+    }
+
+    $ionicModal.fromTemplateUrl('templates/modal/userprofile.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+    $scope.openModal = function () {
+        $scope.modal.show();
+    }
+
+    $scope.closeModal = function () {
+        $scope.modal.hide();
+    };
+
+    $scope.getOneUserDetails = function (data) {
+        Chats.apiCallWithData("UserFollow/getOneUserDetail", data, function (data) {
+            if (data.value == true) {
+                $scope.userInfo = data.data
+                // $scope.userInfo.followUnfollow = false
+                // if ($scope.userInfo._id == $.jStorage.get("user")._id) {
+                //   $scope.showButton = true
+                // }
+            } else {}
+        })
+
+    }
+
+    $scope.userProfile = function (id) {
+        console.log(id)
+        $scope.userData = {}
+        $scope.userData.userId = id
+
+        // $scope.user._id = id
+        $scope.user.GetUserId = id
+        $scope.user.userId = $.jStorage.get("user")._id
+        $scope.getOneUserDetails($scope.user);
+
+        Chats.apiCallWithData("Comment/getKwackForOneUser", $scope.userData, function (data) {
+            if (data.value == true) {
+                $scope.totalKwacks = data.data
+            }
+        })
+
+        Chats.apiCallWithData("PollAnswer/getPollForOneUser", $scope.userData, function (data) {
+            if (data.value == true) {
+                $scope.totalPolls = data.data
+            }
+        })
+    }
+
+    $scope.followUnfollow = function (userId) {
+        console.log("$scope.userInfo", $scope.userInfo)
+        $scope.userData = {}
+        $scope.userData.userBeenFollowed = userId
+        $scope.userData.user = $.jStorage.get('user')._id
+        $scope.userData.userFollowed = $.jStorage.get('user')._id
+        $scope.userData.userFollwing = userId
+        Chats.noLoaderApi("UserFollow/areBothFollowing", $scope.userData, function (data) {
+            if (data.value == true) {
+                Chats.noLoaderApi("UserFollow/removeFollowerCount", $scope.userData, function (data) {
+                    $scope.userInfo.flag = 'false';
+                    console.log("$scope.userInfo", $scope.userInfo)
+                    $scope.getOneUserDetails($scope.user);
+                })
+            } else {
+                Chats.noLoaderApi("UserFollow/addFollowerCount", $scope.userData, function (data) {
+                    $scope.userInfo.flag = 'true';
+                    console.log("$scope.userInfo", $scope.userInfo)
+                    $scope.getOneUserDetails($scope.user);
+                })
+            }
+
         })
     }
 

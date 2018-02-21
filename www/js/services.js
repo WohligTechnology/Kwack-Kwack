@@ -1,5 +1,5 @@
-// var adminurl = "http://localhost:80/api/";
-var adminurl = "http://kwack-backend.wohlig.co.in/api/";
+var adminurl = "http://localhost:80/api/";
+// var adminurl = "http://kwack-backend.wohlig.co.in/api/";
 
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile?file=";

@@ -49,10 +49,10 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   };
   $scope.doRefresh(true);
 
-  $scope.closeModal = function () {
-    $scope.modal.hide();
-    $state.reload();
-  };
+  // $scope.closeModal = function () {
+  //   $scope.modal.hide();
+  //   $state.reload();
+  // };
 
   $ionicModal.fromTemplateUrl('templates/modal/filter1.html', {
     scope: $scope,
