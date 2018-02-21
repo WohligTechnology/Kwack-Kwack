@@ -1,5 +1,7 @@
 connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, Chats, $ionicScrollDelegate) {
   $scope.newsId = {}
+  $scope.exploreState = $state.current.name
+  console.log("$scope.exploreState", $scope.exploreState)
   $scope.newsId.newsId = $stateParams.newsid
   $scope.previousState = $stateParams.previousState
   $scope.newsId.userId = $.jStorage.get('user')._id;
@@ -12,6 +14,12 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
   data.newsId = $scope.newsId
   $scope.dataToSend.newsId = $stateParams.newsid
   $scope.dataToSend.userId = $.jStorage.get('user')._id
+  Chats.setkwackPollStateChange($state.current.name)
+  $scope.goToFromState = function () {
+    $scope.mainTab = Chats.getkwackPollStateChange();
+    $state.go($scope.mainTab.fromState);
+    Chats.flushMainTab();
+};
 
   $scope.goBackHandler = function () {
     window.history.back(); //This works
@@ -83,12 +91,20 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
             newState: $state.current.name
           })
         } else {
-          $state.go("tab.startPollingex", {
+          var poll = {
             newsid: data,
             previousState: $scope.previousState,
             newState: $state.current.name
-          })
-
+          }
+          if($state.current.name == 'tab.exploremoresocial'){
+            $state.go("tab.startPollingsocial",poll)
+          }else if($state.current.name == 'tab.exploremorekwack'){
+            $state.go("tab.startPollingkwack",poll)
+          }else if ($state.current.name == 'tab.exploremore'){
+            $state.go("tab.startPollingex",poll)
+          }else{
+            $state.go("tab.startPollingdis",poll)
+          }
         }
       })
     } else {
@@ -100,11 +116,20 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
             newState: $state.current.name
           })
         } else {
-          $state.go("tab.trailerex", {
+          var kwack = {
             newsid: data,
             previousState: $scope.previousState,
             newState: $state.current.name
-          })
+          }
+          if($state.current.name == 'tab.exploremoresocial'){
+            $state.go("tab.trailersocial",kwack)
+          }else if($state.current.name == 'tab.exploremorekwack'){
+            $state.go("tab.trailerkwack",kwack)
+          }else if ($state.current.name == 'tab.exploremore'){
+            $state.go("tab.trailerex",kwack)
+          }else{
+            $state.go("tab.trailerdis",kwack)
+          }
         }
       })
     }

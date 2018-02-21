@@ -2,6 +2,14 @@ connector.controller('StartPollingCtrl', function ($scope, $stateParams, Chats, 
     $scope.newsId = $stateParams.newsid
     $scope.previousState = $stateParams.previousState
     $scope.newState = $stateParams.newState
+    $scope.goTo =$state.current.name
+    console.log("hello state", $scope.goTo)
+    Chats.setkwackPollStateChange( $scope.goTo)
+    $scope.goToFromState = function () {
+        $scope.mainTab = Chats.getkwackPollStateChange();
+        $state.go($scope.mainTab.fromState);
+        Chats.flushMainTab();
+    };
     data = {}
     data.newsId = $scope.newsId
     data.userId = $.jStorage.get('user')._id;

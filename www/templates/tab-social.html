@@ -1,12 +1,12 @@
 <ion-view title="Social" class="{{fontChange}}">
     <div ng-include="tabHeader"></div>
     <ion-content class="bg-color has-header  has-bottom">
-        <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true)"></ion-refresher>
-        <div ng-if="!searchInput">
+        <ion-refresher ng-if="!searchInputsocial" on-refresh="doRefresh(true)"></ion-refresher>
+        <div>
             <div class="text-center">
                 <h4 class="pad0 title-explore">SOCIAL</h4>
             </div>
-            <div class="border-top">
+            <div ng-if="!searchInputsocial" class="border-top">
             </div>
             <!--<div class="news-content">
                 <div class="row">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </div>-->
-            <div ng-if="!searchInput" class="news-content">
+            <div ng-if="!searchInputsocial" class="news-content">
                 <div ng-repeat="social in discoverNews">
 
 
@@ -124,10 +124,10 @@
             </div>
         </div>
 
-        <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInput" on-infinite="loadMore()" distance="2px">
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInputsocial" on-infinite="loadMore()" distance="2px">
             <ion-infinite-scroll-content></ion-infinite-scroll-content>
         </ion-infinite-scroll>
-        <div ng-if="searchInput" ng-include="searchInclude">
+        <div ng-if="searchInputsocial" ng-include="searchInclude">
         </div>
     </ion-content>
 </ion-view>
