@@ -123,9 +123,28 @@ angular.module('starter.services', [])
 
 
       setkwackPollStateChange: function (fromState) {
-        var mainTab = {
-          fromState: fromState
+        if(fromState== 'tab.explore' || fromState== 'tab.startPollingex' || fromState== 'tab.trailerex' || fromState== 'tab.exploremore'){
+          var mainTab = {
+            fromState: 'tab.explore'
+          }
+        }else if (fromState== 'tab.discoverNews' || fromState== 'tab.startPollingdis' || fromState== 'tab.trailerdis'|| fromState== 'tab.exploremoredis'){
+          var mainTab = {
+            fromState: 'tab.discoverNews'
+          }
+        }else if (fromState== 'tab.kwackScreen' || fromState== 'tab.startPollingkwack' || fromState=='tab.trailerkwack' || fromState== 'tab.exploremorekwack'){
+          var mainTab = {
+            fromState: 'tab.kwackScreen'
+          }
+        }else if (fromState== 'tab.social' || fromState== 'tab.startPollingsocial' || fromState== 'tab.trailersocial'|| fromState== 'tab.exploremoresocial'){
+          var mainTab = {
+            fromState: 'tab.social'
+          }
+        }else{
+          var mainTab = {
+            fromState: fromState
+          }
         }
+        
         $.jStorage.set('mainTab', mainTab);
       },
       getkwackPollStateChange: function () {

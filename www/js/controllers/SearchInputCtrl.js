@@ -1,19 +1,33 @@
 connector.controller('SearchInputCtrl', function ($scope, Chats, $state, $rootScope) {
     $scope.searchText = {}
     $scope.headerState = $state.current.name
+    console.log("$scope.headerState", $scope.headerState)
     if (_.isEmpty($.jStorage.get('mainTab'))) {
 
     } else {
         $scope.previousState = $.jStorage.get('mainTab').fromState
     }
-
+    Chats.setkwackPollStateChange($state.current.name)
+    $scope.goToFromState = function () {
+      $scope.mainTab = Chats.getkwackPollStateChange();
+      $state.go($scope.mainTab.fromState);
+      Chats.flushMainTab();
+  };
     Chats.setkwackPollStateChange($state.current.name)
     $scope.goBackHandler = function () {
         window.history.back(); //This works
     };
     $rootScope.toggleSearch = function () {
         Chats.setkwackPollStateChange($state.current.name)
-        $rootScope.searchInput = !$rootScope.searchInput
+        if($scope.headerState == 'tab.explore'){
+            $rootScope.searchInput = !$rootScope.searchInput
+        }else if($scope.headerState == 'tab.discoverNews'){
+            $rootScope.searchInputdis = !$rootScope.searchInputdis
+        }else if($scope.headerState == 'tab.kwackScreen'){
+            $rootScope.searchInputkwack = !$rootScope.searchInputkwack
+        }else{
+            $rootScope.searchInputsocial = !$rootScope.searchInputsocial
+        }  
     }
     $scope.search = function (value) {
         $scope.discoverFull = [];
@@ -40,9 +54,9 @@ connector.controller('SearchInputCtrl', function ($scope, Chats, $state, $rootSc
         } else if ($scope.previousState == 'tab.explore') {
             $state.go('tab.exploremore', search)
         } else if ($scope.previousState == 'tab.kwackScreen') {
-            $state.go('tab.trailerkwack', search)
+            $state.go('tab.exploremorekwack', search)
         } else {
-            $state.go('tab.trailersocial', search)
+            $state.go('tab.exploremoresocial', search)
         }
     }
 })

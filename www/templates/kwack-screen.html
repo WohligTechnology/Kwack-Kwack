@@ -3,11 +3,12 @@
         <div ng-include="tabHeader"></div>
     </div>
     <ion-content class="bg-color has-bottom">
-            <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true)"></ion-refresher>
-            <div ng-if="!searchInput">
-                    <div class="text-center">
-                            <h4 class="pad0 title-explore">KWACK</h4>
-                        </div>
+            <ion-refresher ng-if="!searchInputkwack" on-refresh="doRefresh(true)"></ion-refresher>
+            <div class="text-center">
+                <h4 class="pad0 title-explore">KWACK</h4>
+            </div>
+            <div ng-if="!searchInputkwack">
+                    
                         <div ng-if="news.length==0" class="text-center pad-10">No news available right now please apply some filters</div>
                         <div class="kwackcard-padd ">
                             <div class="list imagePos kwack-card">
@@ -27,7 +28,7 @@
                 </div>
             </div> -->
         </div>
-        <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInput" on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>
-        <div ng-if="searchInput" ng-include="searchInclude">
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInputkwack" on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>
+        <div ng-if="searchInputkwack" ng-include="searchInclude">
     </ion-content>
 </ion-view>
