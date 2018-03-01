@@ -24,6 +24,8 @@ connector.controller('StartPollingCtrl', function ($scope, $stateParams, Chats, 
         window.history.back(); //This works
     };
     Chats.apiCallWithData("NewsInfo/getOneNews", data, function (data1) {
+        Chats.setkwackPollStateChange($state.current.name)
+      
         if (data1.value == true) {
             $scope.newsInfo = data1.data
             $scope.option1 = $scope.newsInfo.pollQuestionOption[0]
@@ -34,6 +36,7 @@ connector.controller('StartPollingCtrl', function ($scope, $stateParams, Chats, 
         $scope.data = num
     }
     $scope.nextPage = function () {
+      
         if ($scope.data == undefined) {
             ionicToast.show('Choose Your side', 'top', false, 2500);
         } else {
