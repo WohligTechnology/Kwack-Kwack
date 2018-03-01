@@ -315,15 +315,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-inappbrowser.inappbrowser",
-    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-    "pluginId": "cordova-plugin-inappbrowser",
-    "clobbers": [
-      "cordova.InAppBrowser.open",
-      "window.open"
-    ]
-  },
-  {
     "id": "cordova-plugin-splashscreen.SplashScreen",
     "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
     "pluginId": "cordova-plugin-splashscreen",
@@ -369,6 +360,31 @@ module.exports = [
     "clobbers": [
       "cordova.plugins.diagnostic"
     ]
+  },
+  {
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
+    "clobbers": [
+      "cordova.InAppBrowser.open",
+      "window.open"
+    ]
+  },
+  {
+    "id": "twitter-connect-plugin.TwitterConnect",
+    "file": "plugins/twitter-connect-plugin/www/TwitterConnect.js",
+    "pluginId": "twitter-connect-plugin",
+    "clobbers": [
+      "TwitterConnect"
+    ]
+  },
+  {
+    "id": "cordova-plugin-googleplus.GooglePlus",
+    "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
+    "pluginId": "cordova-plugin-googleplus",
+    "clobbers": [
+      "window.plugins.googleplus"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -381,7 +397,6 @@ module.exports.metadata =
   "cordova-plugin-file": "5.0.0",
   "cordova-plugin-file-transfer": "1.7.1",
   "cordova-plugin-image-picker": "1.1.1",
-  "cordova-plugin-inappbrowser": "2.0.2",
   "cordova-plugin-ionic-webview": "1.1.16",
   "cordova-plugin-splashscreen": "4.1.0",
   "cordova-plugin-statusbar": "2.4.1",
@@ -389,7 +404,10 @@ module.exports.metadata =
   "es6-promise-plugin": "4.1.0",
   "cordova-plugin-x-socialsharing": "5.2.1",
   "ionic-plugin-keyboard": "2.2.1",
-  "cordova.plugins.diagnostic": "3.6.2"
+  "cordova.plugins.diagnostic": "3.6.2",
+  "cordova-plugin-inappbrowser": "2.0.2",
+  "twitter-connect-plugin": "0.6.0",
+  "cordova-plugin-googleplus": "5.2.1"
 };
 // BOTTOM OF METADATA
 });

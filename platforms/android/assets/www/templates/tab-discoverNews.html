@@ -1,11 +1,12 @@
 <ion-view title="Discover" class="{{fontChange}}">
   <div ng-include="tabHeader"></div>
   <ion-content class="bg-color has-bottom">
-    <ion-refresher ng-if="!searchInput" on-refresh="doRefresh(true)"></ion-refresher>
-    <div ng-if="!searchInput"  class="bodyFont">
-      <div class="text-center">
-        <h4 class="pad0 title-explore">DISCOVER</h4>
-      </div>
+    <ion-refresher ng-if="!searchInputdis" on-refresh="doRefresh(true)"></ion-refresher>
+    <div class="text-center">
+      <h4 class="pad0 title-explore">DISCOVER</h4>
+    </div>
+    <div ng-if="!searchInputdis"  class="bodyFont">
+     
       <div class="discover-trend" ng-if="trending.value!=false">
         TRENDING THIS WEEK
       </div>
@@ -78,9 +79,9 @@
         <discover></discover>
       </div>
     </div>
-    <div ng-if="searchInput" ng-include="searchInclude">
+    <div ng-if="searchInputdis" ng-include="searchInclude">
     </div>
-    <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInput" on-infinite="loadMore()" distance="2px">
+    <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInputdis" on-infinite="loadMore()" distance="2px">
       <ion-infinite-scroll-content></ion-infinite-scroll-content>
     </ion-infinite-scroll>
 

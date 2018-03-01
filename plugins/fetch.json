@@ -68,14 +68,6 @@
             "PHOTO_LIBRARY_USAGE_DESCRIPTION": " "
         }
     },
-    "cordova-plugin-inappbrowser": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-inappbrowser@^2.0.1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-ionic-webview": {
         "source": {
             "type": "registry",
@@ -139,5 +131,33 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-inappbrowser": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-inappbrowser@2.0.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "twitter-connect-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "twitter-connect-plugin"
+        },
+        "is_top_level": true,
+        "variables": {
+            "FABRIC_KEY": "1a296793e4e29d1a5fd5202310200c4cd75c1d14"
+        }
+    },
+    "cordova-plugin-googleplus": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-googleplus"
+        },
+        "is_top_level": true,
+        "variables": {
+            "REVERSED_CLIENT_ID": "441725615810-q7bl3djtjtp5q00pful4a9gstdd2ej1e.apps.googleusercontent.com"
+        }
     }
 }

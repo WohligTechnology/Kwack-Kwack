@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cleanCss = require('gulp-clean-css');
 var rename = require('gulp-rename');
+var jsSHA = require("jssha")
 
 var paths = {
   sass: ['./scss/**/*.scss']

@@ -1,7 +1,7 @@
 <ion-view title="startPolling" class="{{fontChange}}">
     <div class="bar bar-header bar-light">
         <div class="row">
-            <div class="col col-10" ng-click="goBackHandler()">
+            <div class="col col-10" ng-click="goToFromState()">
                 <i class="closenavbar ion ion-ios-close-outline"></i>
             </div>
             <div class="col col-90">
@@ -19,7 +19,8 @@
             <img class="img-responsive" src="{{newsInfo.imageUrl}}">
         </div>
         <div class="trailerName">
-            <label>{{newsInfo.name}}</label>
+            <label ng-if="!newsInfo.pollQuestion">{{newsInfo.name}}</label>
+            <label ng-if="newsInfo.pollQuestion">{{newsInfo.pollQuestion}}</label>
             <div>
                 <span class="articleDate">
                     {{newsInfo.createdAt | fromNowDay}},
@@ -37,7 +38,7 @@
             <h3>CHOOSE YOUR SIDE</h3>
             <label for="">AND START POLLING</label>
         </div>
-        <div class="row">
+        <div class="row"  ng-if="newsInfo.IsPoll=='NO'" >
             <div class="col col-50 yourSide rel">
                 <div ng-if=" data=='NO' || data==null" ng-click="savePoll('YES')">
                     <img src="img/polling/right.png" alt="">
@@ -63,38 +64,34 @@
             </div>
 
         </div>
+         <div class="row" ng-if="newsInfo.IsPoll=='YES'">
+            <div class="col col-50 yourSide rel">
+                <div ng-if=" data==option2 || data==null" ng-click="savePoll(option1)">
+                    <img src="img/polling/right.png" alt="">
+                    <div class="yoursideright"></div>
+                </div>
+                <div ng-if="data==option1" ng-click="savePoll(option1)">
+                    <img src="img/polling/rightclick.png" alt="">
+                    <div class="yoursideright"></div>
+                </div>
+
+                <label for="" ng-class="{'yourside-labelsel': data==option1}" class="yourside-label">{{option1}}</label>
+            </div>
+            <div class="col col-50 yourSide">
+                <div ng-if=" data==option1 || data==null" ng-click="savePoll(option2)">
+                    <img src="img/polling/wrong.png" alt="">
+                    <div class="yoursideright"></div>
+                </div>
+                <div ng-if="data==option2" ng-click="savePoll(option2)">
+                    <img src="img/polling/wrongclick.png" alt="">
+                    <div class="yoursideright"></div>
+                </div>
+                <label ng-class="{'yourside-labelsel': data==option2}" class="yourside-label" for="">{{option2}}</label>
+            </div>
+
+        </div> 
         <button class=" trailernext" ng-click="nextPage()">
             NEXT
         </button>
     </ion-content>
-    <!-- <div class="bar bar-footer customFooter footer-height">
-           <div class="row pad0">
-               <div class= "pad0 border-r col col-20 ">
-                   <div class="footerImg ">
-                        <img class="img-responsive" src="img/Footerhome.PNG" alt="">
-                   </div>
-               </div>
-               <div class= "pad0 border-r col col-20 ">
-                    <div class="footerImg ">
-                         <img class="img-responsive" src="img/compass.PNG" alt="">
-                    </div>
-                </div>
-                <div class= "pad0 border-r col col-20 ">
-                        <div class="footerKwackImg ">
-                             <img class="img-responsive" src="img/kwackFooter.PNG" alt="">
-                        </div>
-                    </div>
-                    <div class= "pad0 border-r col col-20 ">
-                            <div class="footerImg">
-                                 <img class="img-responsive" src="img/shareit.png" alt="">
-                            </div>
-                        </div>
-                        <div class= "pad0 border-r col col-20 ">
-                                <div class="footerImg">
-                                     <img class="img-responsive" src="img/profileFooter.PNG" alt="">
-                                </div>
-                            </div>
-           </div>
-
-          </div> -->
 </ion-view>

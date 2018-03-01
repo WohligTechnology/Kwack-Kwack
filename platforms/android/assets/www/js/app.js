@@ -5,21 +5,32 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var connector = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ionic-toast', 'ngCordovaOauth'])
+var connector = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ionic-toast', 'ngCordovaOauth','oauth.twitter'])
 
-  .run(function ($ionicPlatform, $rootScope) {
+  .run(function ($ionicPlatform, $rootScope, $state) {
+    $ionicPlatform.registerBackButtonAction(function (e) {
+      console.log("hello")
+      if ($state.current.name == 'tab.explore' || $state.current.name == 'tab.discoverNews' || $state.current.name == 'tab.social' || $state.current.name == 'tab.settings' || $state.current.name == 'tab.kwackScreen') {
+        ionic.Platform.exitApp();
+        console.log("hello")
+      } else {
+        navigator.app.backHistory();
+        console.log("hello")
+      }
+    }, 100);
+
     $rootScope.$on('SendUp', function (event, args) {
       $rootScope.font = args.message;
-         console.log($rootScope.font);
+      console.log($rootScope.font);
     })
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       //hardware back operation
-      $ionicPlatform.registerBackButtonAction(function (event) {
-        //we have to implement it
-      }, 402);
-      
+      // $ionicPlatform.registerBackButtonAction(function (event) {
+      //   //we have to implement it
+      // }, 402);
+   
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         cordova.plugins.Keyboard.disableScroll(true);
@@ -257,7 +268,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.trailerkwack', {
         url: '/trailer/:newsid/:previousState/:newState',
-         cache:false,
+        cache: false,
         views: {
           'tab-kwackScreen': {
             templateUrl: 'templates/tab-trailer.html',
@@ -306,7 +317,11 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         templateUrl: 'templates/profile.html',
         controller: 'ProfileCtrl'
       })
-
+      .state('userprofile', {
+        url: '/userprofile',
+        templateUrl: 'templates/userProfile.html',
+        controller: 'UserProfileCtrl'
+      })
       .state('mobile', {
         url: '/mobile',
         templateUrl: 'templates/mobile.html',
@@ -354,7 +369,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       })
 
-     
+
 
       .state('filter', {
         url: '/filter',
@@ -591,7 +606,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.startPollingex', {
         url: '/startPolling/:newsid',
-         cache:false,
+        cache: false,
         views: {
           'tab-explore': {
             templateUrl: 'templates/startPolling.html',
@@ -602,7 +617,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.startPollingdis', {
         url: '/startPolling/:newsid',
-         cache:false,
+        cache: false,
         views: {
           'tab-discoverNews': {
             templateUrl: 'templates/startPolling.html',
@@ -625,7 +640,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.startPollingkwack', {
         url: '/startPolling/:newsid',
-         cache:false,
+        cache: false,
         views: {
           'tab-kwackScreen': {
             templateUrl: 'templates/startPolling.html',
@@ -648,7 +663,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.social', {
         url: '/social',
-        cache:false,
+        cache: false,
         views: {
           'tab-social': {
             templateUrl: 'templates/tab-social.html',
@@ -738,5 +753,4 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       }
     };
   })
-
- 
+  

@@ -9873,6 +9873,25 @@ a.button {
   transition-duration: 0s; }
 
 @font-face {
+  font-family: 'kwack';
+  src: url("../lib/ionic/fonts/kwack.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'kwack' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@font-face {
   font-family: 'Montserrat-SemiBold';
   src: url("../lib/ionic/fonts/Montserrat-SemiBold.ttf"); }
 
@@ -10055,6 +10074,26 @@ h4 {
   font-size: 20px;
   line-height: 2px;
   z-index: 10; }
+
+.icon-Kwack-01:before {
+  content: "\e900"; }
+
+.icon-Kwack-02 .path1:before {
+  content: "\e901";
+  color: black; }
+
+.icon-Kwack-02 .path2:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: black; }
+
+.icon-Kwack-02 .path3:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: #ffb600; }
+
+.icon-Kwack-03:before {
+  content: "\e904"; }
 
 .sliderbutton .swiper-pagination {
   bottom: 70px; }

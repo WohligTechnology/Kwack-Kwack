@@ -28,9 +28,6 @@
         "cordova-plugin-image-picker": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
         "cordova-plugin-ionic-webview": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
@@ -51,6 +48,16 @@
         },
         "cordova.plugins.diagnostic": {
             "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.kwack_kwack.ionic"
+        },
+        "twitter-connect-plugin": {
+            "FABRIC_KEY": "1a296793e4e29d1a5fd5202310200c4cd75c1d14",
+            "PACKAGE_NAME": "com.kwack_kwack.ionic"
+        },
+        "cordova-plugin-googleplus": {
+            "PACKAGE_NAME": "com.kwack_kwack.ionic"
         }
     },
     "dependent_plugins": {

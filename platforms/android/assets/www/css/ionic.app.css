@@ -9873,6 +9873,25 @@ a.button {
   transition-duration: 0s; }
 
 @font-face {
+  font-family: 'kwack';
+  src: url("../lib/ionic/fonts/kwack.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'kwack' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@font-face {
   font-family: 'Montserrat-SemiBold';
   src: url("../lib/ionic/fonts/Montserrat-SemiBold.ttf"); }
 
@@ -9935,6 +9954,9 @@ h4 {
 
 .bg-color {
   background: linear-gradient(to bottom, white 30%, white 30%, #e0e0e0 99%) !important; }
+
+.bg-white {
+  background: #fff; }
 
 .ionslide {
   height: 600px !important; }
@@ -10052,6 +10074,26 @@ h4 {
   font-size: 20px;
   line-height: 2px;
   z-index: 10; }
+
+.icon-Kwack-01:before {
+  content: "\e900"; }
+
+.icon-Kwack-02 .path1:before {
+  content: "\e901";
+  color: black; }
+
+.icon-Kwack-02 .path2:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: black; }
+
+.icon-Kwack-02 .path3:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: #ffb600; }
+
+.icon-Kwack-03:before {
+  content: "\e904"; }
 
 .sliderbutton .swiper-pagination {
   bottom: 70px; }
@@ -10597,14 +10639,28 @@ button.btn-yellow.button[disabled] {
   z-index: 1; }
 
 .movie-label {
-  bottom: 2%;
-  left: 1px;
   background: #000;
   color: #fff;
   font-size: 10px;
   font-family: 'Montserrat-Regular';
+  letter-spacing: 1px;
   padding: 3px 13px;
-  letter-spacing: 1px; }
+  margin: -4px; }
+
+.interest-spon {
+  bottom: 2%;
+  left: 7px; }
+
+.spon-pos {
+  left: 1px !important; }
+
+.spon-label {
+  background: #ffb600;
+  color: #fff;
+  font-size: 10px;
+  font-family: 'Montserrat-Regular';
+  letter-spacing: 1px;
+  padding: 3px 13px; }
 
 .news-content h3 {
   font-family: 'Montserrat-Medium';
@@ -11331,7 +11387,7 @@ button.btn-yellow.button[disabled] {
   color: #ffc943 !important; }
 
 .w3 {
-  width: 3%; }
+  width: 5%; }
 
 .borderclass.tab-item {
   border-right: 1px solid #fff !important; }
@@ -11540,7 +11596,8 @@ button.btn-yellow.button[disabled] {
 .chngImg {
   text-align: center;
   font-size: 0.7em;
-  font-family: 'Montserrat-Medium'; }
+  font-family: 'Montserrat-Medium';
+  margin-top: 20px; }
 
 .editCard .card {
   margin: 40px 30px !important;
@@ -12389,6 +12446,25 @@ button.btn-yellow.button[disabled] {
   font-family: 'Montserrat-Medium';
   font-size: 17px; }
 
+.user-profile h5 {
+  letter-spacing: 2px; }
+
+.user-profile .follow-btn .button {
+  color: #000;
+  border-color: #000; }
+
+.user-profile .follow-btn .icon-left:before {
+  color: #000; }
+
+.user-profile .editCard .card {
+  margin: 5px 30px 40px !important; }
+
+.city {
+  font-family: 'Montserrat-Medium';
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .accordian label {
     font-size: 10px !important; }
@@ -12423,7 +12499,7 @@ button.btn-yellow.button[disabled] {
   .discoverCardStrip {
     padding: 0px; }
   .explore-icon img {
-    width: 10%;
+    width: 12%;
     vertical-align: middle;
     padding: 1px; }
   .discover-icon img {
@@ -12538,7 +12614,7 @@ button.btn-yellow.button[disabled] {
   .kwack-card .item p {
     font-size: 8px; }
   .kwack-card .item .explore-icon img {
-    width: 8%; }
+    width: 9%; }
   .kwack-card .item .explore-icon span {
     font-size: 10px; }
   .navHead {
@@ -12722,7 +12798,7 @@ button.btn-yellow.button[disabled] {
   .news-discover span {
     font-size: 10px; }
   .explore-icon img {
-    width: 12%;
+    width: 13%;
     padding: 4px; }
   .discoverCardStrip {
     padding: 2px; }

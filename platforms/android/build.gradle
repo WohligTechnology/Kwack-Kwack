@@ -92,6 +92,7 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "twitter-connect-plugin/ionic-twitter.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -256,6 +257,8 @@ dependencies {
     compile "com.android.support:support-v4:24.1.1+"
     compile "com.android.support:support-v4:+"
     compile "com.android.support:appcompat-v7:+"
+    compile "com.google.android.gms:play-services-auth:+"
+    compile "com.google.android.gms:play-services-identity:+"
     // SUB-PROJECT DEPENDENCIES END
 }
 
