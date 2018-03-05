@@ -9971,93 +9971,6 @@ h4 {
     font-size: 18px;
     font-family: 'Montserrat-ExtraLight'; }
 
-.verysmall div {
-  font-size: 10px !important; }
-
-.verysmall label {
-  font-size: 10px !important; }
-
-.verysmall p {
-  font-size: 10px !important; }
-
-.verysmall span {
-  font-size: 10px !important; }
-
-.verysmall button {
-  font-size: 10px !important; }
-
-.verysmall h5 {
-  font-size: 10px !important; }
-
-.verysmall h4 {
-  font-size: 10px !important; }
-
-.verysmall h2 {
-  font-size: 10px !important; }
-
-.small div {
-  font-size: 11px !important; }
-
-.small label {
-  font-size: 11px !important; }
-
-.small p {
-  font-size: 11px !important; }
-
-.small span {
-  font-size: 11px !important; }
-
-.small h5 {
-  font-size: 11px !important; }
-
-.small h4 {
-  font-size: 11px !important; }
-
-.small h2 {
-  font-size: 11px !important; }
-
-.medium div {
-  font-size: 13px !important; }
-
-.medium label {
-  font-size: 13px !important; }
-
-.medium p {
-  font-size: 13px !important; }
-
-.medium span {
-  font-size: 13px !important; }
-
-.medium h5 {
-  font-size: 13px !important; }
-
-.medium h4 {
-  font-size: 13px !important; }
-
-.medium h2 {
-  font-size: 13px !important; }
-
-.bold div {
-  font-size: 15px !important; }
-
-.bold label {
-  font-size: 15px !important; }
-
-.bold p {
-  font-size: 15px !important; }
-
-.bold span {
-  font-size: 15px !important; }
-
-.bold h5 {
-  font-size: 15px !important; }
-
-.bold h4 {
-  font-size: 15px !important; }
-
-.bold h2 {
-  font-size: 15px !important; }
-
 .skipButton {
   position: absolute;
   top: 94%;
@@ -12311,7 +12224,8 @@ button.btn-yellow.button[disabled] {
 .terms {
   margin: 0px 35px; }
   .terms h4 {
-    font-family: 'Montserrat-Medium'; }
+    font-family: 'Montserrat-Medium';
+    font-size: 14px; }
   .terms p {
     font-family: 'Montserrat-Regular';
     line-height: 16px;
@@ -13029,3 +12943,282 @@ button.btn-yellow.button[disabled] {
     background-color: #ffc943 !important;
     color: #fff !important;
     border: none; }
+
+.verysmall .navHead {
+  font-size: 11px !important; }
+
+.verysmall .scrollCategories {
+  font-size: 11px !important; }
+
+.verysmall .scrollFirst {
+  font-size: 11px !important; }
+
+.verysmall .editName .editusername {
+  font-size: 12px; }
+
+.verysmall .editCity {
+  font-size: 10px; }
+
+.verysmall .view-all label {
+  font-size: 8px !important; }
+
+.verysmall .alpha_sidebar {
+  font-size: 10px; }
+
+.verysmall .frnds {
+  font-size: 11.5px !important; }
+
+.verysmall .userName label {
+  font-size: 9px !important; }
+
+.verysmall .cncelNav {
+  font-size: 9px !important; }
+
+.verysmall div {
+  font-size: 10px !important; }
+
+.verysmall label {
+  font-size: 10px !important; }
+
+.verysmall p {
+  font-size: 9.5px !important; }
+
+.verysmall span {
+  font-size: 9px !important; }
+
+.verysmall button {
+  font-size: 10px !important; }
+
+.verysmall h5 {
+  font-size: 10px !important; }
+
+.verysmall h4 {
+  font-size: 12px !important; }
+
+.verysmall h2 {
+  font-size: 11px !important; }
+
+.verysmall h3 {
+  font-size: 11px !important; }
+
+.verysmall .filter h4 {
+  font-size: 12px !important; }
+
+.verysmall .setting .item-input-inset .item-input-wrapper input {
+  font-size: 10px !important; }
+
+.verysmall .searchby-name input {
+  font-size: 10px !important; }
+
+.small .navHead {
+  font-size: 12px !important; }
+
+.small .scrollCategories {
+  font-size: 12px !important; }
+
+.small .scrollFirst {
+  font-size: 12px !important; }
+
+.small .editName .editusername {
+  font-size: 12.5px; }
+
+.small .editCity {
+  font-size: 11px; }
+
+.small .view-all label {
+  font-size: 9.5px !important; }
+
+.small .userNamee label {
+  font-size: 9.5px !important; }
+
+.small .alpha_sidebar {
+  font-size: 11px; }
+
+.small .btn-bg {
+  font-size: 11px; }
+
+.small .cncelNav {
+  font-size: 9.5px !important; }
+
+.small .userName label {
+  font-size: 9.5px !important; }
+
+.small div {
+  font-size: 11px !important; }
+
+.small label {
+  font-size: 11px !important; }
+
+.small p {
+  font-size: 10px !important; }
+
+.small span {
+  font-size: 9.5px !important; }
+
+.small h5 {
+  font-size: 11px !important; }
+
+.small h4 {
+  font-size: 13px !important; }
+
+.small h2 {
+  font-size: 12px !important; }
+
+.small h3 {
+  font-size: 12px !important; }
+
+.small .filter h4 {
+  font-size: 13px !important; }
+
+.small .setting .item-input-inset .item-input-wrapper input {
+  font-size: 10.5px !important; }
+
+.small .searchby-name input {
+  font-size: 11px !important; }
+
+.small .frnds {
+  font-size: 12px !important; }
+
+.medium .navHead {
+  font-size: 13px !important; }
+
+.medium .scrollCategories {
+  font-size: 13px !important; }
+
+.medium .scrollFirst {
+  font-size: 13px !important; }
+
+.medium .view-all label {
+  font-size: 10px !important; }
+
+.medium .editName .editusername {
+  font-size: 13px; }
+
+.medium .userNamee label {
+  font-size: 10px !important; }
+
+.medium .alpha_sidebar {
+  font-size: 12px; }
+
+.medium .editCity {
+  font-size: 12px; }
+
+.medium .btn-bg {
+  font-size: 12px; }
+
+.medium .cncelNav {
+  font-size: 10px !important; }
+
+.medium .userName label {
+  font-size: 10px !important; }
+
+.medium div {
+  font-size: 12px !important; }
+
+.medium label {
+  font-size: 12px !important; }
+
+.medium p {
+  font-size: 10.5px !important; }
+
+.medium span {
+  font-size: 10px !important; }
+
+.medium h5 {
+  font-size: 13px !important; }
+
+.medium h4 {
+  font-size: 14px !important; }
+
+.medium h2 {
+  font-size: 13px !important; }
+
+.medium h3 {
+  font-size: 14px !important; }
+
+.medium .filter h4 {
+  font-size: 14px !important; }
+
+.medium .title-explore {
+  font-size: 13px !important; }
+
+.medium .setting .item-input-inset .item-input-wrapper input {
+  font-size: 11px !important; }
+
+.medium .searchby-name input {
+  font-size: 12px !important; }
+
+.medium .frnds {
+  font-size: 13px !important; }
+
+.bold .navHead {
+  font-size: 14px !important; }
+
+.bold .scrollCategories {
+  font-size: 14px !important; }
+
+.bold .scrollFirst {
+  font-size: 14px !important; }
+
+.bold .editName .editusername {
+  font-size: 14px; }
+
+.bold .editCity {
+  font-size: 14px; }
+
+.bold .view-all label {
+  font-size: 10.5px !important; }
+
+.bold .userNamee label {
+  font-size: 11px !important; }
+
+.bold .alpha_sidebar {
+  font-size: 13px; }
+
+.bold .btn-bg {
+  font-size: 13px; }
+
+.bold .cncelNav {
+  font-size: 10.5px !important; }
+
+.bold .userName label {
+  font-size: 11px !important; }
+
+.bold div {
+  font-size: 13px !important; }
+
+.bold label {
+  font-size: 13px !important; }
+
+.bold p {
+  font-size: 11px !important; }
+
+.bold span {
+  font-size: 10.5px !important; }
+
+.bold h5 {
+  font-size: 15px !important; }
+
+.bold h4 {
+  font-size: 15px !important; }
+
+.bold h2 {
+  font-size: 14px !important; }
+
+.bold h3 {
+  font-size: 15px !important; }
+
+.bold .filter h4 {
+  font-size: 15px !important; }
+
+.bold .title-explore {
+  font-size: 14px !important; }
+
+.bold .setting .item-input-inset .item-input-wrapper input {
+  font-size: 12px !important; }
+
+.bold .searchby-name input {
+  font-size: 13px !important; }
+
+.bold .frnds {
+  font-size: 14px !important; }
