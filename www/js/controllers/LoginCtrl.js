@@ -57,7 +57,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
   }
 
   $scope.facebookLogin = function() {
-      $cordovaOauth.facebook("1814304471935090", ["email", "user_location", "user_relationships"]).then(function(result) {
+      $cordovaOauth.facebook("524845611226910", ["email", "user_location", "user_relationships"]).then(function(result) {
         console.log("Response Object -> " + JSON.stringify(result));
         console.log("facebookLogin",result)
         $.jStorage.set("socialLogin", result);
