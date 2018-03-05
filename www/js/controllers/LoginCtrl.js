@@ -76,7 +76,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
                   country: "India"
                 }
                 console.log('$scope.socialLoginData',$scope.socialLoginData)
-                Chats.apiCallWithData("User/saveUser", $scope.socialLoginData, function (data) {
+                Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
                   if (data.value == true) {
                       $scope.userData = data.data;
                       $scope.userData.verified = false;
@@ -145,7 +145,27 @@ TwitterConnect.login(
         function(result) {
           console.log('User Profile:');
           console.log(result);
-          console.log('Twitter handle :'+result.userName);
+          console.log('Twitter handle :'+result.name);
+              $scope.socialLoginData = {
+                  name:result.name,
+                  email: result.location,
+                  // city: Socialstate[0],
+                  country: "India"
+                }
+                console.log('$scope.socialLoginData',$scope.socialLoginData)
+                Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
+                  console.log("*********************after saving the user in database",data)
+                      if (data.value == true) {
+                      $scope.userData = data.data;
+                      $scope.userData.verified = true;
+                      $.jStorage.set("user", $scope.userData);
+                      $state.go("invite")
+                  } else {
+                      console.log("display error")
+                  }
+
+                })
+
         }, function(error) {
           console.log('Error retrieving user profile');
           console.log(error);
