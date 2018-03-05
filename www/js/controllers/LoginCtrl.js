@@ -164,6 +164,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
                   $scope.userData = data.data;
                   $scope.userData.verified = false;
                   $.jStorage.set("user", $scope.userData);
+                     $state.go("inviteFriends")
                 } else {
                   Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
                     console.log("*********************after saving the user in database", data)
