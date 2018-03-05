@@ -87,7 +87,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
               $scope.userData = data.data;
               $scope.userData.verified = false;
               $.jStorage.set("user", $scope.userData);
-              $state.go("invite")
+              $state.go("inviteFriends")
             } else {
               console.log("display error")
             }
@@ -162,16 +162,16 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
               Chats.apiCallWithData("User/getUserforSocailLogin", $scope.socialLoginData, function (data) {
                 if (data.value == true) {
                   $scope.userData = data.data;
-                  $scope.userData.verified = true;
+                  $scope.userData.verified = false;
                   $.jStorage.set("user", $scope.userData);
                 } else {
                   Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
                     console.log("*********************after saving the user in database", data)
                     if (data.value == true) {
                       $scope.userData = data.data;
-                      $scope.userData.verified = true;
+                      $scope.userData.verified = false;
                       $.jStorage.set("user", $scope.userData);
-                      $state.go("invite")
+                      $state.go("inviteFriends")
                     } else {
                       console.log("display error")
                     }
