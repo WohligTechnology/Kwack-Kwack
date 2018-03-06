@@ -13010,6 +13010,18 @@ button.btn-yellow.button[disabled] {
 .verysmall .searchby-name input {
   font-size: 10px !important; }
 
+.verysmall .category-preferences h6 {
+  font-size: 10px; }
+
+.verysmall .select-month {
+  font-size: 10px; }
+
+.verysmall .select-year {
+  font-size: 11px; }
+
+.verysmall .placeholderCat input {
+  font-size: 11px; }
+
 .small .navHead {
   font-size: 12px !important; }
 
@@ -13078,6 +13090,18 @@ button.btn-yellow.button[disabled] {
 
 .small .frnds {
   font-size: 12px !important; }
+
+.small .category-preferences h6 {
+  font-size: 11px; }
+
+.small .select-month {
+  font-size: 11px; }
+
+.small .select-year {
+  font-size: 12px; }
+
+.small .placeholderCat input {
+  font-size: 12px; }
 
 .medium .navHead {
   font-size: 13px !important; }
@@ -13151,6 +13175,18 @@ button.btn-yellow.button[disabled] {
 .medium .frnds {
   font-size: 13px !important; }
 
+.medium .category-preferences h6 {
+  font-size: 12px; }
+
+.medium .select-month {
+  font-size: 12px; }
+
+.medium .select-year {
+  font-size: 13px; }
+
+.medium .placeholderCat input {
+  font-size: 13px; }
+
 .bold .navHead {
   font-size: 14px !important; }
 
@@ -13222,3 +13258,15 @@ button.btn-yellow.button[disabled] {
 
 .bold .frnds {
   font-size: 14px !important; }
+
+.bold .category-preferences h6 {
+  font-size: 13px; }
+
+.bold .select-month {
+  font-size: 13px; }
+
+.bold .select-year {
+  font-size: 14x; }
+
+.bold .placeholderCat input {
+  font-size: 14px; }
