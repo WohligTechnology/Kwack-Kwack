@@ -31,7 +31,7 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
         $scope.$broadcast('scroll.infiniteScrollComplete');
       });
     } else if ($scope.activeTab == 'Just now') {
-      if($scope.pagination1.page<=5){
+      if ($scope.pagination1.page <= 5) {
         Chats.apiCallWithData("NewsInfo/getAllNewsJustNow", $scope.pagination1, function (data) {
           $scope.discoverNews = _.concat($scope.discoverNews, data.data.results);
           if (data.data.results.length == 10) {
@@ -40,7 +40,7 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
           $scope.$broadcast('scroll.infiniteScrollComplete');
         });
       }
-    
+
     } else {
       $scope.interestData = {
         "page": $scope.pagination.currentPage,
@@ -129,7 +129,15 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
   }
 
   //socialSharing
-  $scope.socilaSharing = function (desciption, imageUrl, title, link) {
+  $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
+    console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption, imageUrl, title, link, newsId)
+    $scope.dataToSendApi = {}
+    $scope.dataToSendApi.newsId = newsId
+    $scope.dataToSendApi.userId = $.jStorage.get('user')._id
+    console.log("******************", $scope.dataToSendApi)
+    Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+      console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+    })
     var message = desciption
     var subject = title
     var image = imageUrl

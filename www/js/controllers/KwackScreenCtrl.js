@@ -292,7 +292,15 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   }
 
   //socialSharing
-  $scope.socilaSharing = function (desciption, imageUrl, title, link) {
+  $scope.socilaSharing = function (desciption, imageUrl, title, link,newsId) {
+     console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption,imageUrl,title,link,newsId)
+    $scope.dataToSendApi = {}
+    $scope.dataToSendApi.newsId = newsId
+    $scope.dataToSendApi.userId = $.jStorage.get('user')._id
+    console.log("******************", $scope.dataToSendApi)
+     Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+        })
     var message = desciption
     var subject = title
     var image = imageUrl

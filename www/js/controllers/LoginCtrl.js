@@ -1,6 +1,6 @@
 connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats, $state, $stateParams, $cordovaOauthUtility, $cordovaOauth, ionicToast, $http) {
   if ($.jStorage.get("user")) {
-    if (_.isEmpty($.jStorage.get("user").state)) {
+       if (_.isEmpty($.jStorage.get("user").otp)) {
       $state.go("mobile")
     } else {
       $state.go("tab.explore")

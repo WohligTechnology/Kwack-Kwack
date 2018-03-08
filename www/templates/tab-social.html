@@ -81,10 +81,10 @@
                                         <img src="img/explore/4.png" alt="logo" class="w3">
                                     </span> {{social.createdAt | fromNow}}</p>
                                 <p class="pad0">In Pics:
-                                    <span class="color-yellow"> @susanthesquark</span> 
+                                    <span class="color-yellow"> @susanthesquark</span>
                                     <!-- did everyone in -->
                                     <span class="color-yellow">#tech </span>{{social.title}}
-                                     <!-- "worshipped as kings" -->
+                                    <!-- "worshipped as kings" -->
                                     <span class="color-yellow"> {{social.url}}</span>
                                 </p>
                             </div>
@@ -114,7 +114,8 @@
                                     <span class="alignM">{{social.comments.length}}</span>
                                 </label>
                                 <label ng-click="socilaSharing(social.description,social.imageUrl,social.title,social.url,social._id)">
-                                    <img src="img/explore/7.png">
+                                   <img  ng-if="!social.flagForShare" src="img/explore/7.png">
+                     <img ng-if="social.flagForShare" src="img/filter/1.png">
                                     <span class="colorw alignM">{{social.share}}</span>
                                 </label>
                             </div>
