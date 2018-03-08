@@ -86,12 +86,24 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
   }
   //socialSharing
   $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
-    //  $scope.dataToSendApi = {}
-    //  $scope.dataToSendApi.newsId = newsId
-    //  $scope.dataToSendApi.userId = $.jStorage.get('user')._id
-    // Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
-    //        console.log("$$$$$$$$$$$$$$$$$$$$", data1)
-    //      })
+    console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption,imageUrl,title,link,newsId)
+    $scope.dataToSendApi = {}
+    $scope.dataToSendApi.newsId = newsId
+    $scope.dataToSendApi.userId = $.jStorage.get('user')._id
+    console.log("******************", $scope.dataToSendApi)
+     Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+        })
+    // Chats.apiCallWithData("ShareNews/shareNewsOrNot", $scope.dataToSendApi, function (data1) {
+    //   console.log("$$$$$$$$$$$$$$$$$$$$", data1)
+    //   if (data1.value == true) {
+    //     console.log("inside if condi")
+    //   } else {
+    //     Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+    //       console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+    //     })
+    //   }
+    // })
     var message = desciption
     var subject = title
     var image = imageUrl

@@ -11,8 +11,9 @@
                 <img ng-if="!test.flagForKwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="test.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
                 <span class=" alignM">{{test.comments.length}}</span>
             </label>
-            <label ng-click="socilaSharing(test.description,test.imageUrl,test.title,test.url)">
-                <img src="img/explore/7.png">
+            <label ng-click="socilaSharing(test.description,test.imageUrl,test.title,test.url,test._id)">
+                <img  ng-if="!test.flagForShare" src="img/explore/7.png">
+                     <img ng-if="test.flagForShare" src="img/filter/1.png">
                 <span class="colorw alignM">12</span>
             </label>
         </p>

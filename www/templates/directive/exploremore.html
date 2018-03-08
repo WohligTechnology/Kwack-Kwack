@@ -10,7 +10,7 @@
                     <label ng-if="news.interest" class="movie-label">{{news.interest}}</label>
                     <label ng-if="news.IsPoll=='YES'" class=" spon-label" ng-class="{'spon-pos': !news.interest}">Sponsored</label>
                 </div>
-                
+
             </div>
             <div class="item item-body ">
                 <h3 class="pad0">{{news.name}}</h3>
@@ -53,8 +53,10 @@
                         <img ng-if="news.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
                         <span class="alignM">{{news.comments.length}}</span>
                     </label>
-                    <label>
-                        <img src="img/explore/7.png">
+
+                    <label ng-click="socilaSharing(news.description,news.imageUrl,news.name,news.url,news._id)">
+                         <img  ng-if="!news.flagForShare" src="img/explore/7.png">
+                     <img ng-if="news.flagForShare" src="img/filter/1.png">
                         <span class="colorw alignM">{{news.share}}</span>
                     </label>
                 </div>

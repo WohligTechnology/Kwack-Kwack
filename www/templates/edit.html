@@ -8,14 +8,14 @@
         <ion-content class="bg-color">
             <div class="bodyFont">
                 <div class="profileImg">
-                    <img ng-if="!userInfo.type" src="{{userInfo.photo | uploadpath}} " alt="">
+                    <img ng-if="!userInfo.type" src="{{userInfo.photo | uploadpath}}" >
                     <img ng-if="userInfo.type" src="{{userInfo.photo}} " alt="">
                     <img src="img/profile/profile.png" ng-if="!userInfo.photo || userInfo.photo==''" alt="logo" class="w100">
                 </div>
                 <div class="chngImg" ng-click="showActionsheet('image')">Change Image</div>
                 <div class="editCard relative">
                     <div class="editBtn">
-                        <img class="img-responsive" src="img/edit/edit.png" alt="">
+                        <img class="img-responsive" src="img/edit/edit.png">
                     </div>
                     <div class="card">
                         <div class="editName">

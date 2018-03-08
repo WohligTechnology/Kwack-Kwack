@@ -28,7 +28,8 @@
           <span class="alignM">{{discover.comments.length}}</span>
         </label>
         <label ng-click="socilaSharing(discover.description,discover.imageUrl,discover.name,discover.url,discover._id)">
-          <img src="img/explore/7.png">
+         <img  ng-if="!discover.flagForShare" src="img/explore/7.png">
+                     <img ng-if="discover.flagForShare" src="img/filter/1.png">
           <span class="colorw alignM">{{discover.share}}</span>
         </label>
       </div>

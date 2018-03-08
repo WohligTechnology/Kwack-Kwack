@@ -6,8 +6,9 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast, 
         if (info.password == info.forgotPassword) {
             if ($.jStorage.get('user')) {
                 info._id = $.jStorage.get('user')._id
-            }
+            } console.log("bvhjgjkhklj",info)
             Chats.apiCallWithData("User/saveUser", info, function (data) {
+               
                 if (data.value == true) {
                     $scope.userData = data.data;
                     $scope.userData.verified = false;
