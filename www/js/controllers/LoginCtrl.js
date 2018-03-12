@@ -81,7 +81,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
             // city: Socialstate[0],
             country: "India"
           }
-            Chats.apiCallWithData("User/getUserforSocailLogin", $scope.socialLoginData, function (data) {
+            Chats.apiCallWithData("User/getUserforSocailLoginFacebook", $scope.socialLoginData, function (data) {
                 if (data.value == true) {
                   $scope.userData = data.data;
                   $scope.userData.verified = false;
@@ -210,7 +210,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
   $scope.googleLogin = function () {
     window.plugins.googleplus.login({
         'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-        'webClientId': '441725615810-ahmpeivsqvig3f9r5rdk2j22hnos2hro.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+        'webClientId': '441725615810-q7bl3djtjtp5q00pful4a9gstdd2ej1e.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
         'offline': true // optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
       },
       function (obj) {
