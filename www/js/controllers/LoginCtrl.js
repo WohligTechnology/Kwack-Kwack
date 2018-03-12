@@ -57,7 +57,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
   }
 
   $scope.facebookLogin = function () {
-    $cordovaOauth.facebook("524845611226910", ["email", "user_location", "user_relationships"]).then(function (result) {
+    $cordovaOauth.facebook("1814304471935090", ["email", "user_location", "user_relationships"]).then(function (result) {
       console.log("Response Object -> " + JSON.stringify(result));
       console.log("facebookLogin", result)
       $.jStorage.set("socialLogin", result);
@@ -76,22 +76,32 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
           $scope.socialLoginData = {
             name: $scope.profileData.name,
             email: $scope.profileData.email,
-            photo: $scope.profileData.picture.data.url,
+            // photo: $scope.profileData.picture.data.url,
             state: Socialstate[1],
             // city: Socialstate[0],
             country: "India"
           }
-          console.log('$scope.socialLoginData', $scope.socialLoginData)
-          Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
-            if (data.value == true) {
-              $scope.userData = data.data;
-              $scope.userData.verified = false;
-              $.jStorage.set("user", $scope.userData);
-              $state.go("inviteFriends")
-            } else {
-              console.log("display error")
-            }
-          })
+            Chats.apiCallWithData("User/getUserforSocailLogin", $scope.socialLoginData, function (data) {
+                if (data.value == true) {
+                  $scope.userData = data.data;
+                  $scope.userData.verified = false;
+                  $.jStorage.set("user", $scope.userData);
+                     $state.go("inviteFriends")
+                } else {
+                  Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
+                    console.log("*********************after saving the user in database", data)
+                    if (data.value == true) {
+                      $scope.userData = data.data;
+                      $scope.userData.verified = false;
+                      $.jStorage.set("user", $scope.userData);
+                      $state.go("inviteFriends")
+                    } else {
+                      console.log("display error")
+                    }
+
+                  })
+                }
+              })
         }, function (error) {
           alert("There was a problem getting your profile. Check the logs for details.");
           console.log(error);

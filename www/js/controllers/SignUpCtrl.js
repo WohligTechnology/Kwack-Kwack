@@ -48,22 +48,33 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast, 
                   $scope.socialLoginData = {
                     name: $scope.profileData.name,
                     email: $scope.profileData.email,
-                    photo: $scope.profileData.picture.data.url,
+                    // photo: $scope.profileData.picture.data.url,
                     state: Socialstate[1],
                     // city: Socialstate[0],
                     country: "India"
                   }
   
-                  Chats.apiCallWithData("User/saveUser", $scope.socialLoginData, function (data) {
+                     Chats.apiCallWithData("User/getUserforSocailLogin", $scope.socialLoginData, function (data) {
+                if (data.value == true) {
+                  $scope.userData = data.data;
+                  $scope.userData.verified = false;
+                  $.jStorage.set("user", $scope.userData);
+                     $state.go("inviteFriends")
+                } else {
+                  Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
+                    console.log("*********************after saving the user in database", data)
                     if (data.value == true) {
-                        $scope.userData = data.data;
-                        $scope.userData.verified = false;
-                        $.jStorage.set("user", $scope.userData);
-                        $state.go("invite")
+                      $scope.userData = data.data;
+                      $scope.userData.verified = false;
+                      $.jStorage.set("user", $scope.userData);
+                      $state.go("inviteFriends")
                     } else {
-                        console.log("display error")
+                      console.log("display error")
                     }
-                })
+
+                  })
+                }
+              })
               }, function(error) {
                   alert("There was a problem getting your profile.  Check the logs for details.");
                   console.log(error);
