@@ -1,8 +1,57 @@
 {
-  "name": "cordova-plugin-statusbar",
-  "version": "2.4.1",
-  "description": "Cordova StatusBar Plugin",
-  "types": "./types/index.d.ts",
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-statusbar@^2.4.0",
+        "scope": null,
+        "escapedName": "cordova-plugin-statusbar",
+        "name": "cordova-plugin-statusbar",
+        "rawSpec": "^2.4.0",
+        "spec": ">=2.4.0 <3.0.0",
+        "type": "range"
+      },
+      "/home/wohlig/Documents/htdocs/Kwack-Kwack"
+    ]
+  ],
+  "_from": "cordova-plugin-statusbar@>=2.4.0 <3.0.0",
+  "_id": "cordova-plugin-statusbar@2.4.1",
+  "_inCache": true,
+  "_location": "/cordova-plugin-statusbar",
+  "_nodeVersion": "8.2.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-statusbar-2.4.1.tgz_1514690818610_0.9176097090821713"
+  },
+  "_npmUser": {
+    "name": "macdonst",
+    "email": "simon.macdonald@gmail.com"
+  },
+  "_npmVersion": "4.6.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-statusbar@^2.4.0",
+    "scope": null,
+    "escapedName": "cordova-plugin-statusbar",
+    "name": "cordova-plugin-statusbar",
+    "rawSpec": "^2.4.0",
+    "spec": ">=2.4.0 <3.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.1.tgz",
+  "_shasum": "222628a78aa54d34d4c927990020d0a3bace5545",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-statusbar@^2.4.0",
+  "_where": "/home/wohlig/Documents/htdocs/Kwack-Kwack",
+  "author": {
+    "name": "Apache Software Foundation"
+  },
+  "bugs": {
+    "url": "https://issues.apache.org/jira/browse/CB"
+  },
   "cordova": {
     "id": "cordova-plugin-statusbar",
     "platforms": [
@@ -13,26 +62,15 @@
       "windows"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/apache/cordova-plugin-statusbar.git"
+  "dependencies": {},
+  "description": "Cordova StatusBar Plugin",
+  "devDependencies": {
+    "jshint": "^2.6.0"
   },
-  "bugs": {
-    "url": "https://issues.apache.org/jira/browse/CB"
-  },
-  "keywords": [
-    "cordova",
-    "statusbar",
-    "ecosystem:cordova",
-    "cordova-android",
-    "cordova-ios",
-    "cordova-wp7",
-    "cordova-wp8",
-    "cordova-windows"
-  ],
-  "scripts": {
-    "test": "npm run jshint",
-    "jshint": "node node_modules/jshint/bin/jshint www && node node_modules/jshint/bin/jshint src && node node_modules/jshint/bin/jshint tests"
+  "directories": {},
+  "dist": {
+    "shasum": "222628a78aa54d34d4c927990020d0a3bace5545",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.1.tgz"
   },
   "engines": {
     "cordovaDependencies": {
@@ -44,28 +82,18 @@
       }
     }
   },
-  "author": {
-    "name": "Apache Software Foundation"
-  },
-  "license": "Apache-2.0",
-  "devDependencies": {
-    "jshint": "^2.6.0"
-  },
   "homepage": "https://github.com/apache/cordova-plugin-statusbar#readme",
-  "_id": "cordova-plugin-statusbar@2.4.1",
-  "_shasum": "222628a78aa54d34d4c927990020d0a3bace5545",
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.1.tgz",
-  "_from": "cordova-plugin-statusbar@>=2.4.0 <3.0.0",
-  "_npmVersion": "4.6.1",
-  "_nodeVersion": "8.2.1",
-  "_npmUser": {
-    "name": "macdonst",
-    "email": "simon.macdonald@gmail.com"
-  },
-  "dist": {
-    "shasum": "222628a78aa54d34d4c927990020d0a3bace5545",
-    "tarball": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.1.tgz"
-  },
+  "keywords": [
+    "cordova",
+    "statusbar",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-wp7",
+    "cordova-wp8",
+    "cordova-windows"
+  ],
+  "license": "Apache-2.0",
   "maintainers": [
     {
       "name": "macdonst",
@@ -100,10 +128,17 @@
       "email": "stevengill97@gmail.com"
     }
   ],
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/cordova-plugin-statusbar-2.4.1.tgz_1514690818610_0.9176097090821713"
+  "name": "cordova-plugin-statusbar",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apache/cordova-plugin-statusbar.git"
   },
-  "directories": {},
-  "readme": "ERROR: No README data found!"
+  "scripts": {
+    "jshint": "node node_modules/jshint/bin/jshint www && node node_modules/jshint/bin/jshint src && node node_modules/jshint/bin/jshint tests",
+    "test": "npm run jshint"
+  },
+  "types": "./types/index.d.ts",
+  "version": "2.4.1"
 }

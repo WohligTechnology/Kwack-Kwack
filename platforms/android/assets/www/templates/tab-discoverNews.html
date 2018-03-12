@@ -6,7 +6,7 @@
       <h4 class="pad0 title-explore">DISCOVER</h4>
     </div>
     <div ng-if="!searchInputdis"  class="bodyFont">
-     
+
       <div class="discover-trend" ng-if="trending.value!=false">
         TRENDING THIS WEEK
       </div>
@@ -40,8 +40,9 @@
               <span class="alignM">{{trendingweek.comments.length}}</span>
             </label>
             <label ng-click="socilaSharing(trendingweek.description,trendingweek.imageUrl,trendingweek.name,trendingweek.url,trendingweek._id)">
-              <img src="img/discover/share.png">
-              <span class="colorw alignM">20</span>
+              <img  ng-if="!trendingweek.flagForShare" src="img/explore/7.png">
+                     <img ng-if="trendingweek.flagForShare" src="img/filter/6.png">
+              <!--<span class="colorw alignM">20</span>-->
             </label>
           </div>
         </ion-slide-page>

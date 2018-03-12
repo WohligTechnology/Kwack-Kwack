@@ -1,68 +1,68 @@
 {
-    "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
     },
-    "config_munge": {
-        "files": {}
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
     },
-    "installed_plugins": {
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-image-picker": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-ionic-webview": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova.plugins.diagnostic": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.kwack_kwack.ionic"
-        },
-        "twitter-connect-plugin": {
-            "FABRIC_KEY": "1a296793e4e29d1a5fd5202310200c4cd75c1d14",
-            "PACKAGE_NAME": "com.kwack_kwack.ionic"
-        },
-        "cordova-plugin-googleplus": {
-            "PACKAGE_NAME": "com.kwack_kwack.ionic"
-        }
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
     },
-    "dependent_plugins": {
-        "es6-promise-plugin": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        }
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-googleplus": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-image-picker": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "twitter-connect-plugin": {
+      "FABRIC_KEY": "1a296793e4e29d1a5fd5202310200c4cd75c1d14",
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
     }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    }
+  }
 }
