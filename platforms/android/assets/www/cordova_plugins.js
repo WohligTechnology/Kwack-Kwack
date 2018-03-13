@@ -307,14 +307,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-googleplus.GooglePlus",
-    "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
-    "pluginId": "cordova-plugin-googleplus",
-    "clobbers": [
-      "window.plugins.googleplus"
-    ]
-  },
-  {
     "id": "cordova-plugin-image-picker.ImagePicker",
     "file": "plugins/cordova-plugin-image-picker/www/imagepicker.js",
     "pluginId": "cordova-plugin-image-picker",
@@ -385,6 +377,14 @@ module.exports = [
     "clobbers": [
       "TwitterConnect"
     ]
+  },
+  {
+    "id": "cordova-plugin-googleplus.GooglePlus",
+    "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
+    "pluginId": "cordova-plugin-googleplus",
+    "clobbers": [
+      "window.plugins.googleplus"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -396,7 +396,6 @@ module.exports.metadata =
   "cordova-plugin-device": "1.1.7",
   "cordova-plugin-file": "5.0.0",
   "cordova-plugin-file-transfer": "1.7.1",
-  "cordova-plugin-googleplus": "5.2.1",
   "cordova-plugin-image-picker": "1.1.1",
   "cordova-plugin-inappbrowser": "2.0.2",
   "cordova-plugin-ionic-webview": "1.1.16",
@@ -407,7 +406,8 @@ module.exports.metadata =
   "cordova-plugin-x-socialsharing": "5.3.2",
   "cordova.plugins.diagnostic": "3.9.2",
   "ionic-plugin-keyboard": "2.2.1",
-  "twitter-connect-plugin": "0.6.0"
+  "twitter-connect-plugin": "0.6.0",
+  "cordova-plugin-googleplus": "5.2.1"
 };
 // BOTTOM OF METADATA
 });

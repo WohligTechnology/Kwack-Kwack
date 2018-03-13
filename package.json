@@ -65,7 +65,7 @@
         "FABRIC_KEY": "1a296793e4e29d1a5fd5202310200c4cd75c1d14"
       },
       "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "441725615810-q7bl3djtjtp5q00pful4a9gstdd2ej1e.apps.googleusercontent.com"
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.441725615810-pojos492gneibjvl891i8o96bnvf35d5"
       }
     },
     "dependencies": {

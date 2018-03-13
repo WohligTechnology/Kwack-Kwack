@@ -33,14 +33,6 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"GooglePlus\"><param name=\"android-package\" value=\"nl.xservices.plugins.GooglePlus\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<access origin=\"https://accounts.google.com/*\" />",
-              "count": 1
-            },
-            {
               "xml": "<feature name=\"ImagePicker\"><param name=\"android-package\" value=\"com.synconset.ImagePicker\" /></feature>",
               "count": 1
             },
@@ -70,6 +62,14 @@
             },
             {
               "xml": "<feature name=\"TwitterConnect\"><param name=\"android-package\" value=\"com.manifestwebdesign.twitterconnect.TwitterConnect\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"GooglePlus\"><param name=\"android-package\" value=\"nl.xservices.plugins.GooglePlus\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<access origin=\"https://accounts.google.com/*\" />",
               "count": 1
             }
           ]
@@ -103,15 +103,15 @@
           ],
           "/manifest": [
             {
+              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+              "count": 1
+            },
+            {
               "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
               "count": 1
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.USE_CREDENTIALS\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
               "count": 1
             }
           ],
@@ -170,9 +170,6 @@
     "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "com.kwack_kwack.ionic"
     },
-    "cordova-plugin-googleplus": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
     "cordova-plugin-image-picker": {
       "PACKAGE_NAME": "com.kwack_kwack.ionic"
     },
@@ -205,6 +202,9 @@
     },
     "twitter-connect-plugin": {
       "FABRIC_KEY": "1a296793e4e29d1a5fd5202310200c4cd75c1d14",
+      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    },
+    "cordova-plugin-googleplus": {
       "PACKAGE_NAME": "com.kwack_kwack.ionic"
     }
   },
@@ -517,14 +517,6 @@
       ]
     },
     {
-      "id": "cordova-plugin-googleplus.GooglePlus",
-      "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
-      "pluginId": "cordova-plugin-googleplus",
-      "clobbers": [
-        "window.plugins.googleplus"
-      ]
-    },
-    {
       "id": "cordova-plugin-image-picker.ImagePicker",
       "file": "plugins/cordova-plugin-image-picker/www/imagepicker.js",
       "pluginId": "cordova-plugin-image-picker",
@@ -595,6 +587,14 @@
       "clobbers": [
         "TwitterConnect"
       ]
+    },
+    {
+      "id": "cordova-plugin-googleplus.GooglePlus",
+      "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
+      "pluginId": "cordova-plugin-googleplus",
+      "clobbers": [
+        "window.plugins.googleplus"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -604,7 +604,6 @@
     "cordova-plugin-device": "1.1.7",
     "cordova-plugin-file": "5.0.0",
     "cordova-plugin-file-transfer": "1.7.1",
-    "cordova-plugin-googleplus": "5.2.1",
     "cordova-plugin-image-picker": "1.1.1",
     "cordova-plugin-inappbrowser": "2.0.2",
     "cordova-plugin-ionic-webview": "1.1.16",
@@ -615,6 +614,7 @@
     "cordova-plugin-x-socialsharing": "5.3.2",
     "cordova.plugins.diagnostic": "3.9.2",
     "ionic-plugin-keyboard": "2.2.1",
-    "twitter-connect-plugin": "0.6.0"
+    "twitter-connect-plugin": "0.6.0",
+    "cordova-plugin-googleplus": "5.2.1"
   }
 }

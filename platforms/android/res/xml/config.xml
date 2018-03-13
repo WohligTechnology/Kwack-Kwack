@@ -17,11 +17,6 @@
     <feature name="FileTransfer">
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
     </feature>
-    <feature name="GooglePlus">
-        <param name="android-package" value="nl.xservices.plugins.GooglePlus" />
-        <param name="onload" value="true" />
-    </feature>
-    <access origin="https://accounts.google.com/*" />
     <feature name="ImagePicker">
         <param name="android-package" value="com.synconset.ImagePicker" />
     </feature>
@@ -92,4 +87,9 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="TwitterConsumerKey" value="7PkdYSniJJjMRjVvYpUk2rHaY" />
     <preference name="TwitterConsumerSecret" value="Df9FqyquPcYPKT92Ezkpn16SN6qGWnMmbbIiX55cO1pJhPSaTL" />
+    <feature name="GooglePlus">
+        <param name="android-package" value="nl.xservices.plugins.GooglePlus" />
+        <param name="onload" value="true" />
+    </feature>
+    <access origin="https://accounts.google.com/*" />
 </widget>
