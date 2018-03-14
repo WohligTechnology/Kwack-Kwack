@@ -1,4 +1,4 @@
-connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, Chats, $ionicScrollDelegate) {
+connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, Chats, $ionicScrollDelegate, $cordovaSocialSharing) {
   $scope.newsId = {}
   $scope.exploreState = $state.current.name
   console.log("$scope.exploreState", $scope.exploreState)
@@ -140,9 +140,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     $scope.dataToSendApi.newsId = newsId
     $scope.dataToSendApi.userId = $.jStorage.get('user')._id
     console.log("******************", $scope.dataToSendApi)
-     Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
-          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
-        })
+     
     // Chats.apiCallWithData("ShareNews/shareNewsOrNot", $scope.dataToSendApi, function (data1) {
     //   console.log("$$$$$$$$$$$$$$$$$$$$", data1)
     //   if (data1.value == true) {
@@ -159,7 +157,13 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     $cordovaSocialSharing
       .share(message, subject, image, link) // Share via native share sheet
       .then(function (result) {
-        $ionicLoading.hide();
+        console.log("Success");
+        console.log(result);
+        console.log(image);
+        Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+        })
+        $scope.doRefresh(true);
         // Success!
       }, function (err) {
         // An error occured. Show a message to the user

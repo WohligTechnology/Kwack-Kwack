@@ -6,11 +6,9 @@
         <img ng-if=" debate.comment.user.socailLoginPhoto && debate.comment.anonymous=='NO'" ng-src="{{debate.comment.user.socailLoginPhoto}}"
             alt="profile-img" class="profile-w">
         <img ng-if=" debate.comment.user.photo && debate.comment.anonymous=='NO' && !debate.comment.user.socailLoginPhoto" ng-src="{{debate.comment.user.photo | uploadpath}}"
-            alt="profile-img" class="profile-w">
-        <img ng-if=" debate.comment.user.photo && debate.comment.anonymous=='NO' && !debate.comment.user.socailLoginPhoto" ng-src="{{debate.comment.user.photo}}"
-            alt="profile-img" class="profile-w">
-            
-
+            alt="profile-img" class="socialLogin">
+        <!-- <img ng-if=" debate.comment.user.photo && debate.comment.anonymous=='NO' && !debate.comment.user.socailLoginPhoto" ng-src="{{debate.comment.user.photo}}"
+            alt="profile-img" class="profile-w"> -->
     </div>
     <div class="list card">
         <div class="item item-body">

@@ -298,20 +298,21 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     $scope.dataToSendApi.newsId = newsId
     $scope.dataToSendApi.userId = $.jStorage.get('user')._id
     console.log("******************", $scope.dataToSendApi)
-     Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
-          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
-        })
+    
     var message = desciption
     var subject = title
     var image = imageUrl
     $cordovaSocialSharing
       .share(message, subject, image, link) // Share via native share sheet
       .then(function (result) {
-        $ionicLoading.hide();
-        // Success!
         console.log("Success");
         console.log(result);
         console.log(image);
+        Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+        })
+        // Success!
+       $scope.doRefresh();
       }, function (err) {
         console.log("error : " + err);
       });

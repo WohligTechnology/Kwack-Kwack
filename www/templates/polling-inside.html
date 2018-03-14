@@ -52,9 +52,9 @@
                   <img ng-if="newsInfo.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
                 <span class="pollingCounts"> {{TotalKwacks}}</span>
                 </label>
-                <label>
+                <label ng-click="socilaSharing(newsInfo.description,newsInfo.imageUrl,newsInfo.title,newsInfo.url,newsInfo._id)">
                 <img src="img/debate/share.png">
-                <span class=" pollingCounts">20</span>
+                <!-- <span class=" pollingCounts">20</span> -->
                 </label>
                 </div>
             </div>

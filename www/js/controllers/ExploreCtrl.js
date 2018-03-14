@@ -98,12 +98,13 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
     $cordovaSocialSharing
       .share(message, subject, image, link) // Share via native share sheet
       .then(function (result) {
-        Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
-          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
-        })
         console.log("Success");
         console.log(result);
         console.log(image);
+        Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+        })
+       $scope.doRefresh(true);
       }, function (err) {
         console.log("error : " + err);
       });
