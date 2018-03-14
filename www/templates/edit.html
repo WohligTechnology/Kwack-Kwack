@@ -8,9 +8,9 @@
         <ion-content class="bg-color">
             <div class="bodyFont">
                 <div class="profileImg">
-                    <img ng-if="!userInfo.type" src="{{userInfo.photo | uploadpath}}" >
-                    <img ng-if="userInfo.type" src="{{userInfo.photo}} " alt="">
-                    <img src="img/profile/profile.png" ng-if="!userInfo.photo || userInfo.photo==''" alt="logo" class="w100">
+                    <img ng-if="!userInfo.socailLoginPhoto" src="{{userInfo.photo | uploadpath}}" >
+                    <img ng-if="userInfo.socailLoginPhoto" src="{{userInfo.socailLoginPhoto}} " alt="">
+                    <img src="img/profile/profile.png" ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto"  alt="logo" class="w100">  
                 </div>
                 <div class="chngImg" ng-click="showActionsheet('image')">Change Image</div>
                 <div class="editCard relative">

@@ -8,8 +8,9 @@
         <ion-content class="bg-color has-header">
             <div class="bodyFont  user-profile martop">
                 <div class="profileImg">
-                    <img ng-if="userInfo.photo && userInfo.photo!=''" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
-                    <img src="img/profile/profile.png" ng-if="!userInfo.photo || userInfo.photo==''" alt="logo" class="w100">
+                    <img ng-if="!userInfo.socailLoginPhoto" src="{{userInfo.photo | uploadpath}}" >
+                    <img ng-if="userInfo.socailLoginPhoto" src="{{userInfo.socailLoginPhoto}} " alt="">
+                    <img src="img/profile/profile.png" ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto" alt="logo" class="w100">
                 </div>
                 <div class="text-center set-username">
                     <h5>{{userInfo.name}}</h5>

@@ -11,9 +11,9 @@
                     <div class="profileImg text-center" ui-sref="edit">{{font1}}
                         <!-- <img src="img/edit/profilechange.jpg"> -->
                         <!-- <img ng-src="{{userInfo.photo | uploadpath}}"> -->
-                        <img ng-if="userInfo.photo && userInfo.photo!='' && !userInfo.type" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
-                        <img ng-if="userInfo.photo && userInfo.photo!='' && userInfo.type" ng-src="{{userInfo.photo}}" alt="logo" class="w100">
-                        <img src="img/profile/profile.png" ng-if="!userInfo.photo || userInfo.photo==''" alt="logo" class="w100">
+                        <img ng-if="userInfo.photo && userInfo.photo!='' && !userInfo.socailLoginPhoto" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
+                        <img ng-if="!userInfo.photo && userInfo.photo=='' && userInfo.socailLoginPhoto" ng-src="{{userInfo.socailLoginPhoto}}" alt="logo" class="w100">
+                        <img src="img/profile/profile.png" ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto" alt="logo" class="w100">
 
                     </div>
                     <div class="set-username text-center">
