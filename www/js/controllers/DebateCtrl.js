@@ -1,4 +1,4 @@
-connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state, $ionicModal) {
+connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state, $ionicModal, $cordovaSocialSharing) {
     $scope.lellow = false;
     $scope.newsId = $stateParams.newsid
     $scope.kwackAns = $stateParams.kwackId
@@ -245,11 +245,14 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         $cordovaSocialSharing
             .share(desciption, title, imageUrl, link) // Share via native share sheet
             .then(function (result) {
-                $ionicLoading.hide();
                 // Success!
                 console.log("Success");
                 console.log(result);
                 console.log(image);
+                Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+                    console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+                  })
+                  $scope.getOneNewsApi();
             }, function (err) {
                 console.log("error : " + err);
             });

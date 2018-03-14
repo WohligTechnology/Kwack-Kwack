@@ -135,9 +135,7 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
     $scope.dataToSendApi.newsId = newsId
     $scope.dataToSendApi.userId = $.jStorage.get('user')._id
     console.log("******************", $scope.dataToSendApi)
-    Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
-      console.log("$$$$$$$$$$$$$$$$$$$$", data2)
-    })
+   
     var message = desciption
     var subject = title
     var image = imageUrl
@@ -147,6 +145,10 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
         console.log("Success");
         console.log(result);
         console.log(image);
+        Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+        })
+        $scope.doRefresh(true);
       }, function (err) {
         console.log("error : " + err);
       });

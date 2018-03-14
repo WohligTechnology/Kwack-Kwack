@@ -21,48 +21,51 @@ connector.controller('PollingInsideCtrl', function ($scope, $stateParams, $state
         $state.go($scope.mainTab.fromState);
         Chats.flushMainTab();
     };
-    Chats.apiCallWithData("NewsInfo/getOneNews", data, function (data1) {
-        if (data1.value == true) {
-            $scope.newsInfo = data1.data
-            if( $scope.newsInfo.IsPoll=="YES"){
-                $scope.option1 = data1.data.pollQuestionOption[0]
-                $scope.option2 = data1.data.pollQuestionOption[1]
-            }
-           
-            $scope.TotalKwacks = data1.data.comments.length
-            $scope.TotalPoll = data1.data.polls.length
-            $scope.yesno = data1.data.polls
-            console.log("$scope.yesno", $scope.newsInfo)
-            if ($scope.newsInfo.IsPoll=="NO") {
-                console.log("Innside poll f condi yes no")
-                _.forEach($scope.yesno, function (value) {
-                    if (value.poll == null) {} else if (value.poll.pollOptions == 'YES') {
-                        $scope.yes.push(value)
-                        var yes = $scope.yes.length / $scope.TotalPoll * 100
-                        $scope.yespercent = _.round(yes)
-                    } else {
-                        $scope.no.push(value)
-                        var no = $scope.no.length / $scope.TotalPoll * 100
-                        $scope.nopercent = _.round(no)
-                    }
-                });
-            }else{
-                _.forEach($scope.yesno, function (value) {
-                    if (value.poll == null) {} else if (value.poll.pollOptions == $scope.option1) {
-                        $scope.yes.push(value)
-                        var yes = $scope.yes.length / $scope.TotalPoll * 100
-                        $scope.yespercent = _.round(yes)
-                    } else {
-                        $scope.no.push(value)
-                        var no = $scope.no.length / $scope.TotalPoll * 100
-                        $scope.nopercent = _.round(no)
-                    }
-                });
-                // $scope.opt1=$scope.newsInfo
-                console.log("Inide else part demo1 demo2")
-            }
-        } else {}
-    })
+    $scope.getOneNews =function(){
+        Chats.apiCallWithData("NewsInfo/getOneNews", data, function (data1) {
+            if (data1.value == true) {
+                $scope.newsInfo = data1.data
+                if( $scope.newsInfo.IsPoll=="YES"){
+                    $scope.option1 = data1.data.pollQuestionOption[0]
+                    $scope.option2 = data1.data.pollQuestionOption[1]
+                }
+               
+                $scope.TotalKwacks = data1.data.comments.length
+                $scope.TotalPoll = data1.data.polls.length
+                $scope.yesno = data1.data.polls
+                console.log("$scope.yesno", $scope.newsInfo)
+                if ($scope.newsInfo.IsPoll=="NO") {
+                    console.log("Innside poll f condi yes no")
+                    _.forEach($scope.yesno, function (value) {
+                        if (value.poll == null) {} else if (value.poll.pollOptions == 'YES') {
+                            $scope.yes.push(value)
+                            var yes = $scope.yes.length / $scope.TotalPoll * 100
+                            $scope.yespercent = _.round(yes)
+                        } else {
+                            $scope.no.push(value)
+                            var no = $scope.no.length / $scope.TotalPoll * 100
+                            $scope.nopercent = _.round(no)
+                        }
+                    });
+                }else{
+                    _.forEach($scope.yesno, function (value) {
+                        if (value.poll == null) {} else if (value.poll.pollOptions == $scope.option1) {
+                            $scope.yes.push(value)
+                            var yes = $scope.yes.length / $scope.TotalPoll * 100
+                            $scope.yespercent = _.round(yes)
+                        } else {
+                            $scope.no.push(value)
+                            var no = $scope.no.length / $scope.TotalPoll * 100
+                            $scope.nopercent = _.round(no)
+                        }
+                    });
+                    // $scope.opt1=$scope.newsInfo
+                    console.log("Inide else part demo1 demo2")
+                }
+            } else {}
+        })
+    }
+    $scope.getOneNews();
 
     $scope.nextPage = function (data, kwackPoll) {
         var data1 = {}
@@ -93,4 +96,28 @@ connector.controller('PollingInsideCtrl', function ($scope, $stateParams, $state
             }
         })
     }
+    $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
+        console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption, imageUrl, title, link, newsId)
+        $scope.dataToSendApi = {}
+        $scope.dataToSendApi.newsId = newsId
+        $scope.dataToSendApi.userId = $.jStorage.get('user')._id
+        console.log("******************", $scope.dataToSendApi)
+       
+        var message = desciption
+        var subject = title
+        var image = imageUrl
+        $cordovaSocialSharing
+          .share(message, subject, image, link) // Share via native share sheet
+          .then(function (result) {
+            console.log("Success");
+            console.log(result);
+            console.log(image);
+            Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+              console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+            })
+            $scope.getOneNews();
+          }, function (err) {
+            console.log("error : " + err);
+          });
+      }
 })

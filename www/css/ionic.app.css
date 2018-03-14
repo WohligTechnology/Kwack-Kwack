@@ -11847,6 +11847,14 @@ button.btn-yellow.button[disabled] {
   border-radius: 50%;
   box-shadow: 1px 10px 35px 0px #d4d4d4; }
 
+.socialLogin {
+  height: 65px;
+  width: 65px;
+  z-index: 3;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 1px 10px 35px 0px #d4d4d4; }
+
 .alignbM {
   font-size: 8px;
   padding-top: 6px;

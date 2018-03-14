@@ -2635,6 +2635,14 @@ $dark:                            #444 !default;
         box-shadow: 1px 10px 35px 0px $lightGray1;
     }
 
+    .socialLogin {
+        @include size(65px);
+        z-index: 3;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: 1px 10px 35px 0px $lightGray1;
+    }
+
     .alignbM {
         font-size: 8px;
         padding-top: 6px;

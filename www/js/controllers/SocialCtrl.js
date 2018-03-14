@@ -84,9 +84,7 @@ connector.controller('SocialCtrl', function ($scope, $rootScope, Chats, $ionicSc
      $scope.dataToSendApi = {}
      $scope.dataToSendApi.newsId = newsId
      $scope.dataToSendApi.userId = $.jStorage.get('user')._id
-    Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
-           console.log("$$$$$$$$$$$$$$$$$$$$", data1)
-         })
+    
     $cordovaSocialSharing
       .share(desciption, title, imageUrl, link) // Share via native share sheet
       .then(function (result) {
@@ -95,6 +93,10 @@ connector.controller('SocialCtrl', function ($scope, $rootScope, Chats, $ionicSc
         console.log("Success");
         console.log(result);
         console.log(image);
+        Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
+          console.log("$$$$$$$$$$$$$$$$$$$$", data1)
+        })
+        $scope.doRefresh(true);
       }, function (err) {
         // An error occured. Show a message to the user
         console.log("error : " + err);
