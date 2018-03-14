@@ -10,7 +10,7 @@
         "spec": ">=4.1.0 <5.0.0",
         "type": "range"
       },
-      "/home/wohlig/Documents/htdocs/Kwack-Kwack"
+      "/Applications/XAMPP/xamppfiles/htdocs/Kwack-Kwack"
     ]
   ],
   "_from": "cordova-plugin-splashscreen@>=4.1.0 <5.0.0",
@@ -45,7 +45,7 @@
   "_shasum": "81028ab7643e615593d27f2ad02445611f1946b6",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-splashscreen@^4.1.0",
-  "_where": "/home/wohlig/Documents/htdocs/Kwack-Kwack",
+  "_where": "/Applications/XAMPP/xamppfiles/htdocs/Kwack-Kwack",
   "author": {
     "name": "Apache Software Foundation"
   },

@@ -18,26 +18,10 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-console": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-console@^1.1.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-contacts": {
     "source": {
       "type": "registry",
       "id": "cordova-plugin-contacts@^3.0.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-device": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-device@^1.1.7"
     },
     "is_top_level": true,
     "variables": {}
@@ -53,7 +37,7 @@
   "cordova-plugin-file-transfer": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-file-transfer@^1.7.0"
+      "id": "cordova-plugin-file-transfer@^1.7.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -84,6 +68,54 @@
     "is_top_level": true,
     "variables": {}
   },
+  "cordova-plugin-x-socialsharing": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-x-socialsharing@^5.3.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "es6-promise-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "es6-promise-plugin@^4.1.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova.plugins.diagnostic": {
+    "source": {
+      "type": "registry",
+      "id": "cordova.plugins.diagnostic@^3.9.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device@^1.1.7"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-console": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-console@^1.1.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@^1.3.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
   "cordova-plugin-splashscreen": {
     "source": {
       "type": "registry",
@@ -100,38 +132,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-whitelist": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-whitelist@^1.3.3"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-x-socialsharing": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-x-socialsharing@^5.2.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "es6-promise-plugin": {
-    "source": {
-      "type": "registry",
-      "id": "es6-promise-plugin@^4.1.0"
-    },
-    "is_top_level": false,
-    "variables": {}
-  },
-  "cordova.plugins.diagnostic": {
-    "source": {
-      "type": "registry",
-      "id": "cordova.plugins.diagnostic@^3.6.2"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "ionic-plugin-keyboard": {
     "source": {
       "type": "registry",
@@ -140,16 +140,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "twitter-connect-plugin": {
-    "source": {
-      "type": "registry",
-      "id": "twitter-connect-plugin@^0.6.0"
-    },
-    "is_top_level": true,
-    "variables": {
-      "FABRIC_KEY": "1a296793e4e29d1a5fd5202310200c4cd75c1d14"
-    }
-  },
   "cordova-plugin-googleplus": {
     "source": {
       "type": "registry",
@@ -157,7 +147,17 @@
     },
     "is_top_level": true,
     "variables": {
-      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.441725615810-pojos492gneibjvl891i8o96bnvf35d5"
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.441725615810-k2csfogc9vfd8qmrr303ffhp9k6ubtha"
+    }
+  },
+  "twitter-connect-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "twitter-connect-plugin"
+    },
+    "is_top_level": true,
+    "variables": {
+      "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de"
     }
   }
 }

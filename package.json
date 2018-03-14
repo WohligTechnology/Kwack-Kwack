@@ -61,11 +61,11 @@
       "cordova-plugin-compat": {},
       "cordova.plugins.diagnostic": {},
       "cordova-plugin-inappbrowser": {},
-      "twitter-connect-plugin": {
-        "FABRIC_KEY": "1a296793e4e29d1a5fd5202310200c4cd75c1d14"
-      },
       "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.441725615810-pojos492gneibjvl891i8o96bnvf35d5"
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.441725615810-k2csfogc9vfd8qmrr303ffhp9k6ubtha"
+      },
+      "twitter-connect-plugin": {
+        "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de"
       }
     },
     "dependencies": {

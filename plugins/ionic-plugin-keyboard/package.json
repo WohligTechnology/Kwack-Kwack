@@ -10,7 +10,7 @@
         "spec": ">=2.2.1 <3.0.0",
         "type": "range"
       },
-      "/home/wohlig/Documents/htdocs/Kwack-Kwack"
+      "/Applications/XAMPP/xamppfiles/htdocs/Kwack-Kwack"
     ]
   ],
   "_from": "ionic-plugin-keyboard@>=2.2.1 <3.0.0",
@@ -45,7 +45,7 @@
   "_shasum": "f2a9e169bbe9b5522400347c9fd6d3467ee3fa12",
   "_shrinkwrap": null,
   "_spec": "ionic-plugin-keyboard@^2.2.1",
-  "_where": "/home/wohlig/Documents/htdocs/Kwack-Kwack",
+  "_where": "/Applications/XAMPP/xamppfiles/htdocs/Kwack-Kwack",
   "author": {
     "name": "Ionic"
   },

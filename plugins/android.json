@@ -52,11 +52,11 @@
     "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "com.kwack_kwack.ionic"
     },
-    "twitter-connect-plugin": {
-      "FABRIC_KEY": "1a296793e4e29d1a5fd5202310200c4cd75c1d14",
+    "cordova-plugin-googleplus": {
       "PACKAGE_NAME": "com.kwack_kwack.ionic"
     },
-    "cordova-plugin-googleplus": {
+    "twitter-connect-plugin": {
+      "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de",
       "PACKAGE_NAME": "com.kwack_kwack.ionic"
     }
   },
