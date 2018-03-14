@@ -165,6 +165,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
               $scope.socialLoginData = {
                 name: result.name,
                 screenName: result.screen_name,
+                socailLoginPhoto:result.profile_image_url
                 // city: Socialstate[0],
                 // country: "India"
               }
@@ -210,14 +211,14 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
   $scope.googleLogin = function () {
     window.plugins.googleplus.login({
         'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-        'webClientId': '441725615810-ahmpeivsqvig3f9r5rdk2j22hnos2hro.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+        'webClientId': '557842286830-hsea4a5agi4cqq9rk6i7aptsms98324v.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
         // 'offline': true // optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
       },
       function (obj) {
-        alert(JSON.stringify(obj)); // do something useful instead of alerting
+         // do something useful instead of alerting
         console.log('done google login', obj)
 
-        $scope.profileData = obj.data;
+        $scope.profileData = obj;
         // var Socialstate = result.data.location.name.split(",")
         $scope.socialLoginData = {
           name: $scope.profileData.displayName,
@@ -252,7 +253,6 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
 
       },
       function (msg) {
-        alert('error: ' + msg);
         console.log('done google login', msg)
       }
     );

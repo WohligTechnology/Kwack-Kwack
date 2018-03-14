@@ -384,6 +384,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('discover', {
         url: '/discover',
+        cache:false,
         templateUrl: 'templates/discover.html',
         controller: 'DiscoverCtrl'
       })

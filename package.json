@@ -6,7 +6,8 @@
     "gulp": "^3.5.6",
     "gulp-clean-css": "^3.7.0",
     "gulp-rename": "^1.2.0",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "ws": "3.3.2"
   },
   "dependencies": {
     "@ionic/app-scripts": "^3.1.6",
@@ -61,11 +62,11 @@
       "cordova-plugin-compat": {},
       "cordova.plugins.diagnostic": {},
       "cordova-plugin-inappbrowser": {},
-      "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.441725615810-k2csfogc9vfd8qmrr303ffhp9k6ubtha"
-      },
       "twitter-connect-plugin": {
         "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de"
+      },
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.557842286830-hsea4a5agi4cqq9rk6i7aptsms98324v"
       }
     },
     "dependencies": {

@@ -144,7 +144,6 @@ connector.controller('DiscoverNewsCtrl', function ($scope, $cordovaSocialSharing
     $cordovaSocialSharing
       .share(message, subject, image, link) // Share via native share sheet
       .then(function (result) {
-        $ionicLoading.hide();
         console.log("Success");
         console.log(result);
         console.log(image);

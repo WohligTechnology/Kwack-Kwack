@@ -58,4 +58,9 @@ connector.controller('DiscoverCtrl', function ($scope, Chats, $ionicModal) {
       });
     }
   };
+
+  // $scope.emptyAllInterest= function() {
+  //   $scope.allInterest = []
+  //   $scope.interestarr = []
+  // }
 })

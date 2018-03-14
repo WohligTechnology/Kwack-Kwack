@@ -27,6 +27,11 @@ $scope.fontapply=$rootScope.font
   $scope.logout = function () {
     $.jStorage.flush();
     $state.go("login");
+    window.plugins.googleplus.logout(
+      function (msg) {
+        alert(msg); // do something useful instead of alerting
+      }
+  );
   }
   //profile
   $scope.user = {}

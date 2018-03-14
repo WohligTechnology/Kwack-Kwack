@@ -1,4 +1,4 @@
-connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chats, $state, $rootScope, $ionicHistory) {
+connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chats, $state, $ionicLoading, $rootScope, $ionicHistory,$cordovaSocialSharing) {
   $scope.pollKwack = {};
   $scope.searchInclude = 'templates/discover-full.html';
   $scope.tabHeader = 'templates/tab-header.html';
@@ -86,34 +86,25 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
   }
   //socialSharing
   $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
-    console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption,imageUrl,title,link,newsId)
+    console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption, imageUrl, title, link, newsId)
     $scope.dataToSendApi = {}
     $scope.dataToSendApi.newsId = newsId
     $scope.dataToSendApi.userId = $.jStorage.get('user')._id
     console.log("******************", $scope.dataToSendApi)
-     Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
-          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
-        })
-    // Chats.apiCallWithData("ShareNews/shareNewsOrNot", $scope.dataToSendApi, function (data1) {
-    //   console.log("$$$$$$$$$$$$$$$$$$$$", data1)
-    //   if (data1.value == true) {
-    //     console.log("inside if condi")
-    //   } else {
-    //     Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
-    //       console.log("$$$$$$$$$$$$$$$$$$$$", data2)
-    //     })
-    //   }
-    // })
+   
     var message = desciption
     var subject = title
     var image = imageUrl
     $cordovaSocialSharing
       .share(message, subject, image, link) // Share via native share sheet
       .then(function (result) {
-        $ionicLoading.hide();
-        // Success!
+        Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
+          console.log("$$$$$$$$$$$$$$$$$$$$", data2)
+        })
+        console.log("Success");
+        console.log(result);
+        console.log(image);
       }, function (err) {
-        // An error occured. Show a message to the user
         console.log("error : " + err);
       });
   }

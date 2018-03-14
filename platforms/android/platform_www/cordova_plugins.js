@@ -371,19 +371,19 @@ module.exports = [
     "runs": true
   },
   {
-    "id": "cordova-plugin-googleplus.GooglePlus",
-    "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
-    "pluginId": "cordova-plugin-googleplus",
-    "clobbers": [
-      "window.plugins.googleplus"
-    ]
-  },
-  {
     "id": "twitter-connect-plugin.TwitterConnect",
     "file": "plugins/twitter-connect-plugin/www/TwitterConnect.js",
     "pluginId": "twitter-connect-plugin",
     "clobbers": [
       "TwitterConnect"
+    ]
+  },
+  {
+    "id": "cordova-plugin-googleplus.GooglePlus",
+    "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
+    "pluginId": "cordova-plugin-googleplus",
+    "clobbers": [
+      "window.plugins.googleplus"
     ]
   }
 ];
@@ -406,8 +406,8 @@ module.exports.metadata =
   "cordova-plugin-x-socialsharing": "5.3.2",
   "cordova.plugins.diagnostic": "3.9.2",
   "ionic-plugin-keyboard": "2.2.1",
-  "cordova-plugin-googleplus": "5.2.1",
-  "twitter-connect-plugin": "0.6.0"
+  "twitter-connect-plugin": "0.6.0",
+  "cordova-plugin-googleplus": "5.2.1"
 };
 // BOTTOM OF METADATA
 });
