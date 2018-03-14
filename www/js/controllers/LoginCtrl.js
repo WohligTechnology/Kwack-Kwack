@@ -1,13 +1,8 @@
 connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats, $state, $stateParams, $cordovaOauthUtility, $cordovaOauth, ionicToast, $http) {
   if ($.jStorage.get("user")) {
-    if (_.isEmpty($.jStorage.get("user").state)) {
-      console.log("************************inside if condition")
-      $state.go("mobile")
-    } else {
-      console.log("************************inside else condition")
-      
+  
       $state.go("tab.explore")
-    }
+    
   }
   $scope.showerrMsg = false
   $scope.verifyUser = function (info) {
