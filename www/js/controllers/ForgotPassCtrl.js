@@ -10,7 +10,7 @@ connector.controller('ForgotPassCtrl', function ($scope, Chats, ionicToast, $sta
                 $state.go("otp")
             } else if (info.data == "INV-NUMBER") {
                 ionicToast.show('Not valid Number', 'top', false, 2500);
-            } else if (data.value == false) {
+            } else if (info.value == false) {
                 ionicToast.show('Please enter correct Mobile Number', 'top', false, 2500);
             }
         })

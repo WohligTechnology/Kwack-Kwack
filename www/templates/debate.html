@@ -71,9 +71,9 @@
                         <img ng-src="img/profile/profile.png" alt="profile-img" class="profile-w">
                     </div>
                     <div class="debateprofile" ng-click="openModal(); userProfile(currentUserInfo._id)">
-                        <img ng-if="!setvarann && currentUserInfo.photo && !currentUserInfo.type" ng-src="{{currentUserInfo.photo | uploadpath}}"
+                        <img ng-if="!setvarann && currentUserInfo.photo && !currentUserInfo.socailLoginPhoto" ng-src="{{currentUserInfo.photo | uploadpath}}"
                             alt="profile-img" class="profile-w">
-                        <img ng-if="!setvarann && currentUserInfo.photo && currentUserInfo.type" ng-src="{{currentUserInfo.photo}}" alt="profile-img"
+                        <img ng-if="!setvarann && !currentUserInfo.photo && currentUserInfo.socailLoginPhoto" ng-src="{{currentUserInfo.socailLoginPhoto}}" alt="profile-img"
                             class="profile-w">
                     </div>
                     <div class="list card">

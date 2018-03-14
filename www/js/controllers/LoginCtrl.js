@@ -1,6 +1,6 @@
 connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats, $state, $stateParams, $cordovaOauthUtility, $cordovaOauth, ionicToast, $http) {
   if ($.jStorage.get("user")) {
-       if (_.isEmpty($.jStorage.get("user").otp)) {
+    if (_.isEmpty($.jStorage.get("user").state)) {
       $state.go("mobile")
     } else {
       $state.go("tab.explore")
@@ -76,32 +76,32 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
           $scope.socialLoginData = {
             name: $scope.profileData.name,
             email: $scope.profileData.email,
-            // photo: $scope.profileData.picture.data.url,
+            socailLoginPhoto: $scope.profileData.picture.data.url,
             // state: Socialstate[1],
             // city: Socialstate[0],
             // country: "India"
           }
-            Chats.apiCallWithData("User/getUserforSocailLoginFacebook", $scope.socialLoginData, function (data) {
+          Chats.apiCallWithData("User/getUserforSocailLoginFacebook", $scope.socialLoginData, function (data) {
+            if (data.value == true) {
+              $scope.userData = data.data;
+              $scope.userData.verified = false;
+              $.jStorage.set("user", $scope.userData);
+              $state.go("tab.explore")
+            } else {
+              Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
+                console.log("*********************after saving the user in database", data)
                 if (data.value == true) {
                   $scope.userData = data.data;
                   $scope.userData.verified = false;
                   $.jStorage.set("user", $scope.userData);
-                     $state.go("inviteFriends")
+                  $state.go("inviteFriends")
                 } else {
-                  Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
-                    console.log("*********************after saving the user in database", data)
-                    if (data.value == true) {
-                      $scope.userData = data.data;
-                      $scope.userData.verified = false;
-                      $.jStorage.set("user", $scope.userData);
-                      $state.go("inviteFriends")
-                    } else {
-                      console.log("display error")
-                    }
-
-                  })
+                  console.log("display error")
                 }
+
               })
+            }
+          })
         }, function (error) {
           alert("There was a problem getting your profile. Check the logs for details.");
           console.log(error);
@@ -164,7 +164,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
               console.log('Twitter handle :' + result.name);
               $scope.socialLoginData = {
                 name: result.name,
-                email: result.location,
+                screenName: result.screen_name,
                 // city: Socialstate[0],
                 // country: "India"
               }
@@ -174,7 +174,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
                   $scope.userData = data.data;
                   $scope.userData.verified = false;
                   $.jStorage.set("user", $scope.userData);
-                     $state.go("inviteFriends")
+                  $state.go("tab.explore")
                 } else {
                   Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
                     console.log("*********************after saving the user in database", data)
@@ -215,11 +215,45 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
       },
       function (obj) {
         alert(JSON.stringify(obj)); // do something useful instead of alerting
-        console.log('done google login',obj)
+        console.log('done google login', obj)
+
+        $scope.profileData = obj.data;
+        // var Socialstate = result.data.location.name.split(",")
+        $scope.socialLoginData = {
+          name: $scope.profileData.displayName,
+          email: $scope.profileData.email,
+          socailLoginPhoto: $scope.profileData.imageUrl,
+          // state: Socialstate[1],
+          // city: Socialstate[0],
+          // country: "India"
+        }
+        Chats.apiCallWithData("User/getUserforSocailLoginFacebook", $scope.socialLoginData, function (data) {
+          if (data.value == true) {
+            $scope.userData = data.data;
+            $scope.userData.verified = false;
+            $.jStorage.set("user", $scope.userData);
+            $state.go("tab.explore")
+          } else {
+            Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
+              console.log("*********************after saving the user in database", data)
+              if (data.value == true) {
+                $scope.userData = data.data;
+                $scope.userData.verified = false;
+                $.jStorage.set("user", $scope.userData);
+                $state.go("inviteFriends")
+              } else {
+                console.log("display error")
+              }
+
+            })
+          }
+        })
+
+
       },
       function (msg) {
         alert('error: ' + msg);
-        console.log('done google login',msg)
+        console.log('done google login', msg)
       }
     );
   }

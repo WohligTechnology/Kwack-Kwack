@@ -44,14 +44,14 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast, 
           if($scope.socialLogin.access_token != '') {
               $http.get("https://graph.facebook.com/v2.5/me", { params: { access_token: $scope.socialLogin.access_token, fields: "id,name,email,gender,location,website,picture,relationship_status", format: "json" }}).then(function(result) {
                   $scope.profileData = result.data;
-                  var Socialstate = result.data.location.name.split(",")
+                //   var Socialstate = result.data.location.name.split(",")
                   $scope.socialLoginData = {
                     name: $scope.profileData.name,
                     email: $scope.profileData.email,
-                    // photo: $scope.profileData.picture.data.url,
-                    state: Socialstate[1],
+                     socailLoginPhoto: $scope.profileData.picture.data.url,
+                    // state: Socialstate[1],
                     // city: Socialstate[0],
-                    country: "India"
+                    // country: "India"
                   }
   
                      Chats.apiCallWithData("User/getUserforSocailLogin", $scope.socialLoginData, function (data) {

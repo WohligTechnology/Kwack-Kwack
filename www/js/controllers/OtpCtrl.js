@@ -17,7 +17,10 @@ connector.controller('OtpCtrl', function ($scope, $stateParams, $state, Chats, i
     $scope.otp = function (info) {
         if (info.digit1 >= 0 && info.digit2 >= 0 && info.digit3 >= 0 && info.digit4 >= 0) {
             $scope.data = {}
-              $scope.data._id=$.jStorage.get("user")._id
+            // if ($.jStorage.get("user")) {
+            //     $scope.data._id = $.jStorage.get("user")._id
+            // }
+
             $scope.data.otp = info.digit1.toString() + info.digit2.toString() + info.digit3.toString() + info.digit4.toString();
             Chats.apiCallWithData("User/verifyOTPForResetPass", $scope.data, function (data) {
                 if (data.value == true) {
