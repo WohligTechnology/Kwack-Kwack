@@ -272,7 +272,18 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
         $scope.dataToSave.state = data.selectedState.stateName
         Chats.apiCallWithData("User/save", $scope.dataToSave, function (data) {
           if (data.value == true) {
-            $state.go("profile")
+            $scope.reqData = {}
+            $scope.reqData._id = $.jStorage.get('user')._id
+            Chats.apiCallWithData("User/getOne", $scope.reqData, function (data) {
+              if (data.value == true) {
+                $scope.userData = data.data;
+                $.jStorage.set("user", $scope.userData);
+                $state.go("profile")
+              }else{
+                 console.log("Err  While getting users Data")
+              }
+            });
+
           } else {}
         })
       } else if (data.selectedCountry.countryName && data.selectedState) {
@@ -280,7 +291,15 @@ connector.controller('LocationCtrl', function ($scope, Chats, $state, $statePara
         $scope.dataToSave.state = data.selectedState
         Chats.apiCallWithData("User/save", $scope.dataToSave, function (data) {
           if (data.value == true) {
-            $state.go("profile")
+            Chats.apiCallWithData("User/getOne", $scope.reqData, function (data) {
+              if (data.value == true) {
+                $scope.userData = data.data;
+                $.jStorage.set("user", $scope.userData);
+                $state.go("profile")
+              }else{
+                console.log("Err  While getting users Data")
+              }
+            })
           } else {}
         })
       } else {}

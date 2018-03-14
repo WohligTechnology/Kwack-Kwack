@@ -10,7 +10,7 @@ connector.controller('ConfirmPassCtrl', function ($scope, ionicToast, $state, Ch
         if (info.value == true) {
           ionicToast.show('Password changed successfully', 'top', false, 2500);
           $scope.verifiedUser.verified = true
-          $.jStorage.set("user", $scope.verifiedUser);
+          // $.jStorage.set("user", $scope.verifiedUser);
           $state.go("login")
         }
       })
