@@ -1,4 +1,4 @@
-connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast, $http) {
+connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast, $http, $cordovaOauth) {
    
     $scope.showMassage = false
     $scope.setEmailMsg = false

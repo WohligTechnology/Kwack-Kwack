@@ -1,4 +1,4 @@
-connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state, $ionicModal, $cordovaSocialSharing) {
+connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state, $ionicModal, $cordovaSocialSharing, $ionicPlatform) {
     $scope.lellow = false;
     $scope.newsId = $stateParams.newsid
     $scope.kwackAns = $stateParams.kwackId
@@ -21,6 +21,19 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         $state.go($scope.mainTab.fromState);
         Chats.flushMainTab();
     };
+    $ionicPlatform.registerBackButtonAction(function (e) {
+        $scope.mainTab = Chats.getkwackPollStateChange();
+        console.log("hello")
+        if($scope.mainTab.fromState == 'tab.explore' || $scope.mainTab.fromState == 'tab.startPollingex' || $scope.mainTab.fromState == 'tab.trailerex' || $scope.mainTab.fromState == 'tab.exploremore'){
+            $state.go('tab.explore')
+          }else if ($scope.mainTab.fromState == 'tab.discoverNews' || $scope.mainTab.fromState == 'tab.startPollingdis' || $scope.mainTab.fromState == 'tab.trailerdis'|| $scope.mainTab.fromState == 'tab.exploremoredis'){
+            $state.go('tab.discoverNews')
+          }else if ($scope.mainTab.fromState == 'tab.kwackScreen' || $scope.mainTab.fromState == 'tab.startPollingkwack' || $scope.mainTab.fromState =='tab.trailerkwack' || $scope.mainTab.fromState == 'tab.exploremorekwack'){
+            $state.go('tab.kwackScreen')
+          }else  if($scope.mainTab.fromState == 'tab.social' || $scope.mainTab.fromState == 'tab.startPollingsocial' || $scope.mainTab.fromState == 'tab.trailersocial'|| $scope.mainTab.fromState == 'tab.exploremoresocial'){
+            $state.go('tab.social')
+          } 
+      }, 100);
     $scope.inApp = function (link) {
         var options = "location=no,toolbar=yes";
         var target = "_blank";
@@ -248,7 +261,7 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
                 // Success!
                 console.log("Success");
                 console.log(result);
-                console.log(image);
+                // console.log(image);
                 Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
                     console.log("$$$$$$$$$$$$$$$$$$$$", data2)
                   })

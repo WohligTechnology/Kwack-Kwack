@@ -88,11 +88,9 @@ connector.controller('SocialCtrl', function ($scope, $rootScope, Chats, $ionicSc
     $cordovaSocialSharing
       .share(desciption, title, imageUrl, link) // Share via native share sheet
       .then(function (result) {
-        $ionicLoading.hide();
         // Success!
         console.log("Success");
         console.log(result);
-        console.log(image);
         Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data1) {
           console.log("$$$$$$$$$$$$$$$$$$$$", data1)
         })

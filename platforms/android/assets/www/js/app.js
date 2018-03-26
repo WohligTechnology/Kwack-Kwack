@@ -10,7 +10,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
   .run(function ($ionicPlatform, $rootScope, $state) {
     $ionicPlatform.registerBackButtonAction(function (e) {
       console.log("hello")
-      if ($state.current.name == 'tab.explore' || $state.current.name == 'tab.discoverNews' || $state.current.name == 'tab.social' || $state.current.name == 'tab.settings' || $state.current.name == 'tab.kwackScreen') {
+      if ($state.current.name == 'tab.explore' || $state.current.name == 'tab.discoverNews' || $state.current.name == 'tab.social' || $state.current.name == 'tab.settings' || $state.current.name == 'tab.kwackScreen' || $state.current.name == 'inviteFriends') {
         ionic.Platform.exitApp();
         console.log("hello")
       } else {
@@ -101,12 +101,14 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('friends', {
         url: '/friends',
+        cache: false,
         templateUrl: 'templates/friends.html',
         controller: 'FriendsCtrl'
 
       })
       .state('tab.privacy', {
         url: '/privacy',
+        cache: false,
         views: {
           'tab-settings': {
             templateUrl: 'templates/privacy.html',
@@ -117,6 +119,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('invite', {
         url: '/invite',
+        cache: false,
         templateUrl: 'templates/invite.html',
         controller: 'InviteCtrl'
       })
@@ -133,6 +136,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.terms', {
         url: '/terms',
+        cache: false,
         views: {
           'tab-settings': {
             templateUrl: 'templates/terms.html',
@@ -142,6 +146,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.about', {
         url: '/about',
+        cache: false,
         views: {
           'tab-settings': {
             templateUrl: 'templates/about.html',
@@ -151,6 +156,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.guidelines', {
         url: '/guidelines',
+        cache: false,
         views: {
           'tab-settings': {
             templateUrl: 'templates/guidelines.html',
@@ -314,21 +320,25 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('profile', {
         url: '/profile',
+        cache:false,
         templateUrl: 'templates/profile.html',
         controller: 'ProfileCtrl'
       })
       .state('userprofile', {
         url: '/userprofile',
+        cache:false,
         templateUrl: 'templates/userProfile.html',
         controller: 'UserProfileCtrl'
       })
       .state('mobile', {
         url: '/mobile',
+        cache:false,
         templateUrl: 'templates/mobile.html',
         controller: 'MobileCtrl'
       })
       .state('error', {
         url: '/error',
+        cache:false,
         templateUrl: 'templates/error.html',
         controller: 'ErrorCtrl'
       })
@@ -373,12 +383,13 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('filter', {
         url: '/filter',
-
+        cache:false,
         templateUrl: 'templates/filter.html',
         controller: 'FilterCtrl'
       })
       .state('success', {
         url: '/success',
+        cache:false,
         templateUrl: 'templates/success.html',
         controller: 'SuccessCtrl'
       })
@@ -404,6 +415,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('tab.discoverfull', {
         url: '/discoverfull',
+        cache:false,
         views: {
           'tab-discoverNews': {
             templateUrl: 'templates/discover-full.html',
@@ -438,6 +450,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.socialsearch', {
         url: '/discoverfull',
+        cache:false,
         views: {
           'tab-social': {
             templateUrl: 'templates/discover-full.html',
@@ -457,6 +470,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('signUp', {
         url: '/signup',
+        cache:false,
         templateUrl: 'templates/signUp.html',
         controller: 'SignUpCtrl'
 
@@ -473,12 +487,14 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('location', {
         url: '/location/:userEmail',
+        cache:false,
         templateUrl: 'templates/location.html',
         controller: 'LocationCtrl'
 
       })
       .state('invitefriendspeople', {
         url: '/invitefriendspeople',
+        cache:false,
         templateUrl: 'templates/inviteFriendsPeople.html',
         controller: 'InviteFriendsPeopleCtrl'
 
@@ -509,9 +525,10 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         }
       })
       .state('tab.exploreDetail', {
+        url: '/exploredetail',
+        cache:false,
         views: {
-          'tab-explore': {
-            url: '/exploredetail',
+          'tab-explore': { 
             templateUrl: 'templates/exploreDetail.html',
             controller: 'ExploreDetailCtrl'
           }
@@ -526,6 +543,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.accountinside', {
         url: '/accountinside',
+        cache: false,
         views: {
           'tab-settings': {
             templateUrl: 'templates/accountinside.html',
@@ -536,6 +554,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.aboutinside', {
         url: '/aboutinside',
+        cache: false,
         views: {
           'tab-settings': {
             templateUrl: 'templates/aboutinside.html',
@@ -552,18 +571,20 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       })
       .state('edit', {
         url: '/edit',
+        cache: false,
         templateUrl: 'templates/edit.html',
         controller: 'EditCtrl'
       })
       .state('yourfriends', {
         url: '/yourfriends',
+        cache: false,
         templateUrl: 'templates/yourFriends.html',
         controller: 'YourFriendsCtrl'
       })
 
       .state('tab.yourfriends', {
         url: '/yourfriends',
-
+        cache: false,
         views: {
           'tab-settings': {
             templateUrl: 'templates/yourFriends.html',
@@ -574,6 +595,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('forgotpass', {
         url: '/forgotpassword',
+        cache: false,
         templateUrl: 'templates/forgotPass.html',
         controller: 'ForgotPassCtrl'
       })
@@ -676,6 +698,7 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       .state('tab.account', {
         url: '/account',
+        cache: false,
         views: {
           'tab-account': {
             templateUrl: 'templates/tab-account.html',

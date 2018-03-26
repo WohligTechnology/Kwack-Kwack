@@ -159,7 +159,6 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
       .then(function (result) {
         console.log("Success");
         console.log(result);
-        console.log(image);
         Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
           console.log("$$$$$$$$$$$$$$$$$$$$", data2)
         })

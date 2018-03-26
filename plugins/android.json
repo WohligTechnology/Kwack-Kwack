@@ -1,68 +1,68 @@
 {
-  "prepare_queue": {
-    "installed": [],
-    "uninstalled": []
-  },
-  "config_munge": {
-    "files": {}
-  },
-  "installed_plugins": {
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
     },
-    "cordova-plugin-console": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    "config_munge": {
+        "files": {}
     },
-    "cordova-plugin-contacts": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-googleplus": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-ionic-webview": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "twitter-connect-plugin": {
+            "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de",
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        }
     },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-image-picker": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-x-socialsharing": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova.plugins.diagnostic": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "twitter-connect-plugin": {
-      "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de",
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    },
-    "cordova-plugin-googleplus": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
+    "dependent_plugins": {
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        }
     }
-  },
-  "dependent_plugins": {
-    "es6-promise-plugin": {
-      "PACKAGE_NAME": "com.kwack_kwack.ionic"
-    }
-  }
 }

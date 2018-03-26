@@ -1,4 +1,4 @@
-connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDelegate, $ionicModal, Chats, $ionicLoading) {
+connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDelegate, $ionicModal, Chats,$cordovaSocialSharing, $ionicLoading) {
   $scope.searchInclude = 'templates/discover-full.html';
   $scope.tabHeader = 'templates/tab-header.html';
   $scope.pollKwack = {}
@@ -307,7 +307,6 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
       .then(function (result) {
         console.log("Success");
         console.log(result);
-        console.log(image);
         Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
           console.log("$$$$$$$$$$$$$$$$$$$$", data2)
         })
