@@ -130,6 +130,20 @@
     <script src="js/directives/directive.js"></script>
 
     <script src="lib/jStorage/jstorage.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBsDS692PMYLUMK4tTg-4RcFd3qSB9WrUk",
+    authDomain: "kwack-kwack-30eac.firebaseapp.com",
+    databaseURL: "https://kwack-kwack-30eac.firebaseio.com",
+    projectId: "kwack-kwack-30eac",
+    storageBucket: "kwack-kwack-30eac.appspot.com",
+    messagingSenderId: "557842286830"
+  };
+  firebase.initializeApp(config);
+</script>
   </head>
   <body ng-app="starter" ng-class="{{font}}" ng-controller="TabCtrl" class="platform-android platform-cordova platform-webview">
     <!--

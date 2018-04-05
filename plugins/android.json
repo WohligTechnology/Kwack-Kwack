@@ -13,13 +13,7 @@
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.kwackkwack.ionic"
         },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.kwackkwack.ionic"
-        },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.kwackkwack.ionic"
-        },
-        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.kwackkwack.ionic"
         },
         "cordova-plugin-file-transfer": {
@@ -61,6 +55,9 @@
         }
     },
     "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
         "es6-promise-plugin": {
             "PACKAGE_NAME": "com.kwackkwack.ionic"
         }

@@ -8,21 +8,6 @@
 var connector = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ionic-toast', 'ngCordovaOauth','oauth.twitter'])
 
   .run(function ($ionicPlatform, $rootScope, $state) {
-    $ionicPlatform.registerBackButtonAction(function (e) {
-      console.log("hello")
-      if ($state.current.name == 'tab.explore' || $state.current.name == 'tab.discoverNews' || $state.current.name == 'tab.social' || $state.current.name == 'tab.settings' || $state.current.name == 'tab.kwackScreen' || $state.current.name == 'inviteFriends') {
-        ionic.Platform.exitApp();
-        console.log("hello")
-      } else {
-        navigator.app.backHistory();
-        console.log("hello")
-      }
-    }, 100);
-
-    $rootScope.$on('SendUp', function (event, args) {
-      $rootScope.font = args.message;
-      console.log($rootScope.font);
-    })
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -41,6 +26,22 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         StatusBar.styleDefault();
       }
     });
+    $ionicPlatform.registerBackButtonAction(function (e) {
+      console.log("hello")
+      if ($state.current.name == 'tab.explore' || $state.current.name == 'tab.discoverNews' || $state.current.name == 'tab.social' || $state.current.name == 'tab.settings' || $state.current.name == 'tab.kwackScreen' || $state.current.name == 'inviteFriends') {
+        ionic.Platform.exitApp();
+        console.log("hello")
+      } else {
+        navigator.app.backHistory();
+        console.log("hello")
+      }
+    }, 100);
+
+    $rootScope.$on('SendUp', function (event, args) {
+      $rootScope.font = args.message;
+      console.log($rootScope.font);
+    })
+   
   })
 
   .config(function ($stateProvider, $urlRouterProvider) {

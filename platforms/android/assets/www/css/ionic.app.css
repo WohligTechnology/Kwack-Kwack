@@ -9878,7 +9878,8 @@ a.button {
   font-weight: normal;
   font-style: normal; }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'kwack' !important;
   speak: none;
@@ -10824,6 +10825,9 @@ button.btn-yellow.button[disabled] {
 
 .has-header {
   top: 57px; }
+
+.platform-ios .invite-header {
+  top: 150px !important; }
 
 .w40 {
   width: 40%; }
