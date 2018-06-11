@@ -5,6 +5,7 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $scope.previousState = $.jStorage.get("mainTab").fromState
     $scope.newState = $stateParams.newState
     $scope.anon = $stateParams.ann
+    $scope.count = 250;
     $scope.setvarann = false
     if ($stateParams.ann) {
         $scope.setvarann = true
@@ -24,16 +25,16 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
     $ionicPlatform.registerBackButtonAction(function (e) {
         $scope.mainTab = Chats.getkwackPollStateChange();
         console.log("hello")
-        if($scope.mainTab.fromState == 'tab.explore' || $scope.mainTab.fromState == 'tab.startPollingex' || $scope.mainTab.fromState == 'tab.trailerex' || $scope.mainTab.fromState == 'tab.exploremore'){
+        if ($scope.mainTab.fromState == 'tab.explore' || $scope.mainTab.fromState == 'tab.startPollingex' || $scope.mainTab.fromState == 'tab.trailerex' || $scope.mainTab.fromState == 'tab.exploremore') {
             $state.go('tab.explore')
-          }else if ($scope.mainTab.fromState == 'tab.discoverNews' || $scope.mainTab.fromState == 'tab.startPollingdis' || $scope.mainTab.fromState == 'tab.trailerdis'|| $scope.mainTab.fromState == 'tab.exploremoredis'){
+        } else if ($scope.mainTab.fromState == 'tab.discoverNews' || $scope.mainTab.fromState == 'tab.startPollingdis' || $scope.mainTab.fromState == 'tab.trailerdis' || $scope.mainTab.fromState == 'tab.exploremoredis') {
             $state.go('tab.discoverNews')
-          }else if ($scope.mainTab.fromState == 'tab.kwackScreen' || $scope.mainTab.fromState == 'tab.startPollingkwack' || $scope.mainTab.fromState =='tab.trailerkwack' || $scope.mainTab.fromState == 'tab.exploremorekwack'){
+        } else if ($scope.mainTab.fromState == 'tab.kwackScreen' || $scope.mainTab.fromState == 'tab.startPollingkwack' || $scope.mainTab.fromState == 'tab.trailerkwack' || $scope.mainTab.fromState == 'tab.exploremorekwack') {
             $state.go('tab.kwackScreen')
-          }else  if($scope.mainTab.fromState == 'tab.social' || $scope.mainTab.fromState == 'tab.startPollingsocial' || $scope.mainTab.fromState == 'tab.trailersocial'|| $scope.mainTab.fromState == 'tab.exploremoresocial'){
+        } else if ($scope.mainTab.fromState == 'tab.social' || $scope.mainTab.fromState == 'tab.startPollingsocial' || $scope.mainTab.fromState == 'tab.trailersocial' || $scope.mainTab.fromState == 'tab.exploremoresocial') {
             $state.go('tab.social')
-          } 
-      }, 100);
+        }
+    }, 100);
     $scope.inApp = function (link) {
         var options = "location=no,toolbar=yes";
         var target = "_blank";
@@ -247,6 +248,13 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
         })
     }
 
+    $scope.$watch('commentText', function (newVal, oldVal) {
+        console.log(newVal, oldVal)
+        // if (newVal.length > 250) {
+        //     $scope.value = oldVal;
+        // }
+    });
+
     //socislSharing
     $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
         //  $scope.dataToSendApi = {}
@@ -264,8 +272,8 @@ connector.controller('DebateCtrl', function ($scope, $stateParams, Chats, $state
                 // console.log(image);
                 Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
                     console.log("$$$$$$$$$$$$$$$$$$$$", data2)
-                  })
-                  $scope.getOneNewsApi();
+                })
+                $scope.getOneNewsApi();
             }, function (err) {
                 console.log("error : " + err);
             });

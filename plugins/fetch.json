@@ -124,6 +124,14 @@
         "is_top_level": true,
         "variables": {}
     },
+    "cordova.plugins.diagnostic": {
+        "source": {
+            "type": "registry",
+            "id": "cordova.plugins.diagnostic@^3.9.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
     "cordova-plugin-inappbrowser": {
         "source": {
             "type": "registry",
@@ -145,19 +153,11 @@
     "cordova-plugin-googleplus": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-googleplus@^5.2.1"
+            "id": "cordova-plugin-googleplus@~5.2.3"
         },
         "is_top_level": true,
         "variables": {
-            "REVERSED_CLIENT_ID": "com.googleusercontent.apps.557842286830-hsea4a5agi4cqq9rk6i7aptsms98324v"
+            "REVERSED_CLIENT_ID": "com.googleusercontent.apps.557842286830-1n397vjrioga04qqe53qah8aq94rqk2n"
         }
-    },
-    "cordova.plugins.diagnostic": {
-        "source": {
-            "type": "registry",
-            "id": "cordova.plugins.diagnostic@3.1.7"
-        },
-        "is_top_level": true,
-        "variables": {}
     }
 }

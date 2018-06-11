@@ -1,20 +1,22 @@
 <div ng-if="!searchInput" class="item item-thumbnail-left ">
-    <img  ng-src="{{test.imageUrl}}" class="img-responsive">
-        <h2>{{test.name}} </h2>
-        <p>{{test.description}}</p>
-        <p class=" float-right explore-icon text-center ">
-            <label class="discoverCardStrip" ng-click="nextPage(test._id,'poll')">
-                <img ng-if="!test.flagForPoll"  src="img/explore/5.png"> <img ng-if="test.flagForPoll" src="img/filter/2.png">
-                <span class=" alignM">{{test.polls.length}}</span>
-            </label>
-            <label class="discoverCardStrip" ng-click="nextPage(test._id,'kwack')">
-                <img ng-if="!test.flagForKwack" class="img-responsive" src="img/explore/6.png"> <img ng-if="test.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
-                <span class=" alignM">{{test.comments.length}}</span>
-            </label>
-            <label ng-click="socilaSharing(test.description,test.imageUrl,test.title,test.url,test._id)">
-                <img  ng-if="!test.flagForShare" src="img/explore/7.png">
-                     <img ng-if="test.flagForShare" src="img/filter/6.png">
-                <span class="colorw alignM"></span>
-            </label>
-        </p>
-    </div>
+    <img ng-src="{{test.imageUrl}}" class="img-responsive" ng-click="inApp(test.url)">
+    <h2>{{test.name}} </h2>
+    <p>{{test.description}}</p>
+    <p class=" float-right explore-icon text-center ">
+        <label class="discoverCardStrip" ng-click="nextPage(test._id,'poll')">
+            <img ng-if="!test.flagForPoll" src="img/explore/5.png">
+            <img ng-if="test.flagForPoll" src="img/filter/2.png">
+            <span class=" alignM">{{test.polls.length}}</span>
+        </label>
+        <label class="discoverCardStrip" ng-click="nextPage(test._id,'kwack')">
+            <img ng-if="!test.flagForKwack" class="img-responsive" src="img/explore/6.png">
+            <img ng-if="test.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
+            <span class=" alignM">{{test.comments.length}}</span>
+        </label>
+        <label ng-click="socilaSharing(test.description,test.imageUrl,test.title,test.url,test._id)">
+            <img ng-if="!test.flagForShare" src="img/explore/7.png">
+            <img ng-if="test.flagForShare" src="img/filter/6.png">
+            <span class="colorw alignM"></span>
+        </label>
+    </p>
+</div>

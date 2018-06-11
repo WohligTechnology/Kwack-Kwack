@@ -1,37 +1,54 @@
 <div class="bar bar-header bar-light" ng-controller="SearchInputCtrl">
-    <div class="row" ng-if="headerState != 'tab.kwackScreen'">
-        <div class="col col-33">
+    <div class="row mar-t10" ng-if="headerState != 'tab.kwackScreen' && headerState != 'tab.exploremore' && headerState != 'tab.exploremoredis' && headerState != 'tab.exploremorekwack' && headerState != 'tab.exploremoresocial'">
+        <div class="col col-33 ">
         </div>
-        <div class="col col-33 text-center">
+        <div class="col col-33 text-center ">
             <div>
-                <img src="img/filter/7.png" class="w40" ui-sref="home">
+                <img src="img/filter/7.png " class="w40 " ui-sref="home ">
             </div>
         </div>
-        <div class="col col-33">
-            <div class="col col33 discover-navsearch" ng-click="toggleSearch()">
-                <i class="ion ion-search"></i>
+        <div class="col col-33 ">
+            <div class="col col33 discover-navsearch " ng-click="toggleSearch() ">
+                <i class="ion ion-search "></i>
             </div>
         </div>
     </div>
-    <div class="row" ng-if="headerState == 'tab.kwackScreen'">
-        <div class="col-20">
+    <div class="row mar-t10 " ng-if="headerState=='tab.kwackScreen' ">
+        <div class="col-20 ">
 
         </div>
-        <div class="col-60 text-center">
+        <div class="col-60 text-center ">
             <div>
-                <img src="img/filter/7.png" class="w25">
+                <img src="img/filter/7.png " class="w25 ">
             </div>
         </div>
-        <div class="col-20">
-            <div class="martop">
-                <span ng-click="toggleSearch()">
-                    <img src="img/filter/5.png" class="w25">
+        <div class="col-20 ">
+            <div class="martop ">
+                <span ng-click="toggleSearch() ">
+                    <img src="img/filter/5.png " class="w25 ">
                 </span>
-                <span class="mar-l15" ng-click="openModal();interestLoad()">
-                    <img src="img/kwack.png" class="w25">
+                <span class="mar-l15 " ng-click="openModal();interestLoad() ">
+                    <img src="img/kwack.png " class="w25 ">
                 </span>
             </div>
 
         </div>
+    </div>
+    <div class="row mar-t10 " ng-if="headerState=='tab.exploremore' || headerState=='tab.exploremoredis' || headerState == 'tab.exploremorekwack' || headerState == 'tab.exploremoresocial'">
+        <div class="col col-33 ">
+            <div ng-click="goToFromState() ">
+                <i class="ion ion-ios-arrow-left trailernav "></i>
+            </div>
+        </div>
+        <div class="col col-33 text-center ">
+            <div>
+                <img src="img/filter/7.png " class="w40 " ui-sref="home ">
+            </div>
+        </div>
+        <!-- <div class="col col-33 ">
+            <div class="text-right " ui-sref="tab.discoversearch ">
+                <img src="img/filter/5.png " class="w15 " ng-click="toggleSearch() ">
+            </div>
+        </div> -->
     </div>
 </div>

@@ -1,4 +1,4 @@
-connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDelegate, $ionicModal, Chats,$cordovaSocialSharing, $ionicLoading) {
+connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDelegate, $ionicModal, Chats, $cordovaSocialSharing, $ionicLoading) {
   $scope.searchInclude = 'templates/discover-full.html';
   $scope.tabHeader = 'templates/tab-header.html';
   $scope.pollKwack = {}
@@ -292,13 +292,13 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   }
 
   //socialSharing
-  $scope.socilaSharing = function (desciption, imageUrl, title, link,newsId) {
-     console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption,imageUrl,title,link,newsId)
+  $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
+    console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption, imageUrl, title, link, newsId)
     $scope.dataToSendApi = {}
     $scope.dataToSendApi.newsId = newsId
     $scope.dataToSendApi.userId = $.jStorage.get('user')._id
     console.log("******************", $scope.dataToSendApi)
-    
+
     var message = desciption
     var subject = title
     var image = imageUrl
@@ -311,9 +311,17 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
           console.log("$$$$$$$$$$$$$$$$$$$$", data2)
         })
         // Success!
-       $scope.doRefresh();
+        $scope.doRefresh();
       }, function (err) {
         console.log("error : " + err);
       });
+  }
+
+  $scope.inApp = function (link) {
+    var options = "location=no,toolbar=yes";
+    var target = "_blank";
+    $scope.finalURL = link;
+    ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
+    window.open = cordova.InAppBrowser.open;
   }
 })

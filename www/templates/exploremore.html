@@ -1,35 +1,17 @@
 <ion-view title="Explore more" class="{{fontChange}}">
-    <div class="bar bar-header bar-light">
-        <div class="row">
-            <div class="col col-33">
-                    <div  ng-click="goToFromState()">
-                        <i class="ion ion-ios-arrow-left trailernav"></i>
-                        </div>
-            </div>
-            <div class="col col-33 text-center">
-                <div>
-                    <img src="img/filter/7.png" class="w40" ui-sref="home">
-                </div>
-            </div>
-            <div class="col col-33">
-                <div class="text-right " ui-sref="tab.discoversearch">
-                    <img src="img/filter/5.png" class="w15">
-                </div>
-            </div>
-        </div>
-    </div>
+    <div ng-include="tabHeader"></div>
     <ion-content class="has-header">
-        <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
+        <ion-refresher on-refresh="doRefresh(true)" ng-if="!searchInputexMore"></ion-refresher>
         <div class="text-center">
             <h4 class="pad0 title-explore">EXPLORE</h4>
         </div>
-        <div class="">
+        <div class="" ng-if="!searchInputexMore">
             <exploremore> </exploremore>
         </div>
-        <div class="related-card" ng-if="discoverNews.length!=0">
-        <div class="news-content box-inside">
-          <div class="list card ">
-              <div class="item item-body">
+        <div class="related-card" ng-if="discoverNews.length!=0 && !searchInputexMore">
+            <div class="news-content box-inside">
+                <div class="list card ">
+                    <div class="item item-body">
                         <h4 class="related-stories">Related Stories</h4>
                         <div class="mar-b20" ng-repeat="related in discoverNews" ui-sref="tab.exploremore({newsid:related._id})">
 
@@ -50,6 +32,10 @@
                 </div>
             </div>
         </div>
-        <ion-infinite-scroll ng-if="pagination.shouldLoadMore" on-infinite="loadMore()" distance="2px"></ion-infinite-scroll>
+        <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInputexMore" on-infinite="loadMore()" distance="2px">
+            <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+        <div ng-if="searchInputexMore" ng-include="searchInclude">
+        </div>
     </ion-content>
 </ion-view>

@@ -116,15 +116,16 @@ connector.controller('YourFriendsCtrl', function ($scope, Chats, $location, $ion
     };
     $cordovaContacts.find({}).then(function (allContacts) { //omitting parameter to .find() causes all contacts to be returned
       $scope.contacts = allContacts;
-      $scope.contacts = _.orderBy($scope.contacts, ['displayName'], ['asc'])
+      console.log(allContacts);
+      // $scope.contacts = _.orderBy($scope.contacts.name, ['givenName'], ['asc'])
       var users = $scope.contacts
       var log = [];
       $scope.alphabet = iterateAlphabet();
       //Sort user list by first letter of name
       var tmp = {};
       for (i = 0; i < users.length; i++) {
-        if (users[i].displayName != null) {
-          var letter = users[i].displayName.toUpperCase().charAt(0);
+        if (users[i] != null) {
+          var letter = users[i].name.givenName.toUpperCase().charAt(0);
           if (tmp[letter] == undefined) {
             tmp[letter] = []
           }
@@ -175,7 +176,7 @@ connector.controller('YourFriendsCtrl', function ($scope, Chats, $location, $ion
       var opts = { //search options
         filter: searchTerm, // 'Bob'
         multiple: true, // Yes, return any contact that matches criteria
-        fields: ['displayName', 'name'], // These are the fields to search for 'bob'.
+        fields: ['givenName', 'name'], // These are the fields to search for 'bob'.
         desiredFields: [id] //return fields.
       };
 

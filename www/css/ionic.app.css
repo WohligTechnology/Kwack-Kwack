@@ -10359,6 +10359,10 @@ button.btn-yellow.button[disabled] {
   border: none;
   font-family: 'Montserrat-Regular'; }
 
+.platform-ios .select-month {
+  color: black;
+  background-color: white; }
+
 .select-year {
   padding: 9px 41px;
   background-color: #ffc943;
@@ -10473,6 +10477,9 @@ button.btn-yellow.button[disabled] {
   margin-bottom: 10px;
   box-shadow: inset 0px 1px 21px rgba(34, 33, 33, 0.22);
   background: #ffc943; }
+
+.platform-ios .input-border {
+  border: 2px solid #c9c9c9; }
 
 .btn-bg {
   background-color: #ffc943;
@@ -10826,6 +10833,15 @@ button.btn-yellow.button[disabled] {
 .has-header {
   top: 57px; }
 
+.platform-ios .has-header {
+  top: 75px !important; }
+
+.platform-ios .mar-t10 {
+  margin-top: 10px; }
+
+.platform-ios .pad10 {
+  padding: 10px; }
+
 .platform-ios .invite-header {
   top: 150px !important; }
 
@@ -10839,6 +10855,9 @@ button.btn-yellow.button[disabled] {
   top: 42px; }
 
 .no-top {
+  top: 0px !important; }
+
+.platform-ios .no-top {
   top: 0px !important; }
 
 .display-inline {
@@ -11547,6 +11566,9 @@ button.btn-yellow.button[disabled] {
     color: #000;
     font-family: "Montserrat-Regular"; }
 
+.platform-ios .editusername {
+  line-height: 54px; }
+
 .editCity {
   width: 95%;
   color: #333333;
@@ -11760,6 +11782,11 @@ button.btn-yellow.button[disabled] {
   top: 10px;
   left: 10px; }
 
+.count {
+  float: right;
+  padding-top: 0.3em;
+  font-size: 0.8em; }
+
 .replay textarea {
   background-color: #000;
   color: #fff;
@@ -11892,6 +11919,9 @@ button.btn-yellow.button[disabled] {
 .debatetrailerName {
   padding: 20px 7px 5px 16px;
   text-align: left; }
+
+.debate-card .card-height {
+  height: 130px; }
 
 .debate-card .card {
   margin: 10px 25px 0px; }
@@ -12112,6 +12142,9 @@ button.btn-yellow.button[disabled] {
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px; }
 
+.platform-ios .cross-search {
+  margin-top: 20px !important; }
+
 .explore-more .card {
   box-shadow: none !important; }
 
@@ -12294,8 +12327,8 @@ button.btn-yellow.button[disabled] {
     border: none;
     background: transparent; }
 
-.contactHeader {
-  top: 181px; }
+.platform-ios .contactHeader {
+  top: 181px !important; }
 
 .alpha_sidebar {
   position: absolute;

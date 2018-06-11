@@ -9,25 +9,28 @@ connector.controller('SearchInputCtrl', function ($scope, Chats, $state, $rootSc
     }
     Chats.setkwackPollStateChange($state.current.name)
     $scope.goToFromState = function () {
-      $scope.mainTab = Chats.getkwackPollStateChange();
-      $state.go($scope.mainTab.fromState);
-      Chats.flushMainTab();
-  };
+        $scope.mainTab = Chats.getkwackPollStateChange();
+        $state.go($scope.mainTab.fromState);
+        Chats.flushMainTab();
+    };
     Chats.setkwackPollStateChange($state.current.name)
     $scope.goBackHandler = function () {
         window.history.back(); //This works
     };
     $rootScope.toggleSearch = function () {
         Chats.setkwackPollStateChange($state.current.name)
-        if($scope.headerState == 'tab.explore'){
+        if ($scope.headerState == 'tab.explore') {
             $rootScope.searchInput = !$rootScope.searchInput
-        }else if($scope.headerState == 'tab.discoverNews'){
+        } else if ($scope.headerState == 'tab.discoverNews') {
             $rootScope.searchInputdis = !$rootScope.searchInputdis
-        }else if($scope.headerState == 'tab.kwackScreen'){
+        } else if ($scope.headerState == 'tab.kwackScreen') {
             $rootScope.searchInputkwack = !$rootScope.searchInputkwack
-        }else{
+        } else if ($scope.headerState == 'tab.exploremore') {
+            $rootScope.searchInputexMore = !$rootScope.searchInputexMore
+            console.log($rootScope.searchInputexMore)
+        } else {
             $rootScope.searchInputsocial = !$rootScope.searchInputsocial
-        }  
+        }
     }
     $scope.search = function (value) {
         $scope.discoverFull = [];

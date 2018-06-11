@@ -5,6 +5,8 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
   $scope.newsId.newsId = $stateParams.newsid
   $scope.previousState = $stateParams.previousState
   $scope.newsId.userId = $.jStorage.get('user')._id;
+  $scope.searchInclude = 'templates/discover-full.html';
+  $scope.tabHeader = 'templates/tab-header.html';
   data = {}
   $scope.dataToSend = {}
   $scope.poll = {}
@@ -19,7 +21,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
     $scope.mainTab = Chats.getkwackPollStateChange();
     $state.go($scope.mainTab.fromState);
     Chats.flushMainTab();
-};
+  };
 
   $scope.goBackHandler = function () {
     window.history.back(); //This works
@@ -35,7 +37,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
 
   Chats.apiCallWithData("NewsInfo/getOneNews", $scope.newsId, function (data) {
     $scope.news = data.data;
-     $scope.doRefresh(true);
+    $scope.doRefresh(true);
   })
 
 
@@ -70,8 +72,7 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
   };
 
   Chats.apiCallWithData("Readlogs/checkingNewsReadOrNot", $scope.dataToSend, function (data) {
-    if (data.value == true) {
-    } else {
+    if (data.value == true) {} else {
       Chats.apiCallWithData("Readlogs/readLogsCount", $scope.dataToSend, function (data1) {
         $scope.news = data1.data
       })
@@ -96,14 +97,14 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
             previousState: $scope.previousState,
             newState: $state.current.name
           }
-          if($state.current.name == 'tab.exploremoresocial'){
-            $state.go("tab.startPollingsocial",poll)
-          }else if($state.current.name == 'tab.exploremorekwack'){
-            $state.go("tab.startPollingkwack",poll)
-          }else if ($state.current.name == 'tab.exploremore'){
-            $state.go("tab.startPollingex",poll)
-          }else{
-            $state.go("tab.startPollingdis",poll)
+          if ($state.current.name == 'tab.exploremoresocial') {
+            $state.go("tab.startPollingsocial", poll)
+          } else if ($state.current.name == 'tab.exploremorekwack') {
+            $state.go("tab.startPollingkwack", poll)
+          } else if ($state.current.name == 'tab.exploremore') {
+            $state.go("tab.startPollingex", poll)
+          } else {
+            $state.go("tab.startPollingdis", poll)
           }
         }
       })
@@ -121,26 +122,26 @@ connector.controller('ExploremoreCtrl', function ($scope, $stateParams, $state, 
             previousState: $scope.previousState,
             newState: $state.current.name
           }
-          if($state.current.name == 'tab.exploremoresocial'){
-            $state.go("tab.trailersocial",kwack)
-          }else if($state.current.name == 'tab.exploremorekwack'){
-            $state.go("tab.trailerkwack",kwack)
-          }else if ($state.current.name == 'tab.exploremore'){
-            $state.go("tab.trailerex",kwack)
-          }else{
-            $state.go("tab.trailerdis",kwack)
+          if ($state.current.name == 'tab.exploremoresocial') {
+            $state.go("tab.trailersocial", kwack)
+          } else if ($state.current.name == 'tab.exploremorekwack') {
+            $state.go("tab.trailerkwack", kwack)
+          } else if ($state.current.name == 'tab.exploremore') {
+            $state.go("tab.trailerex", kwack)
+          } else {
+            $state.go("tab.trailerdis", kwack)
           }
         }
       })
     }
   }
-   $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
-    console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption,imageUrl,title,link,newsId)
+  $scope.socilaSharing = function (desciption, imageUrl, title, link, newsId) {
+    console.log("*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", desciption, imageUrl, title, link, newsId)
     $scope.dataToSendApi = {}
     $scope.dataToSendApi.newsId = newsId
     $scope.dataToSendApi.userId = $.jStorage.get('user')._id
     console.log("******************", $scope.dataToSendApi)
-     
+
     // Chats.apiCallWithData("ShareNews/shareNewsOrNot", $scope.dataToSendApi, function (data1) {
     //   console.log("$$$$$$$$$$$$$$$$$$$$", data1)
     //   if (data1.value == true) {

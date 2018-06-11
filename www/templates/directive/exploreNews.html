@@ -4,7 +4,7 @@
     </div>
     <div class="list card">
         <div class="relative">
-            <img class="full-image" ng-src="{{news.imageUrl}}" ng-click="viewsNextPage(news._id)">
+            <img class="full-image" ng-src="{{news.imageUrl}}" ng-click="inApp(news.url)">
             <!-- <label  class="absolute movie-label">{{news.interest}}</label>
             <label  class="absolute spon-label" ng-class="{'spon-pos': !news.interest}">Sponsored</label> -->
             <div class="interest-spon absolute">
@@ -47,8 +47,8 @@
                     <span class="alignM">{{news.comments.length}}</span>
                 </label>
                 <label ng-click="socilaSharing(news.description,news.imageUrl,news.name,news.url,news._id)">
-                    <img  ng-if="!news.flagForShare" src="img/explore/7.png">
-                     <img ng-if="news.flagForShare" src="img/filter/6.png">
+                    <img ng-if="!news.flagForShare" src="img/explore/7.png">
+                    <img ng-if="news.flagForShare" src="img/filter/6.png">
                     <span class="colorw alignM">{{discover.share}}</span>
                 </label>
             </div>

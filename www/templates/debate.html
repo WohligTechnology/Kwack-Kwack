@@ -1,6 +1,6 @@
 <ion-view title="Trailer" class="{{fontChange}}">
     <div class="bar bar-header bar-light">
-        <div class="row">
+        <div class="row mar-t10">
             <div class="col col-33">
                 <div ng-click="goToFromState()">
                     <i class="ion ion-ios-arrow-left trailernav"></i>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <form name="formFooter">
-        <ion-content class="has-header bg-color">
+        <ion-content class="has-header  bg-color">
 
             <div class="text-center">
                 <h4 class="pad0 title-explore">KWACK</h4>
@@ -73,10 +73,10 @@
                     <div class="debateprofile" ng-click="openModal(); userProfile(currentUserInfo._id)">
                         <img ng-if="!setvarann && currentUserInfo.photo && !currentUserInfo.socailLoginPhoto" ng-src="{{currentUserInfo.photo | uploadpath}}"
                             alt="profile-img" class="profile-w">
-                        <img ng-if="!setvarann && !currentUserInfo.photo && currentUserInfo.socailLoginPhoto" ng-src="{{currentUserInfo.socailLoginPhoto}}" alt="profile-img"
-                            class="socialLogin">
+                        <img ng-if="!setvarann && !currentUserInfo.photo && currentUserInfo.socailLoginPhoto" ng-src="{{currentUserInfo.socailLoginPhoto}}"
+                            alt="profile-img" class="socialLogin">
                     </div>
-                    <div class="list card">
+                    <div class="list card card-height">
                         <div class="item item-body">
                             <div class="row">
                                 <div class="col col-20 relative">
@@ -93,8 +93,10 @@
                                     </div>
                                     <div>
                                         <!-- <p>{{news.desc}}</p> -->
-                                        <textarea class="text-area" ng-model="commentText" placeholder="Enter your Text" name="comment" rows="3" cols="28" required></textarea>
+                                        <textarea class="text-area" ng-keypress="updateBody($event)" maxlength="250" ng-model="commentText" placeholder="Enter your Text"
+                                            name="comment" rows="3" cols="28" required></textarea>
                                     </div>
+                                    <span class="count">{{250 - commentText.length}}</span>
                                     <div class="likes">
                                     </div>
                                 </div>

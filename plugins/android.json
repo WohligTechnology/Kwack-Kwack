@@ -13,13 +13,13 @@
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.kwackkwack.ionic"
         },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.kwackkwack.ionic"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.kwackkwack.ionic"
-        },
-        "cordova-plugin-googleplus": {
             "PACKAGE_NAME": "com.kwackkwack.ionic"
         },
         "cordova-plugin-image-picker": {
@@ -52,10 +52,13 @@
         "twitter-connect-plugin": {
             "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de",
             "PACKAGE_NAME": "com.kwackkwack.ionic"
+        },
+        "cordova-plugin-googleplus": {
+            "PACKAGE_NAME": "com.kwackkwack.ionic"
         }
     },
     "dependent_plugins": {
-        "cordova-plugin-compat": {
+        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.kwackkwack.ionic"
         },
         "es6-promise-plugin": {

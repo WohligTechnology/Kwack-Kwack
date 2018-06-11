@@ -19,23 +19,24 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
     };
     $cordovaContacts.find({}).then(function (allContacts) { //omitting parameter to .find() causes all contacts to be returned
       $scope.contacts = allContacts;
-      $scope.contacts = _.orderBy($scope.contacts, ['displayName'], ['asc'])
+      console.log(allContacts);
+      // $scope.contacts = _.orderBy($scope.contacts.name, ['givenName'], ['asc'])
       var users = $scope.contacts
-      $scope.log = [];
+      var log = [];
       $scope.alphabet = iterateAlphabet();
       //Sort user list by first letter of name
       var tmp = {};
       for (i = 0; i < users.length; i++) {
-        if (users[i].displayName != null) {
-          var letter = users[i].displayName.toUpperCase().charAt(0);
+        if (users[i] != null) {
+          var letter = users[i].name.givenName.toUpperCase().charAt(0);
           if (tmp[letter] == undefined) {
             tmp[letter] = []
           }
           tmp[letter].push(users[i]);
         }
-
       }
-      $scope.sorted_users = tmp;
+      $scope.contactuser = tmp;
+      //Click letter event
       $scope.gotoList = function (id) {
         $location.hash(id);
         $ionicScrollDelegate.anchorScroll();
@@ -62,10 +63,6 @@ connector.controller('InviteFriendsCtrl', function (Chats, $scope, $state, $ioni
         }
       }
 
-      /*
-       * if given group is the selected group, deselect it
-       * else, select the given group
-       */
       $scope.toggleGroup = function (group) {
         if ($scope.isGroupShown(group)) {
           $scope.shownGroup = null;

@@ -1,4 +1,4 @@
-connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chats, $state, $ionicLoading, $rootScope, $ionicHistory,$cordovaSocialSharing) {
+connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chats, $state, $ionicLoading, $rootScope, $ionicHistory, $cordovaSocialSharing) {
   $scope.pollKwack = {};
   $scope.searchInclude = 'templates/discover-full.html';
   $scope.tabHeader = 'templates/tab-header.html';
@@ -91,7 +91,7 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
     $scope.dataToSendApi.newsId = newsId
     $scope.dataToSendApi.userId = $.jStorage.get('user')._id
     console.log("******************", $scope.dataToSendApi)
-   
+
     var message = desciption
     var subject = title
     var image = imageUrl
@@ -103,13 +103,18 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
         Chats.apiCallWithData("ShareNews/addShareCount", $scope.dataToSendApi, function (data2) {
           console.log("$$$$$$$$$$$$$$$$$$$$", data2)
         })
-       $scope.doRefresh(true);
+        $scope.doRefresh(true);
       }, function (err) {
         console.log("error : " + err);
       });
   }
 
-
-
+  $scope.inApp = function (link) {
+    var options = "location=no,toolbar=yes";
+    var target = "_blank";
+    $scope.finalURL = link;
+    ref = cordova.InAppBrowser.open($scope.finalURL, target, options);
+    window.open = cordova.InAppBrowser.open;
+  }
 
 })

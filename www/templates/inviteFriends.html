@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-  <ion-content class=" invtfrndshdr has-bottom invite-header">
+  <ion-content class=" invtfrndshdr  has-bottom invite-header has-header">
     <ion-refresher on-refresh="doRefresh(true)"></ion-refresher>
     <div ng-if="toggle " >
       <div class="back-img " ng-if="countValue">
@@ -181,8 +181,8 @@
         <!-- <ion-item > -->
         <a class="item item-avatar" ng-repeat="author in authors">
           <img ng-src="img/profile/profile.png" alt="logo" class="w100">
-          <h2>{{author.displayName}}</h2>
-          <p>{{author.displayName}}</p>
+          <h2>{{author.name.givenName}}</h2>
+          <p>{{author.name.givenName}}</p>
           <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png">
           <img class="followersUn" ng-show="follow" ng-click='follow=false' src="img/inviteFriends/follow.png">
         </a>

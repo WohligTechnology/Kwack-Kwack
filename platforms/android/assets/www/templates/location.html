@@ -11,30 +11,53 @@
                 </div>
                 <div class="cardBox">
                     <div class="card pad2010">
-                      
+                        <!-- <form class="rel pad-10">
+                        <div class="plusposition">
+                            <img src="img/plus1.png" alt="">
+                        </div>
+                        <select ng-model="data.country" ng-change="addCountry(data)" class="theCombo">
+                            <option value="">Select Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </form>
+                    <form class="rel pad-10">
+                        <div class="plusposition">
+                            <img src="img/plus1.png" alt="">
+                        </div>
+                         <select ng-model="data.state" ng-change="addState(data)" class="theCombo">
+                            <option value="">Select State</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="California">California</option>
+                        </select>
+                    </form> -->
                         <div class="rel pad-10">
                             <div class="plusposition">
                                 <img src="img/plus1.png" alt="">
                             </div>
-                           
-                            <select class="form-control locationtHead locationWidth"  ng-model="formName.selectedCountry"
-                                required>
-                                <option value="" selected>Select Country</option>
-                                <option ng-repeat="data in countryData">{{data.countryName}}</option>
+                            <!-- <select ng-model="data.country" ng-change="addCountry(data)" class="theCombo">
+                            <option value="">Select Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                        </select> -->
+                            <select class="form-control locationtHead locationWidth" ng-options="c.countryName for c in countryData track by c._id" ng-model="formName.selectedCountry"
+                                placeholder="Select">
+                                <option value="">Select Country</option>
                             </select>
                         </div>
                         <div class="rel pad-10" ng-if="formName.selectedCountry.countryName === 'India'">
                             <div class="plusposition">
                                 <img src="img/plus1.png">
                             </div>
-                            <select class="form-control locationtHead locationWidth"  ng-model="formName.selectedState"
-                               required>
-                                <option value="" selected>Select State</option>
-                                <option ng-repeat="stname in stateData">{{stname.stateName}}</option>
+                            <select class="form-control locationtHead locationWidth" ng-options="st.stateName for st in stateData track by st._id" ng-model="formName.selectedState"
+                                placeholder="Select">
+                                <option value="">Select State</option>
                             </select>
                         </div>
                         <div class="rel pad-10 locationtHead" ng-if="formName.selectedCountry.countryName != 'India'" ng-init="formName.selectedState =''">
-                           
+                            <!--<div class="plusposition">
+                            <img src="img/plus1.png">
+                        </div>-->
                             <input type="text" ng-model="formName.selectedState" placeholder="Enter State" />
                         </div>
                     </div>
@@ -55,10 +78,11 @@
                         <div class="skip text-right mar-r" ng-click="goTOProfile(formName)">
                             <span>NEXT</span>
                         </div>
-                       
+                        <!--<div class="skip text-right mar-r" ui-sref="profile">
+                                <span>NEXT</span>
+                           </div>-->
                     </div>
                 </div>
-            </div>
             </div>
     </form>
 </ion-view>
