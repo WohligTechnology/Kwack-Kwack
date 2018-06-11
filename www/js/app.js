@@ -42,6 +42,23 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       console.log($rootScope.font);
     })
 
+    if (window.plugins) {
+      if (window.plugins.OneSignal) {
+        var notificationOpenedCallback = function (jsonData) {
+          // alert("Notification opened:\n" + JSON.stringify(jsonData));
+        };
+        window.plugins.OneSignal
+          .startInit("646e87e1-8fee-4a30-9cd7-442137f90d24")
+          .handleNotificationOpened(notificationOpenedCallback)
+          .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
+          .endInit();
+        window.plugins.OneSignal.getIds(function (ids) {
+          console.log('getIds: ' + JSON.stringify(ids));
+          $rootScope.deviceId = ids.userId;
+        });
+      }
+    }
+
   })
 
   .config(function ($stateProvider, $urlRouterProvider) {
