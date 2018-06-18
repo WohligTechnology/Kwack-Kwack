@@ -143,6 +143,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
 
 
   $scope.select = function (interest) {
+    // console.log(interest)
     var interestEdit = _.find($scope.interestarr, function (o) {
       if (interest == o.name) {
         return o;
@@ -157,11 +158,13 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
       })
 
       $scope.addInterest.interest = $scope.interestarr
+      console.log($scope.addInterest)
     } else {
       _.pull($scope.interestarr, interestEdit)
       $scope.addInterest.interest = $scope.interestarr
     }
     Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
+      console.log($scope.addInterest)
       Chats.noLoaderApi("User/getOne", $scope.pollKwack, function (data) {
         $scope.getInterest = data.data.interests
       })
@@ -178,8 +181,8 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
   $scope.categoryViews = function (data) {
     var toggle = false
     if (data == 'All') {
-      $scope.filterData.polls = !$scope.filterData.polls
-      $scope.filterData.kwacks = !$scope.filterData.kwacks
+      $scope.filterData.polls = true
+      $scope.filterData.kwacks = true
     } else if (data == 'Polls') {
       $scope.filterData.polls = !$scope.filterData.polls
     } else {

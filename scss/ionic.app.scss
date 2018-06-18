@@ -2432,6 +2432,13 @@ $dark:                            #444 !default;
         }
     }
 
+    .deselect-interest{
+        position: absolute;
+        left: 93%;
+        bottom: 81%;
+        font-size: 18px;
+    }
+
     .setting {
         .item-input-inset {
             padding: 0px;

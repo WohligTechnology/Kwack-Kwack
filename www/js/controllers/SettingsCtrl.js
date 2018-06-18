@@ -45,6 +45,25 @@ $scope.fontapply=$rootScope.font
     }
   })
 
+  $scope.select = function (interest) {
+    console.log(interest)
+    var removeInt = _.remove($scope.interestarr, function(n) {
+      console.log(n)
+      return  n.name == interest
+    });
+
+    $scope.addInterest.interest = $scope.interestarr
+    Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
+      console.log(data)
+      $scope.addRemoveInterest();
+    })
+  }
+
+  $scope.onGesture = function(showRemove){
+    console.log(showRemove)
+$scope.showRemove = showRemove;
+  }
+
   console.log($rootScope.font);
   //change font size
   //  $rootScope.fontChange = 'verysmall';
@@ -68,6 +87,7 @@ $scope.fontapply=$rootScope.font
 
   //search interest
 
+$scope.addRemoveInterest = function(){
   Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
     $scope.getInterest = data.data.interests
     $scope.interestdup = _.chunk($scope.getInterest, 2);
@@ -82,6 +102,9 @@ $scope.fontapply=$rootScope.font
 
     // })
   })
+}
+
+$scope.addRemoveInterest()
 
   // $scope.select = function (interest) {
   //   _.forEach($scope.allInterest, function (value) {

@@ -4,7 +4,7 @@
         <div class="col col-33 navHead text-center">SETTINGS</div>
         <div class="col col-33 cncelNav text-right" ng-click="logout()">SIGN OUT</div>
     </div>
-    <ion-content class="bg-color setting has-bottom has-header">
+    <ion-content class="bg-color setting has-bottom has-header"  on-tap="onGesture('remove')">
         <div class="bodyFont ">
             <div class="row">
                 <div class="col">
@@ -68,9 +68,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="settings-btns viewless" ng-class="{'viewall': viewmore == true , 'viewless': viewmore == false }">
+                <div class="settings-btns viewless"   ng-class="{'viewall': viewmore == true , 'viewless': viewmore == false }">
                     <div class="text-center" ng-repeat="int in interestdup">
-                        <button class="button btn-sports btn-bg" ng-repeat="int1 in int | filter:searchText">{{int1.name}}</button>
+                              
+                        <button class="button btn-sports btn-bg" on-hold="onGesture('show')" ng-repeat="int1 in int | filter:searchText">{{int1.name}}<i ng-if="showRemove == 'show'" class="ion ion-close-circled deselect-interest" ng-click="select(int1.name)"></i></button>
                         <!-- <button class="button btn-science btn-bg"> Science</button>
                         <button class="button btn-food btn-bg"> Food</button> -->
                     </div>
