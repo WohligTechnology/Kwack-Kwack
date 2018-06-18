@@ -307,6 +307,14 @@ module.exports = [
     ]
   },
   {
+    "id": "cordova-plugin-googleplus.GooglePlus",
+    "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
+    "pluginId": "cordova-plugin-googleplus",
+    "clobbers": [
+      "window.plugins.googleplus"
+    ]
+  },
+  {
     "id": "cordova-plugin-image-picker.ImagePicker",
     "file": "plugins/cordova-plugin-image-picker/www/imagepicker.js",
     "pluginId": "cordova-plugin-image-picker",
@@ -371,19 +379,19 @@ module.exports = [
     "runs": true
   },
   {
+    "id": "onesignal-cordova-plugin.OneSignal",
+    "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+    "pluginId": "onesignal-cordova-plugin",
+    "clobbers": [
+      "OneSignal"
+    ]
+  },
+  {
     "id": "twitter-connect-plugin.TwitterConnect",
     "file": "plugins/twitter-connect-plugin/www/TwitterConnect.js",
     "pluginId": "twitter-connect-plugin",
     "clobbers": [
       "TwitterConnect"
-    ]
-  },
-  {
-    "id": "cordova-plugin-googleplus.GooglePlus",
-    "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
-    "pluginId": "cordova-plugin-googleplus",
-    "clobbers": [
-      "window.plugins.googleplus"
     ]
   }
 ];
@@ -394,11 +402,12 @@ module.exports.metadata =
   "cordova-plugin-console": "1.1.0",
   "cordova-plugin-contacts": "3.0.1",
   "cordova-plugin-device": "1.1.7",
-  "cordova-plugin-file": "6.0.1",
-  "cordova-plugin-file-transfer": "1.7.1",
+  "cordova-plugin-file": "4.3.0",
+  "cordova-plugin-file-transfer": "1.1.0",
+  "cordova-plugin-googleplus": "5.2.1",
   "cordova-plugin-image-picker": "1.1.1",
   "cordova-plugin-inappbrowser": "2.0.2",
-  "cordova-plugin-ionic-webview": "1.1.19",
+  "cordova-plugin-ionic-webview": "1.1.16",
   "cordova-plugin-splashscreen": "4.1.0",
   "cordova-plugin-statusbar": "2.4.1",
   "cordova-plugin-whitelist": "1.3.3",
@@ -406,8 +415,8 @@ module.exports.metadata =
   "cordova-plugin-x-socialsharing": "5.3.2",
   "cordova.plugins.diagnostic": "3.9.2",
   "ionic-plugin-keyboard": "2.2.1",
-  "twitter-connect-plugin": "0.6.0",
-  "cordova-plugin-googleplus": "5.2.3"
+  "onesignal-cordova-plugin": "2.4.1",
+  "twitter-connect-plugin": "0.6.0"
 };
 // BOTTOM OF METADATA
 });

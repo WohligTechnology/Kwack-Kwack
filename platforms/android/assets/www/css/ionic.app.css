@@ -11710,6 +11710,12 @@ button.btn-yellow.button[disabled] {
 .setting .userName label {
   font-size: 12px; }
 
+.deselect-interest {
+  position: absolute;
+  left: 93%;
+  bottom: 81%;
+  font-size: 18px; }
+
 .setting .item-input-inset {
   padding: 0px; }
   .setting .item-input-inset i {
@@ -11781,6 +11787,11 @@ button.btn-yellow.button[disabled] {
   width: 12px;
   top: 10px;
   left: 10px; }
+
+.count {
+  float: right;
+  padding-top: 0.3em;
+  font-size: 0.8em; }
 
 .replay textarea {
   background-color: #000;
@@ -11914,6 +11925,9 @@ button.btn-yellow.button[disabled] {
 .debatetrailerName {
   padding: 20px 7px 5px 16px;
   text-align: left; }
+
+.debate-card .card-height {
+  height: 130px; }
 
 .debate-card .card {
   margin: 10px 25px 0px; }

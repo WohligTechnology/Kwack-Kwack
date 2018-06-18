@@ -3,9 +3,17 @@
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
     </feature>
+    <feature name="Contacts">
+        <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+    </feature>
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
     <feature name="FileTransfer">
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
     </feature>
@@ -87,4 +95,5 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="TwitterConsumerKey" value="bxdEKQiMCbUUJxo3kK4ixE95P" />
     <preference name="TwitterConsumerSecret" value="Bccd7XOWvflmrjlinxUSnciobSRSCQta1Q9l8zRvNY32U4JlOV" />
+    <preference name="android-targetSdkVersion" value="25" />
 </widget>
