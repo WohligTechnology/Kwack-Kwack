@@ -15,7 +15,36 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       // $ionicPlatform.registerBackButtonAction(function (event) {
       //   //we have to implement it
       // }, 402);
+      // if ($.jStorage.get('notify')) {
+        if (window.plugins) {
+          if (window.plugins.OneSignal) {
 
+            var notificationOpenedCallback = function (jsonData) {
+              // alert("Notification opened:\n" + JSON.stringify(jsonData));
+            };
+            window.plugins.OneSignal
+              .startInit("646e87e1-8fee-4a30-9cd7-442137f90d24")
+              .handleNotificationOpened(notificationOpenedCallback)
+              .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
+              .endInit();
+            window.plugins.OneSignal.getIds(function (ids) {
+              console.log('getIds: ' + JSON.stringify(ids));
+              $rootScope.deviceId = ids.userId;
+            });
+          }
+        }
+      // }
+
+      $ionicPlatform.registerBackButtonAction(function (e) {
+        console.log("hello")
+        if ($state.current.name == 'tab.explore' || $state.current.name == 'tab.discoverNews' || $state.current.name == 'tab.social' || $state.current.name == 'tab.settings' || $state.current.name == 'tab.kwackScreen' || $state.current.name == 'inviteFriends') {
+          ionic.Platform.exitApp();
+          console.log("hello")
+        } else {
+          navigator.app.backHistory();
+          console.log("hello")
+        }
+      }, 100);
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         cordova.plugins.Keyboard.disableScroll(true);
@@ -26,38 +55,14 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
         StatusBar.styleDefault();
       }
     });
-    $ionicPlatform.registerBackButtonAction(function (e) {
-      console.log("hello")
-      if ($state.current.name == 'tab.explore' || $state.current.name == 'tab.discoverNews' || $state.current.name == 'tab.social' || $state.current.name == 'tab.settings' || $state.current.name == 'tab.kwackScreen' || $state.current.name == 'inviteFriends') {
-        ionic.Platform.exitApp();
-        console.log("hello")
-      } else {
-        navigator.app.backHistory();
-        console.log("hello")
-      }
-    }, 100);
+
 
     $rootScope.$on('SendUp', function (event, args) {
       $rootScope.font = args.message;
       console.log($rootScope.font);
     })
 
-    if (window.plugins) {
-      if (window.plugins.OneSignal) {
-        var notificationOpenedCallback = function (jsonData) {
-          // alert("Notification opened:\n" + JSON.stringify(jsonData));
-        };
-        window.plugins.OneSignal
-          .startInit("646e87e1-8fee-4a30-9cd7-442137f90d24")
-          .handleNotificationOpened(notificationOpenedCallback)
-          .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
-          .endInit();
-        window.plugins.OneSignal.getIds(function (ids) {
-          console.log('getIds: ' + JSON.stringify(ids));
-          $rootScope.deviceId = ids.userId;
-        });
-      }
-    }
+
 
   })
 
@@ -731,6 +736,28 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
     $urlRouterProvider.otherwise('/login');
 
   })
+
+ .directive('limitChar', function() {
+    'use strict';
+    return {
+        restrict: 'A',
+        scope: {
+            limit: '=limit',
+            ngModel: '=ngModel'
+        },
+        link: function(scope) {
+            scope.$watch('ngModel', function(newValue, oldValue) {
+                if (newValue) {
+                    var length = newValue.toString().length;
+                    if (length > scope.limit) {
+                        scope.ngModel = oldValue;
+                    }
+                }
+            });
+        }
+    };
+})
+
 
   .filter('uploadpath', function () {
     return function (input) {

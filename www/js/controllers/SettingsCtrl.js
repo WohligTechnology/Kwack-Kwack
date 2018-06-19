@@ -3,6 +3,7 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
   $scope.pollKwack = {}
   $scope.allInterest = []
   $scope.jstorage = $.jStorage.get('user');
+  $scope.toggle = $.jStorage.get("notify") ? $.jStorage.get("notify") : true;
   $scope.pollKwack._id = $scope.jstorage._id
   $scope.addInterest = {}
   $scope.addInterest.userId = $scope.jstorage._id
@@ -10,10 +11,24 @@ connector.controller('SettingsCtrl', function ($scope, Chats, $state, $rootScope
   $scope.interestarr = []
   $scope.viewmore = false;
   $scope.view3 = true;
+  $scope.showRemove = 'remove'
 $scope.fontapply=$rootScope.font
   $scope.goBackHandler = function () {
     window.history.back(); //This works
   };
+
+  $scope.notiToggle = function(){
+
+   
+    if (window.plugins) {
+      if (window.plugins.OneSignal) {
+        window.plugins.OneSignal.setSubscription($scope.toggle)
+      }
+    }
+    $scope.toggle = !$scope.toggle;
+    $.jStorage.set("notify",$scope.toggle)
+    console.log($scope.toggle)
+  }
 
   $scope.viewall = function () {
     $scope.viewmore = true;
@@ -57,9 +72,10 @@ $scope.fontapply=$rootScope.font
       console.log(data)
       $scope.addRemoveInterest();
     })
+    $scope.showRemove = 'remove'
   }
 
-  $scope.onGesture = function(showRemove){
+  $scope.editInt = function(showRemove){
     console.log(showRemove)
 $scope.showRemove = showRemove;
   }

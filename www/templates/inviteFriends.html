@@ -181,8 +181,8 @@
         <!-- <ion-item > -->
         <a class="item item-avatar" ng-repeat="author in authors">
           <img ng-src="img/profile/profile.png" alt="logo" class="w100">
-          <h2>{{author.name.givenName}}</h2>
-          <p>{{author.name.givenName}}</p>
+          <h2>{{author.displayName}}</h2>
+          <p>{{author.displayName}}</p>
           <img class="followersUn" ng-show="!follow" ng-click='follow=true' src="img/inviteFriends/Unfollow.png">
           <img class="followersUn" ng-show="follow" ng-click='follow=false' src="img/inviteFriends/follow.png">
         </a>

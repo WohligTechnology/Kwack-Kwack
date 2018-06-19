@@ -93,7 +93,7 @@
                                     </div>
                                     <div>
                                         <!-- <p>{{news.desc}}</p> -->
-                                        <textarea class="text-area" ng-keypress="updateBody($event)" maxlength="250" ng-model="commentText" placeholder="Enter your Text"
+                                        <textarea class="text-area" ng-keypress="updateBody($event)" limit-char limit="250" ng-model="commentText" placeholder="Enter your Text"
                                             name="comment" rows="3" cols="28" required></textarea>
                                     </div>
                                     <span class="count">{{250 - commentText.length}}</span>
