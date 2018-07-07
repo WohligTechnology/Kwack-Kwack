@@ -5,7 +5,7 @@ var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile?file=";
 angular.module('starter.services', [])
 
-  .factory('Chats', function ($http, $ionicLoading, $timeout, $ionicActionSheet, $cordovaCamera, $cordovaFileTransfer, $cordovaImagePicker) {
+  .factory('Chats', function ($http, $ionicLoading, $ionicPopup, $timeout, $ionicActionSheet, $cordovaCamera, $cordovaFileTransfer, $cordovaImagePicker) {
     // Might use a resource here that returns a JSON array
 
     // Some fake testing data
@@ -57,7 +57,8 @@ angular.module('starter.services', [])
         }
         return null;
       },
-      apiCallWithData: function (url, formData, callback) {
+      apiCallWithData: function (url, formData, callback,$scope) {
+        var error;
         if (!formData.noLoader) {
           $ionicLoading.show({
             content: 'Loading',
@@ -66,6 +67,7 @@ angular.module('starter.services', [])
             maxWidth: 200,
             showDelay: 0
           });
+
         }
         delete formData.noLoader;
         $http.post(adminurl + url, formData).then(function (data) {
@@ -79,15 +81,18 @@ angular.module('starter.services', [])
 
         }, function errorCallback(response) {
           $ionicLoading.hide();
-          $ionicLoading.show({
-            template: 'Something went wrong',
-            noBackdrop: true,
-            duration: 2000
-          });
+          error = $ionicPopup.show({
+            templateUrl: 'templates/modal/errormsg.html',
+            scope: $scope,
+            });
+          $timeout(function() {
+            error.close(); //close the popup after 3 seconds for some reason
+         }, 3000);
         });
       },
 
-      apiCallWithoutData: function (url, callback) {
+      apiCallWithoutData: function (url, callback, $scope) {
+        var error;
         $ionicLoading.show({
           content: 'Loading',
           animation: 'fade-in',
@@ -97,18 +102,20 @@ angular.module('starter.services', [])
         });
         $http.post(adminurl + url).then(function (data) {
           if (data) {
-            $ionicLoading.hide();
+           $ionicLoading.hide();
             data = data.data;
             callback(data);
           }
 
         }, function errorCallback(response) {
-          $ionicLoading.hide();
-          $ionicLoading.show({
-            template: 'Something went wrong',
-            noBackdrop: true,
-            duration: 2000
-          });
+        //   $ionicLoading.hide();
+        //   error = $ionicPopup.show({
+        //     templateUrl: 'templates/modal/errormsg.html',
+        //     scope: $scope,
+        //     });
+        //   $timeout(function() {
+        //     error.close(); //close the popup after 3 seconds for some reason
+        //  }, 3000);
         });
       },
 

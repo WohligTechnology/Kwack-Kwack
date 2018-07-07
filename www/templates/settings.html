@@ -11,7 +11,7 @@
                     <div class="profileImg text-center" ui-sref="edit">{{font1}}
                         <!-- <img src="img/edit/profilechange.jpg"> -->
                         <!-- <img ng-src="{{userInfo.photo | uploadpath}}"> -->
-                        <img ng-if="userInfo.photo && userInfo.photo!='' && !userInfo.socailLoginPhoto" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
+                        <img ng-if="userInfo.photo && userInfo.photo!=''" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
                         <img ng-if="!userInfo.photo && userInfo.photo=='' && userInfo.socailLoginPhoto" ng-src="{{userInfo.socailLoginPhoto}}" alt="logo" class="w100">
                         <img src="img/profile/profile.png" ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto" alt="logo" class="w100">
 
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="row userNamee rel">
-                    <div class="col col-50">
+                    <div class="col col-35">
                         <label>PREFERENCES</label>
                     </div>
                     <div class="col col-50">
@@ -67,13 +67,22 @@
                             </label>
                         </div>
                     </div>
-                    <i class="ion ion-edit edit-option" ng-click="editInt('show')"></i> 
+                    <div class="col col-15 text-center">
+                        <div class="edit-option">
+                                <i class="ion ion-edit" ng-if="!showRemove" ng-click="editInt()"></i>
+                                <i class="ion ion-checkmark-round check-color" ng-if="showRemove" ng-click="editInt()"></i>
+                        </div>
+                         
+                    </div>
                 </div>
                 <div class="settings-btns viewless "   ng-class="{'viewall': viewmore == true , 'viewless': viewmore == false }">
                        
                     <div class="text-center" ng-repeat="int in interestdup">
-                                  
-                        <button class="button btn-sports btn-bg"  ng-repeat="int1 in int | filter:searchText">{{int1.name}}<i ng-if="showRemove == 'show'" class="ion ion-close-circled deselect-interest" ng-click="select(int1.name)"></i></button>
+                             <span ng-repeat="int1 in int | filter:searchText" class="rel">
+                                    <button class="button btn-sports btn-black"   ng-click="select(int1.name,'add')" ng-class="{'sel-btn' : int1.value==true}">{{int1.name}}</button>
+                                    <i ng-if="showRemove && int1.value==true" class="ion ion-close-circled deselect-interest" ng-click="select(int1.name, 'remove')" ></i>
+                             </span>     
+                        
                         <!-- <button class="button btn-science btn-bg"> Science</button>
                         <button class="button btn-food btn-bg"> Food</button> -->
                     </div>

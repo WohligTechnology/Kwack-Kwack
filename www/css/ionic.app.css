@@ -10488,6 +10488,18 @@ button.btn-yellow.button[disabled] {
   font-size: 13px;
   font-family: 'Montserrat-Regular'; }
 
+.btn-black {
+  background-color: #000;
+  box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
+  margin: 14px 8px;
+  font-size: 13px;
+  font-family: 'Montserrat-Regular';
+  color: #fff; }
+
+.sel-btn {
+  background-color: #ffc943;
+  color: #000; }
+
 .btn-bg-black {
   background: linear-gradient(to right bottom, #000 30%, #000 57%, #414141 100%) !important;
   border: none;
@@ -10506,7 +10518,7 @@ button.btn-yellow.button[disabled] {
 
 .btn-sports {
   padding: 7px 23px; }
-  .btn-sports:hover, .btn-sports:focus {
+  .btn-sports:hover, .btn-sports:focus, .btn-sports:active {
     color: #fff !important; }
 
 .cat-btn-plus {
@@ -10763,6 +10775,13 @@ button.btn-yellow.button[disabled] {
   box-shadow: none;
   color: #444444;
   font-size: 17px;
+  display: none; }
+
+.popup-container.active .popup {
+  width: 96%;
+  height: 46%; }
+
+.popup-head {
   display: none; }
 
 .width100 {
@@ -11122,8 +11141,8 @@ button.btn-yellow.button[disabled] {
   background: #ffb600; }
 
 .black {
-  background: linear-gradient(to right bottom, #000 30%, #000 57%, #414141 100%) !important;
-  color: #fff; }
+  background: #000 !important;
+  color: #fff !important; }
 
 .back-img {
   background-image: url("../img/inviteFriends/bg.jpg");
@@ -11712,15 +11731,19 @@ button.btn-yellow.button[disabled] {
 
 .deselect-interest {
   position: absolute;
-  left: 90%;
-  bottom: 78%;
-  font-size: 22px; }
+  right: 0%;
+  /* bottom: 78%; */
+  font-size: 22px;
+  z-index: 100; }
 
 .edit-option {
-  font-size: 20px;
-  position: absolute;
-  right: 0%;
-  top: 81%; }
+  background: #eee;
+  line-height: 24px; }
+  .edit-option .check-color {
+    color: #6ac259; }
+  .edit-option i {
+    font-size: 20px;
+    vertical-align: middle; }
 
 .setting .item-input-inset {
   padding: 0px; }
@@ -11766,7 +11789,7 @@ button.btn-yellow.button[disabled] {
   padding: 0px 8px; }
 
 .font-shadow {
-  box-shadow: 3px 3px 6px 1px #b2b0b09c; }
+  box-shadow: 3px 3px 6px 1px #ccc !important; }
 
 .font-14 {
   font-size: 16px;
@@ -12599,8 +12622,6 @@ button.btn-yellow.button[disabled] {
     width: 46px; }
   .settings-btns .btn-sports {
     padding: 0px 14px; }
-    .settings-btns .btn-sports:hover, .settings-btns .btn-sports:focus {
-      color: #fff !important; }
   .btn-bg-black {
     font-size: 11px; }
   .btn-bg {

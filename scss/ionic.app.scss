@@ -869,7 +869,21 @@ $dark:                            #444 !default;
         box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
         margin: 14px 8px;
         font-size: 13px;
+        font-family: 'Montserrat-Regular'; // color: $black;
+    }
+
+    .btn-black {
+        background-color: $black;
+        box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.27);
+        margin: 14px 8px;
+        font-size: 13px;
         font-family: 'Montserrat-Regular';
+        color: $light;
+    }
+
+    .sel-btn {
+        background-color: $yellow;
+        color: $black;
     }
 
     .btn-bg-black {
@@ -894,7 +908,8 @@ $dark:                            #444 !default;
     .btn-sports {
         padding: 7px 23px;
         &:hover,
-        &:focus {
+        &:focus,
+        &:active {
             color: $light !important;
         }
     } // .btn-comedy {
@@ -1234,6 +1249,13 @@ $dark:                            #444 !default;
         display: none;
     }
 
+    .popup-container.active .popup{
+        width: 96%;
+        height: 46%;
+    }
+    .popup-head{
+        display: none;
+    }
     .width100 {
         width: 100%
     }
@@ -1695,8 +1717,8 @@ $dark:                            #444 !default;
     }
 
     .black {
-        background: linear-gradient(to right bottom, $black 30%, $black 57%, $darkGray2 100%) !important;
-        color: $light;
+        background: $black !important;
+        color: $light !important;
     } //endofdiscover
     //discovernewsend
     // .discover-sliderbutton{
@@ -2432,18 +2454,24 @@ $dark:                            #444 !default;
         }
     }
 
-    .deselect-interest{
-        position: absolute;
-        left: 90%;
-        bottom: 78%;
-        font-size: 22px;
-    }
-
-    .edit-option{
-        font-size: 20px;
+    .deselect-interest {
         position: absolute;
         right: 0%;
-        top: 81%;
+        /* bottom: 78%; */
+        font-size: 22px;
+        z-index: 100
+    }
+
+    .edit-option {
+        background: #eee;
+        line-height: 24px;
+        .check-color {
+            color: #6ac259
+        }
+        i {
+            font-size: 20px;
+            vertical-align: middle;
+        }
     }
 
     .setting {
@@ -2537,7 +2565,7 @@ $dark:                            #444 !default;
     }
 
     .font-shadow {
-        box-shadow: 3px 3px 6px 1px $darkgray3;
+        box-shadow: 3px 3px 6px 1px #ccc!important;
     }
 
     .font-14 {
@@ -3600,11 +3628,10 @@ $dark:                            #444 !default;
             width: 46px;
         }
         .settings-btns .btn-sports {
-            padding: 0px 14px;
-            &:hover,
-            &:focus {
-                color: $light !important;
-            }
+            padding: 0px 14px; // &:hover,
+            // &:focus {
+            //     color: $black !important;
+            // }
         } // .settings-btns .btn-science {
         //     padding: 0px 7px;
         // }

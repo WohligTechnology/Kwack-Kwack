@@ -187,7 +187,7 @@ connector.controller('SignUpCtrl', function ($scope, Chats, $state, ionicToast, 
     $scope.googleLogin = function () {
     window.plugins.googleplus.login({
         'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-        'webClientId': '557842286830-1n397vjrioga04qqe53qah8aq94rqk2n.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+        'webClientId': '908763420783-p0g7ao7tfieqfq58q7ema6grqti33fg2.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
         // 'offline': true // optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
       },
       function (obj) {

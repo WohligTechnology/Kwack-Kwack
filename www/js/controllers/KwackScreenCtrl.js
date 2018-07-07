@@ -128,17 +128,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
     $scope.interestdup = _.chunk($scope.allInterest, 3);
   })
 
-  Chats.apiCallWithData("User/getOne", $scope.pollKwack, function (data) {
-    $scope.getInterest = data.data.interests
-    $scope.interestarr = data.data.interests
-    _.forEach($scope.allInterest, function (allInterest) {
-      _.forEach($scope.getInterest, function (value) {
-        if (value.name == allInterest.name) {
-          allInterest.value = true
-        } else {}
-      })
-    })
-  })
+
 
 
 
@@ -163,8 +153,6 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
       _.pull($scope.interestarr, interestEdit)
       $scope.addInterest.interest = $scope.interestarr
     }
-    Chats.noLoaderApi("User/addInterests", $scope.addInterest, function (data) {
-      console.log($scope.addInterest)
       Chats.noLoaderApi("User/getOne", $scope.pollKwack, function (data) {
         $scope.getInterest = data.data.interests
       })
@@ -174,7 +162,7 @@ connector.controller('KwackScreenCtrl', function ($scope, $state, $ionicScrollDe
           value.value = !value.value
         }
       })
-    })
+  
   }
 
   //filter select kwackpollAll

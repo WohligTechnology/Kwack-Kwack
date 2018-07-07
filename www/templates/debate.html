@@ -67,13 +67,13 @@
             </div>
             <div>
                 <div class="debate-card relative">
-                    <div class="debateprofile" ng-if="!currentUserInfo.photo || setvarann" ng-click="openModal(); userProfile(currentUserInfo._id)">
+                    <div class="debateprofile" ng-if="currentUserInfo.photo == '' && setvarann && currentUserInfo.socailLoginPhoto == ''" ng-click="openModal(); userProfile(currentUserInfo._id)">
                         <img ng-src="img/profile/profile.png" alt="profile-img" class="profile-w">
                     </div>
                     <div class="debateprofile" ng-click="openModal(); userProfile(currentUserInfo._id)">
-                        <img ng-if="!setvarann && currentUserInfo.photo && !currentUserInfo.socailLoginPhoto" ng-src="{{currentUserInfo.photo | uploadpath}}"
+                        <img ng-if="!setvarann && currentUserInfo.photo && currentUserInfo.photo != ''" ng-src="{{currentUserInfo.photo | uploadpath}}"
                             alt="profile-img" class="profile-w">
-                        <img ng-if="!setvarann && !currentUserInfo.photo && currentUserInfo.socailLoginPhoto" ng-src="{{currentUserInfo.socailLoginPhoto}}"
+                        <img ng-if="!setvarann && currentUserInfo.photo =='' && currentUserInfo.socailLoginPhoto != ''" ng-src="{{currentUserInfo.socailLoginPhoto}}"
                             alt="profile-img" class="socialLogin">
                     </div>
                     <div class="list card card-height">

@@ -1,11 +1,11 @@
 <div class="debate-card relative">
-    <div class="debateprofile" ng-if=" !debate.comment.user.photo || debate.comment.anonymous=='YES'" ng-click="openModal(); userProfile(debate.comment.user._id)">
+    <div class="debateprofile" ng-if=" debate.comment.user.photo !='' &&  debate.comment.anonymous=='YES'" ng-click="openModal(); userProfile(debate.comment.user._id)">
         <img ng-src="img/profile/profile.png" alt="profile-img" class="profile-w">
     </div>
     <div class="debateprofile" ng-click="openModal(); userProfile(debate.comment.user._id)">
-        <img ng-if=" debate.comment.user.socailLoginPhoto && debate.comment.anonymous=='NO'" ng-src="{{debate.comment.user.socailLoginPhoto}}"
+        <img ng-if=" debate.comment.user.socailLoginPhoto !='' && debate.comment.anonymous=='NO' && debate.comment.user.photo == ''" ng-src="{{debate.comment.user.socailLoginPhoto}}"
             alt="profile-img" class=" socialLogin">
-        <img ng-if=" debate.comment.user.photo && debate.comment.anonymous=='NO' && !debate.comment.user.socailLoginPhoto" ng-src="{{debate.comment.user.photo | uploadpath}}"
+        <img ng-if=" debate.comment.user.photo && debate.comment.anonymous=='NO' && debate.comment.user.photo !=''" ng-src="{{debate.comment.user.photo | uploadpath}}"
             alt="profile-img" class="profile-w">
         <!-- <img ng-if=" debate.comment.user.photo && debate.comment.anonymous=='NO' && !debate.comment.user.socailLoginPhoto" ng-src="{{debate.comment.user.photo}}"
             alt="profile-img" class="profile-w"> -->

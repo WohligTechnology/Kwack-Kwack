@@ -53,10 +53,10 @@
       "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de",
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     },
-    "cordova-plugin-googleplus": {
+    "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     },
-    "onesignal-cordova-plugin": {
+    "cordova-plugin-googleplus": {
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     }
   },

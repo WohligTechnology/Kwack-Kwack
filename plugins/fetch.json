@@ -150,16 +150,6 @@
       "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de"
     }
   },
-  "cordova-plugin-googleplus": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-googleplus@^5.2.1"
-    },
-    "is_top_level": true,
-    "variables": {
-      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.557842286830-hsea4a5agi4cqq9rk6i7aptsms98324v"
-    }
-  },
   "onesignal-cordova-plugin": {
     "source": {
       "type": "registry",
@@ -167,5 +157,16 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-googleplus": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus"
+    },
+    "is_top_level": true,
+    "variables": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.908763420783-p0g7ao7tfieqfq58q7ema6grqti33fg2",
+      "WEB_APPLICATION_CLIENT_ID": "908763420783-p0g7ao7tfieqfq58q7ema6grqti33fg2.apps.googleusercontent.com"
+    }
   }
 }
