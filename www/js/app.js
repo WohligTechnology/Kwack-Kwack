@@ -5,10 +5,19 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var connector = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ionic-toast', 'ngCordovaOauth', 'oauth.twitter'])
+var connector = angular
+  .module("starter", [
+    "ionic",
+    "starter.controllers",
+    "starter.services",
+    "ngCordova",
+    "ionic-toast",
+    "ngCordovaOauth",
+    "oauth.twitter"
+  ])
 
-  .run(function ($ionicPlatform, $rootScope, $state) {
-    $ionicPlatform.ready(function () {
+  .run(function($ionicPlatform, $rootScope, $state) {
+    $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       //hardware back operation
@@ -16,39 +25,51 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       //   //we have to implement it
       // }, 402);
       // if ($.jStorage.get('notify')) {
-        if (window.plugins) {
-          if (window.plugins.OneSignal) {
-
-            var notificationOpenedCallback = function (jsonData) {
-              // alert("Notification opened:\n" + JSON.stringify(jsonData));
-            };
-            window.plugins.OneSignal
-              .startInit("646e87e1-8fee-4a30-9cd7-442137f90d24")
-              .handleNotificationOpened(notificationOpenedCallback)
-              .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
-              .endInit();
-            window.plugins.OneSignal.getIds(function (ids) {
-              console.log('getIds: ' + JSON.stringify(ids));
-              $rootScope.deviceId = ids.userId;
-            });
-          }
+      if (window.plugins) {
+        if (window.plugins.OneSignal) {
+          var notificationOpenedCallback = function(jsonData) {
+            // alert("Notification opened:\n" + JSON.stringify(jsonData));
+          };
+          window.plugins.OneSignal.startInit(
+            "646e87e1-8fee-4a30-9cd7-442137f90d24"
+          )
+            .handleNotificationOpened(notificationOpenedCallback)
+            .inFocusDisplaying(
+              window.plugins.OneSignal.OSInFocusDisplayOption.Notification
+            )
+            .endInit();
+          window.plugins.OneSignal.getIds(function(ids) {
+            console.log("getIds: " + JSON.stringify(ids));
+            $rootScope.deviceId = ids.userId;
+          });
         }
+      }
       // }
 
-      $ionicPlatform.registerBackButtonAction(function (e) {
-        console.log("hello")
-        if ($state.current.name == 'tab.explore' || $state.current.name == 'tab.discoverNews' || $state.current.name == 'tab.social' || $state.current.name == 'tab.settings' || $state.current.name == 'tab.kwackScreen' || $state.current.name == 'inviteFriends') {
+      $ionicPlatform.registerBackButtonAction(function(e) {
+        console.log("hello");
+        if (
+          $state.current.name == "tab.explore" ||
+          $state.current.name == "tab.discoverNews" ||
+          $state.current.name == "tab.social" ||
+          $state.current.name == "tab.settings" ||
+          $state.current.name == "tab.kwackScreen" ||
+          $state.current.name == "inviteFriends"
+        ) {
           ionic.Platform.exitApp();
-          console.log("hello")
+          console.log("hello");
         } else {
           navigator.app.backHistory();
-          console.log("hello")
+          console.log("hello");
         }
       }, 100);
-      if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+      if (
+        window.cordova &&
+        window.cordova.plugins &&
+        window.cordova.plugins.Keyboard
+      ) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         cordova.plugins.Keyboard.disableScroll(true);
-
       }
       if (window.StatusBar) {
         // org.apache.cordova.statusbar required
@@ -56,17 +77,13 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       }
     });
 
-
-    $rootScope.$on('SendUp', function (event, args) {
+    $rootScope.$on("SendUp", function(event, args) {
       $rootScope.font = args.message;
       console.log($rootScope.font);
-    })
-
-
-
+    });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
     // $rootScope.$on('SendUp', function (event, args) {
     //   $rootScope.message = args.message;
     //   console.log($rootScope.message);
@@ -78,155 +95,153 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
     $stateProvider
 
       // setup an abstract state for the tabs directive
-      .state('tab', {
-        url: '/tab',
+      .state("tab", {
+        url: "/tab",
         abstract: true,
-        templateUrl: 'templates/tabs.html',
-        controller: 'TabCtrl'
+        templateUrl: "templates/tabs.html",
+        controller: "TabCtrl"
       })
 
       // Each tab has its own nav history stack:
 
-      .state('tab.dash', {
-        url: '/dash',
+      .state("tab.dash", {
+        url: "/dash",
         views: {
-          'tab-dash': {
-            templateUrl: 'templates/tab-dash.html',
-            controller: 'DashCtrl'
+          "tab-dash": {
+            templateUrl: "templates/tab-dash.html",
+            controller: "DashCtrl"
           }
         }
       })
 
-      .state('tab.chats', {
-        url: '/chats',
+      .state("tab.chats", {
+        url: "/chats",
         views: {
-          'tab-chats': {
-            templateUrl: 'templates/tab-chats.html',
-            controller: 'ChatsCtrl'
+          "tab-chats": {
+            templateUrl: "templates/tab-chats.html",
+            controller: "ChatsCtrl"
           }
         }
       })
-      .state('tab.chat-detail', {
-        url: '/chats/:chatId',
+      .state("tab.chat-detail", {
+        url: "/chats/:chatId",
         views: {
-          'tab-chats': {
-            templateUrl: 'templates/chat-detail.html',
-            controller: 'ChatDetailCtrl'
-          }
-        }
-      })
-
-      .state('home', {
-        url: '/home',
-        templateUrl: 'templates/homeSlider.html',
-        controller: 'HomeCtrl'
-
-      })
-      .state('friends', {
-        url: '/friends',
-        cache: false,
-        templateUrl: 'templates/friends.html',
-        controller: 'FriendsCtrl'
-
-      })
-      .state('tab.privacy', {
-        url: '/privacy',
-        cache: false,
-        views: {
-          'tab-settings': {
-            templateUrl: 'templates/privacy.html',
-            controller: 'PrivacyCtrl'
+          "tab-chats": {
+            templateUrl: "templates/chat-detail.html",
+            controller: "ChatDetailCtrl"
           }
         }
       })
 
-      .state('invite', {
-        url: '/invite',
-        cache: false,
-        templateUrl: 'templates/invite.html',
-        controller: 'InviteCtrl'
+      .state("home", {
+        url: "/home",
+        templateUrl: "templates/homeSlider.html",
+        controller: "HomeCtrl"
       })
-
-      .state('tab.trailerex', {
-        url: '/trailer/:newsid/:previousState/:newState',
+      .state("friends", {
+        url: "/friends",
+        cache: false,
+        templateUrl: "templates/friends.html",
+        controller: "FriendsCtrl"
+      })
+      .state("tab.privacy", {
+        url: "/privacy",
         cache: false,
         views: {
-          'tab-explore': {
-            templateUrl: 'templates/tab-trailer.html',
-            controller: 'TrailerCtrl'
-          }
-        }
-      })
-      .state('tab.terms', {
-        url: '/terms',
-        cache: false,
-        views: {
-          'tab-settings': {
-            templateUrl: 'templates/terms.html',
-            controller: 'TermsCtrl'
-          }
-        }
-      })
-      .state('tab.about', {
-        url: '/about',
-        cache: false,
-        views: {
-          'tab-settings': {
-            templateUrl: 'templates/about.html',
-            controller: 'AboutCtrl'
-          }
-        }
-      })
-      .state('tab.guidelines', {
-        url: '/guidelines',
-        cache: false,
-        views: {
-          'tab-settings': {
-            templateUrl: 'templates/guidelines.html',
-            controller: 'GuidelinesCtrl'
-          }
-        }
-      })
-      .state('tab.exploremore', {
-        url: '/exploremore/:newsid',
-        cache: false,
-        views: {
-          'tab-explore': {
-            templateUrl: 'templates/exploremore.html',
-            controller: 'ExploremoreCtrl'
+          "tab-settings": {
+            templateUrl: "templates/privacy.html",
+            controller: "PrivacyCtrl"
           }
         }
       })
 
-      .state('tab.exploremoredis', {
-        url: '/exploremore/:newsid',
+      .state("invite", {
+        url: "/invite",
+        cache: false,
+        templateUrl: "templates/invite.html",
+        controller: "InviteCtrl"
+      })
+
+      .state("tab.trailerex", {
+        url: "/trailer/:newsid/:previousState/:newState",
         cache: false,
         views: {
-          'tab-discoverNews': {
-            templateUrl: 'templates/exploremore.html',
-            controller: 'ExploremoreCtrl'
+          "tab-explore": {
+            templateUrl: "templates/tab-trailer.html",
+            controller: "TrailerCtrl"
+          }
+        }
+      })
+      .state("tab.terms", {
+        url: "/terms",
+        cache: false,
+        views: {
+          "tab-settings": {
+            templateUrl: "templates/terms.html",
+            controller: "TermsCtrl"
+          }
+        }
+      })
+      .state("tab.about", {
+        url: "/about",
+        cache: false,
+        views: {
+          "tab-settings": {
+            templateUrl: "templates/about.html",
+            controller: "AboutCtrl"
+          }
+        }
+      })
+      .state("tab.guidelines", {
+        url: "/guidelines",
+        cache: false,
+        views: {
+          "tab-settings": {
+            templateUrl: "templates/guidelines.html",
+            controller: "GuidelinesCtrl"
+          }
+        }
+      })
+      .state("tab.exploremore", {
+        url: "/exploremore/:newsid",
+        cache: false,
+        views: {
+          "tab-explore": {
+            templateUrl: "templates/exploremore.html",
+            controller: "ExploremoreCtrl"
           }
         }
       })
 
-      .state('tab.exploremoresocial', {
-        url: '/exploremore/:newsid',
+      .state("tab.exploremoredis", {
+        url: "/exploremore/:newsid",
         cache: false,
         views: {
-          'tab-social': {
-            templateUrl: 'templates/exploremore.html',
-            controller: 'ExploremoreCtrl'
+          "tab-discoverNews": {
+            templateUrl: "templates/exploremore.html",
+            controller: "ExploremoreCtrl"
           }
         }
       })
 
-      .state('tab.exploremorekwack', {
-        url: '/exploremore/:newsid',
+      .state("tab.exploremoresocial", {
+        url: "/exploremore/:newsid",
         cache: false,
         views: {
-          'tab-kwackScreen': {
-            templateUrl: 'templates/exploremore.html',
-            controller: 'ExploremoreCtrl'
+          "tab-social": {
+            templateUrl: "templates/exploremore.html",
+            controller: "ExploremoreCtrl"
+          }
+        }
+      })
+
+      .state("tab.exploremorekwack", {
+        url: "/exploremore/:newsid",
+        cache: false,
+        views: {
+          "tab-kwackScreen": {
+            templateUrl: "templates/exploremore.html",
+            controller: "ExploremoreCtrl"
           }
         }
       })
@@ -237,14 +252,13 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       //   controller: 'InviteCtrl'
       // })
 
-      .state('tab.trailerdis', {
-        url: '/trailer/:newsid/:previousState/:newState',
+      .state("tab.trailerdis", {
+        url: "/trailer/:newsid/:previousState/:newState",
         cache: false,
         views: {
-          'tab-discoverNews': {
-            templateUrl: 'templates/tab-trailer.html',
-            controller: 'TrailerCtrl'
-
+          "tab-discoverNews": {
+            templateUrl: "templates/tab-trailer.html",
+            controller: "TrailerCtrl"
           }
         }
       })
@@ -284,36 +298,35 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       // })
 
-      .state('tab.trailersocial', {
-        url: '/trailer/:newsid/:previousState/:newState',
+      .state("tab.trailersocial", {
+        url: "/trailer/:newsid/:previousState/:newState",
         cache: false,
         views: {
-          'tab-social': {
-            templateUrl: 'templates/tab-trailer.html',
-            controller: 'TrailerCtrl'
+          "tab-social": {
+            templateUrl: "templates/tab-trailer.html",
+            controller: "TrailerCtrl"
           }
         }
       })
 
-      .state('tab.trailerkwack', {
-        url: '/trailer/:newsid/:previousState/:newState',
+      .state("tab.trailerkwack", {
+        url: "/trailer/:newsid/:previousState/:newState",
         cache: false,
         views: {
-          'tab-kwackScreen': {
-            templateUrl: 'templates/tab-trailer.html',
-            controller: 'TrailerCtrl'
+          "tab-kwackScreen": {
+            templateUrl: "templates/tab-trailer.html",
+            controller: "TrailerCtrl"
           }
         }
-
       })
 
-      .state('tab.kwackScreen', {
-        url: '/kwackScreen',
+      .state("tab.kwackScreen", {
+        url: "/kwackScreen",
         cache: false,
         views: {
-          'tab-kwackScreen': {
-            templateUrl: 'templates/kwack-screen.html',
-            controller: 'KwackScreenCtrl'
+          "tab-kwackScreen": {
+            templateUrl: "templates/kwack-screen.html",
+            controller: "KwackScreenCtrl"
           }
         }
       })
@@ -341,31 +354,30 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       //   }
       // })
 
-      .state('profile', {
-        url: '/profile',
+      .state("profile", {
+        url: "/profile",
         cache: false,
-        templateUrl: 'templates/profile.html',
-        controller: 'ProfileCtrl'
+        templateUrl: "templates/profile.html",
+        controller: "ProfileCtrl"
       })
-      .state('userprofile', {
-        url: '/userprofile',
+      .state("userprofile", {
+        url: "/userprofile",
         cache: false,
-        templateUrl: 'templates/userProfile.html',
-        controller: 'UserProfileCtrl'
+        templateUrl: "templates/userProfile.html",
+        controller: "UserProfileCtrl"
       })
-      .state('mobile', {
-        url: '/mobile',
+      .state("mobile", {
+        url: "/mobile",
         cache: false,
-        templateUrl: 'templates/mobile.html',
-        controller: 'MobileCtrl'
+        templateUrl: "templates/mobile.html",
+        controller: "MobileCtrl"
       })
-      .state('error', {
-        url: '/error',
+      .state("error", {
+        url: "/error",
         cache: false,
-        templateUrl: 'templates/error.html',
-        controller: 'ErrorCtrl'
+        templateUrl: "templates/error.html",
+        controller: "ErrorCtrl"
       })
-
 
       //   .state('tab.discoverfull', {
       //     url: '/discoverfull',
@@ -375,7 +387,6 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       //         controller: 'DiscoverFullCtrl'
       //       }
       //     }
-
 
       //  })
 
@@ -389,73 +400,65 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       //   }
       // })
 
-      .state('tab.kwacksearch', {
-        url: '/discoverfull',
+      .state("tab.kwacksearch", {
+        url: "/discoverfull",
         cache: false,
         views: {
-          'tab-kwackScreen': {
-            templateUrl: 'templates/discover-full.html',
+          "tab-kwackScreen": {
+            templateUrl: "templates/discover-full.html",
             // cache:false,
-            controller: 'SearchInputCtrl'
+            controller: "SearchInputCtrl"
           }
         }
-
       })
 
-
-
-      .state('filter', {
-        url: '/filter',
+      .state("filter", {
+        url: "/filter",
         cache: false,
-        templateUrl: 'templates/filter.html',
-        controller: 'FilterCtrl'
+        templateUrl: "templates/filter.html",
+        controller: "FilterCtrl"
       })
-      .state('success', {
-        url: '/success',
+      .state("success", {
+        url: "/success",
         cache: false,
-        templateUrl: 'templates/success.html',
-        controller: 'SuccessCtrl'
+        templateUrl: "templates/success.html",
+        controller: "SuccessCtrl"
       })
-      .state('discover', {
-        url: '/discover',
+      .state("discover", {
+        url: "/discover",
         cache: false,
-        templateUrl: 'templates/discover.html',
-        controller: 'DiscoverCtrl'
+        templateUrl: "templates/discover.html",
+        controller: "DiscoverCtrl"
       })
 
-      .state('tab.discoverNews', {
-        url: '/discoverNews',
+      .state("tab.discoverNews", {
+        url: "/discoverNews",
         cache: false,
         views: {
-
-          'tab-discoverNews': {
-            templateUrl: 'templates/tab-discoverNews.html',
-            controller: 'DiscoverNewsCtrl',
-          }
-
-        }
-
-      })
-      .state('tab.discoverfull', {
-        url: '/discoverfull',
-        cache: false,
-        views: {
-          'tab-discoverNews': {
-            templateUrl: 'templates/discover-full.html',
-            controller: 'DiscoverFullCtrl'
+          "tab-discoverNews": {
+            templateUrl: "templates/tab-discoverNews.html",
+            controller: "DiscoverNewsCtrl"
           }
         }
-
-
       })
-
-      .state('tab.discoversearch', {
-        url: '/discoverfull',
+      .state("tab.discoverfull", {
+        url: "/discoverfull",
         cache: false,
         views: {
-          'tab-explore': {
-            templateUrl: 'templates/discover-full.html',
-            controller: 'DiscoverFullCtrl'
+          "tab-discoverNews": {
+            templateUrl: "templates/discover-full.html",
+            controller: "DiscoverFullCtrl"
+          }
+        }
+      })
+
+      .state("tab.discoversearch", {
+        url: "/discoverfull",
+        cache: false,
+        views: {
+          "tab-explore": {
+            templateUrl: "templates/discover-full.html",
+            controller: "DiscoverFullCtrl"
           }
         }
       })
@@ -471,16 +474,15 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       // })
 
-      .state('tab.socialsearch', {
-        url: '/discoverfull',
+      .state("tab.socialsearch", {
+        url: "/discoverfull",
         cache: false,
         views: {
-          'tab-social': {
-            templateUrl: 'templates/discover-full.html',
-            controller: 'DiscoverFullCtrl'
+          "tab-social": {
+            templateUrl: "templates/discover-full.html",
+            controller: "DiscoverFullCtrl"
           }
         }
-
       })
 
       // .state('filter', {
@@ -491,183 +493,176 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
 
       // })
 
-      .state('signUp', {
-        url: '/signup',
+      .state("signUp", {
+        url: "/signup",
         cache: false,
-        templateUrl: 'templates/signUp.html',
-        controller: 'SignUpCtrl'
-
+        templateUrl: "templates/signUp.html",
+        controller: "SignUpCtrl"
       })
 
-      .state('login', {
-        url: '/login',
+      .state("login", {
+        url: "/login",
         cache: false,
-        templateUrl: 'templates/login.html',
-        controller: 'LoginCtrl'
-
+        templateUrl: "templates/login.html",
+        controller: "LoginCtrl"
       })
 
-
-      .state('location', {
-        url: '/location/:userEmail',
+      .state("location", {
+        url: "/location/:userEmail",
         cache: false,
-        templateUrl: 'templates/location.html',
-        controller: 'LocationCtrl'
-
+        templateUrl: "templates/location.html",
+        controller: "LocationCtrl"
       })
-      .state('invitefriendspeople', {
-        url: '/invitefriendspeople',
+      .state("invitefriendspeople", {
+        url: "/invitefriendspeople",
         cache: false,
-        templateUrl: 'templates/inviteFriendsPeople.html',
-        controller: 'InviteFriendsPeopleCtrl'
-
+        templateUrl: "templates/inviteFriendsPeople.html",
+        controller: "InviteFriendsPeopleCtrl"
       })
 
-      .state('parampage', {
-        url: '/parampage',
-        templateUrl: 'templates/parampage.html',
-        controller: 'ParampageCtrl'
-
+      .state("parampage", {
+        url: "/parampage",
+        templateUrl: "templates/parampage.html",
+        controller: "ParampageCtrl"
       })
 
-      .state('otp', {
-        url: '/otp',
+      .state("otp", {
+        url: "/otp",
         cache: false,
-        templateUrl: 'templates/otp.html',
-        controller: 'OtpCtrl'
-
+        templateUrl: "templates/otp.html",
+        controller: "OtpCtrl"
       })
-      .state('tab.explore', {
-        url: '/explore',
+      .state("tab.explore", {
+        url: "/explore",
         cache: false,
         views: {
-          'tab-explore': {
-            templateUrl: 'templates/explore.html',
-            controller: 'ExploreCtrl'
+          "tab-explore": {
+            templateUrl: "templates/explore.html",
+            controller: "ExploreCtrl"
           }
         }
       })
-      .state('tab.exploreDetail', {
-        url: '/exploredetail',
+      .state("tab.exploreDetail", {
+        url: "/exploredetail",
         cache: false,
         views: {
-          'tab-explore': {
-            templateUrl: 'templates/exploreDetail.html',
-            controller: 'ExploreDetailCtrl'
+          "tab-explore": {
+            templateUrl: "templates/exploreDetail.html",
+            controller: "ExploreDetailCtrl"
           }
         }
       })
-      .state('inviteFriends', {
-        url: '/inviteFriends',
+      .state("inviteFriends", {
+        url: "/inviteFriends",
         cache: false,
-        templateUrl: 'templates/inviteFriends.html',
-        controller: 'InviteFriendsCtrl'
+        templateUrl: "templates/inviteFriends.html",
+        controller: "InviteFriendsCtrl"
       })
 
-      .state('tab.accountinside', {
-        url: '/accountinside',
+      .state("tab.accountinside", {
+        url: "/accountinside",
         cache: false,
         views: {
-          'tab-settings': {
-            templateUrl: 'templates/accountinside.html',
-            controller: 'AccountInsieCtrl'
+          "tab-settings": {
+            templateUrl: "templates/accountinside.html",
+            controller: "AccountInsieCtrl"
           }
         }
       })
 
-      .state('tab.aboutinside', {
-        url: '/aboutinside',
+      .state("tab.aboutinside", {
+        url: "/aboutinside",
         cache: false,
         views: {
-          'tab-settings': {
-            templateUrl: 'templates/aboutinside.html',
-            controller: 'AboutInsieCtrl'
+          "tab-settings": {
+            templateUrl: "templates/aboutinside.html",
+            controller: "AboutInsieCtrl"
           }
         }
       })
 
-      .state('confirmpass', {
-        url: '/confirmpass',
+      .state("confirmpass", {
+        url: "/confirmpass",
         cache: false,
-        templateUrl: 'templates/confirmPass.html',
-        controller: 'ConfirmPassCtrl'
+        templateUrl: "templates/confirmPass.html",
+        controller: "ConfirmPassCtrl"
       })
-      .state('edit', {
-        url: '/edit',
+      .state("edit", {
+        url: "/edit",
         cache: false,
-        templateUrl: 'templates/edit.html',
-        controller: 'EditCtrl'
+        templateUrl: "templates/edit.html",
+        controller: "EditCtrl"
       })
-      .state('yourfriends', {
-        url: '/yourfriends',
+      .state("yourfriends", {
+        url: "/yourfriends",
         cache: false,
-        templateUrl: 'templates/yourFriends.html',
-        controller: 'YourFriendsCtrl'
+        templateUrl: "templates/yourFriends.html",
+        controller: "YourFriendsCtrl"
       })
 
-      .state('tab.yourfriends', {
-        url: '/yourfriends',
+      .state("tab.yourfriends", {
+        url: "/yourfriends",
         cache: false,
         views: {
-          'tab-settings': {
-            templateUrl: 'templates/yourFriends.html',
-            controller: 'YourFriendsCtrl'
+          "tab-settings": {
+            templateUrl: "templates/yourFriends.html",
+            controller: "YourFriendsCtrl"
           }
         }
       })
 
-      .state('forgotpass', {
-        url: '/forgotpassword',
+      .state("forgotpass", {
+        url: "/forgotpassword",
         cache: false,
-        templateUrl: 'templates/forgotPass.html',
-        controller: 'ForgotPassCtrl'
+        templateUrl: "templates/forgotPass.html",
+        controller: "ForgotPassCtrl"
       })
-      .state('tab.settings', {
-        url: '/settings',
+      .state("tab.settings", {
+        url: "/settings",
         cache: false,
         views: {
-          'tab-settings': {
-            templateUrl: 'templates/settings.html',
-            controller: 'SettingsCtrl'
+          "tab-settings": {
+            templateUrl: "templates/settings.html",
+            controller: "SettingsCtrl"
           }
         }
       })
-      .state('polling-inside', {
-        url: '/pollinginside/:newsid',
+      .state("polling-inside", {
+        url: "/pollinginside/:newsid",
         cache: false,
-        templateUrl: 'templates/polling-inside.html',
-        controller: 'PollingInsideCtrl'
+        templateUrl: "templates/polling-inside.html",
+        controller: "PollingInsideCtrl"
       })
-      .state('debate1', {
-        url: '/debate/:kwackId/:newsid/:ann/:previousState/:newState',
+      .state("debate1", {
+        url: "/debate/:kwackId/:newsid/:ann/:previousState/:newState",
         cache: false,
-        templateUrl: 'templates/debate.html',
-        controller: 'DebateCtrl'
+        templateUrl: "templates/debate.html",
+        controller: "DebateCtrl"
       })
-      .state('debate', {
-        url: '/debate/:kwackId/:newsid/:previousState/:newState',
+      .state("debate", {
+        url: "/debate/:kwackId/:newsid/:previousState/:newState",
         cache: false,
-        templateUrl: 'templates/debate.html',
-        controller: 'DebateCtrl'
+        templateUrl: "templates/debate.html",
+        controller: "DebateCtrl"
       })
-      .state('tab.startPollingex', {
-        url: '/startPolling/:newsid',
+      .state("tab.startPollingex", {
+        url: "/startPolling/:newsid",
         cache: false,
         views: {
-          'tab-explore': {
-            templateUrl: 'templates/startPolling.html',
-            controller: 'StartPollingCtrl'
+          "tab-explore": {
+            templateUrl: "templates/startPolling.html",
+            controller: "StartPollingCtrl"
           }
         }
       })
 
-      .state('tab.startPollingdis', {
-        url: '/startPolling/:newsid',
+      .state("tab.startPollingdis", {
+        url: "/startPolling/:newsid",
         cache: false,
         views: {
-          'tab-discoverNews': {
-            templateUrl: 'templates/startPolling.html',
-            controller: 'StartPollingCtrl'
+          "tab-discoverNews": {
+            templateUrl: "templates/startPolling.html",
+            controller: "StartPollingCtrl"
           }
         }
       })
@@ -684,83 +679,78 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
       //   }
       //   })
 
-      .state('tab.startPollingkwack', {
-        url: '/startPolling/:newsid',
+      .state("tab.startPollingkwack", {
+        url: "/startPolling/:newsid",
         cache: false,
         views: {
-          'tab-kwackScreen': {
-            templateUrl: 'templates/startPolling.html',
-            controller: 'StartPollingCtrl'
+          "tab-kwackScreen": {
+            templateUrl: "templates/startPolling.html",
+            controller: "StartPollingCtrl"
           }
         }
       })
 
-
-      .state('tab.startPollingsocial', {
-        url: '/startPolling/:newsid',
+      .state("tab.startPollingsocial", {
+        url: "/startPolling/:newsid",
         // cache:false,
         views: {
-          'tab-social': {
-            templateUrl: 'templates/startPolling.html',
-            controller: 'StartPollingCtrl'
+          "tab-social": {
+            templateUrl: "templates/startPolling.html",
+            controller: "StartPollingCtrl"
           }
         }
       })
 
-      .state('tab.social', {
-        url: '/social',
+      .state("tab.social", {
+        url: "/social",
         cache: false,
         views: {
-          'tab-social': {
-            templateUrl: 'templates/tab-social.html',
-            controller: 'SocialCtrl'
+          "tab-social": {
+            templateUrl: "templates/tab-social.html",
+            controller: "SocialCtrl"
           }
         }
-
       })
 
-      .state('tab.account', {
-        url: '/account',
+      .state("tab.account", {
+        url: "/account",
         cache: false,
         views: {
-          'tab-account': {
-            templateUrl: 'templates/tab-account.html',
-            controller: 'AccountCtrl'
+          "tab-account": {
+            templateUrl: "templates/tab-account.html",
+            controller: "AccountCtrl"
           }
         }
       });
 
-
     // if none of the above states are matched, use this as the fallback
 
-    $urlRouterProvider.otherwise('/login');
-
+    $urlRouterProvider.otherwise("/login");
   })
 
- .directive('limitChar', function() {
-    'use strict';
+  .directive("limitChar", function() {
+    "use strict";
     return {
-        restrict: 'A',
-        scope: {
-            limit: '=limit',
-            ngModel: '=ngModel'
-        },
-        link: function(scope) {
-            scope.$watch('ngModel', function(newValue, oldValue) {
-                if (newValue) {
-                    var length = newValue.toString().length;
-                    if (length > scope.limit) {
-                        scope.ngModel = oldValue;
-                    }
-                }
-            });
-        }
+      restrict: "A",
+      scope: {
+        limit: "=limit",
+        ngModel: "=ngModel"
+      },
+      link: function(scope) {
+        scope.$watch("ngModel", function(newValue, oldValue) {
+          if (newValue) {
+            var length = newValue.toString().length;
+            if (length > scope.limit) {
+              scope.ngModel = oldValue;
+            }
+          }
+        });
+      }
     };
-})
+  })
 
-
-  .filter('uploadpath', function () {
-    return function (input) {
+  .filter("uploadpath", function() {
+    return function(input) {
       if (input) {
         // console.log(adminurl + "upload/readFile?file=" + input);
         return adminurl + "upload/readFile?file=" + input;
@@ -768,38 +758,47 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
     };
   })
 
-  .filter('fromNow', function () {
-    return function (date) {
+  .filter("fromNow", function() {
+    return function(date) {
       return moment(date).fromNow();
     };
   })
-
-  .filter('fromNowDay', function () {
-    return function (date) {
-      return moment(date).format('dddd');
+  .filter("description", function() {
+    return function(data) {
+      if (data.shortDescription && !_.isEmpty(data.shortDescription)) {
+        return data.shortDescription;
+      } else {
+        return data.description;
+      }
     };
   })
 
-  .filter('fromNowDM', function () {
-    return function (date) {
+  .filter("fromNowDay", function() {
+    return function(date) {
+      return moment(date).format("dddd");
+    };
+  })
+
+  .filter("fromNowDM", function() {
+    return function(date) {
       return moment(date).format(" MMM DD");
     };
   })
 
-  .filter('fromNowDMY', function () {
-    return function (date) {
+  .filter("fromNowDMY", function() {
+    return function(date) {
       return moment(date).format("DD MMM YYYY");
     };
   })
 
-  .filter('fromNowY', function () {
-    return function (date) {
+  .filter("fromNowY", function() {
+    return function(date) {
       return moment(date).format("YYYY");
     };
   })
 
-  .filter('serverimage', function () {
-    return function (input, width, height, style) {
+  .filter("serverimage", function() {
+    return function(input, width, height, style) {
       if (input) {
         if (input.substr(0, 4) == "http") {
           return input;
@@ -816,9 +815,8 @@ var connector = angular.module('starter', ['ionic', 'starter.controllers', 'star
           }
           return image;
         }
-
       } else {
         return;
       }
     };
-  })
+  });

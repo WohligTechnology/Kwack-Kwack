@@ -4,7 +4,7 @@
       <img class="full-image" ng-src="{{discover.imageUrl}}" ng-click="inApp(discover.url)">
       <h3 class="pad0" ng-click="viewsNextPage(discover._id,'view')">{{discover.name}}</h3>
       <div class="detail-para">
-        <p class="pad0">{{discover.description}}</p>
+        <p class="pad0">{{discover | description}}</p>
       </div>
       <span>
         <img src="img/explore/4.png">
