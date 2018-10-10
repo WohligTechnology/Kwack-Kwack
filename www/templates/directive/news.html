@@ -1,7 +1,7 @@
 <div ng-if="!searchInput" class="item item-thumbnail-left ">
     <img ng-src="{{test.imageUrl}}" class="img-responsive" ng-click="inApp(test.url)">
     <h2>{{test.name}} </h2>
-    <p>{{test.description}}</p>
+    <p>{{test|description}}</p>
     <p class=" float-right explore-icon text-center ">
         <label class="discoverCardStrip" ng-click="nextPage(test._id,'poll')">
             <img ng-if="!test.flagForPoll" src="img/explore/5.png">
