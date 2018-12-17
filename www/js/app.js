@@ -16,8 +16,8 @@ var connector = angular
     "oauth.twitter"
   ])
 
-  .run(function($ionicPlatform, $rootScope, $state) {
-    $ionicPlatform.ready(function() {
+  .run(function ($ionicPlatform, $rootScope, $state) {
+    $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       //hardware back operation
@@ -27,18 +27,18 @@ var connector = angular
       // if ($.jStorage.get('notify')) {
       if (window.plugins) {
         if (window.plugins.OneSignal) {
-          var notificationOpenedCallback = function(jsonData) {
+          var notificationOpenedCallback = function (jsonData) {
             // alert("Notification opened:\n" + JSON.stringify(jsonData));
           };
           window.plugins.OneSignal.startInit(
-            "646e87e1-8fee-4a30-9cd7-442137f90d24"
-          )
+              "646e87e1-8fee-4a30-9cd7-442137f90d24"
+            )
             .handleNotificationOpened(notificationOpenedCallback)
             .inFocusDisplaying(
               window.plugins.OneSignal.OSInFocusDisplayOption.Notification
             )
             .endInit();
-          window.plugins.OneSignal.getIds(function(ids) {
+          window.plugins.OneSignal.getIds(function (ids) {
             console.log("getIds: " + JSON.stringify(ids));
             $rootScope.deviceId = ids.userId;
           });
@@ -46,7 +46,7 @@ var connector = angular
       }
       // }
 
-      $ionicPlatform.registerBackButtonAction(function(e) {
+      $ionicPlatform.registerBackButtonAction(function (e) {
         console.log("hello");
         if (
           $state.current.name == "tab.explore" ||
@@ -77,13 +77,13 @@ var connector = angular
       }
     });
 
-    $rootScope.$on("SendUp", function(event, args) {
+    $rootScope.$on("SendUp", function (event, args) {
       $rootScope.font = args.message;
       console.log($rootScope.font);
     });
   })
 
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
     // $rootScope.$on('SendUp', function (event, args) {
     //   $rootScope.message = args.message;
     //   console.log($rootScope.message);
@@ -728,7 +728,7 @@ var connector = angular
     $urlRouterProvider.otherwise("/login");
   })
 
-  .directive("limitChar", function() {
+  .directive("limitChar", function () {
     "use strict";
     return {
       restrict: "A",
@@ -736,8 +736,8 @@ var connector = angular
         limit: "=limit",
         ngModel: "=ngModel"
       },
-      link: function(scope) {
-        scope.$watch("ngModel", function(newValue, oldValue) {
+      link: function (scope) {
+        scope.$watch("ngModel", function (newValue, oldValue) {
           if (newValue) {
             var length = newValue.toString().length;
             if (length > scope.limit) {
@@ -749,8 +749,8 @@ var connector = angular
     };
   })
 
-  .filter("uploadpath", function() {
-    return function(input) {
+  .filter("uploadpath", function () {
+    return function (input) {
       if (input) {
         // console.log(adminurl + "upload/readFile?file=" + input);
         return adminurl + "upload/readFile?file=" + input;
@@ -758,47 +758,48 @@ var connector = angular
     };
   })
 
-  .filter("fromNow", function() {
-    return function(date) {
+  .filter("fromNow", function () {
+    return function (date) {
       return moment(date).fromNow();
     };
   })
-  .filter("description", function() {
-    return function(data) {
-      if (data.shortDescription && !_.isEmpty(data.shortDescription)) {
-        return data.shortDescription;
-      } else {
-        return data.description;
-      }
+  .filter("description", function () {
+    return function (data) {
+      // if (data.shortDescription && !_.isEmpty(data.shortDescription)) {
+      //   return data.shortDescription;
+      // } else {
+      //   return data.description;
+      // }
+      return data.description;
     };
   })
 
-  .filter("fromNowDay", function() {
-    return function(date) {
+  .filter("fromNowDay", function () {
+    return function (date) {
       return moment(date).format("dddd");
     };
   })
 
-  .filter("fromNowDM", function() {
-    return function(date) {
+  .filter("fromNowDM", function () {
+    return function (date) {
       return moment(date).format(" MMM DD");
     };
   })
 
-  .filter("fromNowDMY", function() {
-    return function(date) {
+  .filter("fromNowDMY", function () {
+    return function (date) {
       return moment(date).format("DD MMM YYYY");
     };
   })
 
-  .filter("fromNowY", function() {
-    return function(date) {
+  .filter("fromNowY", function () {
+    return function (date) {
       return moment(date).format("YYYY");
     };
   })
 
-  .filter("serverimage", function() {
-    return function(input, width, height, style) {
+  .filter("serverimage", function () {
+    return function (input, width, height, style) {
       if (input) {
         if (input.substr(0, 4) == "http") {
           return input;
