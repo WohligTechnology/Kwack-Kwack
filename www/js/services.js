@@ -1,5 +1,5 @@
 // var adminurl = "http://183.87.166.13:80/api/";
-var adminurl = "http://kwack-backend.wohlig.co.in/api/";
+var adminurl = "https://kwack-backend.wohlig.co.in/api/";
 // var adminurl = "http://wohlig.io/api/";
 
 var imgurl = adminurl + "upload/";

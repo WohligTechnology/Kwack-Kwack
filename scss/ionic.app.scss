@@ -2326,22 +2326,18 @@ $dark:                            #444 !default;
     }
 
     .userName {
-        // margin: auto 15px !important;
         @include margin(auto 15px auto 15px);
         padding: 25px 0px !important;
-        border-bottom: 1px solid $lightGray;
+      
         height: 80px;
-        width: auto; // div {
-        //     font-family: 'Monserrat-Regular';
-        //     font-size: 0.9em;
-        // }
+        width: auto;
         label {
             font-size: 12px;
         }
-    } // .aboutInside{
-    //         font-family: 'Monserrat-Regular'!important;
-    //         font-size: 1.1em;
-    // }
+       & + .userName{
+        border-top: 1px solid $lightGray;
+       }
+    }
     .email {
         padding: 30px 15px !important;
         label {

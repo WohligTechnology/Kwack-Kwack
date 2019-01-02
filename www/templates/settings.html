@@ -1,96 +1,136 @@
-<ion-view title="settings" class="{{fontChange}}">
-    <div class="row pad10">
-        <div class="col col-33 " ng-click="goBackHandler()"><label class="cncelNav">DONE</label> </div>
-        <div class="col col-33 navHead text-center">SETTINGS</div>
-        <div class="col col-33 cncelNav text-right" ng-click="logout()">SIGN OUT</div>
+<ion-view title="settings" class="{{ fontChange }}">
+  <div class="row pad10">
+    <div class="col col-33 " ng-click="goBackHandler()">
+      <label class="cncelNav">DONE</label>
     </div>
-    <ion-content class="bg-color setting has-bottom has-header" >
-        <div class="bodyFont ">
-            <div class="row">
-                <div class="col">
-                    <div class="profileImg text-center" ui-sref="edit">{{font1}}
-                        <!-- <img src="img/edit/profilechange.jpg"> -->
-                        <!-- <img ng-src="{{userInfo.photo | uploadpath}}"> -->
-                        <img ng-if="userInfo.photo && userInfo.photo!=''" ng-src="{{userInfo.photo | uploadpath}}" alt="logo" class="w100">
-                        <img ng-if="!userInfo.photo && userInfo.photo=='' && userInfo.socailLoginPhoto" ng-src="{{userInfo.socailLoginPhoto}}" alt="logo" class="w100">
-                        <img src="img/profile/profile.png" ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto" alt="logo" class="w100">
-
-                    </div>
-                    <div class="set-username text-center">
-                        <pre>{{font}}</pre>
-                        <h5>{{userInfo.name}}</h5>
-                    </div>
-                </div>
-                <!-- <div class="col-50">
+    <div class="col col-33 navHead text-center">SETTINGS</div>
+    <div class="col col-33 cncelNav text-right" ng-click="logout()">
+      SIGN OUT
+    </div>
+  </div>
+  <ion-content class="bg-color setting has-bottom has-header">
+    <div class="bodyFont ">
+      <div class="row">
+        <div class="col">
+          <div class="profileImg text-center" ui-sref="edit">
+            {{ font1 }}
+            <!-- <img src="img/edit/profilechange.jpg"> -->
+            <!-- <img ng-src="{{userInfo.photo | uploadpath}}"> -->
+            <img
+              ng-if="userInfo.photo && userInfo.photo!=''"
+              ng-src="{{ userInfo.photo | uploadpath }}"
+              alt="logo"
+              class="w100"
+            />
+            <!-- <img ng-if="!userInfo.photo && userInfo.photo=='' && userInfo.socailLoginPhoto" ng-src="{{userInfo.socailLoginPhoto}}" alt="logo" class="w100"> -->
+            <!-- <img src="img/profile/profile.png" ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto" alt="logo" class="w100"> -->
+          </div>
+          <div class="set-username text-center">
+            <pre>{{ font }}</pre>
+            <h5>{{ userInfo.name }}</h5>
+          </div>
+        </div>
+        <!-- <div class="col-50">
                     <div class="chngImg">UPDATE PHOTO</div>
                 </div> -->
-            </div>
+      </div>
+    </div>
+
+    <div class="editCard">
+      <div class="card">
+        <div class="row userName">
+          <div class="col col-33"><label>FONT SIZE</label></div>
+          <div class="col col-66 text-right">
+            <i
+              class="font-7"
+              ng-class="{'font-shadow' : fontChange=='verysmall'}"
+              ng-click="changesize('verysmall')"
+              >A</i
+            >
+            <i
+              class="font-10"
+              ng-class="{'font-shadow' : fontChange=='small'}"
+              ng-click="changesize('small')"
+              >A</i
+            >
+            <i
+              class="font-14"
+              ng-class="{'font-shadow' : fontChange=='medium'}"
+              ng-click="changesize('medium')"
+              >A</i
+            >
+            <i
+              class="font-17 "
+              ng-class="{'font-shadow' : fontChange=='bold'}"
+              ng-click="changesize('bold')"
+              >A</i
+            >
+          </div>
         </div>
+        <div class="row userName">
+          <div class="col col-50"><label>NOTIFICATIONS</label></div>
+          <div class="col col-50 text-right">
+            <div class="notification">
+              <label class="toggle" ng-click="notiToggle()">
+                <input type="checkbox" ng-model="toggle" />
+                <div class="track"><div class="handle"></div></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row userNamee rel">
+          <div class="col col-35"><label>PREFERENCES</label></div>
+          <div class="col col-50">
+            <div class="item-input-inset">
+              <label class="item-input-wrapper">
+                <input type="search" ng-model="searchText" />
+                <i class="icon ion-search placeholder-icon"></i>
+              </label>
+            </div>
+          </div>
+          <div class="col col-15 text-center">
+            <div class="edit-option">
+              <i
+                class="ion ion-edit"
+                ng-if="!showRemove"
+                ng-click="editInt()"
+              ></i>
+              <i
+                class="ion ion-checkmark-round check-color"
+                ng-if="showRemove"
+                ng-click="editInt()"
+              ></i>
+            </div>
+          </div>
+        </div>
+        <div
+          class="settings-btns viewless "
+          ng-class="{'viewall': viewmore == true , 'viewless': viewmore == false }"
+        >
+          <div class="text-center" ng-repeat="int in interestdup">
+            <span ng-repeat="int1 in int | filter:searchText" class="rel">
+              <button
+                class="button btn-sports btn-black"
+                ng-click="select(int1.name,'add')"
+                ng-class="{'sel-btn' : int1.value==true}"
+              >
+                {{ int1.name }}
+              </button>
+              <i
+                ng-if="showRemove && int1.value==true"
+                class="ion ion-close-circled deselect-interest"
+                ng-click="select(int1.name, 'remove')"
+              ></i>
+            </span>
 
-        <div class="editCard">
-            <div class="card">
-                <div class="row userName">
-                    <div class="col col-33">
-                        <label>FONT SIZE</label>
-                    </div>
-                    <div class="col col-66 text-right">
-                        <i class="font-7" ng-class="{'font-shadow' : fontChange=='verysmall'}" ng-click="changesize('verysmall')">A</i>
-                        <i class="font-10" ng-class="{'font-shadow' : fontChange=='small'}" ng-click="changesize('small')">A</i>
-                        <i class="font-14" ng-class="{'font-shadow' : fontChange=='medium'}" ng-click="changesize('medium')">A</i>
-                        <i class="font-17 " ng-class="{'font-shadow' : fontChange=='bold'}" ng-click="changesize('bold')">A</i>
-                    </div>
-                </div>
-                <div class="row userName">
-                    <div class="col col-50">
-                        <label>NOTIFICATIONS</label>
-                    </div>
-                    <div class="col col-50 text-right">
-                        <div class="notification">
-                            <label class="toggle" ng-click="notiToggle()">
-                                <input type="checkbox" ng-model="toggle">
-                                <div class="track">
-                                    <div class="handle"></div>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row userNamee rel">
-                    <div class="col col-35">
-                        <label>PREFERENCES</label>
-                    </div>
-                    <div class="col col-50">
-                        <div class="item-input-inset">
-                            <label class="item-input-wrapper">
-                                <input type="search" ng-model="searchText">
-                                <i class="icon ion-search placeholder-icon"></i>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col col-15 text-center">
-                        <div class="edit-option">
-                                <i class="ion ion-edit" ng-if="!showRemove" ng-click="editInt()"></i>
-                                <i class="ion ion-checkmark-round check-color" ng-if="showRemove" ng-click="editInt()"></i>
-                        </div>
-                         
-                    </div>
-                </div>
-                <div class="settings-btns viewless "   ng-class="{'viewall': viewmore == true , 'viewless': viewmore == false }">
-                       
-                    <div class="text-center" ng-repeat="int in interestdup">
-                             <span ng-repeat="int1 in int | filter:searchText" class="rel">
-                                    <button class="button btn-sports btn-black"   ng-click="select(int1.name,'add')" ng-class="{'sel-btn' : int1.value==true}">{{int1.name}}</button>
-                                    <i ng-if="showRemove && int1.value==true" class="ion ion-close-circled deselect-interest" ng-click="select(int1.name, 'remove')" ></i>
-                             </span>     
-                        
-                        <!-- <button class="button btn-science btn-bg"> Science</button>
+            <!-- <button class="button btn-science btn-bg"> Science</button>
                         <button class="button btn-food btn-bg"> Food</button> -->
-                    </div>
-                    <div class="text-center" ng-if="interestdup.length==0">
-                        There are no currently interest in your Preferences
-                    </div>
+          </div>
+          <div class="text-center" ng-if="interestdup.length==0">
+            There are no currently interest in your Preferences
+          </div>
 
-                    <!-- <div class="text-center">
+          <!-- <div class="text-center">
                         <button class="button btn-science btn-bg"> Business</button>
                         <button class="button btn-entertainment btn-bg"> Entertaintment</button>
                     </div>
@@ -103,45 +143,41 @@
                         <button class="button btn-comedy btn-bg"> Comedy</button>
                         <button class="button btn-books btn-bg"> Books</button>
                     </div> -->
-                </div>
-                <div class="text-center view-all" ng-click="viewall()" ng-if="view3">
-                    <label>VIEW ALL</label>
-                </div>
-                <div class="text-center view-all" ng-click="viewLess3()" ng-if="!view3 ">
-                    <label> VIEW LESS</label>
-                </div>
-            </div>
         </div>
-        <div class="account">
-            <!-- <label>ABOUT</label> -->
+        <div class="text-center view-all" ng-click="viewall()" ng-if="view3">
+          <label>VIEW ALL</label>
         </div>
-        <div class="editCard">
-            <div class="card">
-                <div class="row userName" ui-sref="tab.aboutinside">
-                    <div class="col col-50">
-                        <label>ABOUT</label>
-                    </div>
-                    <div class="col col-50 text-right">
-                        <i class="ion ion-ios-arrow-right"></i>
-                    </div>
-                </div>
-                <div class="row userName" ui-sref="tab.accountinside">
-                    <div class="col col-50">
-                        <label>ACCOUNT</label>
-                    </div>
-                    <div class="col col-50 text-right" ui-sref="accountinside">
-                        <i class="ion ion-ios-arrow-right"></i>
-                    </div>
-                </div>
-                <div class="row userName" ui-sref="tab.yourfriends">
-                    <div class="col col-50 emailText">
-                        <label>FRIENDS</label>
-                    </div>
-                    <div class="col col-50 text-right" ui-sref="inviteFriends">
-                        <i class="ion ion-ios-arrow-right"></i>
-                    </div>
-                </div>
-                <!-- <div class="row  userName">
+        <div
+          class="text-center view-all"
+          ng-click="viewLess3()"
+          ng-if="!view3 "
+        >
+          <label> VIEW LESS</label>
+        </div>
+      </div>
+    </div>
+    <div class="account"><!-- <label>ABOUT</label> --></div>
+    <div class="editCard">
+      <div class="card">
+        <div class="row userName" ui-sref="tab.aboutinside">
+          <div class="col col-50"><label>ABOUT</label></div>
+          <div class="col col-50 text-right">
+            <i class="ion ion-ios-arrow-right"></i>
+          </div>
+        </div>
+        <div class="row userName" ui-sref="tab.accountinside">
+          <div class="col col-50"><label>ACCOUNT</label></div>
+          <div class="col col-50 text-right" ui-sref="accountinside">
+            <i class="ion ion-ios-arrow-right"></i>
+          </div>
+        </div>
+        <div class="row userName" ui-sref="tab.yourfriends">
+          <div class="col col-50 emailText"><label>FRIENDS</label></div>
+          <div class="col col-50 text-right" ui-sref="inviteFriends">
+            <i class="ion ion-ios-arrow-right"></i>
+          </div>
+        </div>
+        <!-- <div class="row  userName">
                     <div class="col col-50">
                         <label>FEEDBACK</label>
                     </div>
@@ -149,8 +185,7 @@
                         <i class="ion ion-ios-arrow-right"></i>
                     </div>
                 </div> -->
-            </div>
-        </div>
-
-    </ion-content>
+      </div>
+    </div>
+  </ion-content>
 </ion-view>

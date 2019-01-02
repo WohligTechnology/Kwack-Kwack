@@ -11635,11 +11635,12 @@ button.btn-yellow.button[disabled] {
 .userName {
   margin: auto 15px;
   padding: 25px 0px !important;
-  border-bottom: 1px solid #afafaf;
   height: 80px;
   width: auto; }
   .userName label {
     font-size: 12px; }
+  .userName + .userName {
+    border-top: 1px solid #afafaf; }
 
 .email {
   padding: 30px 15px !important; }
