@@ -1,36 +1,56 @@
 <div class="news-discover item-index">
   <div class="list card">
     <div class="item item-body pad2010">
-      <img class="full-image" ng-src="{{discover.imageUrl}}" ng-click="inApp(discover.url)">
-      <h3 class="pad0" ng-click="viewsNextPage(discover._id,'view')">{{discover.name}}</h3>
+      <img
+        class="full-image"
+        ng-src="{{ discover.imageUrl }}"
+        onerror="this.style.display='none';"
+        ng-click="inApp(discover.url)"
+      />
+      <h3 class="pad0" ng-click="viewsNextPage(discover._id,'view')">
+        {{ discover.name }}
+      </h3>
       <div class="detail-para">
-        <p class="pad0">{{discover | description}}</p>
+        <p class="pad0">{{ discover | description }}</p>
       </div>
-      <span>
-        <img src="img/explore/4.png">
-      </span>
-      <span>{{discover.createdAt | fromNow}}</span>
-      <span>
-        <img class="viewImg" src="img/discover/views.PNG">
-      </span>
-      <span>{{discover.realTotalCount.length}}</span>{{discover.value}}
+      <span> <img src="img/explore/4.png" /> </span>
+      <span>{{ discover.createdAt | fromNow }}</span>
+      <span> <img class="viewImg" src="img/discover/views.PNG" /> </span>
+      <span>{{ discover.realTotalCount.length }}</span
+      >{{ discover.value }}
       <div class="display-inline float-right explore-icon text-center">
-        <label class="discoverCardStrip" ng-click="nextPage(discover._id,'poll')">
-          <img ng-if="!discover.flagForPoll" src="img/explore/5.png">
-          <img ng-if="discover.flagForPoll" src="img/filter/2.png">
-          <span class="alignM"> {{discover.polls.length}}</span>
+        <label
+          class="discoverCardStrip"
+          ng-click="nextPage(discover._id,'poll')"
+        >
+          <img ng-if="!discover.flagForPoll" src="img/explore/5.png" />
+          <img ng-if="discover.flagForPoll" src="img/filter/2.png" />
+          <span class="alignM"> {{ discover.polls.length }}</span>
         </label>
-        <label class="discoverCardStrip" ng-click="nextPage(discover._id,'kwack')">
+        <label
+          class="discoverCardStrip"
+          ng-click="nextPage(discover._id,'kwack')"
+        >
           <a>
-            <img ng-if="!discover.flagForKwack" class="img-responsive" src="img/explore/6.png">
-            <img ng-if="discover.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
+            <img
+              ng-if="!discover.flagForKwack"
+              class="img-responsive"
+              src="img/explore/6.png"
+            />
+            <img
+              ng-if="discover.flagForKwack"
+              class="img-responsive"
+              src="img/discover/shieldclick.png"
+            />
           </a>
-          <span class="alignM">{{discover.comments.length}}</span>
+          <span class="alignM">{{ discover.comments.length }}</span>
         </label>
-        <label ng-click="socilaSharing(discover.description,discover.imageUrl,discover.name,discover.url,discover._id)">
-          <img ng-if="!discover.flagForShare" src="img/explore/7.png">
-          <img ng-if="discover.flagForShare" src="img/filter/6.png">
-          <span class="colorw alignM">{{discover.share}}</span>
+        <label
+          ng-click="socilaSharing(discover.description,discover.imageUrl,discover.name,discover.url,discover._id)"
+        >
+          <img ng-if="!discover.flagForShare" src="img/explore/7.png" />
+          <img ng-if="discover.flagForShare" src="img/filter/6.png" />
+          <span class="colorw alignM">{{ discover.share }}</span>
         </label>
       </div>
       <!-- <div class="display-flex">

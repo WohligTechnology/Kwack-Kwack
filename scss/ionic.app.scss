@@ -3179,12 +3179,16 @@ $dark:                            #444 !default;
             font-family: 'Montserrat-Medium';
             font-size: 14px;
         }
-        p {
+        p,li {
             font-family: 'Montserrat-Regular';
+            text-align: justify;
             line-height: 16px;
             font-size: 11px;
             color: $darkGray2;
             padding: 5px 0px;
+        }
+        li{
+            list-style: decimal;
         }
     }
 

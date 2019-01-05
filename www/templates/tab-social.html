@@ -1,14 +1,14 @@
-<ion-view title="Social" class="{{fontChange}}">
-    <div ng-include="tabHeader"></div>
-    <ion-content class="bg-color has-header  has-bottom">
-        <ion-refresher ng-if="!searchInputsocial" on-refresh="doRefresh(true)"></ion-refresher>
-        <div>
-            <div class="text-center">
-                <h4 class="pad0 title-explore">SOCIAL</h4>
-            </div>
-            <div ng-if="!searchInputsocial" class="border-top">
-            </div>
-            <!--<div class="news-content">
+<ion-view title="Social" class="{{ fontChange }}">
+  <div ng-include="tabHeader"></div>
+  <ion-content class="bg-color has-header  has-bottom">
+    <ion-refresher
+      ng-if="!searchInputsocial"
+      on-refresh="doRefresh(true)"
+    ></ion-refresher>
+    <div>
+      <div class="text-center"><h4 class="pad0 title-explore">SOCIAL</h4></div>
+      <div ng-if="!searchInputsocial" class="border-top"></div>
+      <!--<div class="news-content">
                 <div class="row">
                     <div class="col col-20">
                         <div class="toi">
@@ -60,75 +60,100 @@
                     </div>
                 </div>
             </div>-->
-            <div ng-if="!searchInputsocial" class="news-content">
-                <div ng-repeat="social in discoverNews">
-
-
-                    <div class="row">
-                        <div class="col col-20">
-                            <div class="toi">
-                                <img src="img/social/et.png" alt="toi-logo" class="w100">
-                            </div>
-                        </div>
-                        <div class="col col-80">
-                            <div class="news-video" ng-click="inApp(social.url)">
-                                <p class="pad0">
-                                    <span>{{social.source}}</span>
-                                    <span>
-                                        <img src="img/social/icon.png" alt="icon" class="w3">
-                                    </span> {{social.sourceId}}
-                                    <span class="pad-left5">
-                                        <img src="img/explore/4.png" alt="logo" class="w3">
-                                    </span> {{social.createdAt | fromNow}}</p>
-                                <p class="pad0">In Pics:
-                                    <span class="color-yellow"> @susanthesquark</span>
-                                    <!-- did everyone in -->
-                                    <span class="color-yellow">#tech </span>{{social.title}}
-                                    <!-- "worshipped as kings" -->
-                                    <span class="color-yellow"> {{social.url}}</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mar-lr">
-                        <div class="relative">
-                            <img class="full-image" src="{{social.imageUrl}}" ng-click="inApp(social.url)">
-                        </div>
-                        <div class="social-icons">
-                            <div class="display-inline">
-                                <div class="w56">
-                                    <img src="img/social/facebook.png" class="w100">
-                                </div>
-                            </div>
-                            <div class="display-inline float-right explore-icon text-center ">
-                                <label class="discoverCardStrip" ng-click="nextPage(social._id,'poll')">
-                                    <img ng-if="!social.flagForPoll" src="img/explore/5.png">
-                                    <img ng-if="social.flagForPoll" src="img/filter/2.png">
-                                    <span class="alignM"> {{social.polls.length}}</span>
-                                </label>
-                                <label class="discoverCardStrip" ng-click="nextPage(social._id,'kwack')">
-                                    <a>
-                                        <img ng-if="!social.flagForKwack" class="img-responsive" src="img/explore/6.png">
-                                        <img ng-if="social.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
-                                    </a>
-                                    <span class="alignM">{{social.comments.length}}</span>
-                                </label>
-                                <label ng-click="socilaSharing(social.description,social.imageUrl,social.title,social.url,social._id)">
-                                   <img  ng-if="!social.flagForShare" src="img/explore/7.png">
-                     <img ng-if="social.flagForShare" src="img/filter/6.png">
-                                    <span class="colorw alignM">{{social.share}}</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div ng-if="!searchInputsocial" class="news-content">
+        <div ng-repeat="social in discoverNews">
+          <div class="row">
+            <div class="col col-20">
+              <div class="toi">
+                <img src="img/social/et.png" alt="toi-logo" class="w100" />
+              </div>
             </div>
+            <div class="col col-80">
+              <div class="news-video" ng-click="inApp(social.url)">
+                <p class="pad0">
+                  <span>{{ social.source }}</span>
+                  <span>
+                    <img src="img/social/icon.png" alt="icon" class="w3" />
+                  </span>
+                  {{ social.sourceId }}
+                  <span class="pad-left5">
+                    <img src="img/explore/4.png" alt="logo" class="w3" />
+                  </span>
+                  {{ social.createdAt | fromNow }}
+                </p>
+                <p class="pad0">
+                  In Pics: <span class="color-yellow"> @susanthesquark</span>
+                  <!-- did everyone in -->
+                  <span class="color-yellow">#tech </span>{{ social.title }}
+                  <!-- "worshipped as kings" -->
+                  <span class="color-yellow"> {{ social.url }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mar-lr">
+            <div class="relative">
+              <img
+                class="full-image"
+                src="{{ social.imageUrl }}"
+                onerror="this.style.display='none';"
+                ng-click="inApp(social.url)"
+              />
+            </div>
+            <div class="social-icons">
+              <div class="display-inline">
+                <div class="w56">
+                  <img src="img/social/facebook.png" class="w100" />
+                </div>
+              </div>
+              <div class="display-inline float-right explore-icon text-center ">
+                <label
+                  class="discoverCardStrip"
+                  ng-click="nextPage(social._id,'poll')"
+                >
+                  <img ng-if="!social.flagForPoll" src="img/explore/5.png" />
+                  <img ng-if="social.flagForPoll" src="img/filter/2.png" />
+                  <span class="alignM"> {{ social.polls.length }}</span>
+                </label>
+                <label
+                  class="discoverCardStrip"
+                  ng-click="nextPage(social._id,'kwack')"
+                >
+                  <a>
+                    <img
+                      ng-if="!social.flagForKwack"
+                      class="img-responsive"
+                      src="img/explore/6.png"
+                    />
+                    <img
+                      ng-if="social.flagForKwack"
+                      class="img-responsive"
+                      src="img/discover/shieldclick.png"
+                    />
+                  </a>
+                  <span class="alignM">{{ social.comments.length }}</span>
+                </label>
+                <label
+                  ng-click="socilaSharing(social.description,social.imageUrl,social.title,social.url,social._id)"
+                >
+                  <img ng-if="!social.flagForShare" src="img/explore/7.png" />
+                  <img ng-if="social.flagForShare" src="img/filter/6.png" />
+                  <span class="colorw alignM">{{ social.share }}</span>
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <ion-infinite-scroll ng-if="pagination.shouldLoadMore && !searchInputsocial" on-infinite="loadMore()" distance="2px">
-            <ion-infinite-scroll-content></ion-infinite-scroll-content>
-        </ion-infinite-scroll>
-        <div ng-if="searchInputsocial" ng-include="searchInclude">
-        </div>
-    </ion-content>
+    <ion-infinite-scroll
+      ng-if="pagination.shouldLoadMore && !searchInputsocial"
+      on-infinite="loadMore()"
+      distance="2px"
+    >
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <div ng-if="searchInputsocial" ng-include="searchInclude"></div>
+  </ion-content>
 </ion-view>

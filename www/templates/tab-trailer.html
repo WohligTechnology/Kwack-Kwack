@@ -1,82 +1,118 @@
-<ion-view title="Trailer" class="{{fontChange}}">
-   <div class="row">
-        <div class="col col-10" ng-click="goBackHandler()">
-                <i class="closenavbar ion ion-ios-close-outline"></i>
-        </div>
-        <div class="col col-90">
-            <div class="pollingtitle text-overflow">
-                    <span class="" for="">{{newsInfo.name}}</span>
-            </div>
-        </div>
-   </div>         
-   <ion-content class=" bg-color has-footer">
-    <div class="text-center">
-      <h4 class="pad0 title-explore">KWACK</h4>
+<ion-view title="Trailer" class="{{ fontChange }}">
+  <div class="row">
+    <div class="col col-10" ng-click="goBackHandler()">
+      <i class="closenavbar ion ion-ios-close-outline"></i>
     </div>
-    <div class="trailerImage">
-      <img class="img-responsive" src="{{newsInfo.imageUrl}}" alt="">
-    </div>
-    <div class="trailerName" >
-      <label for="">{{newsInfo.title}}</label>
-      <div><span class="articleDate"> {{newsInfo.createdAt | fromNowDay}},</span>
-        <span class="articleDate"> {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}</span>
-        <span class="readarticleKwack" ng-click="inApp(newsInfo.url)">Read Article ...</span>
+    <div class="col col-90">
+      <div class="pollingtitle text-overflow">
+        <span class="" for="">{{ newsInfo.name }}</span>
       </div>
-      <div class="row pad0">
-        <div class="col col-25 pad0">
-       </div>
-     </div>
     </div>
-  <div class="bg-yellow">
+  </div>
+  <ion-content class=" bg-color has-footer">
+    <div class="text-center"><h4 class="pad0 title-explore">KWACK</h4></div>
+    <div class="trailerImage">
+      <img
+        class="img-responsive"
+        src="{{ newsInfo.imageUrl }}"
+        onerror="this.style.display='none';"
+        alt=""
+      />
+    </div>
+    <div class="trailerName">
+      <label for="">{{ newsInfo.title }}</label>
+      <div>
+        <span class="articleDate"> {{ newsInfo.createdAt | fromNowDay }},</span>
+        <span class="articleDate">
+          {{ newsInfo.createdAt | fromNowDM }},
+          {{ newsInfo.createdAt | fromNowY }}</span
+        >
+        <span class="readarticleKwack" ng-click="inApp(newsInfo.url)"
+          >Read Article ...</span
+        >
+      </div>
+      <div class="row pad0"><div class="col col-25 pad0"></div></div>
+    </div>
+    <div class="bg-yellow">
       <h3>CHOOSE YOUR SIDE</h3>
-      <label >AND START KWACKING</label>
+      <label>AND START KWACKING</label>
     </div>
     <div class="row">
       <div class="col col-30 yourSide rel">
-        <div ng-if="!kwack1 || kwack1=='AGAINST' || kwack1=='NEUTRAL'" ng-click="saveKwack('FOR')"> 
-          <img src="img/trailer/for.png" alt="">
+        <div
+          ng-if="!kwack1 || kwack1=='AGAINST' || kwack1=='NEUTRAL'"
+          ng-click="saveKwack('FOR')"
+        >
+          <img src="img/trailer/for.png" alt="" />
           <div class="yoursideright"></div>
         </div>
-        <div ng-if="kwack1=='FOR'" ng-click="saveKwack('FOR')"> 
-          <img src="img/trailer/forclick.png" alt="">
+        <div ng-if="kwack1=='FOR'" ng-click="saveKwack('FOR')">
+          <img src="img/trailer/forclick.png" alt="" />
           <div class="yoursideright"></div>
         </div>
-        <label ng-class="{'yourside-labelsel': kwack1=='FOR'}" class="yourside-label">FOR</label>
+        <label
+          ng-class="{'yourside-labelsel': kwack1=='FOR'}"
+          class="yourside-label"
+          >FOR</label
+        >
       </div>
       <div class="col col-30 yourSide rel">
-        <div ng-if="!kwack1 || kwack1=='FOR' || kwack1=='NEUTRAL'" ng-click="saveKwack('AGAINST')">
-          <img src="img/trailer/against.png" alt="">
+        <div
+          ng-if="!kwack1 || kwack1=='FOR' || kwack1=='NEUTRAL'"
+          ng-click="saveKwack('AGAINST')"
+        >
+          <img src="img/trailer/against.png" alt="" />
           <div class="yoursideright"></div>
         </div>
         <div ng-if="kwack1=='AGAINST'" ng-click="saveKwack('AGAINST')">
-          <img src="img/trailer/againstclick.png" alt="">
+          <img src="img/trailer/againstclick.png" alt="" />
           <div class="yoursideright"></div>
         </div>
-        <label ng-class="{'yourside-labelsel': kwack1=='AGAINST'}"  class="yourside-label" for="">AGAINST</label>
+        <label
+          ng-class="{'yourside-labelsel': kwack1=='AGAINST'}"
+          class="yourside-label"
+          for=""
+          >AGAINST</label
+        >
       </div>
-      <div class="col col-30 yourSide" >
-        <div ng-if="!kwack1 || kwack1=='AGAINST' || kwack1=='FOR'" ng-click="saveKwack('NEUTRAL')">
-      <img src="img/trailer/neutral.png" alt="">
-      <div class="yoursideright"></div>
-      </div>
-      <div ng-if="kwack1=='NEUTRAL'" ng-click="saveKwack('NEUTRAL')">
-          <img src="img/trailer/neutralclick.png" alt="">
+      <div class="col col-30 yourSide">
+        <div
+          ng-if="!kwack1 || kwack1=='AGAINST' || kwack1=='FOR'"
+          ng-click="saveKwack('NEUTRAL')"
+        >
+          <img src="img/trailer/neutral.png" alt="" />
           <div class="yoursideright"></div>
-          </div>
-      <label ng-class="{'yourside-labelsel': kwack1=='NEUTRAL'}" class="yourside-label" for="">NEUTRAL</label>
-     </div>
+        </div>
+        <div ng-if="kwack1=='NEUTRAL'" ng-click="saveKwack('NEUTRAL')">
+          <img src="img/trailer/neutralclick.png" alt="" />
+          <div class="yoursideright"></div>
+        </div>
+        <label
+          ng-class="{'yourside-labelsel': kwack1=='NEUTRAL'}"
+          class="yourside-label"
+          for=""
+          >NEUTRAL</label
+        >
+      </div>
     </div>
     <div class="text-center martop">
-      <img class="aligntop" ng-if="setvriableValue == true" src="img/tick.PNG" ng-click="goANONYMOUS()" >
-      <img class="aligntop" ng-if="setvriableValue == false" src="img/trailer/tick.png" ng-click="goANONYMOUS()">
+      <img
+        class="aligntop"
+        ng-if="setvriableValue == true"
+        src="img/tick.PNG"
+        ng-click="goANONYMOUS()"
+      />
+      <img
+        class="aligntop"
+        ng-if="setvriableValue == false"
+        src="img/trailer/tick.png"
+        ng-click="goANONYMOUS()"
+      />
 
       <label class="pad-left5 fs-10">CHECK TO GO ANONYMOUS</label>
     </div>
     <!-- <button class=" trailernext" ng-click="openModal()"> -->
-        <!--<button class=" trailernext" ui-sref="debate">-->
-           <button class=" trailernext"  ng-click="nextPage()">
-      NEXT
-    </button>
+    <!--<button class=" trailernext" ui-sref="debate">-->
+    <button class=" trailernext" ng-click="nextPage()">NEXT</button>
   </ion-content>
-
 </ion-view>

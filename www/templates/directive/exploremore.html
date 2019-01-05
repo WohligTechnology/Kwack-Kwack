@@ -8,8 +8,8 @@
         <img
           class="full-image"
           ng-src="{{ news.imageUrl }}"
-          ng-click="inApp(news.url)"
           onerror="this.style.display='none';"
+          ng-click="inApp(news.url)"
         />
         <div class="interest-spon absolute">
           <label ng-if="news.interest" class="movie-label">{{

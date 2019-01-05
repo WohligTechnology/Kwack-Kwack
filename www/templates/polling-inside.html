@@ -1,139 +1,157 @@
-<ion-view title="polling-inside" class="{{fontChange}}">
-     <div class="bar bar-header bar-light">
-        <div class="row mar-t10">
-          <div class="col col-33">
-            <div  ng-click="goToFromState()">
-              <i class="ion ion-ios-arrow-left trailernav"></i>
-            </div>
-          </div>
-          <div class="col col-33 text-center">
-            <div>
-              <img  src="img/filter/7.png" class="w40">
-            </div>
-          </div>
-          <div class="col col-33">
-            <!-- <div class="text-right ">
+<ion-view title="polling-inside" class="{{ fontChange }}">
+  <div class="bar bar-header bar-light">
+    <div class="row mar-t10">
+      <div class="col col-33">
+        <div ng-click="goToFromState()">
+          <i class="ion ion-ios-arrow-left trailernav"></i>
+        </div>
+      </div>
+      <div class="col col-33 text-center">
+        <div><img src="img/filter/7.png" class="w40" /></div>
+      </div>
+      <div class="col col-33">
+        <!-- <div class="text-right ">
               <img src="img/filter/5.png" class="w15">
             </div> -->
+      </div>
+    </div>
+  </div>
+  <ion-content class="has-header bg-color">
+    <div class="text-center"><h4 class="pad0 title-explore">KWACK</h4></div>
+    <div class="trailerImage">
+      <img
+        class="img-responsive"
+        src="{{ newsInfo.imageUrl }}"
+        onerror="this.style.display='none';"
+        alt=""
+      />
+    </div>
+    <div class="trailerName">
+      <label for="">{{ newsInfo.name }}</label>
+      <div>
+        <span class="articleDate">
+          {{ newsInfo.createdAt | fromNowDay }},
+        </span>
+        <span class="articleDate">
+          {{ newsInfo.createdAt | fromNowDM }},
+          {{ newsInfo.createdAt | fromNowY }}
+        </span>
+      </div>
+      <div class="row pad0 pollingBorder">
+        <div class="col col-30 pad0" ng-click="inApp(newsInfo.url)">
+          <span class="readarticle"> Read Article ... </span>
+        </div>
+        <div class="col col-70 pad0">
+          <div class="display-inline float-right debate-icon text-center">
+            <label class="discoverCardStrip" ui-sref="yourfriends">
+              <img src="img/debate/proicon.png" />
+              <span class="pollingCounts"></span>
+            </label>
+            <label
+              class="discoverCardStrip"
+              ng-click="nextPage(newsInfo._id,'kwack')"
+            >
+              <img
+                ng-if="!newsInfo.flagForKwack"
+                class="img-responsive"
+                src="img/explore/6.png"
+              />
+              <img
+                ng-if="newsInfo.flagForKwack"
+                class="img-responsive"
+                src="img/discover/shieldclick.png"
+              />
+              <span class="pollingCounts"> {{ TotalKwacks }}</span>
+            </label>
+            <label
+              ng-click="socilaSharing(newsInfo.description,newsInfo.imageUrl,newsInfo.title,newsInfo.url,newsInfo._id)"
+            >
+              <img src="img/debate/share.png" />
+              <!-- <span class=" pollingCounts">20</span> -->
+            </label>
           </div>
         </div>
       </div>
-      <ion-content class="has-header bg-color">
-        <div class="text-center">
-          <h4 class="pad0 title-explore">KWACK</h4>
-        </div>
-        <div class="trailerImage">
-          <img class="img-responsive" src="{{newsInfo.imageUrl}}" alt="">
-        </div>
-        <div class="trailerName">
-          <label for="">{{newsInfo.name}}</label>
-          <div>
-            <span class="articleDate">
-              {{newsInfo.createdAt | fromNowDay}},
-            </span>
-            <span class="articleDate">
-              {{newsInfo.createdAt | fromNowDM}}, {{newsInfo.createdAt | fromNowY}}
-            </span>
+    </div>
+
+    <div class="relative">
+      <div class="pollRight">
+        <img src="img/pollingInside/right.png" alt="" />
+      </div>
+      <div class="pollWrong">
+        <img src="img/pollingInside/wrong.png" alt="" />
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          <div class="card text-center relative pollCardpad">
+            <div class="pollUpDown">
+              <img src="img/pollingInside/Up.png" alt="" />
+            </div>
+            <pre></pre>
+            <div class="pollRoProBar">
+              <round-progress
+                max="100"
+                current="yespercent"
+                color="#ffc943"
+                bgcolor="#eaeaea"
+                radius="50"
+                stroke="6"
+                semi="false"
+                rounded="false"
+                clockwise="true"
+                responsive="false"
+                duration="800"
+                animation="easeInOutQuart"
+                animation-delay="0"
+              ></round-progress>
+            </div>
+            <div class="pollPercent">
+              <label ng-if="yespercent" for="">{{ yespercent }}</label>
+              <label ng-if="!yespercent" for="">0</label> <span>%</span>
+            </div>
+            <label ng-if="newsInfo.IsPoll=='NO'" class="pollAnswer" for=""
+              >Like</label
+            >
+            <label ng-if="newsInfo.IsPoll=='YES'" class="pollAnswer" for="">{{
+              option1
+            }}</label>
           </div>
-          <div class="row pad0 pollingBorder">
-            <div class="col col-30 pad0" ng-click="inApp(newsInfo.url)">
-              <span class="readarticle">
-                Read Article ...
-              </span>
+        </div>
+        <div class="col col-50">
+          <div class="card  text-center relative pollCardpad">
+            <div class="pollUpDown">
+              <img src="img/pollingInside/downarr.png" alt="" />
             </div>
-            <div class="col col-70 pad0">
-              <div class="display-inline float-right debate-icon text-center">
-                <label class="discoverCardStrip" ui-sref="yourfriends">
-                <img src="img/debate/proicon.png">
-                <span class="pollingCounts"></span>
-                </label>
-                <label class="discoverCardStrip" ng-click="nextPage(newsInfo._id,'kwack')">
-                  <img ng-if="!newsInfo.flagForKwack" class="img-responsive" src="img/explore/6.png">
-                  <img ng-if="newsInfo.flagForKwack" class="img-responsive" src="img/discover/shieldclick.png">
-                <span class="pollingCounts"> {{TotalKwacks}}</span>
-                </label>
-                <label ng-click="socilaSharing(newsInfo.description,newsInfo.imageUrl,newsInfo.title,newsInfo.url,newsInfo._id)">
-                <img src="img/debate/share.png">
-                <!-- <span class=" pollingCounts">20</span> -->
-                </label>
-                </div>
+            <div class="pollRoProBar">
+              <round-progress
+                max="100"
+                current="nopercent"
+                color="#000000"
+                bgcolor="#eaeaea"
+                radius="50"
+                stroke="6"
+                semi="false"
+                rounded="false"
+                clockwise="true"
+                responsive="false"
+                duration="800"
+                animation="easeInOutQuart"
+                animation-delay="0"
+              ></round-progress>
             </div>
-    
+            <div class="pollPercent">
+              <label ng-if="nopercent" for="">{{ nopercent }}</label>
+              <label ng-if="!nopercent" for="">0</label> <span>%</span>
+            </div>
+            <label ng-if="newsInfo.IsPoll=='NO'" class="pollAnswer" for=""
+              >Dislike</label
+            >
+            <label ng-if="newsInfo.IsPoll=='YES'" class="pollAnswer" for="">{{
+              option2
+            }}</label>
           </div>
         </div>
-    
-       <div class="relative">
-          <div class="pollRight">
-              <img src="img/pollingInside/right.png" alt="">
-            </div>
-            <div class="pollWrong">
-                <img src="img/pollingInside/wrong.png" alt="">
-              </div>
-          <div class="row">
-              
-              <div class="col col-50">
-               <div class="card text-center relative pollCardpad">
-                 <div class="pollUpDown">
-                   <img src="img/pollingInside/Up.png" alt="">
-                 </div><pre></pre>
-                 <div class="pollRoProBar"><round-progress
-                   max="100"
-                   current="yespercent"
-                   color="#ffc943"
-                   bgcolor="#eaeaea"
-                   radius="50"
-                   stroke="6"
-                   semi="false"
-                   rounded="false"
-                   clockwise="true"
-                   responsive="false"
-                   duration="800"
-                   animation="easeInOutQuart"
-                   animation-delay="0"></round-progress></div>
-                   <div class="pollPercent">
-                      <label ng-if="yespercent" for="">{{yespercent}}</label>
-                      <label ng-if="!yespercent" for="">0</label>
-                      <span>%</span>
-                   </div>
-                   <label ng-if="newsInfo.IsPoll=='NO'" class="pollAnswer" for="">Like</label>
-                   <label ng-if="newsInfo.IsPoll=='YES'" class="pollAnswer" for="">{{option1}}</label>
-               </div>
-              </div>
-              <div class="col col-50">
-                <div class="card  text-center relative pollCardpad">
-                    <div class="pollUpDown">
-                        <img src="img/pollingInside/downarr.png" alt="">
-                      </div>
-                   <div class="pollRoProBar"><round-progress
-                     max="100"
-                     current="nopercent"
-                     color="#000000"
-                     bgcolor="#eaeaea"
-                     radius="50"
-                     stroke="6"
-                     semi="false"
-                     rounded="false"
-                     clockwise="true"
-                     responsive="false"
-                     duration="800"
-                     animation="easeInOutQuart"
-                     animation-delay="0"></round-progress></div>
-                     <div class="pollPercent">
-                        <label ng-if="nopercent" for="">{{nopercent}}</label>
-                        <label ng-if="!nopercent" for="">0</label>
-                        <span>%</span>
-                     </div>
-                     <label ng-if="newsInfo.IsPoll=='NO'" class="pollAnswer" for="">Dislike</label>
-                     <label ng-if="newsInfo.IsPoll=='YES'" class="pollAnswer" for="">{{option2}}</label>
-                </div>
-              </div>
-               
-         
-             </div>
-       </div>
-        
-       
-       
-      </ion-content>
-     
-    </ion-view>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
