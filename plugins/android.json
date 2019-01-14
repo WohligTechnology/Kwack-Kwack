@@ -7,10 +7,32 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.kwackkwack.ionic"
+    },
     "cordova-plugin-console": {
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.kwackkwack.ionic"
+    },
     "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.kwackkwack.ionic"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.kwackkwack.ionic"
+    },
+    "cordova-plugin-googleplus": {
+      "PLAY_SERVICES_VERSION": "11.8.0",
+      "PACKAGE_NAME": "com.kwackkwack.ionic"
+    },
+    "cordova-plugin-image-picker": {
+      "PACKAGE_NAME": "com.kwackkwack.ionic"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.kwackkwack.ionic"
+    },
+    "cordova-plugin-ionic-webview": {
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     },
     "cordova-plugin-splashscreen": {
@@ -22,41 +44,21 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     },
-    "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.kwackkwack.ionic"
-    },
-    "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "com.kwackkwack.ionic"
-    },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.kwackkwack.ionic"
-    },
-    "cordova-plugin-image-picker": {
-      "PACKAGE_NAME": "com.kwackkwack.ionic"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "com.kwackkwack.ionic"
-    },
     "cordova-plugin-x-socialsharing": {
-      "PACKAGE_NAME": "com.kwackkwack.ionic"
-    },
-    "cordova-plugin-contacts": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     },
     "cordova.plugins.diagnostic": {
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     },
-    "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.kwackkwack.ionic"
-    },
-    "twitter-connect-plugin": {
-      "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de",
+    "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     },
-    "cordova-plugin-googleplus": {
+    "twitter-connect-plugin": {
+      "FABRIC_KEY": "a8da4edc-16f8-4c36-9867-68e23b3ee0de",
       "PACKAGE_NAME": "com.kwackkwack.ionic"
     }
   },

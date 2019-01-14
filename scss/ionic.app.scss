@@ -3190,6 +3190,17 @@ $dark:                            #444 !default;
         li{
             list-style: decimal;
         }
+        ol{
+            li{
+                ul{
+                    li{
+                        // list-style: lower-latin;
+                        list-style: none;
+                    }
+                }
+            }
+        }
+    
     }
 
     .terms-subheading {

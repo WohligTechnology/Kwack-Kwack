@@ -50,7 +50,7 @@
   "cordova-plugin-ionic-webview": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-ionic-webview@^1.1.16"
+      "id": "cordova-plugin-ionic-webview@^1.2.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -65,14 +65,6 @@
       "CAMERA_USAGE_DESCRIPTION": " ",
       "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
     }
-  },
-  "cordova-plugin-compat": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-compat@^1.1.0"
-    },
-    "is_top_level": false,
-    "variables": {}
   },
   "cordova-plugin-image-picker": {
     "source": {
@@ -103,10 +95,12 @@
   "cordova-plugin-x-socialsharing": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-x-socialsharing@^5.3.2"
+      "id": "cordova-plugin-x-socialsharing@^5.4.0"
     },
     "is_top_level": true,
-    "variables": {}
+    "variables": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+"
+    }
   },
   "es6-promise-plugin": {
     "source": {
@@ -153,7 +147,7 @@
   "onesignal-cordova-plugin": {
     "source": {
       "type": "registry",
-      "id": "onesignal-cordova-plugin"
+      "id": "onesignal-cordova-plugin@^2.4.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -161,12 +155,20 @@
   "cordova-plugin-googleplus": {
     "source": {
       "type": "registry",
-      "id": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus"
+      "id": "git+https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git"
     },
     "is_top_level": true,
     "variables": {
       "REVERSED_CLIENT_ID": "com.googleusercontent.apps.908763420783-p0g7ao7tfieqfq58q7ema6grqti33fg2",
       "WEB_APPLICATION_CLIENT_ID": "908763420783-p0g7ao7tfieqfq58q7ema6grqti33fg2.apps.googleusercontent.com"
     }
+  },
+  "cordova-plugin-compat": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-compat@1.2"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

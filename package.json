@@ -16,7 +16,7 @@
     "angular-svg-round-progressbar": "^1.1.0",
     "bourbon": "^5.0.0",
     "bower": "^1.8.4",
-    "cordova-android": "^6.4.0",
+    "cordova-android": "^6.3.0",
     "cordova-ios": "^4.5.4",
     "cordova-plugin-camera": "^2.4.1",
     "cordova-plugin-compat": "^1.2.0",
@@ -32,7 +32,7 @@
     "cordova-plugin-splashscreen": "^4.1.0",
     "cordova-plugin-statusbar": "^2.4.1",
     "cordova-plugin-whitelist": "^1.3.3",
-    "cordova-plugin-x-socialsharing": "^5.4.0",
+    "cordova-plugin-x-socialsharing": "^5.4.3",
     "cordova.plugins.diagnostic": "^3.9.2",
     "cordova.plugins.diagnostic.api-22": "^100.0.0-api-22",
     "es6-promise-plugin": "^4.2.2",
@@ -45,7 +45,7 @@
     "ionic-native": "^2.9.0",
     "ionic-plugin-keyboard": "^2.2.1",
     "ng-cordova-oauth": "^0.3.0",
-    "onesignal-cordova-plugin": "^2.4.1",
+    "onesignal-cordova-plugin": "^2.4.6",
     "shell.js": "^2.0.9",
     "shelljs": "^0.8.2",
     "twitter-connect-plugin": "^0.6.0"
@@ -70,7 +70,6 @@
       "cordova-plugin-file": {},
       "cordova-plugin-x-socialsharing": {},
       "cordova-plugin-contacts": {},
-      "cordova-plugin-compat": {},
       "cordova.plugins.diagnostic": {},
       "cordova-plugin-inappbrowser": {},
       "twitter-connect-plugin": {
@@ -80,7 +79,8 @@
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "com.googleusercontent.apps.908763420783-p0g7ao7tfieqfq58q7ema6grqti33fg2",
         "WEB_APPLICATION_CLIENT_ID": "908763420783-p0g7ao7tfieqfq58q7ema6grqti33fg2.apps.googleusercontent.com"
-      }
+      },
+      "cordova-plugin-compat": {}
     },
     "dependencies": {
       "@ionic/app-scripts": "^3.1.6",
@@ -150,8 +150,8 @@
       "android"
     ],
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "cordovaPlugins": [

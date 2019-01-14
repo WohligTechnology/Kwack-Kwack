@@ -12307,12 +12307,17 @@ button.btn-yellow.button[disabled] {
   .terms h4 {
     font-family: 'Montserrat-Medium';
     font-size: 14px; }
-  .terms p {
+  .terms p, .terms li {
     font-family: 'Montserrat-Regular';
+    text-align: justify;
     line-height: 16px;
     font-size: 11px;
     color: #414141;
     padding: 5px 0px; }
+  .terms li {
+    list-style: decimal; }
+  .terms ol li ul li {
+    list-style: none; }
 
 .terms-subheading {
   font-family: 'Montserrat-Regular' !important;
