@@ -20,18 +20,24 @@ connector.controller('YourFriendsCtrl', function ($scope, Chats, $location, $ion
         Chats.apiCallWithData("UserFollow/getAllUser", $scope.pagination1, function (data) {
           if (data.value == true) {
             $scope.followingData = _.concat($scope.followingData, data.data.results);
-            var users = $scope.followingData
+            var users = $scope.followingData;
             var log = [];
             $scope.alphabet = iterateAlphabet();
             //Sort user list by first letter of name
             var tmp = {};
-            for (i = 0; i < users.length; i++) {
-              var letter = users[i].name.toUpperCase().charAt(0);
-              if (tmp[letter] == undefined) {
-                tmp[letter] = []
+            console.log(users);
+            if(users.length>0){
+              for (i = 0; i < users.length; i++) {
+                  if(users[i].name){
+                  var letter = users[i].name.toUpperCase().charAt(0);
+                  if (tmp[letter] == undefined) {
+                    tmp[letter] = []
+                  }
+                  tmp[letter].push(users[i]);
+                }
               }
-              tmp[letter].push(users[i]);
             }
+
             $scope.sorted_users = tmp;
 
             //Click letter event
@@ -124,7 +130,7 @@ connector.controller('YourFriendsCtrl', function ($scope, Chats, $location, $ion
       //Sort user list by first letter of name
       var tmp = {};
       for (i = 0; i < users.length; i++) {
-        if (users[i] != null) {
+        if (users[i] != null && users[i].name.givenName) {
           var letter = users[i].name.givenName.toUpperCase().charAt(0);
           if (tmp[letter] == undefined) {
             tmp[letter] = []

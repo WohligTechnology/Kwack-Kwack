@@ -70,14 +70,19 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
           }
         }).then(function (result) {
           $scope.profileData = result.data;
-          // var Socialstate = result.data.location.name.split(",")
           $scope.socialLoginData = {
+            username: $scope.profileData.name,
+            email: $scope.profileData.email,
+            reqfrom: "Facebook",
+          }
+          $scope.socialLoginSave = {
             name: $scope.profileData.name,
             email: $scope.profileData.email,
             socailLoginPhoto: $scope.profileData.picture.data.url,
-            // state: Socialstate[1],
-            // city: Socialstate[0],
-            // country: "India"
+            loginfrom: [{
+              loginreqfrom:"Facebook",
+              username:$scope.profileData.name
+              }],
           }
           Chats.apiCallWithData("User/getUserforSocailLoginFacebook", $scope.socialLoginData, function (data) {
             if (data.value == true) {
@@ -86,7 +91,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
               $.jStorage.set("user", $scope.userData);
               $state.go("tab.explore")
             } else {
-              Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
+              Chats.apiCallWithData("User/save", $scope.socialLoginSave, function (data) {
                 console.log("*********************after saving the user in database", data)
                 if (data.value == true) {
                   $scope.userData = data.data;
@@ -161,11 +166,20 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
               console.log(result);
               console.log('Twitter handle :' + result.name);
               $scope.socialLoginData = {
-                name: result.name,
+                username: result.name,
                 screenName: result.screen_name,
-                socailLoginPhoto:result.profile_image_url
+                reqfrom: "Twitter",
                 // city: Socialstate[0],
                 // country: "India"
+              }
+              $scope.socialLoginSave = {
+                name: result.name,
+                screenName: result.screen_name,
+                socailLoginPhoto:result.profile_image_url,
+                loginfrom: [{
+                  loginreqfrom:"Twitter",
+                  username:result.name
+                  }],
               }
               console.log('$scope.socialLoginData', $scope.socialLoginData)
               Chats.apiCallWithData("User/getUserforSocailLogin", $scope.socialLoginData, function (data) {
@@ -175,7 +189,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
                   $.jStorage.set("user", $scope.userData);
                   $state.go("tab.explore")
                 } else {
-                  Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
+                  Chats.apiCallWithData("User/save", $scope.socialLoginSave, function (data) {
                     console.log("*********************after saving the user in database", data)
                     if (data.value == true) {
                       $scope.userData = data.data;
@@ -189,8 +203,6 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
                   })
                 }
               })
-
-
             },
             function (error) {
               console.log('Error retrieving user profile');
@@ -219,12 +231,22 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
         $scope.profileData = obj;
         // var Socialstate = result.data.location.name.split(",")
         $scope.socialLoginData = {
-          name: $scope.profileData.displayName,
+          username: $scope.profileData.displayName,
           email: $scope.profileData.email,
           socailLoginPhoto: $scope.profileData.imageUrl,
+          reqfrom: "Google",
           // state: Socialstate[1],
           // city: Socialstate[0],
           // country: "India"
+        }
+        $scope.socialLoginSave = {
+          name: $scope.profileData.displayName,
+          email: $scope.profileData.email,
+          socailLoginPhoto: $scope.profileData.imageUrl,
+          loginfrom: [{
+            loginreqfrom:"Google",
+            username:$scope.profileData.displayName
+            }],
         }
         Chats.apiCallWithData("User/getUserforSocailLoginFacebook", $scope.socialLoginData, function (data) {
           if (data.value == true) {
@@ -233,7 +255,7 @@ connector.controller('LoginCtrl', function ($scope, $cordovaFileTransfer, Chats,
             $.jStorage.set("user", $scope.userData);
             $state.go("tab.explore")
           } else {
-            Chats.apiCallWithData("User/save", $scope.socialLoginData, function (data) {
+            Chats.apiCallWithData("User/save", $scope.socialLoginSave, function (data) {
               console.log("*********************after saving the user in database", data)
               if (data.value == true) {
                 $scope.userData = data.data;

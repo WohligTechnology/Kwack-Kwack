@@ -1,7 +1,8 @@
 <ion-view title="settings" class="{{ fontChange }}">
   <div class="row pad10">
-    <div class="col col-33 " ng-click="goBackHandler()">
-      <label class="cncelNav">DONE</label>
+    <div class="col col-33" ng-click="editInt()">
+      <label class="cncelNav" ng-if="!showRemove">Edit</label>
+      <label class="cncelNav" ng-if="showRemove">DONE</label>
     </div>
     <div class="col col-33 navHead text-center">SETTINGS</div>
     <div class="col col-33 cncelNav text-right" ng-click="logout()">
@@ -22,8 +23,8 @@
               alt="logo"
               class="w100"
             />
-            <!-- <img ng-if="!userInfo.photo && userInfo.photo=='' && userInfo.socailLoginPhoto" ng-src="{{userInfo.socailLoginPhoto}}" alt="logo" class="w100"> -->
-            <!-- <img src="img/profile/profile.png" ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto" alt="logo" class="w100"> -->
+            <img ng-if="!userInfo.photo && userInfo.photo=='' && userInfo.socailLoginPhoto" ng-src="{{userInfo.socailLoginPhoto}}" alt="logo" class="w100">
+            <img src="img/profile/profile.png" ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto" alt="logo" class="w100">
           </div>
           <div class="set-username text-center">
             <pre>{{ font }}</pre>

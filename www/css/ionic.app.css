@@ -10722,7 +10722,8 @@ button.btn-yellow.button[disabled] {
 
 .listdetail h2 {
   font-family: 'Montserrat-Regular';
-  font-size: 14px; }
+  font-size: 14px;
+  padding-right: 50px; }
 
 .listdetail p {
   font-family: 'Montserrat-Light'; }
@@ -11540,13 +11541,14 @@ button.btn-yellow.button[disabled] {
 .profileImg {
   height: 150px;
   width: 150px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  box-shadow: 1px 10px 35px 0px #afafaf;
+  border-radius: 50%;
+  overflow: hidden; }
   .profileImg img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 1px 10px 35px 0px #afafaf; }
+    text-align: center; }
 
 .chngImg {
   text-align: center;
@@ -12369,7 +12371,7 @@ button.btn-yellow.button[disabled] {
     background: transparent; }
 
 .platform-ios .contactHeader {
-  top: 181px !important; }
+  top: 185px !important; }
 
 .alpha_sidebar {
   position: absolute;
@@ -13027,6 +13029,9 @@ button.btn-yellow.button[disabled] {
     background-color: #ffc943 !important;
     color: #fff !important;
     border: none; }
+
+.has-tabs-contact-top {
+  top: 185px !important; }
 
 .verysmall .navHead {
   font-size: 11px !important; }
