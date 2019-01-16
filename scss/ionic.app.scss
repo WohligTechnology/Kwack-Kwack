@@ -3182,6 +3182,9 @@ $dark:                            #444 !default;
             font-family: 'Montserrat-Medium';
             font-size: 14px;
         }
+        span{
+            font-size: 10px;
+        }
         p,li {
             font-family: 'Montserrat-Regular';
             text-align: justify;
@@ -3197,7 +3200,6 @@ $dark:                            #444 !default;
             li{
                 ul{
                     li{
-                        // list-style: lower-latin;
                         list-style: none;
                     }
                 }

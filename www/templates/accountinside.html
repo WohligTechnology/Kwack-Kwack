@@ -24,23 +24,16 @@
           </div>
         </div>
       </div>
-      <h2>LINKED ACCOUNTS</h2>
-      <div class="card">
-        <!-- <div class="row userName">
-          <div class="col"><label>TWITTER</label></div>
-        </div>
-        <div class="row userName">
-          <div class="col"><label>GOOGLE</label></div>
-        </div> -->
-        <div class="row userName" ng-repeat="linkedData in userData.loginfrom">
-          <div class="col col-50 emailText"><label>{{linkedData.loginreqfrom}}</label></div>
-          <div class="col col-50 text-right emailId">
-            <label>{{linkedData.username}}</label>
+      <div ng-if="userData.loginfrom.length>0">
+          <h2>LINKED ACCOUNTS</h2>
+          <div class="card">
+            <div class="row userName" ng-repeat="linkedData in userData.loginfrom">
+              <div class="col col-50 emailText"><label>{{linkedData.loginreqfrom}}</label></div>
+              <div class="col col-50 text-right emailId">
+                <label>{{linkedData.username}}</label>
+              </div>
+            </div>
           </div>
-        </div>
-        <!-- <div class="row userName">
-          <div class="col"><label>INSTAGRAM</label></div>
-        </div> -->
       </div>
       <button class="delAcc" ng-click="deleteThisUser()">
         Delete This Account
