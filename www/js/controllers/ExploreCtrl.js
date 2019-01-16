@@ -92,9 +92,15 @@ connector.controller('ExploreCtrl', function ($scope, $ionicScrollDelegate, Chat
     $scope.dataToSendApi.userId = $.jStorage.get('user')._id
     console.log("******************", $scope.dataToSendApi)
 
-    var message = desciption
-    var subject = title
-    var image = imageUrl
+    var message = desciption;
+    var subject = title;
+    var image = imageUrl;
+    
+    console.log("message //////////////////////",message);
+    console.log("title //////////////////////",title);
+    console.log("imageUrl //////////////////////",imageUrl);
+    console.log("link //////////////////////",link);
+
     $cordovaSocialSharing
       .share(message, subject, image, link) // Share via native share sheet
       .then(function (result) {
