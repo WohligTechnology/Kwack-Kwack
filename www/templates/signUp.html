@@ -1,82 +1,158 @@
 <ion-view title="SignUp">
-    <ion-content class="bg-color no-top">
-        <div class="content-mar mar-t20">
-            <div class="w56">
-                <img src="img/signup/bar.png" alt="logo" class="w100">
+  <ion-content class="bg-color no-top">
+    <div class="content-mar mar-t20">
+      <div class="w56">
+        <img src="img/signup/bar.png" alt="logo" class="w100" />
+      </div>
+      <form name="formName">
+        <div class="back-white">
+          <div class="list signupPlaceholder">
+            <label class="item item-input item-floating-label">
+              <span class="mar-t"></span>
+              <input
+                type="text"
+                class="border-bot"
+                ng-model="data.name"
+                name="name"
+                placeholder="Full Name"
+                required
+              />
+              <span
+                class="error-msg"
+                ng-show="formName.name.$touched && formName.name.$invalid"
+                >Full Name is required.</span
+              >
+            </label>
+            <label class="item item-input item-floating-label">
+              <span clas></span>
+              <input
+                type="text"
+                class="border-bot"
+                ng-model="data.userName"
+                name="userName"
+                placeholder="Username"
+                required
+              />
+              <span
+                class="error-msg"
+                ng-show="formName.userName.$touched && formName.userName.$invalid"
+                >User Name is required</span
+              >
+            </label>
+            <label class="item item-input item-floating-label">
+              <span></span>
+              <input
+                type="email"
+                class="border-bot"
+                ng-model="data.email"
+                name="email"
+                placeholder="Email id"
+                ng-change="demo()"
+                required
+              />
+              <span
+                class="error-msg"
+                ng-show="formName.email.$touched && formName.email.$invalid"
+                >Email is required</span
+              >
+              <span class="error-msg" ng-if="setEmailMsg"
+                >email already exist.</span
+              >
+            </label>
+            <label class="item item-input item-floating-label">
+              <span></span>
+              <input
+                type="tel"
+                class="border-bot"
+                ng-model="data.mobile"
+                name="mobile"
+                placeholder="Mobile Number"
+                ng-change="demo1()"
+                minlength="10"
+                maxlength="10"
+                required
+              />
+              <span
+                class="error-msg"
+                ng-show="formName.mobile.$touched && formName.mobile.$invalid"
+                >Mobile Number is required</span
+              >
+              <span class="error-msg" ng-if="setMobileMsg"
+                >mobile already exist.</span
+              >
+            </label>
+            <label class="item item-input item-floating-label">
+              <span></span>
+              <input
+                type="password"
+                class="border-bot"
+                ng-model="data.password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+              <span
+                class="error-msg"
+                ng-show="formName.password.$touched && formName.password.$invalid"
+                >Password is required</span
+              >
+            </label>
+            <label class="item item-input item-floating-label">
+              <span></span>
+              <input
+                type="password"
+                class="border-bot"
+                ng-model="data.forgotPassword"
+                name="forgotPassword"
+                placeholder="Confirm Password"
+                required
+              />
+              <div
+                class="error-msg"
+                ng-show="formName.forgotPassword.$touched && formName.forgotPassword.$invalid"
+              >
+                Confirm Password is required
+              </div>
+              <div class="error-msg" ng-if="showMassage">
+                Passwords did not match.
+              </div>
+            </label>
+            <div class="absolute sign-up">
+              <button
+                class="button  btn-yellow"
+                ng-click="saveUser(data)"
+                ng-disabled="formName.$invalid"
+              >
+                SIGN UP
+              </button>
+              <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
             </div>
-            <form name="formName">
-                <div class="back-white">
-                    <div class="list signupPlaceholder">
-                        <label class="item item-input item-floating-label">
-                            <span class="mar-t"></span>
-                            <input type="text" class="border-bot" ng-model="data.name" name="name" placeholder="Full Name" required>
-                            <span class="error-msg" ng-show="formName.name.$touched && formName.name.$invalid">Full Name is required.</span>
-                        </label>
-                        <label class="item item-input item-floating-label">
-                            <span clas></span>
-                            <input type="text" class="border-bot" ng-model="data.userName" name="userName" placeholder="Username" required>
-                            <span class="error-msg" ng-show="formName.userName.$touched && formName.userName.$invalid">User Name is required</span>
-                        </label>
-                        <label class="item item-input item-floating-label">
-                            <span></span>
-                            <input type="email" class="border-bot" ng-model="data.email" name="email" placeholder="Email id"  ng-change="demo()" required>
-                            <span class="error-msg" ng-show="formName.email.$touched && formName.email.$invalid">Email is required</span>
-                            <span class="error-msg" ng-if="setEmailMsg">email already exist.</span>
-                        </label>
-                        <label class="item item-input item-floating-label">
-                            <span></span>
-                            <input type="tel" class="border-bot" ng-model="data.mobile" name="mobile" placeholder="Mobile Number"  ng-change="demo1()" minlength="10" maxlength="10"
-                                required>
-                            <span class="error-msg" ng-show="formName.mobile.$touched && formName.mobile.$invalid" >Mobile Number is required</span>
-                             <span class="error-msg" ng-if="setMobileMsg">mobile already exist.</span>
-                        </label>
-                        <label class="item item-input item-floating-label">
-                            <span></span>
-                            <input type="password" class="border-bot" ng-model="data.password" name="password" placeholder="Password" required>
-                            <span class="error-msg" ng-show="formName.password.$touched && formName.password.$invalid">Password is required</span>
-                        </label>
-                        <label class="item item-input item-floating-label">
-                            <span></span>
-                            <input type="password" class="border-bot" ng-model="data.forgotPassword" name="forgotPassword" placeholder="Confirm Password" required>
-                            <div class="error-msg" ng-show="formName.forgotPassword.$touched && formName.forgotPassword.$invalid">Confirm Password is required</div>
-                            <div class="error-msg" ng-if="showMassage">Passwords did not match.</div>
-                        </label>
-                        <div class="absolute sign-up">
-                            <button class="button  btn-yellow" ng-click="saveUser(data)" ng-disabled="formName.$invalid">SIGN UP</button>
-                            <!-- <button class="button  btn-yellow" ui-sref="otp"  ng-click="saveUser()" >SIGN UP</button> -->
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <div class="social-icon">
-                <p>OR SIGN UP VIA</p>
-                <ul>
-                      <li ng-click="facebookLogin()">
+          </div>
+        </div>
+      </form>
+      <div class="social-icon">
+        <p>OR SIGN UP VIA</p>
+        <ul>
+          <!-- <li ng-click="facebookLogin()">
                         
                             <img src="img/signup/2.png" alt="facebook" class="w100">
                         
-                    </li>
-                    <li ng-click="twitterLogin()">
-                       
-                            <img src="img/signup/1.png" alt="twitter" class="w100">
-                       
-                    </li>
-                    <li ng-click="googleLogin()">
-                        
-                            <img src="img/signup/3.png" alt="twitter" class="w100">
-                      
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </ion-content>
-    <div class="footer" ui-sref="login">
-        <div class="bar bar-footer bar-black">
-            <div class="title">
-                <h5>EXISITING USER?
-                    <span ui-sref="login"> LOGIN</span>
-                </h5>
-            </div>
-        </div>
+                    </li> -->
+          <li ng-click="twitterLogin()">
+            <img src="img/signup/1.png" alt="twitter" class="w100" />
+          </li>
+          <li ng-click="googleLogin()">
+            <img src="img/signup/3.png" alt="twitter" class="w100" />
+          </li>
+        </ul>
+      </div>
     </div>
+  </ion-content>
+  <div class="footer" ui-sref="login">
+    <div class="bar bar-footer bar-black">
+      <div class="title">
+        <h5>EXISITING USER? <span ui-sref="login"> LOGIN</span></h5>
+      </div>
+    </div>
+  </div>
 </ion-view>
