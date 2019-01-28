@@ -2,6 +2,7 @@ connector.controller("SettingsCtrl", function(
   $scope,
   Chats,
   $state,
+  $cordovaSocialSharing,
   $rootScope
 ) {
   $scope.jstorage = {};
@@ -43,10 +44,9 @@ connector.controller("SettingsCtrl", function(
   };
   //  logout
   $scope.logout = function() {
-    //   window.plugins.googleplus.logout(
-    //     function (msg) {
-    //     }
-    // );
+    if (window.plugins.googleplus) {
+      window.plugins.googleplus.logout(function(msg) {});
+    }
     $.jStorage.flush();
     $state.go("login");
   };
@@ -161,6 +161,28 @@ connector.controller("SettingsCtrl", function(
   };
 
   $scope.addRemoveInterest();
+
+  //sharecode
+
+  $scope.shareAppLink = function() {
+    var link =
+      "https://play.google.com/store/apps/details?id=com.kwackkwack.ionic";
+    $cordovaSocialSharing
+      .share(
+        "Hey download 'Kwack Kwack' app. This app gives you all news in short.",
+        "",
+        "",
+        link
+      ) // Share via native share sheet
+      .then(
+        function(result) {
+          // Success!
+        },
+        function(err) {
+          // An error occured. Show a message to the user
+        }
+      );
+  };
 
   // $scope.select = function (interest) {
   //   _.forEach($scope.allInterest, function (value) {

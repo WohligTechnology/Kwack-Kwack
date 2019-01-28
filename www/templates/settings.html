@@ -23,8 +23,18 @@
               alt="logo"
               class="w100"
             />
-            <img ng-if="!userInfo.photo && userInfo.photo=='' && userInfo.socailLoginPhoto" ng-src="{{userInfo.socailLoginPhoto}}" alt="logo" class="w100">
-            <img src="img/profile/profile.png" ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto" alt="logo" class="w100">
+            <img
+              ng-if="!userInfo.photo && userInfo.photo=='' && userInfo.socailLoginPhoto"
+              ng-src="{{ userInfo.socailLoginPhoto }}"
+              alt="logo"
+              class="w100"
+            />
+            <img
+              src="img/profile/profile.png"
+              ng-if="!userInfo.photo && userInfo.photo=='' && !userInfo.socailLoginPhoto"
+              alt="logo"
+              class="w100"
+            />
           </div>
           <div class="set-username text-center">
             <pre>{{ font }}</pre>
@@ -175,6 +185,14 @@
         <div class="row userName" ui-sref="tab.yourfriends">
           <div class="col col-50 emailText"><label>FRIENDS</label></div>
           <div class="col col-50 text-right" ui-sref="inviteFriends">
+            <i class="ion ion-ios-arrow-right"></i>
+          </div>
+        </div>
+        <div class="row userName" ng-click="shareAppLink();">
+          <div class="col col-50 emailText">
+            <label>SHARE WITH FRIENDS</label>
+          </div>
+          <div class="col col-50 text-right">
             <i class="ion ion-ios-arrow-right"></i>
           </div>
         </div>
